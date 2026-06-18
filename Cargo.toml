@@ -101,6 +101,11 @@ warpui_extras = { path = "crates/warpui_extras", default-features = false }
 watcher = { path = "crates/watcher" }
 websocket = { path = "crates/websocket" }
 
+# i18n / 翻译
+rust-i18n = "3"
+sys-locale = "0.3"
+i18n = { path = "crates/i18n" }
+
 # Workspace-level dependencies used by multiple crates. Prefer adding dependencies
 # here to copying-and-pasting versions.
 axum = "0.8.4"

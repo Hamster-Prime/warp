@@ -604,7 +604,7 @@ impl TypedActionView for AppearanceSettingsPageView {
             SetNewWindowsCustomRows => self.update_new_windows_num_rows(true, ctx),
             SetFontSize => self.set_font_size(ctx),
             SetFontWeight(value) => self.set_font_weight(*value, ctx),
-            SetLanguage(_) => {}
+            SetLanguage(value) => self.set_language(*value, ctx),
             ToggleMatchNotebookToMonospaceFontSize => {
                 FontSettings::handle(ctx).update(ctx, |font_settings, ctx| {
                     report_if_error!(font_settings
@@ -1842,6 +1842,14 @@ impl AppearanceSettingsPageView {
         FontSettings::handle(ctx).update(ctx, |font_settings, ctx| {
             report_if_error!(font_settings.monospace_font_weight.set_value(value, ctx))
         });
+    }
+
+    pub fn set_language(&mut self, value: i18n::AppLanguage, ctx: &mut ViewContext<Self>) {
+        LanguageSettings::handle(ctx).update(ctx, |settings, ctx| {
+            report_if_error!(settings.language.set_value(value, ctx));
+        });
+        i18n::init::apply(value);
+        ctx.invalidate_all_views();
     }
 
     fn set_notebook_font_size(&mut self, ctx: &mut ViewContext<Self>) {

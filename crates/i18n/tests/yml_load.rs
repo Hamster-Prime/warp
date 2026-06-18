@@ -9,10 +9,6 @@
 //! 因为 `rust_i18n::set_locale` 修改进程级全局 `CURRENT_LOCALE`，
 //! cargo 默认并行跑集成测试时会互相竞态。
 
-// 集成测试是独立 crate，必须自己调用 `i18n!()` 才能用 `t!` 宏
-// （`t!` 展开为 `crate::_rust_i18n_t!`，由 `i18n!` 在调用方 crate root 生成）。
-rust_i18n::i18n!("_locales", fallback = "en");
-
 /// 已知的 zh-CN key 列表（来自 `_locales/zh-CN/*.yml`）。
 /// M4 引入抽取工具后会用代码扫描自动维护这个集合，MVP 阶段手写。
 const EXPECTED_ZH_CN_KEYS: &[&str] = &[

@@ -1,0 +1,26 @@
+# 通用按钮、状态、品牌名。跨多个设置页复用。
+# key 用英文原文（rust-i18n fallback 到 key 自身即英文）。
+#
+# 注意：rust-i18n 3.x 由「文件名」(v1) 或 YAML 内的 locale 键 (v2) 决定 locale，
+# 不使用目录名（见 rust-i18n-support/src/lib.rs:92-96 的 `file_stem()`）。
+# 因此同一 locale 拆成多文件必须用 v2 格式（`_version: 2` + `<locale>:` 子键），
+# `zh-CN/` 目录仅作组织用途。详见本次任务报告。
+_version: 2
+
+# 通用动作按钮
+"OK":
+  zh-CN: 确定
+"Cancel":
+  zh-CN: 取消
+"Save":
+  zh-CN: 保存
+"Apply":
+  zh-CN: 应用
+"Reset":
+  zh-CN: 重置
+
+# 品牌/专有名词（参照 spec 节 5.2 术语表）
+"Warp":
+  zh-CN: Warp
+"Settings":
+  zh-CN: 设置

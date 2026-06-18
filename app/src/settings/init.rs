@@ -16,8 +16,9 @@ use super::{
     AISettings, AccessibilitySettings, AliasExpansionSettings, AppEditorSettings,
     BlockVisibilitySettings, ChangelogSettings, CodeSettings, DebugSettings, EmacsBindingsSettings,
     FontSettings, FontSettingsChangedEvent, GPUSettings, InputBoxType, InputModeSettings,
-    InputSettings, LocalControlSettings, PaneSettings, SameLinePromptBlockSettings, ScrollSettings,
-    SelectionSettings, SshSettings, ThemeSettings, VimBannerSettings, WarpDrivePrivacySettings,
+    InputSettings, LanguageSettings, LocalControlSettings, PaneSettings, SameLinePromptBlockSettings,
+    ScrollSettings, SelectionSettings, SshSettings, ThemeSettings, VimBannerSettings,
+    WarpDrivePrivacySettings,
 };
 use crate::ai::cloud_agent_settings::CloudAgentSettings;
 use crate::banner::BannerState;
@@ -59,6 +60,7 @@ pub fn register_all_settings(ctx: &mut AppContext) {
     SessionSettings::register(ctx);
     KeysSettings::register(ctx);
     FontSettings::register(ctx);
+    LanguageSettings::register(ctx);
     TabSettings::register(ctx);
     WindowSettings::register(ctx);
     SafeModeSettings::register(ctx);
@@ -119,6 +121,11 @@ pub fn init(
     ctx.add_singleton_model(|_| SettingsInitializer::new());
 
     register_all_settings(ctx);
+
+    // Apply the user's language choice (or detected system language) to the
+    // rust-i18n global locale. Must come AFTER register_all_settings so
+    // LanguageSettings is initialized before we read from it.
+    i18n::init::apply(*LanguageSettings::as_ref(ctx).language);
 
     // One-time migration: copy public settings from the platform-native store
     // into the TOML file so existing users don't lose their customizations

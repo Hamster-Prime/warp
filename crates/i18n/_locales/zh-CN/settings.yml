@@ -1,0 +1,9 @@
+# 设置面板相关 key。后续 Task（M4）会大规模扩充。
+# 同 _shared.yml：使用 v2 格式，目录内多文件合并到同一 locale。
+_version: 2
+
+# Appearance 页 - Language 开关
+"Language":
+  zh-CN: 语言
+"Appearance":
+  zh-CN: 外观

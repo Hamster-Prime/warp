@@ -59,8 +59,8 @@ use crate::settings::app_icon::{AppIcon, AppIconSettings, ShowDockIconState};
 use crate::settings::{
     active_theme_kind, respect_system_theme, AIFontName, AppEditorSettings, CursorBlink,
     CursorBlinkEnabled, CursorDisplayType, EnforceMinimumContrast, FocusPaneOnHover, FontSettings,
-    FontSettingsChangedEvent, GPUSettings, InputBoxType, InputModeSettings, InputModeState,
-    InputSettings, InputSettingsChangedEvent, MonospaceFontName, PaneSettings,
+    FontSettingsChangedEvent, GPUSettings, InputBoxType, LanguageSettings, InputModeSettings,
+    InputModeState, InputSettings, InputSettingsChangedEvent, MonospaceFontName, PaneSettings,
     ShouldDimInactivePanes, ThemeSettings, UseSystemTheme, UseThinStrokes,
     DEFAULT_MONOSPACE_FONT_NAME,
 };
@@ -103,6 +103,7 @@ const FONT_SIZE_INPUT_BOX_WIDTH: f32 = 80.;
 const NOTEBOOK_FONT_SIZE_INPUT_BOX_WIDTH: f32 = 50.;
 const FONT_FAMILY_DROPDOWN_WIDTH: f32 = 225.;
 const FONT_WEIGHT_DROPDOWN_WIDTH: f32 = 100.;
+const LANGUAGE_DROPDOWN_WIDTH: f32 = 180.;
 const LINE_HEIGHT_INPUT_BOX_WIDTH: f32 = 80.;
 const OPACITY_SLIDER_WIDTH: f32 = 150.;
 const MIN_FONT_SIZE: usize = 1;
@@ -486,6 +487,7 @@ pub enum AppearancePageAction {
     SetNewWindowsCustomRows,
     SetFontSize,
     SetFontWeight(Weight),
+    SetLanguage(i18n::AppLanguage),
     SetNotebookFontSize,
     SetLineHeight,
     SetOpacity(f32),
@@ -559,6 +561,7 @@ pub struct AppearanceSettingsPageView {
     blur_state: SliderStateHandle,
     font_family_dropdown: ViewHandle<FilterableDropdown<AppearancePageAction>>,
     font_weight_dropdown: ViewHandle<Dropdown<AppearancePageAction>>,
+    language_dropdown: ViewHandle<Dropdown<AppearancePageAction>>,
     #[allow(dead_code)]
     thin_strokes_dropdown: ViewHandle<Dropdown<AppearancePageAction>>,
     enforce_min_contrast_dropdown: ViewHandle<Dropdown<AppearancePageAction>>,
@@ -601,6 +604,7 @@ impl TypedActionView for AppearanceSettingsPageView {
             SetNewWindowsCustomRows => self.update_new_windows_num_rows(true, ctx),
             SetFontSize => self.set_font_size(ctx),
             SetFontWeight(value) => self.set_font_weight(*value, ctx),
+            SetLanguage(value) => self.set_language(*value, ctx),
             ToggleMatchNotebookToMonospaceFontSize => {
                 FontSettings::handle(ctx).update(ctx, |font_settings, ctx| {
                     report_if_error!(font_settings
@@ -823,6 +827,8 @@ impl AppearanceSettingsPageView {
                 *font_settings.match_notebook_to_monospace_font_size,
             )
         };
+
+        let current_language = *LanguageSettings::as_ref(ctx).language;
 
         let font_size_editor = Self::editor(
             |me, event, ctx| me.handle_font_size_editor_event(event, ctx),
@@ -1112,6 +1118,25 @@ impl AppearanceSettingsPageView {
             dropdown
         });
 
+        let language_dropdown = ctx.add_typed_action_view(|ctx| {
+            let mut dropdown = Dropdown::new(ctx);
+            dropdown.set_top_bar_max_width(LANGUAGE_DROPDOWN_WIDTH);
+            dropdown.set_menu_width(LANGUAGE_DROPDOWN_WIDTH, ctx);
+
+            let items = i18n::AppLanguage::all()
+                .iter()
+                .map(|lang| {
+                    DropdownItem::new(
+                        lang.dropdown_label().to_string(),
+                        AppearancePageAction::SetLanguage(*lang),
+                    )
+                })
+                .collect();
+            dropdown.add_items(items, ctx);
+            dropdown.set_selected_by_name(current_language.dropdown_label(), ctx);
+            dropdown
+        });
+
         let thin_strokes_dropdown = ctx.add_typed_action_view(|ctx| {
             let mut dropdown = Dropdown::new(ctx);
 
@@ -1294,6 +1319,7 @@ impl AppearanceSettingsPageView {
             blur_state: Default::default(),
             font_family_dropdown,
             font_weight_dropdown,
+            language_dropdown,
             thin_strokes_dropdown,
             input_mode_dropdown,
             input_type_radio_state,
@@ -1816,6 +1842,14 @@ impl AppearanceSettingsPageView {
         FontSettings::handle(ctx).update(ctx, |font_settings, ctx| {
             report_if_error!(font_settings.monospace_font_weight.set_value(value, ctx))
         });
+    }
+
+    pub fn set_language(&mut self, value: i18n::AppLanguage, ctx: &mut ViewContext<Self>) {
+        LanguageSettings::handle(ctx).update(ctx, |settings, ctx| {
+            report_if_error!(settings.language.set_value(value, ctx));
+        });
+        i18n::init::apply(value);
+        ctx.invalidate_all_views();
     }
 
     fn set_notebook_font_size(&mut self, ctx: &mut ViewContext<Self>) {
@@ -4119,6 +4153,29 @@ impl SettingsWidget for TerminalFontWidget {
         );
 
         terminal_font_row.add_child(Container::new(font_weight.finish()).finish());
+
+        // Language
+        let mut language = Flex::column();
+        language.add_child(
+            appearance
+                .ui_builder()
+                .label(i18n::t!("Language").to_string())
+                .with_style(UiComponentStyles {
+                    font_size: Some(CONTENT_FONT_SIZE),
+                    ..Default::default()
+                })
+                .build()
+                .with_margin_left(12.)
+                .finish(),
+        );
+
+        language.add_child(
+            Container::new(ChildView::new(&view.language_dropdown).finish())
+                .with_margin_left(12.)
+                .finish(),
+        );
+
+        terminal_font_row.add_child(Container::new(language.finish()).finish());
 
         // Font Size
         let mut font_size = Flex::column();

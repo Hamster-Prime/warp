@@ -156,18 +156,6 @@ fn generate_channel_config_if_needed(target_family: &str, target_os: &str) {
 
     let config_bin = "warp-channel-config";
 
-    // Check if the config binary is available on PATH. If not, we can't generate embedded
-    // configs. This is expected for external contributors building Warp OSS.
-    if Command::new(config_bin)
-        .arg("--help")
-        .stdout(std::process::Stdio::null())
-        .stderr(std::process::Stdio::null())
-        .status()
-        .is_err()
-    {
-        return;
-    }
-
     // Only track these for bundled builds, where they affect the embedded config.
     // For non-bundled builds these are runtime variables and should not trigger recompilation.
     println!("cargo:rerun-if-env-changed=WITH_LOCAL_SERVER");
@@ -182,6 +170,33 @@ fn generate_channel_config_if_needed(target_family: &str, target_os: &str) {
     } else {
         "native"
     };
+
+    // Check if the config binary is available on PATH. If not, fall back to writing
+    // minimal stub configs so external contributors (without access to the private
+    // warp-channel-config repo) can still build release bundles.
+    let binary_available = Command::new(config_bin)
+        .arg("--help")
+        .stdout(std::process::Stdio::null())
+        .stderr(std::process::Stdio::null())
+        .status()
+        .is_ok();
+
+    if !binary_available {
+        println!(
+            "cargo:warning='warp-channel-config' not on PATH; writing minimal stub \
+             channel configs. Server/telemetry/crash-reporting features will be \
+             non-functional. This is expected for external/fork builds."
+        );
+        let out_dir_path = Path::new(&out_dir);
+        for channel in ["local", "dev", "stable", "preview"] {
+            let stub = stub_channel_config(channel);
+            let config_path = out_dir_path.join(format!("{channel}_config.json"));
+            fs::write(&config_path, stub).unwrap_or_else(|err| {
+                panic!("Failed to write stub config to {}: {err}", config_path.display())
+            });
+        }
+        return;
+    }
 
     // Generate config for all internal channels. The build script runs once per crate (not
     // once per binary), so we generate all configs here and each binary's include_str! picks
@@ -209,6 +224,44 @@ fn generate_channel_config_if_needed(target_family: &str, target_os: &str) {
             panic!("Failed to write config to {}: {err}", config_path.display())
         });
     }
+}
+
+/// Returns a minimal valid `ChannelConfig` JSON for the given channel.
+///
+/// Used when `warp-channel-config` is not on PATH (external/fork builds). The stub points
+/// at production servers so login/RTC work for end-user testing, but disables telemetry,
+/// crash reporting, autoupdate, and MCP OAuth — those require channel-specific secrets.
+fn stub_channel_config(channel: &str) -> String {
+    // Channel-specific app_id and log filename. Keep these in sync with the
+    // APP_NAME / WARP_BIN mapping in script/windows/bundle.ps1.
+    let (app_id, logfile_name) = match channel {
+        "local" => ("dev.warp.WarpLocal", "warp-local.log"),
+        "dev" => ("dev.warp.WarpDev", "warp-dev.log"),
+        "stable" => ("dev.warp.Warp", "warp.log"),
+        "preview" => ("dev.warp.WarpPreview", "warp-preview.log"),
+        _ => ("dev.warp.WarpLocal", "warp.log"),
+    };
+    format!(
+        r#"{{
+  "app_id": "{app_id}",
+  "logfile_name": "{logfile_name}",
+  "server_config": {{
+    "server_root_url": "https://app.warp.dev",
+    "rtc_server_url": "wss://rtc.app.warp.dev/graphql/v2",
+    "session_sharing_server_url": "wss://sessions.app.warp.dev",
+    "firebase_auth_api_key": "AIzaSyBdy3O3S9hrdayLJxJ7mriBR4qgUaUygAs",
+    "iap_config": null
+  }},
+  "oz_config": {{
+    "oz_root_url": "https://oz.warp.dev",
+    "workload_audience_url": null
+  }},
+  "telemetry_config": null,
+  "autoupdate_config": null,
+  "crash_reporting_config": null,
+  "mcp_static_config": null
+}}"#
+    )
 }
 
 fn get_build_profile_name() -> String {

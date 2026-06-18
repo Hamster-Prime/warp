@@ -61,3 +61,10 @@ fn normalize_unrelated_input() {
     assert_eq!(normalize("C"), Some("en"));
     assert_eq!(normalize("POSIX"), Some("en"));
 }
+
+#[test]
+fn normalize_trims_whitespace() {
+    // sys-locale 偶尔会返回带空白的环境变量值；trim 保证健壮性
+    assert_eq!(normalize(" zh-CN "), Some("zh-CN"));
+    assert_eq!(normalize("\ten-US\n"), Some("en"));
+}

@@ -16,7 +16,7 @@ static DETECTED: OnceLock<&'static str> = OnceLock::new();
 /// - 中文系统（含简/繁）→ `"zh-CN"`
 /// - 其他系统 → `"en"`
 pub fn detect_system_language() -> &'static str {
-    *DETECTED.get_or_init(|| {
+    DETECTED.get_or_init(|| {
         let raw = sys_locale::get_locale().unwrap_or_else(|| "en".to_string());
         normalize(&raw).unwrap_or("en")
     })
@@ -36,6 +36,8 @@ pub fn normalize(raw: &str) -> Option<&'static str> {
         return None;
     }
     let lower = trimmed.to_lowercase();
+    // TODO(i18n): 当新增第二种非英文语言（如 ja/ko）时，把这里的前缀检查重构成
+    // 精确的 BCP-47 子标签匹配（primary subtag == "zh"），避免误命中 zha/zho 等。
     if lower.starts_with("zh") {
         // MVP：所有中文变体（简/繁/区域）都归一到 zh-CN
         Some("zh-CN")

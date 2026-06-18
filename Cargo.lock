@@ -6454,7 +6454,9 @@ dependencies = [
  "rust-i18n",
  "schemars",
  "serde",
+ "serde_json",
  "settings",
+ "settings_value",
  "sys-locale",
 ]
 

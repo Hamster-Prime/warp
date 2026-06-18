@@ -1,16 +1,18 @@
-//! 用户界面语言设置。
+//! User interface language setting.
 //!
-//! 仿照 `app/src/settings/font.rs:15-113` 的 `FontSettings` 模板。
-//! 唯一字段 `language` 类型是 [`i18n::AppLanguage`]（已通过
-//! `settings_value::SettingsValue` 派生宏接入 settings 系统）。
+//! Modeled after `app/src/settings/font.rs`' `FontSettings` template.
+//! The single field `language` is of type [`i18n::AppLanguage`] (which
+//! derives `settings_value::SettingsValue` and so plugs into the settings
+//! system).
 //!
-//! 持久化到 `settings.toml` 的 `[appearance].language` 路径
-//! （参考 `app/src/settings/mod.rs:597`）。
-//! 默认值 [`i18n::AppLanguage::System`] 跟随系统语言。
+//! Persisted to the `[appearance].language` path in `settings.toml`.
+//! Defaults to [`i18n::AppLanguage::System`] (follow the system language).
 //!
-//! 宏会自动生成并在本模块导出 `LanguageSettingsChangedEvent`，当
-//! `LanguageSettings::language` 变化时触发。订阅方式（参照
-//! `appearance_page.rs` 中 `FontSettingsChangedEvent` 的模式）：
+//! The macro auto-generates and re-exports `LanguageSettingsChangedEvent`
+//! from this module, fired whenever `LanguageSettings::language` changes.
+//! Subscribe using the same pattern as `FontSettingsChangedEvent`
+//! (called from the Appearance settings page when the user changes
+//! the Language dropdown):
 //! ```ignore
 //! ctx.observe(&LanguageSettings::handle(ctx).entity_id(), |_, ctx| { ... })
 //! ```
@@ -36,16 +38,18 @@ define_settings_group!(
     ]
 );
 
-/// 便利方法：读取当前语言（隐藏 settings group 的间接层）。
+/// Convenience helper: reads the current language (hides the settings group indirection).
 pub fn current_language(ctx: &AppContext) -> AppLanguage {
     *LanguageSettings::as_ref(ctx).language
 }
 
-/// 便利方法：写入当前语言，返回是否成功。
+/// Writes the current language. Returns `Ok(())` on success.
 ///
-/// 调用者负责后续调用 `i18n::init::apply(new_language)` 切换 rust-i18n 全局 locale
-/// （见 `appearance_page.rs::set_language`）。
-pub fn set_language(value: AppLanguage, ctx: &mut AppContext) -> anyhow::Result<()> {
+/// The caller is responsible for afterwards calling
+/// `i18n::init::apply(new_language)` to switch the rust-i18n global locale
+/// (called from the Appearance settings page when the user changes
+/// the Language dropdown; see future `appearance_page.rs::set_language`).
+pub fn set_app_language(value: AppLanguage, ctx: &mut AppContext) -> anyhow::Result<()> {
     LanguageSettings::handle(ctx).update(ctx, |settings, ctx| {
         settings.language.set_value(value, ctx)
     })

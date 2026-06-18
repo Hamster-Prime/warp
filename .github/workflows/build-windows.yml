@@ -1,0 +1,169 @@
+name: Build Windows Installer
+
+# 生成 Warp 的 Windows .exe 安装包。
+#
+# 触发条件：
+#   1. 推送到 master 分支（自动）
+#   2. 手动触发（workflow_dispatch，可在 Actions 页面选分支）
+#
+# 产物：上传 WarpLocalSetup.exe 到 workflow run 的 Artifacts 区，
+#       可在 https://github.com/<owner>/<repo>/actions 下载。
+#
+# 说明：
+#   - 使用 `local` channel 构建，不需要 warp-channel-config 私有仓库
+#     （app/build.rs:151-169 在该二进制缺失时优雅降级）。
+#   - 跳过 Azure 代码签名（fork 仓库没有签名凭据），生成的 .exe 未签名，
+#     Windows SmartScreen 会显示「未知发行商」警告，点「仍要运行」即可。
+#   - 单次构建约 30-60 分钟（windows-latest，含 cargo 缓存）。
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+# 避免同一分支多次连续推送触发并发构建，自动取消旧的。
+concurrency:
+  group: build-windows-${{ github.ref }}
+  cancel-in-progress: true
+
+# 默认 GITHUB_TOKEN 权限只需读取仓库内容。
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build Windows x64 Installer
+    runs-on: windows-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # 拿到完整历史，bundle 脚本和 build.rs 可能引用 git 信息。
+          fetch-depth: 0
+          # LFS 对象需要单独拉取（见下一步）。
+          lfs: false
+
+      - name: Enable long paths (Windows)
+        shell: bash
+        run: git config --system core.longpaths true
+
+      - name: Pull Git LFS objects
+        shell: bash
+        run: |
+          git lfs install --local
+          git lfs pull
+
+      # windows-latest 自带 MSVC 工具链、Windows SDK、CMake。
+      # 我们仍需 Rust、Node、protoc、Inno Setup。
+      - name: Install Rust (MSVC toolchain)
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-msvc
+
+      - name: Install cargo-about (for third-party license generation)
+        shell: bash
+        run: cargo install --locked cargo-about@0.8.4
+
+      - name: Install Node 20 + Corepack (for TS command signatures)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.9.0'
+
+      - name: Enable Corepack
+        shell: bash
+        run: corepack enable
+
+      - name: Install protoc (protobuf compiler)
+        uses: ConorMacBride/install-package@v1
+        with:
+          choco: protoc
+
+      - name: Install Inno Setup 6 (installer compiler)
+        shell: pwsh
+        run: |
+          # windows-latest 通常已预装；若未装则用 choco 安装。
+          $iscc = 'C:\Program Files (x86)\Inno Setup 6\ISCC.exe'
+          if (-not (Test-Path $iscc)) {
+            choco install innosetup -y --no-progress
+          } else {
+            Write-Output "Inno Setup already installed at $iscc"
+          }
+          # 把 ISCC.exe 目录加入 PATH 以便 bundle.ps1 可以直接调 ISCC
+          echo "C:\Program Files (x86)\Inno Setup 6" >> $env:GITHUB_PATH
+
+      # 缓存 ~/.cargo 和 target 目录，二次构建可省 50%+ 时间。
+      - name: Cache Cargo registry + git
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+          key: cargo-registry-${{ runner.os }}-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            cargo-registry-${{ runner.os }}-
+
+      - name: Cache Cargo target
+        uses: actions/cache@v4
+        with:
+          path: target
+          key: cargo-target-${{ runner.os }}-x64-${{ hashFiles('**/Cargo.lock', '**/Cargo.toml') }}
+          restore-keys: |
+            cargo-target-${{ runner.os }}-x64-
+
+      # 用 short SHA 作为版本号，便于追溯是哪次构建。
+      - name: Compute version tag
+        id: version
+        shell: bash
+        run: echo "tag=local-${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
+
+      # 核心构建步骤：编译 Warp 二进制 + 准备资源 + 调 Inno Setup 生成 .exe。
+      # 用 local channel（最简，不依赖私有 channel config 仓库）。
+      # build.rs 检测不到 warp-channel-config 会自动跳过 config 嵌入。
+      - name: Build Warp + Installer
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          .\script\windows\bundle.ps1 -Channel local `
+            -RELEASE_TAG "${{ steps.version.outputs.tag }}" `
+            -ARCH x64
+        env:
+          # 标记为 GitHub Actions 环境，install_cargo_build_deps 会据此跳过
+          # diesel_cli 安装（不需要）和 channel config（fork 仓库没权限，
+          # install_channel_config 会 graceful skip）。
+          GITHUB_ACTIONS: 'true'
+
+      # 把生成的 .exe 安装包作为 artifact 上传，构建完成后可在
+      # https://github.com/<owner>/<repo>/actions/runs/<run-id> 页面下载。
+      - name: Upload installer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: WarpLocalSetup-${{ steps.version.outputs.tag }}
+          path: script/windows/Output/*.exe
+          if-no-files-found: error
+          retention-days: 30
+
+      # 同时上传 .pdb（调试符号），便于崩溃时排查。
+      - name: Upload debug symbols (PDB)
+        uses: actions/upload-artifact@v4
+        with:
+          name: WarpLocalSymbols-${{ steps.version.outputs.tag }}
+          # bundle.ps1 把 .pdb 留在 target 输出目录
+          path: target/x86_64-pc-windows-msvc/rltoda/*.pdb
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Summary
+        shell: bash
+        run: |
+          echo "## Build Complete ✅" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Installer:** \`WarpLocalSetup-${{ steps.version.outputs.tag }}.exe\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Download from the Artifacts section at the top of this workflow run." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Notes" >> $GITHUB_STEP_SUMMARY
+          echo "- **Channel:** local (no embedded channel config)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Code-signed:** no (SmartScreen will show 'Unknown publisher' warning)" >> $GITHUB_STEP_SUMMARY
+          echo "- **i18n M1:** included (zh-CN support + Language dropdown)" >> $GITHUB_STEP_SUMMARY

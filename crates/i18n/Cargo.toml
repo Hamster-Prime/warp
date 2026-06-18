@@ -14,6 +14,3 @@ serde_json = { workspace = true }
 schemars = { workspace = true }
 settings = { workspace = true }
 settings_value = { workspace = true, features = ["derive"] }
-
-[dev-dependencies]
-serde_json = { workspace = true }

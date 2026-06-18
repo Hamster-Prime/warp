@@ -70,7 +70,9 @@ fn serde_roundtrip_preserves_variant() {
 
 #[test]
 fn serde_uses_snake_case_by_default() {
-    // 设置文件存 snake_case，与现有 enum 设置一致（参考 EnforceMinimumContrast）
+    // serde 与 file format 都用 snake_case（AppLanguage 比 EnforceMinimumContrast
+    // 更严格——后者 serde 是 PascalCase）。这是新建设置的推荐做法，避免云端同步
+    // 与本地文件名不一致。
     let s = serde_json::to_string(&AppLanguage::SimplifiedChinese).unwrap();
     assert_eq!(s, "\"simplified_chinese\"");
     let back: AppLanguage = serde_json::from_str("\"simplified_chinese\"").unwrap();

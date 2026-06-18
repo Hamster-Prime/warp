@@ -1,8 +1,13 @@
 //! 用户可选的应用语言枚举。
 //!
 //! 作为 `LanguageSettings`（在 app crate 中）的值类型，
-//! 通过 [`settings_value::SettingsValue`] 派生宏接入 Warp 的 settings 系统，
-//! 序列化为 snake_case（参考 `app/src/settings/mod.rs:460-484` 的 `EnforceMinimumContrast`）。
+//! 通过 [`settings_value::SettingsValue`] 派生宏接入 Warp 的 settings 系统。
+//!
+//! 同时通过 `#[serde(rename_all = "snake_case")]` 让 serde/cloud-sync 序列化
+//! 与 TOML 文件格式保持一致（均为 `simplified_chinese`）。注意这比
+//! `app/src/settings/mod.rs:460-484` 的 `EnforceMinimumContrast`（serde 是
+//! PascalCase、只有 file format 是 snake_case）更严格，但避免了云端同步与
+//! 本地文件名不一致的隐患，适合新建设置。
 
 use serde::{Deserialize, Serialize};
 

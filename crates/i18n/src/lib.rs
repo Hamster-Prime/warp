@@ -14,7 +14,8 @@ pub mod language;
 
 pub use language::AppLanguage;
 
-/// 在编译期把 `_locales/` 嵌入二进制；找不到 key 时 fallback 到 `"en"`。
-///
-/// 注意：此宏必须在 crate 根（本文件）调用一次，之后所有 `t!()` 才能查到表。
+// 在编译期把 `_locales/` 嵌入二进制；找不到 key 时 fallback 到 `"en"`。
+//
+// 注意：此宏必须在 crate 根（本文件）调用一次，之后所有 `t!()` 才能查到表。
+// （使用 `//` 而非 `///`，因为 rust-i18n 的 `i18n!` 宏展开不接受文档注释。）
 rust_i18n::i18n!("_locales", fallback = "en");

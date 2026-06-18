@@ -45,6 +45,7 @@ field_mask = { path = "crates/field_mask" }
 firebase = { path = "crates/firebase" }
 fuzzy_match = { path = "crates/fuzzy_match" }
 handlebars = { path = "crates/handlebars" }
+i18n = { path = "crates/i18n" }
 http_client = { path = "crates/http_client" }
 http_server = { path = "crates/http_server" }
 input_classifier = { path = "crates/input_classifier" }
@@ -100,11 +101,6 @@ warpui_core = { path = "crates/warpui_core" }
 warpui_extras = { path = "crates/warpui_extras", default-features = false }
 watcher = { path = "crates/watcher" }
 websocket = { path = "crates/websocket" }
-
-# i18n / 翻译
-rust-i18n = "3"
-sys-locale = "0.3"
-i18n = { path = "crates/i18n" }
 
 # Workspace-level dependencies used by multiple crates. Prefer adding dependencies
 # here to copying-and-pasting versions.
@@ -254,6 +250,7 @@ reqwest = { version = "0.13", features = [
 reqwest-eventsource = { package = "aha-reqwest-eventsource", version = "0.1" }
 resvg = "0.47.0"
 rust-embed = { version = "8.7.0", features = ["include-exclude"] }
+rust-i18n = "3"
 rustc-hash = "2.1.1"
 rustls = "0.23.39"
 schemars = { version = "1", features = ["chrono04"] }
@@ -283,6 +280,7 @@ smol_str = "0.2.2"
 strsim = "0.11"
 strum = "0.27"
 strum_macros = "0.27"
+sys-locale = "0.3"
 tempfile = "3.8.0"
 thiserror = "2.0.17"
 tokio = "1.47.1"

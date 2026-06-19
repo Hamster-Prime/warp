@@ -30,7 +30,7 @@ fn test_apply_diffs_error_when_no_diffs_applied() {
         let invalid_diff = ParsedDiff::StrReplaceEdit {
             file: Some(file_path.clone()),
             search: Some("1|This content doesn't exist in the file".to_string()),
-            replace: Some("Replacement content".to_string()),
+            replace: Some(i18n::t!("Replacement content").to_string()),
         };
 
         let ai_identifiers = &AIIdentifiers::default();
@@ -69,7 +69,7 @@ fn test_apply_diffs_succeeds_with_valid_diff() {
         let valid_diff = ParsedDiff::StrReplaceEdit {
             file: Some(file_path.clone()),
             search: Some("1|First line".to_string()),
-            replace: Some("Modified first line".to_string()),
+            replace: Some(i18n::t!("Modified first line").to_string()),
         };
 
         let ai_identifiers = &AIIdentifiers::default();
@@ -112,13 +112,13 @@ fn test_apply_diffs_with_partial_failures() {
         let valid_diff = ParsedDiff::StrReplaceEdit {
             file: Some(file_path.clone()),
             search: Some("1|First line".to_string()),
-            replace: Some("Modified first line".to_string()),
+            replace: Some(i18n::t!("Modified first line").to_string()),
         };
 
         let invalid_diff = ParsedDiff::StrReplaceEdit {
             file: Some(file_path.clone()),
             search: Some("1|This content doesn't exist".to_string()),
-            replace: Some("Replacement content".to_string()),
+            replace: Some(i18n::t!("Replacement content").to_string()),
         };
 
         let ai_identifiers = &AIIdentifiers::default();
@@ -157,7 +157,7 @@ fn test_apply_diffs_with_new_file() {
         let create_file_diff = ParsedDiff::StrReplaceEdit {
             file: Some(non_existent_file.clone()),
             search: Some("".to_string()),
-            replace: Some("New file content".to_string()),
+            replace: Some(i18n::t!("New file content").to_string()),
         };
 
         let ai_identifiers = &AIIdentifiers::default();
@@ -202,7 +202,7 @@ fn test_apply_diffs_with_missing_file() {
         let invalid_non_existent_diff = ParsedDiff::StrReplaceEdit {
             file: Some(non_existent_file.clone()),
             search: Some("1|Some content".to_string()),
-            replace: Some("New content".to_string()),
+            replace: Some(i18n::t!("New content").to_string()),
         };
 
         let ai_identifiers = &AIIdentifiers::default();
@@ -245,13 +245,13 @@ fn test_parse_diffs_with_mixed_empty_and_valid_diffs() {
         let valid_diff = ParsedDiff::StrReplaceEdit {
             file: Some(file1_path.clone()),
             search: Some("1|File 1 content".to_string()),
-            replace: Some("Modified file 1 content".to_string()),
+            replace: Some(i18n::t!("Modified file 1 content").to_string()),
         };
 
         let invalid_diff = ParsedDiff::StrReplaceEdit {
             file: Some(file2_path.clone()),
             search: Some("1|This doesn't match anything".to_string()),
-            replace: Some("New content".to_string()),
+            replace: Some(i18n::t!("New content").to_string()),
         };
 
         let ai_identifiers = &AIIdentifiers::default();
@@ -296,13 +296,13 @@ fn test_apply_diffs_noop_with_successful_change() {
             ParsedDiff::StrReplaceEdit {
                 file: Some(file_path.clone()),
                 search: Some("1|Line one".to_string()),
-                replace: Some("Line One".to_string()),
+                replace: Some(i18n::t!("Line One").to_string()),
             },
             // This is a meaningful change.
             ParsedDiff::StrReplaceEdit {
                 file: Some(file_path.clone()),
                 search: Some("2|Line Two".to_string()),
-                replace: Some("Last Line".to_string()),
+                replace: Some(i18n::t!("Last Line").to_string()),
             },
         ];
 
@@ -347,7 +347,7 @@ fn test_apply_diffs_fails_with_only_noop() {
         let noop_diff = ParsedDiff::StrReplaceEdit {
             file: Some(file_path.clone()),
             search: Some("1|First line".to_string()),
-            replace: Some("First line".to_string()),
+            replace: Some(i18n::t!("First line").to_string()),
         };
 
         let ai_identifiers = &AIIdentifiers::default();
@@ -388,11 +388,11 @@ fn test_multiple_file_create_edits_for_same_path() {
         // Create two FileEdit::Create edits for the same file path
         let create_edit1 = FileEdit::Create {
             file: Some(file_path.clone()),
-            content: Some("First content".to_string()),
+            content: Some(i18n::t!("First content").to_string()),
         };
         let create_edit2 = FileEdit::Create {
             file: Some(file_path.clone()),
-            content: Some("Second content".to_string()),
+            content: Some(i18n::t!("Second content").to_string()),
         };
 
         let ai_identifiers = &AIIdentifiers::default();
@@ -430,12 +430,12 @@ fn test_mixed_create_and_edit_for_same_path() {
         // Create a FileEdit::Create and FileEdit::Edit for the same file path
         let create_edit = FileEdit::Create {
             file: Some(file_path.clone()),
-            content: Some("New file content".to_string()),
+            content: Some(i18n::t!("New file content").to_string()),
         };
         let edit_diff = ParsedDiff::StrReplaceEdit {
             file: Some(file_path.clone()),
             search: Some("1|Some existing content".to_string()),
-            replace: Some("Modified content".to_string()),
+            replace: Some(i18n::t!("Modified content").to_string()),
         };
 
         let ai_identifiers = &AIIdentifiers::default();
@@ -478,7 +478,7 @@ fn test_delete_and_create_same_path_replaces_existing_file() {
         };
         let create_edit = FileEdit::Create {
             file: Some(file_path.clone()),
-            content: Some("New file content".to_string()),
+            content: Some(i18n::t!("New file content").to_string()),
         };
 
         let result = apply_edits(
@@ -514,7 +514,7 @@ fn test_create_then_delete_same_path_replaces_existing_file() {
 
         let create_edit = FileEdit::Create {
             file: Some(file_path.clone()),
-            content: Some("New file content".to_string()),
+            content: Some(i18n::t!("New file content").to_string()),
         };
         let delete_edit = FileEdit::Delete {
             file: Some(file_path.clone()),
@@ -555,12 +555,12 @@ fn test_delete_create_and_edit_same_path_still_fails() {
         };
         let create_edit = FileEdit::Create {
             file: Some(file_path.clone()),
-            content: Some("New file content".to_string()),
+            content: Some(i18n::t!("New file content").to_string()),
         };
         let edit_diff = ParsedDiff::StrReplaceEdit {
             file: Some(file_path.clone()),
             search: Some("1|Existing content".to_string()),
-            replace: Some("Modified content".to_string()),
+            replace: Some(i18n::t!("Modified content").to_string()),
         };
 
         let result = apply_edits(
@@ -595,7 +595,7 @@ fn test_create_edit_for_existing_file() {
         // Try to create a file that already exists
         let create_edit = FileEdit::Create {
             file: Some(file_path.clone()),
-            content: Some("New content".to_string()),
+            content: Some(i18n::t!("New content").to_string()),
         };
 
         let ai_identifiers = &AIIdentifiers::default();

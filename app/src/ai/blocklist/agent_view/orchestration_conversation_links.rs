@@ -148,7 +148,7 @@ pub(crate) fn parent_conversation_navigation_card(
     let action = conversation_navigation_action(parent_conversation_id, app)?;
     Some(conversation_navigation_card(
         parent_title,
-        Some("Back to parent conversation".to_string()),
+        Some(i18n::t!("Back to parent conversation").to_string()),
         move |ctx, _, _| {
             ctx.dispatch_typed_action(action.clone());
         },

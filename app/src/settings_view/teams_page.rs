@@ -801,7 +801,7 @@ impl TeamsPageView {
         });
         let transfer_ownership_modal = ctx.add_typed_action_view(|ctx| {
             Modal::new(
-                Some("Transfer team ownership?".to_string()),
+                Some(i18n::t!("Transfer team ownership?").to_string()),
                 transfer_ownership_modal_body,
                 ctx,
             )

@@ -347,7 +347,7 @@ fn test_sqlite_round_trips_custom_vertical_tabs_title() {
                 custom_title: None,
                 root: PaneNodeSnapshot::Leaf(LeafSnapshot {
                     is_focused: true,
-                    custom_vertical_tabs_title: Some("Production API".to_string()),
+                    custom_vertical_tabs_title: Some(i18n::t!("Production API").to_string()),
                     contents: LeafContents::Terminal(TerminalPaneSnapshot {
                         uuid: vec![42],
                         cwd: Some("/tmp".to_string()),
@@ -580,7 +580,7 @@ fn test_sqlite_round_trips_tab_groups() {
             agent_management_filters: None,
             tab_groups: vec![TabGroupSnapshot {
                 id: group_id,
-                name: Some("Backend".to_string()),
+                name: Some(i18n::t!("Backend").to_string()),
                 color: SelectedTabColor::Color(AnsiColorIdentifier::Blue),
                 collapsed: true,
                 pinned: false,
@@ -731,7 +731,7 @@ fn test_sqlite_round_trips_pinned_state() {
             tab_groups: vec![
                 TabGroupSnapshot {
                     id: pinned_group_id,
-                    name: Some("Pinned".to_string()),
+                    name: Some(i18n::t!("Pinned").to_string()),
                     color: SelectedTabColor::default(),
                     collapsed: false,
                     pinned: true,

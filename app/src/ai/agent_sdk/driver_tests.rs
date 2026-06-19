@@ -396,7 +396,7 @@ fn json_format_output_includes_filename_for_file_artifact_created_event() {
                 filepath: "outputs/report.txt".to_string(),
                 filename: "report.txt".to_string(),
                 mime_type: "text/plain".to_string(),
-                description: Some("Build output for the latest run".to_string()),
+                description: Some(i18n::t!("Build output for the latest run").to_string()),
                 size_bytes: 42,
             },
         )],

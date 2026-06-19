@@ -228,7 +228,7 @@ fn test_deserialize_plan_artifact() {
         notebook_uid.as_ref().map(|n| n.to_string()),
         Some("1234567890123456789012".to_string())
     );
-    assert_eq!(*title, Some("My Plan".to_string()));
+    assert_eq!(*title, Some(i18n::t!("My Plan").to_string()));
 }
 
 #[test]
@@ -375,7 +375,7 @@ fn test_deserialize_list_tasks_response_with_artifacts() {
         panic!("expected Plan artifact");
     };
     assert_eq!(document_uid, "doc-1");
-    assert_eq!(*title, Some("Plan Title".to_string()));
+    assert_eq!(*title, Some(i18n::t!("Plan Title").to_string()));
 
     // Check second artifact (PullRequest)
     let Artifact::PullRequest {
@@ -408,7 +408,7 @@ fn test_deserialize_list_tasks_response_with_artifacts() {
     assert_eq!(filepath, "outputs/report.txt");
     assert_eq!(filename, "report.txt");
     assert_eq!(mime_type, "text/plain");
-    assert_eq!(*description, Some("Daily summary".to_string()));
+    assert_eq!(*description, Some(i18n::t!("Daily summary").to_string()));
     assert_eq!(*size_bytes, Some(42));
 }
 
@@ -833,7 +833,7 @@ fn test_artifact_plan_serialize_deserialize_roundtrip() {
     let original = Artifact::Plan {
         document_uid: "doc-123".to_string(),
         notebook_uid: Some(NotebookId::from("notebook12345678901234".to_string())),
-        title: Some("My Plan".to_string()),
+        title: Some(i18n::t!("My Plan").to_string()),
     };
 
     let serialized = serde_json::to_string(&original).unwrap();
@@ -934,7 +934,7 @@ fn test_artifact_plan_serialize_deserialize_roundtrip_no_notebook_uid() {
     let original = Artifact::Plan {
         document_uid: "doc-123".to_string(),
         notebook_uid: None,
-        title: Some("My Plan".to_string()),
+        title: Some(i18n::t!("My Plan").to_string()),
     };
 
     let serialized = serde_json::to_string(&original).unwrap();
@@ -966,7 +966,7 @@ fn test_artifact_file_serialize_deserialize_roundtrip() {
         filepath: "outputs/report.txt".to_string(),
         filename: "report.txt".to_string(),
         mime_type: "text/plain".to_string(),
-        description: Some("Daily summary".to_string()),
+        description: Some(i18n::t!("Daily summary").to_string()),
         size_bytes: Some(42),
     };
 
@@ -982,7 +982,7 @@ fn test_artifact_vec_serialize_deserialize_roundtrip() {
         Artifact::Plan {
             document_uid: "doc-1".to_string(),
             notebook_uid: None,
-            title: Some("Plan 1".to_string()),
+            title: Some(i18n::t!("Plan 1").to_string()),
         },
         Artifact::PullRequest {
             url: "https://github.com/org/repo/pull/1".to_string(),
@@ -995,7 +995,7 @@ fn test_artifact_vec_serialize_deserialize_roundtrip() {
             filepath: "outputs/report.txt".to_string(),
             filename: "report.txt".to_string(),
             mime_type: "text/plain".to_string(),
-            description: Some("Daily summary".to_string()),
+            description: Some(i18n::t!("Daily summary").to_string()),
             size_bytes: Some(42),
         },
     ];

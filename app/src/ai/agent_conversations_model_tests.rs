@@ -272,7 +272,7 @@ fn test_title_update_refreshes_shadowing_task_title() {
             let task_id: AmbientAgentTaskId = task_id.parse().unwrap();
             assert_eq!(
                 model.get_task_data(&task_id).map(|task| task.title),
-                Some("Renamed conversation".to_string()),
+                Some(i18n::t!("Renamed conversation").to_string()),
             );
             let entry = model
                 .get_entry_by_id(&AgentConversationEntryId::AmbientRun(task_id), ctx)
@@ -1888,7 +1888,7 @@ fn test_file_artifact_filter_matches_only_items_with_file_artifacts() {
         filepath: "outputs/report.txt".to_string(),
         filename: "report.txt".to_string(),
         mime_type: "text/plain".to_string(),
-        description: Some("Daily summary".to_string()),
+        description: Some(i18n::t!("Daily summary").to_string()),
         size_bytes: Some(42),
     }];
     let artifacts_with_pr = vec![Artifact::PullRequest {

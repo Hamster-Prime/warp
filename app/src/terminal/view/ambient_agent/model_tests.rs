@@ -111,7 +111,7 @@ fn retry_request(prompt: impl Into<String>) -> SpawnAgentRequest {
             computer_use_enabled: Some(false),
             ..Default::default()
         }),
-        title: Some("Retry title".to_string()),
+        title: Some(i18n::t!("Retry title").to_string()),
         team: Some(true),
         agent_identity_uid: Some("agent-123".to_string()),
         skill: None,

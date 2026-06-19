@@ -9,7 +9,7 @@ use crate::ui_components::icons::Icon;
 fn test_github_pr_display_text_from_url() {
     assert_eq!(
         github_pr_display_text_from_url("https://github.com/warp/warp/pull/123"),
-        Some("PR #123".to_string())
+        Some(i18n::t!("PR #123").to_string())
     );
 }
 

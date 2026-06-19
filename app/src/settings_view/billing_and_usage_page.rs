@@ -288,7 +288,7 @@ impl BillingAndUsagePageView {
 
         let overage_limit_modal_view = ctx.add_typed_action_view(|ctx| {
             Modal::new(
-                Some("Overage spending limit".to_string()),
+                Some(i18n::t!("Overage spending limit").to_string()),
                 overage_limit_modal,
                 ctx,
             )
@@ -312,7 +312,7 @@ impl BillingAndUsagePageView {
 
         let addon_credit_modal_view = ctx.add_typed_action_view(|ctx| {
             Modal::new(
-                Some("Monthly spending limit".to_string()),
+                Some(i18n::t!("Monthly spending limit").to_string()),
                 addon_credit_modal,
                 ctx,
             )
@@ -2256,8 +2256,8 @@ impl BillingAndUsagePageView {
                     on_click_action: None,
                     secondary_text: None,
                     tooltip_override_text: match info.is_current_user {
-                        true => Some("Your credit limit is prorated because you joined midway through the billing cycle.".to_string()),
-                        false => Some("This credit limit is prorated because this user joined midway through the billing cycle.".to_string()),
+                        true => Some(i18n::t!("Your credit limit is prorated because you joined midway through the billing cycle.").to_string()),
+                        false => Some(i18n::t!("This credit limit is prorated because this user joined midway through the billing cycle.").to_string()),
                     },
                 },
             ))

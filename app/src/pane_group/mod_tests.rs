@@ -380,7 +380,7 @@ fn persisted_remote_child_conversation(
                 forked_from_server_conversation_token: None,
                 artifacts_json: None,
                 parent_agent_id,
-                agent_name: Some("Agent 1".to_string()),
+                agent_name: Some(i18n::t!("Agent 1").to_string()),
                 orchestration_harness_type: None,
                 parent_conversation_id: parent_conversation_id.map(|id| id.to_string()),
                 is_remote_child: true,

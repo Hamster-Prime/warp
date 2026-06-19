@@ -2665,7 +2665,7 @@ impl SettingsWidget for AutoOpenCodeReviewPaneCodeWidget {
                     ctx.dispatch_typed_action(CodeSettingsPageAction::ToggleAutoOpenCodeReviewPane);
                 })
                 .finish(),
-            Some("When this setting is on, the code review panel will open on the first accepted diff of a conversation".into()),
+            Some(i18n::t!("When this setting is on, the code review panel will open on the first accepted diff of a conversation").into()),
         )
     }
 }
@@ -2787,7 +2787,7 @@ impl SettingsWidget for CodeReviewDiffStatsToggleWidget {
                     );
                 })
                 .finish(),
-            Some("Show lines added and removed counts on the code review button.".into()),
+            Some(i18n::t!("Show lines added and removed counts on the code review button.").into()),
         )
     }
 }
@@ -2870,7 +2870,7 @@ impl SettingsWidget for GlobalSearchToggleWidget {
                     ctx.dispatch_typed_action(CodeSettingsPageAction::ToggleGlobalSearch);
                 })
                 .finish(),
-            Some("Adds global file search to the left side tools panel.".into()),
+            Some(i18n::t!("Adds global file search to the left side tools panel.").into()),
         )
     }
 }

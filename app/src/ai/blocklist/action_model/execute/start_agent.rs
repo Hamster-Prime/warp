@@ -599,7 +599,7 @@ fn start_agent_error_message_for_status(
                 .to_string(),
         ),
         ConversationStatus::Cancelled => {
-            Some("Child agent was cancelled before initialization".to_string())
+            Some(i18n::t!("Child agent was cancelled before initialization").to_string())
         }
         ConversationStatus::Blocked { blocked_action } => {
             let blocked_action = blocked_action.trim();

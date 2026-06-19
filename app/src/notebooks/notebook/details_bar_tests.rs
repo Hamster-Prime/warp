@@ -17,7 +17,7 @@ fn test_editor_display_name() {
             profiles.insert_profiles(&vec![
                 UserProfileWithUID {
                     firebase_uid: UserUid::new("abc123"),
-                    display_name: Some("The Editor".to_string()),
+                    display_name: Some(i18n::t!("The Editor").to_string()),
                     email: "editor@warp.dev".to_string(),
                     photo_url: "http://example.com/profile.jpg".to_string(),
                 },

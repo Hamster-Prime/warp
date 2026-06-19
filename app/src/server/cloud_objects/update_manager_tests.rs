@@ -4097,7 +4097,7 @@ fn test_accepts_new_metadata_with_force_refresh() {
             trashed_ts: None,
             folder_id: None,
             is_welcome_object: false,
-            creator_uid: Some("BoogaBooga".to_string()),
+            creator_uid: Some(i18n::t!("BoogaBooga").to_string()),
             last_editor_uid: None,
             current_editor_uid: None,
         };
@@ -5796,7 +5796,7 @@ fn test_move_cloud_environment_personal_to_team_success() {
 
         let environment = AmbientAgentEnvironment::new(
             "Test Env".to_string(),
-            Some("Test description".to_string()),
+            Some(i18n::t!("Test description").to_string()),
             vec![],
             "ubuntu:latest".to_string(),
             vec![],
@@ -7155,7 +7155,7 @@ fn test_permissions_update_grants_access() {
         let guest_user_id = UserUid::new("abc123");
         let other_guests = vec![UserProfileWithUID {
             firebase_uid: guest_user_id,
-            display_name: Some("Warp User".to_string()),
+            display_name: Some(i18n::t!("Warp User").to_string()),
             email: "user@warp.dev".to_string(),
             photo_url: String::new(),
         }];
@@ -7368,7 +7368,7 @@ fn test_add_guest_success() {
                     permissions: updated_permissions,
                     profiles: vec![UserProfileWithUID {
                         firebase_uid: UserUid::new("guest"),
-                        display_name: Some("Guest User".to_string()),
+                        display_name: Some(i18n::t!("Guest User").to_string()),
                         email: "guest@warp.dev".to_string(),
                         photo_url: "http://example.com".to_string(),
                     }],

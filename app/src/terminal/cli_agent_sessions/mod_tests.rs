@@ -31,27 +31,27 @@ fn parse_stop_notification() {
 fn cli_agent_session_context_title_like_text_uses_trimmed_summary() {
     let context = CLIAgentSessionContext {
         summary: Some("  Reviewing changes  ".to_string()),
-        query: Some("Latest prompt".to_string()),
+        query: Some(i18n::t!("Latest prompt").to_string()),
         ..Default::default()
     };
 
     assert_eq!(
         context.title_like_text(),
-        Some("Reviewing changes".to_string())
+        Some(i18n::t!("Reviewing changes").to_string())
     );
 }
 
 #[test]
 fn cli_agent_session_context_latest_user_prompt_uses_trimmed_query() {
     let context = CLIAgentSessionContext {
-        summary: Some("Reviewing changes".to_string()),
+        summary: Some(i18n::t!("Reviewing changes").to_string()),
         query: Some("  Latest prompt  ".to_string()),
         ..Default::default()
     };
 
     assert_eq!(
         context.latest_user_prompt(),
-        Some("Latest prompt".to_string())
+        Some(i18n::t!("Latest prompt").to_string())
     );
 }
 
@@ -271,7 +271,7 @@ fn apply_event_preserves_input_session() {
         cwd: Some("/tmp/proj".to_string()),
         project: Some("proj".to_string()),
         payload: CLIAgentEventPayload {
-            summary: Some("Needs approval".to_string()),
+            summary: Some(i18n::t!("Needs approval").to_string()),
             ..Default::default()
         },
     };

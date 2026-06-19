@@ -711,7 +711,7 @@ impl RunAgentsCardView {
         };
         accept.set_disabled(reason.is_some(), ctx);
         // Tooltip explains why the button is disabled; falls back to "Accept".
-        accept.set_tooltip(reason.or_else(|| Some("Accept".to_string())), ctx);
+        accept.set_tooltip(reason.or_else(|| Some(i18n::t!("Accept").to_string())), ctx);
         self.handles.accept_button = Some(accept);
     }
 

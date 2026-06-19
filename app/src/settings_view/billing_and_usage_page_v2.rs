@@ -311,7 +311,7 @@ impl BillingAndUsagePageV2View {
 
         let addon_credit_modal_view = ctx.add_typed_action_view(|ctx| {
             Modal::new(
-                Some("Monthly spending limit".to_string()),
+                Some(i18n::t!("Monthly spending limit").to_string()),
                 addon_credit_modal,
                 ctx,
             )

@@ -37,7 +37,7 @@ fn build_upload_artifact_action(file_path: &str) -> AIAgentAction {
         id: AIAgentActionId::from("upload-artifact-action".to_string()),
         action: AIAgentActionType::UploadArtifact(UploadArtifactRequest {
             file_path: file_path.to_string(),
-            description: Some("Upload the generated report".to_string()),
+            description: Some(i18n::t!("Upload the generated report").to_string()),
         }),
         task_id: TaskId::new("upload-artifact-task".to_string()),
         requires_result: false,

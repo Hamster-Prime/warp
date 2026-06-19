@@ -389,7 +389,7 @@ fn reconcile_preserves_custom_models_saved_on_execution_profile() {
                 "test-key".to_string(),
                 vec![(
                     "custom-model".to_string(),
-                    Some("Custom Model".to_string()),
+                    Some(i18n::t!("Custom Model").to_string()),
                     Some(custom_model_id.to_string()),
                 )],
                 ctx,

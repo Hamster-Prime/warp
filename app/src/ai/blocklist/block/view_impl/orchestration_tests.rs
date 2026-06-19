@@ -290,7 +290,7 @@ fn participant_for_restored_child_run_id_resolves_to_agent_name() {
                     forked_from_server_conversation_token: None,
                     artifacts_json: None,
                     parent_agent_id: Some(parent_run_id.clone()),
-                    agent_name: Some("Agent 1".to_string()),
+                    agent_name: Some(i18n::t!("Agent 1").to_string()),
                     orchestration_harness_type: None,
                     parent_conversation_id: Some(parent_id.to_string()),
                     is_remote_child: false,
@@ -425,7 +425,7 @@ fn transcript_metadata_omits_orchestrator_recipients() {
 
     assert_eq!(
         transcript_metadata(&recipients, "Status update"),
-        Some("Status update".to_string())
+        Some(i18n::t!("Status update").to_string())
     );
     assert_eq!(transcript_metadata(&recipients, ""), None);
 }

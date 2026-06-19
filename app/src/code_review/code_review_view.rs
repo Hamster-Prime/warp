@@ -483,11 +483,11 @@ impl DiscardOperationType {
 
     pub fn description(&self) -> Option<String> {
         match self {
-            DiscardOperationType::AllUncommittedChanges => Some("You're about to discard all local changes that haven't been committed.".to_string()),
-            DiscardOperationType::FileUncommittedChanges => Some("This will restore this file to the last committed version and discard local edits.".to_string()),
-            DiscardOperationType::AllChangesAgainstBranch(None) => Some("You're about to discard all committed and uncommitted changes.".to_string()),
-            DiscardOperationType::FileChangesAgainstBranch(None) => Some("This will restore this file to the main branch version and discard all committed and uncommitted edits.".to_string()),
-            DiscardOperationType::AllChangesAgainstBranch(Some(_)) => Some("You're about to discard all committed and uncommitted changes.".to_string()),
+            DiscardOperationType::AllUncommittedChanges => Some(i18n::t!("You're about to discard all local changes that haven't been committed.").to_string()),
+            DiscardOperationType::FileUncommittedChanges => Some(i18n::t!("This will restore this file to the last committed version and discard local edits.").to_string()),
+            DiscardOperationType::AllChangesAgainstBranch(None) => Some(i18n::t!("You're about to discard all committed and uncommitted changes.").to_string()),
+            DiscardOperationType::FileChangesAgainstBranch(None) => Some(i18n::t!("This will restore this file to the main branch version and discard all committed and uncommitted edits.").to_string()),
+            DiscardOperationType::AllChangesAgainstBranch(Some(_)) => Some(i18n::t!("You're about to discard all committed and uncommitted changes.").to_string()),
             DiscardOperationType::FileChangesAgainstBranch(Some(branch)) => Some(format!("This will reset this file to the {branch} branch version and discard all committed and uncommitted edits.")),
         }
     }

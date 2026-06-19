@@ -290,7 +290,7 @@ fn user_avatar_info_prefers_conversation_creator_profile() {
     App::test((), |app| async move {
         let creator = UserProfileWithUID {
             firebase_uid: UserUid::new("creator-uid"),
-            display_name: Some("Creator Name".to_string()),
+            display_name: Some(i18n::t!("Creator Name").to_string()),
             email: "creator@example.com".to_string(),
             photo_url: "https://example.com/creator.png".to_string(),
         };
@@ -322,7 +322,7 @@ fn user_avatar_info_uses_cached_profile_for_creator_uid() {
         app.add_singleton_model(|_| {
             UserProfiles::new(vec![UserProfileWithUID {
                 firebase_uid: UserUid::new("creator-uid"),
-                display_name: Some("Cached Creator".to_string()),
+                display_name: Some(i18n::t!("Cached Creator").to_string()),
                 email: "cached@example.com".to_string(),
                 photo_url: "https://example.com/cached.png".to_string(),
             }])

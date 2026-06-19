@@ -10,16 +10,26 @@ A new version of the Warp plugin is available:
   zh-CN: AWS 访问密钥 ID：
 'AWS Region:':
   zh-CN: AWS 区域：
+Accept:
+  zh-CN: 接受
 Accept and save:
   zh-CN: 接受并保存
 Add a workflow argument:
   zh-CN: 添加 Workflow 参数
+Add custom endpoint:
+  zh-CN: 添加自定义端点
 Add environment variables:
   zh-CN: 添加环境变量
 Add file diff as context:
   zh-CN: 添加文件差异作为上下文
 Add regex:
   zh-CN: 添加正则表达式
+Add regex pattern:
+  zh-CN: 添加正则表达式
+Address these comments:
+  zh-CN: 处理这些评论
+Adds global file search to the left side tools panel.:
+  zh-CN: 在左侧工具面板中添加全局文件搜索。
 'Already have an account? ':
   zh-CN: '已经有账号了？ '
 Always allow:
@@ -28,6 +38,8 @@ Apply link:
   zh-CN: 应用链接
 Are you sure you want to skip login?:
   zh-CN: 确定要跳过登录吗？
+Argument list too long (os error 7):
+  zh-CN: 参数列表过长（系统错误 7）
 Ask the Warp agent to assist:
   zh-CN: 请求 Warp Agent 协助
 Ask the Warp agent to resume:
@@ -38,8 +50,16 @@ Auth Token:
   zh-CN: Auth Token
 Authenticate with GitHub:
   zh-CN: 使用 GitHub 认证
+Authenticating...:
+  zh-CN: 正在认证...
 Autohides on loss of keyboard focus:
   zh-CN: 失去键盘焦点时自动隐藏
+Available to install:
+  zh-CN: 可安装
+Back to parent conversation:
+  zh-CN: 返回父对话
+Backend:
+  zh-CN: 后端
 Bad response:
   zh-CN: 差评
 Bell:
@@ -48,6 +68,8 @@ Blocked:
   zh-CN: 已阻塞
 Bug fixes:
   zh-CN: Bug 修复
+Build output for the latest run:
+  zh-CN: 最新运行的构建输出
 Buy more:
   zh-CN: 购买更多
 'By continuing, you agree to Warp''s ':
@@ -56,6 +78,8 @@ CLI:
   zh-CN: CLI
 CLI subagent user takeover:
   zh-CN: CLI subagent 用户接管
+CLI summary:
+  zh-CN: CLI 摘要
 Cancel:
   zh-CN: 取消
 Cancelled:
@@ -70,6 +94,8 @@ Change your current theme.:
   zh-CN: 更改当前主题。
 Characters considered part of a word:
   zh-CN: 视为单词一部分的字符
+Child agent:
+  zh-CN: 子 Agent
 Choose an environment:
   zh-CN: 选择环境
 Claimed:
@@ -100,6 +126,8 @@ Complete:
   zh-CN: 完成
 Complete!:
   zh-CN: 完成！
+Completions open as you type.:
+  zh-CN: 输入时自动打开补全菜单。
 Contact Admin to request access:
   zh-CN: 联系管理员请求访问权限
 Contact a team admin to enable add-on credits.:
@@ -128,14 +156,30 @@ Copyright 2026 Warp:
   zh-CN: Copyright 2026 Warp
 Couldn't parse due to invalid syntax:
   zh-CN: 由于语法无效，无法解析
+Courier New:
+  zh-CN: Courier New
+CourierOld:
+  zh-CN: CourierOld
 Create agent:
   zh-CN: 创建 Agent
 Current:
   zh-CN: 当前
 Cursor type is disabled in Vim mode:
   zh-CN: Vim 模式下禁用光标类型
+Custom Model:
+  zh-CN: 自定义模型
+Cyber Wave:
+  zh-CN: Cyber Wave
+Daily summary:
+  zh-CN: 每日摘要
+Dark City:
+  zh-CN: Dark City
 Default:
   zh-CN: 默认
+Deploy Agent:
+  zh-CN: 部署 Agent
+Detected from config file:
+  zh-CN: 从配置文件检测
 Diff is too large to render:
   zh-CN: Diff 过大，无法渲染
 Directory path:
@@ -150,6 +194,8 @@ Don't show me suggested code banners again:
   zh-CN: '现在不想登录？ '
 Done:
   zh-CN: 完成
+Dracula:
+  zh-CN: Dracula
 ESC:
   zh-CN: ESC
 Edit:
@@ -158,32 +204,52 @@ Edit API Keys:
   zh-CN: 编辑 API Key
 Edit config:
   zh-CN: 编辑配置
+Edit custom endpoint:
+  zh-CN: 编辑自定义端点
 Editing:
   zh-CN: 编辑中
+Editing is disabled while offline.:
+  zh-CN: 离线时编辑已禁用。
 Empty diff hunk:
   zh-CN: 空的 diff 块
 Empty trash:
   zh-CN: 清空回收站
 Enable Warp shell integration in this session:
   zh-CN: 在此会话中启用 Warp shell 集成
+Enable auto reload?:
+  zh-CN: 启用自动重载？
+Enable servers:
+  zh-CN: 启用服务器
 Enables codebase indexing and WARP.md:
   zh-CN: 启用代码库索引和 WARP.md
+Enables the use of Wayland:
+  zh-CN: 启用 Wayland 支持
 Enter auth token:
   zh-CN: 输入 Auth Token
 'Enter custom Docker image name:':
   zh-CN: 输入自定义 Docker 镜像名称：
 Environment variables:
   zh-CN: 环境变量
+Environment variables could not be saved because changes were made while you were editing.:
+  zh-CN: 环境变量无法保存，因为编辑期间有其他更改。
 Environments:
   zh-CN: 环境
 Error:
   zh-CN: 错误
 Executable path:
   zh-CN: 可执行文件路径
+Execute this plan:
+  zh-CN: 执行此计划
 Expand:
   zh-CN: 展开
 Failed:
   zh-CN: 失败
+Failed to empty trash:
+  zh-CN: 清空回收站失败
+Failed to load:
+  zh-CN: 加载失败
+Fancy Dracula:
+  zh-CN: Fancy Dracula
 File is too large to render:
   zh-CN: 文件过大，无法渲染
 Fill out the arguments in this workflow and copy it to run in your terminal session:
@@ -194,12 +260,20 @@ Fork conversation:
   zh-CN: 分支对话
 Fork this conversation locally:
   zh-CN: 在本地分支此对话
+Friendly alias:
+  zh-CN: 友好别名
+Future links will automatically open on desktop.:
+  zh-CN: 未来的链接将自动在桌面打开。
 General:
   zh-CN: 通用
 Get started:
   zh-CN: 开始使用
 Good response:
   zh-CN: 好评
+Gruvbox Dark:
+  zh-CN: Gruvbox Dark
+Gruvbox Light:
+  zh-CN: Gruvbox Light
 Hand off to cloud (or type &):
   zh-CN: 移交到云端（或输入 &）
 'Hunk:':
@@ -222,10 +296,20 @@ Initialized / indexed folders:
   zh-CN: 已初始化/已索引的文件夹
 Inline:
   zh-CN: 内联
+Input mode locked while agent is monitoring a command:
+  zh-CN: Agent 正在监控命令时输入模式已锁定
 Insert block:
   zh-CN: 插入 Block
+Install servers:
+  zh-CN: 安装服务器
 Internal Warp error.:
   zh-CN: Warp 内部错误。
+Introducing Oz:
+  zh-CN: Oz 介绍
+Jellyfish:
+  zh-CN: Jellyfish
+Keyboard shortcuts are not synced to the cloud:
+  zh-CN: 键盘快捷键不同步到云端
 Keys:
   zh-CN: 密钥
 'LLM Reasoning: ':
@@ -236,6 +320,16 @@ LSP SERVERS:
   zh-CN: LSP 服务器
 Language:
   zh-CN: 语言
+Language server is unavailable for this codebase:
+  zh-CN: 此代码库的语言服务器不可用
+Language support is unavailable for this file type:
+  zh-CN: 此文件类型的语言支持不可用
+Last Line:
+  zh-CN: 最后一行
+Latest prompt:
+  zh-CN: 最新提示
+Ligatures may reduce performance:
+  zh-CN: 连字可能降低性能
 Line number:Column:
   zh-CN: 行号:列
 Linear Issue:
@@ -250,6 +344,8 @@ Log out:
   zh-CN: 退出登录
 'Looks like you''re out of credits. ':
   zh-CN: '您的额度似乎已用完。 '
+MCP Servers:
+  zh-CN: MCP 服务器
 Manage:
   zh-CN: 管理
 Manage API keys:
@@ -258,6 +354,8 @@ Manage billing:
   zh-CN: 管理账单
 Manage shared blocks:
   zh-CN: 管理共享 Block
+Marble:
+  zh-CN: Marble
 Match terminal:
   zh-CN: 匹配终端
 Maximize:
@@ -266,18 +364,28 @@ Migrates the local database:
   zh-CN: 迁移本地数据库
 Missing source file:
   zh-CN: 缺少源文件
+Monaco:
+  zh-CN: Monaco
 Monthly limit reached:
   zh-CN: 已达到月度限额
 Monthly spend limit:
+  zh-CN: 月度消费限额
+Monthly spending limit:
   zh-CN: 月度消费限额
 Name:
   zh-CN: 名称
 Navigate to a repo and initialize it for coding:
   zh-CN: 导航到代码库并初始化以进行编码
+Needs approval:
+  zh-CN: 需要审批
+New API key:
+  zh-CN: 新建 API 密钥
 New agent:
   zh-CN: 新建 Agent
 New features:
   zh-CN: 新功能
+New worktree branch name:
+  zh-CN: 新工作树分支名
 Nice work on finishing the welcome tips!:
   zh-CN: 恭喜完成欢迎提示！
 No AWS credentials configured:
@@ -290,6 +398,8 @@ No matches found.:
   zh-CN: 未找到匹配项。
 No matching themes!:
   zh-CN: 没有匹配的主题！
+No objects in trash to empty:
+  zh-CN: 回收站中没有需要清空的对象
 No results found.:
   zh-CN: 未找到结果。
 'Not supported on Wayland. ':
@@ -298,12 +408,16 @@ Not visible to other users:
   zh-CN: 对其他用户不可见
 Notifications:
   zh-CN: 通知
+Offline:
+  zh-CN: 离线
 One-time purchase:
   zh-CN: 一次性购买
 Open:
   zh-CN: 打开
 Open Rich Input:
   zh-CN: 打开富输入
+Open a new terminal session in this directory:
+  zh-CN: 在此目录中打开新的终端会话
 Open coding agent settings:
   zh-CN: 打开编码 Agent 设置
 Open file:
@@ -312,30 +426,60 @@ Open file explorer:
   zh-CN: 打开文件资源管理器
 Open in GitHub:
   zh-CN: 在 GitHub 中打开
+Open palette:
+  zh-CN: 打开命令面板
 Open this conversation in the Warp desktop app:
   zh-CN: 在 Warp 桌面应用中打开此对话
 'OpenAI base URL (optional, press Enter to skip):':
   zh-CN: OpenAI base URL（可选，按 Enter 跳过）：
+Opening the completion menu is unbound.:
+  zh-CN: 打开补全菜单的快捷键未绑定。
 Out of credits:
   zh-CN: 额度用完
 Outdated:
   zh-CN: 已过时
+Overage spending limit:
+  zh-CN: 超额消费限额
 Paste sign-in code:
   zh-CN: 粘贴登录代码
 Pending:
   zh-CN: 待处理
+Phenomenon:
+  zh-CN: Phenomenon
 Pick a theme for when your system is in dark mode.:
   zh-CN: 选择系统处于深色模式时的主题。
 Pick a theme for when your system is in light mode.:
   zh-CN: 选择系统处于浅色模式时的主题。
+Pink City:
+  zh-CN: Pink City
+Pinned:
+  zh-CN: 已固定
+Please enter a price between $0.01 and $10,000,000:
+  zh-CN: 请输入 $0.01 到 $10,000,000 之间的价格
+Please enter a valid currency amount:
+  zh-CN: 请输入有效的货币金额
 Please include 'https://':
   zh-CN: 请包含 'https://'
 Pre-Interactive SSH Session:
   zh-CN: 预交互 SSH 会话
+Premature:
+  zh-CN: Premature
 Preparing...:
   zh-CN: 准备中...
+Press enter to create a new conversation.:
+  zh-CN: 按 Enter 创建新对话。
+Press enter to fork the current conversation into a new conversation.:
+  zh-CN: 按 Enter 将当前对话分叉为新对话。
+Press enter to launch this session.:
+  zh-CN: 按 Enter 启动此会话。
+Press enter to navigate to this session.:
+  zh-CN: 按 Enter 导航到此会话。
+Press enter to use this launch configuration.:
+  zh-CN: 按 Enter 使用此启动配置。
 Privacy Settings:
   zh-CN: 隐私设置
+Production API:
+  zh-CN: 生产环境 API
 Project setup:
   zh-CN: 项目设置
 Queued:
@@ -346,8 +490,12 @@ Raw:
   zh-CN: 原始
 Re-generate AGENTS.md file:
   zh-CN: 重新生成 AGENTS.md 文件
+Received Referral Reward:
+  zh-CN: 收到推荐奖励
 Reconnecting:
   zh-CN: 重新连接中
+Red Rock:
+  zh-CN: Red Rock
 Redact secrets (API keys, passwords, IP addresses, PII etc.):
   zh-CN: 脱敏敏感信息（API Key、密码、IP 地址、PII 等）
 Refresh notebook:
@@ -358,8 +506,14 @@ Remove:
   zh-CN: 移除
 Rendered:
   zh-CN: 渲染
+Replacement content:
+  zh-CN: 替换内容
+Request edit access to change input mode:
+  zh-CN: 请求编辑权限以更改输入模式
 Reset to default:
   zh-CN: 重置为默认
+Resolved custom:
+  zh-CN: 已解析的自定义
 Restore:
   zh-CN: 恢复
 Restore notebook from trash:
@@ -370,6 +524,10 @@ Resume conversation:
   zh-CN: 恢复对话
 Review changes:
   zh-CN: 审查更改
+Review the failing tests:
+  zh-CN: 审查失败的测试
+Reviewing changes:
+  zh-CN: 正在审查更改
 Reviewing code changes:
   zh-CN: 正在审查代码更改
 Rewind to before this block:
@@ -378,6 +536,8 @@ Rule:
   zh-CN: 规则
 Rule Editor:
   zh-CN: 规则编辑器
+Rule could not be saved because changes were made while you were editing.:
+  zh-CN: 规则无法保存，因为编辑期间有其他更改。
 Rules:
   zh-CN: 规则
 SSH:
@@ -390,6 +550,10 @@ Save:
   zh-CN: 保存
 Save and auto-sync this plan to your Warp Drive:
   zh-CN: 保存并自动同步此计划到您的 Warp Drive
+Save as workflow:
+  zh-CN: 保存为工作流
+Save your key:
+  zh-CN: 保存您的密钥
 Scanning:
   zh-CN: 扫描中
 Scrollable:
@@ -412,6 +576,8 @@ Search tabs...:
   zh-CN: 搜索标签页...
 Searching web:
   zh-CN: 正在搜索网页
+Select an API key for this harness to continue.:
+  zh-CN: 选择一个 API 密钥以继续。
 Send Feedback:
   zh-CN: 发送反馈
 Send now:
@@ -432,12 +598,18 @@ Share session QR code:
   zh-CN: 分享会话二维码
 Show credit usage details:
   zh-CN: 显示额度使用详情
+Show diff view:
+  zh-CN: 显示差异视图
+Show lines added and removed counts on the code review button.:
+  zh-CN: 在代码审查按钮上显示新增和删除行数。
 Show model picker in prompt:
   zh-CN: 在提示中显示模型选择器
 Show prompt:
   zh-CN: 显示提示
 Show version history:
   zh-CN: 显示版本历史
+Shutting down...:
+  zh-CN: 正在关闭...
 ? "Sign in on your browser \nto continue"
 : zh-CN: '在浏览器中登录
 
@@ -452,8 +624,12 @@ Skip for now:
   zh-CN: 暂时跳过
 Slash commands:
   zh-CN: 斜杠命令
+Solar Flare:
+  zh-CN: Solar Flare
 Sort by:
   zh-CN: 排序方式
+Starting server...:
+  zh-CN: 正在启动服务器...
 Stash changes:
   zh-CN: 储藏更改
 Stop sharing:
@@ -462,6 +638,8 @@ Streaming...:
   zh-CN: 流式传输中...
 Subshells:
   zh-CN: 子 Shell
+Summarize the failures:
+  zh-CN: 总结失败原因
 Synced:
   zh-CN: 已同步
 System:
@@ -484,10 +662,20 @@ Text Editing:
   zh-CN: 文本编辑
 The Agentic Development Environment:
   zh-CN: Agentic 开发环境
+The Editor:
+  zh-CN: 编辑器
 The person you want to say hello to:
   zh-CN: 您想打招呼的人
 This conversation cannot be deleted:
   zh-CN: 此对话无法删除
+This credit limit is prorated because this user joined midway through the billing cycle.:
+  zh-CN: 此信用额度已按比例折算，因为该用户在计费周期中途加入。
+This will restore this file to the last committed version and discard local edits.:
+  zh-CN: 这会将此文件恢复到最后提交的版本，并丢弃本地编辑。
+This will restore this file to the main branch version and discard all committed and uncommitted edits.:
+  zh-CN: 这会将此文件恢复到主分支版本，并丢弃所有已提交和未提交的编辑。
+This workflow could not be saved because changes were made while you were editing.:
+  zh-CN: 此工作流无法保存，因为编辑期间有其他更改。
 Toggle Case Sensitivity:
   zh-CN: 切换区分大小写
 Toggle Regex:
@@ -496,6 +684,8 @@ Toolbar layout:
   zh-CN: 工具栏布局
 Transfer:
   zh-CN: 转移
+Transfer team ownership?:
+  zh-CN: 转移团队所有权？
 Trash:
   zh-CN: 回收站
 Type your answer and press Enter:
@@ -512,6 +702,8 @@ Update:
   zh-CN: 更新
 Upgrade plan:
   zh-CN: 升级方案
+Upload the generated report:
+  zh-CN: 上传生成的报告
 Using Warp Offline:
   zh-CN: 离线使用 Warp
 View agent tasks you created:
@@ -542,18 +734,36 @@ Waiting:
   zh-CN: 等待中
 Warp API Key:
   zh-CN: Warp API Key
+Warp Drive.:
+  zh-CN: Warp Drive。
+Warp Referral:
+  zh-CN: Warp 推荐
 Warp is the intelligent terminal with AI and your dev team's knowledge built-in.:
   zh-CN: Warp 是内置 AI 和您开发团队知识的智能终端。
 Web fetch failed:
   zh-CN: 网页获取失败
 Welcome to Warp:
   zh-CN: 欢迎使用 Warp
+When this setting is on, the code review panel will open on the first accepted diff of a conversation:
+  zh-CN: 开启此设置后，代码审查面板会在对话中第一个接受的 diff 处打开
 Who has access:
   zh-CN: 谁有访问权限
+Willow Dream:
+  zh-CN: Willow Dream
 Working directory:
   zh-CN: 工作目录
+You can change this at any time in settings.:
+  zh-CN: 您可以随时在设置中更改此选项。
 You can sign up later, but some features, such as AI,:
   zh-CN: 您可以稍后注册，但某些功能（如 AI）
+You're about to discard all committed and uncommitted changes.:
+  zh-CN: 您将丢弃所有已提交和未提交的更改。
+You're about to discard all local changes that haven't been committed.:
+  zh-CN: 您将丢弃所有尚未提交的本地更改。
+Your credit limit is prorated because you joined midway through the billing cycle.:
+  zh-CN: 您的信用额度已按比例折算，因为您在计费周期中途加入。
+Your login has expired.:
+  zh-CN: 您的登录已过期。
 Your new team name:
   zh-CN: 您的新团队名称
 _version: 2

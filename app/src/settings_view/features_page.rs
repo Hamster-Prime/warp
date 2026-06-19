@@ -5074,7 +5074,7 @@ impl SettingsWidget for AutoOpenCodeReviewPaneWidget {
                     ctx.dispatch_typed_action(FeaturesPageAction::ToggleAutoOpenCodeReviewPane);
                 })
                 .finish(),
-            Some("When this setting is on, the code review panel will open on the first accepted diff of a conversation".into()),
+            Some(i18n::t!("When this setting is on, the code review panel will open on the first accepted diff of a conversation").into()),
         )
     }
 }
@@ -6604,7 +6604,7 @@ impl TabKeyBehaviorWidget {
                 if *input_settings.completions_open_while_typing.value() =>
             {
                 if view.completions_keystroke.is_empty() {
-                    Some("Completions open as you type.".into())
+                    Some(i18n::t!("Completions open as you type.").into())
                 } else {
                     Some(format!(
                         "Completions open as you type (or {}).",
@@ -6613,7 +6613,7 @@ impl TabKeyBehaviorWidget {
                 }
             }
             TabBehavior::Autosuggestions if view.completions_keystroke.is_empty() => {
-                Some("Opening the completion menu is unbound.".into())
+                Some(i18n::t!("Opening the completion menu is unbound.").into())
             }
             TabBehavior::Autosuggestions => Some(format!(
                 "{} opens completion menu.",
@@ -7515,7 +7515,7 @@ impl SettingsWidget for WindowSystemWidget {
                 mouse_state: self.additional_info_link.clone(),
                 on_click_action: None,
                 secondary_text: None,
-                tooltip_override_text: Some("Enables the use of Wayland".to_string()),
+                tooltip_override_text: Some(i18n::t!("Enables the use of Wayland").to_string()),
             }),
             LocalOnlyIconState::for_setting(
                 ForceX11::storage_key(),

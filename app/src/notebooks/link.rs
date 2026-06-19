@@ -50,7 +50,7 @@ impl LinkTarget {
         match self {
             LinkTarget::LocalDirectory { .. } => Some(SecondaryAction {
                 label: "New session".into(),
-                tooltip: Some("Open a new terminal session in this directory".into()),
+                tooltip: Some(i18n::t!("Open a new terminal session in this directory")),
                 accessibility_content: "Open in terminal session".into(),
             }),
             LinkTarget::LocalFile {

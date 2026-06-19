@@ -244,6 +244,13 @@ fn is_log_line(line: &str) -> bool {
     MARKERS.iter().any(|m| line.contains(m))
 }
 
+/// Lines containing these patterns should never have their strings extracted
+/// (they use `&'a str` or other non-`Cow` types incompatible with `t!()`).
+fn is_excluded_call_line(line: &str) -> bool {
+    // `inquire::Text::new(&str)` takes `&'a str`, not `Cow`.
+    line.contains("inquire::Text::new")
+}
+
 /// 把 `.i18n-ignore.toml` 中的字符串排除正则编译好，供 [`apply_patterns_with`] 使用。
 #[derive(Default)]
 pub struct CompiledStringExcludes {
@@ -315,7 +322,7 @@ pub fn apply_patterns_with(
             continue;
         }
 
-        if is_log_line(line) {
+        if is_log_line(line) || is_excluded_call_line(line) {
             out.push_str(line);
             out.push('\n');
             continue;

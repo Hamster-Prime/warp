@@ -360,7 +360,7 @@ fn screenshot_lightbox_image_from_download_result(
             log::warn!("Failed to load screenshot artifact {index}: {e}");
             Some(LightboxImage {
                 source: LightboxImageSource::Loading,
-                description: Some("Failed to load".to_string()),
+                description: Some(i18n::t!("Failed to load").to_string()),
             })
         }
     }

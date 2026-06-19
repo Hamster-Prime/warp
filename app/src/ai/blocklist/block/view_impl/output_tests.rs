@@ -21,7 +21,7 @@ use crate::warp_managed_paths_watcher::WarpManagedPathsWatcher;
 fn format_upload_artifact_text_includes_request_details() {
     let request = UploadArtifactRequest {
         file_path: "reports/daily.txt".to_string(),
-        description: Some("Daily summary".to_string()),
+        description: Some(i18n::t!("Daily summary").to_string()),
     };
 
     let text = format_upload_artifact_text(&request, None);
@@ -36,13 +36,13 @@ fn format_upload_artifact_text_includes_request_details() {
 fn format_upload_artifact_text_includes_success_summary() {
     let request = UploadArtifactRequest {
         file_path: "reports/daily.txt".to_string(),
-        description: Some("Daily summary".to_string()),
+        description: Some(i18n::t!("Daily summary").to_string()),
     };
     let result = UploadArtifactResult::Success {
         artifact_uid: "artifact-123".to_string(),
         filepath: Some("reports/daily.txt".to_string()),
         mime_type: "text/plain".to_string(),
-        description: Some("Daily summary".to_string()),
+        description: Some(i18n::t!("Daily summary").to_string()),
         size_bytes: 128,
     };
 

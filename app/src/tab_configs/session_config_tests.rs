@@ -550,7 +550,7 @@ fn snapshot_preserves_custom_title_and_color() {
     let snapshot = make_terminal_leaf(Some("/home/user"), true);
     let config = tab_config_from_pane_snapshot(
         &snapshot,
-        Some("My Project".to_string()),
+        Some(i18n::t!("My Project").to_string()),
         Some(crate::themes::theme::AnsiColorIdentifier::Blue),
     );
 

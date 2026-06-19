@@ -42,7 +42,7 @@ fn test_remove_default_values_from_partial_profile() {
             light: default_light_theme(),
             dark: solarized_dark_theme(),
         },
-        profile_name: Some("Partial Profile".to_string()),
+        profile_name: Some(i18n::t!("Partial Profile").to_string()),
         ..Default::default()
     }
     .remove_default_values();
@@ -56,7 +56,7 @@ fn test_remove_default_values_from_partial_profile() {
 fn test_remove_default_values_from_full_profile() {
     let solarized_profile = ITermProfile {
         theme: solarized_theme_type(),
-        profile_name: Some("Solarized Profile".to_string()),
+        profile_name: Some(i18n::t!("Solarized Profile").to_string()),
         ..Default::default()
     }
     .remove_default_values();
@@ -254,7 +254,7 @@ fn test_not_import_from_file() {
 #[test]
 fn test_parse_font() {
     let test_profile = ITermProfile {
-        font_name: Some("CourierNewPSMT".to_string()),
+        font_name: Some(i18n::t!("CourierNewPSMT").to_string()),
         font_size: Some("16".to_string()),
         ..Default::default()
     };
@@ -266,7 +266,7 @@ fn test_parse_font() {
             .font
             .value(),
         ImportedFont {
-            family: Some("Courier New".to_string()),
+            family: Some(i18n::t!("Courier New").to_string()),
             size: Some(16.),
         }
     );
@@ -275,7 +275,7 @@ fn test_parse_font() {
 #[test]
 fn test_parse_font_without_size() {
     let test_profile = ITermProfile {
-        font_name: Some("CourierNewPSMT".to_string()),
+        font_name: Some(i18n::t!("CourierNewPSMT").to_string()),
         ..Default::default()
     };
     let fonts = courier_new();
@@ -286,7 +286,7 @@ fn test_parse_font_without_size() {
             .font
             .value(),
         ImportedFont {
-            family: Some("Courier New".to_string()),
+            family: Some(i18n::t!("Courier New").to_string()),
             size: None,
         }
     );
@@ -295,7 +295,7 @@ fn test_parse_font_without_size() {
 #[test]
 fn test_parse_font_with_default_size() {
     let warp_default_profile = ITermProfile {
-        font_name: Some("CourierNewPSMT".to_string()),
+        font_name: Some(i18n::t!("CourierNewPSMT").to_string()),
         font_size: Some("13".to_string()),
         ..Default::default()
     };
@@ -307,13 +307,13 @@ fn test_parse_font_with_default_size() {
             .font
             .value(),
         ImportedFont {
-            family: Some("Courier New".to_string()),
+            family: Some(i18n::t!("Courier New").to_string()),
             size: None,
         }
     );
 
     let iterm_default_profile = ITermProfile {
-        font_name: Some("CourierNewPSMT".to_string()),
+        font_name: Some(i18n::t!("CourierNewPSMT").to_string()),
         font_size: Some("12".to_string()),
         ..Default::default()
     };
@@ -325,7 +325,7 @@ fn test_parse_font_with_default_size() {
             .font
             .value(),
         ImportedFont {
-            family: Some("Courier New".to_string()),
+            family: Some(i18n::t!("Courier New").to_string()),
             size: None,
         }
     );
@@ -356,7 +356,7 @@ fn test_parse_font_with_default_font() {
     );
 
     let iterm_default_profile = ITermProfile {
-        font_name: Some("Monaco".to_string()),
+        font_name: Some(i18n::t!("Monaco").to_string()),
         font_size: Some("16".to_string()),
         ..Default::default()
     };
@@ -381,7 +381,7 @@ fn test_parse_font_with_default_font() {
 #[test]
 fn test_parse_invalid_font() {
     let test_profile = ITermProfile {
-        font_name: Some("CourierOld".to_string()),
+        font_name: Some(i18n::t!("CourierOld").to_string()),
         ..Default::default()
     };
     let fonts = courier_new();

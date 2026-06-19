@@ -119,7 +119,7 @@ fn test_save_on_close() {
         let state = initialize_app(&mut app);
         let notebook = state.add_notebook(&mut app, |view, ctx| {
             view.open_new_notebook(
-                Some("Test Notebook".to_string()),
+                Some(i18n::t!("Test Notebook").to_string()),
                 Owner::mock_current_user(),
                 None,
                 ctx,

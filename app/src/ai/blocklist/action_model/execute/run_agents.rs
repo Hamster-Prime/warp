@@ -495,7 +495,7 @@ fn prepare_request_for_execution(
     }
 
     if status.is_some_and(|status| status.is_disapproved()) {
-        return Some("Orchestration config was disapproved".to_string());
+        return Some(i18n::t!("Orchestration config was disapproved").to_string());
     }
 
     if BlocklistAIPermissions::as_ref(ctx)

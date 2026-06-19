@@ -46,7 +46,7 @@ fn pill_bar_data_layer_finds_restored_children_before_pane_creation() {
                         forked_from_server_conversation_token: None,
                         artifacts_json: None,
                         parent_agent_id: Some(parent_run_id.clone()),
-                        agent_name: Some("Agent 1".to_string()),
+                        agent_name: Some(i18n::t!("Agent 1").to_string()),
                         orchestration_harness_type: None,
                         parent_conversation_id: Some(parent_id.to_string()),
                         is_remote_child: false,

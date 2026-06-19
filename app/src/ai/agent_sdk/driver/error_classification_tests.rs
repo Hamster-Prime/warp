@@ -23,7 +23,7 @@ fn assert_state_and_code(
 fn bootstrap_pty_spawn_failed_with_reason_includes_reason_in_message() {
     let (state, update) = classify_driver_error(&AgentDriverError::BootstrapFailed {
         error: BootstrapError::PtySpawnFailed {
-            reason: Some("Argument list too long (os error 7)".to_string()),
+            reason: Some(i18n::t!("Argument list too long (os error 7)").to_string()),
         },
     });
     assert_eq!(state, AgentTaskState::Error);

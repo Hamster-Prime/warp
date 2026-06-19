@@ -520,7 +520,7 @@ fn test_populating_missing_fields_with_suggestion() {
         modal_view.update(&mut app, |view, ctx| {
             let workflow = Workflow::Command {
                 name: "New Title".to_string(),
-                description: Some("New description".to_string()),
+                description: Some(i18n::t!("New description").to_string()),
                 command: "git foo_1 foo_2".to_string(),
                 arguments: vec![],
                 tags: vec![],
@@ -578,7 +578,7 @@ fn test_populating_with_sanitization() {
         modal_view.update(&mut app, |view, ctx| {
             let workflow = Workflow::Command {
                 name: "New Title".to_string(),
-                description: Some("New description".to_string()),
+                description: Some(i18n::t!("New description").to_string()),
                 command: "tar -czvf {{9output_(file).tar.gz}} {{input_directory}} {{.file9!_zip}}"
                     .to_string(),
                 arguments: vec![

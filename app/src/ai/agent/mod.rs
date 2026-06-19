@@ -2829,7 +2829,7 @@ impl AIAgentInput {
             } => Some(url.query.clone()),
             Self::InitProjectRules { display_query, .. }
             | Self::CreateEnvironment { display_query, .. } => display_query.clone(),
-            Self::CodeReview { .. } => Some("Address these comments".to_string()),
+            Self::CodeReview { .. } => Some(i18n::t!("Address these comments").to_string()),
             Self::FetchReviewComments { .. } => Some(commands::PR_COMMENTS.name.to_string()),
             Self::InvokeSkill {
                 skill, user_query, ..

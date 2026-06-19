@@ -153,7 +153,7 @@ impl View for WasmNUXDialog {
         let dialog = if self.requested_download {
             Dialog::new(
                 "Open in Warp Desktop?".to_string(),
-                Some("Future links will automatically open on desktop.".to_string()),
+                Some(i18n::t!("Future links will automatically open on desktop.").to_string()),
                 dialog_styles,
             )
             .with_bottom_row_child(Self::render_dialog_button(
@@ -223,7 +223,7 @@ impl View for WasmNUXDialog {
 
             Dialog::new(
                 format!("Always open {object_kind} on the web?"),
-                Some("You can change this at any time in settings.".to_string()),
+                Some(i18n::t!("You can change this at any time in settings.").to_string()),
                 dialog_styles,
             )
             .with_bottom_row_child(Self::render_dialog_button(

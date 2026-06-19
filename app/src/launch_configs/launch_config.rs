@@ -237,7 +237,7 @@ pub fn make_mock_single_window_launch_config() -> LaunchConfig {
             active_tab_index: Some(0),
             tabs: vec![
                 TabTemplate {
-                    title: Some("First Tab".to_string()),
+                    title: Some(i18n::t!("First Tab").to_string()),
                     layout: PaneTemplateType::PaneTemplate {
                         is_focused: Some(true),
                         cwd: PathBuf::from("/some/path"),
@@ -248,7 +248,7 @@ pub fn make_mock_single_window_launch_config() -> LaunchConfig {
                     color: None,
                 },
                 TabTemplate {
-                    title: Some("Second Tab".to_string()),
+                    title: Some(i18n::t!("Second Tab").to_string()),
                     layout: PaneTemplateType::PaneTemplate {
                         is_focused: Some(true),
                         cwd: PathBuf::from("/some/path"),

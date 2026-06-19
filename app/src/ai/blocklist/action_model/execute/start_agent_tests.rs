@@ -435,7 +435,7 @@ fn execute_returns_detailed_error_when_child_startup_fails_before_initialization
                 terminal_view_id,
                 child_conversation_id,
                 ConversationStatus::Error,
-                Some("Failed to resolve child agent skills: review-comments".to_string()),
+                Some(i18n::t!("Failed to resolve child agent skills: review-comments").to_string()),
                 ctx,
             );
         });
@@ -805,7 +805,7 @@ fn parallel_pendings_each_resolve_independently_via_recorded_child_id() {
                 terminal_view_id,
                 child_b,
                 ConversationStatus::Error,
-                Some("Agent B init failed".to_string()),
+                Some(i18n::t!("Agent B init failed").to_string()),
                 ctx,
             );
         });
@@ -942,7 +942,7 @@ fn errored_child_launch_emits_cleanup_event() {
                 state.terminal_view_id,
                 state.child_conversation_id,
                 ConversationStatus::Error,
-                Some("Child agent failed to spawn".to_string()),
+                Some(i18n::t!("Child agent failed to spawn").to_string()),
                 ctx,
             );
         });

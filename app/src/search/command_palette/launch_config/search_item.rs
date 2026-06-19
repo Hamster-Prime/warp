@@ -75,6 +75,6 @@ impl crate::search::item::SearchItem for SearchItem {
     }
 
     fn accessibility_help_message(&self) -> Option<String> {
-        Some("Press enter to use this launch configuration.".into())
+        Some(i18n::t!("Press enter to use this launch configuration.").into())
     }
 }

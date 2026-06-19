@@ -1663,7 +1663,7 @@ impl AISettingsPageView {
 
         let custom_endpoint_modal_view = ctx.add_typed_action_view(|ctx| {
             Modal::new(
-                Some("Add custom endpoint".to_string()),
+                Some(i18n::t!("Add custom endpoint").to_string()),
                 custom_endpoint_modal_body.clone(),
                 ctx,
             )
@@ -1929,7 +1929,7 @@ impl AISettingsPageView {
         self.pending_remove_custom_endpoint_index = None;
 
         self.custom_endpoint_modal_state
-            .set_title(Some("Add custom endpoint".to_string()), ctx);
+            .set_title(Some(i18n::t!("Add custom endpoint").to_string()), ctx);
         self.custom_endpoint_modal_state.prefill(None, None, ctx);
         self.custom_endpoint_modal_state.open(ctx);
         ctx.emit(AISettingsPageEvent::ShowModal);
@@ -1956,7 +1956,7 @@ impl AISettingsPageView {
         self.pending_remove_custom_endpoint_index = None;
 
         self.custom_endpoint_modal_state
-            .set_title(Some("Edit custom endpoint".to_string()), ctx);
+            .set_title(Some(i18n::t!("Edit custom endpoint").to_string()), ctx);
         self.custom_endpoint_modal_state
             .prefill(endpoint.as_ref(), Some(index), ctx);
         self.custom_endpoint_modal_state.open(ctx);

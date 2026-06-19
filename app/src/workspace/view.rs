@@ -9870,7 +9870,7 @@ impl Workspace {
                 .with_height(NEW_SESSION_SIDECAR_SEARCH_BOX_HEIGHT)
                 .finish()
             }),
-            Some("Search repos".to_string()),
+            Some(i18n::t!("Search repos").to_string()),
         )
         .with_no_interaction_on_hover()
         .no_highlight_on_hover()
@@ -21386,7 +21386,7 @@ impl Workspace {
         Some(WorkspaceBannerFields {
             banner_type: WorkspaceBanner::Reauth,
             severity: BannerSeverity::Warning,
-            heading: Some("Your login has expired.".into()),
+            heading: Some(i18n::t!("Your login has expired.").into()),
             description: "Please sign in again to restore access to cloud-based features.".into(),
             secondary_button: None,
             button: Some(WorkspaceBannerButtonDetails {
@@ -22805,7 +22805,7 @@ impl Workspace {
                 ..Default::default()
             })),
             Arc::new(HashMap::new()),
-            Some("Introducing Oz".to_string()),
+            Some(i18n::t!("Introducing Oz").to_string()),
             ctx,
         );
         self.oz_launch_modal.tab_pane_group_id = self

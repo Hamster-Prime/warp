@@ -158,7 +158,7 @@ fn converts_graphql_file_artifact() {
             artifact_uid: "artifact-file-1".into(),
             filepath: "outputs/report.txt".to_string(),
             mime_type: "text/plain".to_string(),
-            description: Some("Daily summary".to_string()),
+            description: Some(i18n::t!("Daily summary").to_string()),
             size_bytes: Some(42),
         },
     ))
@@ -171,7 +171,7 @@ fn converts_graphql_file_artifact() {
             filepath: "outputs/report.txt".to_string(),
             filename: "report.txt".to_string(),
             mime_type: "text/plain".to_string(),
-            description: Some("Daily summary".to_string()),
+            description: Some(i18n::t!("Daily summary").to_string()),
             size_bytes: Some(42),
         }
     );

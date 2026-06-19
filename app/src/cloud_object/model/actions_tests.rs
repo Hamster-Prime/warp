@@ -14,7 +14,7 @@ fn test_object_actions_daily() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::minutes(4),
                     processed_at_timestamp: Some(Utc::now() - Duration::minutes(4)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -25,7 +25,7 @@ fn test_object_actions_daily() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::hours(23),
                     processed_at_timestamp: Some(Utc::now() - Duration::hours(23)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -36,7 +36,7 @@ fn test_object_actions_daily() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(4),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(4)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -47,7 +47,7 @@ fn test_object_actions_daily() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(10),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(10)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -58,7 +58,7 @@ fn test_object_actions_daily() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(28),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(28)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -100,7 +100,7 @@ fn test_object_actions_rollup_weekly() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::minutes(4),
                     processed_at_timestamp: Some(Utc::now() - Duration::minutes(4)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -111,7 +111,7 @@ fn test_object_actions_rollup_weekly() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::hours(23),
                     processed_at_timestamp: Some(Utc::now() - Duration::hours(23)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -122,7 +122,7 @@ fn test_object_actions_rollup_weekly() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(4),
                     processed_at_timestamp: Some(Utc::now()),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -133,7 +133,7 @@ fn test_object_actions_rollup_weekly() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(10),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(10)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -144,7 +144,7 @@ fn test_object_actions_rollup_weekly() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(28),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(10)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -186,7 +186,7 @@ fn test_object_actions_rollup_monthly() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::minutes(4),
                     processed_at_timestamp: Some(Utc::now() - Duration::minutes(4)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -197,7 +197,7 @@ fn test_object_actions_rollup_monthly() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::hours(23),
                     processed_at_timestamp: Some(Utc::now() - Duration::hours(23)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -208,7 +208,7 @@ fn test_object_actions_rollup_monthly() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(4),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(4)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -219,7 +219,7 @@ fn test_object_actions_rollup_monthly() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(10),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(10)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -230,7 +230,7 @@ fn test_object_actions_rollup_monthly() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(15),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(15)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -241,7 +241,7 @@ fn test_object_actions_rollup_monthly() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(28),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(28)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -283,7 +283,7 @@ fn test_object_actions_rollup_yearly() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::minutes(4),
                     processed_at_timestamp: Some(Utc::now() - Duration::minutes(4)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -294,7 +294,7 @@ fn test_object_actions_rollup_yearly() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::hours(23),
                     processed_at_timestamp: Some(Utc::now() - Duration::hours(23)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -305,7 +305,7 @@ fn test_object_actions_rollup_yearly() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(4),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(4)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -316,7 +316,7 @@ fn test_object_actions_rollup_yearly() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(10),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(10)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -327,7 +327,7 @@ fn test_object_actions_rollup_yearly() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(15),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(15)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -338,7 +338,7 @@ fn test_object_actions_rollup_yearly() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(28),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(28)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -380,7 +380,7 @@ fn test_object_actions_rollup_out_of_date_bundle() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::minutes(4),
                     processed_at_timestamp: Some(Utc::now() - Duration::minutes(4)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -391,7 +391,7 @@ fn test_object_actions_rollup_out_of_date_bundle() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::hours(23),
                     processed_at_timestamp: Some(Utc::now() - Duration::hours(23)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -402,7 +402,7 @@ fn test_object_actions_rollup_out_of_date_bundle() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(4),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(4)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -413,7 +413,7 @@ fn test_object_actions_rollup_out_of_date_bundle() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(10),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(10)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -424,7 +424,7 @@ fn test_object_actions_rollup_out_of_date_bundle() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(15),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(15)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -435,7 +435,7 @@ fn test_object_actions_rollup_out_of_date_bundle() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(28),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(28)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -477,7 +477,7 @@ fn test_object_actions_rollup_none() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::minutes(4),
                     processed_at_timestamp: Some(Utc::now() - Duration::minutes(4)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -488,7 +488,7 @@ fn test_object_actions_rollup_none() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::hours(23),
                     processed_at_timestamp: Some(Utc::now() - Duration::hours(23)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -499,7 +499,7 @@ fn test_object_actions_rollup_none() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(4),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(4)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -510,7 +510,7 @@ fn test_object_actions_rollup_none() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(10),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(10)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -521,7 +521,7 @@ fn test_object_actions_rollup_none() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(15),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(15)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },
@@ -532,7 +532,7 @@ fn test_object_actions_rollup_none() {
                 action_subtype: ObjectActionSubtype::SingleAction {
                     timestamp: Utc::now() - Duration::days(28),
                     processed_at_timestamp: Some(Utc::now() - Duration::days(28)),
-                    data: Some("Some data".to_string()),
+                    data: Some(i18n::t!("Some data").to_string()),
                     pending: false,
                 },
             },

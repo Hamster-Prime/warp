@@ -129,7 +129,7 @@ pub fn build_tab_config(
             params.insert(
                 WORKTREE_BRANCH_PARAM.to_string(),
                 TabConfigParam {
-                    description: Some("New worktree branch name".to_string()),
+                    description: Some(i18n::t!("New worktree branch name").to_string()),
                     default: Some(WORKTREE_BRANCH_DEFAULT.to_string()),
                     param_type: TabConfigParamType::Text,
                 },

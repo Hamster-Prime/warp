@@ -435,9 +435,9 @@ impl SearchItem for ConversationSearchItem {
                 matched_conversation.as_ref().conversation.title()
             )),
             ConversationAction::Fork { .. } => {
-                Some("Press enter to fork the current conversation into a new conversation.".into())
+                Some(i18n::t!("Press enter to fork the current conversation into a new conversation.").into())
             }
-            ConversationAction::New => Some("Press enter to create a new conversation.".into()),
+            ConversationAction::New => Some(i18n::t!("Press enter to create a new conversation.").into()),
         }
     }
 }

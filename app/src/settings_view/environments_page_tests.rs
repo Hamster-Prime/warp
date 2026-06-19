@@ -648,7 +648,7 @@ fn test_render_list_page_with_environments_shows_list() {
             // Create test environment in CloudModel
             let environment = AmbientAgentEnvironment::new(
                 "Test Environment".to_string(),
-                Some("Test description".to_string()),
+                Some(i18n::t!("Test description").to_string()),
                 vec![GithubRepo::new("owner".to_string(), "repo".to_string())],
                 "ubuntu:latest".to_string(),
                 vec!["npm install".to_string()],
@@ -1227,7 +1227,7 @@ fn test_environment_matches_search_query_name_description_image_repos() {
         vec![("warpdotdev".to_string(), "warp-internal".to_string())],
         vec![],
     );
-    environment.description = Some("Front end focused agents".to_string());
+    environment.description = Some(i18n::t!("Front end focused agents").to_string());
 
     assert!(environment.matches_search_query("warp"));
     assert!(environment.matches_search_query("Front end"));
@@ -1258,7 +1258,7 @@ fn test_environment_matches_search_query_is_case_insensitive() {
         vec![("WarpDotDev".to_string(), "Warp-Internal".to_string())],
         vec![],
     );
-    environment.description = Some("Some Description".to_string());
+    environment.description = Some(i18n::t!("Some Description").to_string());
 
     assert!(environment.matches_search_query("WARP"));
     assert!(environment.matches_search_query("description"));
@@ -1276,7 +1276,7 @@ fn test_toolbar_renders_search_editor_view() {
         app.update(|ctx| {
             let environment = AmbientAgentEnvironment::new(
                 "Test Environment".to_string(),
-                Some("Test description".to_string()),
+                Some(i18n::t!("Test description").to_string()),
                 vec![],
                 "ubuntu:latest".to_string(),
                 vec![],

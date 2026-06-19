@@ -269,7 +269,7 @@ fn update_cost_and_usage_resolves_custom_endpoint_alias_for_footer_usage() {
                 "key".to_string(),
                 vec![(
                     "raw-model".to_string(),
-                    Some("Friendly alias".to_string()),
+                    Some(i18n::t!("Friendly alias").to_string()),
                     Some("config-key".to_string()),
                 )],
                 ctx,
@@ -353,7 +353,7 @@ fn footer_model_token_usage_keeps_custom_endpoint_usage_distinct_from_same_label
                 "key".to_string(),
                 vec![(
                     "raw-model".to_string(),
-                    Some("Resolved custom".to_string()),
+                    Some(i18n::t!("Resolved custom").to_string()),
                     Some("config-key".to_string()),
                 )],
                 ctx,
@@ -674,7 +674,7 @@ fn fork_artifacts_adds_file_artifacts_to_conversation() {
             filepath: "outputs/report.txt".to_string(),
             filename: "report.txt".to_string(),
             mime_type: "text/plain".to_string(),
-            description: Some("Daily summary".to_string()),
+            description: Some(i18n::t!("Daily summary").to_string()),
             size_bytes: Some(42),
         })
     );

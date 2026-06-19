@@ -29,7 +29,7 @@ fn task_with_run_time_and_credits() -> AmbientAgentTask {
         creator: Some(TaskPrincipalInfo {
             creator_type: "USER".to_string(),
             uid: "user-1".to_string(),
-            display_name: Some("User 1".to_string()),
+            display_name: Some(i18n::t!("User 1").to_string()),
         }),
         executor: None,
         conversation_id: None,

@@ -5357,10 +5357,10 @@ impl TerminalView {
                     let block_id = BlockId::from(block.id().to_string());
                     let suggestion = AgentModePromptSuggestion::Success(PromptSuggestion {
                         id: Uuid::new_v4().to_string(),
-                        label: Some("Execute this plan".to_string()),
+                        label: Some(i18n::t!("Execute this plan").to_string()),
                         prompt: "Execute this plan".to_string(),
                         coding_query_context: None,
-                        static_prompt_suggestion_name: Some("EXECUTE_CREATED_PLAN".to_string()),
+                        static_prompt_suggestion_name: Some(i18n::t!("EXECUTE_CREATED_PLAN").to_string()),
                         should_start_new_conversation: false,
                     });
 
@@ -10675,13 +10675,13 @@ impl TerminalView {
         } else {
             let (termination_reason, termination_details, exit_reason) = match &termination_type {
                 shell_terminated_banner::TerminationType::PtySpawnFailure { .. } => {
-                    (Some("PtySpawnFailure".to_string()), None, None)
+                    (Some(i18n::t!("PtySpawnFailure").to_string()), None, None)
                 }
                 shell_terminated_banner::TerminationType::Premature {
                     shell_detail,
                     reason,
                 } => (
-                    Some("Premature".to_string()),
+                    Some(i18n::t!("Premature").to_string()),
                     Some(shell_detail.into()),
                     Some(reason),
                 ),

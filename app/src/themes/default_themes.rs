@@ -294,7 +294,7 @@ pub(super) fn dracula() -> WarpTheme {
         Some(Details::Darker),
         dracula_colors(),
         None,
-        Some("Dracula".to_string()),
+        Some(i18n::t!("Dracula").to_string()),
     )
 }
 
@@ -307,7 +307,7 @@ pub(super) fn solarized_light() -> WarpTheme {
         Some(Details::Lighter),
         solarized_light_colors(),
         None,
-        Some("Solarized Light".to_string()),
+        Some(i18n::t!("Solarized Light").to_string()),
     )
 }
 
@@ -320,7 +320,7 @@ pub(super) fn solarized_dark() -> WarpTheme {
         Some(Details::Darker),
         solarized_dark_colors(),
         None,
-        Some("Solarized Dark".to_string()),
+        Some(i18n::t!("Solarized Dark").to_string()),
     )
 }
 
@@ -333,7 +333,7 @@ pub(super) fn gruvbox_dark() -> WarpTheme {
         Some(Details::Darker),
         gruvbox_dark_colors(),
         None,
-        Some("Gruvbox Dark".to_string()),
+        Some(i18n::t!("Gruvbox Dark").to_string()),
     )
 }
 
@@ -346,7 +346,7 @@ pub(super) fn gruvbox_light() -> WarpTheme {
         Some(Details::Lighter),
         gruvbox_light_colors(),
         None,
-        Some("Gruvbox Light".to_string()),
+        Some(i18n::t!("Gruvbox Light").to_string()),
     )
 }
 
@@ -366,7 +366,7 @@ pub(super) fn cyber_wave() -> WarpTheme {
         Some(Details::Darker),
         dark_mode_colors(),
         None,
-        Some("Cyber Wave".to_string()),
+        Some(i18n::t!("Cyber Wave").to_string()),
     )
 }
 
@@ -385,7 +385,7 @@ pub(super) fn willow_dream() -> WarpTheme {
         Some(Details::Darker),
         dark_mode_colors(),
         None,
-        Some("Willow Dream".to_string()),
+        Some(i18n::t!("Willow Dream").to_string()),
     )
 }
 
@@ -404,7 +404,7 @@ pub(super) fn fancy_dracula() -> WarpTheme {
         Some(Details::Darker),
         dracula_colors(),
         None,
-        Some("Fancy Dracula".to_string()),
+        Some(i18n::t!("Fancy Dracula").to_string()),
     )
 }
 
@@ -420,7 +420,7 @@ pub(super) fn phenomenon() -> WarpTheme {
             source: bundled_or_fetched_asset!("jpg/phenomenon_bg.jpg"),
             opacity: 100,
         }),
-        Some("Phenomenon".to_string()),
+        Some(i18n::t!("Phenomenon").to_string()),
     )
 }
 
@@ -437,7 +437,7 @@ pub(super) fn jellyfish() -> WarpTheme {
             source: bundled_or_fetched_asset!("jpg/jellyfish_bg.jpg"),
             opacity: 30,
         }),
-        Some("Jellyfish".to_string()),
+        Some(i18n::t!("Jellyfish").to_string()),
     )
 }
 
@@ -485,7 +485,7 @@ pub(super) fn marble() -> WarpTheme {
             source: bundled_or_fetched_asset!("jpg/marble_bg.jpg"),
             opacity: 50,
         }),
-        Some("Marble".to_string()),
+        Some(i18n::t!("Marble").to_string()),
     )
 }
 
@@ -504,7 +504,7 @@ pub(super) fn pink_city() -> WarpTheme {
             source: bundled_or_fetched_asset!("jpg/pink_city_bg.jpg"),
             opacity: 40,
         }),
-        Some("Pink City".to_string()),
+        Some(i18n::t!("Pink City").to_string()),
     )
 }
 
@@ -544,7 +544,7 @@ pub(super) fn red_rock() -> WarpTheme {
             source: bundled_or_fetched_asset!("jpg/red_rock_bg.jpg"),
             opacity: 30,
         }),
-        Some("Red Rock".to_string()),
+        Some(i18n::t!("Red Rock").to_string()),
     )
 }
 
@@ -565,7 +565,7 @@ pub(super) fn dark_city() -> WarpTheme {
             source: bundled_or_fetched_asset!("jpg/dark_city_bg.jpg"),
             opacity: 20,
         }),
-        Some("Dark City".to_string()),
+        Some(i18n::t!("Dark City").to_string()),
     )
 }
 
@@ -581,7 +581,7 @@ pub(super) fn sent_referral_reward() -> WarpTheme {
             source: bundled_or_fetched_asset!("jpg/sent_referral_reward_bg.jpg"),
             opacity: 100,
         }),
-        Some("Warp Referral".to_string()),
+        Some(i18n::t!("Warp Referral").to_string()),
     )
 }
 
@@ -597,7 +597,7 @@ pub(super) fn solar_flare() -> WarpTheme {
             source: bundled_or_fetched_asset!("jpg/solarflare_bg.jpg"),
             opacity: 20,
         }),
-        Some("Solar Flare".to_string()),
+        Some(i18n::t!("Solar Flare").to_string()),
     )
 }
 
@@ -610,7 +610,7 @@ pub(super) fn adeberry() -> WarpTheme {
         Some(Details::Darker),
         adeberry_colors(),
         None,
-        Some("Adeberry".to_string()),
+        Some(i18n::t!("Adeberry").to_string()),
     )
 }
 
@@ -626,6 +626,6 @@ pub(super) fn received_referral_reward() -> WarpTheme {
             source: bundled_or_fetched_asset!("jpg/received_referral_reward_bg.jpg"),
             opacity: 100,
         }),
-        Some("Received Referral Reward".to_string()),
+        Some(i18n::t!("Received Referral Reward").to_string()),
     )
 }

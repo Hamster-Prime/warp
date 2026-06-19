@@ -675,9 +675,9 @@ impl CodeFooterView {
                     .iter()
                     .any(|s| matches!(s, LspRepoStatus::DisabledAndNotInstalled { .. }));
                 if any_needs_install {
-                    Some("Install servers".to_string())
+                    Some(i18n::t!("Install servers").to_string())
                 } else {
-                    Some("Enable servers".to_string())
+                    Some(i18n::t!("Enable servers").to_string())
                 }
             }
         }
@@ -1587,7 +1587,7 @@ impl CodeFooterView {
                 ..
             } => match PersistedWorkspace::as_ref(app).has_enabled_lsp_server_for_file_path(path) {
                 LSPEnablementResultForFile::UnsupportedLanguage => (
-                    Some("Language support is unavailable for this file type".to_string()),
+                    Some(i18n::t!("Language support is unavailable for this file type").to_string()),
                     false,
                 ),
                 LSPEnablementResultForFile::LSPNotEnabled { root_name } => match lsp_repo_status {
@@ -1599,7 +1599,7 @@ impl CodeFooterView {
                         false,
                     ),
                     LspRepoStatus::Ready | LspRepoStatus::Enabled => (
-                        Some("Language server is unavailable for this codebase".to_string()),
+                        Some(i18n::t!("Language server is unavailable for this codebase").to_string()),
                         false,
                     ),
                     LspRepoStatus::DisabledAndNotInstalled { .. }

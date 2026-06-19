@@ -38,7 +38,7 @@ fn create_test_task(task_id: &str) -> AmbientAgentTask {
         creator: Some(TaskPrincipalInfo {
             creator_type: "USER".to_string(),
             uid: "user-1".to_string(),
-            display_name: Some("User 1".to_string()),
+            display_name: Some(i18n::t!("User 1").to_string()),
         }),
         executor: None,
         conversation_id: None,
@@ -332,7 +332,7 @@ fn test_from_task_populates_executor() {
         task.executor = Some(TaskPrincipalInfo {
             creator_type: "service_account".to_string(),
             uid: "agent-uid".to_string(),
-            display_name: Some("Deploy Agent".to_string()),
+            display_name: Some(i18n::t!("Deploy Agent").to_string()),
         });
 
         app.update(|ctx| {

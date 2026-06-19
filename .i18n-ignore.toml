@@ -1,0 +1,22 @@
+# Paths to exclude from i18n extraction
+exclude_paths = [
+  "target/",
+  "**/tests/**",
+  "**/test/**",
+  "**/benches/**",
+  "crates/warp_completer/",
+  "crates/serve-wasm/",
+]
+
+# File-level patterns to skip (if a file contains these, skip it)
+exclude_file_contains = [
+  "#![cfg(test)]",
+]
+
+# String patterns to never extract (regex)
+exclude_strings = [
+  "^https?://",
+  "^/",          # file paths
+  "\\{.*\\}",    # format strings with {} placeholders (handled separately)
+  "^[a-z_]+$",   # snake_case identifiers (likely code, not UI)
+]

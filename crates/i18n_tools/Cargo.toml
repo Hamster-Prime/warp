@@ -1,0 +1,27 @@
+[package]
+name = "i18n_tools"
+version = "0.1.0"
+edition = "2024"
+authors.workspace = true
+publish.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+regex = "1"
+walkdir = "2"
+serde = { workspace = true }
+serde_yaml = "0.9"
+clap = { workspace = true, features = ["derive"] }
+globset = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
+
+[[bin]]
+name = "i18n-extract"
+path = "src/bin/extract.rs"
+
+[[bin]]
+name = "i18n-check"
+path = "src/bin/check.rs"

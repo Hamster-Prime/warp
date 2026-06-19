@@ -6461,6 +6461,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "i18n_tools"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "clap",
+ "globset",
+ "regex",
+ "serde",
+ "serde_yaml 0.9.34+deprecated",
+ "tempfile",
+ "walkdir",
+]
+
+[[package]]
 name = "iana-time-zone"
 version = "0.1.64"
 source = "registry+https://github.com/rust-lang/crates.io-index"

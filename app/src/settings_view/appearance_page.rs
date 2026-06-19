@@ -5387,7 +5387,7 @@ impl SettingsWidget for LanguageWidget {
         render_dropdown_item(
             appearance,
             &i18n::t!("Language"),
-            Some("Select the display language for the Warp interface"),
+            Some(&i18n::t!("Select the display language for the Warp interface")),
             None,
             LocalOnlyIconState::Hidden,
             None,

@@ -23,6 +23,7 @@ const EXPECTED_ZH_CN_KEYS: &[&str] = &[
     // settings.yml
     "Language",
     "Appearance",
+    "Select the display language for the Warp interface",
 ];
 
 #[test]

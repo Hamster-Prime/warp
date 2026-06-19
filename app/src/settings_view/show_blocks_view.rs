@@ -165,7 +165,7 @@ impl UserOwnedBlock {
         if self.unshare_request_status == UnshareBlockRequestState::InFlight {
             appearance
                 .ui_builder()
-                .label("Deleting...")
+                .label(i18n::t!("Deleting..."))
                 .with_style(
                     UiComponentStyles::default()
                         .set_font_family_id(appearance.monospace_font_family())
@@ -303,14 +303,14 @@ impl GetBlocksForUserRequestState {
         let ui_builder = appearance.ui_builder();
         match self {
             GetBlocksForUserRequestState::NotStarted => pad(ui_builder
-                .label("You don't have any shared blocks yet.")
+                .label(i18n::t!("You don't have any shared blocks yet."))
                 .build()
                 .finish()),
             GetBlocksForUserRequestState::InFlight => {
-                pad(ui_builder.label("Getting blocks...").build().finish())
+                pad(ui_builder.label(i18n::t!("Getting blocks...")).build().finish())
             }
             GetBlocksForUserRequestState::Failed => pad(ui_builder
-                .label("Failed to load blocks. Please try again.")
+                .label(i18n::t!("Failed to load blocks. Please try again."))
                 .build()
                 .finish()),
             GetBlocksForUserRequestState::Done(user_blocks) => {
@@ -363,7 +363,7 @@ impl GetBlocksForUserRequestState {
                     .finish()
                 } else {
                     pad(ui_builder
-                        .label("You don't have any shared blocks yet.")
+                        .label(i18n::t!("You don't have any shared blocks yet."))
                         .build()
                         .finish())
                 }
@@ -657,7 +657,7 @@ impl ShowBlocksWidget {
                     .with_child(
                         Align::new(
                             ui_builder
-                                .label("Unshare block")
+                                .label(i18n::t!("Unshare block"))
                                 .with_style(UiComponentStyles {
                                     font_size: Some(appearance.header_font_size()),
                                     ..Default::default()

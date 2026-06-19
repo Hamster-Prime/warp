@@ -319,7 +319,7 @@ impl AgentSlide {
     fn render_header(&self, appearance: &Appearance) -> Box<dyn Element> {
         let title = appearance
             .ui_builder()
-            .paragraph("Customize your Warp Agent")
+            .paragraph(i18n::t!("Customize your Warp Agent"))
             .with_style(UiComponentStyles {
                 font_size: Some(36.),
                 font_weight: Some(Weight::Medium),
@@ -815,7 +815,7 @@ impl AgentSlide {
         let title_color = internal_colors::text_main(theme, background_for_text);
         let subtitle_color = internal_colors::text_sub(theme, background_for_text);
 
-        let title_el = Text::new("Set by Team Workspace", ui_font_family, 14.0)
+        let title_el = Text::new(i18n::t!("Set by Team Workspace"), ui_font_family, 14.0)
             .with_color(title_color)
             .with_style(Properties {
                 weight: Weight::Normal,
@@ -951,7 +951,7 @@ impl AgentSlide {
             .on_click(|ctx, _, _| ctx.dispatch_typed_action(AgentSlideAction::ToggleDisableOz))
             .finish();
 
-        let label = Text::new("Disable Warp Agent", appearance.ui_font_family(), 14.0)
+        let label = Text::new(i18n::t!("Disable Warp Agent"), appearance.ui_font_family(), 14.0)
             .with_color(internal_colors::text_sub(theme, background_for_text))
             .with_style(Properties {
                 weight: Weight::Normal,
@@ -1201,7 +1201,7 @@ impl AgentSlide {
             .with_child(
                 Container::new(
                     ui_builder
-                        .span("If your browser hasn't launched, ")
+                        .span(i18n::t!("If your browser hasn't launched, "))
                         .with_style(text_styles)
                         .build()
                         .finish(),
@@ -1266,7 +1266,7 @@ impl AgentSlide {
         .finish();
 
         let text = ui_builder
-            .span("Plan successfully activated. All premium models are available.")
+            .span(i18n::t!("Plan successfully activated. All premium models are available."))
             .with_style(UiComponentStyles {
                 font_color: Some(text_color),
                 font_size: Some(FONT_SIZE),

@@ -265,7 +265,7 @@ pub fn init(app: &mut AppContext) {
     #[cfg(windows)]
     app.register_editable_bindings([EditableBinding::new(
         "terminal:alternate_terminal_paste",
-        "Alternate terminal paste",
+        i18n::t!("Alternate terminal paste").to_string(),
         TerminalAction::Paste,
     )
     .with_key_binding("ctrl-v")
@@ -303,7 +303,7 @@ pub fn init(app: &mut AppContext) {
         //    of focus location or active-block state; fix for #9916)
         EditableBinding::new(
             OPEN_CLI_AGENT_RICH_INPUT_KEYBINDING,
-            "Toggle CLI Agent Rich Input",
+            i18n::t!("Toggle CLI Agent Rich Input").to_string(),
             TerminalAction::ToggleCLIAgentRichInput,
         )
         .with_key_binding("ctrl-g")
@@ -323,7 +323,7 @@ pub fn init(app: &mut AppContext) {
         ),
         EditableBinding::new(
             "terminal:warpify_subshell",
-            "Warpify subshell",
+            i18n::t!("Warpify subshell").to_string(),
             TerminalAction::TriggerSubshellBootstrap,
         )
         .with_key_binding("ctrl-i")
@@ -332,7 +332,7 @@ pub fn init(app: &mut AppContext) {
         ),
         EditableBinding::new(
             ACCEPT_PROMPT_SUGGESTION_KEYBINDING,
-            "Accept Prompt Suggestion",
+            i18n::t!("Accept Prompt Suggestion").to_string(),
             TerminalAction::ResolvePromptSuggestion(PromptSuggestionResolution::Accept {
                 interaction_source: InteractionSource::Keybinding,
             }),
@@ -353,9 +353,9 @@ pub fn init(app: &mut AppContext) {
         EditableBinding::new(
             CANCEL_COMMAND_KEYBINDING,
             if cfg!(windows) {
-                "Copy text or cancel active process"
+                i18n::t!("Copy text or cancel active process").to_string()
             } else {
-                "Cancel active process"
+                i18n::t!("Cancel active process").to_string()
             },
             TerminalAction::CtrlC,
         )
@@ -363,22 +363,22 @@ pub fn init(app: &mut AppContext) {
         .with_context_predicate(id!("Terminal") & !id!("IMEOpen")),
         EditableBinding::new(
             "terminal:focus_input",
-            "Focus terminal input",
+            i18n::t!("Focus terminal input").to_string(),
             TerminalAction::FocusInputAndClearSelection,
         )
         .with_custom_action(CustomAction::FocusInput)
         .with_context_predicate(id!("Terminal")),
         // Paste is not rebindable on the web.
         #[cfg(not(target_family = "wasm"))]
-        EditableBinding::new("terminal:paste", "Paste", TerminalAction::Paste)
+        EditableBinding::new("terminal:paste", i18n::t!("Paste").to_string(), TerminalAction::Paste)
             .with_custom_action(CustomAction::Paste)
             .with_context_predicate(id!("Terminal") & !id!("IMEOpen")),
-        EditableBinding::new("terminal:copy", "Copy", TerminalAction::Copy)
+        EditableBinding::new("terminal:copy", i18n::t!("Copy").to_string(), TerminalAction::Copy)
             .with_custom_action(CustomAction::Copy)
             .with_context_predicate(id!("Terminal") & !id!("IMEOpen")),
         EditableBinding::new(
             "terminal:reinput_commands",
-            "Reinput selected commands",
+            i18n::t!("Reinput selected commands").to_string(),
             TerminalAction::ReinputCommands,
         )
         .with_context_predicate(
@@ -386,7 +386,7 @@ pub fn init(app: &mut AppContext) {
         ),
         EditableBinding::new(
             "terminal:reinput_commands_with_sudo",
-            "Reinput selected commands as root",
+            i18n::t!("Reinput selected commands as root").to_string(),
             TerminalAction::ReinputCommandsWithSudo,
         )
         .with_context_predicate(
@@ -394,7 +394,7 @@ pub fn init(app: &mut AppContext) {
         ),
         EditableBinding::new(
             "terminal:find",
-            "Find in Terminal",
+            i18n::t!("Find in Terminal").to_string(),
             TerminalAction::ShowFindBar,
         )
         .with_key_binding(cmd_or_ctrl_shift("f"))
@@ -402,21 +402,21 @@ pub fn init(app: &mut AppContext) {
         .with_context_predicate(id!("Terminal")),
         EditableBinding::new(
             "terminal:select_bookmark_up",
-            "Select the closest bookmark up",
+            i18n::t!("Select the closest bookmark up").to_string(),
             TerminalAction::SelectBookmarkUp,
         )
         .with_key_binding("alt-up")
         .with_context_predicate(id!("Terminal") & !id!("IMEOpen")),
         EditableBinding::new(
             "terminal:select_bookmark_down",
-            "Select the closest bookmark down",
+            i18n::t!("Select the closest bookmark down").to_string(),
             TerminalAction::SelectBookmarkDown,
         )
         .with_key_binding("alt-down")
         .with_context_predicate(id!("Terminal") & !id!("IMEOpen")),
         EditableBinding::new(
             "terminal:jump_to_latest_agent_message",
-            "Jump to latest agent message",
+            i18n::t!("Jump to latest agent message").to_string(),
             TerminalAction::JumpToLatestAgentMessage,
         )
         // Available from the terminal (enters the latest conversation's agent view)
@@ -431,7 +431,7 @@ pub fn init(app: &mut AppContext) {
         ),
         EditableBinding::new(
             "terminal:open_block_list_context_menu_via_keybinding",
-            "Open block context menu",
+            i18n::t!("Open block context menu").to_string(),
             TerminalAction::OpenBlockListContextMenu,
         )
         .with_mac_key_binding("ctrl-m")
@@ -440,7 +440,7 @@ pub fn init(app: &mut AppContext) {
         ),
         EditableBinding::new(
             "terminal:toggle_teams_modal",
-            "Toggle team workflows modal",
+            i18n::t!("Toggle team workflows modal").to_string(),
             TerminalAction::OpenWorkflowModal,
         )
         .with_key_binding(cmd_or_ctrl_shift("s"))
@@ -451,7 +451,7 @@ pub fn init(app: &mut AppContext) {
         ),
         EditableBinding::new(
             "terminal:copy_git_branch",
-            "Copy git branch",
+            i18n::t!("Copy git branch").to_string(),
             TerminalAction::CopyGitBranch,
         )
         .with_context_predicate(
@@ -461,7 +461,7 @@ pub fn init(app: &mut AppContext) {
         ),
         EditableBinding::new(
             "terminal:clear_blocks",
-            "Clear Blocks",
+            i18n::t!("Clear Blocks").to_string(),
             TerminalAction::ClearBuffer,
         )
         .with_custom_action(CustomAction::ClearBlocks)
@@ -470,7 +470,7 @@ pub fn init(app: &mut AppContext) {
         ),
         EditableBinding::new(
             "terminal:executing_command_move_cursor_word_left",
-            "Move cursor one word to the left within an executing command",
+            i18n::t!("Move cursor one word to the left within an executing command").to_string(),
             TerminalAction::ControlSequence(Vec::from(EscCodes::WORD_LEFT)),
         )
         .with_mac_key_binding("alt-left")
@@ -478,7 +478,7 @@ pub fn init(app: &mut AppContext) {
         .with_context_predicate(id!("Terminal") & !id!("IMEOpen") & id!("LongRunningCommand")),
         EditableBinding::new(
             "terminal:executing_command_move_cursor_word_right",
-            "Move cursor one word to the right within an executing command",
+            i18n::t!("Move cursor one word to the right within an executing command").to_string(),
             TerminalAction::ControlSequence(Vec::from(EscCodes::WORD_RIGHT)),
         )
         .with_mac_key_binding("alt-right")
@@ -486,7 +486,7 @@ pub fn init(app: &mut AppContext) {
         .with_context_predicate(id!("Terminal") & !id!("IMEOpen") & id!("LongRunningCommand")),
         EditableBinding::new(
             "terminal:executing_command_move_cursor_home",
-            "Move cursor home within an executing command",
+            i18n::t!("Move cursor home within an executing command").to_string(),
             TerminalAction::ControlSequence(vec![escape_sequences::C0::SOH]),
         )
         // We already have bindings for home/end (the keybindings for this on Linux and Mac) that
@@ -495,14 +495,14 @@ pub fn init(app: &mut AppContext) {
         .with_context_predicate(id!("Terminal") & !id!("IMEOpen") & id!("LongRunningCommand")),
         EditableBinding::new(
             "terminal:executing_command_move_cursor_end",
-            "Move cursor end within an executing command",
+            i18n::t!("Move cursor end within an executing command").to_string(),
             TerminalAction::ControlSequence(vec![escape_sequences::C0::ENQ]),
         )
         .with_mac_key_binding("cmd-right")
         .with_context_predicate(id!("Terminal") & !id!("IMEOpen") & id!("LongRunningCommand")),
         EditableBinding::new(
             "terminal:executing_command_delete_word_left",
-            "Delete word left within an executing command",
+            i18n::t!("Delete word left within an executing command").to_string(),
             TerminalAction::ControlSequence(vec![escape_sequences::C0::ETB]),
         )
         .with_mac_key_binding("alt-backspace")
@@ -510,7 +510,7 @@ pub fn init(app: &mut AppContext) {
         .with_context_predicate(id!("Terminal") & !id!("IMEOpen") & id!("LongRunningCommand")),
         EditableBinding::new(
             "terminal:executing_command_delete_line_start",
-            "Delete to line start within an executing command",
+            i18n::t!("Delete to line start within an executing command").to_string(),
             TerminalAction::ControlSequence(vec![escape_sequences::C0::NAK]),
         )
         .with_context_predicate(id!("Terminal") & !id!("IMEOpen") & id!("LongRunningCommand"))
@@ -519,7 +519,7 @@ pub fn init(app: &mut AppContext) {
         .with_mac_key_binding("cmd-backspace"),
         EditableBinding::new(
             "terminal:executing_command_delete_line_end",
-            "Delete to line end within an executing command",
+            i18n::t!("Delete to line end within an executing command").to_string(),
             TerminalAction::ControlSequence(vec![escape_sequences::C0::VT]),
         )
         .with_context_predicate(id!("Terminal") & !id!("IMEOpen") & id!("LongRunningCommand"))
@@ -527,7 +527,7 @@ pub fn init(app: &mut AppContext) {
         .with_mac_key_binding("cmd-delete"),
         EditableBinding::new(
             "terminal:backward_tabulation",
-            "Backward tabulation within an executing command",
+            i18n::t!("Backward tabulation within an executing command").to_string(),
             TerminalAction::ControlSequence(EscCodes::build_escape_sequence_with_c1(
                 escape_sequences::C1::CSI,
                 EscCodes::BACKWARD_TABULATION,
@@ -542,7 +542,7 @@ pub fn init(app: &mut AppContext) {
     app.register_editable_bindings([
         EditableBinding::new(
             SELECT_PREVIOUS_BLOCK_ACTION_NAME,
-            "Select previous block",
+            i18n::t!("Select previous block").to_string(),
             TerminalAction::SelectPriorBlock,
         )
         .with_custom_action(CustomAction::SelectBlockAbove)
@@ -551,7 +551,7 @@ pub fn init(app: &mut AppContext) {
         ),
         EditableBinding::new(
             SELECT_NEXT_BLOCK_ACTION_NAME,
-            "Select next block",
+            i18n::t!("Select next block").to_string(),
             TerminalAction::SelectNextBlock,
         )
         .with_custom_action(CustomAction::SelectBlockBelow)
@@ -560,7 +560,7 @@ pub fn init(app: &mut AppContext) {
         ),
         EditableBinding::new(
             "terminal:open_share_block_modal",
-            "Share selected block",
+            i18n::t!("Share selected block").to_string(),
             TerminalAction::OpenShareModal,
         )
         .with_custom_action(CustomAction::CreateBlockPermalink)
@@ -569,7 +569,7 @@ pub fn init(app: &mut AppContext) {
         ),
         EditableBinding::new(
             "terminal:bookmark_selected_block",
-            "Bookmark selected block",
+            i18n::t!("Bookmark selected block").to_string(),
             TerminalAction::BookmarkSelectedBlock,
         )
         .with_custom_action(CustomAction::ToggleBookmarkBlock)
@@ -578,7 +578,7 @@ pub fn init(app: &mut AppContext) {
         ),
         EditableBinding::new(
             "terminal:find",
-            "Find within selected block",
+            i18n::t!("Find within selected block").to_string(),
             TerminalAction::ShowFindBar,
         )
         .with_custom_action(CustomAction::FindWithinBlock)
@@ -587,7 +587,7 @@ pub fn init(app: &mut AppContext) {
         ),
         EditableBinding::new(
             "terminal:copy",
-            "Copy command and output",
+            i18n::t!("Copy command and output").to_string(),
             TerminalAction::Copy,
         )
         .with_custom_action(CustomAction::CopyBlock)
@@ -596,7 +596,7 @@ pub fn init(app: &mut AppContext) {
         ),
         EditableBinding::new(
             "terminal:copy_outputs",
-            "Copy command output",
+            i18n::t!("Copy command output").to_string(),
             TerminalAction::CopyOutputs,
         )
         .with_custom_action(CustomAction::CopyBlockOutput)
@@ -605,7 +605,7 @@ pub fn init(app: &mut AppContext) {
         ),
         EditableBinding::new(
             "terminal:copy_commands",
-            "Copy command",
+            i18n::t!("Copy command").to_string(),
             TerminalAction::CopyCommands,
         )
         .with_custom_action(CustomAction::CopyBlockCommand)
@@ -617,7 +617,7 @@ pub fn init(app: &mut AppContext) {
     app.register_editable_bindings([
         EditableBinding::new(
             "terminal:scroll_up_one_line",
-            "Scroll terminal output up one line",
+            i18n::t!("Scroll terminal output up one line").to_string(),
             TerminalAction::Scroll {
                 delta: 1.0.into_lines(),
             },
@@ -625,7 +625,7 @@ pub fn init(app: &mut AppContext) {
         .with_context_predicate(id!("Terminal") & id!("TerminalView_NonEmptyBlockList")),
         EditableBinding::new(
             "terminal:scroll_down_one_line",
-            "Scroll terminal output down one line",
+            i18n::t!("Scroll terminal output down one line").to_string(),
             TerminalAction::Scroll {
                 delta: -(1.0.into_lines()),
             },
@@ -636,7 +636,7 @@ pub fn init(app: &mut AppContext) {
     app.register_editable_bindings([
         EditableBinding::new(
             "terminal:scroll_up_one_page",
-            "Scroll terminal output up one page",
+            i18n::t!("Scroll terminal output up one page").to_string(),
             TerminalAction::PageUp,
         )
         .with_key_binding("pageup")
@@ -648,7 +648,7 @@ pub fn init(app: &mut AppContext) {
         ),
         EditableBinding::new(
             "terminal:scroll_down_one_page",
-            "Scroll terminal output down one page",
+            i18n::t!("Scroll terminal output down one page").to_string(),
             TerminalAction::PageDown,
         )
         .with_key_binding("pagedown")
@@ -662,7 +662,7 @@ pub fn init(app: &mut AppContext) {
 
     app.register_editable_bindings([EditableBinding::new(
         "terminal:scroll_to_top_of_selected_block",
-        "Scroll to top of selected block",
+        i18n::t!("Scroll to top of selected block").to_string(),
         TerminalAction::ScrollToTopOfSelectedBlocks,
     )
     .with_custom_action(CustomAction::ScrollToTopOfSelectedBlocks)
@@ -671,7 +671,7 @@ pub fn init(app: &mut AppContext) {
     )]);
     app.register_editable_bindings([EditableBinding::new(
         "terminal:scroll_to_bottom_of_selected_block",
-        "Scroll to bottom of selected block",
+        i18n::t!("Scroll to bottom of selected block").to_string(),
         TerminalAction::ScrollToBottomOfSelectedBlocks,
     )
     .with_custom_action(CustomAction::ScrollToBottomOfSelectedBlocks)
@@ -690,7 +690,7 @@ pub fn init(app: &mut AppContext) {
             // from the menus and doesn't conflict with cmd-A in the editor.
             EditableBinding::new(
                 "terminal:select_all_blocks",
-                "Select all blocks",
+                i18n::t!("Select all blocks").to_string(),
                 TerminalAction::SelectAllBlocks,
             )
             .with_context_predicate(
@@ -699,7 +699,7 @@ pub fn init(app: &mut AppContext) {
             .with_custom_action(CustomAction::SelectAll),
             EditableBinding::new(
                 "terminal:select_all_blocks",
-                "Select all blocks",
+                i18n::t!("Select all blocks").to_string(),
                 TerminalAction::SelectAllBlocks,
             )
             .with_context_predicate(
@@ -710,7 +710,7 @@ pub fn init(app: &mut AppContext) {
     } else {
         app.register_editable_bindings([EditableBinding::new(
             "terminal:select_all_blocks",
-            "Select all blocks",
+            i18n::t!("Select all blocks").to_string(),
             TerminalAction::SelectAllBlocks,
         )
         .with_context_predicate(
@@ -721,7 +721,7 @@ pub fn init(app: &mut AppContext) {
     app.register_editable_bindings([
         EditableBinding::new(
             "terminal:expand_block_selection_above",
-            "Expand selected blocks above",
+            i18n::t!("Expand selected blocks above").to_string(),
             TerminalAction::ExpandBlockSelectionAbove,
         )
         .with_key_binding("shift-up")
@@ -733,7 +733,7 @@ pub fn init(app: &mut AppContext) {
         ),
         EditableBinding::new(
             "terminal:expand_block_selection_below",
-            "Expand selected blocks below",
+            i18n::t!("Expand selected blocks below").to_string(),
             TerminalAction::ExpandBlockSelectionBelow,
         )
         .with_key_binding("shift-down")
@@ -748,7 +748,7 @@ pub fn init(app: &mut AppContext) {
     app.register_editable_bindings([
         EditableBinding::new(
             "terminal:ask_ai_assistant",
-            BindingDescription::new("Attach Selected Block as Agent Context")
+            BindingDescription::new(i18n::t!("Attach Selected Block as Agent Context").to_string())
                 .with_custom_description(
                     bindings::MAC_MENUS_CONTEXT,
                     "Attach Selection as Agent Context",
@@ -769,7 +769,7 @@ pub fn init(app: &mut AppContext) {
         ),
         EditableBinding::new(
             "terminal:ask_ai_assistant",
-            BindingDescription::new("Attach Selected Text as Agent Context")
+            BindingDescription::new(i18n::t!("Attach Selected Text as Agent Context").to_string())
                 .with_custom_description(
                     bindings::MAC_MENUS_CONTEXT,
                     "Attach Selection as Agent Context",
@@ -792,7 +792,7 @@ pub fn init(app: &mut AppContext) {
         // this is a block selection or text selection later on.
         EditableBinding::new(
             "terminal:ask_ai_assistant",
-            "Ask Warp AI about Selection",
+            i18n::t!("Ask Warp AI about Selection").to_string(),
             TerminalAction::ContextMenu(ContextMenuAction::AskAI(AskAISource::SelectedBlockOrText)),
         )
         .with_enabled(|| !FeatureFlag::AgentMode.is_enabled())
@@ -810,7 +810,7 @@ pub fn init(app: &mut AppContext) {
     app.register_editable_bindings([
         EditableBinding::new(
             "terminal:ask_ai_assistant_last_block",
-            "Ask Warp AI about last block",
+            i18n::t!("Ask Warp AI about last block").to_string(),
             TerminalAction::ContextMenu(ContextMenuAction::AskAI(AskAISource::LastBlock)),
         )
         .with_enabled(|| !FeatureFlag::AgentMode.is_enabled())
@@ -821,7 +821,7 @@ pub fn init(app: &mut AppContext) {
         ),
         EditableBinding::new(
             "terminal:ask_ai_assistant",
-            "Ask Warp AI",
+            i18n::t!("Ask Warp AI").to_string(),
             TerminalAction::ContextMenu(ContextMenuAction::AskAI(AskAISource::SelectedInputText)),
         )
         .with_enabled(|| !FeatureFlag::AgentMode.is_enabled())
@@ -833,7 +833,7 @@ pub fn init(app: &mut AppContext) {
     if FeatureFlag::CommandCorrectionKey.is_enabled() {
         app.register_editable_bindings([EditableBinding::new(
             "input:insert_command_correction",
-            "Insert Command Correction",
+            i18n::t!("Insert Command Correction").to_string(),
             TerminalAction::InsertMostRecentCommandCorrection,
         )
         .with_context_predicate(id!("Terminal"))]);
@@ -842,7 +842,7 @@ pub fn init(app: &mut AppContext) {
     app.register_editable_bindings([
         EditableBinding::new(
             "terminal:onboarding_flow",
-            "Setup Guide",
+            i18n::t!("Setup Guide").to_string(),
             TerminalAction::OnboardingFlow(OnboardingVersion::Legacy),
         )
         .with_context_predicate(
@@ -939,7 +939,7 @@ pub fn init(app: &mut AppContext) {
 
     app.register_editable_bindings([EditableBinding::new(
         "workspace:open_settings_import_page",
-        "Import External Settings",
+        i18n::t!("Import External Settings").to_string(),
         TerminalAction::ImportSettings,
     )
     .with_context_predicate(id!("Terminal") & id!(flags::HAS_SETTINGS_TO_IMPORT_FLAG))]);
@@ -947,7 +947,7 @@ pub fn init(app: &mut AppContext) {
     app.register_editable_bindings([
         EditableBinding::new(
             "terminal:share_current_session",
-            "Share current session",
+            i18n::t!("Share current session").to_string(),
             TerminalAction::OpenShareSessionModal {
                 source: SharedSessionActionSource::CommandPalette,
             },
@@ -962,7 +962,7 @@ pub fn init(app: &mut AppContext) {
         }),
         EditableBinding::new(
             "terminal:stop_sharing_current_session",
-            "Stop sharing current session",
+            i18n::t!("Stop sharing current session").to_string(),
             TerminalAction::StopSharingCurrentSession {
                 source: SharedSessionActionSource::CommandPalette,
             },
@@ -974,7 +974,7 @@ pub fn init(app: &mut AppContext) {
 
     app.register_editable_bindings([EditableBinding::new(
         TOGGLE_BLOCK_FILTER_KEYBINDING,
-        "Toggle block filter on selected or last block",
+        i18n::t!("Toggle block filter on selected or last block").to_string(),
         TerminalAction::ToggleBlockFilterOnSelectedOrLastBlock(ToggleBlockFilterSource::Binding),
     )
     .with_mac_key_binding("shift-alt-F")
@@ -982,7 +982,7 @@ pub fn init(app: &mut AppContext) {
 
     app.register_editable_bindings([EditableBinding::new(
         "terminal:toggle_snackbar_in_active_pane",
-        "Toggle Sticky Command Header in Active Pane",
+        i18n::t!("Toggle Sticky Command Header in Active Pane").to_string(),
         TerminalAction::ToggleSnackbarInActivePane,
     )
     .with_context_predicate(id!("Terminal"))]);
@@ -990,7 +990,7 @@ pub fn init(app: &mut AppContext) {
     app.register_editable_bindings([
         EditableBinding::new(
             TOGGLE_AUTOEXECUTE_MODE_KEYBINDING,
-            "Toggle Auto-execute Mode",
+            i18n::t!("Toggle Auto-execute Mode").to_string(),
             TerminalAction::ToggleAutoexecuteMode,
         )
         .with_key_binding("cmdorctrl-shift-I")
@@ -999,7 +999,7 @@ pub fn init(app: &mut AppContext) {
         .with_enabled(|| FeatureFlag::FastForwardAutoexecuteButton.is_enabled()),
         EditableBinding::new(
             TOGGLE_QUEUE_NEXT_PROMPT_KEYBINDING,
-            "Toggle Queue Next Prompt",
+            i18n::t!("Toggle Queue Next Prompt").to_string(),
             TerminalAction::ToggleQueueNextPrompt,
         )
         .with_key_binding("cmdorctrl-shift-J")
@@ -1044,7 +1044,7 @@ pub fn init(app: &mut AppContext) {
 
     app.register_editable_bindings([EditableBinding::new(
         "workspace:write_codebase_index",
-        BindingDescription::new("Write current codebase index snapshot"),
+        BindingDescription::new(i18n::t!("Write current codebase index snapshot").to_string()),
         TerminalAction::WriteCodebaseIndex,
     )
     .with_enabled(|| FeatureFlag::CodebaseIndexPersistence.is_enabled())
@@ -1052,7 +1052,7 @@ pub fn init(app: &mut AppContext) {
 
     app.register_editable_bindings([EditableBinding::new(
         "terminal:load_agent_mode_conversation",
-        "Load agent mode conversation (from debug link in clipboard)",
+        i18n::t!("Load agent mode conversation (from debug link in clipboard)").to_string(),
         TerminalAction::LoadAgentModeConversation,
     )
     .with_enabled(ChannelState::enable_debug_features)
@@ -1060,7 +1060,7 @@ pub fn init(app: &mut AppContext) {
 
     app.register_editable_bindings([EditableBinding::new(
         "terminal:toggle_session_recording",
-        "Toggle PTY Recording for Session",
+        i18n::t!("Toggle PTY Recording for Session").to_string(),
         TerminalAction::ToggleSessionRecording,
     )
     .with_enabled(|| cfg!(feature = "local_fs") && ChannelState::enable_debug_features())
@@ -1068,14 +1068,14 @@ pub fn init(app: &mut AppContext) {
 
     app.register_editable_bindings([EditableBinding::new(
         "workspace:init_project_rules",
-        BindingDescription::new("Initiate project for warp"),
+        BindingDescription::new(i18n::t!("Initiate project for warp").to_string()),
         TerminalAction::InitProject,
     )
     .with_context_predicate(id!("Workspace") & id!(flags::IS_ANY_AI_ENABLED))]);
 
     app.register_editable_bindings([EditableBinding::new(
         "workspace:add_current_dir_as_project",
-        BindingDescription::new("Add current folder as project"),
+        BindingDescription::new(i18n::t!("Add current folder as project").to_string()),
         TerminalAction::AddProjectAtCurrentDirectory,
     )
     .with_enabled(|| FeatureFlag::Projects.is_enabled())
@@ -1084,7 +1084,7 @@ pub fn init(app: &mut AppContext) {
     #[cfg(not(target_arch = "wasm32"))]
     app.register_editable_bindings([EditableBinding::new(
         "terminal:toggle_conversation_details_panel",
-        "Toggle Conversation Details Panel",
+        i18n::t!("Toggle Conversation Details Panel").to_string(),
         TerminalAction::ToggleConversationDetailsPanel,
     )
     .with_group(bindings::BindingGroup::WarpAi.as_str())
@@ -1093,7 +1093,7 @@ pub fn init(app: &mut AppContext) {
     app.register_editable_bindings([
         EditableBinding::new(
             CYCLE_NEXT_ORCHESTRATION_CHILD_AGENT_KEYBINDING,
-            "Cycle to next orchestration session",
+            i18n::t!("Cycle to next orchestration session").to_string(),
             TerminalAction::CycleNextOrchestrationChildAgent,
         )
         .with_group(bindings::BindingGroup::WarpAi.as_str())
@@ -1104,7 +1104,7 @@ pub fn init(app: &mut AppContext) {
         .with_linux_or_windows_key_binding("ctrl-alt-]"),
         EditableBinding::new(
             CYCLE_PREVIOUS_ORCHESTRATION_CHILD_AGENT_KEYBINDING,
-            "Cycle to previous orchestration session",
+            i18n::t!("Cycle to previous orchestration session").to_string(),
             TerminalAction::CyclePreviousOrchestrationChildAgent,
         )
         .with_group(bindings::BindingGroup::WarpAi.as_str())
@@ -1222,7 +1222,7 @@ fn register_input_mode_bindings(app: &mut AppContext) {
     app.register_editable_bindings([
         EditableBinding::new(
             SET_INPUT_MODE_AGENT_ACTION_NAME,
-            "Set Input Mode to Agent Mode",
+            i18n::t!("Set Input Mode to Agent Mode").to_string(),
             TerminalAction::SetInputModeAgent,
         )
         .with_group(bindings::BindingGroup::WarpAi.as_str())
@@ -1231,7 +1231,7 @@ fn register_input_mode_bindings(app: &mut AppContext) {
         .with_linux_or_windows_key_binding("ctrl-i"),
         EditableBinding::new(
             SET_INPUT_MODE_TERMINAL_ACTION_NAME,
-            "Set Input Mode to Terminal Mode",
+            i18n::t!("Set Input Mode to Terminal Mode").to_string(),
             TerminalAction::SetInputModeTerminal,
         )
         .with_group(bindings::BindingGroup::WarpAi.as_str())
@@ -1240,7 +1240,7 @@ fn register_input_mode_bindings(app: &mut AppContext) {
         .with_linux_or_windows_key_binding("ctrl-i"),
         EditableBinding::new(
             TOGGLE_HIDE_CLI_RESPONSES_KEYBINDING,
-            "Toggle Hide CLI Responses",
+            i18n::t!("Toggle Hide CLI Responses").to_string(),
             TerminalAction::ToggleHideCliResponses,
         )
         .with_key_binding("cmdorctrl-g")

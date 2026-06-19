@@ -82,7 +82,7 @@ impl View for IntroSlide {
         let login_row = Flex::row()
             .with_child(
                 ui_builder
-                    .span("Already have an account? ")
+                    .span(i18n::t!("Already have an account? "))
                     .with_style(disclaimer_styles)
                     .build()
                     .finish(),

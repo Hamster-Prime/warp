@@ -1103,7 +1103,7 @@ impl MCPServersListPageView {
         let is_any_ai_enabled = ai_settings.is_any_ai_enabled(app);
 
         let label = render_body_item_label::<MCPServersListPageViewAction>(
-            "Auto-spawn servers from third-party agents".to_string(),
+            i18n::t!("Auto-spawn servers from third-party agents").to_string(),
             None,
             None,
             LocalOnlyIconState::Hidden,
@@ -1275,7 +1275,7 @@ impl MCPServersListPageView {
                         .map(|team| team.name.clone());
                     let shared_by_text = match team_name {
                         Some(name) => format!("Shared by Warp and {name}"),
-                        None => "Shared by Warp and from other devices".to_string(),
+                        None => i18n::t!("Shared by Warp and from other devices").to_string(),
                     };
 
                     page.add_child(self.render_server_cards_section(

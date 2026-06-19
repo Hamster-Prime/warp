@@ -2015,7 +2015,7 @@ impl AISettingsPageView {
                 let window_id = ctx.window_id();
                 crate::ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     let toast = crate::view_components::DismissibleToast::success(
-                        "Endpoint added".to_string(),
+                        i18n::t!("Endpoint added").to_string(),
                     );
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });
@@ -2047,7 +2047,7 @@ impl AISettingsPageView {
                 let window_id = ctx.window_id();
                 crate::ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     let toast = crate::view_components::DismissibleToast::success(
-                        "Endpoint saved".to_string(),
+                        i18n::t!("Endpoint saved").to_string(),
                     );
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });
@@ -2133,7 +2133,7 @@ impl AISettingsPageView {
                 let window_id = ctx.window_id();
                 crate::ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     let toast = crate::view_components::DismissibleToast::success(
-                        "Endpoint removed".to_string(),
+                        i18n::t!("Endpoint removed").to_string(),
                     );
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });
@@ -2233,11 +2233,11 @@ impl AISettingsPageView {
             // id), and the OAuth attempt itself times out when the callback
             // never arrives.
             let toast = DismissibleToast::default(
-                "Opening your browser to connect your SuperGrok subscription…".to_string(),
+                i18n::t!("Opening your browser to connect your SuperGrok subscription…").to_string(),
             )
             .with_object_id(CONNECT_TOAST_OBJECT_ID.to_string())
             .with_link(
-                ToastLink::new("Copy URL".to_string())
+                ToastLink::new(i18n::t!("Copy URL").to_string())
                     .with_onclick_action(WorkspaceAction::CopyTextToClipboard(authorize_url)),
             );
             toast_stack.add_persistent_toast(toast, window_id, ctx);
@@ -2265,7 +2265,7 @@ impl AISettingsPageView {
                     ApiKeyManager::handle(ctx).update(ctx, move |manager, ctx| {
                         manager.store_grok_tokens(tokens, ctx);
                     });
-                    DismissibleToast::success("SuperGrok subscription connected".to_string())
+                    DismissibleToast::success(i18n::t!("SuperGrok subscription connected").to_string())
                 }
                 Err(err) => {
                     me.grok_oauth_attempt = None;
@@ -2334,7 +2334,7 @@ impl AISettingsPageView {
                         ApiKeyManager::handle(ctx).update(ctx, move |manager, ctx| {
                             manager.store_grok_tokens(tokens, ctx);
                         });
-                        DismissibleToast::success("SuperGrok subscription connected".to_string())
+                        DismissibleToast::success(i18n::t!("SuperGrok subscription connected").to_string())
                     }
                     Err(err) => {
                         // Keep the row open so the user can correct the code.
@@ -3083,7 +3083,7 @@ impl AISettingsPageView {
 
                     dropdown.set_menu_header_text_override(|label| {
                         if label == "Other" {
-                            "Select coding agent".to_string()
+                            i18n::t!("Select coding agent").to_string()
                         } else {
                             label.to_string()
                         }
@@ -4033,7 +4033,7 @@ impl TypedActionView for AISettingsPageView {
                 let window_id = ctx.window_id();
                 crate::ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     let toast = crate::view_components::DismissibleToast::default(
-                        "SuperGrok subscription disconnected".to_string(),
+                        i18n::t!("SuperGrok subscription disconnected").to_string(),
                     );
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });
@@ -4354,7 +4354,7 @@ impl SettingsWidget for GlobalAIWidget {
                                     }),
                                     ..Default::default()
                                 })
-                                .with_text_label("Sign up".to_owned())
+                                .with_text_label(i18n::t!("Sign up").to_string())
                                 .build()
                                 .on_click(move |ctx, _, _| {
                                     ctx.dispatch_typed_action(
@@ -4420,7 +4420,7 @@ impl UsageWidget {
         }
 
         let request_count_label = if workspace_is_delinquent_due_to_payment_issue {
-            "Restricted due to billing issue".to_string()
+            i18n::t!("Restricted due to billing issue").to_string()
         } else if is_unlimited {
             "Unlimited".to_string()
         } else {
@@ -5179,7 +5179,7 @@ impl AgentsWidget {
         let max = cw.max;
 
         let label = Container::new(render_body_item_label::<AISettingsPageAction>(
-            "Context window (tokens)".to_string(),
+            i18n::t!("Context window (tokens)").to_string(),
             None,
             None,
             LocalOnlyIconState::Hidden,
@@ -5775,7 +5775,7 @@ impl AgentsWidget {
         app: &AppContext,
     ) -> Box<dyn Element> {
         let header = Container::new(render_body_item_label_with_icon::<AISettingsPageAction>(
-            "Call MCP servers".into(),
+            i18n::t!("Call MCP servers").to_string(),
             Icon::Dataflow,
             Some(styles::header_font_color(
                 ai_settings.is_any_ai_enabled(app),
@@ -6220,7 +6220,7 @@ impl AIInputWidget {
 
         section
             .with_child(render_ai_setting_label::<AICommandDenylist>(
-                "Natural language denylist".to_owned(),
+                i18n::t!("Natural language denylist").to_string(),
                 is_toggleable,
                 &view.local_only_icon_tooltip_states,
                 app,
@@ -6969,14 +6969,14 @@ impl SettingsWidget for CLIAgentWidget {
             if FeatureFlag::CLIAgentRichInput.is_enabled() {
                 // Setting 1: Auto show/hide rich input based on agent status
                 let auto_show_toggle_label = render_body_item_label::<AISettingsPageAction>(
-                    "Auto show/hide Rich Input based on agent status".into(),
+                    i18n::t!("Auto show/hide Rich Input based on agent status").to_string(),
                     Some(styles::header_font_color(true, app)),
                     Some(AdditionalInfo {
                         mouse_state: self.auto_toggle_rich_input_info_tooltip.clone(),
                         on_click_action: None,
                         secondary_text: None,
                         tooltip_override_text: Some(
-                            "Requires the Warp plugin for your coding agent".to_owned(),
+                            i18n::t!("Requires the Warp plugin for your coding agent").to_string(),
                         ),
                     }),
                     LocalOnlyIconState::for_setting(
@@ -7235,7 +7235,7 @@ impl SettingsWidget for AgentAttributionWidget {
                 .switch(self.toggle.clone())
                 .check(state.is_enabled)
                 .with_tooltip(TooltipConfig {
-                    text: "This option is enforced by your organization's settings and cannot be customized.".to_string(),
+                    text: i18n::t!("This option is enforced by your organization's settings and cannot be customized.").to_string(),
                     styles: ui_builder.default_tool_tip_styles(),
                 })
                 .disable()
@@ -7261,7 +7261,7 @@ impl SettingsWidget for AgentAttributionWidget {
 
         let toggle_row = build_toggle_element(
             render_body_item_label::<AISettingsPageAction>(
-                "Enable agent attribution".to_string(),
+                i18n::t!("Enable agent attribution").to_string(),
                 Some(styles::header_font_color(!state.is_disabled, app)),
                 None,
                 LocalOnlyIconState::Hidden,
@@ -7338,7 +7338,7 @@ impl SettingsWidget for CloudAgentComputerUseWidget {
                 .switch(self.toggle.clone())
                 .check(is_checked)
                 .with_tooltip(TooltipConfig {
-                    text: "This option is enforced by your organization's settings and cannot be customized.".to_string(),
+                    text: i18n::t!("This option is enforced by your organization's settings and cannot be customized.").to_string(),
                     styles: ui_builder.default_tool_tip_styles(),
                 })
                 .disable()
@@ -7366,7 +7366,7 @@ impl SettingsWidget for CloudAgentComputerUseWidget {
 
         let toggle_row = build_toggle_element(
             render_body_item_label::<AISettingsPageAction>(
-                "Computer use in Cloud Agents".to_string(),
+                i18n::t!("Computer use in Cloud Agents").to_string(),
                 Some(styles::header_font_color(!is_disabled, app)),
                 None,
                 LocalOnlyIconState::Hidden,
@@ -7466,7 +7466,7 @@ impl SettingsWidget for CloudHandoffWidget {
 
         let handoff_row = build_toggle_element(
             render_body_item_label::<AISettingsPageAction>(
-                "Cloud handoff".to_string(),
+                i18n::t!("Cloud handoff").to_string(),
                 Some(styles::header_font_color(!is_force_disabled, app)),
                 None,
                 LocalOnlyIconState::Hidden,
@@ -7511,7 +7511,7 @@ impl SettingsWidget for CloudHandoffWidget {
                     .finish();
                 let auto_handoff_on_sleep_row = build_toggle_element(
                     render_body_item_label::<AISettingsPageAction>(
-                        "Auto-handoff before sleep".to_string(),
+                        i18n::t!("Auto-handoff before sleep").to_string(),
                         Some(styles::header_font_color(true, app)),
                         None,
                         LocalOnlyIconState::Hidden,
@@ -7540,7 +7540,7 @@ impl SettingsWidget for CloudHandoffWidget {
 
             let ampersand_row = build_toggle_element(
                 render_body_item_label::<AISettingsPageAction>(
-                    "Use & to trigger handoff".to_string(),
+                    i18n::t!("Use & to trigger handoff").to_string(),
                     Some(styles::header_font_color(true, app)),
                     None,
                     LocalOnlyIconState::Hidden,
@@ -8634,7 +8634,7 @@ impl AwsBedrockWidget {
         let are_credentials_enabled = user_workspaces.is_aws_bedrock_credentials_enabled(app);
         let is_usage_enabled = is_section_enabled && are_credentials_enabled;
         let toggle_description = if is_admin_enforced {
-            "Warp loads and sends local AWS CLI credentials for Bedrock-supported models. This setting is managed by your organization.".to_string()
+            i18n::t!("Warp loads and sends local AWS CLI credentials for Bedrock-supported models. This setting is managed by your organization.").to_string()
         } else {
             "Warp loads and sends local AWS CLI credentials for Bedrock-supported models."
                 .to_string()

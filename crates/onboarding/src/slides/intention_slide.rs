@@ -83,7 +83,7 @@ impl IntentionSlide {
 
         let title = appearance
             .ui_builder()
-            .paragraph("Welcome to Warp")
+            .paragraph(i18n::t!("Welcome to Warp"))
             .with_style(UiComponentStyles {
                 font_size: Some(36.),
                 font_weight: Some(Weight::Medium),
@@ -202,7 +202,7 @@ impl IntentionSlide {
         let header_row = {
             let label = appearance
                 .ui_builder()
-                .paragraph("Build faster with AI agents")
+                .paragraph(i18n::t!("Build faster with AI agents"))
                 .with_style(UiComponentStyles {
                     font_size: Some(16.),
                     font_weight: Some(Weight::Semibold),
@@ -321,7 +321,7 @@ impl IntentionSlide {
 
         let label = appearance
             .ui_builder()
-            .paragraph("Just use the terminal")
+            .paragraph(i18n::t!("Just use the terminal"))
             .with_style(UiComponentStyles {
                 font_size: Some(16.),
                 font_weight: Some(Weight::Semibold),
@@ -334,7 +334,7 @@ impl IntentionSlide {
         let badge = {
             let badge_text = appearance
                 .ui_builder()
-                .paragraph("No AI features")
+                .paragraph(i18n::t!("No AI features"))
                 .with_style(UiComponentStyles {
                     font_size: Some(12.),
                     font_weight: Some(Weight::Semibold),

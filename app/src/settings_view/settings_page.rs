@@ -550,7 +550,7 @@ pub fn render_info_icon<T: Clone + Action>(
 ) -> Box<dyn Element> {
     let tooltip_text = additional_info
         .tooltip_override_text
-        .unwrap_or("Click to learn more in docs".to_owned());
+        .unwrap_or(i18n::t!("Click to learn more in docs").to_string());
     let icon = Container::new(
         ConstrainedBox::new(
             Icon::Info
@@ -608,7 +608,7 @@ pub fn render_local_only_icon(
         .ui_builder()
         .local_only_icon_with_tooltip(
             13.,
-            custom_tooltip.unwrap_or("This setting is not synced to your other devices".to_owned()),
+            custom_tooltip.unwrap_or(i18n::t!("This setting is not synced to your other devices").to_string()),
             mouse_state.clone(),
         )
         .finish();
@@ -1921,5 +1921,5 @@ pub(super) fn build_reset_button(
             font_size: Some(appearance.ui_font_size() * 0.8),
             ..Default::default()
         })
-        .with_text_label("Reset to default".to_owned())
+        .with_text_label(i18n::t!("Reset to default").to_string())
 }

@@ -134,7 +134,7 @@ pub fn init(app: &mut AppContext) {
     app.register_editable_bindings([
         EditableBinding::new(
             "find:find_next_occurrence",
-            "Find the next occurrence of your search query",
+            i18n::t!("Find the next occurrence of your search query").to_string(),
             FindAction::CmdG,
         )
         .with_context_predicate(id!("Find"))
@@ -144,7 +144,7 @@ pub fn init(app: &mut AppContext) {
         .with_linux_or_windows_key_binding("f3"),
         EditableBinding::new(
             "find:find_prev_occurrence",
-            "Find the previous occurrence of your search query",
+            i18n::t!("Find the previous occurrence of your search query").to_string(),
             FindAction::CmdShiftG,
         )
         .with_context_predicate(id!("Find"))

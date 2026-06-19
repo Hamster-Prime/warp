@@ -194,7 +194,7 @@ impl ThemePickerSlide {
     fn render_header_text(&self, appearance: &Appearance) -> Box<dyn Element> {
         let title = appearance
             .ui_builder()
-            .paragraph("Choose a theme")
+            .paragraph(i18n::t!("Choose a theme"))
             .with_style(UiComponentStyles {
                 font_size: Some(36.),
                 font_weight: Some(Weight::Medium),
@@ -576,7 +576,7 @@ impl ThemePickerSlide {
         let privacy_line = Flex::row()
             .with_child(
                 ui_builder
-                    .span("If you'd like to opt out of analytics, you can adjust your ")
+                    .span(i18n::t!("If you'd like to opt out of analytics, you can adjust your "))
                     .with_style(disclaimer_styles)
                     .build()
                     .finish(),
@@ -603,7 +603,7 @@ impl ThemePickerSlide {
         let tos_line = Flex::row()
             .with_child(
                 ui_builder
-                    .span("By continuing, you agree to Warp's ")
+                    .span(i18n::t!("By continuing, you agree to Warp's "))
                     .with_style(disclaimer_styles)
                     .build()
                     .finish(),

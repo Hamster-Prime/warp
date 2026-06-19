@@ -31,7 +31,7 @@ pub fn init(app: &mut AppContext) {
     app.register_editable_bindings([
         EditableBinding::new(
             "project_buttons:open_repository",
-            "Open repository",
+            i18n::t!("Open repository").to_string(),
             ProjectButtonsAction::OpenRepository,
         )
         .with_context_predicate(id!("ProjectButons"))
@@ -39,7 +39,7 @@ pub fn init(app: &mut AppContext) {
         .with_custom_action(CustomAction::OpenRepository),
         EditableBinding::new(
             "project_buttons:create_new_project",
-            "Create new project",
+            i18n::t!("Create new project").to_string(),
             ProjectButtonsAction::CreateProject,
         )
         .with_context_predicate(id!("ProjectButons"))

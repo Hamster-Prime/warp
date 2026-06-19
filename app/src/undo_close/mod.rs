@@ -13,7 +13,7 @@ use crate::workspace::WorkspaceAction;
 pub fn init(ctx: &mut AppContext) {
     ctx.register_editable_bindings([EditableBinding::new(
         "app:reopen_closed_session",
-        "Reopen closed session",
+        i18n::t!("Reopen closed session").to_string(),
         // Trigger ReopenClosedSession on the active workspace when
         // the action is taken from the command palette.
         WorkspaceAction::ReopenClosedSession,

@@ -51,7 +51,7 @@ impl GoToLineView {
                 },
                 ctx,
             );
-            editor.set_placeholder_text("Line number:Column", ctx);
+            editor.set_placeholder_text(i18n::t!("Line number:Column").to_string(), ctx);
             editor
         });
 

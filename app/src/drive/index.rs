@@ -924,7 +924,7 @@ impl DriveIndex {
                 ..Default::default()
             };
             let mut editor = EditorView::single_line(options, ctx);
-            editor.set_placeholder_text("Untitled", ctx);
+            editor.set_placeholder_text(i18n::t!("Untitled").to_string(), ctx);
             editor
         });
 
@@ -1590,7 +1590,7 @@ impl DriveIndex {
                 Some(empty_trash_hover_style),
                 Some(empty_trash_disabled_style),
             )
-            .with_text_label("Empty trash".to_string());
+            .with_text_label(i18n::t!("Empty trash").to_string());
 
         // Only show Empty Trash button when online, do not show for Shared space
         if self.is_online(app) && space != &Space::Shared {
@@ -2538,7 +2538,7 @@ impl DriveIndex {
         let text = Container::new(
             appearance
                 .ui_builder()
-                .span("Trash".to_string())
+                .span(i18n::t!("Trash").to_string())
                 .with_style(UiComponentStyles {
                     font_family_id: Some(appearance.ui_font_family()),
                     font_size: Some(TITLE_FONT_SIZE),
@@ -4052,7 +4052,7 @@ impl DriveIndex {
             .with_style(button_styles)
             .with_hovered_styles(hovered_and_clicked_styles)
             .with_active_styles(hovered_and_clicked_styles)
-            .with_centered_text_label("Sign up".to_string())
+            .with_centered_text_label(i18n::t!("Sign up").to_string())
             .build()
             .on_click(|ctx, _, _| ctx.dispatch_typed_action(DriveIndexAction::SignupAnonymousUser))
             .with_cursor(Cursor::PointingHand)

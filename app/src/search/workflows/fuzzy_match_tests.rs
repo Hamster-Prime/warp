@@ -7,7 +7,7 @@ fn test_exact_command_before_exact_title() {
     // matches.
 
     let goose_workflow = Workflow::new("Run migration", "goose up")
-        .with_description("Migrates the local database".to_string());
+        .with_description(i18n::t!("Migrates the local database").to_string());
 
     let test_workflow = Workflow::new("Use goose up", "echo test");
 

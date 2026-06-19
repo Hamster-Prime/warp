@@ -2327,7 +2327,7 @@ fn test_placeholder_text() {
         // Create a view with placeholder text
         let (_, view) = app.add_window(WindowStyle::NotStealFocus, |ctx| {
             let mut view = EditorView::new(Default::default(), ctx);
-            view.set_placeholder_text("sample instruction\ntwo lines", ctx);
+            view.set_placeholder_text(i18n::t!("sample instruction\ntwo lines").to_string(), ctx);
             view
         });
 

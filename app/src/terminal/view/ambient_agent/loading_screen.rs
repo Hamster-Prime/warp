@@ -345,7 +345,7 @@ pub fn render_cloud_mode_github_auth_required_screen(
     let auth_button = appearance
         .ui_builder()
         .button(ButtonVariant::Accent, auth_button_mouse_state.clone())
-        .with_centered_text_label("Authenticate with GitHub".to_string())
+        .with_centered_text_label(i18n::t!("Authenticate with GitHub").to_string())
         .build()
         .on_click(move |_, app, _| {
             app.open_url(&auth_url_clone);

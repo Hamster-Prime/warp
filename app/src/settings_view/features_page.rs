@@ -2994,18 +2994,18 @@ impl FeaturesPageView {
         }
 
         let categories = vec![
-            Category::new("General", general_widgets),
-            Category::new("Session", session_widgets),
-            Category::new("Keys", keys_widgets),
-            Category::new("Text Editing", text_editing_widgets),
-            Category::new("Terminal Input", editor_widgets),
-            Category::new("Terminal", terminal_widgets),
-            Category::new("Notifications", notifications_widgets),
+            Category::new(i18n::t!("General").to_string(), general_widgets),
+            Category::new(i18n::t!("Session").to_string(), session_widgets),
+            Category::new(i18n::t!("Keys").to_string(), keys_widgets),
+            Category::new(i18n::t!("Text Editing").to_string(), text_editing_widgets),
+            Category::new(i18n::t!("Terminal Input").to_string(), editor_widgets),
+            Category::new(i18n::t!("Terminal").to_string(), terminal_widgets),
+            Category::new(i18n::t!("Notifications").to_string(), notifications_widgets),
             Category::new(
                 "Workflows",
                 vec![Box::new(WorkflowsInCommandSearch::default())],
             ),
-            Category::new("System", system_widgets),
+            Category::new(i18n::t!("System").to_string(), system_widgets),
         ];
 
         PageType::new_categorized(categories, None)
@@ -3906,7 +3906,7 @@ impl FeaturesPageView {
                 .with_child(
                     appearance
                         .ui_builder()
-                        .span("Autohides on loss of keyboard focus")
+                        .span(i18n::t!("Autohides on loss of keyboard focus"))
                         .build()
                         .with_margin_left(5.)
                         .finish(),
@@ -4141,7 +4141,7 @@ impl FeaturesPageView {
                         } else {
                             appearance
                                 .ui_builder()
-                                .paragraph("Click to set global hotkey".to_string())
+                                .paragraph(i18n::t!("Click to set global hotkey").to_string())
                                 .build()
                                 .finish()
                         })
@@ -4196,7 +4196,7 @@ impl FeaturesPageView {
                 padding: Some(Coords::default().right(10.)),
                 ..Default::default()
             })
-            .with_text_label("Cancel".to_string())
+            .with_text_label(i18n::t!("Cancel").to_string())
             .build()
             .on_click(move |ctx, _, _| {
                 ctx.dispatch_typed_action(cancel_action.clone());
@@ -4208,7 +4208,7 @@ impl FeaturesPageView {
             appearance
                 .ui_builder()
                 .button(ButtonVariant::Text, save_button_mouse_state)
-                .with_text_label("Save".to_string())
+                .with_text_label(i18n::t!("Save").to_string())
                 .build()
                 .on_click(move |ctx, _, _| {
                     ctx.dispatch_typed_action(save_action.clone());
@@ -5616,7 +5616,7 @@ impl SettingsWidget for GlobalHotkeyWidget {
                 Flex::row()
                     .with_children([
                         ui_builder
-                            .span("Not supported on Wayland. ")
+                            .span(i18n::t!("Not supported on Wayland. "))
                             .build()
                             .finish(),
                         ui_builder
@@ -6676,7 +6676,7 @@ impl SettingsWidget for TabKeyBehaviorWidget {
             .with_child(
                 appearance
                     .ui_builder()
-                    .span("Tab key behavior")
+                    .span(i18n::t!("Tab key behavior"))
                     .with_style(UiComponentStyles {
                         font_size: Some(CONTENT_FONT_SIZE + 1.),
                         ..Default::default()
@@ -6983,7 +6983,7 @@ impl SmartSelectWidget {
         Flex::column()
             .with_child(
                 ui_builder
-                    .label("Characters considered part of a word".to_string())
+                    .label(i18n::t!("Characters considered part of a word").to_string())
                     .with_style(UiComponentStyles {
                         margin: Some(Coords {
                             top: 10.0,

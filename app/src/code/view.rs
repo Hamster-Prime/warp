@@ -1070,7 +1070,7 @@ impl CodeView {
                                     ButtonVariant::Outlined,
                                     tab.mouse_state_handles.reject_mouse_state.clone(),
                                 )
-                                .with_text_label("Reject".to_string())
+                                .with_text_label(i18n::t!("Reject").to_string())
                                 .build()
                                 .on_click(|ctx, _, _| {
                                     ctx.dispatch_typed_action(CodeViewAction::RejectPendingDiffs)
@@ -1088,7 +1088,7 @@ impl CodeView {
                                     ButtonVariant::Outlined,
                                     tab.mouse_state_handles.accept_mouse_state.clone(),
                                 )
-                                .with_text_label("Accept and save".to_string())
+                                .with_text_label(i18n::t!("Accept and save").to_string())
                                 .build()
                                 .on_click(|ctx, _, _| {
                                     ctx.dispatch_typed_action(

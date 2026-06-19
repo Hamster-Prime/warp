@@ -541,7 +541,7 @@ impl ProfileModelSelector {
 
         let manage_api_key_button = ctx.add_typed_action_view(|_ctx| {
             ActionButton::new("Manage", SecondaryTheme)
-                .with_tooltip("Manage API keys")
+                .with_tooltip(i18n::t!("Manage API keys").to_string())
                 .with_size(ButtonSize::XSmall)
                 .on_click(|ctx| {
                     ctx.dispatch_typed_action(WorkspaceAction::ShowSettingsPageWithSearch {

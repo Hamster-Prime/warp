@@ -333,13 +333,13 @@ impl RuleEditorView {
     fn render_form(&self, appearance: &Appearance) -> Box<dyn Element> {
         Flex::column()
             .with_child(
-                Container::new(appearance.ui_builder().span("Name").build().finish())
+                Container::new(appearance.ui_builder().span(i18n::t!("Name")).build().finish())
                     .with_margin_bottom(style::ITEM_BOTTOM_MARGIN)
                     .finish(),
             )
             .with_child(self.render_name_editor(appearance))
             .with_child(
-                Container::new(appearance.ui_builder().span("Rule").build().finish())
+                Container::new(appearance.ui_builder().span(i18n::t!("Rule")).build().finish())
                     .with_margin_bottom(style::ITEM_BOTTOM_MARGIN)
                     .finish(),
             )

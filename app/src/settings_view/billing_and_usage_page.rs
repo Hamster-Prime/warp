@@ -1141,7 +1141,7 @@ impl BillingAndUsagePageView {
                     ButtonVariant::Secondary,
                     self.ambient_trial_new_agent_button.clone(),
                 )
-                .with_text_label("New agent".to_string())
+                .with_text_label(i18n::t!("New agent").to_string())
                 .with_style(UiComponentStyles {
                     font_color: Some(bg),
                     background: Some(fg.into()),
@@ -1178,7 +1178,7 @@ impl BillingAndUsagePageView {
                     ButtonVariant::Secondary,
                     self.ambient_trial_buy_more_button.clone(),
                 )
-                .with_text_label("Buy more".to_string())
+                .with_text_label(i18n::t!("Buy more").to_string())
                 .with_style(UiComponentStyles {
                     background: Some(bg.into()),
                     font_size: Some(14.),
@@ -1800,7 +1800,7 @@ impl BillingAndUsagePageView {
         let monthly_spend_row = Flex::row()
             .with_cross_axis_alignment(CrossAxisAlignment::Center)
             .with_children([
-                ui_builder.span("Monthly spend limit").build().finish(),
+                ui_builder.span(i18n::t!("Monthly spend limit")).build().finish(),
                 Shrinkable::new(1., Align::new(info_icon).left().finish()).finish(),
                 icon_button(
                     appearance,
@@ -2076,7 +2076,7 @@ impl BillingAndUsagePageView {
                 .finish();
 
             let mut card_content_lower_children = vec![
-                ui_builder.span("One-time purchase").build().finish(),
+                ui_builder.span(i18n::t!("One-time purchase")).build().finish(),
                 buy_row.finish(),
             ];
 
@@ -2829,7 +2829,7 @@ impl BillingAndUsagePageView {
                         Hoverable::new(self.sort_icon_mouse_state.clone(), |mouse_state| {
                             if mouse_state.is_hovered() {
                                 let tooltip =
-                                    appearance.ui_builder().tool_tip("Sort by".to_string());
+                                    appearance.ui_builder().tool_tip(i18n::t!("Sort by").to_string());
 
                                 button.add_positioned_overlay_child(
                                     tooltip.build().finish(),

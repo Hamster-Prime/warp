@@ -2119,7 +2119,7 @@ fn render_stopped_output(props: Props, app: &AppContext) -> Box<dyn Element> {
         .with_custom_label(button_content)
         .with_tooltip(move || {
             ui_builder
-                .tool_tip("Resume conversation".to_string())
+                .tool_tip(i18n::t!("Resume conversation").to_string())
                 .build()
                 .finish()
         })
@@ -3124,7 +3124,7 @@ fn render_response_footer(props: Props, app: &AppContext) -> Option<Box<dyn Elem
         )
         .with_tooltip(move || {
             ui_builder
-                .tool_tip("Good response".to_string())
+                .tool_tip(i18n::t!("Good response").to_string())
                 .build()
                 .finish()
         })
@@ -3145,7 +3145,7 @@ fn render_response_footer(props: Props, app: &AppContext) -> Option<Box<dyn Elem
         .with_tooltip(move || {
             ui_builder
                 .clone()
-                .tool_tip("Bad response".to_string())
+                .tool_tip(i18n::t!("Bad response").to_string())
                 .build()
                 .finish()
         })
@@ -3217,7 +3217,7 @@ fn render_response_footer(props: Props, app: &AppContext) -> Option<Box<dyn Elem
         )
         .with_tooltip(move || {
             ui_builder
-                .tool_tip("Continue conversation".to_string())
+                .tool_tip(i18n::t!("Continue conversation").to_string())
                 .build()
                 .finish()
         })
@@ -3241,7 +3241,7 @@ fn render_response_footer(props: Props, app: &AppContext) -> Option<Box<dyn Elem
         )
         .with_tooltip(move || {
             ui_builder
-                .tool_tip("Fork conversation".to_string())
+                .tool_tip(i18n::t!("Fork conversation").to_string())
                 .build()
                 .finish()
         })
@@ -3417,7 +3417,7 @@ fn render_usage_button(props: Props, app: &AppContext) -> Box<dyn Element> {
                 // Show tooltip on hover or while clicked
                 let mut stack = Stack::new().with_child(content.finish());
                 let tooltip = ui_builder
-                    .tool_tip("Show credit usage details".to_string())
+                    .tool_tip(i18n::t!("Show credit usage details").to_string())
                     .build()
                     .finish();
                 stack.add_positioned_overlay_child(

@@ -29,7 +29,7 @@ fn child_conversation_card_data_for_success_result_returns_conversation_id_and_t
             history_model
                 .conversation_mut(&conversation_id)
                 .expect("conversation should exist")
-                .set_fallback_display_title("Generated child title".to_string());
+                .set_fallback_display_title(i18n::t!("Generated child title").to_string());
             conversation_id
         });
         let result = StartAgentResult::Success {

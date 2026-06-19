@@ -312,7 +312,7 @@ fn build_menu_items(
             fields = fields
                 .with_disabled(true)
                 .with_override_text_color(disabled_text_color)
-                .with_tooltip("Disabled by your administrator");
+                .with_tooltip(i18n::t!("Disabled by your administrator").to_string());
         }
         items.push(MenuItem::Item(fields));
     }

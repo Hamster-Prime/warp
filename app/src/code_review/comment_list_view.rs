@@ -879,7 +879,7 @@ impl CommentListView {
                     ButtonVariant::Text,
                     self.view_state.cancel_button_mouse_state.clone(),
                 )
-                .with_text_label("Cancel".to_string())
+                .with_text_label(i18n::t!("Cancel").to_string())
                 .build()
                 .finish(),
         )
@@ -956,7 +956,7 @@ impl CommentListView {
                 ButtonVariant::Accent,
                 self.view_state.submit_button_mouse_state.clone(),
             )
-            .with_text_label("Send to Agent".to_string())
+            .with_text_label(i18n::t!("Send to Agent").to_string())
             .with_tooltip(|| tooltip)
             .with_tooltip_position(ButtonTooltipPosition::AboveLeft);
 

@@ -111,7 +111,7 @@ impl WarpifyPageView {
         let add_added_commands_editor = ctx.add_typed_action_view(|ctx| {
             let mut input =
                 SubmittableTextInput::new(ctx).validate_on_edit(|regex| Regex::new(regex).is_ok());
-            input.set_placeholder_text("command (supports regex)", ctx);
+            input.set_placeholder_text(i18n::t!("command (supports regex)").to_string(), ctx);
             input
         });
 
@@ -122,7 +122,7 @@ impl WarpifyPageView {
 
         let add_denylisted_commands_editor = ctx.add_typed_action_view(|ctx| {
             let mut input = SubmittableTextInput::new(ctx);
-            input.set_placeholder_text("command (supports regex)", ctx);
+            input.set_placeholder_text(i18n::t!("command (supports regex)").to_string(), ctx);
             input
         });
 
@@ -150,7 +150,7 @@ impl WarpifyPageView {
     fn build_page(ctx: &mut ViewContext<Self>) -> PageType<Self> {
         let mut categories = vec![
             Category::new("", vec![Box::new(TitleWidget::default())]),
-            Category::new("Subshells", vec![Box::new(SubshellsWidget::default())])
+            Category::new(i18n::t!("Subshells").to_string(), vec![Box::new(SubshellsWidget::default())])
                 .with_subtitle("Subshells supported: bash, zsh, and fish."),
         ];
 
@@ -160,7 +160,7 @@ impl WarpifyPageView {
             .is_supported_on_current_platform()
         {
             categories.push(
-                Category::new("SSH", vec![Box::new(SSHWidget::default())])
+                Category::new(i18n::t!("SSH").to_string(), vec![Box::new(SSHWidget::default())])
                     .with_subtitle("Warpify your interactive SSH sessions."),
             );
         }

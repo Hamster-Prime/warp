@@ -162,7 +162,7 @@ impl CreateApiKeyModal {
                 ..Default::default()
             };
             let mut editor = EditorView::single_line(options, ctx);
-            editor.set_placeholder_text("Warp API Key", ctx);
+            editor.set_placeholder_text(i18n::t!("Warp API Key").to_string(), ctx);
             editor
         });
 
@@ -551,7 +551,7 @@ impl CreateApiKeyModal {
                 ButtonVariant::Accent,
                 self.cancel_button_mouse_state.clone(),
             )
-            .with_text_label("Done".to_string())
+            .with_text_label(i18n::t!("Done").to_string())
             .with_style(button_style)
             .build()
             .on_click(|ctx, _, _| ctx.dispatch_typed_action(CreateApiKeyModalAction::Cancel))
@@ -650,7 +650,7 @@ impl View for CreateApiKeyModal {
                         ButtonVariant::Secondary,
                         self.cancel_button_mouse_state.clone(),
                     )
-                    .with_text_label("Cancel".to_string())
+                    .with_text_label(i18n::t!("Cancel").to_string())
                     .with_style(button_style)
                     .build()
                     .on_click(move |ctx, _, _| {
@@ -741,7 +741,7 @@ impl View for CreateApiKeyModal {
                                 ButtonVariant::Secondary,
                                 self.create_agent_button_mouse_state.clone(),
                             )
-                            .with_text_label("Create agent".to_string())
+                            .with_text_label(i18n::t!("Create agent").to_string())
                             .with_style(button_style)
                             .build()
                             .on_click(|ctx, _, _| {

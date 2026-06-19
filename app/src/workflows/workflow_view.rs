@@ -1923,7 +1923,7 @@ impl WorkflowView {
             WorkflowViewMode::Edit => {
                 let mode_text = appearance
                     .ui_builder()
-                    .span("Editing")
+                    .span(i18n::t!("Editing"))
                     .with_style(base_text_styles)
                     .build();
                 let edit_button = accent_icon_button(
@@ -1938,7 +1938,7 @@ impl WorkflowView {
             WorkflowViewMode::View => {
                 let mode_text = appearance
                     .ui_builder()
-                    .span("Viewing")
+                    .span(i18n::t!("Viewing"))
                     .with_style(base_text_styles)
                     .build();
                 let edit_button = icon_button(
@@ -1958,7 +1958,7 @@ impl WorkflowView {
                 let ui_builder = appearance.ui_builder().clone();
                 edit_button = edit_button.with_tooltip(move || {
                     ui_builder
-                        .tool_tip("Sign in to edit".to_string())
+                        .tool_tip(i18n::t!("Sign in to edit").to_string())
                         .build()
                         .finish()
                 });
@@ -2872,11 +2872,11 @@ impl WorkflowView {
                         )
                         .with_tooltip(move || {
                             ui_builder
-                                .tool_tip("Restore workflow from trash".to_string())
+                                .tool_tip(i18n::t!("Restore workflow from trash").to_string())
                                 .build()
                                 .finish()
                         })
-                        .with_text_label("Restore".to_string())
+                        .with_text_label(i18n::t!("Restore").to_string())
                         .build()
                         .on_click(|ctx, _, _| ctx.dispatch_typed_action(WorkflowAction::Untrash))
                         .finish(),

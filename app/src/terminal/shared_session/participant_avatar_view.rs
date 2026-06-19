@@ -583,7 +583,7 @@ pub fn render_viewer_role_button(
     let button = icon_button(appearance, icon, false, mouse_state_handle.clone())
         .with_tooltip(move || {
             ui_builder
-                .tool_tip("Change role".to_string())
+                .tool_tip(i18n::t!("Change role").to_string())
                 .build()
                 .finish()
         })

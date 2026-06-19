@@ -567,7 +567,7 @@ impl CommandSearchView {
         let muted_color: ColorU = appearance.theme().nonactive_ui_text_color().into();
         let text = appearance
             .ui_builder()
-            .span("Loading...")
+            .span(i18n::t!("Loading..."))
             .with_style(UiComponentStyles {
                 font_size: Some(appearance.monospace_font_size()),
                 font_family_id: Some(appearance.ui_font_family()),
@@ -700,7 +700,7 @@ impl CommandSearchView {
         row.add_child(
             appearance
                 .ui_builder()
-                .span("Looks like you're out of credits. ")
+                .span(i18n::t!("Looks like you're out of credits. "))
                 .with_style(UiComponentStyles {
                     font_size: Some(appearance.monospace_font_size()),
                     font_family_id: Some(appearance.ui_font_family()),
@@ -722,7 +722,7 @@ impl CommandSearchView {
         row.add_child(
             appearance
                 .ui_builder()
-                .span(" for more credits.")
+                .span(i18n::t!(" for more credits."))
                 .with_style(UiComponentStyles {
                     font_size: Some(appearance.monospace_font_size()),
                     font_family_id: Some(appearance.ui_font_family()),
@@ -749,7 +749,7 @@ impl CommandSearchView {
                 // There are no results to display, so notify the user of that fact.
                 let text = appearance
                     .ui_builder()
-                    .span("No results found.")
+                    .span(i18n::t!("No results found."))
                     .with_style(UiComponentStyles {
                         font_size: Some(appearance.monospace_font_size()),
                         font_family_id: Some(appearance.ui_font_family()),

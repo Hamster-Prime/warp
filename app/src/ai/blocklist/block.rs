@@ -597,7 +597,7 @@ impl ImportedCommentElementState {
                 ActionButton::new("", NakedTheme)
                     .with_icon(Icon::Github)
                     .with_size(ButtonSize::Small)
-                    .with_tooltip("Open in GitHub")
+                    .with_tooltip(i18n::t!("Open in GitHub").to_string())
                     .on_click({
                         let url = url.clone();
                         move |ctx| {
@@ -1405,7 +1405,7 @@ impl AIBlock {
         let rewind_button = ctx.add_typed_action_view(|_| {
             ActionButton::new("Rewind", RewindButtonTheme)
                 .with_size(ButtonSize::XSmall)
-                .with_tooltip("Rewind to before this block")
+                .with_tooltip(i18n::t!("Rewind to before this block").to_string())
                 .on_click(move |ctx| {
                     ctx.dispatch_typed_action(TerminalAction::RewindAIConversation {
                         ai_block_view_id,

@@ -594,7 +594,7 @@ impl EditorModal {
     fn render_same_line_prompt_section(&self, appearance: &Appearance) -> Box<dyn Element> {
         let label = appearance
             .ui_builder()
-            .span("Same line prompt".to_string())
+            .span(i18n::t!("Same line prompt").to_string())
             .with_style(UiComponentStyles {
                 font_size: Some(MODAL_CONTENT_FONT_SIZE),
                 ..Default::default()
@@ -632,7 +632,7 @@ impl EditorModal {
                 Container::new(
                     appearance
                         .ui_builder()
-                        .span("Separator".to_string())
+                        .span(i18n::t!("Separator").to_string())
                         .with_style(UiComponentStyles {
                             font_size: Some(MODAL_CONTENT_FONT_SIZE),
                             ..Default::default()

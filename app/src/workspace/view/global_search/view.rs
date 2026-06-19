@@ -657,7 +657,7 @@ impl GlobalSearchView {
             };
 
             let mut editor = EditorView::new(options, ctx);
-            editor.set_placeholder_text("Search in files", ctx);
+            editor.set_placeholder_text(i18n::t!("Search in files").to_string(), ctx);
             editor
         });
 
@@ -671,7 +671,7 @@ impl GlobalSearchView {
         let case_sensitivity_button = ctx.add_typed_action_view(|_ctx| {
             ActionButton::new_with_boxed_theme(String::new(), Arc::new(NakedTheme))
                 .with_icon(UiIcon::CaseSensitivity)
-                .with_tooltip("Toggle Case Sensitivity")
+                .with_tooltip(i18n::t!("Toggle Case Sensitivity").to_string())
                 .with_size(ButtonSize::Small)
                 .on_click(|ctx| {
                     ctx.dispatch_typed_action(GlobalSearchAction::ToggleCaseSensitivity);
@@ -681,7 +681,7 @@ impl GlobalSearchView {
         let regex_button = ctx.add_typed_action_view(|_ctx| {
             ActionButton::new_with_boxed_theme(String::new(), Arc::new(NakedTheme))
                 .with_icon(UiIcon::Regex)
-                .with_tooltip("Toggle Regex")
+                .with_tooltip(i18n::t!("Toggle Regex").to_string())
                 .with_size(ButtonSize::Small)
                 .on_click(|ctx| {
                     ctx.dispatch_typed_action(GlobalSearchAction::ToggleRegexSearch);

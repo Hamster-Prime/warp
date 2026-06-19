@@ -274,7 +274,7 @@ impl EnableAutoReloadModalBody {
                 }),
                 ..Default::default()
             })
-            .with_text_label("Cancel".to_string())
+            .with_text_label(i18n::t!("Cancel").to_string())
             .build()
             .on_click(|ctx, _, _| {
                 ctx.dispatch_typed_action(Action::Cancel);

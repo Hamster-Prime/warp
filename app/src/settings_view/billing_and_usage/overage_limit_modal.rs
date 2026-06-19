@@ -53,7 +53,7 @@ impl SpendingLimitModal {
                 ..Default::default()
             };
             let mut editor = EditorView::single_line(options, ctx);
-            editor.set_placeholder_text("50.00", ctx);
+            editor.set_placeholder_text(i18n::t!("50.00").to_string(), ctx);
             editor
         });
         ctx.subscribe_to_view(&amount_editor, |me, _, event, ctx| {
@@ -263,7 +263,7 @@ impl View for SpendingLimitModal {
                 ButtonVariant::Accent,
                 self.update_button_mouse_state.clone(),
             )
-            .with_text_label("Update".to_string())
+            .with_text_label(i18n::t!("Update").to_string())
             .with_style(button_style);
 
         if self.input_error_state.is_some() {
@@ -278,7 +278,7 @@ impl View for SpendingLimitModal {
                         ButtonVariant::Secondary,
                         self.cancel_button_mouse_state.clone(),
                     )
-                    .with_text_label("Cancel".to_string())
+                    .with_text_label(i18n::t!("Cancel").to_string())
                     .with_style(button_style)
                     .build()
                     .on_click(|ctx, _, _| {

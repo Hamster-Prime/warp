@@ -93,7 +93,7 @@ impl AuthSecretFtuxDropdown {
                 },
                 ctx,
             );
-            editor.set_placeholder_text("Search secrets or create a new one", ctx);
+            editor.set_placeholder_text(i18n::t!("Search secrets or create a new one").to_string(), ctx);
             editor
         });
 

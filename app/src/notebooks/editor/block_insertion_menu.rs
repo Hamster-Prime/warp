@@ -306,7 +306,7 @@ impl RichTextEditorView {
         })
         .with_tooltip(move || {
             ui_builder
-                .tool_tip("Insert block".to_string())
+                .tool_tip(i18n::t!("Insert block").to_string())
                 .build()
                 .finish()
         })

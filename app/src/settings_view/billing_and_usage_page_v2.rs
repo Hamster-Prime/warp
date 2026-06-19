@@ -920,7 +920,7 @@ impl BillingAndUsagePageV2View {
                     ButtonVariant::Secondary,
                     self.ambient_trial_mouse_states.new_agent_button.clone(),
                 )
-                .with_text_label("New agent".to_string())
+                .with_text_label(i18n::t!("New agent").to_string())
                 .with_style(UiComponentStyles {
                     font_color: Some(bg),
                     background: Some(fg.into()),
@@ -956,7 +956,7 @@ impl BillingAndUsagePageV2View {
                     ButtonVariant::Secondary,
                     self.ambient_trial_mouse_states.buy_more_button.clone(),
                 )
-                .with_text_label("Buy more".to_string())
+                .with_text_label(i18n::t!("Buy more").to_string())
                 .with_style(UiComponentStyles {
                     background: Some(bg.into()),
                     font_size: Some(14.),
@@ -1252,7 +1252,7 @@ impl BillingAndUsagePageV2View {
             }
             AddonCreditsRestriction::ContactAccountExecutive => appearance
                 .ui_builder()
-                .paragraph("Contact your Account Executive for more add-on credits.")
+                .paragraph(i18n::t!("Contact your Account Executive for more add-on credits."))
                 .with_style(UiComponentStyles {
                     font_color: Some(theme.sub_text_color(bg).into()),
                     ..Default::default()
@@ -1261,7 +1261,7 @@ impl BillingAndUsagePageV2View {
                 .finish(),
             AddonCreditsRestriction::ContactTeamAdmin => appearance
                 .ui_builder()
-                .paragraph("Contact a team admin to enable add-on credits.")
+                .paragraph(i18n::t!("Contact a team admin to enable add-on credits."))
                 .with_style(UiComponentStyles {
                     font_color: Some(theme.sub_text_color(bg).into()),
                     ..Default::default()
@@ -1399,7 +1399,7 @@ impl BillingAndUsagePageV2View {
             let spend_row = Flex::row()
                 .with_cross_axis_alignment(CrossAxisAlignment::Center)
                 .with_children([
-                    ui_builder.span("Monthly spend limit").build().finish(),
+                    ui_builder.span(i18n::t!("Monthly spend limit")).build().finish(),
                     Shrinkable::new(1., Align::new(info_icon).left().finish()).finish(),
                     icon_button(
                         appearance,

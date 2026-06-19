@@ -375,8 +375,8 @@ impl CodeSettingsPageView {
                 Box::new(FormatOnSaveToggleWidget::default()),
             ]);
             let categories = vec![
-                Category::new("Codebase Indexing", codebase_indexing_widgets),
-                Category::new("Code Editor and Review", code_editor_review_widgets),
+                Category::new(i18n::t!("Codebase Indexing").to_string(), codebase_indexing_widgets),
+                Category::new(i18n::t!("Code Editor and Review").to_string(), code_editor_review_widgets),
             ];
             PageType::new_categorized(categories, None)
         } else {
@@ -511,8 +511,8 @@ impl CodeSettingsPageView {
                 Box::new(FormatOnSaveToggleWidget::default()),
             ]);
             let categories = vec![
-                Category::new("Codebase Indexing", codebase_indexing_widgets),
-                Category::new("Code Editor and Review", code_editor_review_widgets),
+                Category::new(i18n::t!("Codebase Indexing").to_string(), codebase_indexing_widgets),
+                Category::new(i18n::t!("Code Editor and Review").to_string(), code_editor_review_widgets),
             ];
             PageType::new_categorized(categories, None)
         } else {
@@ -1344,7 +1344,7 @@ impl CodePageWidget {
                     .with_cross_axis_alignment(CrossAxisAlignment::Center)
                     .with_child(
                         ui_builder
-                            .span("Initialized / indexed folders")
+                            .span(i18n::t!("Initialized / indexed folders"))
                             .with_style(UiComponentStyles {
                                 font_size: Some(16.0),
                                 font_weight: Some(Weight::Semibold),
@@ -1468,7 +1468,7 @@ impl CodePageWidget {
                 Container::new(
                     appearance
                         .ui_builder()
-                        .paragraph("No folders have been initialized yet.")
+                        .paragraph(i18n::t!("No folders have been initialized yet."))
                         .build()
                         .finish(),
                 )
@@ -1699,7 +1699,7 @@ impl CodePageWidget {
         let mut column = Flex::column().with_spacing(SUB_SECTION_MARGIN);
         column.add_child(
             ui_builder
-                .span("INDEXING")
+                .span(i18n::t!("INDEXING"))
                 .with_style(UiComponentStyles {
                     font_size: Some(11.0),
                     font_weight: Some(Weight::Semibold),
@@ -2049,7 +2049,7 @@ impl CodePageWidget {
         // "LSP SERVERS" label
         content.add_child(
             ui_builder
-                .span("LSP SERVERS")
+                .span(i18n::t!("LSP SERVERS"))
                 .with_style(UiComponentStyles {
                     font_size: Some(11.0),
                     font_weight: Some(Weight::Semibold),

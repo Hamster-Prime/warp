@@ -603,7 +603,7 @@ impl GitDialog {
             ActionButton::new("", NakedTheme)
                 .with_icon(Icon::X)
                 .with_size(ButtonSize::Small)
-                .with_tooltip("ESC")
+                .with_tooltip(i18n::t!("ESC").to_string())
                 .on_click(|ctx| ctx.dispatch_typed_action(GitDialogAction::Cancel))
         });
         (confirm_button, cancel_button, close_button)

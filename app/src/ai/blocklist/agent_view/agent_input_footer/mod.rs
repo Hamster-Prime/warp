@@ -307,7 +307,7 @@ impl AgentInputFooter {
         let mic_button = ctx.add_typed_action_view(|_ctx| {
             let button = ActionButton::new("", ActiveMicButtonTheme)
                 .with_icon(Icon::Microphone)
-                .with_tooltip("Voice input")
+                .with_tooltip(i18n::t!("Voice input").to_string())
                 .with_size(button_size)
                 .with_tooltip_alignment(TooltipAlignment::Left);
             #[cfg(feature = "voice_input")]
@@ -343,7 +343,7 @@ impl AgentInputFooter {
         let file_button = ctx.add_typed_action_view(|_ctx| {
             ActionButton::new("", AgentInputButtonTheme)
                 .with_icon(Icon::Plus)
-                .with_tooltip("Attach file")
+                .with_tooltip(i18n::t!("Attach file").to_string())
                 .with_size(button_size)
                 .with_tooltip_alignment(TooltipAlignment::Left)
                 .on_click(|ctx| {
@@ -372,7 +372,7 @@ impl AgentInputFooter {
         let handoff_to_cloud_button = ctx.add_typed_action_view(|_ctx| {
             ActionButton::new("", AgentInputButtonTheme)
                 .with_icon(Icon::UploadCloud)
-                .with_tooltip("Hand off to cloud (or type &)")
+                .with_tooltip(i18n::t!("Hand off to cloud (or type &)").to_string())
                 .with_size(button_size)
                 .with_tooltip_alignment(TooltipAlignment::Left)
                 .on_click(|ctx| {
@@ -385,7 +385,7 @@ impl AgentInputFooter {
         let file_explorer_button = ctx.add_typed_action_view(|ctx| {
             ActionButton::new("File explorer", AgentInputButtonTheme)
                 .with_icon(Icon::FileCopy)
-                .with_tooltip("Open file explorer")
+                .with_tooltip(i18n::t!("Open file explorer").to_string())
                 .with_size(cli_button_size)
                 .with_tooltip_alignment(TooltipAlignment::Left)
                 .with_keybinding(
@@ -400,7 +400,7 @@ impl AgentInputFooter {
         let rich_input_button = ctx.add_typed_action_view(|ctx| {
             ActionButton::new("Rich Input", AgentInputButtonTheme)
                 .with_icon(Icon::TextInput)
-                .with_tooltip("Open Rich Input")
+                .with_tooltip(i18n::t!("Open Rich Input").to_string())
                 .with_size(cli_button_size)
                 .with_tooltip_alignment(TooltipAlignment::Left)
                 .with_keybinding(
@@ -415,7 +415,7 @@ impl AgentInputFooter {
         let settings_button = ctx.add_typed_action_view(|_ctx| {
             ActionButton::new("", AgentInputButtonTheme)
                 .with_icon(Icon::Settings)
-                .with_tooltip("Open coding agent settings")
+                .with_tooltip(i18n::t!("Open coding agent settings").to_string())
                 .with_size(cli_button_size)
                 .with_tooltip_alignment(TooltipAlignment::Left)
                 .on_click(|ctx| {
@@ -440,7 +440,7 @@ impl AgentInputFooter {
         let plugin_instructions_button = ctx.add_typed_action_view(|_ctx| {
             ActionButton::new("Notifications setup instructions", InstallPluginButtonTheme)
                 .with_icon(Icon::Info)
-                .with_tooltip("View instructions to install the Warp plugin")
+                .with_tooltip(i18n::t!("View instructions to install the Warp plugin").to_string())
                 .with_size(cli_button_size)
                 .with_tooltip_alignment(TooltipAlignment::Left)
                 .with_adjoined_side(AdjoinedSide::Right)
@@ -454,7 +454,7 @@ impl AgentInputFooter {
         let update_plugin_button = ctx.add_typed_action_view(|_ctx| {
             ActionButton::new("Update Warp plugin", InstallPluginButtonTheme)
                 .with_icon(Icon::Download)
-                .with_tooltip("A new version of the Warp plugin is available")
+                .with_tooltip(i18n::t!("A new version of the Warp plugin is available").to_string())
                 .with_size(cli_button_size)
                 .with_tooltip_alignment(TooltipAlignment::Left)
                 .with_adjoined_side(AdjoinedSide::Right)
@@ -466,7 +466,7 @@ impl AgentInputFooter {
         let update_instructions_button = ctx.add_typed_action_view(|_ctx| {
             ActionButton::new("Plugin update instructions", InstallPluginButtonTheme)
                 .with_icon(Icon::Info)
-                .with_tooltip("View instructions to update the Warp plugin")
+                .with_tooltip(i18n::t!("View instructions to update the Warp plugin").to_string())
                 .with_size(cli_button_size)
                 .with_tooltip_alignment(TooltipAlignment::Left)
                 .with_adjoined_side(AdjoinedSide::Right)
@@ -481,7 +481,7 @@ impl AgentInputFooter {
             ActionButton::new("", InstallPluginButtonTheme)
                 .with_icon(Icon::X)
                 .with_size(cli_button_size)
-                .with_tooltip("Dismiss")
+                .with_tooltip(i18n::t!("Dismiss").to_string())
                 .with_tooltip_alignment(TooltipAlignment::Left)
                 .with_adjoined_side(AdjoinedSide::Left)
                 .on_click(|ctx| {
@@ -592,7 +592,7 @@ impl AgentInputFooter {
             ActionButton::new("Stop sharing", RemoteControlButtonTheme)
                 .with_icon(Icon::StopFilled)
                 .with_icon_ansi_color(AnsiColorIdentifier::Red)
-                .with_tooltip("Stop sharing")
+                .with_tooltip(i18n::t!("Stop sharing").to_string())
                 .with_size(cli_button_size)
                 .with_tooltip_alignment(TooltipAlignment::Left)
                 .on_click(|ctx| {
@@ -603,7 +603,7 @@ impl AgentInputFooter {
         let context_window_button = ctx.add_typed_action_view(|_ctx| {
             ActionButton::new("", AgentInputButtonTheme)
                 .with_icon(Icon::ConversationContext0)
-                .with_tooltip("Context window usage")
+                .with_tooltip(i18n::t!("Context window usage").to_string())
                 .with_size(button_size)
                 .with_tooltip_alignment(TooltipAlignment::Left)
         });

@@ -171,7 +171,7 @@ impl View for WasmNUXDialog {
                         .with_child(
                             appearance
                                 .ui_builder()
-                                .span("Warp is the intelligent terminal with AI and your dev team's knowledge built-in.")
+                                .span(i18n::t!("Warp is the intelligent terminal with AI and your dev team's knowledge built-in."))
                                 .with_style(UiComponentStyles {
                                     font_weight: Some(Weight::Thin),
                                     font_color: Some(

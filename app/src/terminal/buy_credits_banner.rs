@@ -426,7 +426,7 @@ impl BuyCreditsBanner {
             .with_children([
                 appearance
                     .ui_builder()
-                    .paragraph("Monthly limit reached")
+                    .paragraph(i18n::t!("Monthly limit reached"))
                     .with_style(UiComponentStyles {
                         font_size: Some(14.),
                         ..Default::default()
@@ -477,7 +477,7 @@ impl BuyCreditsBanner {
                     }),
                     ..Default::default()
                 })
-                .with_text_label("Manage billing".to_string())
+                .with_text_label(i18n::t!("Manage billing").to_string())
                 .build()
                 .on_click(|ctx, _, _| {
                     ctx.dispatch_typed_action(Action::ManageBilling);
@@ -562,7 +562,7 @@ impl BuyCreditsBanner {
         let make_banner_text = || {
             let mut banner_text_children = vec![appearance
                 .ui_builder()
-                .paragraph("Out of credits")
+                .paragraph(i18n::t!("Out of credits"))
                 .with_style(UiComponentStyles {
                     font_size: Some(14.),
                     ..Default::default()

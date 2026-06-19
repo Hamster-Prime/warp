@@ -73,7 +73,7 @@ impl View for TransferOwnershipConfirmationModal {
                 appearance
                     .ui_builder()
                     .button(ButtonVariant::Secondary, self.cancel_mouse_state.clone())
-                    .with_text_label("Cancel".to_string())
+                    .with_text_label(i18n::t!("Cancel").to_string())
                     .with_style(button_style)
                     .build()
                     .on_click(|ctx, _, _| {
@@ -86,7 +86,7 @@ impl View for TransferOwnershipConfirmationModal {
                     appearance
                         .ui_builder()
                         .button(ButtonVariant::Accent, self.confirm_mouse_state.clone())
-                        .with_text_label("Transfer".to_string())
+                        .with_text_label(i18n::t!("Transfer").to_string())
                         .with_style(button_style)
                         .build()
                         .on_click(|ctx, _, _| {

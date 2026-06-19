@@ -223,7 +223,7 @@ impl GetStartedView {
                 .finish(),
                 appearance
                     .ui_builder()
-                    .paragraph("Welcome to Warp")
+                    .paragraph(i18n::t!("Welcome to Warp"))
                     .with_style(UiComponentStyles {
                         font_size: Some(20.),
                         ..Default::default()
@@ -233,7 +233,7 @@ impl GetStartedView {
                 Container::new(
                     appearance
                         .ui_builder()
-                        .paragraph("The Agentic Development Environment")
+                        .paragraph(i18n::t!("The Agentic Development Environment"))
                         .with_style(UiComponentStyles {
                             font_size: Some(14.),
                             font_family_id: Some(appearance.monospace_font_family()),
@@ -361,7 +361,7 @@ impl BackingView for GetStartedView {
         _ctx: &view::HeaderRenderContext<'_>,
         _app: &AppContext,
     ) -> view::HeaderContent {
-        view::HeaderContent::simple("Get started")
+        view::HeaderContent::simple(i18n::t!("Get started").to_string())
     }
 
     fn set_focus_handle(&mut self, focus_handle: PaneFocusHandle, _ctx: &mut ViewContext<Self>) {

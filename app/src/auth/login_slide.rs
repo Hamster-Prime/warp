@@ -293,7 +293,7 @@ impl LoginSlideView {
                 },
                 ctx,
             );
-            editor.set_placeholder_text("Auth Token", ctx);
+            editor.set_placeholder_text(i18n::t!("Auth Token").to_string(), ctx);
             editor
         });
 
@@ -516,7 +516,7 @@ impl LoginSlideView {
         let tos_line = Flex::row()
             .with_child(
                 ui_builder
-                    .span("By continuing, you agree to Warp's ")
+                    .span(i18n::t!("By continuing, you agree to Warp's "))
                     .with_style(disclaimer_styles)
                     .build()
                     .finish(),
@@ -690,7 +690,7 @@ impl LoginSlideView {
                 Flex::row()
                     .with_child(
                         ui_builder
-                            .span("If your browser hasn't launched, ")
+                            .span(i18n::t!("If your browser hasn't launched, "))
                             .with_style(sub_text_styles)
                             .build()
                             .finish(),
@@ -711,7 +711,7 @@ impl LoginSlideView {
                     )
                     .with_child(
                         ui_builder
-                            .span(" and open")
+                            .span(i18n::t!(" and open"))
                             .with_style(sub_text_styles)
                             .build()
                             .finish(),
@@ -720,7 +720,7 @@ impl LoginSlideView {
             )
             .with_child(
                 ui_builder
-                    .span("the page manually.")
+                    .span(i18n::t!("the page manually."))
                     .with_style(sub_text_styles)
                     .build()
                     .finish(),

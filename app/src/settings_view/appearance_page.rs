@@ -59,8 +59,8 @@ use crate::settings::app_icon::{AppIcon, AppIconSettings, ShowDockIconState};
 use crate::settings::{
     active_theme_kind, respect_system_theme, AIFontName, AppEditorSettings, CursorBlink,
     CursorBlinkEnabled, CursorDisplayType, EnforceMinimumContrast, FocusPaneOnHover, FontSettings,
-    FontSettingsChangedEvent, GPUSettings, InputBoxType, LanguageSettings, InputModeSettings,
-    InputModeState, InputSettings, InputSettingsChangedEvent, MonospaceFontName, PaneSettings,
+    FontSettingsChangedEvent, GPUSettings, InputBoxType, InputModeSettings, InputModeState,
+    InputSettings, InputSettingsChangedEvent, LanguageSettings, MonospaceFontName, PaneSettings,
     ShouldDimInactivePanes, ThemeSettings, UseSystemTheme, UseThinStrokes,
     DEFAULT_MONOSPACE_FONT_NAME,
 };
@@ -1357,10 +1357,7 @@ impl AppearanceSettingsPageView {
                     Box::new(ThemeSelectWidget::default()),
                 ],
             ),
-            Category::new(
-                "Language",
-                vec![Box::new(LanguageWidget)],
-            ),
+            Category::new(i18n::t!("Language").to_string(), vec![Box::new(LanguageWidget)]),
         ];
 
         if AppIconSettings::as_ref(ctx).is_supported_on_current_platform() {
@@ -1409,7 +1406,10 @@ impl AppearanceSettingsPageView {
         }
 
         if !window_settings_widgets.is_empty() {
-            categories.push(Category::new(i18n::t!("Window").to_string(), window_settings_widgets));
+            categories.push(Category::new(
+                i18n::t!("Window").to_string(),
+                window_settings_widgets,
+            ));
         }
 
         // Create the Input category with all widgets
@@ -1421,7 +1421,10 @@ impl AppearanceSettingsPageView {
             Box::new(InputModeWidget::default()),
         ];
 
-        categories.push(Category::new(i18n::t!("Input").to_string(), category_widgets));
+        categories.push(Category::new(
+            i18n::t!("Input").to_string(),
+            category_widgets,
+        ));
 
         categories.push(Category::new(
             i18n::t!("Panes").to_string(),
@@ -1438,7 +1441,10 @@ impl AppearanceSettingsPageView {
         if FeatureFlag::MinimalistUI.is_enabled() {
             block_settings_widgets.push(Box::new(ShowBlockDividersWidget::default()));
         }
-        categories.push(Category::new(i18n::t!("Blocks").to_string(), block_settings_widgets));
+        categories.push(Category::new(
+            i18n::t!("Blocks").to_string(),
+            block_settings_widgets,
+        ));
 
         let font_settings = FontSettings::as_ref(ctx);
         let mut text_settings_widgets: Vec<Box<dyn SettingsWidget<View = Self>>> = vec![
@@ -1467,7 +1473,10 @@ impl AppearanceSettingsPageView {
             text_settings_widgets.push(Box::new(LigaturesWidget::default()));
         }
 
-        categories.push(Category::new(i18n::t!("Text").to_string(), text_settings_widgets));
+        categories.push(Category::new(
+            i18n::t!("Text").to_string(),
+            text_settings_widgets,
+        ));
 
         categories.push(Category::new(
             i18n::t!("Cursor").to_string(),
@@ -1519,7 +1528,10 @@ impl AppearanceSettingsPageView {
             tab_settings_widgets.push(Box::new(DirectoryTabColorsWidget { add_picker }));
         }
 
-        categories.push(Category::new(i18n::t!("Tabs").to_string(), tab_settings_widgets));
+        categories.push(Category::new(
+            i18n::t!("Tabs").to_string(),
+            tab_settings_widgets,
+        ));
 
         categories.push(Category::new(
             i18n::t!("Full-screen Apps").to_string(),
@@ -3952,7 +3964,7 @@ impl SettingsWidget for AIFontWidget {
         ai_font_row.add_child(
             appearance
                 .ui_builder()
-                .span("Match terminal".to_string())
+                .span(i18n::t!("Match terminal").to_string())
                 .build()
                 .with_margin_left(2.)
                 .with_margin_right(16.)
@@ -4047,7 +4059,7 @@ impl TerminalFontWidget {
                     font_size: Some(appearance.ui_font_size() * 0.8),
                     ..Default::default()
                 })
-                .with_text_label("Reset to default".to_string());
+                .with_text_label(i18n::t!("Reset to default").to_string());
 
             button
                 .build()
@@ -4121,7 +4133,7 @@ impl SettingsWidget for TerminalFontWidget {
                             1.,
                             appearance
                                 .ui_builder()
-                                .span("View all available system fonts".to_string())
+                                .span(i18n::t!("View all available system fonts").to_string())
                                 .build()
                                 .with_margin_left(2.)
                                 .finish(),
@@ -4275,7 +4287,7 @@ impl SettingsWidget for NotebookFontSizeWidget {
                 .with_child(
                     appearance
                         .ui_builder()
-                        .span("Match terminal".to_string())
+                        .span(i18n::t!("Match terminal").to_string())
                         .build()
                         .with_margin_left(2.)
                         .with_margin_right(16.)
@@ -4484,7 +4496,7 @@ impl SettingsWidget for CursorTypeWidget {
                     .with_child(
                         appearance
                             .ui_builder()
-                            .span("Cursor type is disabled in Vim mode".to_string())
+                            .span(i18n::t!("Cursor type is disabled in Vim mode").to_string())
                             .build()
                             .finish(),
                     )
@@ -5387,7 +5399,9 @@ impl SettingsWidget for LanguageWidget {
         render_dropdown_item(
             appearance,
             &i18n::t!("Language"),
-            Some(&i18n::t!("Select the display language for the Warp interface")),
+            Some(&i18n::t!(
+                "Select the display language for the Warp interface"
+            )),
             None,
             LocalOnlyIconState::Hidden,
             None,

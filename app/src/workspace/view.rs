@@ -1294,7 +1294,7 @@ impl Workspace {
                 },
                 ctx,
             );
-            editor.set_placeholder_text("Search repos", ctx);
+            editor.set_placeholder_text(i18n::t!("Search repos").to_string(), ctx);
             editor
         });
         ctx.subscribe_to_view(&editor, |me, editor_view, event, ctx| match event {
@@ -1330,7 +1330,7 @@ impl Workspace {
             EditorView::single_line(options, ctx)
         });
         editor.update(ctx, |editor, ctx| {
-            editor.set_placeholder_text("Search tabs...", ctx);
+            editor.set_placeholder_text(i18n::t!("Search tabs...").to_string(), ctx);
         });
         ctx.subscribe_to_view(&editor, |me, editor_view, event, ctx| match event {
             EditorEvent::Edited(_) => {
@@ -18710,7 +18710,7 @@ impl Workspace {
         {
             BlocklistAIHistoryModel::handle(ctx).update(ctx, |history, _ctx| {
                 if let Some(conversation) = history.conversation_mut(&conversation_id) {
-                    conversation.set_fallback_display_title("Linear Issue".to_string());
+                    conversation.set_fallback_display_title(i18n::t!("Linear Issue").to_string());
                 }
             });
         }

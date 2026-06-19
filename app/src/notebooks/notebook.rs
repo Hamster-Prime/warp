@@ -355,7 +355,7 @@ impl NotebookView {
                 ..Default::default()
             };
             let mut editor = EditorView::single_line(options, ctx);
-            editor.set_placeholder_text("Untitled", ctx);
+            editor.set_placeholder_text(i18n::t!("Untitled").to_string(), ctx);
             editor
         });
         ctx.subscribe_to_view(&title, |notebook, _, event, ctx| {
@@ -1968,11 +1968,11 @@ impl NotebookView {
                             )
                             .with_tooltip(move || {
                                 ui_builder
-                                    .tool_tip("Restore notebook from trash".to_string())
+                                    .tool_tip(i18n::t!("Restore notebook from trash").to_string())
                                     .build()
                                     .finish()
                             })
-                            .with_text_label("Restore".to_string())
+                            .with_text_label(i18n::t!("Restore").to_string())
                             .build()
                             .on_click(|ctx, _, _| {
                                 ctx.dispatch_typed_action(NotebookAction::Untrash)
@@ -2005,7 +2005,7 @@ impl NotebookView {
                                         .build()
                                         .finish()
                                 })
-                                .with_text_label("Copy to Personal".to_string())
+                                .with_text_label(i18n::t!("Copy to Personal").to_string())
                                 .build()
                                 .on_click(|ctx, _, _| {
                                     ctx.dispatch_typed_action(NotebookAction::CopyToPersonal)
@@ -2083,11 +2083,11 @@ impl NotebookView {
                         )
                         .with_tooltip(move || {
                             ui_builder
-                                .tool_tip("Copy notebook contents to your clipboard".to_string())
+                                .tool_tip(i18n::t!("Copy notebook contents to your clipboard").to_string())
                                 .build()
                                 .finish()
                         })
-                        .with_text_label("Copy All".to_string())
+                        .with_text_label(i18n::t!("Copy All").to_string())
                         .build()
                         .on_click(|ctx, _, _| {
                             ctx.dispatch_typed_action(NotebookAction::CopyToClipboard)
@@ -2117,7 +2117,7 @@ impl NotebookView {
                             )
                             .with_tooltip(move || {
                                 ui_builder
-                                    .tool_tip("Refresh notebook".to_string())
+                                    .tool_tip(i18n::t!("Refresh notebook").to_string())
                                     .build()
                                     .finish()
                             })

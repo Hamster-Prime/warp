@@ -100,7 +100,7 @@ impl BackingView for TestView {
         _ctx: &super::HeaderRenderContext<'_>,
         _app: &AppContext,
     ) -> super::HeaderContent {
-        super::HeaderContent::simple("Test")
+        super::HeaderContent::simple(i18n::t!("Test").to_string())
     }
 
     fn set_focus_handle(&mut self, _focus_handle: PaneFocusHandle, _ctx: &mut ViewContext<Self>) {}

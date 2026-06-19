@@ -224,7 +224,7 @@ impl AgentManagementView {
         let all_filter_button = ctx.add_typed_action_view(|_ctx| {
             ActionButton::new("All", NakedTheme)
                 .with_size(ButtonSize::Small)
-                .with_tooltip("View your agent tasks plus all shared team tasks")
+                .with_tooltip(i18n::t!("View your agent tasks plus all shared team tasks").to_string())
                 .on_click(|ctx| {
                     ctx.dispatch_typed_action(AgentManagementViewAction::SetOwnerFilter(
                         OwnerFilter::All,
@@ -235,7 +235,7 @@ impl AgentManagementView {
         let personal_filter_button = ctx.add_typed_action_view(|_ctx| {
             ActionButton::new("Personal", NakedTheme)
                 .with_size(ButtonSize::Small)
-                .with_tooltip("View agent tasks you created")
+                .with_tooltip(i18n::t!("View agent tasks you created").to_string())
                 .on_click(|ctx| {
                     ctx.dispatch_typed_action(AgentManagementViewAction::SetOwnerFilter(
                         OwnerFilter::PersonalOnly,
@@ -311,7 +311,7 @@ impl AgentManagementView {
                 },
                 ctx,
             );
-            editor.set_placeholder_text("Search", ctx);
+            editor.set_placeholder_text(i18n::t!("Search").to_string(), ctx);
             editor
         });
         ctx.subscribe_to_view(&search_editor, |me, _handle, event, ctx| {

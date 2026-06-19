@@ -238,7 +238,7 @@ impl ConversationListView {
                 ctx,
             );
 
-            editor.set_placeholder_text("Search", ctx);
+            editor.set_placeholder_text(i18n::t!("Search").to_string(), ctx);
             editor
         });
         ctx.subscribe_to_view(&query_editor, |me, _handle, event, ctx| {
@@ -1045,7 +1045,7 @@ impl TypedActionView for ConversationListView {
                         .with_disabled(!entry.capabilities.can_delete);
                     if !entry.capabilities.can_delete {
                         delete_item =
-                            delete_item.with_tooltip("This conversation cannot be deleted");
+                            delete_item.with_tooltip(i18n::t!("This conversation cannot be deleted").to_string());
                     }
 
                     // Only show share item if the conversation is shareable

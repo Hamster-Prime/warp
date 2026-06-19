@@ -9,8 +9,8 @@
 //! 因为 `rust_i18n::set_locale` 修改进程级全局 `CURRENT_LOCALE`，
 //! cargo 默认并行跑集成测试时会互相竞态。
 
-/// 已知的 zh-CN key 列表（来自 `_locales/zh-CN/*.yml`）。
-/// M4 引入抽取工具后会用代码扫描自动维护这个集合，MVP 阶段手写。
+/// 抽样验证 key（从所有 zh-CN YAML 文件中选代表性 key）。
+/// 完整性由 `i18n-check` 工具负责（CI 门禁），这里只做 smoke test。
 const EXPECTED_ZH_CN_KEYS: &[&str] = &[
     // _shared.yml
     "OK",
@@ -20,10 +20,15 @@ const EXPECTED_ZH_CN_KEYS: &[&str] = &[
     "Reset",
     "Warp",
     "Settings",
-    // settings.yml
+    // settings.yml + appearance.yml + extracted.yml
     "Language",
     "Appearance",
     "Select the display language for the Warp interface",
+    // 从 M2 抽取工具产出的 key 中抽样
+    "Notifications",
+    "Cancel",
+    "Close",
+    "Search",
 ];
 
 #[test]
@@ -45,42 +50,27 @@ fn all_expected_keys_resolve_in_zh_cn() {
 
 #[test]
 fn cancel_translates_to_zh() {
-    assert_eq!(
-        i18n::t!("Cancel", locale = "zh-CN").to_string(),
-        "取消"
-    );
+    assert_eq!(i18n::t!("Cancel", locale = "zh-CN").to_string(), "取消");
 }
 
 #[test]
 fn language_translates_to_zh() {
-    assert_eq!(
-        i18n::t!("Language", locale = "zh-CN").to_string(),
-        "语言"
-    );
+    assert_eq!(i18n::t!("Language", locale = "zh-CN").to_string(), "语言");
 }
 
 #[test]
 fn settings_translates_to_zh() {
-    assert_eq!(
-        i18n::t!("Settings", locale = "zh-CN").to_string(),
-        "设置"
-    );
+    assert_eq!(i18n::t!("Settings", locale = "zh-CN").to_string(), "设置");
 }
 
 #[test]
 fn en_fallback_returns_key() {
     // en.yml 只有 _placeholder，Cancel 查不到 → fallback 返回 key 本身
-    assert_eq!(
-        i18n::t!("Cancel", locale = "en").to_string(),
-        "Cancel"
-    );
+    assert_eq!(i18n::t!("Cancel", locale = "en").to_string(), "Cancel");
 }
 
 #[test]
 fn glossary_keys_keep_brand_names_untranslated() {
     // 术语表里 "Warp": "Warp" — 品牌名不译
-    assert_eq!(
-        i18n::t!("Warp", locale = "zh-CN").to_string(),
-        "Warp"
-    );
+    assert_eq!(i18n::t!("Warp", locale = "zh-CN").to_string(), "Warp");
 }

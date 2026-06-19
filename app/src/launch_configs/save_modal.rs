@@ -290,7 +290,7 @@ impl LaunchConfigSaveModal {
     pub fn reset_editor(&mut self, ctx: &mut ViewContext<Self>) {
         self.editor.update(ctx, |editor, ctx| {
             editor.clear_buffer_and_reset_undo_stack(ctx);
-            editor.set_placeholder_text("launch_config.yaml", ctx);
+            editor.set_placeholder_text(i18n::t!("launch_config.yaml").to_string(), ctx);
         });
     }
 

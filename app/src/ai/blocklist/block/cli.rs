@@ -1843,7 +1843,7 @@ fn render_permissions_speedbump(
 
     let checkbox_text = appearance
         .ui_builder()
-        .span("Always allow")
+        .span(i18n::t!("Always allow"))
         .with_style(UiComponentStyles {
             font_color: Some(font_color),
             font_size: Some(font_size),

@@ -904,7 +904,7 @@ impl SecretRedactionWidget {
 
         if enterprise_regex_list.is_empty() {
             return ui_builder
-                .paragraph("No enterprise regexes have been configured by your organization.")
+                .paragraph(i18n::t!("No enterprise regexes have been configured by your organization."))
                 .with_style(UiComponentStyles {
                     font_color: Some(description_text_color),
                     ..Default::default()

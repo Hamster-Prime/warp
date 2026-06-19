@@ -764,7 +764,7 @@ impl ShareBlockModal {
                     .manage_permalinks_mouse_state
                     .clone(),
             )
-            .with_centered_text_label("Manage shared blocks".to_string())
+            .with_centered_text_label(i18n::t!("Manage shared blocks").to_string())
             .with_style(
                 self.button_style_overrides(appearance)
                     .set_font_size(12.)
@@ -958,7 +958,7 @@ impl ShareBlockModal {
                 .finish();
             let show_prompt_description = appearance
                 .ui_builder()
-                .span("Show prompt".to_string())
+                .span(i18n::t!("Show prompt").to_string())
                 .build()
                 .with_margin_left(2.)
                 .finish();
@@ -1059,7 +1059,7 @@ impl ShareBlockModal {
 
             let redact_secrets_description = appearance
                 .ui_builder()
-                .span("Redact secrets (API keys, passwords, IP addresses, PII etc.)".to_string())
+                .span(i18n::t!("Redact secrets (API keys, passwords, IP addresses, PII etc.)").to_string())
                 .build()
                 .with_margin_left(4.)
                 .finish();

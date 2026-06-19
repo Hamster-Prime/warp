@@ -1,0 +1,486 @@
+_version: 2
+
+"*Secrets are not sent to Warp's server.":
+  zh-CN: "*密钥不会发送到 Warp 的服务器。"
+"+ Add model":
+  zh-CN: "+ 添加模型"
+"+ Create API Key":
+  zh-CN: "+ 创建 API Key"
+"A new version of the Warp plugin is available":
+  zh-CN: "有新版本的 Warp 插件可用"
+"AWS Access Key ID:":
+  zh-CN: "AWS 访问密钥 ID："
+"AWS Region:":
+  zh-CN: "AWS 区域："
+"Accept and save":
+  zh-CN: "接受并保存"
+"Add a workflow argument":
+  zh-CN: "添加 Workflow 参数"
+"Add environment variables":
+  zh-CN: "添加环境变量"
+"Add file diff as context":
+  zh-CN: "添加文件差异作为上下文"
+"Add regex":
+  zh-CN: "添加正则表达式"
+"Already have an account? ":
+  zh-CN: "已经有账号了？ "
+"Always allow":
+  zh-CN: "始终允许"
+"Apply link":
+  zh-CN: "应用链接"
+"Are you sure you want to skip login?":
+  zh-CN: "确定要跳过登录吗？"
+"Ask the Warp agent to assist":
+  zh-CN: "请求 Warp Agent 协助"
+"Ask the Warp agent to resume":
+  zh-CN: "请求 Warp Agent 继续"
+"Attach file":
+  zh-CN: "附加文件"
+"Auth Token":
+  zh-CN: "Auth Token"
+"Authenticate with GitHub":
+  zh-CN: "使用 GitHub 认证"
+"Autohides on loss of keyboard focus":
+  zh-CN: "失去键盘焦点时自动隐藏"
+"Bad response":
+  zh-CN: "差评"
+"Buy more":
+  zh-CN: "购买更多"
+"By continuing, you agree to Warp's ":
+  zh-CN: "继续即表示您同意 Warp 的 "
+"Cancel":
+  zh-CN: "取消"
+"Change git branch":
+  zh-CN: "更改 git 分支"
+"Change role":
+  zh-CN: "更改角色"
+"Change working directory":
+  zh-CN: "更改工作目录"
+"Change your current theme.":
+  zh-CN: "更改当前主题。"
+"Characters considered part of a word":
+  zh-CN: "视为单词一部分的字符"
+"Choose an environment":
+  zh-CN: "选择环境"
+"Click to set global hotkey":
+  zh-CN: "点击设置全局快捷键"
+"Close":
+  zh-CN: "关闭"
+"Close Welcome Tips":
+  zh-CN: "关闭欢迎提示"
+"Close panel":
+  zh-CN: "关闭面板"
+"Cloud agent run":
+  zh-CN: "云端 Agent 运行"
+"Code Editor and Review":
+  zh-CN: "代码编辑与审查"
+"Codebase Indexing":
+  zh-CN: "代码库索引"
+"Collapse":
+  zh-CN: "折叠"
+"Commands that enable the toolbar":
+  zh-CN: "启用工具栏的命令"
+"Commands, comma separated":
+  zh-CN: "命令，逗号分隔"
+"Complete!":
+  zh-CN: "完成！"
+"Contact Admin to request access":
+  zh-CN: "联系管理员请求访问权限"
+"Contact a team admin to enable add-on credits.":
+  zh-CN: "联系团队管理员启用附加额度。"
+"Contact your Account Executive for more add-on credits.":
+  zh-CN: "联系您的客户经理获取更多附加额度。"
+"Context window usage":
+  zh-CN: "上下文窗口使用量"
+"Continue conversation":
+  zh-CN: "继续对话"
+"Continue this cloud conversation":
+  zh-CN: "继续此云端对话"
+"Copy All":
+  zh-CN: "全部复制"
+"Copy error":
+  zh-CN: "复制错误"
+"Copy file path":
+  zh-CN: "复制文件路径"
+"Copy notebook contents to your clipboard":
+  zh-CN: "将 Notebook 内容复制到剪贴板"
+"Copy to Personal":
+  zh-CN: "复制到个人"
+"Copyright 2026 Warp":
+  zh-CN: "Copyright 2026 Warp"
+"Create agent":
+  zh-CN: "创建 Agent"
+"Current":
+  zh-CN: "当前"
+"Cursor type is disabled in Vim mode":
+  zh-CN: "Vim 模式下禁用光标类型"
+"Default":
+  zh-CN: "默认"
+"Directory path":
+  zh-CN: "目录路径"
+"Disabled by your administrator":
+  zh-CN: "已被管理员禁用"
+"Dismiss":
+  zh-CN: "忽略"
+"Don't show me suggested code banners again":
+  zh-CN: "不再显示建议代码横幅"
+"Don't want to sign in right now? ":
+  zh-CN: "现在不想登录？ "
+"Done":
+  zh-CN: "完成"
+"ESC":
+  zh-CN: "ESC"
+"Edit":
+  zh-CN: "编辑"
+"Edit API Keys":
+  zh-CN: "编辑 API Key"
+"Edit config":
+  zh-CN: "编辑配置"
+"Editing":
+  zh-CN: "编辑中"
+"Empty trash":
+  zh-CN: "清空回收站"
+"Enable Warp shell integration in this session":
+  zh-CN: "在此会话中启用 Warp shell 集成"
+"Enables codebase indexing and WARP.md":
+  zh-CN: "启用代码库索引和 WARP.md"
+"Enter auth token":
+  zh-CN: "输入 Auth Token"
+"Enter custom Docker image name:":
+  zh-CN: "输入自定义 Docker 镜像名称："
+"Environment variables":
+  zh-CN: "环境变量"
+"Environments":
+  zh-CN: "环境"
+"Executable path":
+  zh-CN: "可执行文件路径"
+"Expand":
+  zh-CN: "展开"
+"Fill out the arguments in this workflow and copy it to run in your terminal session":
+  zh-CN: "填写此 Workflow 中的参数并复制到终端会话中运行"
+"Fork conversation":
+  zh-CN: "分支对话"
+"Fork this conversation locally":
+  zh-CN: "在本地分支此对话"
+"General":
+  zh-CN: "通用"
+"Get started":
+  zh-CN: "开始使用"
+"Good response":
+  zh-CN: "好评"
+"Hand off to cloud (or type &)":
+  zh-CN: "移交到云端（或输入 &）"
+"Hunk:":
+  zh-CN: "Hunk："
+"INDEXING":
+  zh-CN: "索引中"
+"If you'd like to opt out of analytics and AI features,":
+  zh-CN: "如果您想退出分析和 AI 功能，"
+"If your browser hasn't launched, ":
+  zh-CN: "如果您的浏览器未启动， "
+"Ignore this suggestion":
+  zh-CN: "忽略此建议"
+"Initialized / indexed folders":
+  zh-CN: "已初始化/已索引的文件夹"
+"Insert block":
+  zh-CN: "插入 Block"
+"Keys":
+  zh-CN: "密钥"
+"LSP SERVERS":
+  zh-CN: "LSP 服务器"
+"Language":
+  zh-CN: "语言"
+"Line number:Column":
+  zh-CN: "行号:列"
+"Linear Issue":
+  zh-CN: "Linear Issue"
+"Link (web or file)":
+  zh-CN: "链接（网页或文件）"
+"Link SSO":
+  zh-CN: "关联 SSO"
+"Loading...":
+  zh-CN: "加载中..."
+"Log out":
+  zh-CN: "退出登录"
+"Looks like you're out of credits. ":
+  zh-CN: "您的额度似乎已用完。 "
+"Manage":
+  zh-CN: "管理"
+"Manage API keys":
+  zh-CN: "管理 API Key"
+"Manage billing":
+  zh-CN: "管理账单"
+"Manage shared blocks":
+  zh-CN: "管理共享 Block"
+"Match terminal":
+  zh-CN: "匹配终端"
+"Maximize":
+  zh-CN: "最大化"
+"Migrates the local database":
+  zh-CN: "迁移本地数据库"
+"Missing source file":
+  zh-CN: "缺少源文件"
+"Monthly limit reached":
+  zh-CN: "已达到月度限额"
+"Monthly spend limit":
+  zh-CN: "月度消费限额"
+"Name":
+  zh-CN: "名称"
+"Navigate to a repo and initialize it for coding":
+  zh-CN: "导航到代码库并初始化以进行编码"
+"New agent":
+  zh-CN: "新建 Agent"
+"Nice work on finishing the welcome tips!":
+  zh-CN: "恭喜完成欢迎提示！"
+"No enterprise regexes have been configured by your organization.":
+  zh-CN: "您的组织尚未配置任何企业正则表达式。"
+"No folders have been initialized yet.":
+  zh-CN: "尚未初始化任何文件夹。"
+"No matches found.":
+  zh-CN: "未找到匹配项。"
+"No matching themes!":
+  zh-CN: "没有匹配的主题！"
+"No results found.":
+  zh-CN: "未找到结果。"
+"Not supported on Wayland. ":
+  zh-CN: "Wayland 上不支持。 "
+"Not visible to other users":
+  zh-CN: "对其他用户不可见"
+"Notifications":
+  zh-CN: "通知"
+"One-time purchase":
+  zh-CN: "一次性购买"
+"Open":
+  zh-CN: "打开"
+"Open Rich Input":
+  zh-CN: "打开富输入"
+"Open coding agent settings":
+  zh-CN: "打开编码 Agent 设置"
+"Open file":
+  zh-CN: "打开文件"
+"Open file explorer":
+  zh-CN: "打开文件资源管理器"
+"Open in GitHub":
+  zh-CN: "在 GitHub 中打开"
+"Open this conversation in the Warp desktop app":
+  zh-CN: "在 Warp 桌面应用中打开此对话"
+"OpenAI base URL (optional, press Enter to skip):":
+  zh-CN: "OpenAI base URL（可选，按 Enter 跳过）："
+"Out of credits":
+  zh-CN: "额度用完"
+"Outdated":
+  zh-CN: "已过时"
+"Paste sign-in code":
+  zh-CN: "粘贴登录代码"
+"Pick a theme for when your system is in dark mode.":
+  zh-CN: "选择系统处于深色模式时的主题。"
+"Pick a theme for when your system is in light mode.":
+  zh-CN: "选择系统处于浅色模式时的主题。"
+"Please include 'https://'":
+  zh-CN: "请包含 'https://'"
+"Preparing...":
+  zh-CN: "准备中..."
+"Privacy Settings":
+  zh-CN: "隐私设置"
+"Project setup":
+  zh-CN: "项目设置"
+"Raw":
+  zh-CN: "原始"
+"Re-generate AGENTS.md file":
+  zh-CN: "重新生成 AGENTS.md 文件"
+"Redact secrets (API keys, passwords, IP addresses, PII etc.)":
+  zh-CN: "脱敏敏感信息（API Key、密码、IP 地址、PII 等）"
+"Refresh notebook":
+  zh-CN: "刷新 Notebook"
+"Reject":
+  zh-CN: "拒绝"
+"Remove":
+  zh-CN: "移除"
+"Rendered":
+  zh-CN: "渲染"
+"Reset to default":
+  zh-CN: "重置为默认"
+"Restore":
+  zh-CN: "恢复"
+"Restore notebook from trash":
+  zh-CN: "从回收站恢复 Notebook"
+"Restore workflow from trash":
+  zh-CN: "从回收站恢复 Workflow"
+"Resume conversation":
+  zh-CN: "恢复对话"
+"Review changes":
+  zh-CN: "审查更改"
+"Reviewing code changes":
+  zh-CN: "正在审查代码更改"
+"Rewind to before this block":
+  zh-CN: "回退到此 Block 之前"
+"Rule":
+  zh-CN: "规则"
+"SSH":
+  zh-CN: "SSH"
+"Same line prompt":
+  zh-CN: "同一行提示"
+"Save":
+  zh-CN: "保存"
+"Save and auto-sync this plan to your Warp Drive":
+  zh-CN: "保存并自动同步此计划到您的 Warp Drive"
+"Search":
+  zh-CN: "搜索"
+"Search API keys":
+  zh-CN: "搜索 API Key"
+"Search MCP Servers":
+  zh-CN: "搜索 MCP 服务器"
+"Search diff sets or branches to compare…":
+  zh-CN: "搜索要比较的差异集或分支…"
+"Search in files":
+  zh-CN: "在文件中搜索"
+"Search repos":
+  zh-CN: "搜索代码库"
+"Search secrets or create a new one":
+  zh-CN: "搜索密钥或创建新密钥"
+"Search tabs...":
+  zh-CN: "搜索标签页..."
+"Send Feedback":
+  zh-CN: "发送反馈"
+"Send now":
+  zh-CN: "立即发送"
+"Send to Agent":
+  zh-CN: "发送到 Agent"
+"Separator":
+  zh-CN: "分隔符"
+"Session":
+  zh-CN: "会话"
+"Set up":
+  zh-CN: "设置"
+"Settings":
+  zh-CN: "设置"
+"Share":
+  zh-CN: "分享"
+"Share session QR code":
+  zh-CN: "分享会话二维码"
+"Show credit usage details":
+  zh-CN: "显示额度使用详情"
+"Show model picker in prompt":
+  zh-CN: "在提示中显示模型选择器"
+"Show prompt":
+  zh-CN: "显示提示"
+"Show version history":
+  zh-CN: "显示版本历史"
+"Sign in on your browser \nto continue":
+  zh-CN: "在浏览器中登录\n以继续"
+"Sign in to edit":
+  zh-CN: "登录以编辑"
+"Sign up":
+  zh-CN: "注册"
+"Skip Welcome Tips":
+  zh-CN: "跳过欢迎提示"
+"Skip for now":
+  zh-CN: "暂时跳过"
+"Slash commands":
+  zh-CN: "斜杠命令"
+"Sort by":
+  zh-CN: "排序方式"
+"Stash changes":
+  zh-CN: "储藏更改"
+"Stop sharing":
+  zh-CN: "停止分享"
+"Subshells":
+  zh-CN: "子 Shell"
+"System":
+  zh-CN: "系统"
+"Tab configs":
+  zh-CN: "标签页配置"
+"Tab key behavior":
+  zh-CN: "Tab 键行为"
+"Terminal":
+  zh-CN: "终端"
+"Terminal Input":
+  zh-CN: "终端输入"
+"Test":
+  zh-CN: "测试"
+"Text":
+  zh-CN: "文本"
+"Text Editing":
+  zh-CN: "文本编辑"
+"The Agentic Development Environment":
+  zh-CN: "Agentic 开发环境"
+"The person you want to say hello to":
+  zh-CN: "您想打招呼的人"
+"This conversation cannot be deleted":
+  zh-CN: "此对话无法删除"
+"Toggle Case Sensitivity":
+  zh-CN: "切换区分大小写"
+"Toggle Regex":
+  zh-CN: "切换正则表达式"
+"Toolbar layout":
+  zh-CN: "工具栏布局"
+"Transfer":
+  zh-CN: "转移"
+"Trash":
+  zh-CN: "回收站"
+"Type your answer and press Enter":
+  zh-CN: "输入您的答案并按 Enter"
+"Unable to create QR code for this session link.":
+  zh-CN: "无法为此会话链接创建二维码。"
+"Untitled":
+  zh-CN: "无标题"
+"Update":
+  zh-CN: "更新"
+"Upgrade plan":
+  zh-CN: "升级方案"
+"Using Warp Offline":
+  zh-CN: "离线使用 Warp"
+"View agent tasks you created":
+  zh-CN: "查看您创建的 Agent 任务"
+"View all available system fonts":
+  zh-CN: "查看所有可用系统字体"
+"View index status":
+  zh-CN: "查看索引状态"
+"View instructions to install the Warp plugin":
+  zh-CN: "查看安装 Warp 插件的说明"
+"View instructions to update the Warp plugin":
+  zh-CN: "查看更新 Warp 插件的说明"
+"View logs":
+  zh-CN: "查看日志"
+"View options":
+  zh-CN: "查看选项"
+"View pull request":
+  zh-CN: "查看 Pull Request"
+"View this run in the Oz web app":
+  zh-CN: "在 Oz Web 应用中查看此运行"
+"View your agent tasks plus all shared team tasks":
+  zh-CN: "查看您的 Agent 任务及所有共享的团队任务"
+"Viewing":
+  zh-CN: "查看中"
+"Voice input":
+  zh-CN: "语音输入"
+"Warp API Key":
+  zh-CN: "Warp API Key"
+"Warp is the intelligent terminal with AI and your dev team's knowledge built-in.":
+  zh-CN: "Warp 是内置 AI 和您开发团队知识的智能终端。"
+"Welcome to Warp":
+  zh-CN: "欢迎使用 Warp"
+"Who has access":
+  zh-CN: "谁有访问权限"
+"Working directory":
+  zh-CN: "工作目录"
+"You can sign up later, but some features, such as AI,":
+  zh-CN: "您可以稍后注册，但某些功能（如 AI）"
+"Your new team name":
+  zh-CN: "您的新团队名称"
+"alias name":
+  zh-CN: "别名"
+"are only available to logged-in users. ":
+  zh-CN: "仅对已登录用户可用。 "
+"command (supports regex)":
+  zh-CN: "命令（支持正则表达式）"
+"e.g. \"Google API Key\"":
+  zh-CN: "e.g. \"Google API Key\""
+"e.g., GLM-5":
+  zh-CN: "e.g., GLM-5"
+"e.g., GLM-5-FP8":
+  zh-CN: "e.g., GLM-5-FP8"
+"e.g., Zach's external models":
+  zh-CN: "e.g., Zach's external models"
+"e.g., sk-...":
+  zh-CN: "e.g., sk-..."

@@ -93,7 +93,7 @@ impl StartupShellView {
                 ..Default::default()
             };
             let mut editor = EditorView::single_line(options, ctx);
-            editor.set_placeholder_text("Executable path", ctx);
+            editor.set_placeholder_text(i18n::t!("Executable path").to_string(), ctx);
 
             if let Some(shell) = custom_shell_text.as_ref() {
                 editor.set_buffer_text(shell, ctx);

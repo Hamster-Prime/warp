@@ -1298,7 +1298,7 @@ impl CodeReviewView {
         let init_project_button = ctx.add_typed_action_view(|_ctx| {
             ActionButton::new("Initialize codebase", NakedTheme)
                 .with_size(ButtonSize::Small)
-                .with_tooltip("Enables codebase indexing and WARP.md")
+                .with_tooltip(i18n::t!("Enables codebase indexing and WARP.md").to_string())
                 .with_tooltip_alignment(TooltipAlignment::Center)
                 .on_click(|ctx| {
                     ctx.dispatch_typed_action(CodeReviewAction::InitProjectForCurrentDirectory)
@@ -1309,7 +1309,7 @@ impl CodeReviewView {
         let open_repository_button = ctx.add_typed_action_view(|_ctx| {
             ActionButton::new("Open repository", NakedTheme)
                 .with_size(ButtonSize::Small)
-                .with_tooltip("Navigate to a repo and initialize it for coding")
+                .with_tooltip(i18n::t!("Navigate to a repo and initialize it for coding").to_string())
                 .with_tooltip_alignment(TooltipAlignment::Center)
                 .on_click(|ctx| ctx.dispatch_typed_action(CodeReviewAction::OpenRepository))
         });
@@ -2646,7 +2646,7 @@ impl CodeReviewView {
                 ActionButton::new("", NakedTheme)
                     .with_icon(Icon::LinkExternal)
                     .with_size(ButtonSize::InlineActionHeader)
-                    .with_tooltip("Open file")
+                    .with_tooltip(i18n::t!("Open file").to_string())
                     .on_click(move |ctx| {
                         ctx.dispatch_typed_action(CodeReviewAction::OpenInNewTab {
                             path: open_tab_path.clone(),
@@ -2683,7 +2683,7 @@ impl CodeReviewView {
                 ActionButton::new("", NakedTheme)
                     .with_icon(Icon::Paperclip)
                     .with_size(ButtonSize::InlineActionHeader)
-                    .with_tooltip("Add file diff as context")
+                    .with_tooltip(i18n::t!("Add file diff as context").to_string())
                     .on_click(move |ctx| {
                         ctx.dispatch_typed_action(CodeReviewAction::AddDiffSetAsContext(
                             DiffSetScope::File(context_path.clone()),
@@ -2696,7 +2696,7 @@ impl CodeReviewView {
                 ActionButton::new("", NakedTheme)
                     .with_icon(Icon::Copy)
                     .with_size(ButtonSize::InlineActionHeader)
-                    .with_tooltip("Copy file path")
+                    .with_tooltip(i18n::t!("Copy file path").to_string())
                     .on_click(move |ctx| {
                         ctx.dispatch_typed_action(CodeReviewAction::CopyFilePath(copy_path.clone()))
                     })
@@ -5489,7 +5489,7 @@ impl CodeReviewView {
                     )
                     .check(self.discard_dialog_state.stash_changes_enabled)
                     .with_label(
-                        appearance.ui_builder().span("Stash changes").with_style(
+                        appearance.ui_builder().span(i18n::t!("Stash changes")).with_style(
                             UiComponentStyles {
                                 font_size: Some(appearance.ui_font_size()),
                                 font_color: Some(
@@ -7644,7 +7644,7 @@ impl BackingView for CodeReviewView {
         _ctx: &view::HeaderRenderContext<'_>,
         _app: &AppContext,
     ) -> view::HeaderContent {
-        view::HeaderContent::simple("Reviewing code changes")
+        view::HeaderContent::simple(i18n::t!("Reviewing code changes").to_string())
     }
 
     fn set_focus_handle(&mut self, focus_handle: PaneFocusHandle, ctx: &mut ViewContext<Self>) {

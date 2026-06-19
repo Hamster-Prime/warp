@@ -777,7 +777,7 @@ impl TeamsPageView {
             .to_string();
         let rename_team_editor = ctx.add_typed_action_view(|ctx| {
             let mut input = ClickableTextInput::new(team_name, ctx);
-            input.set_placeholder_text("Your new team name", ctx);
+            input.set_placeholder_text(i18n::t!("Your new team name").to_string(), ctx);
             input
         });
         ctx.subscribe_to_view(&rename_team_editor, |me, _, event, ctx| {
@@ -4341,7 +4341,7 @@ impl TeamsWidget {
                     font_size: Some(14.),
                     ..Default::default()
                 })
-                .with_centered_text_label("Contact Admin to request access".to_string())
+                .with_centered_text_label(i18n::t!("Contact Admin to request access").to_string())
                 .disabled()
                 .build()
                 .finish()

@@ -50,7 +50,6 @@ pub fn current_language(ctx: &AppContext) -> AppLanguage {
 /// (called from the Appearance settings page when the user changes
 /// the Language dropdown; see future `appearance_page.rs::set_language`).
 pub fn set_app_language(value: AppLanguage, ctx: &mut AppContext) -> anyhow::Result<()> {
-    LanguageSettings::handle(ctx).update(ctx, |settings, ctx| {
-        settings.language.set_value(value, ctx)
-    })
+    LanguageSettings::handle(ctx)
+        .update(ctx, |settings, ctx| settings.language.set_value(value, ctx))
 }

@@ -1502,7 +1502,7 @@ fn render_settings_button(
 
             if hover_state.is_hovered() && !is_popup_open {
                 let tooltip = ui_builder
-                    .tool_tip("View options".to_string())
+                    .tool_tip(i18n::t!("View options").to_string())
                     .build()
                     .finish();
                 let mut stack = Stack::new().with_child(button_container);
@@ -1587,7 +1587,7 @@ fn render_new_tab_button(
                     .finish()
             } else {
                 ui_builder
-                    .tool_tip("Tab configs".to_string())
+                    .tool_tip(i18n::t!("Tab configs").to_string())
                     .build()
                     .finish()
             };

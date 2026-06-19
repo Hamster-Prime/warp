@@ -4758,11 +4758,11 @@ fn test_workflow_view_does_not_panic() {
                 .with_description("This is a test workflow that prints Hello World!".into()),
             Workflow::new("Test Workflow with Args", "echo \"Hello {{person}}\"")
                 .with_arguments(vec![Argument::new("person", ArgumentType::Text)
-                    .with_description("The person you want to say hello to".to_string())]),
+                    .with_description(i18n::t!("The person you want to say hello to").to_string())]),
             Workflow::new("test", "echo \"Hello {{person}}\"")
                 .with_description("This is a test workflow that prints Hello {{person}}!".into())
                 .with_arguments(vec![Argument::new("person", ArgumentType::Text)
-                    .with_description("The person you want to say hello to".to_string())]),
+                    .with_description(i18n::t!("The person you want to say hello to").to_string())]),
         ];
 
         for workflow in workflows {

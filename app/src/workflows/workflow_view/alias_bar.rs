@@ -98,7 +98,7 @@ impl AliasBar {
                 },
                 ctx,
             );
-            view.set_placeholder_text("alias name", ctx);
+            view.set_placeholder_text(i18n::t!("alias name").to_string(), ctx);
 
             view
         });
@@ -431,7 +431,7 @@ impl View for AliasBar {
                     |_state, background| {
                         appearance
                             .ui_builder()
-                            .span("Default")
+                            .span(i18n::t!("Default"))
                             .with_style(UiComponentStyles {
                                 font_color: Some(
                                     appearance.theme().main_text_color(background).into_solid(),

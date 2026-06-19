@@ -328,7 +328,7 @@ impl AuthViewBody {
             Flex::row()
                 .with_child(
                     ui_builder
-                        .span("By continuing, you agree to Warp's ")
+                        .span(i18n::t!("By continuing, you agree to Warp's "))
                         .with_style(disclaimer_styles)
                         .build()
                         .finish(),
@@ -377,7 +377,7 @@ impl AuthViewBody {
             Flex::column()
                 .with_child(
                     ui_builder
-                        .paragraph("If you'd like to opt out of analytics and AI features,")
+                        .paragraph(i18n::t!("If you'd like to opt out of analytics and AI features,"))
                         .with_style(disclaimer_styles)
                         .build()
                         .finish(),
@@ -386,7 +386,7 @@ impl AuthViewBody {
                     Flex::row()
                         .with_child(
                             ui_builder
-                                .paragraph("you can adjust your ")
+                                .paragraph(i18n::t!("you can adjust your "))
                                 .with_style(disclaimer_styles)
                                 .build()
                                 .finish(),
@@ -486,7 +486,7 @@ impl AuthViewBody {
         Flex::row()
             .with_child(
                 ui_builder
-                    .span("Already have an account? ")
+                    .span(i18n::t!("Already have an account? "))
                     .build()
                     .finish(),
             )
@@ -514,7 +514,7 @@ impl AuthViewBody {
             Flex::row()
                 .with_child(
                     ui_builder
-                        .span("Don't want to sign in right now? ")
+                        .span(i18n::t!("Don't want to sign in right now? "))
                         .build()
                         .finish(),
                 )
@@ -545,13 +545,13 @@ impl AuthViewBody {
             Flex::column()
                 .with_child(
                     ui_builder
-                        .paragraph("Are you sure you want to skip login?")
+                        .paragraph(i18n::t!("Are you sure you want to skip login?"))
                         .build()
                         .finish(),
                 )
                 .with_child(
                     ui_builder
-                        .paragraph("You can sign up later, but some features, such as AI,")
+                        .paragraph(i18n::t!("You can sign up later, but some features, such as AI,"))
                         .build()
                         .finish(),
                 )
@@ -559,7 +559,7 @@ impl AuthViewBody {
                     Flex::row()
                         .with_child(
                             ui_builder
-                                .span("are only available to logged-in users. ")
+                                .span(i18n::t!("are only available to logged-in users. "))
                                 .build()
                                 .finish(),
                         )
@@ -755,7 +755,7 @@ impl AuthViewBody {
 
         let header = Container::new(
             ui_builder
-                .paragraph("Sign in on your browser \nto continue")
+                .paragraph(i18n::t!("Sign in on your browser \nto continue"))
                 .with_style(header_styles)
                 .build()
                 .finish(),
@@ -769,7 +769,7 @@ impl AuthViewBody {
                     Flex::row()
                         .with_child(
                             ui_builder
-                                .span("If your browser hasn't launched, ")
+                                .span(i18n::t!("If your browser hasn't launched, "))
                                 .build()
                                 .finish(),
                         )
@@ -795,7 +795,7 @@ impl AuthViewBody {
                 )
                 .with_child(
                     ui_builder
-                        .span("and open the page manually.")
+                        .span(i18n::t!("and open the page manually."))
                         .build()
                         .finish(),
                 )

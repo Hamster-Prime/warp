@@ -1936,7 +1936,7 @@ impl EnvironmentsPageWidget {
                     )
                     .with_tooltip(move || {
                         share_ui_builder
-                            .tool_tip("Share".to_string())
+                            .tool_tip(i18n::t!("Share").to_string())
                             .build()
                             .finish()
                     })
@@ -1972,7 +1972,7 @@ impl EnvironmentsPageWidget {
             if is_card_hovered {
                 edit_button = edit_button.with_tooltip(move || {
                     edit_ui_builder
-                        .tool_tip("Edit".to_string())
+                        .tool_tip(i18n::t!("Edit").to_string())
                         .build()
                         .finish()
                 });
@@ -2071,7 +2071,7 @@ impl BackingView for EnvironmentsPageView {
         _ctx: &HeaderRenderContext<'_>,
         _app: &AppContext,
     ) -> HeaderContent {
-        HeaderContent::simple("Environments")
+        HeaderContent::simple(i18n::t!("Environments").to_string())
     }
 
     fn set_focus_handle(&mut self, focus_handle: PaneFocusHandle, _ctx: &mut ViewContext<Self>) {

@@ -78,7 +78,7 @@ where
                 Container::new(
                     appearance
                         .ui_builder()
-                        .span(" | ".to_string())
+                        .span(i18n::t!(" | ").to_string())
                         .build()
                         .finish(),
                 )
@@ -201,7 +201,7 @@ where
             .with_child(
                 appearance
                     .ui_builder()
-                    .span("*Secrets are not sent to Warp's server.")
+                    .span(i18n::t!("*Secrets are not sent to Warp's server."))
                     .with_style(UiComponentStyles {
                         font_size: Some(12.),
                         margin: Some(Coords::default().top(4.)),

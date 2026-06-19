@@ -378,7 +378,7 @@ impl AIDocumentView {
             ActionButton::new("", NakedTheme)
                 .with_icon(icons::Icon::History)
                 .with_size(ButtonSize::Small)
-                .with_tooltip("Show version history")
+                .with_tooltip(i18n::t!("Show version history").to_string())
                 .on_click(|ctx| {
                     ctx.dispatch_typed_action(
                         PaneHeaderAction::<AIDocumentAction, AIDocumentAction>::CustomAction(
@@ -660,7 +660,7 @@ impl AIDocumentView {
                 let appearance = Appearance::as_ref(app);
                 let ui_builder = appearance.ui_builder().clone();
                 let tooltip = ui_builder
-                    .tool_tip("Save and auto-sync this plan to your Warp Drive".to_string())
+                    .tool_tip(i18n::t!("Save and auto-sync this plan to your Warp Drive").to_string())
                     .build()
                     .finish();
                 let sync_button_mouse_state = self.sync_button_mouse_state.clone();

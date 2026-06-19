@@ -171,7 +171,7 @@ impl PlatformPageView {
                 ..Default::default()
             };
             let mut editor = EditorView::single_line(options, ctx);
-            editor.set_placeholder_text("Search API keys", ctx);
+            editor.set_placeholder_text(i18n::t!("Search API keys").to_string(), ctx);
             editor
         });
         ctx.subscribe_to_view(&api_key_search_editor, |me, _, event, ctx| {
@@ -537,7 +537,7 @@ impl PlatformPageWidget {
                             ButtonVariant::Outlined,
                             self.create_api_key_button_mouse_state.clone(),
                         )
-                        .with_text_label("+ Create API Key".to_string())
+                        .with_text_label(i18n::t!("+ Create API Key").to_string())
                         .build()
                         .on_click(|ctx, _, _| {
                             ctx.dispatch_typed_action(PlatformPageAction::ShowCreateApiKeyModal);

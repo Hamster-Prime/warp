@@ -908,7 +908,7 @@ impl FileNotebookView {
         Align::new(
             appearance
                 .ui_builder()
-                .paragraph("Missing source file".to_string())
+                .paragraph(i18n::t!("Missing source file").to_string())
                 .with_style(self.state_style(appearance))
                 .build()
                 .finish(),

@@ -192,7 +192,10 @@ fn generate_channel_config_if_needed(target_family: &str, target_os: &str) {
             let stub = stub_channel_config(channel);
             let config_path = out_dir_path.join(format!("{channel}_config.json"));
             fs::write(&config_path, stub).unwrap_or_else(|err| {
-                panic!("Failed to write stub config to {}: {err}", config_path.display())
+                panic!(
+                    "Failed to write stub config to {}: {err}",
+                    config_path.display()
+                )
             });
         }
         return;

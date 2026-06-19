@@ -1789,7 +1789,7 @@ impl SharingDialog {
     fn render_access_header(&self, appearance: &Appearance) -> Box<dyn Element> {
         appearance
             .ui_builder()
-            .span("Who has access")
+            .span(i18n::t!("Who has access"))
             .with_style(UiComponentStyles {
                 font_color: Some(style::label_text(appearance)),
                 font_size: Some(style::PRIMARY_TEXT_SIZE),
@@ -2604,7 +2604,7 @@ impl SharingDialog {
         .finish();
         let title = appearance
             .ui_builder()
-            .span("Share session QR code")
+            .span(i18n::t!("Share session QR code"))
             .with_style(UiComponentStyles {
                 font_color: Some(foreground),
                 font_size: Some(style::HEADER_TEXT_SIZE),
@@ -2614,7 +2614,7 @@ impl SharingDialog {
             .finish();
         let esc_hint = appearance
             .ui_builder()
-            .span("ESC")
+            .span(i18n::t!("ESC"))
             .with_style(UiComponentStyles {
                 font_color: Some(style::acl_secondary_text_color(appearance)),
                 font_size: Some(12.),
@@ -2703,7 +2703,7 @@ impl SharingDialog {
             .unwrap_or_else(|| {
                 appearance
                     .ui_builder()
-                    .paragraph("Unable to create QR code for this session link.")
+                    .paragraph(i18n::t!("Unable to create QR code for this session link."))
                     .with_style(UiComponentStyles {
                         font_color: Some(style::acl_secondary_text_color(appearance)),
                         ..Default::default()

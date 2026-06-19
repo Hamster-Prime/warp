@@ -380,7 +380,7 @@ impl ImportModalBody {
 
         let file_picker_button = if is_loading {
             base_button
-                .with_centered_text_label("Preparing...".to_string())
+                .with_centered_text_label(i18n::t!("Preparing...").to_string())
                 .disabled()
         } else {
             base_button.with_text_and_icon_label(

@@ -70,6 +70,42 @@ fn rewrites_span_with_to_string() {
 }
 
 #[test]
+fn rewrites_span_bare_str_arg() {
+    let src = r#"    let s = b.span("No matches found.");
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(
+        out,
+        r#"    let s = b.span(i18n::t!("No matches found."));
+"#
+    );
+    assert_eq!(keys, vec!["No matches found.".to_string()]);
+}
+
+#[test]
+fn span_bare_does_not_match_to_string_form() {
+    // 裸 span 规则不应误改带 `.to_string()` 的调用（由另一条规则负责）。
+    let src = r#"    b.span("Keep".to_string());
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert!(out.contains(r#"i18n::t!("Keep").to_string()"#));
+    assert_eq!(keys, vec!["Keep".to_string()]);
+}
+
+#[test]
+fn rewrites_with_tooltip_bare_str_arg() {
+    let src = r#"    btn.with_tooltip("Attach file")
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(
+        out,
+        r#"    btn.with_tooltip(i18n::t!("Attach file").to_string())
+"#
+    );
+    assert_eq!(keys, vec!["Attach file".to_string()]);
+}
+
+#[test]
 fn rewrites_ui_builder_label_str_arg() {
     let src = r#"    ui_builder().label("Account")
 "#;
@@ -80,6 +116,165 @@ fn rewrites_ui_builder_label_str_arg() {
 "#
     );
     assert_eq!(keys, vec!["Account".to_string()]);
+}
+
+#[test]
+fn rewrites_tool_tip_with_to_string() {
+    let src = r#"    btn.tool_tip("Resume conversation".to_string())
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(
+        out,
+        r#"    btn.tool_tip(i18n::t!("Resume conversation").to_string())
+"#
+    );
+    assert_eq!(keys, vec!["Resume conversation".to_string()]);
+}
+
+#[test]
+fn rewrites_with_centered_text_label_with_to_string() {
+    let src = r#"    ui.with_centered_text_label("Save".to_string())
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(
+        out,
+        r#"    ui.with_centered_text_label(i18n::t!("Save").to_string())
+"#
+    );
+    assert_eq!(keys, vec!["Save".to_string()]);
+}
+
+#[test]
+fn rewrites_paragraph_with_to_string() {
+    let src = r#"    b.paragraph("Welcome to Warp".to_string())
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(
+        out,
+        r#"    b.paragraph(i18n::t!("Welcome to Warp").to_string())
+"#
+    );
+    assert_eq!(keys, vec!["Welcome to Warp".to_string()]);
+}
+
+#[test]
+fn rewrites_paragraph_bare_str_arg() {
+    let src = r#"    b.paragraph("Out of credits")
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(
+        out,
+        r#"    b.paragraph(i18n::t!("Out of credits"))
+"#
+    );
+    assert_eq!(keys, vec!["Out of credits".to_string()]);
+}
+
+#[test]
+fn paragraph_barg_does_not_match_to_string_form() {
+    // 裸 paragraph 规则不应误改带 `.to_string()` 的调用（由另一条规则负责）。
+    let src = r#"    b.paragraph("Keep".to_string())
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert!(out.contains(r#"i18n::t!("Keep").to_string()"#));
+    assert_eq!(keys, vec!["Keep".to_string()]);
+}
+
+#[test]
+fn rewrites_with_description_with_to_string() {
+    let src = r#"    cmd.with_description("Migrates the local database".to_string())
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(
+        out,
+        r#"    cmd.with_description(i18n::t!("Migrates the local database").to_string())
+"#
+    );
+    assert_eq!(keys, vec!["Migrates the local database".to_string()]);
+}
+
+#[test]
+fn rewrites_set_fallback_display_title_with_to_string() {
+    let src = r#"    node.set_fallback_display_title("Linear Issue".to_string())
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(
+        out,
+        r#"    node.set_fallback_display_title(i18n::t!("Linear Issue").to_string())
+"#
+    );
+    assert_eq!(keys, vec!["Linear Issue".to_string()]);
+}
+
+#[test]
+fn rewrites_with_badge_with_to_string() {
+    let src = r#"    item.with_badge("Outdated".to_string())
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(
+        out,
+        r#"    item.with_badge(i18n::t!("Outdated").to_string())
+"#
+    );
+    assert_eq!(keys, vec!["Outdated".to_string()]);
+}
+
+#[test]
+fn rewrites_set_placeholder_text_keeps_comma() {
+    let src = r#"    editor.set_placeholder_text("Search", ctx);
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(
+        out,
+        r#"    editor.set_placeholder_text(i18n::t!("Search").to_string(), ctx);
+"#
+    );
+    assert_eq!(keys, vec!["Search".to_string()]);
+}
+
+#[test]
+fn set_placeholder_text_idempotent_when_already_t() {
+    let src = r#"    editor.set_placeholder_text(i18n::t!("Search").to_string(), ctx);
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(out, src);
+    assert!(keys.is_empty());
+}
+
+#[test]
+fn rewrites_header_content_simple() {
+    let src = r#"    let h = HeaderContent::simple("Get started");
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(
+        out,
+        r#"    let h = HeaderContent::simple(i18n::t!("Get started").to_string());
+"#
+    );
+    assert_eq!(keys, vec!["Get started".to_string()]);
+}
+
+#[test]
+fn rewrites_text_new_bare() {
+    let src = r#"    let t = Text::new("AWS Region:");
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(
+        out,
+        r#"    let t = Text::new(i18n::t!("AWS Region:"));
+"#
+    );
+    assert_eq!(keys, vec!["AWS Region:".to_string()]);
+}
+
+#[test]
+fn text_new_does_not_match_suffixed_type() {
+    // `\b` 前置边界应避免匹配 `FooText::new("X")` 这类自定义类型。
+    let src = r#"    let t = FooText::new("Skip me");
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(out, src);
+    assert!(keys.is_empty());
 }
 
 #[test]

@@ -83,11 +83,94 @@ fn patterns() -> &'static [Pattern] {
                 r#".span(i18n::t!("$1").to_string())"#,
                 1,
             ),
+            // 5b. `.span("X")`（裸 `&str`/`Cow` 形参，UI builder 的 `span`）
+            //     → `.span(i18n::t!("X"))`（形参为 `impl Into<Cow<'static, str>>`）
+            //     末尾要求 `")`，故不会误匹配上方带 `.to_string()` 的形式。
+            mk(
+                &format!(r#"\.span\("{lit}"\)"#),
+                r#".span(i18n::t!("$1"))"#,
+                1,
+            ),
             // 6. `ui_builder().label("X")`（无 `.to_string`，形参为 `&str`）
             //    → `ui_builder().label(&i18n::t!("X"))`
             mk(
                 &format!(r#"ui_builder\(\)\.label\("{lit}"\)"#),
                 r#"ui_builder().label(&i18n::t!("$1"))"#,
+                1,
+            ),
+            // 7. `.tool_tip("X".to_string())` → `.tool_tip(i18n::t!("X").to_string())`
+            mk(
+                &format!(r#"\.tool_tip\("{lit}"\.to_string\(\)\)"#),
+                r#".tool_tip(i18n::t!("$1").to_string())"#,
+                1,
+            ),
+            // 8. `.with_centered_text_label("X".to_string())`
+            //    → `.with_centered_text_label(i18n::t!("X").to_string())`
+            mk(
+                &format!(r#"\.with_centered_text_label\("{lit}"\.to_string\(\)\)"#),
+                r#".with_centered_text_label(i18n::t!("$1").to_string())"#,
+                1,
+            ),
+            // 9. `.paragraph("X".to_string())` → `.paragraph(i18n::t!("X").to_string())`
+            mk(
+                &format!(r#"\.paragraph\("{lit}"\.to_string\(\)\)"#),
+                r#".paragraph(i18n::t!("$1").to_string())"#,
+                1,
+            ),
+            // 10. `.paragraph("X")`（裸 `&str`/`Cow` 形参）
+            //     → `.paragraph(i18n::t!("X"))`（形参为 `impl Into<Cow<'static, str>>`）
+            //     末尾要求 `")`，故不会误匹配上方带 `.to_string()` 的形式。
+            mk(
+                &format!(r#"\.paragraph\("{lit}"\)"#),
+                r#".paragraph(i18n::t!("$1"))"#,
+                1,
+            ),
+            // 11. `.with_description("X".to_string())` → `.with_description(i18n::t!("X").to_string())`
+            mk(
+                &format!(r#"\.with_description\("{lit}"\.to_string\(\)\)"#),
+                r#".with_description(i18n::t!("$1").to_string())"#,
+                1,
+            ),
+            // 12. `.set_fallback_display_title("X".to_string())`
+            //     → `.set_fallback_display_title(i18n::t!("X").to_string())`
+            mk(
+                &format!(r#"\.set_fallback_display_title\("{lit}"\.to_string\(\)\)"#),
+                r#".set_fallback_display_title(i18n::t!("$1").to_string())"#,
+                1,
+            ),
+            // 13. `.with_badge("X".to_string())` → `.with_badge(i18n::t!("X").to_string())`
+            mk(
+                &format!(r#"\.with_badge\("{lit}"\.to_string\(\)\)"#),
+                r#".with_badge(i18n::t!("$1").to_string())"#,
+                1,
+            ),
+            // 14. `set_placeholder_text("X"` → `set_placeholder_text(i18n::t!("X").to_string()`
+            //     （形参为 `impl Into<String>`，按既有约定补 `.to_string()`；
+            //      不吞逗号——由原文保留。仅匹配紧跟 `("` 的字面量，已 `t!` 化的调用天然不匹配。）
+            mk(
+                &format!(r#"set_placeholder_text\("{lit}""#),
+                r#"set_placeholder_text(i18n::t!("$1").to_string()"#,
+                1,
+            ),
+            // 15. `HeaderContent::simple("X")` → `HeaderContent::simple(i18n::t!("X").to_string())`
+            //     （形参为 `impl Into<String>`）
+            mk(
+                &format!(r#"HeaderContent::simple\("{lit}"\)"#),
+                r#"HeaderContent::simple(i18n::t!("$1").to_string())"#,
+                1,
+            ),
+            // 16. `Text::new("X")` → `Text::new(i18n::t!("X"))`
+            //     （形参为 `impl Into<Cow<'static, str>>`；前置 `\b` 防止匹配 `FooText::new`）
+            mk(
+                &format!(r#"\bText::new\("{lit}"\)"#),
+                r#"Text::new(i18n::t!("$1"))"#,
+                1,
+            ),
+            // 17. `.with_tooltip("X")` → `.with_tooltip(i18n::t!("X").to_string())`
+            //     （形参为 `impl Into<String>`；调用点一律是裸 `&str`，无 `.to_string()` 形式）
+            mk(
+                &format!(r#"\.with_tooltip\("{lit}"\)"#),
+                r#".with_tooltip(i18n::t!("$1").to_string())"#,
                 1,
             ),
         ]

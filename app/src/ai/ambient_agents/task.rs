@@ -465,16 +465,16 @@ impl AmbientAgentTaskState {
 impl std::fmt::Display for AmbientAgentTaskState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            AmbientAgentTaskState::Queued => write!(f, "Queued"),
-            AmbientAgentTaskState::Pending => write!(f, "Pending"),
-            AmbientAgentTaskState::Claimed => write!(f, "Claimed"),
-            AmbientAgentTaskState::InProgress => write!(f, "In progress"),
-            AmbientAgentTaskState::Succeeded => write!(f, "Done"),
-            AmbientAgentTaskState::Failed => write!(f, "Failed"),
-            AmbientAgentTaskState::Error => write!(f, "Error"),
-            AmbientAgentTaskState::Blocked => write!(f, "Blocked"),
-            AmbientAgentTaskState::Cancelled => write!(f, "Cancelled"),
-            AmbientAgentTaskState::Unknown => write!(f, "Failed"),
+            AmbientAgentTaskState::Queued => write!(f, "{}", i18n::t!("Queued")),
+            AmbientAgentTaskState::Pending => write!(f, "{}", i18n::t!("Pending")),
+            AmbientAgentTaskState::Claimed => write!(f, "{}", i18n::t!("Claimed")),
+            AmbientAgentTaskState::InProgress => write!(f, "{}", i18n::t!("In progress")),
+            AmbientAgentTaskState::Succeeded => write!(f, "{}", i18n::t!("Done")),
+            AmbientAgentTaskState::Failed => write!(f, "{}", i18n::t!("Failed")),
+            AmbientAgentTaskState::Error => write!(f, "{}", i18n::t!("Error")),
+            AmbientAgentTaskState::Blocked => write!(f, "{}", i18n::t!("Blocked")),
+            AmbientAgentTaskState::Cancelled => write!(f, "{}", i18n::t!("Cancelled")),
+            AmbientAgentTaskState::Unknown => write!(f, "{}", i18n::t!("Failed")),
         }
     }
 }

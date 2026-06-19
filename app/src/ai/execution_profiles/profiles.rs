@@ -91,9 +91,9 @@ pub enum DefaultProfileState {
 impl std::fmt::Display for DefaultProfileState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            DefaultProfileState::Unsynced { .. } => write!(f, "Unsynced"),
-            DefaultProfileState::Synced { .. } => write!(f, "Synced"),
-            DefaultProfileState::Cli { .. } => write!(f, "CLI"),
+            DefaultProfileState::Unsynced { .. } => write!(f, "{}", i18n::t!("Unsynced")),
+            DefaultProfileState::Synced { .. } => write!(f, "{}", i18n::t!("Synced")),
+            DefaultProfileState::Cli { .. } => write!(f, "{}", i18n::t!("CLI")),
         }
     }
 }

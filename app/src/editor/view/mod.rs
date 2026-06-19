@@ -173,8 +173,8 @@ impl AutosuggestionType {
 impl fmt::Display for AutosuggestionLocation {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match self {
-            AutosuggestionLocation::EndOfBuffer => write!(f, "EndOfBuffer"),
-            AutosuggestionLocation::Inline(_) => write!(f, "Inline"),
+            AutosuggestionLocation::EndOfBuffer => write!(f, "{}", i18n::t!("EndOfBuffer")),
+            AutosuggestionLocation::Inline(_) => write!(f, "{}", i18n::t!("Inline")),
         }
     }
 }

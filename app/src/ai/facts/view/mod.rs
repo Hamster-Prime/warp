@@ -46,8 +46,8 @@ pub enum AIFactPage {
 impl std::fmt::Display for AIFactPage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            AIFactPage::Rules => write!(f, "Rules"),
-            AIFactPage::RuleEditor { .. } => write!(f, "Rule Editor"),
+            AIFactPage::Rules => write!(f, "{}", i18n::t!("Rules")),
+            AIFactPage::RuleEditor { .. } => write!(f, "{}", i18n::t!("Rule Editor")),
         }
     }
 }

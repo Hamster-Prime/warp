@@ -143,8 +143,8 @@ pub enum MenuVariant {
 impl std::fmt::Debug for MenuVariant {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            Self::Fixed => write!(f, "Fixed"),
-            Self::Scrollable(_) => write!(f, "Scrollable"),
+            Self::Fixed => write!(f, "{}", i18n::t!("Fixed")),
+            Self::Scrollable(_) => write!(f, "{}", i18n::t!("Scrollable")),
         }
     }
 }

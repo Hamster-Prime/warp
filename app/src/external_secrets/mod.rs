@@ -230,7 +230,7 @@ impl fmt::Display for SecretManager {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match self {
             SecretManager::OnePassword => write!(f, "1Password"),
-            SecretManager::LastPass => write!(f, "LastPass"),
+            SecretManager::LastPass => write!(f, "{}", i18n::t!("LastPass")),
         }
     }
 }

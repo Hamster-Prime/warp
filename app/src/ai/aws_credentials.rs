@@ -34,7 +34,7 @@ pub enum LoadAwsCredentialsError {
 impl std::fmt::Display for LoadAwsCredentialsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::NotConfigured => write!(f, "No AWS credentials configured"),
+            Self::NotConfigured => write!(f, "{}", i18n::t!("No AWS credentials configured")),
             Self::CredentialsLoadFailed(msg) => {
                 write!(f, "Failed to load AWS credentials: {msg}")
             }

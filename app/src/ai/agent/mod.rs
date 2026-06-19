@@ -121,10 +121,10 @@ impl Display for CancellationReason {
             CancellationReason::Reverted => write!(f, "revert"),
             CancellationReason::Deleted => write!(f, "deleted"),
             CancellationReason::OptimisticCLISubagentCompletion => {
-                write!(f, "LRC command completed")
+                write!(f, "{}", i18n::t!("LRC command completed"))
             }
             CancellationReason::CLISubagentUserTakeover => {
-                write!(f, "CLI subagent user takeover")
+                write!(f, "{}", i18n::t!("CLI subagent user takeover"))
             }
         }
     }
@@ -190,7 +190,7 @@ pub enum FinishedAIAgentOutput {
 impl Display for FinishedAIAgentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            FinishedAIAgentOutput::Cancelled { .. } => write!(f, "Cancelled"),
+            FinishedAIAgentOutput::Cancelled { .. } => write!(f, "{}", i18n::t!("Cancelled")),
             FinishedAIAgentOutput::Error { error, .. } => write!(f, "Error: {error}"),
             FinishedAIAgentOutput::Success { output } => write!(f, "\n{output}"),
         }
@@ -279,7 +279,7 @@ pub enum AIAgentOutputStatus {
 impl Display for AIAgentOutputStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            AIAgentOutputStatus::Streaming { .. } => write!(f, "Streaming..."),
+            AIAgentOutputStatus::Streaming { .. } => write!(f, "{}", i18n::t!("Streaming...")),
             AIAgentOutputStatus::Finished { finished_output } => write!(f, "{finished_output}"),
         }
     }
@@ -809,13 +809,13 @@ impl Display for RenderableAIError {
                 if let Some(message) = user_display_message {
                     write!(f, "{message}")
                 } else {
-                    write!(f, "Quota limit reached.")
+                    write!(f, "{}", i18n::t!("Quota limit reached."))
                 }
             }
             Self::ServerOverloaded => {
                 write!(f, "Warp is currently overloaded. Please try again later.")
             }
-            Self::InternalWarpError => write!(f, "Internal Warp error."),
+            Self::InternalWarpError => write!(f, "{}", i18n::t!("Internal Warp error.")),
             Self::ContextWindowExceeded(message) => {
                 write!(f, "Context window exceeded: {message}")
             }
@@ -1844,9 +1844,9 @@ impl Display for AIAgentOutputMessage {
             | AIAgentOutputMessageType::Reasoning { text, .. }
             | AIAgentOutputMessageType::Summarization { text, .. } => {
                 if matches!(self.message, AIAgentOutputMessageType::Reasoning { .. }) {
-                    write!(f, "LLM Reasoning: ")?;
+                    write!(f, "{}", i18n::t!("LLM Reasoning: "))?;
                 } else if matches!(self.message, AIAgentOutputMessageType::Summarization { .. }) {
-                    write!(f, "Conversation Summary: ")?;
+                    write!(f, "{}", i18n::t!("Conversation Summary: "))?;
                 }
                 for (i, section) in text.sections.iter().enumerate() {
                     if i > 0 {
@@ -1902,7 +1902,7 @@ impl Display for AIAgentOutputMessage {
             AIAgentOutputMessageType::WebSearch(status) => match status {
                 WebSearchStatus::Searching { query } => match query {
                     Some(q) => write!(f, "Searching web for: {q}")?,
-                    None => write!(f, "Searching web")?,
+                    None => write!(f, "{}", i18n::t!("Searching web"))?,
                 },
                 WebSearchStatus::Success { query, pages } => {
                     write!(f, "Searched web for: {query} ({} results)", pages.len())?
@@ -1916,7 +1916,7 @@ impl Display for AIAgentOutputMessage {
                 WebFetchStatus::Success { pages } => {
                     write!(f, "Fetched {} web pages", pages.len())?
                 }
-                WebFetchStatus::Error => write!(f, "Web fetch failed")?,
+                WebFetchStatus::Error => write!(f, "{}", i18n::t!("Web fetch failed"))?,
             },
             AIAgentOutputMessageType::CommentsAddressed {
                 comments: comment_ids,
@@ -2775,15 +2775,15 @@ impl Display for AIAgentInput {
                 write!(f, "AutoCodeDiffQuery: {query}")
             }
             Self::ActionResult { result, .. } => write!(f, "ActionResult: {result}"),
-            Self::ResumeConversation { .. } => write!(f, "ResumeConversation"),
-            Self::InitProjectRules { .. } => write!(f, "InitProjectRules"),
-            Self::CreateEnvironment { .. } => write!(f, "CreateEnvironment"),
-            Self::TriggerPassiveSuggestion { .. } => write!(f, "TriggerSuggestPrompt"),
-            Self::CreateNewProject { .. } => write!(f, "CreateNewProject"),
-            Self::CloneRepository { .. } => write!(f, "CloneRepository"),
-            Self::CodeReview { .. } => write!(f, "CodeReview"),
-            Self::FetchReviewComments { .. } => write!(f, "FetchReviewComments"),
-            Self::SummarizeConversation { .. } => write!(f, "SummarizeConversation"),
+            Self::ResumeConversation { .. } => write!(f, "{}", i18n::t!("ResumeConversation")),
+            Self::InitProjectRules { .. } => write!(f, "{}", i18n::t!("InitProjectRules")),
+            Self::CreateEnvironment { .. } => write!(f, "{}", i18n::t!("CreateEnvironment")),
+            Self::TriggerPassiveSuggestion { .. } => write!(f, "{}", i18n::t!("TriggerSuggestPrompt")),
+            Self::CreateNewProject { .. } => write!(f, "{}", i18n::t!("CreateNewProject")),
+            Self::CloneRepository { .. } => write!(f, "{}", i18n::t!("CloneRepository")),
+            Self::CodeReview { .. } => write!(f, "{}", i18n::t!("CodeReview")),
+            Self::FetchReviewComments { .. } => write!(f, "{}", i18n::t!("FetchReviewComments")),
+            Self::SummarizeConversation { .. } => write!(f, "{}", i18n::t!("SummarizeConversation")),
             Self::InvokeSkill {
                 skill, user_query, ..
             } => {
@@ -2797,15 +2797,15 @@ impl Display for AIAgentInput {
                     write!(f, "InvokeSkill: {}", skill.name)
                 }
             }
-            Self::StartFromAmbientRunPrompt { .. } => write!(f, "StartFromAmbientRunPrompt"),
+            Self::StartFromAmbientRunPrompt { .. } => write!(f, "{}", i18n::t!("StartFromAmbientRunPrompt")),
             Self::MessagesReceivedFromAgents { messages } => {
                 write!(f, "MessagesReceivedFromAgents({} messages)", messages.len())
             }
             Self::EventsFromAgents { events } => {
                 write!(f, "EventsFromAgents({} events)", events.len())
             }
-            Self::PassiveSuggestionResult { .. } => write!(f, "PassiveSuggestionResult"),
-            Self::OrchestrationConfigUpdate { .. } => write!(f, "OrchestrationConfigUpdate"),
+            Self::PassiveSuggestionResult { .. } => write!(f, "{}", i18n::t!("PassiveSuggestionResult")),
+            Self::OrchestrationConfigUpdate { .. } => write!(f, "{}", i18n::t!("OrchestrationConfigUpdate")),
         }
     }
 }

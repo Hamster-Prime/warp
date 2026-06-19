@@ -587,3 +587,76 @@ fn preserves_trailing_newline_state() {
     assert!(!out.ends_with('\n'));
     assert!(out.contains(r#"i18n::t!("X")"#));
 }
+
+// ---------- Pattern 18: write!(f, "X") in Display impls ----------
+
+#[test]
+fn rewrites_write_bang_display_simple() {
+    let src = "    AgentRunDisplayStatus::TaskQueued => write!(f, \"Queued\"),\n";
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(
+        out,
+        "    AgentRunDisplayStatus::TaskQueued => write!(f, \"{}\", i18n::t!(\"Queued\")),\n"
+    );
+    assert_eq!(keys, vec!["Queued".to_string()]);
+}
+
+#[test]
+fn rewrites_write_bang_display_with_question_mark() {
+    // 末尾 `?;` 不属于匹配范围，应原样保留。
+    let src = "    write!(f, \"Done\")?;\n";
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(out, "    write!(f, \"{}\", i18n::t!(\"Done\"))?;\n");
+    assert_eq!(keys, vec!["Done".to_string()]);
+}
+
+#[test]
+fn rewrites_write_bang_multi_word_phrase() {
+    let src = "    ChangelogHeader::NewFeatures => write!(f, \"New features\"),\n";
+    let (out, keys) = apply_patterns(src);
+    assert!(out.contains(r#"write!(f, "{}", i18n::t!("New features"))"#));
+    assert_eq!(keys, vec!["New features".to_string()]);
+}
+
+#[test]
+fn write_bang_excludes_format_args() {
+    // 含 `{}` 的格式字符串不应被改写（避免破坏格式化语义）。
+    let src = "    write!(f, \"Hello {}\", name)\n";
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(out, src);
+    assert!(keys.is_empty());
+}
+
+#[test]
+fn write_bang_excludes_lowercase_start() {
+    let src = "    write!(f, \"queued\")\n";
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(out, src);
+    assert!(keys.is_empty());
+}
+
+#[test]
+fn write_bang_excludes_too_short() {
+    // 总长 < 3（首字母 + 仅 1 个字符）不应改写。
+    let src = "    write!(f, \"AI\")\n";
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(out, src);
+    assert!(keys.is_empty());
+}
+
+#[test]
+fn write_bang_does_not_match_writeln_or_rewrite() {
+    // `\b` 前置边界：不应匹配 `writeln!` 或自定义 `rewrite!`。
+    let src = "    writeln!(f, \"Queued\")\n    rewrite!(f, \"Queued\")\n";
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(out, src);
+    assert!(keys.is_empty());
+}
+
+#[test]
+fn write_bang_idempotent_when_already_translated() {
+    let src = "    write!(f, \"{}\", i18n::t!(\"Queued\"))\n";
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(out, src);
+    assert!(keys.is_empty());
+}

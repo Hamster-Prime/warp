@@ -411,10 +411,10 @@ pub enum ParseGeneratorOutputError {
 impl Debug for Event {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
         match self {
-            Event::CompletionsFinished(_) => write!(f, "CompletionsFinished"),
-            Event::MouseCursorDirty => write!(f, "MouseCursorDirty"),
-            Event::BlockCompleted(_) => write!(f, "BlockCompleted"),
-            Event::AfterBlockCompleted(_) => write!(f, "AfterBlockCompleted"),
+            Event::CompletionsFinished(_) => write!(f, "{}", i18n::t!("CompletionsFinished")),
+            Event::MouseCursorDirty => write!(f, "{}", i18n::t!("MouseCursorDirty")),
+            Event::BlockCompleted(_) => write!(f, "{}", i18n::t!("BlockCompleted")),
+            Event::AfterBlockCompleted(_) => write!(f, "{}", i18n::t!("AfterBlockCompleted")),
             Event::BlockMetadataReceived(event) => write!(
                 f,
                 "BlockStarted({:?}, Done bootstrapping: {:?})",
@@ -425,20 +425,20 @@ impl Debug for Event {
                 "BlockWorkingDirectoryUpdated({:?}, Done bootstrapping: {:?})",
                 event.block_metadata, event.is_done_bootstrapping
             ),
-            Event::AfterBlockStarted { .. } => write!(f, "BlockExecutionStarted"),
-            Event::BackgroundBlockStarted => write!(f, "BackgroundBlockStarted"),
-            Event::VisibleBootstrapBlock => write!(f, "VisibleBootstrapBlock"),
+            Event::AfterBlockStarted { .. } => write!(f, "{}", i18n::t!("BlockExecutionStarted")),
+            Event::BackgroundBlockStarted => write!(f, "{}", i18n::t!("BackgroundBlockStarted")),
+            Event::VisibleBootstrapBlock => write!(f, "{}", i18n::t!("VisibleBootstrapBlock")),
             Event::Title(title) => write!(f, "Title({title})"),
             Event::ClipboardStore(_, text) => write!(f, "ClipboardStore({text})"),
-            Event::ClipboardLoad(_, _) => write!(f, "ClipboardLoad()"),
-            Event::TerminalClear => write!(f, "TerminalClear"),
-            Event::Bell => write!(f, "Bell"),
+            Event::ClipboardLoad(_, _) => write!(f, "{}", i18n::t!("ClipboardLoad()")),
+            Event::TerminalClear => write!(f, "{}", i18n::t!("TerminalClear")),
+            Event::Bell => write!(f, "{}", i18n::t!("Bell")),
             Event::Exit { reason } => write!(f, "Exit({reason:?})"),
             Event::CursorBlinkingChange(blinking) => write!(f, "CursorBlinking({blinking})"),
-            Event::PreInteractiveSSHSession => write!(f, "Pre-Interactive SSH Session"),
+            Event::PreInteractiveSSHSession => write!(f, "{}", i18n::t!("Pre-Interactive SSH Session")),
             Event::SSH(remote_shell) => write!(f, "SSH(remote shell: {remote_shell}"),
-            Event::SSHControlMasterError => write!(f, "SSH ControlMaster error"),
-            Event::TerminalModeSwapped(_) => write!(f, "Terminal mode swapped"),
+            Event::SSHControlMasterError => write!(f, "{}", i18n::t!("SSH ControlMaster error")),
+            Event::TerminalModeSwapped(_) => write!(f, "{}", i18n::t!("Terminal mode swapped")),
             Event::DetectedEndOfSshLogin(check_type) => {
                 write!(f, "DetectedEndOfSshLogin: {check_type:?}")
             }
@@ -453,9 +453,9 @@ impl Debug for Event {
             Event::SourcedRcFileInSubshell(event) => {
                 write!(f, "SourcedRcFileInSubshell({event:?})")
             }
-            Event::PromptUpdated => write!(f, "PromptUpdated"),
-            Event::HonorPS1OutOfSync => write!(f, "HonorPS1OutOfSync"),
-            Event::Typeahead => write!(f, "Typeahead"),
+            Event::PromptUpdated => write!(f, "{}", i18n::t!("PromptUpdated")),
+            Event::HonorPS1OutOfSync => write!(f, "{}", i18n::t!("HonorPS1OutOfSync")),
+            Event::Typeahead => write!(f, "{}", i18n::t!("Typeahead")),
             Event::AgentTaggedInChanged {
                 block_id,
                 is_tagged_in,
@@ -479,13 +479,13 @@ impl Debug for Event {
                 )
             }
             Event::FinishUpdate(data) => write!(f, "FinishUpdate({})", data.update_id),
-            Event::TextSelectionChanged => write!(f, "TextSelectionChanged"),
+            Event::TextSelectionChanged => write!(f, "{}", i18n::t!("TextSelectionChanged")),
             Event::ShellSpawned(shell_type) => write!(f, "ShellSpawned({shell_type:?})"),
-            Event::SendCompletionsPrompt => write!(f, "SendCompletionsPrompt"),
+            Event::SendCompletionsPrompt => write!(f, "{}", i18n::t!("SendCompletionsPrompt")),
             Event::ImageReceived { image_id, .. } => {
                 write!(f, "ImageReceived(image_id: {image_id})")
             }
-            Event::BootstrapPrecmdDone => write!(f, "BootstrapPrecmdDone"),
+            Event::BootstrapPrecmdDone => write!(f, "{}", i18n::t!("BootstrapPrecmdDone")),
             Event::PluggableNotification { title, body } => {
                 write!(f, "PluggableNotification(title: {title:?}, body: {body})")
             }

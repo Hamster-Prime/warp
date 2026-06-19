@@ -4257,13 +4257,13 @@ pub enum ConversationStatus {
 impl std::fmt::Display for ConversationStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            ConversationStatus::InProgress => write!(f, "In progress"),
-            ConversationStatus::Success => write!(f, "Done"),
-            ConversationStatus::Error => write!(f, "Error"),
-            ConversationStatus::TransientError => write!(f, "Reconnecting"),
-            ConversationStatus::Cancelled => write!(f, "Cancelled"),
-            ConversationStatus::Blocked { .. } => write!(f, "Blocked"),
-            ConversationStatus::WaitingForEvents => write!(f, "Waiting"),
+            ConversationStatus::InProgress => write!(f, "{}", i18n::t!("In progress")),
+            ConversationStatus::Success => write!(f, "{}", i18n::t!("Done")),
+            ConversationStatus::Error => write!(f, "{}", i18n::t!("Error")),
+            ConversationStatus::TransientError => write!(f, "{}", i18n::t!("Reconnecting")),
+            ConversationStatus::Cancelled => write!(f, "{}", i18n::t!("Cancelled")),
+            ConversationStatus::Blocked { .. } => write!(f, "{}", i18n::t!("Blocked")),
+            ConversationStatus::WaitingForEvents => write!(f, "{}", i18n::t!("Waiting")),
         }
     }
 }

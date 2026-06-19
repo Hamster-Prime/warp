@@ -62,8 +62,8 @@ pub enum UnrenderableReason {
 impl fmt::Display for UnrenderableReason {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            Self::DiffTooLarge => write!(f, "Diff is too large to render"),
-            Self::FileTooLarge => write!(f, "File is too large to render"),
+            Self::DiffTooLarge => write!(f, "{}", i18n::t!("Diff is too large to render")),
+            Self::FileTooLarge => write!(f, "{}", i18n::t!("File is too large to render")),
         }
     }
 }

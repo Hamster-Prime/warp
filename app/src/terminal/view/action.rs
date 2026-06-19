@@ -626,7 +626,7 @@ impl fmt::Debug for TerminalAction {
                 write!(f, "OpenBlockFilterEditor({block_index:?})")
             }
             OnboardingFlow(version) => write!(f, "OnboardingFlow({version:?})"),
-            ImportSettings => write!(f, "ImportSettings"),
+            ImportSettings => write!(f, "{}", i18n::t!("ImportSettings")),
             StopSharingCurrentSession { source } => {
                 write!(f, "StopSharingCurrentSession({source:?})")
             }
@@ -639,53 +639,53 @@ impl fmt::Debug for TerminalAction {
             OpenShareSessionModal { source } => write!(f, "OpenShareSessionModal({source:?})"),
             CopySharedSessionLink { .. } => f.write_str("CopySharedSessionLink"),
             VimModeBanner(action) => write!(f, "VimModeBanner({action:?})"),
-            ToggleSnackbarInActivePane => write!(f, "ToggleSnackbarInActivePane"),
+            ToggleSnackbarInActivePane => write!(f, "{}", i18n::t!("ToggleSnackbarInActivePane")),
             MakeAllParticipantsReaders { reason } => {
                 write!(f, "MakeAllParticipantsReaders {{ reason: {reason:?} }}")
             }
-            OpenSharedSessionViewerRoleMenu => write!(f, "OpenSharedSessionViewerRoleMenu"),
+            OpenSharedSessionViewerRoleMenu => write!(f, "{}", i18n::t!("OpenSharedSessionViewerRoleMenu")),
             RequestSharedSessionRole(role) => write!(f, "RequestSharedSessionRole({role:?})"),
             MiddleClickOnGrid { position } => {
                 write!(f, "MiddleClickonGrid {{ position: {position:?} }}")
             }
-            MiddleClickOnInput => write!(f, "MiddleClickOnInput"),
-            OpenAIBlockAttachedBlocksMenu { .. } => write!(f, "OpenAIBlockAttachedBlocksMenu"),
-            OpenAIBlockOverflowMenu { .. } => write!(f, "OpenAIBlockOverflowMenu"),
-            RewindAIConversation { .. } => write!(f, "RewindAIConversation"),
-            ExecuteRewindAIConversation { .. } => write!(f, "ExecuteRewindAIConversation"),
-            ExecuteRewindFromInlineMenu { .. } => write!(f, "ExecuteRewindFromInlineMenu"),
-            SelectAIAttachedBlock(_) => write!(f, "SelectAIAttachedBlock"),
-            DragAndDropFiles(_) => write!(f, "DragAndDropFiles"),
-            SetInputModeAgent => write!(f, "SetInputModeAgent"),
-            SetInputModeTerminal => write!(f, "SetInputModeTerminal"),
+            MiddleClickOnInput => write!(f, "{}", i18n::t!("MiddleClickOnInput")),
+            OpenAIBlockAttachedBlocksMenu { .. } => write!(f, "{}", i18n::t!("OpenAIBlockAttachedBlocksMenu")),
+            OpenAIBlockOverflowMenu { .. } => write!(f, "{}", i18n::t!("OpenAIBlockOverflowMenu")),
+            RewindAIConversation { .. } => write!(f, "{}", i18n::t!("RewindAIConversation")),
+            ExecuteRewindAIConversation { .. } => write!(f, "{}", i18n::t!("ExecuteRewindAIConversation")),
+            ExecuteRewindFromInlineMenu { .. } => write!(f, "{}", i18n::t!("ExecuteRewindFromInlineMenu")),
+            SelectAIAttachedBlock(_) => write!(f, "{}", i18n::t!("SelectAIAttachedBlock")),
+            DragAndDropFiles(_) => write!(f, "{}", i18n::t!("DragAndDropFiles")),
+            SetInputModeAgent => write!(f, "{}", i18n::t!("SetInputModeAgent")),
+            SetInputModeTerminal => write!(f, "{}", i18n::t!("SetInputModeTerminal")),
             #[cfg(feature = "voice_input")]
             ToggleCLIAgentVoiceInput(source) => write!(f, "ToggleCLIAgentVoiceInput({source:?})"),
             HyperlinkClick(hyperlink_url) => write!(f, "HyperlinkClick({hyperlink_url:?})"),
-            AttemptLoginGatedFeature => write!(f, "AttemptLoginGatedFeature"),
-            StartFileDropTarget => write!(f, "StartFileDropTarget"),
-            StopFileDropTarget => write!(f, "StopFileDropTarget"),
+            AttemptLoginGatedFeature => write!(f, "{}", i18n::t!("AttemptLoginGatedFeature")),
+            StartFileDropTarget => write!(f, "{}", i18n::t!("StartFileDropTarget")),
+            StopFileDropTarget => write!(f, "{}", i18n::t!("StopFileDropTarget")),
             RunNativeShellCompletions { buffer_text, .. } => {
                 write!(f, "RunNativeShellCompletions({buffer_text:?})")
             }
-            OpenTeamSettingsPage => write!(f, "OpenTeamSettingsPage"),
+            OpenTeamSettingsPage => write!(f, "{}", i18n::t!("OpenTeamSettingsPage")),
             SetMarkedText {
                 marked_text,
                 selected_range,
             } => write!(f, "SetMarkedText {{{marked_text:?}, {selected_range:?}}}"),
-            ClearMarkedText => write!(f, "ClearMarkedText"),
+            ClearMarkedText => write!(f, "{}", i18n::t!("ClearMarkedText")),
             SelectAgenticSuggestion(index) => write!(f, "SelectAgenticSuggestion({index:?})"),
-            HideTelemetryBannerPermanently => write!(f, "HideTelemetryBannerPermanently"),
-            ShowInitializationBlock => write!(f, "ShowInitializationBlock"),
-            GenerateCodebaseIndex => write!(f, "GenerateIndexForRepo"),
-            LoadAgentModeConversation => write!(f, "LoadAgentModeConversation"),
-            ShowWarpifySettings => write!(f, "ShowWarpifySettings"),
+            HideTelemetryBannerPermanently => write!(f, "{}", i18n::t!("HideTelemetryBannerPermanently")),
+            ShowInitializationBlock => write!(f, "{}", i18n::t!("ShowInitializationBlock")),
+            GenerateCodebaseIndex => write!(f, "{}", i18n::t!("GenerateIndexForRepo")),
+            LoadAgentModeConversation => write!(f, "{}", i18n::t!("LoadAgentModeConversation")),
+            ShowWarpifySettings => write!(f, "{}", i18n::t!("ShowWarpifySettings")),
             DeleteAttachment { index } => write!(f, "DeleteAttachment({index:?})"),
             OpenAttachmentLightbox { index } => {
                 write!(f, "OpenAttachmentLightbox({index:?})")
             }
-            WriteCodebaseIndex => write!(f, "PersistCodebaseIndex"),
-            ToggleAutoexecuteMode => write!(f, "ToggleAutoexecuteMode"),
-            ToggleQueueNextPrompt => write!(f, "ToggleQueueNextPrompt"),
+            WriteCodebaseIndex => write!(f, "{}", i18n::t!("PersistCodebaseIndex")),
+            ToggleAutoexecuteMode => write!(f, "{}", i18n::t!("ToggleAutoexecuteMode")),
+            ToggleQueueNextPrompt => write!(f, "{}", i18n::t!("ToggleQueueNextPrompt")),
             CodebaseIndexSpeedbumpBanner(action) => {
                 write!(f, "CodebaseIndexSpeedbumpBanner({action:?})")
             }
@@ -695,66 +695,66 @@ impl fmt::Debug for TerminalAction {
             AnonymousUserAISignUpBanner(action) => {
                 write!(f, "AnonymousUserLoginBanner({action:?})")
             }
-            ResumeConversation => write!(f, "ResumeConversation"),
+            ResumeConversation => write!(f, "{}", i18n::t!("ResumeConversation")),
             ForkConversationFromLastKnownGoodState => {
-                write!(f, "ForkConversationFromLastKnownGoodState")
+                write!(f, "{}", i18n::t!("ForkConversationFromLastKnownGoodState"))
             }
-            ToggleAIDocumentPane => write!(f, "ToggleAIDocumentPane"),
-            ToggleTodoPopup => write!(f, "ToggleTodoPopup"),
-            CloseTodoPopup => write!(f, "CloseTodoPopup"),
-            ToggleCodeReviewPane { .. } => write!(f, "ToggleCodeReviewPane"),
-            InitProject => write!(f, "InitProject"),
-            IndexProjectSpeedbump => write!(f, "IndexProject"),
-            AddProjectAtCurrentDirectory => write!(f, "AddProjectAtCurrentDirectory"),
-            OpenProjectRulesPane => write!(f, "OpenProjectRulesPane"),
-            OpenViewMCPPane => write!(f, "OpenViewMCPPane"),
-            OpenAddMCPPane => write!(f, "OpenAddMCPPane"),
-            OpenAddRulePane => write!(f, "OpenAddRulePane"),
-            OpenRulesPane => write!(f, "OpenRulesPane"),
-            OpenEditSkillPane { .. } => write!(f, "OpenEditSkillPane"),
-            OpenAddPromptPane => write!(f, "OpenAddPromptPane"),
-            OpenBillingAndUsagePane => write!(f, "OpenBillingAndUsagePane"),
-            OpenConversationsPalette => write!(f, "OpenConversationsPalette"),
-            PickRepoToOpen => write!(f, "PickRepoToOpen"),
-            OpenFilesPalette { .. } => write!(f, "OpenFilesPalette"),
-            DismissCodeToolbeltTooltip => write!(f, "DismissCodeToolbeltTooltip"),
-            StartLspServer => write!(f, "StartLspServer"),
-            SetupCloudEnvironment(_) => write!(f, "SetupCloudEnvironment"),
-            SetupCloudEnvironmentAndStart(_) => write!(f, "SetupCloudEnvironmentAndStart"),
-            TriggerEnvironmentSetupSelection(_) => write!(f, "TriggerEnvironmentSetupSelection"),
-            OpenEnvironmentManagementPane => write!(f, "OpenEnvironmentManagementPane"),
-            SummarizeConversation => write!(f, "SummarizeConversation"),
+            ToggleAIDocumentPane => write!(f, "{}", i18n::t!("ToggleAIDocumentPane")),
+            ToggleTodoPopup => write!(f, "{}", i18n::t!("ToggleTodoPopup")),
+            CloseTodoPopup => write!(f, "{}", i18n::t!("CloseTodoPopup")),
+            ToggleCodeReviewPane { .. } => write!(f, "{}", i18n::t!("ToggleCodeReviewPane")),
+            InitProject => write!(f, "{}", i18n::t!("InitProject")),
+            IndexProjectSpeedbump => write!(f, "{}", i18n::t!("IndexProject")),
+            AddProjectAtCurrentDirectory => write!(f, "{}", i18n::t!("AddProjectAtCurrentDirectory")),
+            OpenProjectRulesPane => write!(f, "{}", i18n::t!("OpenProjectRulesPane")),
+            OpenViewMCPPane => write!(f, "{}", i18n::t!("OpenViewMCPPane")),
+            OpenAddMCPPane => write!(f, "{}", i18n::t!("OpenAddMCPPane")),
+            OpenAddRulePane => write!(f, "{}", i18n::t!("OpenAddRulePane")),
+            OpenRulesPane => write!(f, "{}", i18n::t!("OpenRulesPane")),
+            OpenEditSkillPane { .. } => write!(f, "{}", i18n::t!("OpenEditSkillPane")),
+            OpenAddPromptPane => write!(f, "{}", i18n::t!("OpenAddPromptPane")),
+            OpenBillingAndUsagePane => write!(f, "{}", i18n::t!("OpenBillingAndUsagePane")),
+            OpenConversationsPalette => write!(f, "{}", i18n::t!("OpenConversationsPalette")),
+            PickRepoToOpen => write!(f, "{}", i18n::t!("PickRepoToOpen")),
+            OpenFilesPalette { .. } => write!(f, "{}", i18n::t!("OpenFilesPalette")),
+            DismissCodeToolbeltTooltip => write!(f, "{}", i18n::t!("DismissCodeToolbeltTooltip")),
+            StartLspServer => write!(f, "{}", i18n::t!("StartLspServer")),
+            SetupCloudEnvironment(_) => write!(f, "{}", i18n::t!("SetupCloudEnvironment")),
+            SetupCloudEnvironmentAndStart(_) => write!(f, "{}", i18n::t!("SetupCloudEnvironmentAndStart")),
+            TriggerEnvironmentSetupSelection(_) => write!(f, "{}", i18n::t!("TriggerEnvironmentSetupSelection")),
+            OpenEnvironmentManagementPane => write!(f, "{}", i18n::t!("OpenEnvironmentManagementPane")),
+            SummarizeConversation => write!(f, "{}", i18n::t!("SummarizeConversation")),
             ToggleLongRunningCommandControl => {
-                write!(f, "TakeOverLongRunningCommandControlForUser")
+                write!(f, "{}", i18n::t!("TakeOverLongRunningCommandControlForUser"))
             }
-            ToggleHideCliResponses => write!(f, "ToggleHideCliResponses"),
-            ExitAgentView => write!(f, "ExitAgentView"),
-            EnterCloudAgentView => write!(f, "EnterCloudAgentView"),
+            ToggleHideCliResponses => write!(f, "{}", i18n::t!("ToggleHideCliResponses")),
+            ExitAgentView => write!(f, "{}", i18n::t!("ExitAgentView")),
+            EnterCloudAgentView => write!(f, "{}", i18n::t!("EnterCloudAgentView")),
             StartNewAgentConversation { origin } => {
                 write!(f, "StartNewAgentConversation {{ origin: {origin:?} }}")
             }
-            ToggleConversationDetailsPanel => write!(f, "ToggleConversationDetailsPanel"),
-            CancelAmbientAgentTask => write!(f, "CancelAmbientAgentTask"),
-            OpenInlineHistoryMenu => write!(f, "OpenInlineHistoryMenu"),
-            OpenModelSelector => write!(f, "OpenModelSelector"),
-            ResolvePromptSuggestion(..) => write!(f, "ResolvePromptSuggestion"),
+            ToggleConversationDetailsPanel => write!(f, "{}", i18n::t!("ToggleConversationDetailsPanel")),
+            CancelAmbientAgentTask => write!(f, "{}", i18n::t!("CancelAmbientAgentTask")),
+            OpenInlineHistoryMenu => write!(f, "{}", i18n::t!("OpenInlineHistoryMenu")),
+            OpenModelSelector => write!(f, "{}", i18n::t!("OpenModelSelector")),
+            ResolvePromptSuggestion(..) => write!(f, "{}", i18n::t!("ResolvePromptSuggestion")),
             AwsBedrockLoginBanner(action) => write!(f, "AwsBedrockLoginBanner({action:?})"),
             AwsCliNotInstalledBanner(action) => write!(f, "AwsCliNotInstalledBanner({action:?})"),
-            ToggleUsageFooter => write!(f, "ToggleUsageFooter"),
-            RevealChildAgent { .. } => write!(f, "RevealChildAgent"),
-            SwitchAgentViewToConversation { .. } => write!(f, "SwitchAgentViewToConversation"),
-            OpenChildAgentInNewPane { .. } => write!(f, "OpenChildAgentInNewPane"),
-            OpenChildAgentInNewTab { .. } => write!(f, "OpenChildAgentInNewTab"),
-            StopAgentConversation { .. } => write!(f, "StopAgentConversation"),
-            KillAgentConversation { .. } => write!(f, "KillAgentConversation"),
+            ToggleUsageFooter => write!(f, "{}", i18n::t!("ToggleUsageFooter")),
+            RevealChildAgent { .. } => write!(f, "{}", i18n::t!("RevealChildAgent")),
+            SwitchAgentViewToConversation { .. } => write!(f, "{}", i18n::t!("SwitchAgentViewToConversation")),
+            OpenChildAgentInNewPane { .. } => write!(f, "{}", i18n::t!("OpenChildAgentInNewPane")),
+            OpenChildAgentInNewTab { .. } => write!(f, "{}", i18n::t!("OpenChildAgentInNewTab")),
+            StopAgentConversation { .. } => write!(f, "{}", i18n::t!("StopAgentConversation")),
+            KillAgentConversation { .. } => write!(f, "{}", i18n::t!("KillAgentConversation")),
             CyclePreviousOrchestrationChildAgent => {
-                write!(f, "CyclePreviousOrchestrationChildAgent")
+                write!(f, "{}", i18n::t!("CyclePreviousOrchestrationChildAgent"))
             }
-            CycleNextOrchestrationChildAgent => write!(f, "CycleNextOrchestrationChildAgent"),
-            ToggleSessionRecording => write!(f, "ToggleSessionRecording"),
-            ToggleCLIAgentRichInput => write!(f, "ToggleCLIAgentRichInput"),
+            CycleNextOrchestrationChildAgent => write!(f, "{}", i18n::t!("CycleNextOrchestrationChildAgent")),
+            ToggleSessionRecording => write!(f, "{}", i18n::t!("ToggleSessionRecording")),
+            ToggleCLIAgentRichInput => write!(f, "{}", i18n::t!("ToggleCLIAgentRichInput")),
             Osc52AllowBlockedClipboardOperation => {
-                write!(f, "Osc52AllowBlockedClipboardOperation")
+                write!(f, "{}", i18n::t!("Osc52AllowBlockedClipboardOperation"))
             }
         }
     }

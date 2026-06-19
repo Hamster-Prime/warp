@@ -492,24 +492,24 @@ impl AgentRunDisplayStatus {
 impl std::fmt::Display for AgentRunDisplayStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            AgentRunDisplayStatus::TaskQueued => write!(f, "Queued"),
-            AgentRunDisplayStatus::TaskPending => write!(f, "Pending"),
-            AgentRunDisplayStatus::TaskClaimed => write!(f, "Claimed"),
+            AgentRunDisplayStatus::TaskQueued => write!(f, "{}", i18n::t!("Queued")),
+            AgentRunDisplayStatus::TaskPending => write!(f, "{}", i18n::t!("Pending")),
+            AgentRunDisplayStatus::TaskClaimed => write!(f, "{}", i18n::t!("Claimed")),
             AgentRunDisplayStatus::TaskInProgress
-            | AgentRunDisplayStatus::ConversationInProgress => write!(f, "In progress"),
+            | AgentRunDisplayStatus::ConversationInProgress => write!(f, "{}", i18n::t!("In progress")),
             AgentRunDisplayStatus::TaskSucceeded | AgentRunDisplayStatus::ConversationSucceeded => {
-                write!(f, "Done")
+                write!(f, "{}", i18n::t!("Done"))
             }
-            AgentRunDisplayStatus::TaskFailed => write!(f, "Failed"),
+            AgentRunDisplayStatus::TaskFailed => write!(f, "{}", i18n::t!("Failed")),
             AgentRunDisplayStatus::TaskError | AgentRunDisplayStatus::ConversationError => {
-                write!(f, "Error")
+                write!(f, "{}", i18n::t!("Error"))
             }
             AgentRunDisplayStatus::TaskBlocked { .. }
-            | AgentRunDisplayStatus::ConversationBlocked { .. } => write!(f, "Blocked"),
+            | AgentRunDisplayStatus::ConversationBlocked { .. } => write!(f, "{}", i18n::t!("Blocked")),
             AgentRunDisplayStatus::TaskCancelled | AgentRunDisplayStatus::ConversationCancelled => {
-                write!(f, "Cancelled")
+                write!(f, "{}", i18n::t!("Cancelled"))
             }
-            AgentRunDisplayStatus::TaskUnknown => write!(f, "Failed"),
+            AgentRunDisplayStatus::TaskUnknown => write!(f, "{}", i18n::t!("Failed")),
         }
     }
 }

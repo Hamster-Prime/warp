@@ -1,3 +1,5 @@
+_version: 2
+
 '*Secrets are not sent to Warp''s server.':
   zh-CN: '*密钥不会发送到 Warp 的服务器。'
 + Add model:
@@ -766,7 +768,6 @@ Your login has expired.:
   zh-CN: 您的登录已过期。
 Your new team name:
   zh-CN: 您的新团队名称
-_version: 2
 alias name:
   zh-CN: 别名
 'are only available to logged-in users. ':

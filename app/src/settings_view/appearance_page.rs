@@ -1351,7 +1351,7 @@ impl AppearanceSettingsPageView {
     fn build_page(ctx: &mut ViewContext<Self>) -> PageType<Self> {
         let mut categories = vec![
             Category::new(
-                "Themes",
+                i18n::t!("Themes").to_string(),
                 vec![
                     Box::new(CreateCustomThemeWidget::default()),
                     Box::new(ThemeSelectWidget::default()),
@@ -1365,7 +1365,7 @@ impl AppearanceSettingsPageView {
 
         if AppIconSettings::as_ref(ctx).is_supported_on_current_platform() {
             categories.push(Category::new(
-                "Icon",
+                i18n::t!("Icon").to_string(),
                 vec![Box::new(CustomAppIconWidget::default())],
             ));
         }
@@ -1409,7 +1409,7 @@ impl AppearanceSettingsPageView {
         }
 
         if !window_settings_widgets.is_empty() {
-            categories.push(Category::new("Window", window_settings_widgets));
+            categories.push(Category::new(i18n::t!("Window").to_string(), window_settings_widgets));
         }
 
         // Create the Input category with all widgets
@@ -1421,10 +1421,10 @@ impl AppearanceSettingsPageView {
             Box::new(InputModeWidget::default()),
         ];
 
-        categories.push(Category::new("Input", category_widgets));
+        categories.push(Category::new(i18n::t!("Input").to_string(), category_widgets));
 
         categories.push(Category::new(
-            "Panes",
+            i18n::t!("Panes").to_string(),
             vec![
                 Box::new(DimInactivePanesWidget::default()),
                 Box::new(FocusFollowsMouseWidget::default()),
@@ -1438,7 +1438,7 @@ impl AppearanceSettingsPageView {
         if FeatureFlag::MinimalistUI.is_enabled() {
             block_settings_widgets.push(Box::new(ShowBlockDividersWidget::default()));
         }
-        categories.push(Category::new("Blocks", block_settings_widgets));
+        categories.push(Category::new(i18n::t!("Blocks").to_string(), block_settings_widgets));
 
         let font_settings = FontSettings::as_ref(ctx);
         let mut text_settings_widgets: Vec<Box<dyn SettingsWidget<View = Self>>> = vec![
@@ -1467,10 +1467,10 @@ impl AppearanceSettingsPageView {
             text_settings_widgets.push(Box::new(LigaturesWidget::default()));
         }
 
-        categories.push(Category::new("Text", text_settings_widgets));
+        categories.push(Category::new(i18n::t!("Text").to_string(), text_settings_widgets));
 
         categories.push(Category::new(
-            "Cursor",
+            i18n::t!("Cursor").to_string(),
             vec![
                 Box::new(CursorTypeWidget::default()),
                 Box::new(BlinkingCursorWidget::default()),
@@ -1519,10 +1519,10 @@ impl AppearanceSettingsPageView {
             tab_settings_widgets.push(Box::new(DirectoryTabColorsWidget { add_picker }));
         }
 
-        categories.push(Category::new("Tabs", tab_settings_widgets));
+        categories.push(Category::new(i18n::t!("Tabs").to_string(), tab_settings_widgets));
 
         categories.push(Category::new(
-            "Full-screen Apps",
+            i18n::t!("Full-screen Apps").to_string(),
             vec![Box::new(AltScreenPaddingWidget::default())],
         ));
 
@@ -3916,7 +3916,7 @@ impl SettingsWidget for AIFontWidget {
         let mut ai_font_row = Flex::row().with_cross_axis_alignment(CrossAxisAlignment::Center);
         let mut ai_font = Flex::column();
         ai_font.add_child(render_body_item_label::<AppearancePageAction>(
-            "Agent font".to_string(),
+            i18n::t!("Agent font").to_string(),
             None,
             None,
             LocalOnlyIconState::for_setting(
@@ -3980,7 +3980,7 @@ impl TerminalFontWidget {
         line_height.add_child(
             appearance
                 .ui_builder()
-                .label("Line height".to_string())
+                .label(i18n::t!("Line height").to_string())
                 .with_style(UiComponentStyles {
                     margin: Some(Coords {
                         left: 12.,
@@ -4078,7 +4078,7 @@ impl SettingsWidget for TerminalFontWidget {
         // Terminal Font
         let mut terminal_font = Flex::column();
         terminal_font.add_child(render_body_item_label::<AppearancePageAction>(
-            "Terminal font".to_string(),
+            i18n::t!("Terminal font").to_string(),
             None,
             None,
             LocalOnlyIconState::for_setting(
@@ -4142,7 +4142,7 @@ impl SettingsWidget for TerminalFontWidget {
         font_weight.add_child(
             appearance
                 .ui_builder()
-                .label("Font weight".to_string())
+                .label(i18n::t!("Font weight").to_string())
                 .with_style(UiComponentStyles {
                     font_size: Some(CONTENT_FONT_SIZE),
                     ..Default::default()
@@ -4165,7 +4165,7 @@ impl SettingsWidget for TerminalFontWidget {
         font_size.add_child(
             appearance
                 .ui_builder()
-                .label("Font size (px)".to_string())
+                .label(i18n::t!("Font size (px)").to_string())
                 .with_style(UiComponentStyles {
                     margin: Some(Coords {
                         left: 2.,
@@ -4249,7 +4249,7 @@ impl SettingsWidget for NotebookFontSizeWidget {
                         Align::new(
                             appearance
                                 .ui_builder()
-                                .span("Notebook font size".to_string())
+                                .span(i18n::t!("Notebook font size").to_string())
                                 .build()
                                 .with_margin_right(16.)
                                 .finish(),

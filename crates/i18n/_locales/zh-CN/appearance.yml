@@ -1,0 +1,148 @@
+# Appearance 页分类和标签
+_version: 2
+
+# Category 名
+"Themes":
+  zh-CN: 主题
+"Icon":
+  zh-CN: 图标
+"Window":
+  zh-CN: 窗口
+"Input":
+  zh-CN: 输入
+"Panes":
+  zh-CN: 窗格
+"Blocks":
+  zh-CN: 块
+"Text":
+  zh-CN: 文本
+"Cursor":
+  zh-CN: 光标
+"Tabs":
+  zh-CN: 标签页
+"Full-screen Apps":
+  zh-CN: 全屏应用
+
+# Appearance 标签
+"Terminal font":
+  zh-CN: 终端字体
+"Font weight":
+  zh-CN: 字体粗细
+"Font size (px)":
+  zh-CN: 字号 (px)
+"Line height":
+  zh-CN: 行高
+"Agent font":
+  zh-CN: Agent 字体
+"Notebook font size":
+  zh-CN: 笔记本字号
+"Match terminal":
+  zh-CN: 匹配终端
+"View all available system fonts":
+  zh-CN: 查看所有可用系统字体
+"Sync with OS":
+  zh-CN: 跟随系统
+"Create your own custom theme":
+  zh-CN: 创建自定义主题
+"Light":
+  zh-CN: 浅色
+"Dark":
+  zh-CN: 深色
+"Current theme":
+  zh-CN: 当前主题
+"Show Warp in Dock":
+  zh-CN: 在 Dock 中显示 Warp
+"Open new windows with custom size":
+  zh-CN: 以自定义尺寸打开新窗口
+"Columns":
+  zh-CN: 列数
+"Rows":
+  zh-CN: 行数
+"Use Window Blur (Acrylic texture)":
+  zh-CN: 使用窗口模糊（亚克力纹理）
+"Input type":
+  zh-CN: 输入类型
+"Dim inactive panes":
+  zh-CN: 暗化非活动窗格
+"Focus follows mouse":
+  zh-CN: 焦点跟随鼠标
+"Compact mode":
+  zh-CN: 紧凑模式
+"Show Jump to Bottom of Block button":
+  zh-CN: 显示"跳到块底部"按钮
+"Show block dividers":
+  zh-CN: 显示块分隔线
+"Cursor type":
+  zh-CN: 光标类型
+"Blinking cursor":
+  zh-CN: 闪烁光标
+"Show tab indicators":
+  zh-CN: 显示标签页指示器
+"Preserve active tab color for new tabs":
+  zh-CN: 为新标签页保留活动标签页颜色
+"Use vertical tab layout":
+  zh-CN: 使用垂直标签页布局
+
+# Features 页分类
+"General":
+  zh-CN: 通用
+"Session":
+  zh-CN: 会话
+"Keys":
+  zh-CN: 按键
+"Text Editing":
+  zh-CN: 文本编辑
+"Terminal Input":
+  zh-CN: 终端输入
+"Terminal":
+  zh-CN: 终端
+"Notifications":
+  zh-CN: 通知
+"System":
+  zh-CN: 系统
+
+# Features 页高频标签
+"Restore windows, tabs, and panes on startup":
+  zh-CN: 启动时恢复窗口、标签页和窗格
+"Show sticky command header":
+  zh-CN: 显示固定命令标题栏
+"Show warning before quitting/logging out":
+  zh-CN: 退出/注销前显示警告
+"Quit when all windows are closed":
+  zh-CN: 关闭所有窗口时退出
+"Copy on select":
+  zh-CN: 选中时复制
+"Middle-click to paste":
+  zh-CN: 中键点击粘贴
+"Edit code and commands with Vim keybindings":
+  zh-CN: 使用 Vim 快捷键编辑代码和命令
+"Double-click smart selection":
+  zh-CN: 双击智能选择
+
+# AI 页标签
+"Usage":
+  zh-CN: 用量
+"Experimental":
+  zh-CN: 实验性
+"Other":
+  zh-CN: 其他
+"Voice":
+  zh-CN: 语音
+
+# 代码页
+"Codebase Indexing":
+  zh-CN: 代码库索引
+"Code Editor and Review":
+  zh-CN: 代码编辑器和审查
+
+# 隐私页
+"Send crash reports":
+  zh-CN: 发送崩溃报告
+"Store AI conversations in the cloud":
+  zh-CN: 在云端存储 AI 对话
+
+# Warpify
+"SSH":
+  zh-CN: SSH
+"Subshells":
+  zh-CN: 子 shell

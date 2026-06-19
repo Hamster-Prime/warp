@@ -283,24 +283,33 @@ use crate::util::bindings::custom_tag_to_keystroke;
 
 impl Display for SettingsSection {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        match self {
-            SettingsSection::BillingAndUsage => write!(f, "Billing and usage"),
-            SettingsSection::Keybindings => write!(f, "Keyboard shortcuts"),
-            SettingsSection::SharedBlocks => write!(f, "Shared blocks"),
-            SettingsSection::MCPServers => write!(f, "MCP Servers"),
-            SettingsSection::Scripting => write!(f, "Scripting"),
-            SettingsSection::WarpDrive => write!(f, "Warp Drive"),
-            SettingsSection::WarpAgent => write!(f, "Warp Agent"),
-            SettingsSection::AgentProfiles => write!(f, "Profiles"),
-            SettingsSection::AgentMCPServers => write!(f, "MCP servers"),
-            SettingsSection::Knowledge => write!(f, "Knowledge"),
-            SettingsSection::ThirdPartyCLIAgents => write!(f, "Third party CLI agents"),
-            SettingsSection::CodeIndexing => write!(f, "Indexing and projects"),
-            SettingsSection::EditorAndCodeReview => write!(f, "Editor and Code Review"),
-            SettingsSection::CloudEnvironments => write!(f, "Environments"),
-            SettingsSection::OzCloudAPIKeys => write!(f, "Oz Cloud API Keys"),
-            _ => write!(f, "{self:?}"),
-        }
+        let s = match self {
+            SettingsSection::About => i18n::t!("About"),
+            SettingsSection::Account => i18n::t!("Account"),
+            SettingsSection::Appearance => i18n::t!("Appearance"),
+            SettingsSection::Features => i18n::t!("Features"),
+            SettingsSection::Privacy => i18n::t!("Privacy"),
+            SettingsSection::Referrals => i18n::t!("Referrals"),
+            SettingsSection::Teams => i18n::t!("Teams"),
+            SettingsSection::Warpify => i18n::t!("Warpify"),
+            SettingsSection::BillingAndUsage => i18n::t!("Billing and usage"),
+            SettingsSection::Keybindings => i18n::t!("Keyboard shortcuts"),
+            SettingsSection::SharedBlocks => i18n::t!("Shared blocks"),
+            SettingsSection::MCPServers => i18n::t!("MCP Servers"),
+            SettingsSection::Scripting => i18n::t!("Scripting"),
+            SettingsSection::WarpDrive => i18n::t!("Warp Drive"),
+            SettingsSection::WarpAgent => i18n::t!("Warp Agent"),
+            SettingsSection::AgentProfiles => i18n::t!("Profiles"),
+            SettingsSection::AgentMCPServers => i18n::t!("MCP servers"),
+            SettingsSection::Knowledge => i18n::t!("Knowledge"),
+            SettingsSection::ThirdPartyCLIAgents => i18n::t!("Third party CLI agents"),
+            SettingsSection::CodeIndexing => i18n::t!("Indexing and projects"),
+            SettingsSection::EditorAndCodeReview => i18n::t!("Editor and Code Review"),
+            SettingsSection::CloudEnvironments => i18n::t!("Environments"),
+            SettingsSection::OzCloudAPIKeys => i18n::t!("Oz Cloud API Keys"),
+            _ => return write!(f, "{self:?}"),
+        };
+        write!(f, "{s}")
     }
 }
 
@@ -1254,7 +1263,7 @@ impl SettingsView {
                 ..Default::default()
             };
             let mut editor = EditorView::single_line(options, ctx);
-            editor.set_placeholder_text("Search", ctx);
+            editor.set_placeholder_text(i18n::t!("Search").to_string(), ctx);
             editor
         });
 

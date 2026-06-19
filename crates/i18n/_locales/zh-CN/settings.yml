@@ -1,11 +1,69 @@
-# 设置面板相关 key。后续 Task（M4）会大规模扩充。
-# 同 _shared.yml：使用 v2 格式，目录内多文件合并到同一 locale。
+# 设置面板 - Section 名称（侧栏导航）
 _version: 2
 
-# Appearance 页 - Language 开关
-"Language":
-  zh-CN: 语言
+"Account":
+  zh-CN: 账户
 "Appearance":
   zh-CN: 外观
+"Features":
+  zh-CN: 功能
+"Keyboard shortcuts":
+  zh-CN: 快捷键
+"Privacy":
+  zh-CN: 隐私
+"About":
+  zh-CN: 关于
+"Teams":
+  zh-CN: 团队
+"Billing and usage":
+  zh-CN: 账单和用量
+"Shared blocks":
+  zh-CN: 共享块
+"Warp Drive":
+  zh-CN: Warp Drive
+"MCP Servers":
+  zh-CN: MCP 服务器
+"Scripting":
+  zh-CN: 脚本
+"Warpify":
+  zh-CN: Warpify
+"Referrals":
+  zh-CN: 推荐
+
+# Umbrella 分组名
+"Agents":
+  zh-CN: Agent
+"Code":
+  zh-CN: 代码
+"Cloud platform":
+  zh-CN: 云平台
+
+# Subpage 名称
+"Warp Agent":
+  zh-CN: Warp Agent
+"Profiles":
+  zh-CN: 配置文件
+"MCP servers":
+  zh-CN: MCP 服务器
+"Knowledge":
+  zh-CN: 知识库
+"Third party CLI agents":
+  zh-CN: 第三方 CLI Agent
+"Indexing and projects":
+  zh-CN: 索引和项目
+"Editor and Code Review":
+  zh-CN: 编辑器和代码审查
+"Environments":
+  zh-CN: 环境
+"Oz Cloud API Keys":
+  zh-CN: Oz Cloud API 密钥
+
+# 通用 UI
+"Search":
+  zh-CN: 搜索
+"Reset to default":
+  zh-CN: 恢复默认
+"Language":
+  zh-CN: 语言
 "Select the display language for the Warp interface":
   zh-CN: 选择 Warp 界面的显示语言

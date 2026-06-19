@@ -316,8 +316,8 @@ pub fn init_actions_from_parent_view<T: Action + Clone>(
         toggle_binding_pairs.push(
             ToggleSettingActionPair::custom(
                 SettingActionPairDescriptions::new(
-                    "Show code review button in tab bar",
-                    "Hide code review button in tab bar",
+                    &i18n::t!("Show code review button in tab bar"),
+                    &i18n::t!("Hide code review button in tab bar"),
                 ),
                 builder(SettingsAction::AppearancePageToggle(
                     AppearancePageAction::ToggleShowCodeReviewButton,
@@ -1690,20 +1690,20 @@ impl AppearanceSettingsPageView {
 
     fn workspace_decoration_visibility_dropdown_item_label(
         value: WorkspaceDecorationVisibility,
-    ) -> &'static str {
+    ) -> String {
         match value {
-            WorkspaceDecorationVisibility::AlwaysShow => "Always",
-            WorkspaceDecorationVisibility::HideFullscreen => "When windowed",
-            WorkspaceDecorationVisibility::OnHover => "Only on hover",
+            WorkspaceDecorationVisibility::AlwaysShow => i18n::t!("Always").to_string(),
+            WorkspaceDecorationVisibility::HideFullscreen => i18n::t!("When windowed").to_string(),
+            WorkspaceDecorationVisibility::OnHover => i18n::t!("Only on hover").to_string(),
         }
     }
 
     fn tab_close_button_position_dropdown_item_label(
         value: TabCloseButtonPosition,
-    ) -> &'static str {
+    ) -> String {
         match value {
-            TabCloseButtonPosition::Right => "Right",
-            TabCloseButtonPosition::Left => "Left",
+            TabCloseButtonPosition::Right => i18n::t!("Right").to_string(),
+            TabCloseButtonPosition::Left => i18n::t!("Left").to_string(),
         }
     }
 
@@ -2988,7 +2988,7 @@ impl SettingsWidget for CustomAppIconWidget {
         let dropdown = render_dropdown_item(
             appearance,
             "Customize your app icon",
-            show_bundle_warning.then_some("Changing the app icon requires the app to be bundled."),
+            show_bundle_warning.then_some(&i18n::t!("Changing the app icon requires the app to be bundled.")),
             None,
             LocalOnlyIconState::Hidden,
             None,
@@ -3575,7 +3575,7 @@ impl SettingsWidget for InputModeWidget {
     ) -> Box<dyn Element> {
         render_dropdown_item(
             appearance,
-            "Input position",
+            &i18n::t!("Input position"),
             None,
             None,
             LocalOnlyIconState::for_setting(
@@ -4592,7 +4592,7 @@ impl SettingsWidget for TabCloseButtonPositionWidget {
     ) -> Box<dyn Element> {
         render_dropdown_item(
             appearance,
-            "Tab close button position",
+            &i18n::t!("Tab close button position"),
             None,
             None,
             LocalOnlyIconState::for_setting(
@@ -4830,7 +4830,7 @@ impl SettingsWidget for ShowVerticalTabPanelInRestoredWindowsWidget {
                 })
                 .finish(),
             Some(
-                "When enabled, reopening or restoring a window opens the vertical tabs panel even if it was closed when the window was last saved."
+                i18n::t!("When enabled, reopening or restoring a window opens the vertical tabs panel even if it was closed when the window was last saved.")
                     .to_string(),
             ),
         )
@@ -4880,7 +4880,7 @@ impl SettingsWidget for HideTitleBarSearchBarInVerticalTabsWidget {
                 })
                 .finish(),
             Some(
-                "When using the vertical tab layout, hide the search bar in the title bar. Search stays available via the command palette and keyboard shortcuts."
+                i18n::t!("When using the vertical tab layout, hide the search bar in the title bar. Search stays available via the command palette and keyboard shortcuts.")
                     .to_string(),
             ),
         )
@@ -5063,7 +5063,7 @@ impl SettingsWidget for DirectoryTabColorsWidget {
             .with_spacing(4.)
             .with_child(
                 Text::new(
-                    "Directory tab colors",
+                    i18n::t!("Directory tab colors").to_string(),
                     appearance.ui_font_family(),
                     appearance.ui_font_size(),
                 )
@@ -5073,7 +5073,7 @@ impl SettingsWidget for DirectoryTabColorsWidget {
             )
             .with_child(
                 Text::new(
-                    "Automatically color tabs based on the directory or repo you're working in.",
+                    i18n::t!("Automatically color tabs based on the directory or repo you're working in.").to_string(),
                     appearance.ui_font_family(),
                     appearance.ui_font_size(),
                 )
@@ -5210,7 +5210,7 @@ impl SettingsWidget for ZenModeWidget {
     ) -> Box<dyn Element> {
         render_dropdown_item(
             appearance,
-            "Show the tab bar",
+            &i18n::t!("Show the tab bar"),
             None,
             None,
             LocalOnlyIconState::for_setting(

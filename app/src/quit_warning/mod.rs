@@ -427,12 +427,12 @@ impl<'a> QuitWarningDialog<'a> {
         }
 
         let title = match &state.scope {
-            QuitScope::Pane { .. } => "Close pane?",
-            QuitScope::Tabs(tabs) if tabs.len() == 1 => "Close tab?",
-            QuitScope::Tabs(_) => "Close tabs?",
-            QuitScope::Window(_) => "Close window?",
-            QuitScope::App => "Quit Warp?",
-            QuitScope::EditorTab { .. } => "Save changes?",
+            QuitScope::Pane { .. } => i18n::t!("Close pane?").to_string(),
+            QuitScope::Tabs(tabs) if tabs.len() == 1 => i18n::t!("Close tab?").to_string(),
+            QuitScope::Tabs(_) => i18n::t!("Close tabs?").to_string(),
+            QuitScope::Window(_) => i18n::t!("Close window?").to_string(),
+            QuitScope::App => i18n::t!("Quit Warp?").to_string(),
+            QuitScope::EditorTab { .. } => i18n::t!("Save changes?").to_string(),
         };
 
         AlertDialogWithCallbacks::for_app(

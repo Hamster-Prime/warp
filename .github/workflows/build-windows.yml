@@ -76,9 +76,40 @@ jobs:
         run: corepack enable
 
       - name: Install protoc (protobuf compiler)
+        id: install_protoc
         uses: ConorMacBride/install-package@v1
+        continue-on-error: true
         with:
           choco: protoc
+
+      - name: Install protoc via winget (fallback)
+        if: steps.install_protoc.outcome == 'failure'
+        shell: pwsh
+        run: winget install --id Google.Protobuf -e --accept-source-agreements --accept-package-agreements
+
+      - name: Verify protoc available
+        shell: pwsh
+        run: |
+          $protoc = Get-Command protoc -ErrorAction SilentlyContinue
+          if (-not $protoc) {
+            # winget 把 protoc 放到 PATH 但当前 shell 没刷新；尝试常见路径
+            $candidates = @(
+              "${env:ProgramFiles}\protoc\bin\protoc.exe",
+              "${env:LOCALAPPDATA}\Microsoft\WinGet\Packages\Google.Protobuf*\protoc*\bin\protoc.exe"
+            )
+            $found = $candidates | Where-Object { Test-Path $_ } | Select-Object -First 1
+            if ($found) {
+              $protocDir = Split-Path $found
+              echo "$protocDir" >> $env:GITHUB_PATH
+              echo "PROTOC=$found" >> $env:GITHUB_ENV
+              Write-Output "Found protoc at: $found (added to PATH + PROTOC env var)"
+            } else {
+              throw "protoc not found on PATH or in common locations"
+            }
+          } else {
+            Write-Output "protoc already on PATH: $($protoc.Source)"
+            echo "PROTOC=$($protoc.Source)" >> $env:GITHUB_ENV
+          }
 
       - name: Install Inno Setup 6 (installer compiler)
         shell: pwsh

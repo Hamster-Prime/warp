@@ -1349,13 +1349,19 @@ impl AppearanceSettingsPageView {
     }
 
     fn build_page(ctx: &mut ViewContext<Self>) -> PageType<Self> {
-        let mut categories = vec![Category::new(
-            "Themes",
-            vec![
-                Box::new(CreateCustomThemeWidget::default()),
-                Box::new(ThemeSelectWidget::default()),
-            ],
-        )];
+        let mut categories = vec![
+            Category::new(
+                "Themes",
+                vec![
+                    Box::new(CreateCustomThemeWidget::default()),
+                    Box::new(ThemeSelectWidget::default()),
+                ],
+            ),
+            Category::new(
+                "Language",
+                vec![Box::new(LanguageWidget)],
+            ),
+        ];
 
         if AppIconSettings::as_ref(ctx).is_supported_on_current_platform() {
             categories.push(Category::new(
@@ -4154,29 +4160,6 @@ impl SettingsWidget for TerminalFontWidget {
 
         terminal_font_row.add_child(Container::new(font_weight.finish()).finish());
 
-        // Language
-        let mut language = Flex::column();
-        language.add_child(
-            appearance
-                .ui_builder()
-                .label(i18n::t!("Language").to_string())
-                .with_style(UiComponentStyles {
-                    font_size: Some(CONTENT_FONT_SIZE),
-                    ..Default::default()
-                })
-                .build()
-                .with_margin_left(12.)
-                .finish(),
-        );
-
-        language.add_child(
-            Container::new(ChildView::new(&view.language_dropdown).finish())
-                .with_margin_left(12.)
-                .finish(),
-        );
-
-        terminal_font_row.add_child(Container::new(language.finish()).finish());
-
         // Font Size
         let mut font_size = Flex::column();
         font_size.add_child(
@@ -5382,6 +5365,33 @@ impl SettingsWidget for ZoomLevelWidget {
             ),
             None,
             &view.zoom_level_dropdown,
+        )
+    }
+}
+
+struct LanguageWidget;
+
+impl SettingsWidget for LanguageWidget {
+    type View = AppearanceSettingsPageView;
+
+    fn search_terms(&self) -> &str {
+        "language locale i18n localization chinese zhongwen zhongwen translation"
+    }
+
+    fn render(
+        &self,
+        view: &Self::View,
+        appearance: &Appearance,
+        _app: &AppContext,
+    ) -> Box<dyn Element> {
+        render_dropdown_item(
+            appearance,
+            &i18n::t!("Language"),
+            Some("Select the display language for the Warp interface"),
+            None,
+            LocalOnlyIconState::Hidden,
+            None,
+            &view.language_dropdown,
         )
     }
 }

@@ -660,3 +660,81 @@ fn write_bang_idempotent_when_already_translated() {
     assert_eq!(out, src);
     assert!(keys.is_empty());
 }
+
+// ---------- Pattern 19/20: Some("X".into()) / Some("X".to_string()) ----------
+
+#[test]
+fn rewrites_some_into_description() {
+    let src = r#"    Some("Adjusts the default zoom level across all windows".into())
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(
+        out,
+        r#"    Some(i18n::t!("Adjusts the default zoom level across all windows").into())
+"#
+    );
+    assert_eq!(
+        keys,
+        vec!["Adjusts the default zoom level across all windows".to_string()]
+    );
+}
+
+#[test]
+fn rewrites_some_to_string_description() {
+    let src = r#"    Some("Monthly spending limit".to_string())
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(
+        out,
+        r#"    Some(i18n::t!("Monthly spending limit").to_string())
+"#
+    );
+    assert_eq!(keys, vec!["Monthly spending limit".to_string()]);
+}
+
+#[test]
+fn some_into_idempotent_when_already_t() {
+    let src = r#"    Some(i18n::t!("Already done").into())
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(out, src);
+    assert!(keys.is_empty());
+}
+
+#[test]
+fn some_to_string_idempotent_when_already_t() {
+    let src = r#"    Some(i18n::t!("Already done").to_string())
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(out, src);
+    assert!(keys.is_empty());
+}
+
+#[test]
+fn some_excludes_short_strings() {
+    // 总长 < 6（首字母 + <5 字符）不应改写。
+    let src = r#"    Some("Save".to_string())
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(out, src);
+    assert!(keys.is_empty());
+}
+
+#[test]
+fn some_excludes_lowercase_start() {
+    let src = r#"    Some("error code xyz".to_string())
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert_eq!(out, src);
+    assert!(keys.is_empty());
+}
+
+#[test]
+fn some_into_does_not_match_to_string_form() {
+    // into 规则不应误改 to_string 形式（由规则 20 负责）。
+    let src = r#"    Some("Monthly spending limit".to_string())
+"#;
+    let (out, keys) = apply_patterns(src);
+    assert!(out.contains(r#"i18n::t!("Monthly spending limit").to_string()"#));
+    assert_eq!(keys, vec!["Monthly spending limit".to_string()]);
+}

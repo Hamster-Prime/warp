@@ -186,6 +186,23 @@ fn patterns() -> &'static [Pattern] {
                 r#"write!(f, "{}", i18n::t!("$1"))"#,
                 1,
             ),
+            // 19. `Some("X".into())` → `Some(i18n::t!("X").into())`
+            //     设置项描述：`render_dropdown_item` / `render_body_item` 等的
+            //     `Option<String>`（或 `Option<Cow>`）描述字段。约束：首字符 `[A-Z]`、
+            //     长度 6–151（`[A-Z]` + 5..150），排除短按钮文案与小写/符号开头的非 UI
+            //     字符串。已 `t!` 化的调用天然不匹配（`Some(` 后紧跟 `i18n::t!`，而非 `"`）。
+            mk(
+                r#"Some\("([A-Z][^"]{5,150})"\.into\(\)\)"#,
+                r#"Some(i18n::t!("$1").into())"#,
+                1,
+            ),
+            // 20. `Some("X".to_string())` → `Some(i18n::t!("X").to_string())`
+            //     同上，针对 `.to_string()` 形式（`Option<String>` 描述字段）。
+            mk(
+                r#"Some\("([A-Z][^"]{5,150})"\.to_string\(\)\)"#,
+                r#"Some(i18n::t!("$1").to_string())"#,
+                1,
+            ),
         ]
     })
 }

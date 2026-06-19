@@ -5367,7 +5367,7 @@ impl SettingsWidget for ZoomLevelWidget {
         render_dropdown_item(
             appearance,
             "Zoom",
-            Some("Adjusts the default zoom level across all windows"),
+            Some(&i18n::t!("Adjusts the default zoom level across all windows")),
             Some(reset_button),
             LocalOnlyIconState::for_setting(
                 crate::window_settings::ZoomLevel::storage_key(),

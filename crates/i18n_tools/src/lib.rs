@@ -203,6 +203,16 @@ fn patterns() -> &'static [Pattern] {
                 r#"Some(i18n::t!("$1").to_string())"#,
                 1,
             ),
+            // 21. 独立行 `Some("X")` 或 `Some("X"),`
+            //     匹配 render_dropdown_item 的 `Option<&str>` 描述参数。
+            //     约束：整行只有空白 + Some("大写开头的长文本") + 可选逗号，
+            //     避免误匹配代码中的其他 Some 用途（如 `Some(value)` / `Some(x.into())`）。
+            //     文本 ≥15 字符进一步过滤短标识符。
+            mk(
+                r#"^\s*Some\("([A-Z][^"]{14,150})"\),?\s*$"#,
+                r#"Some(&i18n::t!("$1")),"#,
+                1,
+            ),
         ]
     })
 }

@@ -6622,8 +6622,8 @@ impl TabKeyBehaviorWidget {
             TabBehavior::UserDefined => None,
         };
         let other_keybinding_name = match *view.tab_behavior {
-            TabBehavior::Completions => Some("Accept Autosuggestion"),
-            TabBehavior::Autosuggestions => Some("Open Completions Menu"),
+            TabBehavior::Completions => Some(&i18n::t!("Accept Autosuggestion")),
+            TabBehavior::Autosuggestions => Some(&i18n::t!("Open Completions Menu")),
             TabBehavior::UserDefined => None,
         };
 
@@ -7207,7 +7207,7 @@ impl SettingsWidget for Osc52ClipboardAccessWidget {
         render_dropdown_item(
             appearance,
             "Clipboard access (OSC 52)",
-            Some("Controls whether programs running in the terminal can read or write your system clipboard."),
+            Some(&i18n::t!("Controls whether programs running in the terminal can read or write your system clipboard.")),
             None,
             LocalOnlyIconState::for_setting(
                 Osc52ClipboardAccessSetting::storage_key(),

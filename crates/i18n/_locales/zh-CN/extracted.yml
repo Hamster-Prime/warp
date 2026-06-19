@@ -784,3 +784,20 @@ e.g., Zach's external models:
   zh-CN: e.g., Zach's external models
 e.g., sk-...:
   zh-CN: e.g., sk-...
+# 设置项描述（手动添加）
+"Adjusts the default zoom level across all windows":
+  zh-CN: 调整所有窗口的默认缩放级别
+"Press and hold to activate.":
+  zh-CN: 按住以激活。
+"Controls how reasoning/thinking traces are displayed.":
+  zh-CN: 控制推理/思考过程的显示方式。
+"Controls whether orchestration messages stay expanded.":
+  zh-CN: 控制编排消息是否保持展开。
+"Controls whether programs running in the terminal can read or write your system clipboard.":
+  zh-CN: 控制终端中运行的程序是否可以读取或写入系统剪贴板。
+"Accept Autosuggestion":
+  zh-CN: 接受自动建议
+"Open Completions Menu":
+  zh-CN: 打开补全菜单
+"Warp Drive is a workspace in your terminal where you can save Workflows, Notebooks, Prompts, and Environment Variables for personal use or to share with a team.":
+  zh-CN: Warp Drive 是终端中的工作区，您可以保存工作流、笔记本、提示和环境变量供个人使用或与团队共享。

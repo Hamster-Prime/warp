@@ -6616,7 +6616,7 @@ impl VoiceWidget {
             column.add_child(render_dropdown_item(
                 appearance,
                 "Key for Activating Voice Input",
-                Some("Press and hold to activate."),
+                Some(&i18n::t!("Press and hold to activate.")),
                 None,
                 LocalOnlyIconState::for_setting(
                     VoiceInputToggleKey::storage_key(),
@@ -6821,7 +6821,7 @@ impl SettingsWidget for OtherAIWidget {
         column.add_child(render_dropdown_item(
             appearance,
             "Agent thinking display",
-            Some("Controls how reasoning/thinking traces are displayed."),
+            Some(&i18n::t!("Controls how reasoning/thinking traces are displayed.")),
             None,
             LocalOnlyIconState::for_setting(
                 ThinkingDisplayMode::storage_key(),
@@ -6836,7 +6836,7 @@ impl SettingsWidget for OtherAIWidget {
         column.add_child(render_dropdown_item(
             appearance,
             "Orchestration message display",
-            Some("Controls whether orchestration messages stay expanded."),
+            Some(&i18n::t!("Controls whether orchestration messages stay expanded.")),
             None,
             LocalOnlyIconState::for_setting(
                 OrchestrationMessageDisplayMode::storage_key(),

@@ -423,7 +423,7 @@ impl<'a> QuitWarningDialog<'a> {
         }
 
         if let Some(callback) = on_cancel {
-            buttons.push(ModalButton::for_app("Cancel".to_string(), callback));
+            buttons.push(ModalButton::for_app(i18n::t!("Cancel").to_string(), callback));
         }
 
         let title = match &state.scope {

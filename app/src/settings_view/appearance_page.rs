@@ -2987,7 +2987,7 @@ impl SettingsWidget for CustomAppIconWidget {
 
         let dropdown = render_dropdown_item(
             appearance,
-            "Customize your app icon",
+            &i18n::t!("Customize your app icon"),
             show_bundle_warning.then_some(&i18n::t!("Changing the app icon requires the app to be bundled.")),
             None,
             LocalOnlyIconState::Hidden,

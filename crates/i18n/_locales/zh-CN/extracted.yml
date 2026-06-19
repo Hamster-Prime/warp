@@ -1,4 +1,5 @@
 _version: 2
+
 '''{cli}'' CLI not found on your machine.':
   zh-CN: 在您的机器上未找到 '{cli}' CLI。
 '*Secrets are not sent to Warp''s server.':
@@ -9,18 +10,32 @@ _version: 2
   zh-CN: + 创建 API Key
 A new version of the Warp plugin is available:
   zh-CN: 有新版本的 Warp 插件可用
+AI Document:
+  zh-CN: AI 文档
+AI Fact:
+  zh-CN: AI 事实
+API key '{name}' deleted.:
+  zh-CN: API Key '{name}' 已删除。
+API key '{name}' saved.:
+  zh-CN: API Key '{name}' 已保存。
+'AWS Access Key ID:':
+  zh-CN: AWS 访问密钥 ID：
+AWS Bedrock credentials expired or invalid for {model_name}.:
+  zh-CN: '{model_name} 的 AWS Bedrock 凭据已过期或无效。'
+'AWS Region:':
+  zh-CN: AWS 区域：
 About Warp:
   zh-CN: 关于 Warp
 Accept:
   zh-CN: 接受
-Accept and save:
-  zh-CN: 接受并保存
 Accept Autosuggestion:
-  zh-CN: 接受自动建议
-Accept autosuggestion:
   zh-CN: 接受自动建议
 Accept Prompt Suggestion:
   zh-CN: 接受提示建议
+Accept and save:
+  zh-CN: 接受并保存
+Accept autosuggestion:
+  zh-CN: 接受自动建议
 Activate next pane:
   zh-CN: 激活下一个窗格
 Activate next tab:
@@ -57,8 +72,10 @@ Adds global file search to the left side tools panel.:
   zh-CN: 在左侧工具面板中添加全局文件搜索。
 Adjusts the default zoom level across all windows:
   zh-CN: 调整所有窗口的默认缩放级别
-alias name:
-  zh-CN: 别名
+Agent:
+  zh-CN: Agent
+Agents:
+  zh-CN: Agent
 All changes compared to {branch}:
   zh-CN: 与 {branch} 相比的所有更改
 Allow Warp users with an @{domain} email to find and join the team.:
@@ -67,6 +84,8 @@ Allow Warp users with an @{domain} email to find and join the team.:
   zh-CN: '已经有账号了？ '
 Alternate terminal paste:
   zh-CN: 备用终端粘贴
+Always:
+  zh-CN: 始终
 Always allow:
   zh-CN: 始终允许
 Always open {object_kind} on the web?:
@@ -77,42 +96,36 @@ Ansi {color_idx} Color{suffix}:
   zh-CN: Ansi {color_idx} 颜色{suffix}
 Answered all {total} questions:
   zh-CN: 已回答全部 {total} 个问题
-API key '{name}' deleted.:
-  zh-CN: API Key '{name}' 已删除。
-API key '{name}' saved.:
-  zh-CN: API Key '{name}' 已保存。
 Appearance...:
   zh-CN: 外观...
 Apply:
   zh-CN: 应用
 Apply link:
   zh-CN: 应用链接
-'are only available to logged-in users. ':
-  zh-CN: '仅对已登录用户可用。 '
 Are you sure you want to skip login?:
   zh-CN: 确定要跳过登录吗？
 Argument list too long (os error 7):
   zh-CN: 参数列表过长（系统错误 7）
+Ask Warp AI:
+  zh-CN: 询问 Warp AI
+Ask Warp AI about Selection:
+  zh-CN: 就所选内容询问 Warp AI
+Ask Warp AI about last block:
+  zh-CN: 就上一个 Block 询问 Warp AI
 Ask the Warp agent to assist:
   zh-CN: 请求 Warp Agent 协助
 Ask the Warp agent to resume:
   zh-CN: 请求 Warp Agent 继续
 Ask the {agent_name} agent a follow up:
   zh-CN: 向 {agent_name} Agent 追问
-Ask Warp AI:
-  zh-CN: 询问 Warp AI
-Ask Warp AI about last block:
-  zh-CN: 就上一个 Block 询问 Warp AI
-Ask Warp AI about Selection:
-  zh-CN: 就所选内容询问 Warp AI
 Asynchronous find:
   zh-CN: 异步查找
-Attach file:
-  zh-CN: 附加文件
 Attach Selected Block as Agent Context:
   zh-CN: 将所选 Block 作为 Agent 上下文附加
 Attach Selected Text as Agent Context:
   zh-CN: 将所选文本作为 Agent 上下文附加
+Attach file:
+  zh-CN: 附加文件
 Auth Token:
   zh-CN: Auth Token
 Authenticate with GitHub:
@@ -131,16 +144,12 @@ Autocomplete quotes, parentheses, and brackets:
   zh-CN: 自动补全引号、括号和方括号
 Autohides on loss of keyboard focus:
   zh-CN: 失去键盘焦点时自动隐藏
+Automatically color tabs based on the directory or repo you're working in.:
+  zh-CN: 根据您正在工作的目录或仓库自动为标签页着色。
 Automatically open links in desktop app whenever possible.:
   zh-CN: 尽可能在桌面应用中自动打开链接。
 Available to install:
   zh-CN: 可安装
-'AWS Access Key ID:':
-  zh-CN: AWS 访问密钥 ID：
-AWS Bedrock credentials expired or invalid for {model_name}.:
-  zh-CN: '{model_name} 的 AWS Bedrock 凭据已过期或无效。'
-'AWS Region:':
-  zh-CN: AWS 区域：
 Back to parent conversation:
   zh-CN: 返回父对话
 Backend:
@@ -167,6 +176,12 @@ Buy more:
   zh-CN: 购买更多
 'By continuing, you agree to Warp''s ':
   zh-CN: '继续即表示您同意 Warp 的 '
+CLI:
+  zh-CN: CLI
+CLI subagent user takeover:
+  zh-CN: CLI subagent 用户接管
+CLI summary:
+  zh-CN: CLI 摘要
 Call MCP servers:
   zh-CN: 调用 MCP 服务器
 Calling "{name}" MCP tool...:
@@ -187,6 +202,8 @@ Change working directory:
   zh-CN: 更改工作目录
 Change your current theme.:
   zh-CN: 更改当前主题。
+Changing the app icon requires the app to be bundled.:
+  zh-CN: 更改应用图标需要打包应用。
 Characters considered part of a word:
   zh-CN: 视为单词一部分的字符
 Check for updates:
@@ -203,22 +220,16 @@ Choose an environment:
   zh-CN: 选择环境
 Claimed:
   zh-CN: 已认领
-Clear and reset AI context menu query:
-  zh-CN: 清除并重置 AI 上下文菜单查询
 Clear Blocks:
   zh-CN: 清除 Block
+Clear and reset AI context menu query:
+  zh-CN: 清除并重置 AI 上下文菜单查询
 Clear command editor:
   zh-CN: 清空命令编辑器
 Clear screen:
   zh-CN: 清屏
 Clear selected lines:
   zh-CN: 清除所选行
-CLI:
-  zh-CN: CLI
-CLI subagent user takeover:
-  zh-CN: CLI subagent 用户接管
-CLI summary:
-  zh-CN: CLI 摘要
 Click to learn more in docs:
   zh-CN: 点击在文档中了解更多
 Click to set global hotkey:
@@ -227,32 +238,52 @@ ClipboardLoad():
   zh-CN: ClipboardLoad()
 Close:
   zh-CN: 关闭
-Close all tabs:
-  zh-CN: 关闭所有标签页
 Close Current Session:
   zh-CN: 关闭当前会话
-Close focused panel:
-  zh-CN: 关闭聚焦的面板
-Close other tabs:
-  zh-CN: 关闭其他标签页
-Close panel:
-  zh-CN: 关闭面板
-Close saved tabs:
-  zh-CN: 关闭已保存的标签页
-Close tabs to the right:
-  zh-CN: 关闭右侧标签页
-Close the current tab:
-  zh-CN: 关闭当前标签页
 Close Welcome Tips:
   zh-CN: 关闭欢迎提示
 Close Window:
   zh-CN: 关闭窗口
+Close all tabs:
+  zh-CN: 关闭所有标签页
+Close all tabs in group:
+  zh-CN: 关闭组中的所有标签页
+Close focused panel:
+  zh-CN: 关闭聚焦的面板
+Close other tabs:
+  zh-CN: 关闭其他标签页
+Close pane?:
+  zh-CN: 关闭窗格？
+Close panel:
+  zh-CN: 关闭面板
+Close saved tabs:
+  zh-CN: 关闭已保存的标签页
+Close tab?:
+  zh-CN: 关闭标签页？
+Close tabs above:
+  zh-CN: 关闭上方的标签页
+Close tabs below:
+  zh-CN: 关闭下方的标签页
+Close tabs to the left:
+  zh-CN: 关闭左侧的标签页
+Close tabs to the right:
+  zh-CN: 关闭右侧标签页
+Close tabs?:
+  zh-CN: 关闭标签页？
+Close the current tab:
+  zh-CN: 关闭当前标签页
+Close window?:
+  zh-CN: 关闭窗口？
+Cloud Agent:
+  zh-CN: 云端 Agent
 Cloud agent failed to start:
   zh-CN: 云端 Agent 启动失败
 Cloud agent run:
   zh-CN: 云端 Agent 运行
 Cloud handoff:
   zh-CN: 云端移交
+Cloud platform:
+  zh-CN: 云平台
 Code Diff:
   zh-CN: 代码差异
 Code Editor and Review:
@@ -261,8 +292,8 @@ Codebase Indexing:
   zh-CN: 代码库索引
 Collapse:
   zh-CN: 折叠
-command (supports regex):
-  zh-CN: 命令（支持正则表达式）
+Columns:
+  zh-CN: 列数
 Command Palette:
   zh-CN: 命令面板
 Command Search:
@@ -291,10 +322,10 @@ Configure Warpify...:
   zh-CN: 配置 Warpify...
 Confirm before closing shared session:
   zh-CN: 关闭共享会话前确认
-Contact a team admin to enable add-on credits.:
-  zh-CN: 联系团队管理员启用附加额度。
 Contact Admin to request access:
   zh-CN: 联系管理员请求访问权限
+Contact a team admin to enable add-on credits.:
+  zh-CN: 联系团队管理员启用附加额度。
 Contact your Account Executive for more add-on credits.:
   zh-CN: 联系您的客户经理获取更多附加额度。
 Context window (tokens):
@@ -311,18 +342,20 @@ Controls whether orchestration messages stay expanded.:
   zh-CN: 控制编排消息是否保持展开。
 Controls whether programs running in the terminal can read or write your system clipboard.:
   zh-CN: 控制终端中运行的程序是否可以读取或写入系统剪贴板。
-Conversation renamed to {title}:
-  zh-CN: 对话已重命名为 {title}
 'Conversation Summary: ':
   zh-CN: 对话摘要：
+Conversation renamed to {title}:
+  zh-CN: 对话已重命名为 {title}
 Copied link to {object_name}.:
   zh-CN: 已复制 {object_name} 的链接。
 Copy:
   zh-CN: 复制
-Copy access token to clipboard:
-  zh-CN: 将访问 Token 复制到剪贴板
 Copy All:
   zh-CN: 全部复制
+Copy URL:
+  zh-CN: 复制 URL
+Copy access token to clipboard:
+  zh-CN: 将访问 Token 复制到剪贴板
 Copy and clear selected lines:
   zh-CN: 复制并清除所选行
 Copy command:
@@ -347,8 +380,6 @@ Copy text or cancel active process:
   zh-CN: 复制文本或取消活动进程
 Copy to Personal:
   zh-CN: 复制到个人
-Copy URL:
-  zh-CN: 复制 URL
 Copyright 2026 Warp:
   zh-CN: Copyright 2026 Warp
 Could not create {file} because it already exists.:
@@ -393,14 +424,16 @@ Create or edit link:
   zh-CN: 创建或编辑链接
 Current:
   zh-CN: 当前
+Current theme:
+  zh-CN: 当前主题
 Current version is {version}:
   zh-CN: 当前版本为 {version}
+Cursor Color{suffix}:
+  zh-CN: 光标颜色{suffix}
 Cursor at buffer end:
   zh-CN: 光标位于缓冲区末尾
 Cursor at buffer start:
   zh-CN: 光标位于缓冲区起始
-Cursor Color{suffix}:
-  zh-CN: 光标颜色{suffix}
 Cursor type is disabled in Vim mode:
   zh-CN: Vim 模式下禁用光标类型
 Custom Model:
@@ -411,6 +444,8 @@ Customize your Warp:
   zh-CN: 自定义您的 Warp
 Customize your Warp Agent:
   zh-CN: 自定义您的 Warp Agent
+Customize your app icon:
+  zh-CN: 自定义应用图标
 Cut all left:
   zh-CN: 向左全部剪切
 Cut all right:
@@ -427,6 +462,8 @@ Cycle to previous orchestration session:
   zh-CN: 切换到上一个编排会话
 Daily summary:
   zh-CN: 每日摘要
+Dark:
+  zh-CN: 深色
 Dark City:
   zh-CN: Dark City
 De-select shell commands:
@@ -475,6 +512,8 @@ Diff is too large to render:
   zh-CN: Diff 过大，无法渲染
 Directory path:
   zh-CN: 目录路径
+Directory tab colors:
+  zh-CN: 目录标签页颜色
 Disable Warp Agent:
   zh-CN: 禁用 Warp Agent
 Disabled by your administrator:
@@ -491,28 +530,20 @@ Done:
   zh-CN: 完成
 Dracula:
   zh-CN: Dracula
-e.g. "Google API Key":
-  zh-CN: e.g. "Google API Key"
-e.g., GLM-5:
-  zh-CN: e.g., GLM-5
-e.g., GLM-5-FP8:
-  zh-CN: e.g., GLM-5-FP8
-e.g., sk-...:
-  zh-CN: e.g., sk-...
-e.g., Zach's external models:
-  zh-CN: e.g., Zach's external models
+ESC:
+  zh-CN: ESC
 Edit:
   zh-CN: 编辑
 Edit API Keys:
   zh-CN: 编辑 API Key
 Edit Code Diff:
   zh-CN: 编辑代码差异
+Edit Prompt:
+  zh-CN: 编辑提示词
 Edit config:
   zh-CN: 编辑配置
 Edit custom endpoint:
   zh-CN: 编辑自定义端点
-Edit Prompt:
-  zh-CN: 编辑提示词
 Edit requested command:
   zh-CN: 编辑请求的命令
 Edit {name} MCP Server:
@@ -527,22 +558,22 @@ Empty trash:
   zh-CN: 清空回收站
 Enable '@' context menu in terminal mode:
   zh-CN: 在终端模式下启用 '@' 上下文菜单
-Enable agent attribution:
-  zh-CN: 启用 Agent 归属
-Enable auto reload?:
-  zh-CN: 启用自动重载？
 Enable Focus Reporting:
   zh-CN: 启用焦点报告
 Enable Mouse Reporting:
   zh-CN: 启用鼠标报告
 Enable Scroll Reporting:
   zh-CN: 启用滚动报告
+Enable Warp shell integration in this session:
+  zh-CN: 在此会话中启用 Warp shell 集成
+Enable agent attribution:
+  zh-CN: 启用 Agent 归属
+Enable auto reload?:
+  zh-CN: 启用自动重载？
 Enable servers:
   zh-CN: 启用服务器
 Enable slash commands in terminal mode:
   zh-CN: 在终端模式下启用斜杠命令
-Enable Warp shell integration in this session:
-  zh-CN: 在此会话中启用 Warp shell 集成
 Enabled by your organization.:
   zh-CN: 由您的组织启用。
 Enables codebase indexing and WARP.md:
@@ -579,8 +610,6 @@ Error:
   zh-CN: 错误
 Error underlining for commands:
   zh-CN: 命令的错误下划线
-ESC:
-  zh-CN: ESC
 Executable path:
   zh-CN: 可执行文件路径
 Execute this plan:
@@ -643,16 +672,20 @@ Failed to update {object_name_lowercase}:
   zh-CN: 更新 {object_name_lowercase} 失败
 Fancy Dracula:
   zh-CN: Fancy Dracula
+Feedback:
+  zh-CN: 反馈
+File:
+  zh-CN: 文件
 File is too large to render:
   zh-CN: 文件过大，无法渲染
 Fill out the arguments in this workflow and copy it to run in your terminal session:
   zh-CN: 填写此 Workflow 中的参数并复制到终端会话中运行
-Find in code editor:
-  zh-CN: 在代码编辑器中查找
 Find in Notebook:
   zh-CN: 在 Notebook 中查找
 Find in Terminal:
   zh-CN: 在终端中查找
+Find in code editor:
+  zh-CN: 在代码编辑器中查找
 Find the next occurrence of your search query:
   zh-CN: 查找搜索查询的下一个匹配项
 Find the previous occurrence of your search query:
@@ -663,18 +696,18 @@ First Tab:
   zh-CN: 首个标签页
 Fixed:
   zh-CN: 已修复
+Focus Terminal Input From Warp AI:
+  zh-CN: 聚焦来自 Warp AI 的终端输入
+Focus Terminal Input from File:
+  zh-CN: 聚焦来自文件的终端输入
+Focus Terminal Input from Notebook:
+  zh-CN: 聚焦来自 Notebook 的终端输入
 Focus next match:
   zh-CN: 聚焦下一个匹配项
 Focus previous match:
   zh-CN: 聚焦上一个匹配项
 Focus terminal input:
   zh-CN: 聚焦终端输入
-Focus Terminal Input from File:
-  zh-CN: 聚焦来自文件的终端输入
-Focus Terminal Input from Notebook:
-  zh-CN: 聚焦来自 Notebook 的终端输入
-Focus Terminal Input From Warp AI:
-  zh-CN: 聚焦来自 Warp AI 的终端输入
 Fold:
   zh-CN: 折叠
 Fold selected ranges:
@@ -699,10 +732,10 @@ Get started:
   zh-CN: 开始使用
 Getting blocks...:
   zh-CN: 正在获取 Block...
-'Global hotkey:':
-  zh-CN: 全局快捷键：
 Global Search:
   zh-CN: 全局搜索
+'Global hotkey:':
+  zh-CN: 全局快捷键：
 Go to line:
   zh-CN: 跳转到行
 Good response:
@@ -715,16 +748,22 @@ Hand off to cloud (or type &):
   zh-CN: 移交到云端（或输入 &）
 Header toolbar layout:
   zh-CN: 标题栏工具栏布局
+Hide code review button in tab bar:
+  zh-CN: 在标签页栏中隐藏代码审查按钮
 Hide search bar in vertical tab layout:
   zh-CN: 在垂直标签页布局中隐藏搜索栏
 Hide tab bar if fullscreen:
   zh-CN: 全屏时隐藏标签页栏
 History Search:
   zh-CN: 历史搜索
+Home:
+  zh-CN: 首页
 Honor linux selection clipboard:
   zh-CN: 支持 Linux 选区剪贴板
 'Hunk:':
   zh-CN: Hunk：
+INDEXING:
+  zh-CN: 索引中
 Idle:
   zh-CN: 空闲
 If you'd like to opt out of analytics and AI features,:
@@ -753,8 +792,6 @@ Increase notebook font size:
   zh-CN: 增大 Notebook 字体大小
 Increase zoom level:
   zh-CN: 提高缩放级别
-INDEXING:
-  zh-CN: 索引中
 Initialized / indexed folders:
   zh-CN: 已初始化/已索引的文件夹
 Initiate project for warp:
@@ -763,10 +800,12 @@ Inline:
   zh-CN: 内联
 Input mode locked while agent is monitoring a command:
   zh-CN: Agent 正在监控命令时输入模式已锁定
-Insert block:
-  zh-CN: 插入 Block
+Input position:
+  zh-CN: 输入位置
 Insert Command Correction:
   zh-CN: 插入命令更正
+Insert block:
+  zh-CN: 插入 Block
 Insert last word of previous command:
   zh-CN: 插入上一条命令的最后一个单词
 Insert newline:
@@ -793,6 +832,8 @@ Invalid proxy URL configured in {proxy_env_name}:
   zh-CN: '{proxy_env_name} 中配置的代理 URL 无效'
 Invite People...:
   zh-CN: 邀请用户...
+Invite a friend:
+  zh-CN: 邀请好友
 It seems you're out of credits. Please try again {next_time}.:
   zh-CN: 您的额度似乎已用完。请在 {next_time} 重试。
 Jellyfish:
@@ -807,6 +848,12 @@ Keyboard shortcuts are not synced to the cloud:
   zh-CN: 键盘快捷键不同步到云端
 Keys:
   zh-CN: 密钥
+'LLM Reasoning: ':
+  zh-CN: LLM 推理：
+LRC command completed:
+  zh-CN: LRC 命令已完成
+LSP SERVERS:
+  zh-CN: LSP 服务器
 Language:
   zh-CN: 语言
 Language server is unavailable for this codebase:
@@ -815,10 +862,10 @@ Language support is unavailable for this file type:
   zh-CN: 此文件类型的语言支持不可用
 Language support is unavailable for {root_name}:
   zh-CN: '{root_name} 不提供语言支持'
-Last edited by {name}:
-  zh-CN: 最后由 {name} 编辑
 Last Line:
   zh-CN: 最后一行
+Last edited by {name}:
+  zh-CN: 最后由 {name} 编辑
 Latest CLI prompt:
   zh-CN: 最新 CLI 提示
 Latest Oz prompt:
@@ -829,6 +876,8 @@ Launch configuration palette:
   zh-CN: 启动配置面板
 Learn more about authentication for {harness_name} in Warp.:
   zh-CN: 在 Warp 中了解更多关于 {harness_name} 的认证信息。
+Left:
+  zh-CN: 左
 'Left Panel: Agent conversations':
   zh-CN: 左侧面板：Agent 对话
 'Left Panel: Global search':
@@ -839,6 +888,8 @@ Learn more about authentication for {harness_name} in Warp.:
   zh-CN: 左侧面板：Warp Drive
 Ligatures may reduce performance:
   zh-CN: 连字可能降低性能
+Light:
+  zh-CN: 浅色
 Line number:Column:
   zh-CN: 行号:列
 Linear Issue:
@@ -847,26 +898,30 @@ Lines scrolled by mouse wheel interval:
   zh-CN: 鼠标滚轮滚动的行数间隔
 Link (web or file):
   zh-CN: 链接（网页或文件）
-Link existing {linkable_file} to my AGENTS.md file:
-  zh-CN: 将现有的 {linkable_file} 链接到我的 AGENTS.md 文件
 Link SSO:
   zh-CN: 关联 SSO
-'LLM Reasoning: ':
-  zh-CN: LLM 推理：
+Link existing {linkable_file} to my AGENTS.md file:
+  zh-CN: 将现有的 {linkable_file} 链接到我的 AGENTS.md 文件
 Load agent mode conversation (from debug link in clipboard):
   zh-CN: 加载 Agent 模式对话（从剪贴板中的调试链接）
 Loaded (refreshes in ~{mins}m):
   zh-CN: 已加载（约 {mins} 分钟后刷新）
 Loading...:
   zh-CN: 加载中...
+Local Docker Sandbox:
+  zh-CN: 本地 Docker 沙盒
 Log out:
   zh-CN: 退出登录
 'Looks like you''re out of credits. ':
   zh-CN: '您的额度似乎已用完。 '
-LRC command completed:
-  zh-CN: LRC 命令已完成
-LSP SERVERS:
-  zh-CN: LSP 服务器
+MCP Server {uuid}:
+  zh-CN: MCP 服务器 {uuid}
+MCP Servers:
+  zh-CN: MCP 服务器
+'MCP Tool: {name} ({display_input})':
+  zh-CN: MCP 工具：{name}（{display_input}）
+MCP server '{gallery_title}' cannot be installed from this link.:
+  zh-CN: 无法从此链接安装 MCP 服务器 '{gallery_title}'。
 Make Warp the default terminal:
   zh-CN: 将 Warp 设为默认终端
 Manage:
@@ -885,14 +940,6 @@ Maximize:
   zh-CN: 最大化
 Maximum rows in a block:
   zh-CN: 每个 Block 的最大行数
-MCP server '{gallery_title}' cannot be installed from this link.:
-  zh-CN: 无法从此链接安装 MCP 服务器 '{gallery_title}'。
-MCP Server {uuid}:
-  zh-CN: MCP 服务器 {uuid}
-MCP Servers:
-  zh-CN: MCP 服务器
-'MCP Tool: {name} ({display_input})':
-  zh-CN: MCP 工具：{name}（{display_input}）
 Migrates the local database:
   zh-CN: 迁移本地数据库
 Missing source file:
@@ -909,6 +956,10 @@ Move Backward One Subword:
   zh-CN: 向后移动一个子词
 Move Backward One Word:
   zh-CN: 向后移动一个单词
+Move Forward One Subword:
+  zh-CN: 向前移动一个子词
+Move Forward One Word:
+  zh-CN: 向前移动一个单词
 Move backward one word:
   zh-CN: 向后移动一个单词
 Move cursor down:
@@ -931,10 +982,6 @@ Move cursor to the top:
   zh-CN: 将光标移至顶部
 Move cursor up:
   zh-CN: 向上移动光标
-Move Forward One Subword:
-  zh-CN: 向前移动一个子词
-Move Forward One Word:
-  zh-CN: 向前移动一个单词
 Move forward one word:
   zh-CN: 向前移动一个单词
 Move tab left:
@@ -975,18 +1022,12 @@ Network Log:
   zh-CN: 网络日志
 Network log console:
   zh-CN: 网络日志控制台
-New agent:
-  zh-CN: 新建 Agent
-New agent conversation:
-  zh-CN: 新建 Agent 对话
-New Agent Tab:
-  zh-CN: 新建 Agent 标签页
 New API key:
   zh-CN: 新建 API 密钥
+New Agent Tab:
+  zh-CN: 新建 Agent 标签页
 New Cloud Agent Tab:
   zh-CN: 新建云端 Agent 标签页
-New features:
-  zh-CN: 新功能
 New Personal Folder:
   zh-CN: 新建个人文件夹
 New Personal Notebook:
@@ -995,8 +1036,6 @@ New Personal Prompt:
   zh-CN: 新建个人提示词
 New Personal Workflow:
   zh-CN: 新建个人 Workflow
-New tab:
-  zh-CN: 新建标签页
 New Team Folder:
   zh-CN: 新建团队文件夹
 New Team Notebook:
@@ -1007,6 +1046,20 @@ New Team Workflow:
   zh-CN: 新建团队 Workflow
 New Terminal Tab:
   zh-CN: 新建终端标签页
+New agent:
+  zh-CN: 新建 Agent
+New agent conversation:
+  zh-CN: 新建 Agent 对话
+New features:
+  zh-CN: 新功能
+New tab:
+  zh-CN: 新建标签页
+New tab config:
+  zh-CN: 新建标签页配置
+New tab group:
+  zh-CN: 新建标签页组
+New tab in group:
+  zh-CN: 在组中新建标签页
 New window:
   zh-CN: 新建窗口
 New worktree branch name:
@@ -1045,66 +1098,36 @@ Offline:
   zh-CN: 离线
 One-time purchase:
   zh-CN: 一次性购买
+Only on hover:
+  zh-CN: 仅在悬停时
 Only show tab bar on hover:
   zh-CN: 仅在悬停时显示标签页栏
 Open:
   zh-CN: 打开
-Open a new terminal session in this directory:
-  zh-CN: 在此目录中打开新的终端会话
-Open a project:
-  zh-CN: 打开项目
 Open AI Command Suggestions:
   zh-CN: 打开 AI 命令建议
 Open AI Rules:
   zh-CN: 打开 AI 规则
-Open block context menu:
-  zh-CN: 打开 Block 上下文菜单
-Open coding agent settings:
-  zh-CN: 打开编码 Agent 设置
 Open Completions Menu:
   zh-CN: 打开补全菜单
-Open completions menu:
-  zh-CN: 打开补全菜单
-Open completions menu as you type:
-  zh-CN: 输入时打开补全菜单
-Open file:
-  zh-CN: 打开文件
-Open file explorer:
-  zh-CN: 打开文件资源管理器
-Open global search:
-  zh-CN: 打开全局搜索
-Open in GitHub:
-  zh-CN: 在 GitHub 中打开
-Open keybindings editor:
-  zh-CN: 打开快捷键编辑器
 Open Left Panel:
   zh-CN: 打开左侧面板
-Open links in desktop app:
-  zh-CN: 在桌面应用中打开链接
-Open local folder:
-  zh-CN: 打开本地文件夹
 Open MCP Servers:
   zh-CN: 打开 MCP 服务器
 Open New tab with {shell_name} shell:
   zh-CN: 使用 {shell_name} shell 打开新标签页
-Open palette:
-  zh-CN: 打开命令面板
 Open Repository:
-  zh-CN: 打开仓库
-Open repository:
   zh-CN: 打开仓库
 Open Rich Input:
   zh-CN: 打开富输入
 Open Settings:
   zh-CN: 打开设置
-Open settings file:
-  zh-CN: 打开设置文件
+'Open Settings: AI':
+  zh-CN: 打开设置：AI
 'Open Settings: About':
   zh-CN: 打开设置：关于
 'Open Settings: Account':
   zh-CN: 打开设置：账户
-'Open Settings: AI':
-  zh-CN: 打开设置：AI
 'Open Settings: Appearance':
   zh-CN: 打开设置：外观
 'Open Settings: Billing and usage':
@@ -1131,6 +1154,40 @@ Open settings file:
   zh-CN: 打开设置：Warpify
 Open Team Settings:
   zh-CN: 打开团队设置
+Open a new terminal session in this directory:
+  zh-CN: 在此目录中打开新的终端会话
+Open a project:
+  zh-CN: 打开项目
+Open block context menu:
+  zh-CN: 打开 Block 上下文菜单
+Open coding agent settings:
+  zh-CN: 打开编码 Agent 设置
+Open completions menu:
+  zh-CN: 打开补全菜单
+Open completions menu as you type:
+  zh-CN: 输入时打开补全菜单
+Open file:
+  zh-CN: 打开文件
+Open file explorer:
+  zh-CN: 打开文件资源管理器
+Open global search:
+  zh-CN: 打开全局搜索
+Open in GitHub:
+  zh-CN: 在 GitHub 中打开
+Open keybindings editor:
+  zh-CN: 打开快捷键编辑器
+Open links in desktop app:
+  zh-CN: 在桌面应用中打开链接
+Open local folder:
+  zh-CN: 打开本地文件夹
+Open palette:
+  zh-CN: 打开命令面板
+Open repository:
+  zh-CN: 打开仓库
+Open settings file:
+  zh-CN: 打开设置文件
+Open tab configs menu:
+  zh-CN: 打开标签页配置菜单
 Open theme picker:
   zh-CN: 打开主题选择器
 Open this conversation in the Warp desktop app:
@@ -1143,6 +1200,8 @@ Opening your browser to connect your SuperGrok subscription…:
   zh-CN: 正在打开浏览器以连接您的 SuperGrok 订阅…
 Orchestration config was disapproved:
   zh-CN: 编排配置未获批准
+Other:
+  zh-CN: 其他
 Out of credits:
   zh-CN: 额度用完
 Outdated:
@@ -1167,6 +1226,8 @@ Pin Input to the Bottom:
   zh-CN: 将输入固定到底部
 Pin Input to the Top:
   zh-CN: 将输入固定到顶部
+Pin group:
+  zh-CN: 固定组
 Pink City:
   zh-CN: Pink City
 Pinned:
@@ -1189,6 +1250,8 @@ Premature:
   zh-CN: Premature
 Preparing...:
   zh-CN: 准备中...
+Preserve input focus on block selection:
+  zh-CN: 选择块时保持输入焦点
 Press and hold to activate.:
   zh-CN: 按住以激活。
 Press enter to create a new conversation.:
@@ -1217,10 +1280,14 @@ Queued:
   zh-CN: 排队中
 Quit Warp:
   zh-CN: 退出 Warp
+Quit Warp?:
+  zh-CN: 退出 Warp？
 Quota limit reached.:
   zh-CN: 已达到配额上限。
 Raw:
   zh-CN: 原始
+Re-arrange toolbar items:
+  zh-CN: 重新排列工具栏项
 Re-generate AGENTS.md file:
   zh-CN: 重新生成 AGENTS.md 文件
 Read more about Warp's use of data:
@@ -1253,6 +1320,8 @@ Remove:
   zh-CN: 移除
 Remove the previous character:
   zh-CN: 删除前一个字符
+Rename:
+  zh-CN: 重命名
 Rename the current pane:
   zh-CN: 重命名当前窗格
 Rename the current tab:
@@ -1317,16 +1386,24 @@ Reviewing code changes:
   zh-CN: 正在审查代码更改
 Rewind to before this block:
   zh-CN: 回退到此 Block 之前
+Right:
+  zh-CN: 右
+Rows:
+  zh-CN: 行数
 Rule:
   zh-CN: 规则
-Rule could not be saved because changes were made while you were editing.:
-  zh-CN: 规则无法保存，因为编辑期间有其他更改。
 Rule Editor:
   zh-CN: 规则编辑器
+Rule could not be saved because changes were made while you were editing.:
+  zh-CN: 规则无法保存，因为编辑期间有其他更改。
 Rules:
   zh-CN: 规则
 Run selected commands:
   zh-CN: 运行所选命令
+SSH:
+  zh-CN: SSH
+SSH ControlMaster error:
+  zh-CN: SSH ControlMaster 错误
 Same line prompt:
   zh-CN: 同一行提示
 Save:
@@ -1337,6 +1414,8 @@ Save and auto-sync this plan to your Warp Drive:
   zh-CN: 保存并自动同步此计划到您的 Warp Drive
 Save as workflow:
   zh-CN: 保存为工作流
+Save changes?:
+  zh-CN: 保存更改？
 Save file as:
   zh-CN: 另存为
 Save new launch configuration:
@@ -1371,16 +1450,18 @@ Search:
   zh-CN: 搜索
 Search API keys:
   zh-CN: 搜索 API Key
+Search MCP Servers:
+  zh-CN: 搜索 MCP 服务器
 Search diff sets or branches to compare…:
   zh-CN: 搜索要比较的差异集或分支…
 Search in files:
   zh-CN: 在文件中搜索
-Search MCP Servers:
-  zh-CN: 搜索 MCP 服务器
 Search repos:
   zh-CN: 搜索代码库
 Search secrets or create a new one:
   zh-CN: 搜索密钥或创建新密钥
+Search sessions, agents, files...:
+  zh-CN: 搜索会话、Agent、文件...
 Search tabs...:
   zh-CN: 搜索标签页...
 Searched the web for "{query}":
@@ -1395,6 +1476,10 @@ Secret visual redaction mode:
   zh-CN: 密钥视觉脱敏模式
 See docs.:
   zh-CN: 查看文档。
+Select To Line End:
+  zh-CN: 选择到行尾
+Select To Line Start:
+  zh-CN: 选择到行首
 Select all:
   zh-CN: 全选
 Select all blocks:
@@ -1443,20 +1528,16 @@ Select to end of line:
   zh-CN: 选择到行尾
 Select to end of paragraph:
   zh-CN: 选择到段落末尾
-Select To Line End:
-  zh-CN: 选择到行尾
-Select To Line Start:
-  zh-CN: 选择到行首
 Select to start of line:
   zh-CN: 选择到行首
 Select to start of paragraph:
   zh-CN: 选择到段落起始
 Select up:
   zh-CN: 向上选择
-Send diff comments to {label}:
-  zh-CN: 将差异评论发送到 {label}
 Send Feedback:
   zh-CN: 发送反馈
+Send diff comments to {label}:
+  zh-CN: 将差异评论发送到 {label}
 Send feedback (opens external link):
   zh-CN: 发送反馈（打开外部链接）
 Send message to {recipients} cancelled.:
@@ -1471,12 +1552,12 @@ Session:
   zh-CN: 会话
 Session limit ({max_bytes}) exceeded. Please reshare to continue.:
   zh-CN: 已超出会话限制（{max_bytes}）。请重新共享以继续。
-Set by Team Workspace:
-  zh-CN: 由团队工作区设置
 Set Input Mode to Agent Mode:
   zh-CN: 将输入模式设置为 Agent 模式
 Set Input Mode to Terminal Mode:
   zh-CN: 将输入模式设置为终端模式
+Set by Team Workspace:
+  zh-CN: 由团队工作区设置
 Set unnamed register as system clipboard:
   zh-CN: 将未命名寄存器设为系统剪贴板
 Set up:
@@ -1507,6 +1588,12 @@ Shared {object_type}s limit reached:
   zh-CN: 已达到共享 {object_type} 的上限
 Shared {object_type}s restricted:
   zh-CN: 共享 {object_type} 已受限
+Show Global Workflows in Command Search (ctrl-r):
+  zh-CN: 在命令搜索中显示全局 Workflow（ctrl-r）
+Show Vim status bar:
+  zh-CN: 显示 Vim 状态栏
+Show Warp network log:
+  zh-CN: 显示 Warp 网络日志
 Show autosuggestion ignore button:
   zh-CN: 显示自动建议忽略按钮
 Show autosuggestion keybinding hint:
@@ -1515,14 +1602,14 @@ Show changelog toast after updates:
   zh-CN: 更新后显示更新日志 toast
 Show code review button:
   zh-CN: 显示代码审查按钮
+Show code review button in tab bar:
+  zh-CN: 在标签页栏中显示代码审查按钮
 Show credit usage details:
   zh-CN: 显示额度使用详情
 Show diff view:
   zh-CN: 显示差异视图
 Show find bar in code review:
   zh-CN: 在代码审查中显示查找栏
-Show Global Workflows in Command Search (ctrl-r):
-  zh-CN: 在命令搜索中显示全局 Workflow（ctrl-r）
 Show help block in new sessions:
   zh-CN: 在新会话中显示帮助 Block
 Show in-app agent notifications:
@@ -1537,16 +1624,14 @@ Show prompt:
   zh-CN: 显示提示
 Show terminal input message line:
   zh-CN: 显示终端输入消息行
+Show the tab bar:
+  zh-CN: 显示标签页栏
 Show tooltip on click on links:
   zh-CN: 点击链接时显示提示
 Show version history:
   zh-CN: 显示版本历史
 Show vertical tabs panel in restored windows:
   zh-CN: 在还原的窗口中显示垂直标签页面板
-Show Vim status bar:
-  zh-CN: 显示 Vim 状态栏
-Show Warp network log:
-  zh-CN: 显示 Warp 网络日志
 Show {hidden_count} more:
   zh-CN: 再显示 {hidden_count} 条
 Showing {total_refs} references:
@@ -1563,10 +1648,12 @@ Sign up:
   zh-CN: 注册
 Skill '{skill}' not found:
   zh-CN: 未找到技能 '{skill}'
-Skip for now:
-  zh-CN: 暂时跳过
 Skip Welcome Tips:
   zh-CN: 跳过欢迎提示
+Skip for now:
+  zh-CN: 暂时跳过
+Slack:
+  zh-CN: Slack
 Slash commands:
   zh-CN: 斜杠命令
 Solar Flare:
@@ -1587,10 +1674,6 @@ Split pane right:
   zh-CN: 向右拆分窗格
 Split pane up:
   zh-CN: 向上拆分窗格
-SSH:
-  zh-CN: SSH
-SSH ControlMaster error:
-  zh-CN: SSH ControlMaster 错误
 Start Input at the Top:
   zh-CN: 从顶部开始输入
 Starting server...:
@@ -1599,12 +1682,12 @@ Stash changes:
   zh-CN: 储藏更改
 Steer the {agent_name} agent:
   zh-CN: 引导 {agent_name} Agent
+Stop Synchronizing Any Panes:
+  zh-CN: 停止同步所有窗格
 Stop sharing:
   zh-CN: 停止分享
 Stop sharing current session:
   zh-CN: 停止共享当前会话
-Stop Synchronizing Any Panes:
-  zh-CN: 停止同步所有窗格
 'Stopped task: "{task_name}"':
   zh-CN: 已停止任务："{task_name}"
 Streaming...:
@@ -1665,6 +1748,8 @@ Syntax highlighting for commands:
   zh-CN: 命令的语法高亮
 System:
   zh-CN: 系统
+Tab close button position:
+  zh-CN: 标签页关闭按钮位置
 Tab configs:
   zh-CN: 标签页配置
 Tab key behavior:
@@ -1727,56 +1812,68 @@ Toggle Agent conversation list view:
   zh-CN: 切换 Agent 对话列表视图
 Toggle Auto-execute Mode:
   zh-CN: 切换自动执行模式
-Toggle block filter on selected or last block:
-  zh-CN: 对所选或上一个 Block 切换 Block 筛选器
-Toggle Case Sensitivity:
-  zh-CN: 切换区分大小写
-Toggle case-sensitive search:
-  zh-CN: 切换区分大小写搜索
 Toggle CLI Agent Rich Input:
   zh-CN: 切换 CLI Agent 富输入
+Toggle Case Sensitivity:
+  zh-CN: 切换区分大小写
 Toggle Code Review:
   zh-CN: 切换代码审查
-Toggle code review:
-  zh-CN: 切换代码审查
-Toggle command palette:
-  zh-CN: 切换命令面板
-Toggle comment:
-  zh-CN: 切换注释
 Toggle Conversation Details Panel:
   zh-CN: 切换对话详情面板
-Toggle file navigation in code review:
-  zh-CN: 切换代码审查中的文件导航
 Toggle Files Palette:
   zh-CN: 切换文件面板
-Toggle fullscreen:
-  zh-CN: 切换全屏
-Toggle hidden files in Project Explorer:
-  zh-CN: 切换项目资源管理器中的隐藏文件
 Toggle Hide CLI Responses:
   zh-CN: 切换隐藏 CLI 响应
-Toggle inline code styling:
-  zh-CN: 切换内联代码样式
 Toggle Input Mode (Warp/Classic):
   zh-CN: 切换输入模式（Warp/经典）
-Toggle keyboard shortcuts:
-  zh-CN: 切换键盘快捷键
 Toggle Maximize Active Pane:
   zh-CN: 切换最大化活动窗格
 Toggle Maximize Code Review Panel:
   zh-CN: 切换最大化代码审查面板
-Toggle navigation palette:
-  zh-CN: 切换导航面板
-Toggle notification mailbox:
-  zh-CN: 切换通知邮箱
-Toggle project explorer:
-  zh-CN: 切换项目资源管理器
 Toggle PTY Recording for Session:
   zh-CN: 切换会话 PTY 录制
 Toggle Queue Next Prompt:
   zh-CN: 切换排队下一条提示
 Toggle Regex:
   zh-CN: 切换正则表达式
+Toggle Sticky Command Header in Active Pane:
+  zh-CN: 切换活动窗格中的置顶命令标题
+Toggle Synchronizing All Panes in All Tabs:
+  zh-CN: 切换同步所有标签页中的所有窗格
+Toggle Synchronizing All Panes in Current Tab:
+  zh-CN: 切换同步当前标签页中的所有窗格
+Toggle Vertical Tabs Panel:
+  zh-CN: 切换垂直标签页面板
+Toggle Warp AI:
+  zh-CN: 切换 Warp AI
+Toggle Warp Drive:
+  zh-CN: 切换 Warp Drive
+Toggle block filter on selected or last block:
+  zh-CN: 对所选或上一个 Block 切换 Block 筛选器
+Toggle case-sensitive search:
+  zh-CN: 切换区分大小写搜索
+Toggle code review:
+  zh-CN: 切换代码审查
+Toggle command palette:
+  zh-CN: 切换命令面板
+Toggle comment:
+  zh-CN: 切换注释
+Toggle file navigation in code review:
+  zh-CN: 切换代码审查中的文件导航
+Toggle fullscreen:
+  zh-CN: 切换全屏
+Toggle hidden files in Project Explorer:
+  zh-CN: 切换项目资源管理器中的隐藏文件
+Toggle inline code styling:
+  zh-CN: 切换内联代码样式
+Toggle keyboard shortcuts:
+  zh-CN: 切换键盘快捷键
+Toggle navigation palette:
+  zh-CN: 切换导航面板
+Toggle notification mailbox:
+  zh-CN: 切换通知邮箱
+Toggle project explorer:
+  zh-CN: 切换项目资源管理器
 Toggle regular expression search:
   zh-CN: 切换正则表达式搜索
 Toggle resource center:
@@ -1785,28 +1882,16 @@ Toggle rich-text debug mode:
   zh-CN: 切换富文本调试模式
 Toggle sticky command header:
   zh-CN: 切换置顶命令标题
-Toggle Sticky Command Header in Active Pane:
-  zh-CN: 切换活动窗格中的置顶命令标题
 Toggle strikethrough styling:
   zh-CN: 切换删除线样式
-Toggle Synchronizing All Panes in All Tabs:
-  zh-CN: 切换同步所有标签页中的所有窗格
-Toggle Synchronizing All Panes in Current Tab:
-  zh-CN: 切换同步当前标签页中的所有窗格
 Toggle team workflows modal:
   zh-CN: 切换团队 Workflow 模态框
 Toggle the agent management view:
   zh-CN: 切换 Agent 管理视图
 Toggle underline styling:
   zh-CN: 切换下划线样式
-Toggle Vertical Tabs Panel:
-  zh-CN: 切换垂直标签页面板
 Toggle vertical tabs panel:
   zh-CN: 切换垂直标签页面板
-Toggle Warp AI:
-  zh-CN: 切换 Warp AI
-Toggle Warp Drive:
-  zh-CN: 切换 Warp Drive
 Toolbar layout:
   zh-CN: 工具栏布局
 Tools panel visibility is consistent across tabs:
@@ -1831,10 +1916,14 @@ Unable to create QR code for this session link.:
   zh-CN: 无法为此会话链接创建二维码。
 Unfold:
   zh-CN: 展开
+Ungroup tabs:
+  zh-CN: 取消标签页分组
 Uninstall Oz CLI command:
   zh-CN: 卸载 Oz CLI 命令
 Unknown MCP server '{autoinstall_param}':
   zh-CN: 未知的 MCP 服务器 '{autoinstall_param}'
+Unpin group:
+  zh-CN: 取消固定组
 Unshare block:
   zh-CN: 取消共享 Block
 Unsynced:
@@ -1843,8 +1932,14 @@ Untitled:
   zh-CN: 无标题
 Update:
   zh-CN: 更新
+Update Warp manually:
+  zh-CN: 手动更新 Warp
+Update and relaunch Warp:
+  zh-CN: 更新并重新启动 Warp
 Update from {name}:
   zh-CN: 来自 {name} 的更新
+Upgrade:
+  zh-CN: 升级
 Upgrade plan:
   zh-CN: 升级方案
 Upload the generated report:
@@ -1857,14 +1952,18 @@ Use & to trigger handoff:
   zh-CN: 使用 & 触发移交
 Use Audible Bell:
   zh-CN: 使用响铃
+Use Wayland for window management:
+  zh-CN: 使用 Wayland 进行窗口管理
 Use custom padding in alt-screen:
   zh-CN: 在备用屏幕中使用自定义内边距
 Use latest user prompt as conversation title in tab names:
   zh-CN: 在标签页名称中使用最新的用户提示作为对话标题
-Use Wayland for window management:
-  zh-CN: 使用 Wayland 进行窗口管理
 Using Warp Offline:
   zh-CN: 离线使用 Warp
+View Shared Blocks...:
+  zh-CN: 查看共享 Block...
+View Warp logs:
+  zh-CN: 查看 Warp 日志
 View agent tasks you created:
   zh-CN: 查看您创建的 Agent 任务
 View all available system fonts:
@@ -1887,18 +1986,16 @@ View privacy policy (opens external link):
   zh-CN: 查看隐私政策（打开外部链接）
 View pull request:
   zh-CN: 查看 Pull Request
-View Shared Blocks...:
-  zh-CN: 查看共享 Block...
 View this run in the Oz web app:
   zh-CN: 在 Oz Web 应用中查看此运行
 View user docs (opens external link):
   zh-CN: 查看用户文档（打开外部链接）
-View Warp logs:
-  zh-CN: 查看 Warp 日志
 View your agent tasks plus all shared team tasks:
   zh-CN: 查看您的 Agent 任务及所有共享的团队任务
 Viewing:
   zh-CN: 查看中
+'Visual:':
+  zh-CN: 可视化：
 Voice:
   zh-CN: 语音
 Voice input:
@@ -1911,20 +2008,21 @@ Warp:
   zh-CN: Warp
 Warp API Key:
   zh-CN: Warp API Key
-? Warp Drive is a workspace in your terminal where you can save Workflows, Notebooks, Prompts, and Environment Variables for personal use or to share with a team.
+? Warp Drive is a workspace in your terminal where you can save Workflows, Notebooks,
+  Prompts, and Environment Variables for personal use or to share with a team.
 : zh-CN: Warp Drive 是终端中的工作区，您可以保存工作流、笔记本、提示和环境变量供个人使用或与团队共享。
 Warp Drive.:
   zh-CN: Warp Drive。
+Warp Referral:
+  zh-CN: Warp 推荐
 Warp is the intelligent terminal with AI and your dev team's knowledge built-in.:
   zh-CN: Warp 是内置 AI 和您开发团队知识的智能终端。
 Warp loads and sends local AWS CLI credentials for Bedrock-supported models. This setting is managed by your organization.:
   zh-CN: Warp 会加载并发送本地 AWS CLI 凭据用于 Bedrock 支持的模型。此设置由您的组织管理。
-Warp Referral:
-  zh-CN: Warp 推荐
-Warp's free plan comes with a limited number of shared {object_type}s.:
-  zh-CN: Warp 的免费套餐包含有限数量的共享 {object_type}。
 Warp's Pro plan comes with a limited number of shared {object_type}s.:
   zh-CN: Warp 的 Pro 套餐包含有限数量的共享 {object_type}。
+Warp's free plan comes with a limited number of shared {object_type}s.:
+  zh-CN: Warp 的免费套餐包含有限数量的共享 {object_type}。
 Warpify subshell:
   zh-CN: Warpify 子 shell
 Warping with {name}.:
@@ -1933,8 +2031,18 @@ Web fetch failed:
   zh-CN: 网页获取失败
 Welcome to Warp:
   zh-CN: 欢迎使用 Warp
+What's new:
+  zh-CN: 新功能
+? When enabled, reopening or restoring a window opens the vertical tabs panel even
+  if it was closed when the window was last saved.
+: zh-CN: 启用后，重新打开或恢复窗口时会打开垂直标签页面板，即使上次保存窗口时该面板已关闭。
 When this setting is on, the code review panel will open on the first accepted diff of a conversation:
   zh-CN: 开启此设置后，代码审查面板会在对话中第一个接受的 diff 处打开
+? When using the vertical tab layout, hide the search bar in the title bar. Search
+  stays available via the command palette and keyboard shortcuts.
+: zh-CN: 使用垂直标签页布局时，隐藏标题栏中的搜索栏。搜索仍可通过命令面板和键盘快捷键使用。
+When windowed:
+  zh-CN: 窗口模式时
 Whether the Linux primary clipboard should be supported.:
   zh-CN: 是否支持 Linux 主剪贴板。
 Who has access:
@@ -1951,12 +2059,12 @@ Working directory:
   zh-CN: 工作目录
 Working directory for new sessions:
   zh-CN: 新会话的工作目录
+You can Warpify this {lowercase_title} for more Warp features.:
+  zh-CN: 您可以 Warpify 此 {lowercase_title} 以获得更多 Warp 功能。
 You can change this at any time in settings.:
   zh-CN: 您可以随时在设置中更改此选项。
 You can sign up later, but some features, such as AI,:
   zh-CN: 您可以稍后注册，但某些功能（如 AI）
-You can Warpify this {lowercase_title} for more Warp features.:
-  zh-CN: 您可以 Warpify 此 {lowercase_title} 以获得更多 Warp 功能。
 You don't have any shared blocks yet.:
   zh-CN: 您还没有任何共享 Block。
 You have unsaved file changes{scope_suffix}:
@@ -1983,3 +2091,19 @@ Your new team name:
   zh-CN: 您的新团队名称
 Your plan ({plan_display}) has a maximum capacity of {cap} members.:
   zh-CN: 您的套餐（{plan_display}）最多可容纳 {cap} 名成员。
+alias name:
+  zh-CN: 别名
+'are only available to logged-in users. ':
+  zh-CN: '仅对已登录用户可用。 '
+command (supports regex):
+  zh-CN: 命令（支持正则表达式）
+e.g. "Google API Key":
+  zh-CN: e.g. "Google API Key"
+e.g., GLM-5:
+  zh-CN: e.g., GLM-5
+e.g., GLM-5-FP8:
+  zh-CN: e.g., GLM-5-FP8
+e.g., Zach's external models:
+  zh-CN: e.g., Zach's external models
+e.g., sk-...:
+  zh-CN: e.g., sk-...

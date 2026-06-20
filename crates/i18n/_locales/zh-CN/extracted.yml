@@ -3286,3 +3286,22 @@ View details:
   zh-CN: 查看详情
 View screenshot:
   zh-CN: 查看截图
+
+# Additional translations
+
+Could not determine parent directory of file when running grep:
+  zh-CN: 无法determine 父 目录 of 文件 when 运行中 grep
+No active conversation to export:
+  zh-CN: 没有活跃 对话 to export
+No directory selected:
+  zh-CN: 没有目录 已选择
+No remote server client available:
+  zh-CN: 没有远程 服务器 客户端 可用
+Open New Window:
+  zh-CN: 打开新 窗口
+Successfully created environment:
+  zh-CN: 成功已创建 环境
+Successfully shared environment:
+  zh-CN: 成功共享 环境
+Successfully updated environment:
+  zh-CN: 成功已更新 环境

@@ -1436,7 +1436,7 @@ fn render_spawning_card(
     let label = if total == 1 {
         i18n::t!("Spawning 1 agent\u{2026}").to_string()
     } else {
-        format!("Spawning {total} agents\u{2026}")
+        i18n::t!("Spawning {total} agents\u{2026}", total = total).to_string()
     };
     render_status_only_card(label, appearance, StatusKind::Spawning, app)
 }

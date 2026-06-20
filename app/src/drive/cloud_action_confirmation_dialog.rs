@@ -101,12 +101,8 @@ impl CloudActionConfirmationDialog {
 
     fn confirm_button_text(&self) -> String {
         match self.variant {
-            CloudActionConfirmationDialogVariant::LeaveTeam => {
-                i18n::t!("Yes, leave").to_string()
-            }
-            CloudActionConfirmationDialogVariant::DeleteTeam => {
-                i18n::t!("Yes, delete").to_string()
-            }
+            CloudActionConfirmationDialogVariant::LeaveTeam => i18n::t!("Yes, leave").to_string(),
+            CloudActionConfirmationDialogVariant::DeleteTeam => i18n::t!("Yes, delete").to_string(),
             CloudActionConfirmationDialogVariant::LeaveTeamReloadCredits => {
                 i18n::t!("Leave Team").to_string()
             }

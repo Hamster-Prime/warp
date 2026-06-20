@@ -418,9 +418,9 @@ impl OnboardingCalloutModel {
     fn prompt_for_agent_modality(&self, state: AgentModalityCalloutState) -> OnboardingQuery {
         match state {
             AgentModalityCalloutState::Off => OnboardingQuery::None,
-            AgentModalityCalloutState::TerminalMode => OnboardingQuery::TerminalCommand(
-                i18n::t!("Run a command...").to_string(),
-            ),
+            AgentModalityCalloutState::TerminalMode => {
+                OnboardingQuery::TerminalCommand(i18n::t!("Run a command...").to_string())
+            }
             AgentModalityCalloutState::AgentMode => {
                 if self.has_project {
                     OnboardingQuery::AgentPrompt("/init".to_string())

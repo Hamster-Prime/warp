@@ -657,7 +657,9 @@ impl ReferralsWidget {
                 Container::new(
                     appearance
                         .ui_builder()
-                        .span(i18n::t!("Sign up to participate in Warp's referral program"))
+                        .span(i18n::t!(
+                            "Sign up to participate in Warp's referral program"
+                        ))
                         .with_style(UiComponentStyles {
                             font_size: Some(HEADER_FONT_SIZE),
                             ..Default::default()
@@ -729,7 +731,9 @@ impl ReferralsWidget {
             Container::new(
                 appearance
                     .ui_builder()
-                    .span(i18n::t!("Get exclusive Warp goodies when you refer someone*"))
+                    .span(i18n::t!(
+                        "Get exclusive Warp goodies when you refer someone*"
+                    ))
                     .with_style(UiComponentStyles {
                         font_size: Some(REWARD_INTRO_FONT_SIZE),
                         ..Default::default()

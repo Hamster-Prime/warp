@@ -6564,3 +6564,454 @@ you can adjust your:
 💣 {secret}:
   zh-CN: 💣 {secret}
 
+
+", ask a team admin to enable overages":
+  zh-CN: "，请联系团队管理员启用超额使用"
+", ask a team admin to increase overages":
+  zh-CN: "，请联系团队管理员提高超额上限"
+", contact a team admin":
+  zh-CN: "，联系团队管理员"
+"AWS credentials expired or missing for {model_name}. Please refresh your AWS credentials.":
+  zh-CN: "{model_name} 的 AWS 凭证已过期或缺失。请刷新您的 AWS 凭证。"
+"Access all of Warp via the keyboard.":
+  zh-CN: "通过键盘访问 Warp 的所有功能。"
+"Access to ":
+  zh-CN: "访问权限："
+"Action Selected":
+  zh-CN: "已选择操作"
+"Add MCP servers to extend the Warp Agent's capabilities. MCP servers expose data sources or tools to agents through a standardized interface, essentially acting like plugins. Add a custom server, or use the presets to get started with popular servers. You can also find team servers that have been shared with you here. ":
+  zh-CN: "添加 MCP 服务器以扩展 Warp 代理的功能。MCP 服务器通过标准化接口向代理公开数据源或工具，本质上类似于插件。您可以添加自定义服务器，或使用预设快速开始使用流行的服务器。您还可以在此处找到与您共享的团队服务器。"
+"Add comment on line":
+  zh-CN: "在行上添加评论"
+"Add diff hunk as context":
+  zh-CN: "将差异代码块添加为上下文"
+"Adjusting tasks...":
+  zh-CN: "正在调整任务..."
+"Agent is asking you to take control.":
+  zh-CN: "代理请求您接管控制。"
+"Agent is in control":
+  zh-CN: "代理控制中"
+"Agent is waiting for command to exit":
+  zh-CN: "代理正在等待命令退出"
+"Agent is waiting on instructions":
+  zh-CN: "代理正在等待指令"
+"Agent needs your permission to continue":
+  zh-CN: "代理需要您的许可才能继续"
+"Agent waiting for instructions...":
+  zh-CN: "代理正在等待指令..."
+"Allow automatic indexing":
+  zh-CN: "允许自动索引"
+"An error occurred while processing your voice input.":
+  zh-CN: "处理您的语音输入时出错。"
+"Approve":
+  zh-CN: "批准"
+"At Limit -":
+  zh-CN: "已达上限 -"
+"Authenticate GitHub":
+  zh-CN: "认证 GitHub"
+"Auto":
+  zh-CN: "自动"
+"Auto-approve all agent actions for this task":
+  zh-CN: "为该任务自动批准所有代理操作"
+"Auto-reload":
+  zh-CN: "自动重载"
+"Available chips":
+  zh-CN: "可用芯片"
+"Available items":
+  zh-CN: "可用项目"
+"BETA":
+  zh-CN: "测试版"
+"Background color":
+  zh-CN: "背景颜色"
+"Balance":
+  zh-CN: "余额"
+"Buy credits":
+  zh-CN: "购买额度"
+"Can I write the following to this running command?":
+  zh-CN: "我可以将以下内容写入此运行中的命令吗？"
+"Cancel request":
+  zh-CN: "取消请求"
+"Cannot edit inherited permissions":
+  zh-CN: "无法编辑继承的权限"
+"Certain restrictions apply.":
+  zh-CN: "某些限制适用。"
+"Click the button below to link your Warp account to your SSO provider.":
+  zh-CN: "点击下方按钮将您的 Warp 账户链接到 SSO 提供商。"
+"Click to select a block and navigate with arrow keys.":
+  zh-CN: "点击选择代码块并使用方向键导航。"
+"Configure Warp to launch from your most used development tools":
+  zh-CN: "配置 Warp 从您最常用的开发工具启动"
+"Contact sales":
+  zh-CN: "联系销售"
+"Continue sharing":
+  zh-CN: "继续共享"
+"Conversation":
+  zh-CN: "对话"
+"Create a pull request":
+  zh-CN: "创建拉取请求"
+"Create your first block":
+  zh-CN: "创建您的第一个代码块"
+"Creating diff...":
+  zh-CN: "正在创建差异..."
+"Current referral":
+  zh-CN: "当前推荐"
+"Current referrals":
+  zh-CN: "当前推荐"
+"Deny":
+  zh-CN: "拒绝"
+"Did you intend ":
+  zh-CN: "您是否打算 "
+"Disable terminal command autodetection":
+  zh-CN: "禁用终端命令自动检测"
+"Docker image to use for the environment":
+  zh-CN: "用于该环境的 Docker 镜像"
+"Documentation.":
+  zh-CN: "文档。"
+"Don't ask me this again":
+  zh-CN: "不再询问"
+"Don't show me again":
+  zh-CN: "不再显示"
+"Earn rewards by sharing Warp with friends & colleagues":
+  zh-CN: "通过向朋友和同事分享 Warp 赢取奖励"
+"Edit Profile":
+  zh-CN: "编辑配置文件"
+"Edit inherited permissions on the parent folder":
+  zh-CN: "在父文件夹上编辑继承的权限"
+"Edit toolbar":
+  zh-CN: "编辑工具栏"
+"Enable auto-handoff?":
+  zh-CN: "启用自动交接？"
+"Enable premium overages":
+  zh-CN: "启用高级超额使用"
+"Enable terminal command autodetection":
+  zh-CN: "启用终端命令自动检测"
+"Encountered an incorrect detection? ":
+  zh-CN: "遇到错误的检测？"
+"Executing command...":
+  zh-CN: "正在执行命令..."
+"Expiration":
+  zh-CN: "过期时间"
+"Failed to load referral code.":
+  zh-CN: "加载推荐代码失败。"
+"Failed to replace browser state":
+  zh-CN: "替换浏览器状态失败"
+"Failed to send emails. Please try again.":
+  zh-CN: "发送邮件失败。请重试。"
+"Fast forward is always enabled for cloud agent conversations":
+  zh-CN: "云端代理对话始终启用快进功能"
+"Fetching PR comments...":
+  zh-CN: "正在获取 PR 评论..."
+"File Uploads":
+  zh-CN: "文件上传"
+"Find and run previously executed commands, workflows, and more.":
+  zh-CN: "查找并运行之前执行过的命令、工作流等。"
+"Finding files that match ":
+  zh-CN: "正在查找匹配的文件："
+"Finding files...":
+  zh-CN: "正在查找文件..."
+"Folder":
+  zh-CN: "文件夹"
+"Free credits":
+  zh-CN: "免费额度"
+"Generating fix...":
+  zh-CN: "正在生成修复..."
+"Generating plan...":
+  zh-CN: "正在生成计划..."
+"Generating title...":
+  zh-CN: "正在生成标题..."
+"Get exclusive Warp goodies when you refer someone*":
+  zh-CN: "推荐他人即可获得 Warp 专属好礼*"
+"GitHub link or local filepath to the repository":
+  zh-CN: "GitHub 链接或仓库的本地文件路径"
+"Grant access to the following files?":
+  zh-CN: "授予对以下文件的访问权限？"
+"Grant access to the following repository?":
+  zh-CN: "授予对此仓库的访问权限？"
+"Grant access to upload this artifact?":
+  zh-CN: "授予上传此构件的权限？"
+"Grep for ":
+  zh-CN: "Grep 搜索："
+"Grepping for ":
+  zh-CN: "正在 Grep 搜索："
+"Grepping...":
+  zh-CN: "正在 Grep..."
+"Help improve Warp.":
+  zh-CN: "帮助改进 Warp。"
+"Hold <keybinding> to speak your prompt directly to the agent.":
+  zh-CN: "按住 <keybinding> 直接向代理口述您的提示。"
+"How Warp uses Warp":
+  zh-CN: "Warp 如何使用 Warp"
+"I'm sorry, I couldn't complete that request.":
+  zh-CN: "抱歉，我无法完成该请求。"
+"ID of the environment to integrate with":
+  zh-CN: "要集成的环境 ID"
+"If you installed Warp using ":
+  zh-CN: "如果您使用 "
+"Imported Alacritty Theme":
+  zh-CN: "已导入的 Alacritty 主题"
+"Increase it":
+  zh-CN: "提高限额"
+"Increase monthly spend limit":
+  zh-CN: "提高月度消费限额"
+"Index Codebase?":
+  zh-CN: "索引代码库？"
+"Index codebase":
+  zh-CN: "索引代码库"
+"Indexing codebase":
+  zh-CN: "正在索引代码库"
+"Indexing helps agents quickly understand context and provide targeted solutions. Code is never stored on the server.":
+  zh-CN: "索引有助于代理快速理解上下文并提供针对性解决方案。代码绝不会存储在服务器上。"
+"Installed":
+  zh-CN: "已安装"
+"Integrate Warp with your IDE":
+  zh-CN: "将 Warp 与您的 IDE 集成"
+"Keybinding":
+  zh-CN: "快捷键"
+"Launch configuration":
+  zh-CN: "启动配置"
+"Learn how Warp's engineering team uses their favorite features":
+  zh-CN: "了解 Warp 工程团队如何使用他们最喜爱的功能"
+"Learn more on our ":
+  zh-CN: "在我们的 "
+"Left side":
+  zh-CN: "左侧"
+"Link copied to clipboard!":
+  zh-CN: "链接已复制到剪贴板！"
+"Loading cloud agent runs":
+  zh-CN: "正在加载云端代理运行记录"
+"Loading session...":
+  zh-CN: "正在加载会话..."
+"Log in to use /remote-control":
+  zh-CN: "登录以使用 /remote-control"
+"MODELS":
+  zh-CN: "模型"
+"Make Editor":
+  zh-CN: "设为编辑者"
+"Make Warp your own by choosing a theme.":
+  zh-CN: "通过选择主题让 Warp 成为您的专属。"
+"Manage Agent permissions":
+  zh-CN: "管理代理权限"
+"Menu Closed":
+  zh-CN: "菜单已关闭"
+"Name for the environment":
+  zh-CN: "环境名称"
+"Navigate blocks":
+  zh-CN: "导航代码块"
+"Never":
+  zh-CN: "从不"
+"New":
+  zh-CN: "新建"
+"No conversations yet":
+  zh-CN: "暂无对话"
+"No git actions available":
+  zh-CN: "没有可用的 git 操作"
+"No internet connection":
+  zh-CN: "无网络连接"
+"No open changes":
+  zh-CN: "没有未提交的更改"
+"No search results found":
+  zh-CN: "未找到搜索结果"
+"No suggestions":
+  zh-CN: "无建议"
+"No tabs open":
+  zh-CN: "没有打开的标签页"
+"No usage history":
+  zh-CN: "无使用记录"
+"No, keep IDE bindings":
+  zh-CN: "不，保留 IDE 绑定"
+"Notification":
+  zh-CN: "通知"
+"OK if I search the files in this directory?":
+  zh-CN: "可以搜索此目录中的文件吗？"
+"Offline, trying to reconnect...":
+  zh-CN: "离线，正在尝试重新连接..."
+"Once you add a MCP server, it will be shown here.":
+  zh-CN: "添加 MCP 服务器后，它将显示在这里。"
+"Open command palette":
+  zh-CN: "打开命令面板"
+"Orchestrator":
+  zh-CN: "编排器"
+"Other...":
+  zh-CN: "其他..."
+"Oz Cloud API Keys":
+  zh-CN: "Oz Cloud API 密钥"
+"PERMISSIONS":
+  zh-CN: "权限"
+"Powerlevel10k now supports Warp!  ":
+  zh-CN: "Powerlevel10k 现已支持 Warp！  "
+"Preparing question...":
+  zh-CN: "正在准备问题..."
+"Profile Editor":
+  zh-CN: "配置文件编辑器"
+"Prompt agent to interact with":
+  zh-CN: "提示代理与之交互"
+"Prompt agent to interact with the running command":
+  zh-CN: "提示代理与正在运行的命令交互"
+"Publish branch to remote":
+  zh-CN: "将分支发布到远程"
+"Push commits to remote":
+  zh-CN: "将提交推送到远程"
+"Read article":
+  zh-CN: "阅读文章"
+"Read-only":
+  zh-CN: "只读"
+"Reading files...":
+  zh-CN: "正在读取文件..."
+"Restricted due to payment issue":
+  zh-CN: "由于付款问题受限"
+"Revert diff hunk":
+  zh-CN: "还原差异代码块"
+"Right click on a block to copy/paste, share, more.":
+  zh-CN: "右键点击代码块进行复制/粘贴、共享等操作。"
+"Right side":
+  zh-CN: "右侧"
+"Run a command to see your command and output grouped.":
+  zh-CN: "运行命令以查看命令和输出的分组。"
+"Save changes to add comment":
+  zh-CN: "保存更改以添加评论"
+"Save changes to attach as context.":
+  zh-CN: "保存更改以作为上下文附加。"
+"Save changes to revert":
+  zh-CN: "保存更改以还原"
+"Save your current configuration of windows, tabs, and panes.":
+  zh-CN: "保存您当前的窗口、标签页和窗格配置。"
+"Saved successfully to ":
+  zh-CN: "已成功保存到 "
+"Search for files that match ":
+  zh-CN: "搜索匹配的文件："
+"Searching codebase...":
+  zh-CN: "正在搜索代码库..."
+"Searching the web...":
+  zh-CN: "正在搜索网络..."
+"Seems like your completions are not working (":
+  zh-CN: "您的自动补全似乎无法正常工作（"
+"Send":
+  zh-CN: "发送"
+"Sending message to ":
+  zh-CN: "正在发送消息给："
+"Sending...":
+  zh-CN: "发送中..."
+"Set up Warp to honor your PS1 setting":
+  zh-CN: "设置 Warp 以遵循您的 PS1 设置"
+"Set your theme":
+  zh-CN: "设置您的主题"
+"Sharing without scrollback is disabled because this session has agent conversations":
+  zh-CN: "由于此会话包含代理对话，已禁用无回滚共享"
+"Show saved comment":
+  zh-CN: "显示已保存的评论"
+"Sign up for more AI credits":
+  zh-CN: "注册以获取更多 AI 额度"
+"Sign up to participate in Warp's referral program":
+  zh-CN: "注册以参与 Warp 推荐计划"
+"Skipped":
+  zh-CN: "已跳过"
+"Some options are disabled due to sharing size limits":
+  zh-CN: "由于共享大小限制，部分选项已被禁用"
+"Some options are disabled due to sharing size limits and the presence of agent conversations in the session":
+  zh-CN: "由于共享大小限制以及会话中存在代理对话，部分选项已被禁用"
+"Spawning {total} agents\\u{2026}":
+  zh-CN: "正在生成 {total} 个代理…"
+"Split panes":
+  zh-CN: "拆分窗格"
+"Split tabs into multiple panes to make your ideal layout.":
+  zh-CN: "将标签页拆分为多个窗格以打造您理想的布局。"
+"Start remote control":
+  zh-CN: "启动远程控制"
+"Start sharing":
+  zh-CN: "开始共享"
+"Started agent ":
+  zh-CN: "已启动代理 "
+"Submenu Closed":
+  zh-CN: "子菜单已关闭"
+"Submenu Expanded":
+  zh-CN: "子菜单已展开"
+"Subshells supported: bash, zsh, and fish.":
+  zh-CN: "支持的子 shell：bash、zsh 和 fish。"
+"Successfully sent emails.":
+  zh-CN: "邮件已成功发送。"
+"Summarizing command output...":
+  zh-CN: "正在总结命令输出..."
+"Summarizing conversation...":
+  zh-CN: "正在总结对话..."
+"Syncing Warp Drive":
+  zh-CN: "正在同步 Warp Drive"
+"Take an action on block":
+  zh-CN: "对代码块执行操作"
+"Theme name":
+  zh-CN: "主题名称"
+"This action cannot be undone":
+  zh-CN: "此操作无法撤销"
+"This action takes effect immediately":
+  zh-CN: "此操作立即生效"
+"Today":
+  zh-CN: "今天"
+"Turn off auto-approve all agent actions":
+  zh-CN: "关闭所有代理操作的自动批准"
+"Type":
+  zh-CN: "类型"
+"Unknown":
+  zh-CN: "未知"
+"Unnamed":
+  zh-CN: "未命名"
+"Updating plan...":
+  zh-CN: "正在更新计划..."
+"Upgrade to Build":
+  zh-CN: "升级到 Build"
+"Upgrade to the Build plan":
+  zh-CN: "升级到 Build 套餐"
+"Upgrade to the Build plan.":
+  zh-CN: "升级到 Build 套餐。"
+"Use your":
+  zh-CN: "使用您的"
+"Use your custom prompt":
+  zh-CN: "使用您的自定义提示"
+"User is in control":
+  zh-CN: "用户控制中"
+"View documentation":
+  zh-CN: "查看文档"
+"View status":
+  zh-CN: "查看状态"
+"Visit docs":
+  zh-CN: "访问文档"
+"Waiting for command to exit...":
+  zh-CN: "正在等待命令退出..."
+"Waiting for password input":
+  zh-CN: "正在等待密码输入"
+"Warp Docs":
+  zh-CN: "Warp 文档"
+"Warp is now open-source":
+  zh-CN: "Warp 现已开源"
+"Warp's Terms of Service":
+  zh-CN: "Warp 服务条款"
+"Warpify your interactive SSH sessions.":
+  zh-CN: "Warpify 您的交互式 SSH 会话。"
+"Warping...":
+  zh-CN: "Warping 中..."
+"We may collect certain console interactions to improve Warp's AI capabilities. You can opt out any time.":
+  zh-CN: "我们可能会收集某些控制台交互以改进 Warp 的 AI 功能。您可以随时选择退出。"
+"We've updated our telemetry policy.":
+  zh-CN: "我们已更新遥测政策。"
+"Welcome to Warp on Web":
+  zh-CN: "欢迎使用 Web 版 Warp"
+"What's new in Oz":
+  zh-CN: "Oz 的最新功能"
+"When enabled, ":
+  zh-CN: "启用后，"
+"Wispr Flow":
+  zh-CN: "Wispr Flow"
+"Writing command input...":
+  zh-CN: "正在写入命令输入..."
+"Yes, use Emacs-style bindings":
+  zh-CN: "是，使用 Emacs 风格的绑定"
+"You're using the base agent. Full terminal use models only apply to the full terminal use agent.":
+  zh-CN: "您正在使用基础代理。完整终端使用模型仅适用于完整终端使用代理。"
+"You're using the full terminal use agent. Base models only apply to the base agent.":
+  zh-CN: "您正在使用完整终端使用代理。基础模型仅适用于基础代理。"
+"You've reached your credit limit. Your credit limit resets on {formatted_next_refresh_time}.":
+  zh-CN: "您已达到额度上限。您的额度将在 {formatted_next_refresh_time} 重置。"
+"Your organization disallows AI when the active pane contains content from a remote session":
+  zh-CN: "当活动窗格包含远程会话的内容时，您的组织不允许使用 AI"
+"Your organization has enabled SSO for your account":
+  zh-CN: "您的组织已为您的账户启用了 SSO"
+"ZDR":
+  zh-CN: "ZDR"

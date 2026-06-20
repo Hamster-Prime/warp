@@ -2654,12 +2654,16 @@ impl BillingAndUsagePageView {
                 )
                 .with_child(
                     Container::new(
-                        Text::new(i18n::t!("No usage history"), appearance.ui_font_family(), 14.)
-                            .with_color(blended_colors::text_sub(
-                                appearance.theme(),
-                                appearance.theme().surface_1(),
-                            ))
-                            .finish(),
+                        Text::new(
+                            i18n::t!("No usage history"),
+                            appearance.ui_font_family(),
+                            14.,
+                        )
+                        .with_color(blended_colors::text_sub(
+                            appearance.theme(),
+                            appearance.theme().surface_1(),
+                        ))
+                        .finish(),
                     )
                     .with_margin_bottom(4.)
                     .finish(),
@@ -3199,7 +3203,10 @@ impl BillingAndUsagePageView {
                 ]
             } else if !team.billing_metadata.is_usage_based_pricing_toggleable() {
                 vec![
-                    FormattedTextFragment::hyperlink(i18n::t!("Contact support"), "mailto:support@warp.dev"),
+                    FormattedTextFragment::hyperlink(
+                        i18n::t!("Contact support"),
+                        "mailto:support@warp.dev",
+                    ),
                     FormattedTextFragment::plain_text(" for more AI usage."),
                 ]
             } else {

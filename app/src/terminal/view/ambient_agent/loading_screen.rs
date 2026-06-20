@@ -49,7 +49,10 @@ pub fn render_cloud_mode_loading_screen(
         // Add link at the end if it exists
         if let Some(link_target) = tip.link() {
             fragments.push(FormattedTextFragment::plain_text(" "));
-            fragments.push(FormattedTextFragment::hyperlink(i18n::t!("Learn more"), link_target));
+            fragments.push(FormattedTextFragment::hyperlink(
+                i18n::t!("Learn more"),
+                link_target,
+            ));
         }
 
         let formatted_text = FormattedText::new(vec![FormattedTextLine::Line(fragments)]);
@@ -163,7 +166,10 @@ fn render_tier_limits_footer(
         .current_team()
         .map(|team| UserWorkspaces::upgrade_link_for_team(team.uid))?;
 
-    fragments.push(FormattedTextFragment::hyperlink(i18n::t!("Upgrade"), upgrade_url));
+    fragments.push(FormattedTextFragment::hyperlink(
+        i18n::t!("Upgrade"),
+        upgrade_url,
+    ));
     fragments.push(FormattedTextFragment::plain_text(
         " for more powerful cloud agents.",
     ));

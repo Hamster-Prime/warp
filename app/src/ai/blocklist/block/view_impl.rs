@@ -663,7 +663,8 @@ pub fn render_citation(
                 .to_warp_drive_item(appearance)?;
             (
                 item.icon(appearance, Some(theme.active_ui_text_color())),
-                item.display_name().unwrap_or(i18n::t!("Untitled").to_string()),
+                item.display_name()
+                    .unwrap_or(i18n::t!("Untitled").to_string()),
             )
         }
         AIAgentCitation::WarpDocumentation { .. } => {

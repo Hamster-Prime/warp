@@ -867,10 +867,10 @@ impl EnumCreationDialog {
                             self.mouse_state_handles
                                 .cancel_button_mouse_state_handle
                                 .clone(),
-                             EnumCreationDialogAction::Close,
-                             i18n::t!("Close"),
-                             false,
-                             false,
+                            EnumCreationDialogAction::Close,
+                            i18n::t!("Close"),
+                            false,
+                            false,
                         ),
                     )
                     .with_margin_right(ELEMENT_SPACING)

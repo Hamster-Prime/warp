@@ -315,9 +315,7 @@ pub fn render_warping_indicator<V: View>(
             Some(AIAgentActionType::SearchCodebase(..)) => {
                 i18n::t!("Searching codebase...").to_string()
             }
-            Some(AIAgentActionType::Grep { .. }) => {
-                i18n::t!("Grepping...").to_string()
-            }
+            Some(AIAgentActionType::Grep { .. }) => i18n::t!("Grepping...").to_string(),
             Some(AIAgentActionType::CallMCPTool { name, .. }) => {
                 format!("Calling \"{name}\" MCP tool...")
             }

@@ -4089,10 +4089,14 @@ impl CodeReviewView {
                 .finish(),
             )
             .with_child(
-                Text::new(i18n::t!("No open changes"), appearance.ui_font_family(), 16.)
-                    .with_style(Properties::default().weight(Weight::Semibold))
-                    .with_color(theme.main_text_color(theme.surface_2()).into())
-                    .finish(),
+                Text::new(
+                    i18n::t!("No open changes"),
+                    appearance.ui_font_family(),
+                    16.,
+                )
+                .with_style(Properties::default().weight(Weight::Semibold))
+                .with_color(theme.main_text_color(theme.surface_2()).into())
+                .finish(),
             )
             .with_child(
                 Container::new(
@@ -6598,7 +6602,10 @@ impl CodeReviewView {
                 });
                 self.git_operations_chevron.update(ctx, |button, ctx| {
                     button.set_disabled(disabled, ctx);
-                    button.set_tooltip(disabled.then_some(i18n::t!("No git actions available").to_string()), ctx);
+                    button.set_tooltip(
+                        disabled.then_some(i18n::t!("No git actions available").to_string()),
+                        ctx,
+                    );
                 });
             }
             PrimaryGitActionMode::Push => {

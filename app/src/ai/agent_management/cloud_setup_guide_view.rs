@@ -349,7 +349,10 @@ impl CloudSetupGuideView {
                 WorkflowType::Local(
                     Workflow::new("Create Environment", CREATE_ENV_SLASH_CMD).with_arguments(vec![
                         Argument::new("github link or local filepath", ArgumentType::Text)
-                            .with_description(i18n::t!("GitHub link or local filepath to the repository").to_string()),
+                            .with_description(
+                                i18n::t!("GitHub link or local filepath to the repository")
+                                    .to_string(),
+                            ),
                     ]),
                 ),
                 SetupGuideStep::CreateEnvironment,
@@ -360,8 +363,9 @@ impl CloudSetupGuideView {
                         vec![
                             Argument::new("NAME", ArgumentType::Text)
                                 .with_description(i18n::t!("Name for the environment").to_string()),
-                            Argument::new("DOCKER_IMAGE", ArgumentType::Text)
-                                .with_description(i18n::t!("Docker image to use for the environment").to_string()),
+                            Argument::new("DOCKER_IMAGE", ArgumentType::Text).with_description(
+                                i18n::t!("Docker image to use for the environment").to_string(),
+                            ),
                         ],
                     ),
                 ),
@@ -371,7 +375,9 @@ impl CloudSetupGuideView {
                 WorkflowType::Local(
                     Workflow::new("Create Slack Integration", CREATE_SLACK_INTEGRATION_CMD)
                         .with_arguments(vec![Argument::new("environment_id", ArgumentType::Text)
-                            .with_description(i18n::t!("ID of the environment to integrate with").to_string())]),
+                            .with_description(
+                                i18n::t!("ID of the environment to integrate with").to_string(),
+                            )]),
                 ),
                 SetupGuideStep::CreateSlackIntegration,
             )),
@@ -379,7 +385,9 @@ impl CloudSetupGuideView {
                 WorkflowType::Local(
                     Workflow::new("Create Linear Integration", CREATE_LINEAR_INTEGRATION_CMD)
                         .with_arguments(vec![Argument::new("environment_id", ArgumentType::Text)
-                            .with_description(i18n::t!("ID of the environment to integrate with").to_string())]),
+                            .with_description(
+                                i18n::t!("ID of the environment to integrate with").to_string(),
+                            )]),
                 ),
                 SetupGuideStep::CreateLinearIntegration,
             )),

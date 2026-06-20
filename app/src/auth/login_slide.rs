@@ -1,7 +1,7 @@
 use std::cell::Cell;
 
 use onboarding::slides::{layout, slide_content};
-use onboarding::{OnboardingIntention, ai_features, warp_drive_features};
+use onboarding::{ai_features, warp_drive_features, OnboardingIntention};
 use pathfinder_color::ColorU;
 use pathfinder_geometry::vector::vec2f;
 use ui_components::{button, Component as _, Options as _};

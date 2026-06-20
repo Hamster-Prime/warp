@@ -51,12 +51,12 @@ impl GrabEditAccessModal {
             appearance.ui_font_family(),
             13.,
         )
-            .with_style(Properties {
-                style: Style::Normal,
-                weight: Weight::Bold,
-            })
-            .with_color(theme.active_ui_text_color().into())
-            .finish();
+        .with_style(Properties {
+            style: Style::Normal,
+            weight: Weight::Bold,
+        })
+        .with_color(theme.active_ui_text_color().into())
+        .finish();
 
         let close_button = close_button(appearance, self.mouse_state_handles.close_button.clone())
             .build()

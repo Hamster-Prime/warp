@@ -53,9 +53,7 @@ use crate::ai::agent::{
     AIAgentActionType, AIAgentInput, AIAgentOutput, AIAgentOutputMessageType, AIAgentPtyWriteMode,
     AIAgentText, AIAgentTextSection, CancellationReason, ProgrammingLanguage, WebSearchStatus,
 };
-use crate::ai::blocklist::block::view_impl::common::{
-    render_query_text, UserQueryProps,
-};
+use crate::ai::blocklist::block::view_impl::common::{render_query_text, UserQueryProps};
 use crate::ai::blocklist::block::TextLocation;
 use crate::ai::blocklist::code_block::CodeSnippetButtonHandles;
 use crate::ai::blocklist::inline_action::inline_action_icons::icon_size;
@@ -1557,16 +1555,10 @@ fn should_show_read_files_speedbump(app: &AppContext) -> bool {
 
 fn get_action_loading_text(action: AIAgentActionType) -> Option<String> {
     match action {
-        AIAgentActionType::SearchCodebase(_) => {
-            Some(i18n::t!("Searching codebase...").to_string())
-        }
-        AIAgentActionType::ReadFiles(_) => {
-            Some(i18n::t!("Reading files...").to_string())
-        }
+        AIAgentActionType::SearchCodebase(_) => Some(i18n::t!("Searching codebase...").to_string()),
+        AIAgentActionType::ReadFiles(_) => Some(i18n::t!("Reading files...").to_string()),
         AIAgentActionType::Grep { .. } => Some(i18n::t!("Grepping...").to_string()),
-        AIAgentActionType::FileGlobV2 { .. } => {
-            Some(i18n::t!("Finding files...").to_string())
-        }
+        AIAgentActionType::FileGlobV2 { .. } => Some(i18n::t!("Finding files...").to_string()),
         _ => None,
     }
 }
@@ -1918,9 +1910,9 @@ fn render_transfer_control_reason(reason: &str, app: &AppContext) -> Box<dyn Ele
 
 fn get_blocked_action_header(action: AIAgentActionType) -> Option<String> {
     match action {
-        AIAgentActionType::WriteToLongRunningShellCommand { .. } => Some(
-            i18n::t!("Can I write the following to this running command?").to_string(),
-        ),
+        AIAgentActionType::WriteToLongRunningShellCommand { .. } => {
+            Some(i18n::t!("Can I write the following to this running command?").to_string())
+        }
         AIAgentActionType::ReadFiles(..) => {
             Some(i18n::t!("Grant access to the following files?").to_string())
         }

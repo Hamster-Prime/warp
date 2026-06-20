@@ -19,7 +19,6 @@ use crate::terminal::session_settings::{
 };
 use crate::{report_if_error, Appearance};
 
-
 /// Controls which set of items and settings the editor modal operates on.
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
 pub enum AgentToolbarEditorMode {

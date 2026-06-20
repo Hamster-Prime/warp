@@ -3893,7 +3893,9 @@ impl TerminalView {
 
         let control_master_error_banner = ctx.add_typed_action_view(|_| {
             Banner::new(BannerTextContent::formatted_text(vec![
-                FormattedTextFragment::plain_text(i18n::t!("Seems like your completions are not working (")),
+                FormattedTextFragment::plain_text(i18n::t!(
+                    "Seems like your completions are not working ("
+                )),
                 FormattedTextFragment::hyperlink("more info", CONTROLMASTER_ISSUES_URL),
                 FormattedTextFragment::plain_text("). Enabling the SSH extension in "),
                 FormattedTextFragment::hyperlink_action(
@@ -12631,8 +12633,9 @@ impl TerminalView {
                 }
 
                 if self.is_navigated_away_from_window(ctx) {
-                    let notification_title =
-                        title.clone().unwrap_or_else(|| i18n::t!("Notification").to_string());
+                    let notification_title = title
+                        .clone()
+                        .unwrap_or_else(|| i18n::t!("Notification").to_string());
                     let notification = BlockNotification {
                         title: notification_title,
                         body: body.clone(),
@@ -22128,7 +22131,10 @@ impl TerminalView {
                         "Pure is not yet supported in Warp. You might consider one of the \
                         supported prompts as an alternative.  ",
                     ),
-                    FormattedTextFragment::hyperlink(i18n::t!("Learn more"), PROMPT_COMPATIBILITY_URL),
+                    FormattedTextFragment::hyperlink(
+                        i18n::t!("Learn more"),
+                        PROMPT_COMPATIBILITY_URL,
+                    ),
                 ]))
             } else {
                 None
@@ -23807,9 +23813,13 @@ impl TerminalView {
                             .finish(),
                     )
                     .with_child(
-                        Text::new_inline(i18n::t!("Loading session..."), appearance.ui_font_family(), 14.)
-                            .with_color(color.into())
-                            .finish(),
+                        Text::new_inline(
+                            i18n::t!("Loading session..."),
+                            appearance.ui_font_family(),
+                            14.,
+                        )
+                        .with_color(color.into())
+                        .finish(),
                     )
                     .with_cross_axis_alignment(CrossAxisAlignment::Center)
                     .finish(),

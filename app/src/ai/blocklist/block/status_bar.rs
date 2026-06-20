@@ -934,7 +934,10 @@ impl BlocklistAIStatusBar {
                     FormattedTextFragment::plain_text(
                         i18n::t!("{error_message} ", error_message = error_message).to_string(),
                     ),
-                    FormattedTextFragment::hyperlink(i18n::t!("Authenticate GitHub"), auth_url.to_owned()),
+                    FormattedTextFragment::hyperlink(
+                        i18n::t!("Authenticate GitHub"),
+                        auth_url.to_owned(),
+                    ),
                 ],
                 app,
             ));
@@ -1009,7 +1012,10 @@ fn render_agent_tip(tip: &AgentTip, app: &AppContext) -> Box<dyn Element> {
         fragments.push(FormattedTextFragment::hyperlink_action(text, action));
     } else if let Some(link_target) = tip.link.clone() {
         fragments.push(FormattedTextFragment::plain_text(" "));
-        fragments.push(FormattedTextFragment::hyperlink(i18n::t!("Learn more"), link_target));
+        fragments.push(FormattedTextFragment::hyperlink(
+            i18n::t!("Learn more"),
+            link_target,
+        ));
     }
 
     let formatted_text =
@@ -1191,9 +1197,9 @@ impl View for BlocklistAIStatusBar {
                 render_warping_indicator_base(
                     WarpingIndicatorProps {
                         icon: Some(icons::gray_clock_icon(appearance).finish()),
-                        warping_indicator_text: MaybeShimmeringText::Static(
-                            i18n::t!("Agent waiting for instructions...").into(),
-                        ),
+                        warping_indicator_text: MaybeShimmeringText::Static(i18n::t!(
+                            "Agent waiting for instructions..."
+                        )),
                         non_shimmering_text: None,
                         non_shimmering_suffix: None,
                         buttons: Some(render_switch_control_to_user_button(

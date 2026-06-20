@@ -1493,7 +1493,10 @@ impl MCPServersListPageView {
                         .with_child(
                             appearance
                                 .ui_builder()
-                                .wrappable_text(i18n::t!("Once you add a MCP server, it will be shown here."), true)
+                                .wrappable_text(
+                                    i18n::t!("Once you add a MCP server, it will be shown here."),
+                                    true,
+                                )
                                 .with_style(style::description_text(appearance))
                                 .build()
                                 .finish(),

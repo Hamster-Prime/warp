@@ -299,8 +299,8 @@ impl View for EnvVarCommandDialog {
                                                 self.mouse_state_handles
                                                     .cancel_button_mouse_state_handle
                                                     .clone(),
-                                                 EnvVarCommandDialogAction::Close,
-                                                 i18n::t!("Cancel"),
+                                                EnvVarCommandDialogAction::Close,
+                                                i18n::t!("Cancel"),
                                                 false,
                                                 app,
                                             ),

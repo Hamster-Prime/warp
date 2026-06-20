@@ -336,14 +336,18 @@ impl View for Body {
             if self.has_agent_conversations {
                 Some(i18n::t!("Some options are disabled due to sharing size limits and the presence of agent conversations in the session"))
             } else {
-                Some(i18n::t!("Some options are disabled due to sharing size limits"))
+                Some(i18n::t!(
+                    "Some options are disabled due to sharing size limits"
+                ))
             }
         } else {
             // Only one option disabled - use specific message if it's due to agent conversations
             if self.has_agent_conversations {
                 Some(i18n::t!("Sharing without scrollback is disabled because this session has agent conversations"))
             } else {
-                Some(i18n::t!("Some options are disabled due to sharing size limits"))
+                Some(i18n::t!(
+                    "Some options are disabled due to sharing size limits"
+                ))
             }
         };
 

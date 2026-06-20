@@ -4644,7 +4644,10 @@ impl SettingsWidget for UsageWidget {
                 }
             } else {
                 vec![
-                    FormattedTextFragment::hyperlink(i18n::t!("Contact support"), "mailto:support@warp.dev"),
+                    FormattedTextFragment::hyperlink(
+                        i18n::t!("Contact support"),
+                        "mailto:support@warp.dev",
+                    ),
                     FormattedTextFragment::plain_text(" for more AI usage."),
                 ]
             }
@@ -4912,7 +4915,9 @@ impl ActiveAIWidget {
                 app,
             ))
             .with_child(render_ai_setting_description(
-                i18n::t!("Let AI generate commit messages and pull request titles and descriptions."),
+                i18n::t!(
+                    "Let AI generate commit messages and pull request titles and descriptions."
+                ),
                 is_toggleable,
                 app,
             ))
@@ -6131,7 +6136,9 @@ impl AIInputWidget {
             static AUTODETECTION_DESCRIPTION_FRAGMENTS: LazyLock<Vec<FormattedTextFragment>> =
                 LazyLock::new(|| {
                     vec![
-                        FormattedTextFragment::plain_text(i18n::t!("Encountered an incorrect detection? ")),
+                        FormattedTextFragment::plain_text(i18n::t!(
+                            "Encountered an incorrect detection? "
+                        )),
                         FormattedTextFragment::hyperlink(
                             "Let us know",
                             "https://warpdotdev.typeform.com/to/offrTIpq",
@@ -8046,9 +8053,13 @@ impl ApiKeysWidget {
             .with_cross_axis_alignment(CrossAxisAlignment::Center)
             .with_spacing(4.)
             .with_child(
-                Text::new_inline(i18n::t!("Use your"), appearance.ui_font_family(), CONTENT_FONT_SIZE)
-                    .with_color(text_color.into())
-                    .finish(),
+                Text::new_inline(
+                    i18n::t!("Use your"),
+                    appearance.ui_font_family(),
+                    CONTENT_FONT_SIZE,
+                )
+                .with_color(text_color.into())
+                .finish(),
             )
             .with_child(
                 ConstrainedBox::new(Icon::XLogo.to_warpui_icon(text_color).finish())
@@ -8363,7 +8374,10 @@ impl SettingsWidget for ApiKeysWidget {
             {
                 if team.billing_metadata.customer_type == CustomerType::Enterprise {
                     vec![
-                        FormattedTextFragment::hyperlink(i18n::t!("Contact sales"), "mailto:sales@warp.dev"),
+                        FormattedTextFragment::hyperlink(
+                            i18n::t!("Contact sales"),
+                            "mailto:sales@warp.dev",
+                        ),
                         FormattedTextFragment::plain_text(
                             " to enable bringing your own API keys on your Enterprise plan.",
                         ),
@@ -8400,7 +8414,10 @@ impl SettingsWidget for ApiKeysWidget {
                 let user_id = auth_state.user_id().unwrap_or_default();
                 let upgrade_url = UserWorkspaces::upgrade_link(user_id);
                 vec![
-                    FormattedTextFragment::hyperlink(i18n::t!("Upgrade to the Build plan"), upgrade_url),
+                    FormattedTextFragment::hyperlink(
+                        i18n::t!("Upgrade to the Build plan"),
+                        upgrade_url,
+                    ),
                     FormattedTextFragment::plain_text(" to use your own API keys."),
                 ]
             };

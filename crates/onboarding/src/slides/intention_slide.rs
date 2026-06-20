@@ -24,7 +24,7 @@ use super::OnboardingSlide;
 use crate::model::OnboardingStateModel;
 use crate::slides::{bottom_nav, layout, slide_content};
 use crate::visuals::{intention_terminal_visual, intention_visual};
-use crate::{OnboardingIntention, ai_features};
+use crate::{ai_features, OnboardingIntention};
 
 #[derive(Debug, Clone)]
 pub enum IntentionSlideAction {

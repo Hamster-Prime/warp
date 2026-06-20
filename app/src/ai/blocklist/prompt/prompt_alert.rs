@@ -19,7 +19,6 @@ use crate::workspaces::user_workspaces::UserWorkspaces;
 
 const ANONYMOUS_USER_REQUEST_LIMIT_SOFT_GATE_PERCENTAGE: f32 = 0.5;
 
-
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum PromptAlertAction {
     SignUpClickedForAnonymousUser,
@@ -174,9 +173,9 @@ impl PromptAlertView {
         text_fragments.push(FormattedTextFragment::plain_text("  "));
         match state {
             PromptAlertState::NoConnection => {
-                text_fragments.push(FormattedTextFragment::plain_text(
-                    i18n::t!("No internet connection"),
-                ));
+                text_fragments.push(FormattedTextFragment::plain_text(i18n::t!(
+                    "No internet connection"
+                )));
             }
             PromptAlertState::AnonymousUserRequestLimitSoftGate => {
                 text_fragments.push(FormattedTextFragment::plain_text(""));
@@ -185,14 +184,16 @@ impl PromptAlertView {
                 text_fragments.push(FormattedTextFragment::plain_text(i18n::t!("At Limit -")));
             }
             PromptAlertState::DelinquentDueToPaymentIssue => {
-                text_fragments.push(FormattedTextFragment::plain_text(
-                    i18n::t!("Restricted due to payment issue"),
-                ));
+                text_fragments.push(FormattedTextFragment::plain_text(i18n::t!(
+                    "Restricted due to payment issue"
+                )));
             }
             PromptAlertState::OveragesToggleableButNotEnabled
             | PromptAlertState::MonthlyOveragesSpendLimitReached
             | PromptAlertState::RequestLimitReached => {
-                text_fragments.push(FormattedTextFragment::plain_text(i18n::t!("Out of credits")));
+                text_fragments.push(FormattedTextFragment::plain_text(i18n::t!(
+                    "Out of credits"
+                )));
             }
             PromptAlertState::NoAlert => {}
         }
@@ -234,9 +235,9 @@ impl PromptAlertView {
                         },
                     ));
                 } else {
-                    text_fragments.push(FormattedTextFragment::plain_text(
-                        i18n::t!(", contact a team admin"),
-                    ));
+                    text_fragments.push(FormattedTextFragment::plain_text(i18n::t!(
+                        ", contact a team admin"
+                    )));
                 }
             }
             PromptAlertState::OveragesToggleableButNotEnabled => {
@@ -247,9 +248,9 @@ impl PromptAlertView {
                         PromptAlertAction::OpenSettingsClicked,
                     ));
                 } else {
-                    text_fragments.push(FormattedTextFragment::plain_text(
-                        i18n::t!(", ask a team admin to enable overages"),
-                    ));
+                    text_fragments.push(FormattedTextFragment::plain_text(i18n::t!(
+                        ", ask a team admin to enable overages"
+                    )));
                 }
             }
             PromptAlertState::MonthlyOveragesSpendLimitReached => {
@@ -260,9 +261,9 @@ impl PromptAlertView {
                         PromptAlertAction::OpenSettingsClicked,
                     ));
                 } else {
-                    text_fragments.push(FormattedTextFragment::plain_text(
-                        i18n::t!(", ask a team admin to increase overages"),
-                    ));
+                    text_fragments.push(FormattedTextFragment::plain_text(i18n::t!(
+                        ", ask a team admin to increase overages"
+                    )));
                 }
             }
             PromptAlertState::RequestLimitReached => {

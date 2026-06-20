@@ -1,5 +1,11 @@
 _version: 2
 
+'## Warp AI Transcript ({})':
+  zh-CN: '## Warp AI 转录记录 ({})'
+${} per user per month:
+  zh-CN: ${}/每位用户每月
+${} per user per month for annual plans:
+  zh-CN: 年度套餐为 ${}/每位用户每月
 '''{cli}'' CLI not found on your machine.':
   zh-CN: 在您的机器上未找到 '{cli}' CLI。
 '*Secrets are not sent to Warp''s server.':
@@ -8,22 +14,38 @@ _version: 2
   zh-CN: + 添加模型
 + Create API Key:
   zh-CN: + 创建 API Key
+1 image wasn't attached - limit is {limit_value} images {limit_name}.:
+  zh-CN: 有 1 张图片未附加 - 上限为 {limit_value} 张图片 {limit_name}。
+1 image wasn't attached - {limit_reason}.:
+  zh-CN: 有 1 张图片未附加 - {limit_reason}。
+1 result in {files} {file_word}:
+  zh-CN: 在 {files} {file_word} 中有 1 个结果
 A new version of the Warp plugin is available:
   zh-CN: 有新版本的 Warp 插件可用
 AI Document:
   zh-CN: AI 文档
 AI Fact:
   zh-CN: AI 事实
+AI command search:
+  zh-CN: AI 命令搜索
+'AI prompt: {query_text}':
+  zh-CN: AI 提示：{query_text}
+'AI query: {query_text}':
+  zh-CN: AI 查询：{query_text}
 API key '{name}' deleted.:
   zh-CN: API Key '{name}' 已删除。
 API key '{name}' saved.:
   zh-CN: API Key '{name}' 已保存。
+API request failed with status {status}:
+  zh-CN: API 请求失败，状态码 {status}
 'AWS Access Key ID:':
   zh-CN: AWS 访问密钥 ID：
 AWS Bedrock credentials expired or invalid for {model_name}.:
   zh-CN: '{model_name} 的 AWS Bedrock 凭据已过期或无效。'
 'AWS Region:':
   zh-CN: AWS 区域：
+AWS credentials were not found for {}. Log in with the AWS CLI or update your AWS credentials configuration, then refresh.:
+  zh-CN: 未找到 {} 的 AWS 凭据。请使用 AWS CLI 登录或更新您的 AWS 凭据配置，然后刷新。
 About Warp:
   zh-CN: 关于 Warp
 Accept:
@@ -36,6 +58,10 @@ Accept and save:
   zh-CN: 接受并保存
 Accept autosuggestion:
   zh-CN: 接受自动建议
+Access to Reload credits and volume-based discounts:
+  zh-CN: 访问 Reload 额度和基于用量的折扣
+Access to frontier OpenAI, Anthropic, and Google models:
+  zh-CN: 访问前沿的 OpenAI、Anthropic 和 Google 模型
 Activate next pane:
   zh-CN: 激活下一个窗格
 Activate next tab:
@@ -44,10 +70,22 @@ Activate previous pane:
   zh-CN: 激活上一个窗格
 Activate previous tab:
   zh-CN: 激活上一个标签页
+Active App Usage:
+  zh-CN: 活跃应用使用情况
 Active Screen:
   zh-CN: 当前屏幕
+Add:
+  zh-CN: 添加
+Add New MCP Server:
+  zh-CN: 添加新的 MCP 服务器
+Add Profile:
+  zh-CN: 添加配置文件
+Add a session {i} using cmd-t and verify it bootstraps:
+  zh-CN: 使用 cmd-t 添加会话 {i} 并验证其引导
 Add a workflow argument:
   zh-CN: 添加 Workflow 参数
+Add agent profiles to customize permissions and models per session.:
+  zh-CN: 添加智能体配置文件以自定义每个会话的权限和模型。
 Add current folder as project:
   zh-CN: 将当前文件夹添加为项目
 Add cursor above:
@@ -56,6 +94,10 @@ Add cursor below:
   zh-CN: 在下方添加光标
 Add custom endpoint:
   zh-CN: 添加自定义端点
+Add diff set as context:
+  zh-CN: 添加差异集作为上下文
+Add endpoint:
+  zh-CN: 添加端点
 Add environment variables:
   zh-CN: 添加环境变量
 Add file diff as context:
@@ -64,24 +106,72 @@ Add regex:
   zh-CN: 添加正则表达式
 Add regex pattern:
   zh-CN: 添加正则表达式
+Add repo:
+  zh-CN: 添加仓库
+Add rule:
+  zh-CN: 添加规则
+'Add rule: {clone}':
+  zh-CN: 添加规则：{clone}
 Add selection for next occurrence:
   zh-CN: 为下一个匹配项添加选择
+Add-on credits:
+  zh-CN: 附加额度
+Additional members are billed at your plan's per-user rate. {prorated_message}:
+  zh-CN: 额外成员按您套餐的每位用户费率计费。{prorated_message}
+? 'Additional members are billed at your plan''s per-user rate: ${monthly_cost:.0}/month or ${yearly_cost:.0}/year, depending on your billing interval. {prorated_message}'
+: zh-CN: 额外成员按您套餐的每位用户费率计费：${monthly_cost:.0}/月或 ${yearly_cost:.0}/年，取决于您的计费周期。{prorated_message}
+Additional metadata:
+  zh-CN: 额外元数据
 Address these comments:
   zh-CN: 处理这些评论
+Addressed {len} comments:
+  zh-CN: 已处理 {len} 条评论
 Adds global file search to the left side tools panel.:
   zh-CN: 在左侧工具面板中添加全局文件搜索。
 Adjusts the default zoom level across all windows:
   zh-CN: 调整所有窗口的默认缩放级别
 Agent:
   zh-CN: Agent
+Agent 1:
+  zh-CN: 智能体 1
+Agent B init failed:
+  zh-CN: 智能体 B 初始化失败
+Agent conversations:
+  zh-CN: 智能体对话
+Agent failed:
+  zh-CN: 智能体失败
+Agent is unaware of recent plan edits:
+  zh-CN: 智能体未察觉最近的计划编辑
+Agent location:
+  zh-CN: 智能体位置
+Agent management panel:
+  zh-CN: 智能体管理面板
+? Agent mode gives your questions and tasks their own conversation, so you can ask follow-ups without leaving your terminal workflow. Press {} to return to terminal mode at any point.
+: zh-CN: Agent 模式为您的问题和任务提供独立的对话，因此您可以在不离开终端工作流的情况下追问。随时按 {} 返回终端模式。
+Agent profile "{name}" not found. Check the profile ID and ensure it exists in your team's Warp Drive.:
+  zh-CN: 未找到 Agent 配置文件 "{name}"。请检查配置文件 ID 并确保它存在于您团队的 Warp Drive 中。
+Agent questions:
+  zh-CN: 智能体问题
+Agent task:
+  zh-CN: 智能体任务
 Agents:
   zh-CN: Agent
+All:
+  zh-CN: 全部
+All changes compared to the main branch:
+  zh-CN: 与主分支相比的所有更改
 All changes compared to {branch}:
   zh-CN: 与 {branch} 相比的所有更改
+All uncommitted changes in the working directory:
+  zh-CN: 工作目录中的所有未提交更改
 Allow Warp users with an @{domain} email to find and join the team.:
   zh-CN: 允许使用 @{domain} 邮箱的 Warp 用户查找并加入团队。
 'Already have an account? ':
   zh-CN: '已经有账号了？ '
+Already shared with {}:
+  zh-CN: 已与 {} 共享
+Already the default:
+  zh-CN: 已是默认
 Alternate terminal paste:
   zh-CN: 备用终端粘贴
 Always:
@@ -92,60 +182,134 @@ Always open {object_kind} on the web?:
   zh-CN: 始终在网页端打开 {object_kind}？
 Always show tab bar:
   zh-CN: 始终显示标签页栏
+An error occurred while trying to invoke the env var:
+  zh-CN: 尝试调用环境变量时发生错误
+An issue was encountered while saving.:
+  zh-CN: 保存时遇到了问题。
+An unknown error occurred:
+  zh-CN: 发生了未知错误
+And more...:
+  zh-CN: 更多...
 Ansi {color_idx} Color{suffix}:
   zh-CN: Ansi {color_idx} 颜色{suffix}
 Answered all {total} questions:
   zh-CN: 已回答全部 {total} 个问题
+Answered question:
+  zh-CN: 已回答问题
+Answered {answered_count} of {total} question{}:
+  zh-CN: 已回答 {total} 个问题中的 {answered_count} 个{}
+Anthropic API Key:
+  zh-CN: Anthropic API 密钥
+Anthropic Bedrock API Key:
+  zh-CN: Anthropic Bedrock API 密钥
+Anthropic Bedrock Access Key:
+  zh-CN: Anthropic Bedrock 访问密钥
+Anyone with the link:
+  zh-CN: 任何拥有链接的人
 Appearance...:
   zh-CN: 外观...
 Apply:
   zh-CN: 应用
 Apply link:
   zh-CN: 应用链接
+? Are you sure you want to delete {}? This action cannot be undone. Any agents or environments referencing this secret will no longer have access to it.
+: zh-CN: 您确定要删除 {} 吗？此操作无法撤销。任何引用此密钥的 Agent 或环境将无法再访问它。
+Are you sure you want to remove the {} environment?:
+  zh-CN: 您确定要移除 {} 环境吗？
+Are you sure you want to remove this endpoint? You won't be able to use its models in your agent sessions moving forward.:
+  zh-CN: 确定要移除此端点吗？今后您将无法在智能体会话中使用其模型。
 Are you sure you want to skip login?:
   zh-CN: 确定要跳过登录吗？
+? Are you sure you want to transfer team ownership to {}? You will no longer be the owner and will not be able to take any administrative actions for this team.
+: zh-CN: 您确定要将团队所有权转移给 {} 吗？您将不再是所有者，且无法对此团队执行任何管理操作。
 Argument list too long (os error 7):
   zh-CN: 参数列表过长（系统错误 7）
+Artifact downloaded:
+  zh-CN: 构件已下载
+'Artifact upload failed: {error_chain}':
+  zh-CN: 产物上传失败：{error_chain}
 Ask Warp AI:
   zh-CN: 询问 Warp AI
 Ask Warp AI about Selection:
   zh-CN: 就所选内容询问 Warp AI
 Ask Warp AI about last block:
   zh-CN: 就上一个 Block 询问 Warp AI
+Ask Warp AI to explain errors, suggest commands or write scripts.:
+  zh-CN: 让 Warp AI 解释错误、建议命令或编写脚本。
 Ask the Warp agent to assist:
   zh-CN: 请求 Warp Agent 协助
 Ask the Warp agent to resume:
   zh-CN: 请求 Warp Agent 继续
+Ask the agent to check this command now, skipping its timer.:
+  zh-CN: 要求智能体现在检查此命令，跳过其计时器。
 Ask the {agent_name} agent a follow up:
   zh-CN: 向 {agent_name} Agent 追问
+Ask user {} question(s):
+  zh-CN: 向用户提问 {} 个问题
+Asset '{asset_name}' not found in release:
+  zh-CN: 在发布版本中找不到资产 '{asset_name}'
 Asynchronous find:
   zh-CN: 异步查找
 Attach Selected Block as Agent Context:
   zh-CN: 将所选 Block 作为 Agent 上下文附加
 Attach Selected Text as Agent Context:
   zh-CN: 将所选文本作为 Agent 上下文附加
+Attach as context:
+  zh-CN: 作为上下文附加
 Attach file:
   zh-CN: 附加文件
+Attach images:
+  zh-CN: 附加图片
+Attach to active session:
+  zh-CN: 附加到活跃会话
+Attached images were removed — the selected model does not support images.:
+  zh-CN: 已移除附加的图片 — 所选模型不支持图片。
+AttemptLoginGatedFeature:
+  zh-CN: 尝试登录受限功能
 Auth Token:
   zh-CN: Auth Token
 Authenticate with GitHub:
   zh-CN: 使用 GitHub 认证
 Authenticating...:
   zh-CN: 正在认证...
+Authentication failed:
+  zh-CN: 认证失败
+'Authentication failed: {err:#}':
+  zh-CN: 认证失败：{err:#}
 Auto open code review panel:
   zh-CN: 自动打开代码审查面板
+Auto reload:
+  zh-CN: 自动重载
 Auto show/hide Rich Input based on agent status:
   zh-CN: 根据 Agent 状态自动显示/隐藏富输入
+Auto-approve:
+  zh-CN: 自动批准
 Auto-handoff before sleep:
   zh-CN: 睡眠前自动移交
+Auto-install not supported for this agent:
+  zh-CN: 此智能体不支持自动安装
+Auto-reload disabled.:
+  zh-CN: 已禁用自动重载。
+Auto-reload enabled. We'll refill with {credits} credits when your balance runs low.:
+  zh-CN: 已启用自动充值。当您的余额不足时，我们将充值 {credits} 积分。
+Auto-reload settings updated:
+  zh-CN: 自动重载设置已更新
+? Auto-reload will automatically purchase credits at your selected rate when your account balance reaches 100 credits. Your monthly spend limit is set at your legacy plan's monthly cost and can be updated in Settings > Billing & usage.
+: zh-CN: 当您的账户余额达到 100 积分时，自动充值将按您选择的额度自动购买积分。您的每月消费上限设置为旧版套餐的每月费用，可在“设置 > 账单与用量”中更新。
 Auto-spawn servers from third-party agents:
   zh-CN: 从第三方 Agent 自动启动服务器
+Auto-update not supported for this agent:
+  zh-CN: 此智能体不支持自动更新
 Autocomplete quotes, parentheses, and brackets:
   zh-CN: 自动补全引号、括号和方括号
+Autogenerate worktree branch name:
+  zh-CN: 自动生成 worktree 分支名称
 Autohides on loss of keyboard focus:
   zh-CN: 失去键盘焦点时自动隐藏
 Automatically color tabs based on the directory or repo you're working in.:
   zh-CN: 根据您正在工作的目录或仓库自动为标签页着色。
+Automatically enforced team-wide Zero Data Retention:
+  zh-CN: 自动强制实施团队范围的零数据保留
 Automatically open links in desktop app whenever possible.:
   zh-CN: 尽可能在桌面应用中自动打开链接。
 Available to install:
@@ -160,50 +324,120 @@ Backward tabulation within an executing command:
   zh-CN: 在执行中的命令内向后缩进
 Bad response:
   zh-CN: 差评
+Baseball cap:
+  zh-CN: 棒球帽
 Bell:
   zh-CN: Bell
+Billed to API:
+  zh-CN: 通过 API 计费
+Block was successfully unshared.:
+  zh-CN: 已成功取消共享该块。
+'Block: {command}':
+  zh-CN: 块：{command}
 Blocked:
   zh-CN: 已阻塞
 Bookmark selected block:
   zh-CN: 为所选 Block 添加书签
+Bookmark this block to quickly scroll to it:
+  zh-CN: 为此块添加书签以便快速滚动到它
+Bring your own API key:
+  zh-CN: 使用您自己的 API 密钥
+Buffer not found:
+  zh-CN: 未找到缓冲区
+'Buffer not open: {path}':
+  zh-CN: 缓冲区未打开：{path}
 Bug fixes:
   zh-CN: Bug 修复
 Build faster with AI agents:
   zh-CN: 使用 AI Agent 加速构建
 Build output for the latest run:
   zh-CN: 最新运行的构建输出
+Bundled skills cannot be edited:
+  zh-CN: 捆绑的技能无法编辑
 Buy more:
   zh-CN: 购买更多
 'By continuing, you agree to Warp''s ':
   zh-CN: '继续即表示您同意 Warp 的 '
+By discovery:
+  zh-CN: 通过发现
+By email:
+  zh-CN: 通过邮箱
+By link:
+  zh-CN: 通过链接
 CLI:
   zh-CN: CLI
 CLI subagent user takeover:
   zh-CN: CLI subagent 用户接管
 CLI summary:
   zh-CN: CLI 摘要
+Cached Creator:
+  zh-CN: 缓存的创建者
 Call MCP servers:
   zh-CN: 调用 MCP 服务器
+Call web tools:
+  zh-CN: 调用网络工具
 Calling "{name}" MCP tool...:
   zh-CN: 正在调用 "{name}" MCP 工具...
 Cancel:
   zh-CN: 取消
 Cancel active process:
   zh-CN: 取消活动进程
+Cancel invite:
+  zh-CN: 取消邀请
+Cancel summarization:
+  zh-CN: 取消生成摘要
+Cancel summarization?:
+  zh-CN: 取消生成摘要?
 Cancelled:
   zh-CN: 已取消
+Cancelled before launch:
+  zh-CN: 启动前已取消
+Cancelled grep for the following patterns in {display_path}:
+  zh-CN: 已取消在 {display_path} 中对以下模式的 grep
+Cancelled search for files that match the following patterns in {path}:
+  zh-CN: 已取消在 {path} 中搜索匹配以下模式的文件
+Cannot add multiple MCP servers while editing a single server.:
+  zh-CN: 编辑单个服务器时无法添加多个 MCP 服务器。
+Cannot attach context when terminal is running:
+  zh-CN: 终端运行时无法附加上下文
+Cannot attach diff while input is not available:
+  zh-CN: 输入不可用时无法附加差异
+Cannot index remote codebase because the maximum number of codebase indexes has been reached.:
+  zh-CN: 无法索引远程代码库，因为已达到最大代码库索引数。
+Cannot open a new terminal session:
+  zh-CN: 无法打开新的终端会话
+Cannot send queries as a read-only viewer.:
+  zh-CN: 无法以只读查看者身份发送查询。
+'Cannot show conversation cost: conversation is empty':
+  zh-CN: 无法显示对话费用：对话为空
+'Cannot show conversation cost: conversation is in progress':
+  zh-CN: 无法显示对话费用：对话进行中
+'Cannot show conversation cost: no active conversation':
+  zh-CN: 无法显示对话费用：没有活跃对话
+Cannot start a new conversation while agent is monitoring a command.:
+  zh-CN: 智能体正在监视命令时无法开始新对话。
 Change code block language to {code_block_type}:
   zh-CN: 将代码块语言更改为 {code_block_type}
 Change git branch:
   zh-CN: 更改 git 分支
+Change keybinding:
+  zh-CN: 更改按键绑定
 Change role:
   zh-CN: 更改角色
 Change working directory:
   zh-CN: 更改工作目录
 Change your current theme.:
   zh-CN: 更改当前主题。
+Changes to document {document_id} were already made:
+  zh-CN: 已对文档 {document_id} 做出更改
+Changes vs. main branch:
+  zh-CN: 与主分支的差异
+Changes vs. {branch}:
+  zh-CN: 与 {branch} 的差异
 Changing the app icon requires the app to be bundled.:
   zh-CN: 更改应用图标需要打包应用。
+Channel closed:
+  zh-CN: 通道已关闭
 Characters considered part of a word:
   zh-CN: 视为单词一部分的字符
 Check for updates:
@@ -212,30 +446,54 @@ Child agent:
   zh-CN: 子 Agent
 Child agent failed to spawn:
   zh-CN: 子 Agent 启动失败
+Child agent startup was blocked before initialization:
+  zh-CN: 子智能体启动在初始化前被阻止
 Child agent was cancelled before initialization:
   zh-CN: 子 Agent 在初始化前已取消
 Choose a theme:
   zh-CN: 选择主题
 Choose an environment:
   zh-CN: 选择环境
+Choose files...:
+  zh-CN: 选择文件...
+Choose how you'd like to set up your environment:
+  zh-CN: 选择您想如何设置环境
+Choose your agent:
+  zh-CN: 选择您的智能体
+'Choose your experience for this remote session:':
+  zh-CN: 选择您此次远程会话的体验：
 Claimed:
   zh-CN: 已认领
 Clear Blocks:
   zh-CN: 清除 Block
+Clear all:
+  zh-CN: 全部清除
 Clear and reset AI context menu query:
   zh-CN: 清除并重置 AI 上下文菜单查询
 Clear command editor:
   zh-CN: 清空命令编辑器
+Clear filters:
+  zh-CN: 清除筛选条件
 Clear screen:
   zh-CN: 清屏
 Clear selected lines:
   zh-CN: 清除所选行
+Clear upload:
+  zh-CN: 清除上传
+Click here to paste your token from the browser:
+  zh-CN: 点击此处从浏览器粘贴您的令牌
+Click on a block attached as context to this AI query.:
+  zh-CN: 点击附加到此 AI 查询作为上下文的块。
 Click to learn more in docs:
   zh-CN: 点击在文档中了解更多
 Click to set global hotkey:
   zh-CN: 点击设置全局快捷键
 ClipboardLoad():
   zh-CN: ClipboardLoad()
+Clone a repo from GitHub or another source:
+  zh-CN: 从 GitHub 或其他来源克隆仓库
+Clone {url}:
+  zh-CN: 克隆 {url}
 Close:
   zh-CN: 关闭
 Close Current Session:
@@ -252,12 +510,20 @@ Close focused panel:
   zh-CN: 关闭聚焦的面板
 Close other tabs:
   zh-CN: 关闭其他标签页
+Close pane:
+  zh-CN: 关闭窗格
 Close pane?:
   zh-CN: 关闭窗格？
 Close panel:
   zh-CN: 关闭面板
 Close saved tabs:
   zh-CN: 关闭已保存的标签页
+Close session:
+  zh-CN: 关闭会话
+Close session?:
+  zh-CN: 关闭会话?
+Close tab:
+  zh-CN: 关闭标签页
 Close tab?:
   zh-CN: 关闭标签页？
 Close tabs above:
@@ -276,10 +542,18 @@ Close window?:
   zh-CN: 关闭窗口？
 Cloud Agent:
   zh-CN: 云端 Agent
+Cloud agent failed:
+  zh-CN: 云端智能体失败
 Cloud agent failed to start:
   zh-CN: 云端 Agent 启动失败
 Cloud agent run:
   zh-CN: 云端 Agent 运行
+Cloud agent starting up…:
+  zh-CN: 云端智能体启动中…
+Cloud follow-up did not start in time:
+  zh-CN: 云端后续操作未及时启动
+Cloud follow-up finished before a new session became available:
+  zh-CN: 云端后续操作在新会话可用前已完成
 Cloud handoff:
   zh-CN: 云端移交
 Cloud platform:
@@ -288,66 +562,174 @@ Code Diff:
   zh-CN: 代码差异
 Code Editor and Review:
   zh-CN: 代码编辑与审查
+Code review:
+  zh-CN: 代码审查
+Code review panel:
+  zh-CN: 代码审查面板
+Code search failed:
+  zh-CN: 代码搜索失败
 Codebase Indexing:
   zh-CN: 代码库索引
+Codebase index has no synced root hash:
+  zh-CN: 代码库索引没有已同步的根哈希
+Codebase index not found:
+  zh-CN: 未找到代码库索引
+Collaborate with {} of your teammates already on Warp.:
+  zh-CN: 与已在 Warp 上的 {} 位团队成员协作。
 Collapse:
   zh-CN: 折叠
+Collapse all:
+  zh-CN: 全部折叠
 Columns:
   zh-CN: 列数
 Command Palette:
   zh-CN: 命令面板
 Command Search:
   zh-CN: 命令搜索
+'Command allowlist:':
+  zh-CN: 命令允许列表：
+Command copied.:
+  zh-CN: 命令已复制。
+'Command denylist:':
+  zh-CN: 命令拒绝列表：
+Command from {arg0}:
+  zh-CN: 来自 {arg0} 的命令
+Command from {name}:
+  zh-CN: 来自 {name} 的命令
+Command is waiting for a password:
+  zh-CN: 命令正在等待密码
+Command search:
+  zh-CN: 命令搜索
+'Command: {command}':
+  zh-CN: 命令：{command}
 Commands that enable the toolbar:
   zh-CN: 启用工具栏的命令
 Commands, comma separated:
   zh-CN: 命令，逗号分隔
+Comment:
+  zh-CN: 评论
 'Comment addressed: "{content}"':
   zh-CN: 已处理的评论："{content}"
+Comment imported from GitHub:
+  zh-CN: 从 GitHub 导入的评论
+Comments sent to agent:
+  zh-CN: 评论已发送给智能体
+Commit:
+  zh-CN: 提交
+Commit and create PR:
+  zh-CN: 提交并创建 PR
+Commit {short}:
+  zh-CN: 提交 {short}
+Compare plans:
+  zh-CN: 比较套餐
 Complete:
   zh-CN: 完成
 Complete!:
   zh-CN: 完成！
+Completed over 1 hour ago:
+  zh-CN: 完成于 1 小时前
 Completed {mins} minute ago:
   zh-CN: '{mins} 分钟前完成'
 Completed {mins} minutes ago:
   zh-CN: '{mins} 分钟前完成'
+Completed {title}:
+  zh-CN: 已完成 {title}
+Completions open as you type (or {}).:
+  zh-CN: 补全会在您输入时打开（或按 {}）。
 Completions open as you type.:
   zh-CN: 输入时自动打开补全菜单。
+Compute file paths:
+  zh-CN: 计算文件路径
 Computer use in Cloud Agents:
   zh-CN: 云端 Agent 中的计算机使用
 'Config:':
   zh-CN: 配置：
+Configure:
+  zh-CN: 配置
 Configure Warpify...:
   zh-CN: 配置 Warpify...
+Configure notifications:
+  zh-CN: 配置通知
+Confirm:
+  zh-CN: 确认
 Confirm before closing shared session:
   zh-CN: 关闭共享会话前确认
+Connect:
+  zh-CN: 连接
+Connecting:
+  zh-CN: 连接中
+Connection timed out after {} seconds. The server may be unresponsive.:
+  zh-CN: 连接在 {} 秒后超时。服务器可能无响应。
 Contact Admin to request access:
   zh-CN: 联系管理员请求访问权限
 Contact a team admin to enable add-on credits.:
   zh-CN: 联系团队管理员启用附加额度。
+Contact support:
+  zh-CN: 联系支持
 Contact your Account Executive for more add-on credits.:
   zh-CN: 联系您的客户经理获取更多附加额度。
+Context window:
+  zh-CN: 上下文窗口
 Context window (tokens):
   zh-CN: 上下文窗口（tokens）
+'Context window exceeded: {msg}':
+  zh-CN: 已超出上下文窗口：{msg}
 Context window usage:
   zh-CN: 上下文窗口使用量
+Continue:
+  zh-CN: 继续
 Continue conversation:
   zh-CN: 继续对话
+Continue current conversation:
+  zh-CN: 继续当前对话
+Continue locally:
+  zh-CN: 在本地继续
+Continue summarization:
+  zh-CN: 继续生成摘要
 Continue this cloud conversation:
   zh-CN: 继续此云端对话
+Continue without installing:
+  zh-CN: 不安装继续
 Controls how reasoning/thinking traces are displayed.:
   zh-CN: 控制推理/思考过程的显示方式。
 Controls whether orchestration messages stay expanded.:
   zh-CN: 控制编排消息是否保持展开。
 Controls whether programs running in the terminal can read or write your system clipboard.:
   zh-CN: 控制终端中运行的程序是否可以读取或写入系统剪贴板。
+'Conversation Debug Link: {debug_link}':
+  zh-CN: 对话调试链接：{debug_link}
 'Conversation Summary: ':
   zh-CN: 对话摘要：
+Conversation deleted:
+  zh-CN: 对话已删除
+Conversation exported to {display_path}:
+  zh-CN: 对话已导出到 {display_path}
+Conversation forking failed.:
+  zh-CN: 对话分叉失败。
 Conversation renamed to {title}:
   zh-CN: 对话已重命名为 {title}
+Conversation restored:
+  zh-CN: 对话已恢复
+Conversation summarized:
+  zh-CN: 对话已生成摘要
+Conversation title must be {CONVERSATION_TITLE_MAX_CHARS} characters or fewer:
+  zh-CN: 对话标题必须不超过 {CONVERSATION_TITLE_MAX_CHARS} 个字符
+'Conversation: {title}':
+  zh-CN: 对话：{title}
+Conversations cannot be deleted while in progress.:
+  zh-CN: 进行中的对话无法删除。
+Convert to {label}:
+  zh-CN: 转换为 {label}
+Copied branch name:
+  zh-CN: 已复制分支名称
 Copied link to {object_name}.:
   zh-CN: 已复制 {object_name} 的链接。
+Copied to clipboard:
+  zh-CN: 已复制到剪贴板
+Copied {len} blocks.:
+  zh-CN: 已复制 {len} 个 Block。
+Copied {} block outputs.:
+  zh-CN: 已复制 {} 个 Block 输出。
 Copy:
   zh-CN: 复制
 Copy All:
@@ -358,42 +740,126 @@ Copy access token to clipboard:
   zh-CN: 将访问 Token 复制到剪贴板
 Copy and clear selected lines:
   zh-CN: 复制并清除所选行
+Copy answer to clipboard:
+  zh-CN: 复制答案到剪贴板
+Copy code to clipboard [Cmd + C]:
+  zh-CN: 复制代码到剪贴板 [Cmd + C]
 Copy command:
   zh-CN: 复制命令
 Copy command and output:
   zh-CN: 复制命令和输出
 Copy command output:
   zh-CN: 复制命令输出
+Copy conversation ID:
+  zh-CN: 复制对话 ID
+Copy conversation text:
+  zh-CN: 复制对话文本
+Copy debug ID:
+  zh-CN: 复制调试 ID
+Copy debugging ID:
+  zh-CN: 复制调试 ID
+Copy debugging link:
+  zh-CN: 复制调试链接
 Copy error:
   zh-CN: 复制错误
 Copy file path:
   zh-CN: 复制文件路径
+Copy filtered output:
+  zh-CN: 复制筛选后的输出
 Copy git branch:
   zh-CN: 复制 git 分支
+Copy id:
+  zh-CN: 复制id
+Copy link:
+  zh-CN: 复制链接
 Copy notebook contents to your clipboard:
   zh-CN: 将 Notebook 内容复制到剪贴板
+Copy output:
+  zh-CN: 复制输出
+Copy output as Markdown:
+  zh-CN: 复制输出 as Markdown
+Copy path:
+  zh-CN: 复制路径
+Copy plan ID:
+  zh-CN: 复制计划 ID
+Copy prompt:
+  zh-CN: 复制提示
+Copy relative path:
+  zh-CN: 复制相对路径
 Copy rich-text buffer:
   zh-CN: 复制富文本缓冲区
 Copy rich-text selection:
   zh-CN: 复制富文本所选内容
+Copy right prompt:
+  zh-CN: 复制右侧提示
+Copy secret:
+  zh-CN: 复制密钥
+Copy session sharing link:
+  zh-CN: 复制会话共享链接
+Copy share link:
+  zh-CN: 复制共享链接
+Copy text:
+  zh-CN: 复制文本
 Copy text or cancel active process:
   zh-CN: 复制文本或取消活动进程
 Copy to Personal:
   zh-CN: 复制到个人
+Copy transcript to clipboard:
+  zh-CN: 复制对话记录 to clipboard
+Copy variables:
+  zh-CN: 复制变量
+Copy workflow text:
+  zh-CN: 复制工作流文本
+Copy working directory:
+  zh-CN: 复制工作目录
+Copy {title}:
+  zh-CN: 复制{title}
 Copyright 2026 Warp:
   zh-CN: Copyright 2026 Warp
 Could not create {file} because it already exists.:
   zh-CN: 无法创建 {file}，因为它已存在。
+Could not determine parent directory of file when running grep:
+  zh-CN: 无法determine 父 目录 of 文件 when 运行中 grep
+Could not find cloud template:
+  zh-CN: 找不到云端模板
 Could not mutate a deleted file {file}.:
   zh-CN: 无法修改已删除的文件 {file}。
+Could not read {display_name}:
+  zh-CN: 无法读取 {display_name}
 Could not read {file}:
   zh-CN: 无法读取 {file}
+Could not resolve a working directory for the local {} child.:
+  zh-CN: 无法resolve a 工作目录 for the 本地 {} 子.
+Could not submit comments to the agent:
+  zh-CN: 无法向智能体提交评论
+'Couldn''t connect SuperGrok: {err}':
+  zh-CN: 无法连接 SuperGrok：{err}
+Couldn't continue this cloud task.:
+  zh-CN: 无法继续此云端任务。
+Couldn't navigate to conversation.:
+  zh-CN: 无法导航到对话。
 Couldn't parse due to invalid syntax:
   zh-CN: 由于语法无效，无法解析
+'Couldn''t start Grok login: {err}':
+  zh-CN: 无法启动 Grok 登录：{err}
 Courier New:
   zh-CN: Courier New
 CourierOld:
   zh-CN: CourierOld
+Crash reporting helps Warp's engineering team understand stability and improve performance.:
+  zh-CN: 崩溃报告帮助 Warp 工程团队了解稳定性并改进性能。
+Create:
+  zh-CN: 创建
+'Create New Tab: {short_name}':
+  zh-CN: 新建标签页：{short_name}
+'Create New Window: {short_name}':
+  zh-CN: 新建窗口：{short_name}
+Create PR:
+  zh-CN: 创建PR
+Create a Matrix-styled custom theme:
+  zh-CN: 创建a Matrix 风格 自定义主题
+Create a file named {file_name}…:
+  zh-CN: 创建一个名为 {file_name} 的文件…
 Create a new personal folder:
   zh-CN: 创建新的个人文件夹
 Create a new personal notebook:
@@ -410,8 +876,32 @@ Create a new team prompt:
   zh-CN: 创建新的团队提示词
 Create a new team workflow:
   zh-CN: 创建新的团队 Workflow
+Create a snake game in Python from scratch:
+  zh-CN: 创建a 贪吃蛇游戏 in Python from scratch
+Create a team:
+  zh-CN: 创建a 团队
 Create agent:
   zh-CN: 创建 Agent
+Create an environment:
+  zh-CN: 创建an 环境
+Create and initialize a brand new project:
+  zh-CN: 创建并初始化一个全新项目
+Create environment:
+  zh-CN: 创建环境
+Create environment using the current working dir as repo:
+  zh-CN: 创建环境 using the current 工作目录 as 仓库
+'Create environment using the supplied repos: {}':
+  zh-CN: 使用提供的仓库创建环境：{}
+Create environment without any repos:
+  zh-CN: 创建不带任何仓库的环境
+'Create file: {file_name}':
+  zh-CN: '创建文件: {file_name}'
+Create group from tabs:
+  zh-CN: 从标签页创建组
+Create key:
+  zh-CN: 创建密钥
+Create new branch "{}":
+  zh-CN: 创建新分支 "{}"
 Create new personal environment variables:
   zh-CN: 创建新的个人环境变量
 Create new project:
@@ -422,12 +912,42 @@ Create new team environment variables:
   zh-CN: 创建新的团队环境变量
 Create or edit link:
   zh-CN: 创建或编辑链接
+Create team:
+  zh-CN: 创建团队
+'Created: {created_formatted}':
+  zh-CN: 创建时间：{created_formatted}
+'Created: {formatted}':
+  zh-CN: 创建时间：{formatted}
+Creating block...:
+  zh-CN: 正在创建块...
+Creator Name:
+  zh-CN: 创建者名称
+Credential refresh was interrupted:
+  zh-CN: 凭据刷新被中断
+'Credits used: {credits}':
+  zh-CN: 已使用额度：{credits}
+'Credits used: {num_requests_used} / {request_limit}.':
+  zh-CN: 已使用额度：{num_requests_used} / {request_limit}。
+'Credits used: {usage}':
+  zh-CN: 已使用额度：{usage}
 Current:
   zh-CN: 当前
+Current Directory:
+  zh-CN: 当前目录
+'Current backend: {to_label}':
+  zh-CN: 当前后端：{to_label}
+Current conversation has not been synced to the server yet:
+  zh-CN: 当前对话尚未同步到服务器
+Current state (no rewind):
+  zh-CN: 当前状态（无回退）
 Current theme:
   zh-CN: 当前主题
 Current version is {version}:
   zh-CN: 当前版本为 {version}
+'Currently running AI interaction: {prompt}':
+  zh-CN: 当前正在运行的 AI 交互：{prompt}
+Currently running {running_command}:
+  zh-CN: 当前正在运行 {running_command}
 Cursor Color{suffix}:
   zh-CN: 光标颜色{suffix}
 Cursor at buffer end:
@@ -436,8 +956,22 @@ Cursor at buffer start:
   zh-CN: 光标位于缓冲区起始
 Cursor type is disabled in Vim mode:
   zh-CN: Vim 模式下禁用光标类型
+Custom ({command}):
+  zh-CN: 自定义 ({command})
 Custom Model:
   zh-CN: 自定义模型
+Custom URI is invalid.:
+  zh-CN: 自定义 URI 无效。
+'Custom URI is invalid: {e}':
+  zh-CN: 自定义 URI 无效：{e}
+Custom models:
+  zh-CN: 自定义模型
+Custom · {name}:
+  zh-CN: 自定义 · {name}
+Custom...:
+  zh-CN: 自定义...
+'Custom: {display}':
+  zh-CN: 自定义：{display}
 Customize third party agents:
   zh-CN: 自定义第三方 Agent
 Customize your Warp:
@@ -446,6 +980,8 @@ Customize your Warp Agent:
   zh-CN: 自定义您的 Warp Agent
 Customize your app icon:
   zh-CN: 自定义应用图标
+Cut:
+  zh-CN: 剪切
 Cut all left:
   zh-CN: 向左全部剪切
 Cut all right:
@@ -468,6 +1004,10 @@ Dark City:
   zh-CN: Dark City
 De-select shell commands:
   zh-CN: 取消选择 shell 命令
+'Debug information: {debug_info}':
+  zh-CN: 调试信息：{debug_info}
+Debug output:
+  zh-CN: 调试输出
 Decrease font size:
   zh-CN: 减小字体大小
 Decrease notebook font size:
@@ -482,12 +1022,38 @@ Default mode for new sessions:
   zh-CN: 新会话的默认模式
 Default shell for new sessions:
   zh-CN: 新会话的默认 shell
+'Default: {default_value}':
+  zh-CN: 默认：{default_value}
 Delete:
   zh-CN: 删除
+Delete '{}'?:
+  zh-CN: 删除'{}'？
+Delete API key {name}:
+  zh-CN: 删除 API 密钥 {name}
+Delete MCP:
+  zh-CN: 删除 MCP
+Delete MCP server?:
+  zh-CN: 删除 MCP 服务器？
 Delete all left:
   zh-CN: 向左全部删除
 Delete all right:
   zh-CN: 向右全部删除
+Delete conversation?:
+  zh-CN: 删除对话？
+Delete environment:
+  zh-CN: 删除环境
+Delete environment?:
+  zh-CN: 删除环境？
+Delete forever:
+  zh-CN: 永久删除
+Delete profile:
+  zh-CN: 删除配置文件
+Delete rule:
+  zh-CN: 删除规则
+Delete secret:
+  zh-CN: 删除密钥
+Delete shared MCP server?:
+  zh-CN: 删除共享 MCP 服务器？
 Delete to line end within an executing command:
   zh-CN: 在执行中的命令内删除到行尾
 Delete to line start within an executing command:
@@ -500,64 +1066,182 @@ Delete word right:
   zh-CN: 向右删除单词
 Delete {scope} secret '{name}'?:
   zh-CN: 删除 {scope} 密钥 '{name}'？
+Deleted conversation:
+  zh-CN: 已删除的对话
 Deleting...:
   zh-CN: 删除中...
+Demote from admin:
+  zh-CN: 取消管理员权限
 Deploy Agent:
   zh-CN: 部署 Agent
+Description for item {}:
+  zh-CN: 项 {} 的描述
+Description must be at most {} characters (got {}):
+  zh-CN: 描述最多 {} 个字符（当前为 {} 个）
+'Description: {description}':
+  zh-CN: 描述：{description}
 Detected from config file:
   zh-CN: 从配置文件检测
+Detected from {display_name}:
+  zh-CN: 从 {display_name} 检测到
+Did you know that Warp can directly display Markdown files?:
+  zh-CN: 您知道 Warp 可以直接显示 Markdown 文件吗？
+Did you know that Warp can directly edit code?:
+  zh-CN: 您知道 Warp 可以直接编辑代码吗？
 Did you know that Warp can directly edit {display_name} files?:
   zh-CN: 您知道 Warp 可以直接编辑 {display_name} 文件吗？
 Diff is too large to render:
   zh-CN: Diff 过大，无法渲染
+Diff removed:
+  zh-CN: 差异已移除
+'Directory allowlist:':
+  zh-CN: 目录允许列表：
+'Directory not found: {}':
+  zh-CN: 未找到目录：{}
 Directory path:
   zh-CN: 目录路径
 Directory tab colors:
   zh-CN: 目录标签页颜色
+'Directory: {display_dir}':
+  zh-CN: 目录：{display_dir}
+'Directory: {display}':
+  zh-CN: 目录：{display}
 Disable Warp Agent:
   zh-CN: 禁用 Warp Agent
+Disable {description_suffix}:
+  zh-CN: 禁用 {description_suffix}
+Disabled all synchronized inputs.:
+  zh-CN: 已禁用所有同步输入。
 Disabled by your administrator:
   zh-CN: 已被管理员禁用
+Disabled in terminal mode, re-enable in settings:
+  zh-CN: 在终端模式下已禁用，请在设置中重新启用
+Discard all:
+  zh-CN: 全部放弃
+Discard all changes to file?:
+  zh-CN: 放弃对文件的所有更改？
+Discard all changes?:
+  zh-CN: 放弃所有更改？
+Discard all uncommitted changes to file?:
+  zh-CN: 放弃对文件的所有未提交更改？
+Discard changes:
+  zh-CN: 放弃更改
+Discard this version:
+  zh-CN: 放弃此版本
+Discard uncommitted changes?:
+  zh-CN: 放弃未提交的更改？
+Disconnect:
+  zh-CN: 断开连接
+Discovered {total_nodes} chunks:
+  zh-CN: 发现了 {total_nodes} 个分块
 Dismiss:
   zh-CN: 忽略
+Divider:
+  zh-CN: 分隔符
+Do not show again:
+  zh-CN: 不再显示
+Do you want to save the changes you made to {}? Your changes will be discarded if you don't save them.:
+  zh-CN: 您要保存对 {} 所做的更改吗？如果不保存，您的更改将被放弃。
+Docker Sandbox:
+  zh-CN: Docker 沙盒
 Docker sandbox ({image}):
   zh-CN: Docker 沙箱（{image}）
+'Docker sandbox setup failed: {e}':
+  zh-CN: Docker 沙盒设置失败：{e}
+Docker sandbox shells are not supported on Windows:
+  zh-CN: Windows 不支持 Docker 沙盒 shell
+Dockerfile:
+  zh-CN: Dockerfile
+Document {document_id} does not exist.:
+  zh-CN: 文档 {document_id} 不存在。
+'Document(s) not found: {missing_list}':
+  zh-CN: 未找到文档：{missing_list}
+Documentation:
+  zh-CN: 文档
+'Domain restrictions added: {len}':
+  zh-CN: 已添加域名限制：{len}
+Don't Save:
+  zh-CN: 不保存
+Don't show again:
+  zh-CN: 不再显示
 Don't show me suggested code banners again:
   zh-CN: 不再显示建议代码横幅
 'Don''t want to sign in right now? ':
   zh-CN: '现在不想登录？ '
 Done:
   zh-CN: 完成
+'Download failed with status {status}: {body}':
+  zh-CN: 下载失败，状态码 {status}：{body}
+Downloaded {toast_filename}.:
+  zh-CN: 已下载 {toast_filename}。
 Dracula:
   zh-CN: Dracula
+Drag an image into the pane to attach it as agent context.:
+  zh-CN: 将图片拖到窗格中以将其作为智能体上下文附加。
 Dump heap profile (can only be done once):
   zh-CN: 导出堆分析（仅可执行一次）
+Duplicate:
+  zh-CN: 复制
 ESC:
   zh-CN: ESC
+Early adopter:
+  zh-CN: 早期采用者
+Easily discover everything you can do in Warp without your hands leaving the keyboard.:
+  zh-CN: 手不离键盘即可轻松发现 Warp 中的一切功能。
 Edit:
   zh-CN: 编辑
 Edit API Keys:
   zh-CN: 编辑 API Key
+Edit CLI agent toolbelt:
+  zh-CN: 编辑 CLI 智能体工具带
 Edit Code Diff:
   zh-CN: 编辑代码差异
+Edit MCP Server:
+  zh-CN: 编辑 MCP 服务器
+Edit Markdown file:
+  zh-CN: 编辑 Markdown 文件
 Edit Prompt:
   zh-CN: 编辑提示词
+Edit Variables:
+  zh-CN: 编辑变量
+Edit agent toolbelt:
+  zh-CN: 编辑智能体工具带
 Edit config:
   zh-CN: 编辑配置
 Edit custom endpoint:
   zh-CN: 编辑自定义端点
+Edit prompt:
+  zh-CN: 编辑提示
 Edit requested command:
   zh-CN: 编辑请求的命令
+Edit rule:
+  zh-CN: 编辑规则
+Edit {file_names}:
+  zh-CN: 编辑{file_names}
 Edit {name} MCP Server:
   zh-CN: 编辑 {name} MCP 服务器
+Edited {time_ago}:
+  zh-CN: 编辑于 {time_ago}
 Editing:
   zh-CN: 编辑中
 Editing is disabled while offline.:
   zh-CN: 离线时编辑已禁用。
+Editing permissions were revoked because the sharer is idle:
+  zh-CN: 由于共享者空闲，编辑权限已被撤销
+Editing skills is not supported in this build:
+  zh-CN: 此构建版本不支持编辑技能
+Embed:
+  zh-CN: 嵌入
+Embed code copied.:
+  zh-CN: 嵌入代码已复制。
+Empty Session:
+  zh-CN: 空会话
 Empty diff hunk:
   zh-CN: 空的 diff 块
 Empty trash:
   zh-CN: 清空回收站
+Enable:
+  zh-CN: 启用
 Enable '@' context menu in terminal mode:
   zh-CN: 在终端模式下启用 '@' 上下文菜单
 Enable Focus Reporting:
@@ -568,14 +1252,34 @@ Enable Scroll Reporting:
   zh-CN: 启用滚动报告
 Enable Warp shell integration in this session:
   zh-CN: 在此会话中启用 Warp shell 集成
+Enable Warp's Vim keybindings?:
+  zh-CN: 启用 Warp 的 Vim 快捷键？
 Enable agent attribution:
   zh-CN: 启用 Agent 归属
+Enable alias expansion:
+  zh-CN: 启用别名展开
 Enable auto reload?:
   zh-CN: 启用自动重载？
+Enable desktop notifications to get an alert when an agent needs your attention.:
+  zh-CN: 启用桌面通知，以便在 Agent 需要您关注时收到提醒。
+Enable notifications:
+  zh-CN: 启用通知
+Enable reopening of closed sessions:
+  zh-CN: 启用重新打开已关闭的会话
 Enable servers:
   zh-CN: 启用服务器
 Enable slash commands in terminal mode:
   zh-CN: 在终端模式下启用斜杠命令
+Enable {binary_name}:
+  zh-CN: 启用 {binary_name}
+Enable {description_suffix}:
+  zh-CN: 启用 {description_suffix}
+Enable {} notifications:
+  zh-CN: 启用 {} 通知
+Enable {} support:
+  zh-CN: 启用 {} 支持
+Enable {} support for this codebase? This will give you smarter code navigation, inline error checking, and more.:
+  zh-CN: 为此代码库启用 {} 支持？这将为您提供更智能的代码导航、内联错误检查等功能。
 Enabled by your organization.:
   zh-CN: 由您的组织启用。
 Enables codebase indexing and WARP.md:
@@ -590,18 +1294,36 @@ Endpoint removed:
   zh-CN: 端点已移除
 Endpoint saved:
   zh-CN: 端点已保存
+Enter a new prompt to redirect the agent while it's running.:
+  zh-CN: 输入新提示词，在 Agent 运行时重新引导它。
 Enter auth token:
   zh-CN: 输入 Auth Token
 'Enter custom Docker image name:':
   zh-CN: 输入自定义 Docker 镜像名称：
 Enter local subshell command for {shell}:
   zh-CN: 输入 {shell} 的本地子 shell 命令
+Enter prompt for {}...:
+  zh-CN: 为 {} 输入提示词…
+Enter your credentials below.:
+  zh-CN: 请在下方输入您的凭据。
+Enter {name}:
+  zh-CN: 输入 {name}
 Enterprise secret redaction cannot be modified.:
   zh-CN: 企业密钥脱敏无法修改。
+Environment '{id}' not found. Verify the environment ID and ensure it exists in your team settings.:
+  zh-CN: 未找到环境 '{id}'。请核实环境 ID 并确保它存在于您的团队设置中。
 Environment Management:
   zh-CN: 环境管理
 Environment Variable Collection:
   zh-CN: 环境变量集合
+Environment deleted successfully:
+  zh-CN: 环境删除成功
+Environment details:
+  zh-CN: 环境详情
+Environment setup commands:
+  zh-CN: 环境设置命令
+'Environment setup failed: {msg}. Check your repository URLs and setup commands.':
+  zh-CN: 环境设置失败：{msg}。请检查您的仓库 URL 和设置命令。
 Environment variables:
   zh-CN: 环境变量
 Environment variables could not be saved because changes were made while you were editing.:
@@ -610,10 +1332,22 @@ Environments:
   zh-CN: 环境
 Error:
   zh-CN: 错误
+Error generating embed snippet:
+  zh-CN: 生成嵌入代码片段失败
+Error leaving team:
+  zh-CN: 退出团队失败
+Error saving aliases:
+  zh-CN: 保存别名失败
 Error underlining for commands:
   zh-CN: 命令的错误下划线
+'Error:':
+  zh-CN: 错误：
+Exclusive theme:
+  zh-CN: 专属主题
 Executable path:
   zh-CN: 可执行文件路径
+Execute rewind to before this point in the AI conversation.:
+  zh-CN: 回退到 AI 对话中此处之前的状态。
 Execute this plan:
   zh-CN: 执行此计划
 Execution Profile Editor:
@@ -632,70 +1366,518 @@ Expire API key '{key}'?:
   zh-CN: 使 API Key '{key}' 过期？
 Explore git history in {git_repo_trimmed}:
   zh-CN: 在 {git_repo_trimmed} 中探索 git 历史
+Export:
+  zh-CN: 导出
 Export all Warp Drive objects:
   zh-CN: 导出所有 Warp Drive 对象
+Export conversation to file unsupported in web:
+  zh-CN: Web 端不支持将对话导出到文件
+Export failed:
+  zh-CN: 导出失败
+Exported object:
+  zh-CN: 已导出的对象
+Exported {name}:
+  zh-CN: 已导出 {name}
+Extended AI credits per month:
+  zh-CN: 每月额外 AI 积分
+Extended Credits per month:
+  zh-CN: 每月额外积分
+Extended cloud agents access:
+  zh-CN: 扩展的云 Agent 访问权限
 Failed:
   zh-CN: 失败
+'Failed to build agent configuration: {err}':
+  zh-CN: 构建智能体配置 失败：{err}
+'Failed to build client with headers: {e}':
+  zh-CN: 构建客户端 with headers 失败：{e}
+'Failed to build request proxy: {e}':
+  zh-CN: 构建请求代理 失败：{e}
+'Failed to cancel task: {e}':
+  zh-CN: 取消任务 失败：{e}
+Failed to capture initial screenshot:
+  zh-CN: 捕获initial 截图 失败
+'Failed to connect to D-Bus session bus: {e}':
+  zh-CN: 连接to D-Bus 会话总线 失败：{e}
+'Failed to connect to X11: {e}':
+  zh-CN: 连接to X11 失败：{e}
+Failed to connect to proxy {}:{}:
+  zh-CN: 连接to proxy {} 失败：{}
+Failed to convert conversation data to AIConversation:
+  zh-CN: 转换对话数据 to AIConversation 失败
+Failed to convert {format:?} {uid}:
+  zh-CN: 转换{format:?} {uid} 失败
+Failed to create API key. Please try again.:
+  zh-CN: 创建 API Key 失败。请重试。
+Failed to create Codex config dir at {display}:
+  zh-CN: 创建Codex 配置 dir at {display} 失败
+Failed to create Codex config dir at {}:
+  zh-CN: 创建Codex 配置 dir at {} 失败
+'Failed to create RemoteDesktop session: {e}':
+  zh-CN: 创建RemoteDesktop 会话 失败：{e}
+'Failed to create base dir: {e}':
+  zh-CN: 创建基础目录 失败：{e}
+'Failed to create config directory: {e}':
+  zh-CN: 创建配置目录 失败：{e}
+Failed to create dir {}:
+  zh-CN: 创建dir {} 失败
+Failed to create download directory '{display}':
+  zh-CN: 创建download 目录 '{display}' 失败
+Failed to create download file '{}':
+  zh-CN: 创建download 文件 '{}' 失败
+'Failed to create environment: {error_message}':
+  zh-CN: 创建环境 失败：{error_message}
+'Failed to create file: {:?}':
+  zh-CN: 创建文件 失败：{:?}
+'Failed to create install directory: {:?}':
+  zh-CN: 创建安装目录 失败：{:?}
+Failed to create key down event for keycode {}:
+  zh-CN: 创建按下事件 for keycode {} 失败
+Failed to create key up event for keycode {}:
+  zh-CN: 创建松开事件 for keycode {} 失败
+'Failed to create local child task: {error}':
+  zh-CN: 创建local 子任务 失败：{error}
+'Failed to create local {} child task: {error}':
+  zh-CN: 创建本地 {} 子任务 失败：{error}
+'Failed to create log bundle: {err}':
+  zh-CN: 创建日志包 失败：{err}
+Failed to create remote-server tarball cache directory '{}':
+  zh-CN: 创建远程-服务器 tarball cache 目录 '{}' 失败
+'Failed to create request proxy: {e}':
+  zh-CN: 创建请求代理 失败：{e}
+'Failed to create screenshot portal proxy: {e}':
+  zh-CN: 创建截图门户 proxy 失败：{e}
+'Failed to create subdir {subdir_name}: {e}':
+  zh-CN: 创建子目录 {subdir_name} 失败：{e}
+'Failed to create temp dir: {e}':
+  zh-CN: 创建临时目录 失败：{e}
+Failed to create temp file for {}:
+  zh-CN: 创建临时文件 for {} 失败
+'Failed to create temporary directory for screenshot: {e}':
+  zh-CN: 创建临时目录 for 截图 失败：{e}
 Failed to create {object_name_lowercase}:
   zh-CN: 创建 {object_name_lowercase} 失败
+Failed to create {}:
+  zh-CN: 创建{} 失败
+'Failed to create {}: {e}':
+  zh-CN: 创建{} 失败：{e}
+'Failed to decode screenshot: {e}':
+  zh-CN: 解码截图 失败：{e}
+'Failed to delete API key ''{name}'': {error}':
+  zh-CN: 删除API 密钥 '{name}' 失败：{error}
+Failed to delete API key. Please try again.:
+  zh-CN: 删除 API Key 失败。请重试。
+Failed to delete conversation. Please exit the agent view and try again.:
+  zh-CN: 删除对话失败。请退出 Agent 视图后重试。
+'Failed to delete file: {e:?}':
+  zh-CN: 删除文件 失败：{e:?}
 Failed to delete {object_name_lowercase}:
   zh-CN: 删除 {object_name_lowercase} 失败
+Failed to deserialize Claude transcript for wake task {task_id}:
+  zh-CN: 反序列化Claude 对话记录 for wake 任务 {task_id} 失败
+Failed to deserialize response from {url}:
+  zh-CN: 反序列化响应 from {url} 失败
+'Failed to deserialize {harness_label} transcript for {conversation_id}: {err:#}':
+  zh-CN: 反序列化{harness_label} 对话记录 for {conversation_id} 失败：{err:#}
+Failed to determine home directory:
+  zh-CN: 确定主目录 失败
+Failed to download artifact '{}' from signed URL:
+  zh-CN: 下载产物 '{}' from signed URL 失败
 Failed to download from {url}:
   zh-CN: 从 {url} 下载失败
+Failed to download {toast_filename}.:
+  zh-CN: 下载 {toast_filename} 失败。
 Failed to empty trash:
   zh-CN: 清空回收站失败
+Failed to enable auto-reload. Please try updating your settings in Billing & usage.:
+  zh-CN: 启用自动充值失败。请尝试在“账单与用量”中更新您的设置。
+'Failed to encode screenshot to PNG: {e}':
+  zh-CN: 编码截图 to PNG 失败：{e}
+'Failed to establish connection: {}':
+  zh-CN: 建立连接 失败：{}
+Failed to execute command. Please try again.:
+  zh-CN: 执行命令失败。请重试。
+'Failed to execute command: {e}':
+  zh-CN: 执行命令 失败：{e}
+'Failed to export to {display}: {e}':
+  zh-CN: 导出to {display} 失败：{e}
 Failed to export {name}:
   zh-CN: 导出 {name} 失败
+Failed to fetch Claude transcript for task {task_id}:
+  zh-CN: 获取Claude 对话记录 for 任务 {task_id} 失败
+Failed to fetch npm info for {}:
+  zh-CN: 获取npm 信息 for {} 失败
+'Failed to fetch task secrets: {err}':
+  zh-CN: 获取任务 secrets 失败：{err}
+'Failed to flush X11 connection: {e}':
+  zh-CN: 刷新X11 连接 失败：{e}
+'Failed to flush file: {:?}':
+  zh-CN: 刷新文件 失败：{:?}
+Failed to flush temp file for {}:
+  zh-CN: 刷新临时文件 for {} 失败
+Failed to flush {:?}:
+  zh-CN: 刷新{:?} 失败
+'Failed to get URI from response: {e}':
+  zh-CN: 获取URI from 响应 失败：{e}
+Failed to get artifact '{artifact_uid}':
+  zh-CN: 获取产物 '{artifact_uid}' 失败
+Failed to get current working directory:
+  zh-CN: 获取当前工作目录 失败
+'Failed to get keyboard mapping: {e}':
+  zh-CN: 获取键盘 mapping 失败：{e}
+Failed to get metadata for {:?}:
+  zh-CN: 获取元数据 for {:?} 失败
+'Failed to get response arguments: {e}':
+  zh-CN: 获取响应 arguments 失败：{e}
+'Failed to get screenshot reply: {e}':
+  zh-CN: 获取截图 reply 失败：{e}
+Failed to get transcript upload target for {conversation_id}:
+  zh-CN: 获取对话记录 upload target for {conversation_id} 失败
+'Failed to initialize client: {}':
+  zh-CN: 初始化客户端 失败：{}
+'Failed to initialize server: {}':
+  zh-CN: 初始化服务器 失败：{}
+'Failed to initiate delete: {err}':
+  zh-CN: 发起delete 失败：{err}
+'Failed to initiate write: {err}':
+  zh-CN: 发起write 失败：{err}
+'Failed to install Oz command: {error}':
+  zh-CN: 安装Oz 命令 失败：{error}
+'Failed to install {}: {e}':
+  zh-CN: 安装{} 失败：{e}
+'Failed to install {}: {}':
+  zh-CN: 安装{} 失败：{}
 Failed to leave {object_name}:
   zh-CN: 离开 {object_name} 失败
 Failed to load:
   zh-CN: 加载失败
+Failed to load GitHub repositories:
+  zh-CN: 加载GitHub 仓库 失败
 Failed to load blocks. Please try again.:
   zh-CN: 加载 Block 失败。请重试。
+'Failed to load buffer: {error}':
+  zh-CN: 加载缓冲区 失败：{error}
+Failed to load conversation data.:
+  zh-CN: 加载对话数据. 失败
+Failed to load conversation for forking.:
+  zh-CN: 加载对话 for forking. 失败
+'Failed to load conversation with id: {conversation_id}':
+  zh-CN: 加载对话 with id 失败：{conversation_id}
 Failed to load conversation {server_conversation_id}:
   zh-CN: 加载对话 {server_conversation_id} 失败
+Failed to load conversation.:
+  zh-CN: 加载对话. 失败
+'Failed to load conversation: {msg}':
+  zh-CN: 加载对话 失败：{msg}
+'Failed to load directory: {e}':
+  zh-CN: 加载目录 失败：{e}
+Failed to load invite link.:
+  zh-CN: 加载邀请链接. 失败
+'Failed to load tab config {friendly_path}: {}':
+  zh-CN: 加载标签页 配置 {friendly_path} 失败：{}
+Failed to make edit. Please try again.:
+  zh-CN: 编辑失败。请重试。
+Failed to mark agent message {message_id} as delivered:
+  zh-CN: 标记智能体消息 {message_id} as delivered 失败
+'Failed to move cursor to ({}, {}): {e}':
+  zh-CN: 移动cursor to ({}, {}) 失败：{e}
+Failed to move message bridge record {} to {}:
+  zh-CN: 移动消息 bridge record {} to {} 失败
+'Failed to move mouse: {e}':
+  zh-CN: 移动鼠标 失败：{e}
 Failed to move {object_name_lowercase}:
   zh-CN: 移动 {object_name_lowercase} 失败
+Failed to open artifact file '{}':
+  zh-CN: 打开产物 文件 '{}' 失败
+'Failed to open screenshot file: {e}':
+  zh-CN: 打开截图文件 失败：{e}
+Failed to open {}:
+  zh-CN: 打开{} 失败
+Failed to open {} for writing:
+  zh-CN: 打开{} for writing 失败
+Failed to parse Codex config.toml at {}:
+  zh-CN: 解析Codex 配置.toml at {} 失败
+'Failed to parse MCP server JSON configuration: {msg}':
+  zh-CN: 解析MCP 服务器 JSON 配置 失败：{msg}
+'Failed to parse MCP server: {err:#}':
+  zh-CN: 解析MCP 服务器 失败：{err:#}
+'Failed to parse Node.js version: {}':
+  zh-CN: 解析节点.js 版本 失败：{}
+Failed to parse bundled skill at {}:
+  zh-CN: 解析bundled 技能 at {} 失败
+Failed to parse config file '{}' as JSON or YAML:
+  zh-CN: 解析配置文件 '{}' as JSON or YAML 失败
+'Failed to parse file: {e}':
+  zh-CN: 解析文件 失败：{e}
+'Failed to parse markdown: {e:?}':
+  zh-CN: 解析markdown 失败：{e:?}
+Failed to parse npm info for {}:
+  zh-CN: 解析npm 信息 for {} 失败
+'Failed to parse screenshot URI: {e}':
+  zh-CN: 解析截图 URI 失败：{e}
+'Failed to parse skill file {}: {message}':
+  zh-CN: 解析技能文件 {} 失败：{message}
+Failed to parse {}:
+  zh-CN: 解析{} 失败
+Failed to perform action. Please try again.:
+  zh-CN: 操作失败。请重试。
+Failed to persist temporary {prefix} file:
+  zh-CN: 持久化temporary {prefix} 文件 失败
+'Failed to prepare cloud handoff: {error_message}':
+  zh-CN: 准备云端交接 失败：{error_message}
+Failed to prepare file download.:
+  zh-CN: 准备文件下载失败。
+'Failed to press mouse button: {e}':
+  zh-CN: 按下鼠标按钮 失败：{e}
+'Failed to press shift: {e}':
+  zh-CN: 按下Shift 失败：{e}
 'Failed to process selected image due to error: {e}. Please try again with a different image.':
   zh-CN: 由于错误 {e} 处理所选图片失败。请使用其他图片重试。
+Failed to read Codex config.toml at {}:
+  zh-CN: 读取Codex 配置.toml at {} 失败
+'Failed to read MCP config file ''{}'': {e}':
+  zh-CN: 读取MCP 配置文件 '{}' 失败：{e}
+Failed to read agent message {message_id}:
+  zh-CN: 读取智能体消息 {message_id} 失败
+Failed to read artifact file '{}':
+  zh-CN: 读取产物 文件 '{}' 失败
+Failed to read config file '{}':
+  zh-CN: 读取配置文件 '{}' 失败
+'Failed to read file ''{file_path}'': {e:#}':
+  zh-CN: 读取文件 '{file_path}' 失败：{e:#}
+Failed to read files:
+  zh-CN: 读取文件失败
+'Failed to read files: {failed}':
+  zh-CN: 读取files 失败：{failed}
+Failed to read lead-agent message {}:
+  zh-CN: 读取主智能体消息 {} 失败
+Failed to read line from {}:
+  zh-CN: 读取line from {} 失败
+'Failed to read remote search result files: {failed}':
+  zh-CN: 读取远程搜索 结果 files 失败：{failed}
+'Failed to read secret value from: {display}':
+  zh-CN: 读取密钥值 from 失败：{display}
+Failed to read subagents dir {}:
+  zh-CN: 读取子智能体目录 {} 失败
+Failed to read todos dir {}:
+  zh-CN: 读取待办目录 {} 失败
+Failed to read transcript for session {session_id}:
+  zh-CN: 读取对话记录 for 会话 {session_id} 失败
+Failed to read {}:
+  zh-CN: 读取{} 失败
+'Failed to receive map result: {e}':
+  zh-CN: 接收map 结果 失败：{e}
+Failed to reconnect. Please try again later.:
+  zh-CN: 重新连接失败。请稍后重试。
+'Failed to release mouse button: {e}':
+  zh-CN: 释放鼠标按钮 失败：{e}
+'Failed to release shift: {e}':
+  zh-CN: 释放Shift 失败：{e}
+'Failed to remove existing install directory: {:?}':
+  zh-CN: 移除existing 安装目录 失败：{:?}
+'Failed to remove tab config: {e}':
+  zh-CN: 移除标签页配置失败：{e}
+Failed to remove {}:
+  zh-CN: 移除{} 失败
+'Failed to rename conversation: {e}':
+  zh-CN: 重命名对话失败：{e}
+Failed to rename {} to {}:
+  zh-CN: 重命名{} to {} 失败
+Failed to report driver error for task {task_id}:
+  zh-CN: 报告驱动程序 错误 for 任务 {task_id} 失败
+'Failed to request screenshot: {e}':
+  zh-CN: 请求截图 失败：{e}
+Failed to resolve Claude wake prompt for task {task_id}:
+  zh-CN: 解决Claude 唤醒提示 for 任务 {task_id} 失败
+'Failed to resolve child agent skills: review-comments':
+  zh-CN: '解决子智能体技能: review-comments 失败'
+'Failed to resolve child agent skills: {}':
+  zh-CN: 解决子智能体技能 失败：{}
+'Failed to resolve conflict: {err}':
+  zh-CN: 解决conflict 失败：{err}
+'Failed to resolve prompt for the run: {err}':
+  zh-CN: 解决提示 for the run 失败：{err}
 Failed to restore {object_name_lowercase}:
   zh-CN: 恢复 {object_name_lowercase} 失败
 Failed to revert changes to {file_name}:
   zh-CN: 还原对 {file_name} 的更改失败
+Failed to run git {:?} in {}:
+  zh-CN: 运行git {:?} in {} 失败
+'Failed to run screencapture: {e}':
+  zh-CN: 运行screencapture 失败：{e}
+Failed to sample process (check logs):
+  zh-CN: 采样进程 (check 日志) 失败
+'Failed to save API key: {error}':
+  zh-CN: 保存API 密钥 失败：{error}
+Failed to save file {file_path_clone}:
+  zh-CN: 保存文件 {file_path_clone} 失败
+'Failed to save file {path:?}: {error}':
+  zh-CN: 保存文件 {path:?} 失败：{error}
+'Failed to save file: {e:?}':
+  zh-CN: 保存文件 失败：{e:?}
+Failed to save. A launch configuration with the same name already exists.:
+  zh-CN: 保存失败。已存在同名的启动配置。
+'Failed to save: {err}':
+  zh-CN: 保存 失败：{err}
+'Failed to scroll: {e}':
+  zh-CN: 滚动 失败：{e}
+'Failed to select devices: {e}':
+  zh-CN: 选择devices 失败：{e}
+Failed to send API request to {url}:
+  zh-CN: 发送API 请求 to {url} 失败
+'Failed to send button down: {e}':
+  zh-CN: 发送按下按钮 失败：{e}
+'Failed to send button up: {e}':
+  zh-CN: 发送松开按钮 失败：{e}
+'Failed to send key down: {e}':
+  zh-CN: 发送按下 失败：{e}
+'Failed to send key press: {e}':
+  zh-CN: 发送按键 失败：{e}
+'Failed to send key release: {e}':
+  zh-CN: 发送释放按键 失败：{e}
+'Failed to send key up: {e}':
+  zh-CN: 发送松开 失败：{e}
+'Failed to send message to {recipients}: {error}':
+  zh-CN: 发送消息 to {recipients} 失败：{error}
+'Failed to set input focus: {e}':
+  zh-CN: 设置输入 focus 失败：{e}
+Failed to set permissions for {:?}:
+  zh-CN: 设置权限 for {:?} 失败
+Failed to set permissions on {}:
+  zh-CN: 设置权限 on {} 失败
+Failed to share agent session due to an internal error. Please try running your task again.:
+  zh-CN: 由于内部错误，共享 Agent 会话失败。请重新运行您的任务。
+'Failed to share agent session: {reason}':
+  zh-CN: 共享 Agent 会话失败：{reason}
+Failed to share environment with team:
+  zh-CN: 与团队共享环境失败
+Failed to spawn agent:
+  zh-CN: 派生智能体 失败
 Failed to spawn {total} agents:
   zh-CN: 启动 {total} 个 Agent 失败
+Failed to start LSP server for {workspace_root_display} with error {e}:
+  zh-CN: 启动LSP 服务器 for {workspace_root_display} with 错误 {e} 失败
+Failed to start SSH extension:
+  zh-CN: 启动SSH 扩展 失败
 Failed to start editing {object_name_lowercase}:
   zh-CN: 开始编辑 {object_name_lowercase} 失败
+Failed to start orchestration:
+  zh-CN: 启动orchestration 失败
+'Failed to start orchestration: {error}':
+  zh-CN: 启动orchestration 失败：{error}
+'Failed to start session request: {e}':
+  zh-CN: 启动会话 请求 失败：{e}
+Failed to suggest a Docker image:
+  zh-CN: 推荐 Docker 镜像失败
+'Failed to suggest a Docker image: {e}':
+  zh-CN: 推荐 Docker 镜像失败：{e}
 Failed to trash {object_name_lowercase}:
   zh-CN: 移至回收站 {object_name_lowercase} 失败
+'Failed to uninstall Oz command: {error}':
+  zh-CN: 卸载Oz 命令 失败：{error}
+Failed to unshare block. Please try again.:
+  zh-CN: 取消共享 Block 失败。请重试。
+Failed to update permissions for shared session:
+  zh-CN: 更新权限 for shared 会话 失败
 Failed to update permissions for {object_name_lowercase}:
   zh-CN: 更新 {object_name_lowercase} 的权限失败
 Failed to update {object_name_lowercase}:
   zh-CN: 更新 {object_name_lowercase} 失败
+Failed to upload file to server:
+  zh-CN: 上传文件 to 服务器 失败
+Failed to upload folder to server:
+  zh-CN: 上传文件夹 to 服务器 失败
+Failed to upload manifest '{manifest_filename}':
+  zh-CN: 上传manifest '{manifest_filename}' 失败
+Failed to write Codex config.toml at {}:
+  zh-CN: 写入Codex 配置.toml at {} 失败
+Failed to write Codex system prompt to {}:
+  zh-CN: 写入Codex system 提示 to {} 失败
+Failed to write Gemini system prompt to {}:
+  zh-CN: 写入Gemini system 提示 to {} 失败
+Failed to write download file '{}':
+  zh-CN: 写入download 文件 '{}' 失败
+'Failed to write file: {:?}':
+  zh-CN: 写入文件 失败：{:?}
+Failed to write temp file for {}:
+  zh-CN: 写入临时文件 for {} 失败
+Failed to write to command.:
+  zh-CN: 写入命令失败。
+Failed to write to {:?}:
+  zh-CN: 写入to {:?} 失败
+Failed to write {}:
+  zh-CN: 写入{} 失败
+Failed to write {} to storage:
+  zh-CN: 写入{} to storage 失败
+'Failed to write {}: {e}':
+  zh-CN: 写入{} 失败：{e}
+'Failed: {message}':
+  zh-CN: 失败：{message}
 Fancy Dracula:
   zh-CN: Fancy Dracula
 Feedback:
   zh-CN: 反馈
+Fetched {} of {} web pages:
+  zh-CN: 已获取 {} 个网页（共 {} 个）
+Fetched {} web pages:
+  zh-CN: 已获取 {} 个网页
+Fetching {} web pages...:
+  zh-CN: 正在获取 {} 个网页…
 File:
   zh-CN: 文件
+File explorer:
+  zh-CN: 文件浏览器
+File is binary:
+  zh-CN: 文件为二进制文件
 File is too large to render:
   zh-CN: 文件过大，无法渲染
+File not found or could not be read:
+  zh-CN: 未找到文件或无法读取文件
+'File not found: {display}':
+  zh-CN: 未找到文件：{display}
+File {display_path} already exists and will be overwritten:
+  zh-CN: 文件 {display_path} 已存在，将被覆盖
+File {display} already exists:
+  zh-CN: 文件 {display} 已存在
 Fill out the arguments in this workflow and copy it to run in your terminal session:
   zh-CN: 填写此 Workflow 中的参数并复制到终端会话中运行
+Filter block output:
+  zh-CN: 筛选 Block 输出
+Find bar for searching text in the editor.:
+  zh-CN: 用于在编辑器中搜索文本的查找栏。
+Find bar with {} matches found. Currently on match {} of {}.:
+  zh-CN: 查找栏找到 {} 个匹配项。当前为第 {} 个（共 {} 个）。
+'Find files that match the following patterns in {display_path}:':
+  zh-CN: 在 {display_path} 中查找匹配以下模式的文件：
+Find files that match the following patterns in {path}:
+  zh-CN: 在 {path} 中查找匹配以下模式的文件
 Find in Notebook:
   zh-CN: 在 Notebook 中查找
 Find in Terminal:
   zh-CN: 在终端中查找
 Find in code editor:
   zh-CN: 在代码编辑器中查找
+Find references:
+  zh-CN: 查找引用
 Find the next occurrence of your search query:
   zh-CN: 查找搜索查询的下一个匹配项
 Find the previous occurrence of your search query:
   zh-CN: 查找搜索查询的上一个匹配项
 Find within selected block:
   zh-CN: 在所选 Block 中查找
+Find, edit and re-run previously executed commands.:
+  zh-CN: 查找、编辑并重新运行先前执行的命令。
+Finding files that match the following patterns in {path}:
+  zh-CN: 正在 {path} 中查找匹配以下模式的文件
+Finish:
+  zh-CN: 完成
+Finish the current MCP install before opening another install link.:
+  zh-CN: 在打开另一个安装链接前，请先完成当前的 MCP 安装。
+Finished exporting objects:
+  zh-CN: 已完成导出对象
 First Tab:
   zh-CN: 首个标签页
+Fix with Oz:
+  zh-CN: 使用 Oz 修复
 Fixed:
   zh-CN: 已修复
 Focus Terminal Input From Warp AI:
@@ -714,48 +1896,134 @@ Fold:
   zh-CN: 折叠
 Fold selected ranges:
   zh-CN: 折叠所选范围
+Follow up with existing conversation:
+  zh-CN: 在现有对话中继续
 Foreground Color{suffix}:
   zh-CN: 前景颜色{suffix}
+Fork:
+  zh-CN: 分叉
 Fork conversation:
   zh-CN: 分支对话
 Fork current conversation ({title}):
   zh-CN: 分支当前对话（{title}）
 Fork from "{truncated}{suffix}":
   zh-CN: 从 "{truncated}{suffix}" 分支
+Fork from here:
+  zh-CN: 从此处分叉
+Fork from here (dev only):
+  zh-CN: 从此处分叉（仅限开发）
+Fork from last query:
+  zh-CN: 从上一次查询分叉
+Fork in new pane:
+  zh-CN: 在新窗格中分叉
+Fork in new tab:
+  zh-CN: 在新标签页中分叉
 Fork this conversation locally:
   zh-CN: 在本地分支此对话
+Forked "{title}":
+  zh-CN: 已分叉 "{title}"
+Format on save (requires an active language server):
+  zh-CN: 保存时格式化（需要活动的语言服务器）
 Friendly alias:
   zh-CN: 友好别名
+From:
+  zh-CN: 来自
+From GitHub:
+  zh-CN: 来自 GitHub
+From another device:
+  zh-CN: 来自其他设备
+Front end focused agents:
+  zh-CN: 专注前端的 Agent
+Full Terminal Use:
+  zh-CN: 完整终端使用权限
 Future links will automatically open on desktop.:
   zh-CN: 未来的链接将自动在桌面打开。
+'Gallery Id: None':
+  zh-CN: 图库 ID：无
 General:
   zh-CN: 通用
+Generate AGENTS.md file:
+  zh-CN: 生成 AGENTS.md 文件
+Generate a title, descriptions, or parameters with Warp AI:
+  zh-CN: 使用 Warp AI 生成标题、描述或参数
+Generate shell commands with natural language.:
+  zh-CN: 使用自然语言生成 shell 命令。
+Get Started:
+  zh-CN: 开始使用
+Get Warping:
+  zh-CN: 开始使用 Warp
 Get started:
   zh-CN: 开始使用
 Getting blocks...:
   zh-CN: 正在获取 Block...
+GitHub authentication required:
+  zh-CN: 需要 GitHub 身份验证
 Global Search:
   zh-CN: 全局搜索
+Global file search:
+  zh-CN: 全局文件搜索
 'Global hotkey:':
   zh-CN: 全局快捷键：
+Global search:
+  zh-CN: 全局搜索
+Global search failed.:
+  zh-CN: 全局搜索失败。
+Go to Warp to see your new tab.:
+  zh-CN: 前往 Warp 查看您的新标签页。
+Go to definition:
+  zh-CN: 转到定义
 Go to line:
   zh-CN: 跳转到行
+Go to settings > keyboard shortcuts to configure custom keybindings:
+  zh-CN: 前往“设置 > 键盘快捷键”配置自定义快捷键
 Good response:
   zh-CN: 好评
+Grep for the following patterns in {display_path}:
+  zh-CN: 在 {display_path} 中 grep 以下模式
+'Grep for the following patterns in {display_path}:':
+  zh-CN: 在 {display_path} 中 grep 以下模式：
+Grepping for patterns:
+  zh-CN: 正在 grep 模式
+'Grepping for patterns: {joined}':
+  zh-CN: 正在 grep 模式：{joined}
+Grepping for the following patterns in {display_path}:
+  zh-CN: 正在 {display_path} 中 grep 以下模式
 Gruvbox Dark:
   zh-CN: Gruvbox Dark
 Gruvbox Light:
   zh-CN: Gruvbox Light
+Guest User:
+  zh-CN: 访客用户
 Hand off to cloud (or type &):
   zh-CN: 移交到云端（或输入 &）
+Hand off to {display_name}:
+  zh-CN: 移交给 {display_name}
+Handed session off to the cloud:
+  zh-CN: 已将会话交给云端
+Handoff to cloud:
+  zh-CN: 移交到云端
+Have Agent Mode walk you through creating a snake game from end-to-end:
+  zh-CN: 让 Agent 模式带您从头到尾创建一个贪吃蛇游戏
+Have Warp installed but redirecting to download page?:
+  zh-CN: 已安装 Warp 但被重定向到下载页面？
 Header toolbar layout:
   zh-CN: 标题栏工具栏布局
+Hide Others:
+  zh-CN: 隐藏其他
+Hide Warp:
+  zh-CN: 隐藏 Warp
 Hide code review button in tab bar:
   zh-CN: 在标签页栏中隐藏代码审查按钮
+Hide file navigation:
+  zh-CN: 隐藏文件导航
 Hide search bar in vertical tab layout:
   zh-CN: 在垂直标签页布局中隐藏搜索栏
+Hide secret:
+  zh-CN: 隐藏密钥
 Hide tab bar if fullscreen:
   zh-CN: 全屏时隐藏标签页栏
+High-level feature usage data helps Warp's product team prioritize the roadmap.:
+  zh-CN: 高层级的功能使用数据有助于 Warp 产品团队确定路线图的优先级。
 History Search:
   zh-CN: 历史搜索
 Home:
@@ -764,6 +2032,8 @@ Honor linux selection clipboard:
   zh-CN: 支持 Linux 选区剪贴板
 'Hunk:':
   zh-CN: Hunk：
+'IAP credential refresh failed: {message}':
+  zh-CN: IAP 凭据刷新失败：{message}
 INDEXING:
   zh-CN: 索引中
 Idle:
@@ -776,6 +2046,22 @@ If you'd like to opt out of analytics and AI features,:
   zh-CN: '如果您的浏览器未启动， '
 Ignore this suggestion:
   zh-CN: 忽略此建议
+Image attachment is disabled — limit is {MAX_IMAGES_PER_CONVERSATION} per conversation:
+  zh-CN: 图片附件已禁用 — 每个对话上限为 {MAX_IMAGES_PER_CONVERSATION} 张
+Image attachment is disabled — limit is {MAX_IMAGE_COUNT_FOR_QUERY} per query:
+  zh-CN: 图片附件已禁用 — 每次查询上限为 {MAX_IMAGE_COUNT_FOR_QUERY} 张
+Image attachment isn't supported by this model:
+  zh-CN: 此模型不支持图片附件
+Image cannot be attached - error processing.:
+  zh-CN: 无法附加图片 - 处理出错。
+Image cannot be attached - failed to read file.:
+  zh-CN: 无法附加图片 - 读取文件失败。
+Image cannot be attached - file is too large.:
+  zh-CN: 无法附加图片 - 文件过大。
+Image cannot be attached - supported types are PNG, JPG, GIF, WEBP.:
+  zh-CN: 无法附加图片 - 支持的类型为 PNG、JPG、GIF、WEBP。
+Import:
+  zh-CN: 导入
 Import External Settings:
   zh-CN: 导入外部设置
 Import To Personal Drive:
@@ -794,6 +2080,18 @@ Increase notebook font size:
   zh-CN: 增大 Notebook 字体大小
 Increase zoom level:
   zh-CN: 提高缩放级别
+Index new folder:
+  zh-CN: 索引新文件夹
+Indexing - 0 / {total}:
+  zh-CN: 正在索引 - 0 / {total}
+Indexing - {completed}:
+  zh-CN: 正在索引 - {completed}
+Indexing - {completed} / {total}:
+  zh-CN: 正在索引 - {completed} / {total}
+Initialize Project:
+  zh-CN: 初始化项目
+Initialize codebase:
+  zh-CN: 初始化代码库
 Initialized / indexed folders:
   zh-CN: 已初始化/已索引的文件夹
 Initiate project for warp:
@@ -808,46 +2106,96 @@ Insert Command Correction:
   zh-CN: 插入命令更正
 Insert block:
   zh-CN: 插入 Block
+Insert code into terminal input [Cmd + Enter]:
+  zh-CN: 将代码插入终端输入框 [Cmd + Enter]
+Insert into input:
+  zh-CN: 插入到输入框
 Insert last word of previous command:
   zh-CN: 插入上一条命令的最后一个单词
 Insert newline:
   zh-CN: 插入换行
 Insert non-expanding space:
   zh-CN: 插入不换行空格
+Insert {label} block:
+  zh-CN: 插入 {label} Block
+Insert {} code review comments:
+  zh-CN: 插入 {} 条代码审查评论
 Inspect Command:
   zh-CN: 检查命令
+Install:
+  zh-CN: 安装
 Install Oz CLI command:
   zh-CN: 安装 Oz CLI 命令
+Install Update:
+  zh-CN: 安装更新
+Install Warp's SSH extension:
+  zh-CN: 安装 Warp 的 SSH 扩展
+Install and enable {}:
+  zh-CN: 安装并启用 {}
+'Install it first: {url}':
+  zh-CN: 请先安装：{url}
+Install nvm:
+  zh-CN: 安装 nvm
+Install nvm for me:
+  zh-CN: 为我安装 nvm
 Install servers:
   zh-CN: 安装服务器
+Install update ({version}):
+  zh-CN: 安装更新 ({version})
 Install update and relaunch:
   zh-CN: 安装更新并重启
+Install {name}:
+  zh-CN: 安装 {name}
+Installation not found:
+  zh-CN: 未找到安装
+Installing Warp SSH Extension...:
+  zh-CN: 正在安装 Warp SSH 扩展…
 Installing Warp SSH Extension... ({p}%):
   zh-CN: 正在安装 Warp SSH 扩展...（{p}%）
+Insufficient permissions. Please request edit access.:
+  zh-CN: 权限不足。请申请编辑权限。
+Integrate 1Password app with CLI:
+  zh-CN: 将 1Password 应用与 CLI 集成
 Internal Warp error.:
   zh-CN: Warp 内部错误。
 Introducing Oz:
   zh-CN: Oz 介绍
 Invalid API key for {provider}. Update your API key in settings.:
   zh-CN: '{provider} 的 API Key 无效。请在设置中更新您的 API Key。'
+Invalid conversation. Please try again.:
+  zh-CN: 对话无效。请重试。
 Invalid proxy URL configured in {proxy_env_name}:
   zh-CN: '{proxy_env_name} 中配置的代理 URL 无效'
+Invite:
+  zh-CN: 邀请
 Invite People...:
   zh-CN: 邀请用户...
 Invite a friend:
   zh-CN: 邀请好友
+Invite team members:
+  zh-CN: 邀请团队成员
 It seems you're out of credits. Please try again {next_time}.:
   zh-CN: 您的额度似乎已用完。请在 {next_time} 重试。
+'Item #{index}':
+  zh-CN: 第 {index} 项
 Jellyfish:
   zh-CN: Jellyfish
 Join our Slack community (opens external link):
   zh-CN: 加入我们的 Slack 社区（打开外部链接）
 Jump to latest agent task:
   zh-CN: 跳转到最新的 Agent 任务
+Jump to the bottom of this block:
+  zh-CN: 跳转到此 Block 的底部
+Just now:
+  zh-CN: 刚刚
 Just use the terminal:
   zh-CN: 仅使用终端
+Keyboard Shortcuts:
+  zh-CN: 键盘快捷键
 Keyboard shortcuts are not synced to the cloud:
   zh-CN: 键盘快捷键不同步到云端
+Keycaps + stickers:
+  zh-CN: 键帽 + 贴纸
 Keys:
   zh-CN: 密钥
 'LLM Reasoning: ':
@@ -860,14 +2208,32 @@ Language:
   zh-CN: 语言
 Language server is unavailable for this codebase:
   zh-CN: 此代码库的语言服务器不可用
+Language support enabled:
+  zh-CN: 已启用语言支持
+Language support is not currently enabled for {root_name}:
+  zh-CN: 当前未为 {root_name} 启用语言支持
+Language support is not currently enabled for {}:
+  zh-CN: 当前未为 {} 启用语言支持
 Language support is unavailable for this file type:
   zh-CN: 此文件类型的语言支持不可用
 Language support is unavailable for {root_name}:
   zh-CN: '{root_name} 不提供语言支持'
+Last 24 hours:
+  zh-CN: 最近 24 小时
+Last 30 days:
+  zh-CN: 最近 30 天
 Last Line:
   zh-CN: 最后一行
 Last edited by {name}:
   zh-CN: 最后由 {name} 编辑
+Last ran {arg0}:
+  zh-CN: 上次运行于 {arg0}
+Last ran {}:
+  zh-CN: 上次运行于 {}
+'Last used: never':
+  zh-CN: 上次使用：从未
+Last week:
+  zh-CN: 上周
 Latest CLI prompt:
   zh-CN: 最新 CLI 提示
 Latest Oz prompt:
@@ -876,6 +2242,12 @@ Latest prompt:
   zh-CN: 最新提示
 Launch configuration palette:
   zh-CN: 启动配置面板
+Learn More:
+  zh-CN: 了解更多
+Learn about file support and formatting:
+  zh-CN: 了解文件支持和格式
+Learn more:
+  zh-CN: 了解更多
 Learn more about authentication for {harness_name} in Warp.:
   zh-CN: 在 Warp 中了解更多关于 {harness_name} 的认证信息。
 Left:
@@ -902,22 +2274,50 @@ Link (web or file):
   zh-CN: 链接（网页或文件）
 Link SSO:
   zh-CN: 关联 SSO
+Link copied to clipboard:
+  zh-CN: 链接已复制到剪贴板
+Link copied.:
+  zh-CN: 链接已复制。
 Link existing {linkable_file} to my AGENTS.md file:
   zh-CN: 将现有的 {linkable_file} 链接到我的 AGENTS.md 文件
+Link to Documentation:
+  zh-CN: 文档链接
+Listing messages:
+  zh-CN: 正在列出消息
 Load agent mode conversation (from debug link in clipboard):
   zh-CN: 加载 Agent 模式对话（从剪贴板中的调试链接）
+Load in subshell:
+  zh-CN: 在子 shell 中加载
+Load more:
+  zh-CN: 加载更多
 Loaded (refreshes in ~{mins}m):
   zh-CN: 已加载（约 {mins} 分钟后刷新）
+Loading {display_name} suggestions:
+  zh-CN: 正在加载 {display_name} 建议
+Loading {display_name}...:
+  zh-CN: 正在加载{display_name}...
 Loading...:
   zh-CN: 加载中...
+Loading…:
+  zh-CN: 加载中…
 Local Docker Sandbox:
   zh-CN: 本地 Docker 沙盒
+Lock scrolling at bottom of block:
+  zh-CN: 锁定滚动到 Block 底部
 Log editor state:
   zh-CN: 记录编辑器状态
+Log into AWS:
+  zh-CN: 登录 AWS
 Log out:
   zh-CN: 退出登录
+Looks like you're out of AI credits.:
+  zh-CN: 看起来您的 AI 额度已用完。
+Looks like you're out of AI credits. Contact a team admin to upgrade for more credits.:
+  zh-CN: 您的 AI 积分似乎已用完。请联系团队管理员升级以获取更多积分。
 'Looks like you''re out of credits. ':
   zh-CN: '您的额度似乎已用完。 '
+Looks like you're out of credits. Contact a team admin to upgrade for more credits.:
+  zh-CN: 您的积分似乎已用完。请联系团队管理员升级以获取更多积分。
 MCP Server {uuid}:
   zh-CN: MCP 服务器 {uuid}
 MCP Servers:
@@ -926,36 +2326,74 @@ MCP Servers:
   zh-CN: MCP 工具：{name}（{display_input}）
 MCP server '{gallery_title}' cannot be installed from this link.:
   zh-CN: 无法从此链接安装 MCP 服务器 '{gallery_title}'。
+MCP server {uuid} was not found. Verify the server exists in your Warp Drive and the UUID is correct.:
+  zh-CN: 未找到 MCP 服务器 {uuid}。请核实服务器存在于您的 Warp Drive 中且 UUID 正确。
 Make Warp the default terminal:
   zh-CN: 将 Warp 设为默认终端
+Make Warp your own by choosing a built-in theme. Or create your own.:
+  zh-CN: 选择一个内置主题来打造专属于您的 Warp，或创建您自己的主题。
+Make default:
+  zh-CN: 设为默认
+Make editor:
+  zh-CN: 设为编辑者
+Make viewer:
+  zh-CN: 设为查看者
+Make your terminal look like you entered the Matrix:
+  zh-CN: 让您的终端看起来像进入了《黑客帝国》
 Manage:
   zh-CN: 管理
+Manage AI Autonomy permissions:
+  zh-CN: 管理 AI 自主权限
 Manage API keys:
   zh-CN: 管理 API Key
+Manage Warpify settings:
+  zh-CN: 管理 Warpify 设置
 Manage billing:
   zh-CN: 管理账单
+Manage command execution setting:
+  zh-CN: 管理命令执行设置
+Manage defaults:
+  zh-CN: 管理默认值
+Manage plan:
+  zh-CN: 管理套餐
+Manage privacy settings:
+  zh-CN: 管理隐私设置
+Manage profiles:
+  zh-CN: 管理配置文件
+Manage rules:
+  zh-CN: 管理规则
 Manage shared blocks:
   zh-CN: 管理共享 Block
 Marble:
   zh-CN: Marble
+Mark all as read:
+  zh-CN: 全部标记为已读
 Match terminal:
   zh-CN: 匹配终端
 Maximize:
   zh-CN: 最大化
 Maximum rows in a block:
   zh-CN: 每个 Block 的最大行数
+Mermaid diagram:
+  zh-CN: Mermaid 图表
 Migrates the local database:
   zh-CN: 迁移本地数据库
 Missing source file:
   zh-CN: 缺少源文件
+Model Specs:
+  zh-CN: 模型规格
 Monaco:
   zh-CN: Monaco
+Monthly AI credits reset!:
+  zh-CN: 每月 AI 额度已重置！
 Monthly limit reached:
   zh-CN: 已达到月度限额
 Monthly spend limit:
   zh-CN: 月度消费限额
 Monthly spending limit:
   zh-CN: 月度消费限额
+More info:
+  zh-CN: 更多信息
 Move Backward One Subword:
   zh-CN: 向后移动一个子词
 Move Backward One Word:
@@ -1018,20 +2456,32 @@ Natural language denylist:
   zh-CN: 自然语言屏蔽词列表
 Navigate to a repo and initialize it for coding:
   zh-CN: 导航到代码库并初始化以进行编码
+Navigate to {} to open these comments:
+  zh-CN: 导航到 {} 以打开这些评论
 Navigation Palette:
   zh-CN: 导航面板
+Need more seats?:
+  zh-CN: 需要更多席位？
 Needs approval:
   zh-CN: 需要审批
 Network Log:
   zh-CN: 网络日志
 Network log console:
   zh-CN: 网络日志控制台
+Never Warpify this host:
+  zh-CN: 永不 Warpify 此主机
 New API key:
   zh-CN: 新建 API 密钥
 New Agent Tab:
   zh-CN: 新建 Agent 标签页
 New Cloud Agent Tab:
   zh-CN: 新建云端 Agent 标签页
+New Group:
+  zh-CN: 新建分组
+New Oz agent conversation:
+  zh-CN: 新建 Oz Agent 对话
+New Oz cloud agent conversation:
+  zh-CN: 新建 Oz 云 Agent 对话
 New Personal Folder:
   zh-CN: 新建个人文件夹
 New Personal Notebook:
@@ -1040,6 +2490,8 @@ New Personal Prompt:
   zh-CN: 新建个人提示词
 New Personal Workflow:
   zh-CN: 新建个人 Workflow
+New Tab:
+  zh-CN: 新建标签页
 New Team Folder:
   zh-CN: 新建团队文件夹
 New Team Notebook:
@@ -1054,56 +2506,152 @@ New agent:
   zh-CN: 新建 Agent
 New agent conversation:
   zh-CN: 新建 Agent 对话
+New cloud agent:
+  zh-CN: 新建云 Agent
+New conversation:
+  zh-CN: 新对话
+New environment:
+  zh-CN: 新环境
 New features:
   zh-CN: 新功能
+New file:
+  zh-CN: 新建文件
+New group with tab:
+  zh-CN: 用标签页新建分组
+New models available:
+  zh-CN: 有新模型可用
+New session:
+  zh-CN: 新会话
+New session in {}  {}:
+  zh-CN: 在 {} 中新建会话  {}
 New tab:
   zh-CN: 新建标签页
 New tab config:
   zh-CN: 新建标签页配置
+New tab created:
+  zh-CN: 已创建新标签页
 New tab group:
   zh-CN: 新建标签页组
 New tab in group:
   zh-CN: 在组中新建标签页
 New window:
   zh-CN: 新建窗口
+New worktree:
+  zh-CN: 新建工作树
 New worktree branch name:
   zh-CN: 新工作树分支名
 'New worktree: {repo_display_name}, {base_branch}':
   zh-CN: 新工作树：{repo_display_name}，{base_branch}
 'New worktree: {repo_display_name}, {name}':
   zh-CN: 新工作树：{repo_display_name}，{name}
+Next:
+  zh-CN: 下一个
 Nice work on finishing the welcome tips!:
   zh-CN: 恭喜完成欢迎提示！
 No AI features:
   zh-CN: 无 AI 功能
 No AWS credentials configured:
   zh-CN: 未配置 AWS 凭据
+No MCP Server specified.:
+  zh-CN: 未指定 MCP 服务器。
+No URLs fetched:
+  zh-CN: 未获取到 URL
+No URLs found:
+  zh-CN: 未找到 URL
+No active conversation to export:
+  zh-CN: 没有活跃 对话 to export
+No available objects in the current context.:
+  zh-CN: 当前上下文中没有可用对象。
+No changes to discard:
+  zh-CN: 没有可放弃的更改
+No code to be restored:
+  zh-CN: 没有可恢复的代码
+No diffs could be applied.:
+  zh-CN: 无法应用任何差异。
+No directory selected:
+  zh-CN: 没有目录 已选择
 No enterprise regexes have been configured by your organization.:
   zh-CN: 您的组织尚未配置任何企业正则表达式。
+No file name:
+  zh-CN: 无文件名
 No folders have been initialized yet.:
   zh-CN: 尚未初始化任何文件夹。
+No matches:
+  zh-CN: 无匹配项
 No matches found.:
   zh-CN: 未找到匹配项。
 No matching themes!:
   zh-CN: 没有匹配的主题！
+No notifications:
+  zh-CN: 无通知
 No objects in trash to empty:
   zh-CN: 回收站中没有需要清空的对象
+No output:
+  zh-CN: 没有输出
+No output received.:
+  zh-CN: 未收到输出。
+No plugin manager available:
+  zh-CN: 无可用插件管理器
+No remote server client available:
+  zh-CN: 没有远程 服务器 客户端 可用
+No result in OpenBuffer response:
+  zh-CN: 没有结果 in OpenBuffer 响应
+No results:
+  zh-CN: 无结果
+No results found:
+  zh-CN: 未找到结果
 No results found.:
   zh-CN: 未找到结果。
+No results found. Review your gitignore files.:
+  zh-CN: 未找到结果。请检查您的 gitignore 文件。
+No secrets found:
+  zh-CN: 未找到密钥
+No terminal pane open. Open a new pane to attach as context.:
+  zh-CN: 没有打开的终端窗格。请打开一个新窗格以作为上下文附加。
+No tools available:
+  zh-CN: 无可用的工具
+None:
+  zh-CN: 无
+Not implemented:
+  zh-CN: 未实现
+Not logged in:
+  zh-CN: 未登录
+Not set:
+  zh-CN: 未设置
+Not supported in SSH sessions without remote server:
+  zh-CN: 在没有远程服务器的 SSH 会话中不受支持
+Not supported in subshells:
+  zh-CN: 在子 shell 中不受支持
 'Not supported on Wayland. ':
   zh-CN: 'Wayland 上不支持。 '
 Not visible to other users:
   zh-CN: 对其他用户不可见
+Not yet loaded:
+  zh-CN: 尚未加载
 Notebook:
   zh-CN: Notebook
+Nothing to hand off — start a conversation first.:
+  zh-CN: 没有可移交的内容 — 请先开始一个对话。
 Notifications:
   zh-CN: 通知
+Notifications setup instructions:
+  zh-CN: 通知设置说明
 Offline:
   zh-CN: 离线
+'One or more MCP servers failed to start:':
+  zh-CN: 一个或多个 MCP 服务器启动失败：
+One or more of the emails are not Warp users.:
+  zh-CN: 一个或多个邮箱不是 Warp 用户。
+One or more of the guests has already been added.:
+  zh-CN: 一个或多个访客已被添加。
 One-time purchase:
   zh-CN: 一次性购买
+Only invited teammates:
+  zh-CN: 仅受邀的团队成员
 Only on hover:
   zh-CN: 仅在悬停时
+Only people invited:
+  zh-CN: 仅受邀人员
 Only show tab bar on hover:
   zh-CN: 仅在悬停时显示标签页栏
 Open:
@@ -1118,8 +2666,14 @@ Open Left Panel:
   zh-CN: 打开左侧面板
 Open MCP Servers:
   zh-CN: 打开 MCP 服务器
+Open Markdown files in Warp's Markdown Viewer by default:
+  zh-CN: 默认在 Warp 的 Markdown 查看器中打开 Markdown 文件
+Open New Window:
+  zh-CN: 打开新 窗口
 Open New tab with {shell_name} shell:
   zh-CN: 使用 {shell_name} shell 打开新标签页
+Open PR:
+  zh-CN: 打开PR
 Open Repository:
   zh-CN: 打开仓库
 Open Rich Input:
@@ -1156,12 +2710,18 @@ Open Settings:
   zh-CN: 打开设置：团队
 'Open Settings: Warpify':
   zh-CN: 打开设置：Warpify
+Open Tab:
+  zh-CN: 打开标签页
 Open Team Settings:
   zh-CN: 打开团队设置
 Open a new terminal session in this directory:
   zh-CN: 在此目录中打开新的终端会话
 Open a project:
   zh-CN: 打开项目
+Open all in code review:
+  zh-CN: 在代码审查中全部打开
+Open an existing local folder or repository:
+  zh-CN: 打开现有的本地文件夹或仓库
 Open block context menu:
   zh-CN: 打开 Block 上下文菜单
 Open coding agent settings:
@@ -1170,20 +2730,50 @@ Open completions menu:
   zh-CN: 打开补全菜单
 Open completions menu as you type:
   zh-CN: 输入时打开补全菜单
+Open conversation:
+  zh-CN: 打开对话
 Open file:
   zh-CN: 打开文件
 Open file explorer:
   zh-CN: 打开文件资源管理器
+Open files and review code diffs:
+  zh-CN: 打开文件并审查代码差异
 Open global search:
   zh-CN: 打开全局搜索
+Open image at {docker_hub_url}:
+  zh-CN: 打开图片 at {docker_hub_url}
 Open in GitHub:
   zh-CN: 在 GitHub 中打开
+Open in Oz:
+  zh-CN: 打开in Oz
+Open in Warp:
+  zh-CN: 在 Warp 中打开
+Open in Warp Desktop?:
+  zh-CN: 在 Warp 桌面端中打开？
+Open in code review:
+  zh-CN: 在代码审查中打开
+Open in editor:
+  zh-CN: 在编辑器中打开
+Open in new pane:
+  zh-CN: 打开in new 窗格
+Open in new tab:
+  zh-CN: 打开in new 标签页
+Open in terminal session:
+  zh-CN: 打开in terminal 会话
 Open keybindings editor:
   zh-CN: 打开快捷键编辑器
+'Open link: {arg0}':
+  zh-CN: '打开链接: {arg0}'
 Open links in desktop app:
   zh-CN: 在桌面应用中打开链接
+Open list of blocks attached as context to this AI query.:
+  zh-CN: 打开作为此 AI 查询上下文附加的 Block 列表。
 Open local folder:
   zh-CN: 打开本地文件夹
+Open on Desktop:
+  zh-CN: 在桌面打开
+Open overflow menu with copy options for this AI block.:
+  zh-CN: 打开此 AI Block 的溢出菜单及复制选项。
 Open palette:
   zh-CN: 打开命令面板
 Open repository:
@@ -1198,30 +2788,74 @@ Open this conversation in the Warp desktop app:
   zh-CN: 在 Warp 桌面应用中打开此对话
 Open view tree debugger:
   zh-CN: 打开视图树调试器
+Open {} in Warp:
+  zh-CN: 在 Warp 中打开 {}
+OpenAI API Key:
+  zh-CN: OpenAI API Key
 'OpenAI base URL (optional, press Enter to skip):':
   zh-CN: OpenAI base URL（可选，按 Enter 跳过）：
 Opening the completion menu is unbound.:
   zh-CN: 打开补全菜单的快捷键未绑定。
 Opening your browser to connect your SuperGrok subscription…:
   zh-CN: 正在打开浏览器以连接您的 SuperGrok 订阅…
+Or, join an existing team within your company:
+  zh-CN: 或者，加入您公司内的现有团队
 Orchestration config was disapproved:
   zh-CN: 编排配置未获批准
+Orchestration is currently disabled. Re-enable on the plan card to launch. ({reason}):
+  zh-CN: 编排当前已禁用。请在套餐卡片上重新启用以启动。({reason})
 Other:
   zh-CN: 其他
+Other members:
+  zh-CN: 其他成员
+Other user:
+  zh-CN: 其他用户
 Out of credits:
   zh-CN: 额度用完
 Outdated:
   zh-CN: 已过时
 Outline codebase symbols for '@' context menu:
   zh-CN: 为 '@' 上下文菜单列出代码库符号
+'Output:':
+  zh-CN: 输出：
 Overage spending limit:
   zh-CN: 超额消费限额
+Oz documentation:
+  zh-CN: Oz 文档
+Oz needs your confirmation to continue:
+  zh-CN: Oz 需要您的确认才能继续
+Oz needs your permission to edit a file:
+  zh-CN: Oz 需要您的许可才能编辑文件
+Oz needs your permission to read files:
+  zh-CN: Oz 需要您的许可才能读取文件
+Oz needs your permission to search your codebase:
+  zh-CN: Oz 需要您的许可才能搜索您的代码库
+PR successfully created.:
+  zh-CN: PR 已成功创建。
+'Paid plans include everything in your free trial plus:':
+  zh-CN: 付费套餐包含免费试用的所有内容，外加：
+'Paid plans start at ${price}/month and include everything in your free trial plus:':
+  zh-CN: 付费套餐起价为 ${price}/月，包含免费试用的所有内容，外加：
+Pair with an Agent to accomplish another task:
+  zh-CN: 与 Agent 协作完成另一项任务
+Pane title as:
+  zh-CN: 窗格标题显示为
+Parent conversation:
+  zh-CN: 父对话
+Past 3 days:
+  zh-CN: 过去 3 天
 Paste:
   zh-CN: 粘贴
+Paste a URL to attach that webpage as context for the agent.:
+  zh-CN: 粘贴 URL 以将该网页作为 Agent 的上下文附加。
 Paste sign-in code:
   zh-CN: 粘贴登录代码
 Pending:
   zh-CN: 待处理
+Permission denied writing to {}. Check file permissions.:
+  zh-CN: 写入 {} 被拒绝。请检查文件权限。
+Personal:
+  zh-CN: 个人
 Phenomenon:
   zh-CN: Phenomenon
 Pick a theme for when your system is in dark mode.:
@@ -1238,48 +2872,136 @@ Pink City:
   zh-CN: Pink City
 Pinned:
   zh-CN: 已固定
+Plan:
+  zh-CN: 套餐
+Plan ID copied to clipboard:
+  zh-CN: 计划 ID 已复制到剪贴板
+Plan and Todo List:
+  zh-CN: 计划和待办列表
+Plan auto-sync:
+  zh-CN: 计划自动同步
+Plan document {ai_document_id} is not backed by a saved Warp Drive notebook.:
+  zh-CN: 套餐文档 {ai_document_id} 没有已保存的 Warp Drive Notebook 作为支撑。
 Plan document {ai_document_id} was not found in Warp Drive.:
   zh-CN: 在 Warp Drive 中未找到计划文档 {ai_document_id}。
 Plan successfully activated. All premium models are available.:
   zh-CN: 计划已成功激活。所有高级模型均可用。
+Plan synced to your Warp Drive:
+  zh-CN: 套餐已同步到您的 Warp Drive
+Platform not supported:
+  zh-CN: 不支持的平台
+Platform plugin installation did not take effect:
+  zh-CN: 平台插件安装未生效
+Platform plugin update did not take effect:
+  zh-CN: 平台插件更新未生效
+'Please ensure the following email is valid: {invalid_email}':
+  zh-CN: 请确保以下邮箱有效：{invalid_email}
+Please enter a line number:
+  zh-CN: 请输入行号
 Please enter a price between $0.01 and $10,000,000:
   zh-CN: 请输入 $0.01 到 $10,000,000 之间的价格
+Please enter a valid column number:
+  zh-CN: 请输入有效的列号
 Please enter a valid currency amount:
   zh-CN: 请输入有效的货币金额
+Please enter a valid line number:
+  zh-CN: 请输入有效的行号
+Please enter an email.:
+  zh-CN: 请输入邮箱。
 Please include 'https://':
   zh-CN: 请包含 'https://'
+Please provide a color after /set-tab-color ({}):
+  zh-CN: 请在 /set-tab-color 后提供颜色 ({})
+Please provide a tab name after /rename-tab:
+  zh-CN: 请在 /rename-tab 后提供标签页名称
+Please select an agent.:
+  zh-CN: 请选择一个 Agent。
+Please sign in again to restore access to cloud-based features.:
+  zh-CN: 请重新登录以恢复对云端功能的访问。
+Plugin update did not take effect:
+  zh-CN: 插件更新未生效
+Plugin update instructions:
+  zh-CN: 插件更新说明
+PowerShell subshells not supported:
+  zh-CN: 不支持 PowerShell 子外壳
 Pre-Interactive SSH Session:
   zh-CN: 预交互 SSH 会话
 Prefer rendering new windows with integrated GPU (low power):
   zh-CN: 优先使用集成 GPU 渲染新窗口（低功耗）
 Premature:
   zh-CN: Premature
+Preparing handoff — try again in a moment.:
+  zh-CN: 正在准备移交 — 请稍后重试。
 Preparing...:
   zh-CN: 准备中...
 Preserve input focus on block selection:
   zh-CN: 选择块时保持输入焦点
+Press Cmd-Up to navigate to the command's output.:
+  zh-CN: 按 Cmd-Up 导航到命令的输出。
+Press Enter to create {} in the current directory:
+  zh-CN: 按 Enter 在当前目录中创建 {}
+Press Enter to navigate to this directory:
+  zh-CN: 按 Enter 导航到此目录
+Press Enter to open this file:
+  zh-CN: 按 Enter 打开此文件
 Press and hold to activate.:
   zh-CN: 按住以激活。
+Press enter to confirm.:
+  zh-CN: 按 Enter 确认。
+Press enter to confirm. Use {} binding to run this action in the future.:
+  zh-CN: 按 Enter 确认。今后可使用 {} 快捷键运行此操作。
 Press enter to create a new conversation.:
   zh-CN: 按 Enter 创建新对话。
 Press enter to fork the current conversation into a new conversation.:
   zh-CN: 按 Enter 将当前对话分叉为新对话。
 Press enter to launch this session.:
   zh-CN: 按 Enter 启动此会话。
+Press enter to navigate to conversation "{}".:
+  zh-CN: 按 Enter 导航到对话 "{}"。
+'Press enter to navigate to tab: {}.':
+  zh-CN: 按 Enter 导航到标签页：{}。
 Press enter to navigate to this session.:
   zh-CN: 按 Enter 导航到此会话。
 Press enter to use this launch configuration.:
   zh-CN: 按 Enter 使用此启动配置。
+Previous:
+  zh-CN: 上一个
+Previous session:
+  zh-CN: 上一个会话
 Privacy Settings:
   zh-CN: 隐私设置
 Production API:
   zh-CN: 生产环境 API
 Project Explorer:
   zh-CN: 项目资源管理器
+Project explorer:
+  zh-CN: 项目浏览器
 Project rules linked from {path}:
   zh-CN: 项目规则链接自 {path}
 Project setup:
   zh-CN: 项目设置
+Promote to admin:
+  zh-CN: 提升为管理员
+Prompt copied.:
+  zh-CN: 提示词已复制。
+Prompt the agent to control interactive tools like node, python, postgres, gdb, or vim.:
+  zh-CN: 提示 Agent 控制 node、python、postgres、gdb 或 vim 等交互式工具。
+Publish:
+  zh-CN: 发布
+Pull Request:
+  zh-CN: Pull Request
+Purchased this month:
+  zh-CN: 本月已购买
+Push:
+  zh-CN: 推送
+QR code downloaded.:
+  zh-CN: 二维码已下载。
+Questions skipped:
+  zh-CN: 已跳过的问题
+Questions skipped due to auto-approve:
+  zh-CN: 因自动批准而跳过的问题
+Questions unavailable:
+  zh-CN: 问题不可用
 Queue a follow up for the {agent_name} agent:
   zh-CN: 为 {agent_name} Agent 排队后续问题
 Queued:
@@ -1292,10 +3014,14 @@ Quota limit reached.:
   zh-CN: 已达到配额上限。
 Raw:
   zh-CN: 原始
+Raw Value:
+  zh-CN: 原始值
 Re-arrange toolbar items:
   zh-CN: 重新排列工具栏项
 Re-generate AGENTS.md file:
   zh-CN: 重新生成 AGENTS.md 文件
+Read all changelogs:
+  zh-CN: 阅读所有更新日志
 Read more about Warp's use of data:
   zh-CN: 了解更多关于 Warp 的数据使用
 Reading "{name}" MCP resource...:
@@ -1312,6 +3038,14 @@ Red Rock:
   zh-CN: Red Rock
 Redact secrets (API keys, passwords, IP addresses, PII etc.):
   zh-CN: 脱敏敏感信息（API Key、密码、IP 地址、PII 等）
+Refer a friend:
+  zh-CN: 推荐好友
+Refresh:
+  zh-CN: 刷新
+Refresh AWS Credentials:
+  zh-CN: 刷新 AWS 凭据
+Refresh file:
+  zh-CN: 刷新文件
 Refresh notebook:
   zh-CN: 刷新 Notebook
 Reinput selected commands:
@@ -1320,14 +3054,54 @@ Reinput selected commands as root:
   zh-CN: 以 root 重新输入所选命令
 Reject:
   zh-CN: 拒绝
+Relevant file search in the current directory is not available:
+  zh-CN: 当前目录中的相关文件搜索不可用
+Reload Credits:
+  zh-CN: 充值积分
 Reload file:
   zh-CN: 重新加载文件
+Remote codebase indexing is not enabled:
+  zh-CN: 远程代码库索引未启用
+Remote codebase search is not available in this environment.:
+  zh-CN: 此环境中远程代码库搜索不可用。
+Remote codebase search is not available.:
+  zh-CN: 远程代码库搜索不可用。
+Remote codebase search is not enabled.:
+  zh-CN: 远程代码库搜索未启用。
+'Remote codebase search is unavailable for {}: {message}':
+  zh-CN: '{} 的远程代码库搜索不可用：{message}'
+Remote codebase search is unavailable.:
+  zh-CN: 远程代码库搜索不可用。
+Remote codebase search was unexpectedly unavailable.:
+  zh-CN: 远程代码库搜索意外不可用。
+Remote control link copied.:
+  zh-CN: 远程控制链接已复制。
+Remote host:
+  zh-CN: 远程主机
 Remove:
   zh-CN: 移除
+Remove '{}'?:
+  zh-CN: 移除'{}'?
+Remove domain:
+  zh-CN: 移除域名
+Remove endpoint:
+  zh-CN: 移除端点
+Remove endpoint?:
+  zh-CN: 移除端点？
+Remove from group:
+  zh-CN: 从分组中移除
+Remove from team:
+  zh-CN: 从团队中移除
+Remove queued prompt:
+  zh-CN: 移除排队中的提示
+Remove shared MCP server from team?:
+  zh-CN: 从团队中移除共享 MCP 服务器？
 Remove the previous character:
   zh-CN: 删除前一个字符
 Rename:
   zh-CN: 重命名
+Rename tab:
+  zh-CN: 重命名标签页
 Rename the current pane:
   zh-CN: 重命名当前窗格
 Rename the current tab:
@@ -1338,6 +3112,8 @@ Rendered:
   zh-CN: 渲染
 Reopen closed session:
   zh-CN: 重新打开已关闭的会话
+Replace all:
+  zh-CN: 全部替换
 Replacement content:
   zh-CN: 替换内容
 Repo is initialized with a {file_name} file.:
@@ -1346,16 +3122,40 @@ Repository '{repo}' found but belongs to org '{found}', expected '{expected}':
   zh-CN: 找到仓库 '{repo}'，但它属于组织 '{found}'，预期为 '{expected}'
 Repository '{repo}' not found:
   zh-CN: 未找到仓库 '{repo}'
+'Repository indexing failed: {error}':
+  zh-CN: 仓库索引失败：{error}
+'Repository indexing is still pending: {repo_id_path}':
+  zh-CN: 仓库索引仍在等待中：{repo_id_path}
+'Repository not found: {repo_id_path}':
+  zh-CN: 未找到仓库：{repo_id_path}
+Request edit access:
+  zh-CN: 申请编辑权限
 Request edit access to change input mode:
   zh-CN: 请求编辑权限以更改输入模式
+Requested Edit:
+  zh-CN: 已请求编辑
+Requires a filesystem:
+  zh-CN: 需要文件系统
+Requires a local session:
+  zh-CN: 需要本地会话
+Requires the GitHub CLI:
+  zh-CN: 需要 GitHub CLI
 Requires the Warp plugin for your coding agent:
   zh-CN: 需要用于您的编码 Agent 的 Warp 插件
+Requires the `{command}` command:
+  zh-CN: 需要 `{command}` 命令
 Reset:
   zh-CN: 重置
 Reset font size to default:
   zh-CN: 将字体大小重置为默认
+Reset links:
+  zh-CN: 重置链接
 Reset notebook font size:
   zh-CN: 重置 Notebook 字体大小
+Reset tab name:
+  zh-CN: 重置标签页名称
+Reset to Warp defaults:
+  zh-CN: 重置为 Warp 默认值
 Reset to default:
   zh-CN: 重置为默认
 Reset zoom level to default:
@@ -1372,16 +3172,36 @@ Resolved custom:
   zh-CN: 已解析的自定义
 Restart Warp AI:
   zh-CN: 重启 Warp AI
+Restart app and update now:
+  zh-CN: 立即重启应用并更新
+Restart server:
+  zh-CN: 重启服务器
 Restore:
   zh-CN: 恢复
+Restore environment variables from trash:
+  zh-CN: 从废纸篓还原环境变量
 Restore notebook from trash:
   zh-CN: 从回收站恢复 Notebook
 Restore workflow from trash:
   zh-CN: 从回收站恢复 Workflow
 Restricted due to billing issue:
   zh-CN: 由于账单问题受限
+Result accepted.:
+  zh-CN: 结果已接受。
+Result executed:
+  zh-CN: 结果已执行
 Resume conversation:
   zh-CN: 恢复对话
+Retry:
+  zh-CN: 重试
+Retry title:
+  zh-CN: 重试标题
+Reuse existing SSH ControlMaster:
+  zh-CN: 复用现有的 SSH ControlMaster
+Reveal secret:
+  zh-CN: 显示密钥
+Revert to server:
+  zh-CN: 还原到服务器版本
 Review changes:
   zh-CN: 审查更改
 Review the failing tests:
@@ -1390,10 +3210,28 @@ Reviewing changes:
   zh-CN: 正在审查更改
 Reviewing code changes:
   zh-CN: 正在审查代码更改
+Reviewing open changes:
+  zh-CN: 正在审查未提交的更改
+Revoke all edit permissions:
+  zh-CN: 撤销所有编辑权限
+Rewind:
+  zh-CN: 回退
+Rewind to before here:
+  zh-CN: 回退到此处之前
 Rewind to before this block:
   zh-CN: 回退到此 Block 之前
+'Rewind to: {query_text} (no code changes)':
+  zh-CN: 回退到：{query_text}（无代码更改）
+Rich Input:
+  zh-CN: 富输入
 Right:
   zh-CN: 右
+Right-click a block to copy a conversation's output.:
+  zh-CN: 右键点击 Block 以复制对话的输出。
+Right-click a block to fork the conversation from that point.:
+  zh-CN: 右键点击 Block 以从该点分叉对话。
+Right-click selected text to attach it as agent context.:
+  zh-CN: 右键点击选中的文本以将其作为 Agent 上下文附加。
 Rows:
   zh-CN: 行数
 Rule:
@@ -1404,8 +3242,18 @@ Rule could not be saved because changes were made while you were editing.:
   zh-CN: 规则无法保存，因为编辑期间有其他更改。
 Rules:
   zh-CN: 规则
+'Run command: {command}':
+  zh-CN: 运行命令：{command}
+? Run commands here, just like a regular terminal. If you type a question or task using natural language, Warp can suggest opening it in agent mode. You can always override using {}.
+: zh-CN: 在此处运行命令，就像普通终端一样。如果您使用自然语言输入问题或任务，Warp 可以建议在 Agent 模式中打开它。您随时可以使用 {} 覆盖此行为。
 Run selected commands:
   zh-CN: 运行所选命令
+Run {action} in command palette:
+  zh-CN: 在命令面板中运行 {action}
+Run {package_manager_name} to update:
+  zh-CN: 运行 {package_manager_name} 以更新
+Running child agents is disabled by the active execution profile.:
+  zh-CN: 活动的执行配置文件已禁用运行子 Agent。
 SSH:
   zh-CN: SSH
 SSH ControlMaster error:
@@ -1418,8 +3266,18 @@ Save all unsaved files in code review:
   zh-CN: 保存代码审查中的所有未保存文件
 Save and auto-sync this plan to your Warp Drive:
   zh-CN: 保存并自动同步此计划到您的 Warp Drive
+Save as markdown file:
+  zh-CN: 保存为 Markdown 文件
+Save as new config:
+  zh-CN: 保存as new 配置
+Save as prompt:
+  zh-CN: 保存as 提示
 Save as workflow:
   zh-CN: 保存为工作流
+Save as workflow [Cmd + S]:
+  zh-CN: 另存为 Workflow [Cmd + S]
+Save changes:
+  zh-CN: 保存更改
 Save changes?:
   zh-CN: 保存更改？
 Save file as:
@@ -1432,6 +3290,8 @@ Save your key:
   zh-CN: 保存您的密钥
 Saved prompt ({id}):
   zh-CN: 已保存的提示词（{id}）
+Saved prompt not found for ID {id}. Verify the prompt exists in your Warp Drive.:
+  zh-CN: 未找到 ID 为 {id} 的已保存提示词。请核实提示词存在于您的 Warp Drive 中。
 Scanning:
   zh-CN: 扫描中
 Scroll down half a page (vim):
@@ -1452,6 +3312,12 @@ Scroll up half a page (vim):
   zh-CN: 向上滚动半页（vim）
 Scrollable:
   zh-CN: 可滚动
+Scrolled to bottom of bottommost visible block:
+  zh-CN: 已滚动到最底部可见 Block 的底部
+Scrolled to bottom of selected block:
+  zh-CN: 已滚动到选中 Block 的底部
+Scrolled to top of selected block:
+  zh-CN: 已滚动到选中 Block 的顶部
 Search:
   zh-CN: 搜索
 Search API keys:
@@ -1460,8 +3326,16 @@ Search MCP Servers:
   zh-CN: 搜索 MCP 服务器
 Search diff sets or branches to compare…:
   zh-CN: 搜索要比较的差异集或分支…
+Search files and directories:
+  zh-CN: 搜索文件和目录
+Search for "{}" cancelled:
+  zh-CN: 已取消对 "{}" 的搜索
+Search for "{}" in {} cancelled:
+  zh-CN: 已取消在 {} 中对 "{}" 的搜索
 Search in files:
   zh-CN: 在文件中搜索
+Search in {} failed because the codebase isn't indexed:
+  zh-CN: 在 {} 中搜索失败，因为代码库未建立索引
 Search repos:
   zh-CN: 搜索代码库
 Search secrets or create a new one:
@@ -1470,22 +3344,48 @@ Search sessions, agents, files...:
   zh-CN: 搜索会话、Agent、文件...
 Search tabs...:
   zh-CN: 搜索标签页...
+? Search your history, workflows, and more.  Use the Up and Down arrows to browse search results after typing.  Press Enter to accept a selected result, inserting it into the terminal input.  Press Escape to close.
+: zh-CN: 搜索您的历史记录、Workflow 等。输入后使用上下箭头浏览搜索结果。按 Enter 接受选中的结果并将其插入终端输入框。按 Escape 关闭。
+Searched codebase for "{}":
+  zh-CN: 已在代码库中搜索 "{}"
+Searched codebase for "{}" in {}:
+  zh-CN: 已在 {} 的代码库中搜索 "{}"
+Searched for "{}":
+  zh-CN: 已搜索 "{}"
+Searched for "{}" in {}:
+  zh-CN: 已在 {} 中搜索 "{}"
+Searched the web:
+  zh-CN: 已搜索网络
 Searched the web for "{query}":
   zh-CN: 已在网络上搜索 "{query}"
+Searching codebase for "{}":
+  zh-CN: 正在代码库中搜索 "{}"
+Searching for "{}" in {}:
+  zh-CN: 正在 {} 中搜索 "{}"
+Searching the web:
+  zh-CN: 正在搜索网络
 Searching the web for "{q}":
   zh-CN: 正在网络上搜索 "{q}"
 Searching web:
   zh-CN: 正在搜索网页
 Second Tab:
   zh-CN: 第二个标签页
+Secret key copied.:
+  zh-CN: 密钥已复制。
 Secret visual redaction mode:
   zh-CN: 密钥视觉脱敏模式
 See docs.:
   zh-CN: 查看文档。
+See logs for details:
+  zh-CN: 查看日志了解详情
+See what's new:
+  zh-CN: 查看新功能
 Select To Line End:
   zh-CN: 选择到行尾
 Select To Line Start:
   zh-CN: 选择到行首
+Select a git repository to enable worktree support:
+  zh-CN: 选择一个 git 仓库以启用工作树支持
 Select all:
   zh-CN: 全选
 Select all blocks:
@@ -1500,6 +3400,8 @@ Select and move to the top:
   zh-CN: 选择并移至顶部
 Select coding agent:
   zh-CN: 选择编码 Agent
+Select directory:
+  zh-CN: 选择目录
 Select down:
   zh-CN: 向下选择
 Select next block:
@@ -1522,6 +3424,8 @@ Select previous block:
   zh-CN: 选择上一个 Block
 Select previous command:
   zh-CN: 选择上一条命令
+Select repos for your environment:
+  zh-CN: 为您的环境选择仓库
 Select shell command at cursor:
   zh-CN: 选择光标处的 shell 命令
 Select the closest bookmark down:
@@ -1540,60 +3444,128 @@ Select to start of paragraph:
   zh-CN: 选择到段落起始
 Select up:
   zh-CN: 向上选择
+'Selected folder is not a Git repository: {path}':
+  zh-CN: 所选文件夹不是 Git 仓库：{path}
 Send Feedback:
   zh-CN: 发送反馈
+Send a prompt below to start a new conversation:
+  zh-CN: 在下方发送提示以开始新对话
 Send diff comments to {label}:
   zh-CN: 将差异评论发送到 {label}
 Send feedback (opens external link):
   zh-CN: 发送反馈（打开外部链接）
 Send message to {recipients} cancelled.:
   zh-CN: 发送消息到 {recipients} 已取消。
+'Send message: {subject}':
+  zh-CN: 发送消息：{subject}
 Send now:
   zh-CN: 立即发送
 Send to Agent:
   zh-CN: 发送到 Agent
 Separator:
   zh-CN: 分隔符
+Server update available:
+  zh-CN: 有可用的服务器更新
 Session:
   zh-CN: 会话
+Session ended due to an internal error. Please try sharing again.:
+  zh-CN: 由于内部错误，会话已结束。请重新尝试共享。
+Session ended.:
+  zh-CN: 会话已结束。
+Session is already being shared:
+  zh-CN: 会话已在共享中
 Session limit ({max_bytes}) exceeded. Please reshare to continue.:
   zh-CN: 已超出会话限制（{max_bytes}）。请重新共享以继续。
+Session sharing was interrupted before it could complete. Please try running your task again.:
+  zh-CN: 会话共享在完成前被中断。请重新运行您的任务。
+Session type:
+  zh-CN: 会话类型
 Set Input Mode to Agent Mode:
   zh-CN: 将输入模式设置为 Agent 模式
 Set Input Mode to Terminal Mode:
   zh-CN: 将输入模式设置为终端模式
 Set by Team Workspace:
   zh-CN: 由团队工作区设置
+Set permissions:
+  zh-CN: 设置权限
 Set unnamed register as system clipboard:
   zh-CN: 将未命名寄存器设为系统剪贴板
 Set up:
   zh-CN: 设置
 Set up a project to optimize it for coding in Warp.:
   zh-CN: 设置项目以优化在 Warp 中的编码。
+Sets the monthly limit spent on add-on credits:
+  zh-CN: 设置在附加积分上的每月花费上限
+Sets the monthly overage spending limit beyond the plan amount:
+  zh-CN: 设置超出套餐额度的每月超额花费上限
+Setting the limit above 100k lines may impact performance. Maximum rows supported is {max_rows}.:
+  zh-CN: 将上限设置为超过 10 万行可能会影响性能。支持的最大行数为 {max_rows}。
+Setting up environment:
+  zh-CN: 正在设置环境
 Settings:
   zh-CN: 设置
+Settings sync:
+  zh-CN: 设置同步
 Setup Guide:
   zh-CN: 设置指南
 Share:
   zh-CN: 分享
+Share block:
+  zh-CN: 共享 Block
+Share conversation:
+  zh-CN: 共享对话
 Share current session:
   zh-CN: 共享当前会话
 Share pane:
   zh-CN: 共享窗格
 Share selected block:
   zh-CN: 共享所选 Block
+Share server:
+  zh-CN: 共享服务器
+Share session:
+  zh-CN: 共享会话
 Share session QR code:
   zh-CN: 分享会话二维码
+Share session...:
+  zh-CN: 共享会话…
+Share this {object_type}:
+  zh-CN: 共享此 {object_type}
+Share with team:
+  zh-CN: 与团队共享
+Shared Notebooks:
+  zh-CN: 共享 Notebook
+Shared Workflows:
+  zh-CN: 共享 Workflow
 Shared by Warp and from other devices:
   zh-CN: 由 Warp 共享且来自其他设备
+Shared by Warp and your team:
+  zh-CN: 由 Warp 和您的团队共享
 Shared by Warp and {name}:
   zh-CN: 由 Warp 和 {name} 共享
+Shared by a team member:
+  zh-CN: 由团队成员共享
+'Shared by: {creator}':
+  zh-CN: 共享者：{creator}
+Shared editing permissions were revoked due to inactivity:
+  zh-CN: 由于长时间未活动，共享编辑权限已被撤销
+Shared with me:
+  zh-CN: 与我共享的
 Shared {object_type}s have been restricted due to a subscription payment issue.:
   zh-CN: 由于订阅付款问题，共享的 {object_type} 已受限。
 Shared {object_type}s limit reached:
   zh-CN: 已达到共享 {object_type} 的上限
 Shared {object_type}s restricted:
   zh-CN: 共享 {object_type} 已受限
+Sharing ended due to inactivity:
+  zh-CN: 由于长时间未活动，共享已结束
+Sharing ended due to sharer inactivity:
+  zh-CN: 由于共享者长时间未活动，共享已结束
+Sharing will end in {}:{:02} due to inactivity.:
+  zh-CN: 由于长时间未活动，共享将在 {}:{:02} 后结束。
+Shell process exited:
+  zh-CN: Shell 进程已退出
+Shell process exited prematurely!:
+  zh-CN: Shell 进程意外退出！
 Show Global Workflows in Command Search (ctrl-r):
   zh-CN: 在命令搜索中显示全局 Workflow（ctrl-r）
 Show Vim status bar:
@@ -1612,22 +3584,38 @@ Show code review button in tab bar:
   zh-CN: 在标签页栏中显示代码审查按钮
 Show credit usage details:
   zh-CN: 显示额度使用详情
+Show diff stats on code review button:
+  zh-CN: 在代码审查按钮上显示差异统计
 Show diff view:
   zh-CN: 显示差异视图
+Show dotfiles and hidden files (starting with .) in the project explorer.:
+  zh-CN: 在项目浏览器中显示点文件和隐藏文件（以 . 开头）。
+Show file navigation:
+  zh-CN: 显示文件导航
 Show find bar in code review:
   zh-CN: 在代码审查中显示查找栏
 Show help block in new sessions:
   zh-CN: 在新会话中显示帮助 Block
+Show hidden files in project explorer:
+  zh-CN: 在项目浏览器中显示隐藏文件
+Show in Warp Drive:
+  zh-CN: 在 Warp Drive 中显示
 Show in-app agent notifications:
   zh-CN: 显示应用内 Agent 通知
+Show initialization block:
+  zh-CN: 显示初始化 Block
 Show ligatures in terminal:
   zh-CN: 在终端中显示连字
 Show lines added and removed counts on the code review button.:
   zh-CN: 在代码审查按钮上显示新增和删除行数。
+Show logs:
+  zh-CN: 显示日志
 Show model picker in prompt:
   zh-CN: 在提示中显示模型选择器
 Show prompt:
   zh-CN: 显示提示
+Show running processes:
+  zh-CN: 显示正在运行的进程
 Show terminal input message line:
   zh-CN: 显示终端输入消息行
 Show the tab bar:
@@ -1640,10 +3628,24 @@ Show vertical tabs panel in restored windows:
   zh-CN: 在还原的窗口中显示垂直标签页面板
 Show {hidden_count} more:
   zh-CN: 再显示 {hidden_count} 条
+Showing 1 reference:
+  zh-CN: 显示 1 个引用
+Showing all workflows:
+  zh-CN: 显示所有 Workflow
+Showing my workflows:
+  zh-CN: 显示我的 Workflow
+Showing project workflows:
+  zh-CN: 显示项目 Workflow
+Showing team workflows:
+  zh-CN: 显示团队 Workflow
+Showing workflows with category {}:
+  zh-CN: 显示类别为 {} 的 Workflow
 Showing {total_refs} references:
   zh-CN: 显示 {total_refs} 个引用
 Shutting down...:
   zh-CN: 正在关闭...
+Sign in:
+  zh-CN: 登录
 ? "Sign in on your browser \nto continue"
 : zh-CN: '在浏览器中登录
 
@@ -1654,22 +3656,56 @@ Sign up:
   zh-CN: 注册
 Skill '{skill}' not found:
   zh-CN: 未找到技能 '{skill}'
+Skip:
+  zh-CN: 跳过
+Skip AGENTS.md generation for now:
+  zh-CN: 暂时跳过 AGENTS.md 生成
 Skip Welcome Tips:
   zh-CN: 跳过欢迎提示
+Skip all:
+  zh-CN: 全部跳过
 Skip for now:
   zh-CN: 暂时跳过
+Skip for now.:
+  zh-CN: 暂时跳过。
 Slack:
   zh-CN: Slack
+'Slash command: {name}':
+  zh-CN: 斜杠命令：{name}
 Slash commands:
   zh-CN: 斜杠命令
 Solar Flare:
   zh-CN: Solar Flare
+Some features may be unavailable offline:
+  zh-CN: 部分功能在离线时可能不可用
+Something else?:
+  zh-CN: 其他？
+Something went wrong:
+  zh-CN: 出现错误
+Something went wrong.:
+  zh-CN: 出现错误。
+Something went wrong. Please ask sharer to reshare to continue.:
+  zh-CN: 出现错误。请让共享者重新共享以继续。
+Something went wrong. Please try again.:
+  zh-CN: 出现错误。请重试。
+Something went wrong. Please try sharing again.:
+  zh-CN: 出现错误。请重新尝试共享。
+? Sorry you had a bad experience with this interaction. We've refunded you {request_refunded_count} credits. We appreciate your feedback!
+: zh-CN: 很抱歉此次交互给您带来了不好的体验。我们已退还您 {request_refunded_count} 积分。感谢您的反馈！
 Sort by:
   zh-CN: 排序方式
+Spawn agents cancelled:
+  zh-CN: 已取消生成 Agent
+Spawn {} agent(s) to address this task.:
+  zh-CN: 生成 {} 个 Agent 以处理此任务。
+Spawned 1 agent:
+  zh-CN: 已生成 1 个 Agent
 Spawned {launched} of {total} agents:
   zh-CN: 已启动 {launched} / {total} 个 Agent
 Spawned {total} agents:
   zh-CN: 已启动 {total} 个 Agent
+Split Pane:
+  zh-CN: 拆分窗格
 Split pane:
   zh-CN: 拆分窗格
 Split pane down:
@@ -1680,38 +3716,86 @@ Split pane right:
   zh-CN: 向右拆分窗格
 Split pane up:
   zh-CN: 向上拆分窗格
+Staging API call failed. Did your IP address change?:
+  zh-CN: Staging API 调用失败。您的 IP 地址是否已更改？
+Staging IAP credentials:
+  zh-CN: 正在准备 IAP 凭据
 Start Input at the Top:
   zh-CN: 从顶部开始输入
+Start a new conversation:
+  zh-CN: 开始新对话
+'Start agent: {name}':
+  zh-CN: 启动 Agent：{name}
+Started installation for language support:
+  zh-CN: 已开始安装语言支持
+Starting cloud environment for this session...:
+  zh-CN: 正在为此会话启动云环境…
 Starting server...:
   zh-CN: 正在启动服务器...
+Starting shell...:
+  zh-CN: 正在启动 shell…
 Stash changes:
   zh-CN: 储藏更改
+Status update:
+  zh-CN: 状态更新
 Steer the {agent_name} agent:
   zh-CN: 引导 {agent_name} Agent
 Stop Synchronizing Any Panes:
   zh-CN: 停止同步所有窗格
+Stop agent task:
+  zh-CN: 停止智能体任务
 Stop sharing:
   zh-CN: 停止分享
+Stop sharing all:
+  zh-CN: 停止共享全部
 Stop sharing current session:
   zh-CN: 停止共享当前会话
+Stop sharing session:
+  zh-CN: 停止共享会话
+Stopped task:
+  zh-CN: 已停止的任务
 'Stopped task: "{task_name}"':
   zh-CN: 已停止任务："{task_name}"
+Store reusable workflows, notebooks, and prompts in your:
+  zh-CN: 在以下位置存储可重用的 Workflow、Notebook 和提示词：
 Streaming...:
   zh-CN: 流式传输中...
 Subshells:
   zh-CN: 子 Shell
+Successfully authenticated {server_name} MCP server:
+  zh-CN: 已成功验证 {server_name} MCP 服务器
+Successfully created environment:
+  zh-CN: 成功已创建 环境
 Successfully installed the Oz CLI! You can now run '{command_name}' from the command line.:
   zh-CN: 成功安装 Oz CLI！您现在可以在命令行中运行 '{command_name}'。
+Successfully joined team:
+  zh-CN: 已成功加入团队
+Successfully joined {name}:
+  zh-CN: 已成功加入 {name}
+Successfully logged out of MCP server:
+  zh-CN: 已成功登出 MCP 服务器
 Successfully logged out of {name} MCP server:
   zh-CN: 已成功登出 {name} MCP 服务器
+Successfully replaced match. Selected match is {match_index} of {remaining_matches}:
+  zh-CN: 已成功替换匹配项。当前选中的匹配项为第 {match_index} 个（共 {remaining_matches} 个）
+Successfully shared environment:
+  zh-CN: 成功共享 环境
+Successfully updated environment:
+  zh-CN: 成功已更新 环境
 Successfully updated permissions for {object_name_lowercase}:
   zh-CN: 已成功更新 {object_name_lowercase} 的权限
 Suggest corrected commands:
   zh-CN: 建议更正后的命令
+'Suggested corrected command: {command}':
+  zh-CN: 建议的修正命令：{command}
 'Suggested prompt:':
   zh-CN: 建议的提示词：
+? Summarization is already running. If you cancel now, the request may still incur cost, any progress so far will be lost, and restarting will take longer.
+: zh-CN: 摘要生成已在运行。如果现在取消，请求可能仍会产生费用，目前的所有进度将丢失，且重新开始将需要更长时间。
 Summarize the failures:
   zh-CN: 总结失败原因
+Summary for task {id}:
+  zh-CN: 任务 {id} 的摘要
 SuperGrok subscription connected:
   zh-CN: SuperGrok 订阅已连接
 SuperGrok subscription disconnected:
@@ -1722,6 +3806,10 @@ Switch Focus to Left Panel:
   zh-CN: 将焦点切换到左侧面板
 Switch Focus to Right Panel:
   zh-CN: 将焦点切换到右侧面板
+Switch agent profiles to quickly change models and agent permissions.:
+  zh-CN: 切换 Agent 配置文件以快速更改模型和 Agent 权限。
+Switch back to horizontal tabs:
+  zh-CN: 切换回水平标签页
 Switch panes down:
   zh-CN: 向下切换窗格
 Switch panes left:
@@ -1760,8 +3848,34 @@ Tab configs:
   zh-CN: 标签页配置
 Tab key behavior:
   zh-CN: Tab 键行为
+Tab was not in expected path {}:
+  zh-CN: 标签页不在预期路径 {} 中
+Tail prompt chip log:
+  zh-CN: 跟踪提示词标记日志
+Take control:
+  zh-CN: 取得控制权
 Take control of running command:
   zh-CN: 接管运行中的命令
+Take over:
+  zh-CN: 接管
+Task blocked:
+  zh-CN: 任务受阻
+Task cancelled:
+  zh-CN: 任务已取消
+Task completed.:
+  zh-CN: 任务已完成。
+Task was cancelled.:
+  zh-CN: 任务已取消。
+Tasks:
+  zh-CN: 任务
+Team members:
+  zh-CN: 团队成员
+Team total:
+  zh-CN: 团队总计
+Teammates with the link:
+  zh-CN: 拥有链接的团队成员
+Template contains no servers:
+  zh-CN: 模板不包含任何服务器
 Terminal:
   zh-CN: 终端
 Terminal Input:
@@ -1770,50 +3884,148 @@ Terminal mode swapped:
   zh-CN: 终端模式已切换
 Terminal session:
   zh-CN: 终端会话
+Terms of Service:
+  zh-CN: 服务条款
 Test:
   zh-CN: 测试
 Text:
   zh-CN: 文本
 Text Editing:
   zh-CN: 文本编辑
+The /open-file command is not supported in this build:
+  zh-CN: 此版本不支持 /open-file 命令
 The Agentic Development Environment:
   zh-CN: Agentic 开发环境
+'The Build plan includes everything in the free tier plus:':
+  zh-CN: Build 套餐包含免费层级的所有内容，外加：
 'The Build plan is ${price}/month which includes everything in the free tier plus:':
   zh-CN: Build 套餐为 ${price}/月，包含免费层的所有内容以及：
+'The Business plan includes everything on your current plan plus:':
+  zh-CN: Business 套餐包含您当前套餐的所有内容，外加：
+'The Business plan starts at ${price}/month and includes everything on your current plan plus:':
+  zh-CN: Business 套餐起价为 ${price}/月，包含您当前套餐的所有内容，外加：
 The Editor:
   zh-CN: 编辑器
+'The agent got stuck waiting for user confirmation on the action: {blocked_action}':
+  zh-CN: Agent 在等待用户确认操作时受阻：{blocked_action}
+The agent may use web search when helpful for completing tasks.:
+  zh-CN: Agent 在有助于完成任务时可使用网络搜索。
+? The base model's working memory — how many tokens of your conversation, code, and documents it can consider at once. Larger windows enable longer conversations and more coherent responses over bigger codebases, at the cost of higher latency and compute usage.
+: zh-CN: 基础模型的工作记忆 — 它一次能考虑的对话、代码和文档的 token 数量。更大的窗口可支持更长的对话以及在更大代码库上更连贯的响应，但代价是更高的延迟和计算用量。
+The codebase doesn't exist:
+  zh-CN: 代码库不存在
+The codebase isn't indexed:
+  zh-CN: 代码库未建立索引
+The current directory isn't within a git repository, which is necessary to search for relevant files.:
+  zh-CN: 当前目录不在 git 仓库内，而搜索相关文件需要这一点。
+The current git repository is still being indexed, so search is unavailable right now. You can try again later:
+  zh-CN: 当前 git 仓库仍在建立索引，因此搜索暂时不可用。您可以稍后重试
+The current remote directory is not in a known codebase.:
+  zh-CN: 当前远程目录不属于已知的代码库。
+The default AWS profile:
+  zh-CN: 默认 AWS 配置文件
+The file read/edit tool is not available on this remote session. Try using a different tool.:
+  zh-CN: 此远程会话上不提供文件读取/编辑工具。请尝试使用其他工具。
 The person you want to say hello to:
   zh-CN: 您想打招呼的人
 The primary model ({primary}) failed. Retrying with the fallback model.:
   zh-CN: 主要模型（{primary}）失败。正在使用备用模型重试。
+The primary model failed. Retrying with the fallback model.:
+  zh-CN: 主模型失败。正在使用备用模型重试。
+The remote codebase at {} is not indexed yet.:
+  zh-CN: '{} 处的远程代码库尚未建立索引。'
+The remote codebase at {} is still being indexed. Try again later.:
+  zh-CN: '{} 处的远程代码库仍在建立索引。请稍后重试。'
+The remote codebase index is missing its root hash.:
+  zh-CN: 远程代码库索引缺少其根哈希。
+The remote host is currently disconnected.:
+  zh-CN: 远程主机当前已断开连接。
+The result set only contains a subset of all matches. Be more specific in your search to narrow down results.:
+  zh-CN: 结果集仅包含所有匹配项的一个子集。请使搜索更具体以缩小结果范围。
+The search failed because the codebase is not available. Try another way to locate the relevant files.:
+  zh-CN: 搜索失败，因为代码库不可用。请尝试其他方式定位相关文件。
+The search failed. Try another way to locate the relevant files.:
+  zh-CN: 搜索失败。请尝试其他方式定位相关文件。
+The selected model does not support images as context:
+  zh-CN: 选定的模型不支持将图片作为上下文
+Theme Picker:
+  zh-CN: 主题选择器
 There can only be one attempt to create {file}.:
   zh-CN: 只能尝试创建 {file} 一次。
 There can only be one attempt to rename {file}.:
   zh-CN: 只能尝试重命名 {file} 一次。
+'These files do not exist: {missing_files}':
+  zh-CN: 以下文件不存在：{missing_files}
+'These files do not exist: {}':
+  zh-CN: 以下文件不存在：{}
+This MCP server contains secrets. Visit Settings > Privacy to modify your secret redaction settings.:
+  zh-CN: 此 MCP 服务器包含密钥。请前往“设置 > 隐私”修改您的密钥编辑设置。
+? This cloud run is queued because your team has reached the maximum number of concurrent cloud agents. It will start automatically when another cloud run finishes.
+: zh-CN: 此云运行已排队，因为您的团队已达到并发云 Agent 的最大数量。当另一个云运行结束时，它将自动启动。
+This cloud run stopped because your team has used all available AI credits for the current billing period.:
+  zh-CN: 此云运行已停止，因为您的团队已用完当前账单周期的所有可用 AI 积分。
 This conversation cannot be deleted:
   zh-CN: 此对话无法删除
 This credit limit is prorated because this user joined midway through the billing cycle.:
   zh-CN: 此信用额度已按比例折算，因为该用户在计费周期中途加入。
+'This environment is used in the following integration(s): {integration_list}. Are you sure you want to {action} it?':
+  zh-CN: 此环境用于以下集成：{integration_list}。您确定要{action}它吗？
+? This environment variable cannot be created due to conflicts with your enterprise's secret redaction settings. Contact a team admin for details.
+: zh-CN: 由于与您企业的密钥编辑设置冲突，无法创建此环境变量。请联系团队管理员了解详情。
+? This environment variable cannot be created due to conflicts with your secret redaction settings. Save the secret as an environment variable (in your shell config or a .env file), or update your secret redaction settings in Settings > Privacy.
+: zh-CN: 由于与您的密钥编辑设置冲突，无法创建此环境变量。请将密钥保存为环境变量（在您的 shell 配置或 .env 文件中），或在“设置 > 隐私”中更新您的密钥编辑设置。
 This file has unsaved changes. {save_shortcut} to save:
   zh-CN: 此文件有未保存的更改。{save_shortcut} 保存
+This is an automated agent on your team.:
+  zh-CN: 这是您团队中的一个自动化 Agent。
 This is the {refresh_duration} limit of AI credits for your account.:
   zh-CN: 这是您账户每 {refresh_duration} 的 AI 额度上限。
+This is the {} limit of AI credits for your account.:
+  zh-CN: 这是您账户 AI 积分的{}上限。
 This option is enforced by your organization's settings and cannot be customized.:
   zh-CN: 此选项由您的组织设置强制执行，无法自定义。
 This plan has changes the agent isn't aware of. {save_action} to stop the agent's current task and send the updated plan:
   zh-CN: 此计划包含 Agent 未知的更改。{save_action} 以停止 Agent 当前任务并发送更新后的计划
+This plan is already in context.:
+  zh-CN: 此套餐已在上下文中。
+This response won't count towards your usage.:
+  zh-CN: 此回复不会计入您的使用量。
+This server has {} updates available, which would you like to proceed with?:
+  zh-CN: 此服务器有 {} 个可用更新，您想继续哪一个？
 This setting is managed by your organization.:
   zh-CN: 此设置由您的组织管理。
 This setting is not synced to your other devices:
   zh-CN: 此设置不会同步到您的其他设备
+This tab config will be permanently deleted. This action cannot be undone.:
+  zh-CN: 此标签页配置将被永久删除。此操作无法撤销。
+? This will not only delete this MCP server for yourself, but also uninstall and remove this MCP server from Warp and across all of your teammates' devices.
+: zh-CN: 这不仅会为您自己删除此 MCP 服务器，还会从 Warp 以及您所有团队成员的设备上卸载并移除此 MCP 服务器。
 This will reset this file to the {branch} branch version and discard all committed and uncommitted edits.:
   zh-CN: 这会将此文件重置为 {branch} 分支版本，并丢弃所有已提交和未提交的编辑。
 This will restore this file to the last committed version and discard local edits.:
   zh-CN: 这会将此文件恢复到最后提交的版本，并丢弃本地编辑。
 This will restore this file to the main branch version and discard all committed and uncommitted edits.:
   zh-CN: 这会将此文件恢复到主分支版本，并丢弃所有已提交和未提交的编辑。
+This will uninstall and remove this MCP server from Warp and across all of your teammates' devices.:
+  zh-CN: 这将从 Warp 以及您所有团队成员的设备上卸载并移除此 MCP 服务器。
+This will uninstall and remove this MCP server from all your devices.:
+  zh-CN: 这将从您所有的设备上卸载并移除此 MCP 服务器。
+This workflow cannot be saved because it contains secrets:
+  zh-CN: 此 Workflow 包含密钥，无法保存
 This workflow could not be saved because changes were made while you were editing.:
   zh-CN: 此工作流无法保存，因为编辑期间有其他更改。
+This workflow is no longer available.:
+  zh-CN: 此 Workflow 不再可用。
+Thought for {arg0}:
+  zh-CN: 思考用时 {arg0}
+Timed out creating shared session:
+  zh-CN: 创建共享会话超时
+Timed out while loading AWS credentials. Refresh and try again.:
+  zh-CN: 加载 AWS 凭据超时。请刷新后重试。
+To toggle this panel:
+  zh-CN: 切换此面板
+To use Warp Drive, please create an account.:
+  zh-CN: 要使用 Warp Drive，请创建一个账户。
 Toggle Agent conversation list view:
   zh-CN: 切换 Agent 对话列表视图
 Toggle Auto-execute Mode:
@@ -1854,8 +4066,12 @@ Toggle Warp AI:
   zh-CN: 切换 Warp AI
 Toggle Warp Drive:
   zh-CN: 切换 Warp Drive
+Toggle block filter:
+  zh-CN: 切换 Block 筛选
 Toggle block filter on selected or last block:
   zh-CN: 对所选或上一个 Block 切换 Block 筛选器
+Toggle bookmark:
+  zh-CN: 切换书签
 Toggle case-sensitive search:
   zh-CN: 切换区分大小写搜索
 Toggle code review:
@@ -1898,28 +4114,68 @@ Toggle underline styling:
   zh-CN: 切换下划线样式
 Toggle vertical tabs panel:
   zh-CN: 切换垂直标签页面板
+Too many attachments for this conversation.:
+  zh-CN: 此对话的附件过多。
+Tool call was cancelled:
+  zh-CN: 工具调用已取消
 Toolbar layout:
   zh-CN: 工具栏布局
 Tools panel visibility is consistent across tabs:
   zh-CN: 工具面板的可见性在不同标签页间保持一致
+Total overages:
+  zh-CN: 超额总计
+Total usage:
+  zh-CN: 总用量
 Transfer:
   zh-CN: 转移
+Transfer ownership:
+  zh-CN: 转移所有权
 Transfer team ownership?:
   zh-CN: 转移团队所有权？
 Trash:
   zh-CN: 回收站
+'Trash emptied: {count_objects_message} deleted forever':
+  zh-CN: 回收站已清空：{count_objects_message} 已永久删除
 Trigger Auto Detection:
   zh-CN: 触发自动检测
+Troubleshoot notifications:
+  zh-CN: 排查通知问题
+Try Voice Input:
+  zh-CN: 试用语音输入
+Try again:
+  zh-CN: 重试
 Turn notifications off:
   zh-CN: 关闭通知
 Turn notifications on:
   zh-CN: 打开通知
 Type your answer and press Enter:
   zh-CN: 输入您的答案并按 Enter
+Type {action} in command palette:
+  zh-CN: 在命令面板中输入 {action}
+Type {} and hit tab:
+  zh-CN: 输入 {} 并按 Tab
 Typeahead:
   zh-CN: 自动补全
 Unable to create QR code for this session link.:
   zh-CN: 无法为此会话链接创建二维码。
+'Unable to create environment: not logged in.':
+  zh-CN: 无法创建环境：未登录。
+Unable to download QR code.:
+  zh-CN: 无法下载二维码。
+Unable to load secrets:
+  zh-CN: 无法加载密钥
+Unable to resolve {}:
+  zh-CN: 无法解析 {}
+'Unable to save: environment no longer exists.':
+  zh-CN: 无法保存：环境已不存在。
+'Unable to share environment: environment is not yet synced.':
+  zh-CN: 无法共享环境：环境尚未同步。
+'Unable to share environment: you are not currently on a team.':
+  zh-CN: 无法共享环境：您当前不在任何团队中。
+Uncommitted changes:
+  zh-CN: 未提交的更改
+Undo:
+  zh-CN: 撤销
 Unfold:
   zh-CN: 展开
 Ungroup tabs:
@@ -1928,44 +4184,108 @@ Uninstall Oz CLI command:
   zh-CN: 卸载 Oz CLI 命令
 Unknown MCP server '{autoinstall_param}':
   zh-CN: 未知的 MCP 服务器 '{autoinstall_param}'
+Unknown agent:
+  zh-CN: 未知 Agent
+Unknown error:
+  zh-CN: 未知错误
+Unknown platform:
+  zh-CN: 未知平台
+'Unknown tab color ''{arg}''. Use one of: {}.':
+  zh-CN: 未知的标签页颜色 '{arg}'。请使用以下之一：{}。
+Unnamed file:
+  zh-CN: 未命名文件
 Unpin group:
   zh-CN: 取消固定组
+Unshare:
+  zh-CN: 取消共享
 Unshare block:
   zh-CN: 取消共享 Block
+'Unsupported architecture: {arch}':
+  zh-CN: 不支持的架构：{arch}
+Unsupported local child harness '{harness_name}'.:
+  zh-CN: 不支持的本地子框架 '{harness_name}'。
 Unsynced:
   zh-CN: 未同步
 Untitled:
   zh-CN: 无标题
+Untitled Plan:
+  zh-CN: 无标题套餐
+Untitled conversation:
+  zh-CN: 未命名对话
+Untitled group:
+  zh-CN: 无标题分组
+Untitled pane:
+  zh-CN: 无标题窗格
+Untitled tab:
+  zh-CN: 无标题标签页
 Update:
   zh-CN: 更新
+Update Agent:
+  zh-CN: 更新 Agent
 Update Warp manually:
   zh-CN: 手动更新 Warp
+Update Warp plugin:
+  zh-CN: 更新 Warp 插件
 Update and relaunch Warp:
   zh-CN: 更新并重新启动 Warp
 Update from {name}:
   zh-CN: 来自 {name} 的更新
+Update from {publisher_string}:
+  zh-CN: 来自 {publisher_string} 的更新
+Update now:
+  zh-CN: 立即更新
+Update {name}:
+  zh-CN: 更新 {name}
+Updating Warp SSH Extension...:
+  zh-CN: 正在更新 Warp SSH 扩展…
+Updating to ({version}):
+  zh-CN: 正在更新到 ({version})
 Upgrade:
   zh-CN: 升级
+Upgrade for more credits.:
+  zh-CN: 升级以获取更多积分。
 Upgrade plan:
   zh-CN: 升级方案
 Upload the generated report:
   zh-CN: 上传生成的报告
+'Uploaded file: {filepath}':
+  zh-CN: 已上传文件：{filepath}
 Usage:
   zh-CN: 用量
 Usage resets on {formatted_date}:
   zh-CN: 用量将在 {formatted_date} 重置
 Use & to trigger handoff:
   zh-CN: 使用 & 触发移交
+Use AWS Bedrock?:
+  zh-CN: 使用 AWS Bedrock？
 Use Audible Bell:
   zh-CN: 使用响铃
+Use Oz to update this config:
+  zh-CN: 使用 Oz 更新此配置
 Use Wayland for window management:
   zh-CN: 使用 Wayland 进行窗口管理
+Use agent:
+  zh-CN: 使用 Agent
+Use auto-reload to never miss a beat.:
+  zh-CN: 使用自动充值，确保不间断。
 Use custom padding in alt-screen:
   zh-CN: 在备用屏幕中使用自定义内边距
+Use file picker to select a git repository:
+  zh-CN: 使用文件选择器选择一个 git 仓库
 Use latest user prompt as conversation title in tab names:
   zh-CN: 在标签页名称中使用最新的用户提示作为对话标题
 Using Warp Offline:
   zh-CN: 离线使用 Warp
+Using injected token (WARP_IAP_TOKEN):
+  zh-CN: 使用注入的令牌 (WARP_IAP_TOKEN)
+View:
+  zh-CN: 查看
+View Agents:
+  zh-CN: 查看 Agent
+View Context:
+  zh-CN: 查看上下文
+View Markdown preview:
+  zh-CN: 查看 Markdown 预览
 View Shared Blocks...:
   zh-CN: 查看共享 Block...
 View Warp logs:
@@ -1974,6 +4294,18 @@ View agent tasks you created:
   zh-CN: 查看您创建的 Agent 任务
 View all available system fonts:
   zh-CN: 查看所有可用系统字体
+View all cloud runs:
+  zh-CN: 查看所有云运行
+View as:
+  zh-CN: 查看方式
+View changelog:
+  zh-CN: 查看更新日志
+View details:
+  zh-CN: 查看详情
+View in GitHub:
+  zh-CN: 在 GitHub 中查看
+View in Oz:
+  zh-CN: 在 Oz 中查看
 View index status:
   zh-CN: 查看索引状态
 View instructions to install the Warp plugin:
@@ -1984,22 +4316,36 @@ View latest changelog:
   zh-CN: 查看最新更新日志
 View logs:
   zh-CN: 查看日志
+View my runs:
+  zh-CN: 查看我的运行
 View network logging:
   zh-CN: 查看网络日志
 View options:
   zh-CN: 查看选项
+View plan:
+  zh-CN: 查看套餐
 View privacy policy (opens external link):
   zh-CN: 查看隐私政策（打开外部链接）
 View pull request:
   zh-CN: 查看 Pull Request
+View screenshot:
+  zh-CN: 查看截图
 View this run in the Oz web app:
   zh-CN: 在 Oz Web 应用中查看此运行
+View todo list:
+  zh-CN: 查看待办列表
 View user docs (opens external link):
   zh-CN: 查看用户文档（打开外部链接）
 View your agent tasks plus all shared team tasks:
   zh-CN: 查看您的 Agent 任务及所有共享的团队任务
+View {} CLI installation documentation:
+  zh-CN: 查看 {} CLI 安装文档
 Viewing:
   zh-CN: 查看中
+Visit Oz:
+  zh-CN: 访问 Oz
+Visit the repo:
+  zh-CN: 访问仓库
 'Visual:':
   zh-CN: 可视化：
 Voice:
@@ -2008,44 +4354,83 @@ Voice input:
   zh-CN: 语音输入
 Voice input (hold {key_name} key):
   zh-CN: 语音输入（按住 {key_name} 键）
+Voice transcription:
+  zh-CN: 语音转录
+Voice transcription is disabled because Microphone access was not granted.:
+  zh-CN: 语音转录已禁用，因为未授予麦克风访问权限。
 Waiting:
   zh-CN: 等待中
+Waiting for input.:
+  zh-CN: 正在等待输入。
+Waiting for your answer:
+  zh-CN: 正在等待您的回答
+Waiting for {}...:
+  zh-CN: 正在等待 {}…
+'Warning: some MCP servers were unavailable during startup ({details}); continuing without their tools.':
+  zh-CN: 警告：某些 MCP 服务器在启动期间不可用 ({details})；将在没有它们的工具的情况下继续。
 Warp:
   zh-CN: Warp
 Warp API Key:
   zh-CN: Warp API Key
-? Warp Drive is a workspace in your terminal where you can save Workflows, Notebooks,
-  Prompts, and Environment Variables for personal use or to share with a team.
+? Warp Drive is a workspace in your terminal where you can save Workflows, Notebooks, Prompts, and Environment Variables for personal use or to share with a team.
 : zh-CN: Warp Drive 是终端中的工作区，您可以保存工作流、笔记本、提示和环境变量供个人使用或与团队共享。
 Warp Drive.:
   zh-CN: Warp Drive。
+Warp Essentials:
+  zh-CN: Warp 精要
 Warp Referral:
   zh-CN: Warp 推荐
+Warp Settings:
+  zh-CN: Warp 设置
+Warp can auto-expand aliases.:
+  zh-CN: Warp 可以自动展开别名。
+Warp doesn't have permission to send desktop notifications.:
+  zh-CN: Warp 没有发送桌面通知的权限。
+Warp is currently overloaded. Please try again later.:
+  zh-CN: Warp 当前负载过高。请稍后重试。
 Warp is the intelligent terminal with AI and your dev team's knowledge built-in.:
   zh-CN: Warp 是内置 AI 和您开发团队知识的智能终端。
 Warp loads and sends local AWS CLI credentials for Bedrock-supported models. This setting is managed by your organization.:
   zh-CN: Warp 会加载并发送本地 AWS CLI 凭据用于 Bedrock 支持的模型。此设置由您的组织管理。
+Warp was unable to launch the new installed version.:
+  zh-CN: Warp 无法启动新安装的版本。
 Warp's Pro plan comes with a limited number of shared {object_type}s.:
   zh-CN: Warp 的 Pro 套餐包含有限数量的共享 {object_type}。
 Warp's free plan comes with a limited number of shared {object_type}s.:
   zh-CN: Warp 的免费套餐包含有限数量的共享 {object_type}。
+Warpify SSH Sessions:
+  zh-CN: Warpify SSH 会话
+Warpify a remote SSH session to enable Oz inside that environment.:
+  zh-CN: Warpify 远程 SSH 会话以在该环境中启用 Oz。
 Warpify subshell:
   zh-CN: Warpify 子 shell
+Warping with another model.:
+  zh-CN: 正在使用其他模型进行 Warp。
 Warping with {name}.:
   zh-CN: 正在与 {name} 一起 Warp。
+Warp’s benchmarks for how well a model performs in our harness, the rate at which it consumes credits, and task speed.:
+  zh-CN: Warp 关于模型在我们的框架中表现如何、消耗积分的速率以及任务速度的基准测试。
+We recommend creating an environment for cloud agents.:
+  zh-CN: 我们建议为云 Agent 创建一个环境。
+We recommend selecting an environment for cloud agents.:
+  zh-CN: 我们建议为云 Agent 选择一个环境。
+We're experiencing technical difficulties right now. Please try again later.:
+  zh-CN: 我们当前遇到技术问题。请稍后重试。
 Web fetch failed:
   zh-CN: 网页获取失败
 Welcome to Warp:
   zh-CN: 欢迎使用 Warp
+What can you help with me on?:
+  zh-CN: 您可以帮我做些什么？
 What's new:
   zh-CN: 新功能
-? When enabled, reopening or restoring a window opens the vertical tabs panel even
-  if it was closed when the window was last saved.
+When enabled, auto reload will purchase {} credits when your credit balance gets low:
+  zh-CN: 启用后，当您的积分余额不足时，自动充值将购买 {} 积分
+? When enabled, reopening or restoring a window opens the vertical tabs panel even if it was closed when the window was last saved.
 : zh-CN: 启用后，重新打开或恢复窗口时会打开垂直标签页面板，即使上次保存窗口时该面板已关闭。
 When this setting is on, the code review panel will open on the first accepted diff of a conversation:
   zh-CN: 开启此设置后，代码审查面板会在对话中第一个接受的 diff 处打开
-? When using the vertical tab layout, hide the search bar in the title bar. Search
-  stays available via the command palette and keyboard shortcuts.
+? When using the vertical tab layout, hide the search bar in the title bar. Search stays available via the command palette and keyboard shortcuts.
 : zh-CN: 使用垂直标签页布局时，隐藏标题栏中的搜索栏。搜索仍可通过命令面板和键盘快捷键使用。
 When windowed:
   zh-CN: 窗口模式时
@@ -2057,50 +4442,106 @@ Willow Dream:
   zh-CN: Willow Dream
 'Window Opacity:':
   zh-CN: 窗口不透明度：
+Work with Agent Mode to understand recent changes to a git repository:
+  zh-CN: 与 Agent 模式协作以了解 git 仓库的最近更改
 Workflow:
   zh-CN: Workflow
 Workflows:
   zh-CN: Workflow
 Working directory:
   zh-CN: 工作目录
+Working directory '{}' does not exist or is not a directory. Verify the path in your environment configuration.:
+  zh-CN: 工作目录 '{}' 不存在或不是目录。请核实您环境配置中的路径。
 Working directory for new sessions:
   zh-CN: 新会话的工作目录
+Worktree branch name:
+  zh-CN: 工作树分支名称
 Write current codebase index snapshot:
   zh-CN: 写入当前代码库索引快照
+Yes, index this codebase.:
+  zh-CN: 是，索引此代码库。
+Yes, skip login:
+  zh-CN: 是，跳过登录
+You are sharing {} {}{scope_suffix}:
+  zh-CN: 您正在共享 {} {}{scope_suffix}
 You can Warpify this {lowercase_title} for more Warp features.:
   zh-CN: 您可以 Warpify 此 {lowercase_title} 以获得更多 Warp 功能。
 You can change this at any time in settings.:
   zh-CN: 您可以随时在设置中更改此选项。
+You can edit the command here before pressing Enter to execute it.:
+  zh-CN: 您可以在此处编辑命令，然后按 Enter 执行。
+You can press {} to Warpify this {} for more Warp features.:
+  zh-CN: 您可以按 {} 来 Warpify 此 {} 以获得更多 Warp 功能。
 You can sign up later, but some features, such as AI,:
   zh-CN: 您可以稍后注册，但某些功能（如 AI）
 You don't have any shared blocks yet.:
   zh-CN: 您还没有任何共享 Block。
+You have 1 free credit to use on Oz cloud agents.:
+  zh-CN: 您有 1 个免费积分可用于 Oz 云 Agent。
+You have requested {} mode:
+  zh-CN: 您已请求 {} 模式
 You have unsaved file changes{scope_suffix}:
   zh-CN: 您有未保存的文件更改{scope_suffix}
+You have {num_long_running_commands} {plural} running.:
+  zh-CN: 您有 {num_long_running_commands} 个 {plural} 正在运行。
 You have {num_shared_sessions} shared {plural}.:
   zh-CN: 您有 {num_shared_sessions} 个共享的 {plural}。
+You have {} free credits to use on Oz cloud agents.:
+  zh-CN: 您有 {} 个免费积分可用于 Oz 云 Agent。
+You have {} {} running:
+  zh-CN: 您有 {} 个 {} 正在运行
 You {verb} mouse reporting.:
   zh-CN: 您{verb}了鼠标报告。
 You {verb} synchronized inputs in all tabs.:
   zh-CN: 您{verb}了所有标签页中的输入同步。
 You {verb} synchronized inputs in this tab.:
   zh-CN: 您{verb}了此标签页中的输入同步。
+You'll be able to interact with Oz soon:
+  zh-CN: 您很快就能与 Oz 互动
 You're about to discard all committed and uncommitted changes.:
   zh-CN: 您将丢弃所有已提交和未提交的更改。
 You're about to discard all local changes that haven't been committed.:
   zh-CN: 您将丢弃所有尚未提交的本地更改。
 You've run out of {object_type}s on your plan.:
   zh-CN: 您套餐中的 {object_type} 已用完。
+Your API key is invalid. Please provide a valid key via '--api-key' or the WARP_API_KEY environment variable.:
+  zh-CN: 您的 API Key 无效。请通过 '--api-key' 或 WARP_API_KEY 环境变量提供有效的密钥。
+? Your admin has enabled auto-reload for add-on credits. When your personal add-on credit balance runs low, Warp will automatically purchase add-on credits and add them to your balance.
+: zh-CN: 您的管理员已为附加积分启用自动充值。当您的个人附加积分余额不足时，Warp 将自动购买附加积分并添加到您的余额中。
+? Your admin has enabled auto-reload for add-on credits. When your personal add-on credit balance runs low, Warp will automatically purchase {credits} credits for {price} and add them to your balance.
+: zh-CN: 您的管理员已为附加积分启用自动充值。当您的个人附加积分余额不足时，Warp 将以 {price} 自动购买 {credits} 积分并添加到您的余额中。
+Your agent is currently running on a {} machine.:
+  zh-CN: 您的 Agent 当前正在 {} 机器上运行。
+Your credentials are encrypted end-to-end.:
+  zh-CN: 您的凭据经过端到端加密。
 Your credit limit is prorated because you joined midway through the billing cycle.:
   zh-CN: 您的信用额度已按比例折算，因为您在计费周期中途加入。
+Your invite is on the way!:
+  zh-CN: 您的邀请正在发送中！
 Your login has expired.:
   zh-CN: 您的登录已过期。
 Your new team name:
   zh-CN: 您的新团队名称
 Your plan ({plan_display}) has a maximum capacity of {cap} members.:
   zh-CN: 您的套餐（{plan_display}）最多可容纳 {cap} 名成员。
+Your settings file contains an error.:
+  zh-CN: 您的设置文件包含一个错误。
+Your settings file contains errors.:
+  zh-CN: 您的设置文件包含错误。
+? Your terminal input accepts both terminal commands and agent prompts and automatically detects which you're using. Use {} to lock the input to Agent mode (natural language) or Terminal mode (commands).
+: zh-CN: 您的终端输入框同时接受终端命令和 Agent 提示词，并自动检测您正在使用哪一种。使用 {} 将输入框锁定为 Agent 模式（自然语言）或终端模式（命令）。
+Your usage:
+  zh-CN: 您的用量
+Your {len} invites are on the way!:
+  zh-CN: 您的 {len} 份邀请正在发送中！
 alias name:
   zh-CN: 别名
+and open:
+  zh-CN: 并打开
+and open the page manually.:
+  zh-CN: 并手动打开页面。
+and {extra_open_tabs} more:
+  zh-CN: 以及另外 {extra_open_tabs} 个
 'are only available to logged-in users. ':
   zh-CN: '仅对已登录用户可用。 '
 command (supports regex):
@@ -2115,1250 +4556,95 @@ e.g., Zach's external models:
   zh-CN: e.g., Zach's external models
 e.g., sk-...:
   zh-CN: e.g., sk-...
-
-# Auto-translated additions
-
-AI command search:
-  zh-CN: AI 命令搜索
-'AI prompt: {query_text}':
-  zh-CN: AI 提示：{query_text}
-'AI query: {query_text}':
-  zh-CN: AI 查询：{query_text}
-API request failed with status {status}:
-  zh-CN: API 请求失败，状态码 {status}
-Access to Reload credits and volume-based discounts:
-  zh-CN: 访问 Reload 额度和基于用量的折扣
-Access to frontier OpenAI, Anthropic, and Google models:
-  zh-CN: 访问前沿的 OpenAI、Anthropic 和 Google 模型
-Active App Usage:
-  zh-CN: 活跃应用使用情况
-Add:
-  zh-CN: 添加
-Add New MCP Server:
-  zh-CN: 添加新的 MCP 服务器
-Add Profile:
-  zh-CN: 添加配置文件
-Add a session {i} using cmd-t and verify it bootstraps:
-  zh-CN: 使用 cmd-t 添加会话 {i} 并验证其引导
-Add agent profiles to customize permissions and models per session.:
-  zh-CN: 添加智能体配置文件以自定义每个会话的权限和模型。
-Add diff set as context:
-  zh-CN: 添加差异集作为上下文
-Add endpoint:
-  zh-CN: 添加端点
-Add repo:
-  zh-CN: 添加仓库
-Add rule:
-  zh-CN: 添加规则
-'Add rule: {clone}':
-  zh-CN: 添加规则：{clone}
-Add-on credits:
-  zh-CN: 附加额度
-Additional metadata:
-  zh-CN: 额外元数据
-Addressed {len} comments:
-  zh-CN: 已处理 {len} 条评论
-Agent 1:
-  zh-CN: 智能体 1
-Agent B init failed:
-  zh-CN: 智能体 B 初始化失败
-Agent conversations:
-  zh-CN: 智能体对话
-Agent failed:
-  zh-CN: 智能体失败
-Agent is unaware of recent plan edits:
-  zh-CN: 智能体未察觉最近的计划编辑
-Agent location:
-  zh-CN: 智能体位置
-Agent management panel:
-  zh-CN: 智能体管理面板
-Agent questions:
-  zh-CN: 智能体问题
-Agent task:
-  zh-CN: 智能体任务
-All:
-  zh-CN: 全部
-All changes compared to the main branch:
-  zh-CN: 与主分支相比的所有更改
-All uncommitted changes in the working directory:
-  zh-CN: 工作目录中的所有未提交更改
-Already the default:
-  zh-CN: 已是默认
-An error occurred while trying to invoke the env var:
-  zh-CN: 尝试调用环境变量时发生错误
-An issue was encountered while saving.:
-  zh-CN: 保存时遇到了问题。
-An unknown error occurred:
-  zh-CN: 发生了未知错误
-And more...:
-  zh-CN: 更多...
-Answered question:
-  zh-CN: 已回答问题
-Anthropic API Key:
-  zh-CN: Anthropic API 密钥
-Anthropic Bedrock API Key:
-  zh-CN: Anthropic Bedrock API 密钥
-Anthropic Bedrock Access Key:
-  zh-CN: Anthropic Bedrock 访问密钥
-Anyone with the link:
-  zh-CN: 任何拥有链接的人
-Are you sure you want to remove this endpoint? You won't be able to use its models in your agent sessions moving forward.:
-  zh-CN: 确定要移除此端点吗？今后您将无法在智能体会话中使用其模型。
-'Artifact upload failed: {error_chain}':
-  zh-CN: 产物上传失败：{error_chain}
-Ask Warp AI to explain errors, suggest commands or write scripts.:
-  zh-CN: 让 Warp AI 解释错误、建议命令或编写脚本。
-Ask the agent to check this command now, skipping its timer.:
-  zh-CN: 要求智能体现在检查此命令，跳过其计时器。
-Ask user {} question(s):
-  zh-CN: 向用户提问 {} 个问题
-Asset '{asset_name}' not found in release:
-  zh-CN: 在发布版本中找不到资产 '{asset_name}'
-Attach as context:
-  zh-CN: 作为上下文附加
-Attach images:
-  zh-CN: 附加图片
-Attach to active session:
-  zh-CN: 附加到活跃会话
-Attached images were removed — the selected model does not support images.:
-  zh-CN: 已移除附加的图片 — 所选模型不支持图片。
-AttemptLoginGatedFeature:
-  zh-CN: 尝试登录受限功能
-Authentication failed:
-  zh-CN: 认证失败
-'Authentication failed: {err:#}':
-  zh-CN: 认证失败：{err:#}
-Auto reload:
-  zh-CN: 自动重载
-Auto-approve:
-  zh-CN: 自动批准
-Auto-install not supported for this agent:
-  zh-CN: 此智能体不支持自动安装
-Auto-reload disabled.:
-  zh-CN: 已禁用自动重载。
-Auto-reload settings updated:
-  zh-CN: 自动重载设置已更新
-Auto-update not supported for this agent:
-  zh-CN: 此智能体不支持自动更新
-Autogenerate worktree branch name:
-  zh-CN: 自动生成 worktree 分支名称
-Automatically enforced team-wide Zero Data Retention:
-  zh-CN: 自动强制实施团队范围的零数据保留
-Baseball cap:
-  zh-CN: 棒球帽
-Billed to API:
-  zh-CN: 通过 API 计费
-Block was successfully unshared.:
-  zh-CN: 已成功取消共享该块。
-'Block: {command}':
-  zh-CN: 块：{command}
-Bookmark this block to quickly scroll to it:
-  zh-CN: 为此块添加书签以便快速滚动到它
-Bring your own API key:
-  zh-CN: 使用您自己的 API 密钥
-Buffer not found:
-  zh-CN: 未找到缓冲区
-'Buffer not open: {path}':
-  zh-CN: 缓冲区未打开：{path}
-Bundled skills cannot be edited:
-  zh-CN: 捆绑的技能无法编辑
-By discovery:
-  zh-CN: 通过发现
-By email:
-  zh-CN: 通过邮箱
-By link:
-  zh-CN: 通过链接
-Cached Creator:
-  zh-CN: 缓存的创建者
-Call web tools:
-  zh-CN: 调用网络工具
-Cancel invite:
-  zh-CN: 取消邀请
-Cancel summarization:
-  zh-CN: 取消生成摘要
-Cancel summarization?:
-  zh-CN: 取消生成摘要?
-Cancelled before launch:
-  zh-CN: 启动前已取消
-Cannot add multiple MCP servers while editing a single server.:
-  zh-CN: 编辑单个服务器时无法添加多个 MCP 服务器。
-Cannot attach context when terminal is running:
-  zh-CN: 终端运行时无法附加上下文
-Cannot attach diff while input is not available:
-  zh-CN: 输入不可用时无法附加差异
-Cannot index remote codebase because the maximum number of codebase indexes has been reached.:
-  zh-CN: 无法索引远程代码库，因为已达到最大代码库索引数。
-Cannot open a new terminal session:
-  zh-CN: 无法打开新的终端会话
-Cannot send queries as a read-only viewer.:
-  zh-CN: 无法以只读查看者身份发送查询。
-'Cannot show conversation cost: conversation is empty':
-  zh-CN: 无法显示对话费用：对话为空
-'Cannot show conversation cost: conversation is in progress':
-  zh-CN: 无法显示对话费用：对话进行中
-'Cannot show conversation cost: no active conversation':
-  zh-CN: 无法显示对话费用：没有活跃对话
-Cannot start a new conversation while agent is monitoring a command.:
-  zh-CN: 智能体正在监视命令时无法开始新对话。
-Change keybinding:
-  zh-CN: 更改按键绑定
-Changes to document {document_id} were already made:
-  zh-CN: 已对文档 {document_id} 做出更改
-Changes vs. main branch:
-  zh-CN: 与主分支的差异
-Changes vs. {branch}:
-  zh-CN: 与 {branch} 的差异
-Channel closed:
-  zh-CN: 通道已关闭
-Child agent startup was blocked before initialization:
-  zh-CN: 子智能体启动在初始化前被阻止
-Choose files...:
-  zh-CN: 选择文件...
-Choose how you'd like to set up your environment:
-  zh-CN: 选择您想如何设置环境
-Choose your agent:
-  zh-CN: 选择您的智能体
-'Choose your experience for this remote session:':
-  zh-CN: 选择您此次远程会话的体验：
-Clear all:
-  zh-CN: 全部清除
-Clear filters:
-  zh-CN: 清除筛选条件
-Clear upload:
-  zh-CN: 清除上传
-Click here to paste your token from the browser:
-  zh-CN: 点击此处从浏览器粘贴您的令牌
-Click on a block attached as context to this AI query.:
-  zh-CN: 点击附加到此 AI 查询作为上下文的块。
-Clone a repo from GitHub or another source:
-  zh-CN: 从 GitHub 或其他来源克隆仓库
-Clone {url}:
-  zh-CN: 克隆 {url}
-Close pane:
-  zh-CN: 关闭窗格
-Close session:
-  zh-CN: 关闭会话
-Close session?:
-  zh-CN: 关闭会话?
-Close tab:
-  zh-CN: 关闭标签页
-Cloud agent failed:
-  zh-CN: 云端智能体失败
-Cloud agent starting up…:
-  zh-CN: 云端智能体启动中…
-Cloud follow-up did not start in time:
-  zh-CN: 云端后续操作未及时启动
-Cloud follow-up finished before a new session became available:
-  zh-CN: 云端后续操作在新会话可用前已完成
-Code review:
-  zh-CN: 代码审查
-Code review panel:
-  zh-CN: 代码审查面板
-Code search failed:
-  zh-CN: 代码搜索失败
-Codebase index has no synced root hash:
-  zh-CN: 代码库索引没有已同步的根哈希
-Codebase index not found:
-  zh-CN: 未找到代码库索引
-Collapse all:
-  zh-CN: 全部折叠
-'Command allowlist:':
-  zh-CN: 命令允许列表：
-Command copied.:
-  zh-CN: 命令已复制。
-'Command denylist:':
-  zh-CN: 命令拒绝列表：
-Command from {arg0}:
-  zh-CN: 来自 {arg0} 的命令
-Command from {name}:
-  zh-CN: 来自 {name} 的命令
-Command is waiting for a password:
-  zh-CN: 命令正在等待密码
-Command search:
-  zh-CN: 命令搜索
-'Command: {command}':
-  zh-CN: 命令：{command}
-Comment:
-  zh-CN: 评论
-Comment imported from GitHub:
-  zh-CN: 从 GitHub 导入的评论
-Comments sent to agent:
-  zh-CN: 评论已发送给智能体
-Commit:
-  zh-CN: 提交
-Commit and create PR:
-  zh-CN: 提交并创建 PR
-Commit {short}:
-  zh-CN: 提交 {short}
-Compare plans:
-  zh-CN: 比较套餐
-Completed over 1 hour ago:
-  zh-CN: 完成于 1 小时前
-Completed {title}:
-  zh-CN: 已完成 {title}
-Compute file paths:
-  zh-CN: 计算文件路径
-Configure:
-  zh-CN: 配置
-Configure notifications:
-  zh-CN: 配置通知
-Confirm:
-  zh-CN: 确认
-Connect:
-  zh-CN: 连接
-Connecting:
-  zh-CN: 连接中
-Contact support:
-  zh-CN: 联系支持
-Context window:
-  zh-CN: 上下文窗口
-'Context window exceeded: {msg}':
-  zh-CN: 已超出上下文窗口：{msg}
-Continue:
-  zh-CN: 继续
-Continue current conversation:
-  zh-CN: 继续当前对话
-Continue locally:
-  zh-CN: 在本地继续
-Continue summarization:
-  zh-CN: 继续生成摘要
-Continue without installing:
-  zh-CN: 不安装继续
-'Conversation Debug Link: {debug_link}':
-  zh-CN: 对话调试链接：{debug_link}
-Conversation deleted:
-  zh-CN: 对话已删除
-Conversation forking failed.:
-  zh-CN: 对话分叉失败。
-Conversation restored:
-  zh-CN: 对话已恢复
-Conversation summarized:
-  zh-CN: 对话已生成摘要
-'Conversation: {title}':
-  zh-CN: 对话：{title}
-Conversations cannot be deleted while in progress.:
-  zh-CN: 进行中的对话无法删除。
-Convert to {label}:
-  zh-CN: 转换为 {label}
-Copied branch name:
-  zh-CN: 已复制分支名称
-Copied to clipboard:
-  zh-CN: 已复制到剪贴板
-Copy answer to clipboard:
-  zh-CN: 复制答案到剪贴板
-Copy code to clipboard [Cmd + C]:
-  zh-CN: 复制代码到剪贴板 [Cmd + C]
-Copy conversation ID:
-  zh-CN: 复制对话 ID
-Copy conversation text:
-  zh-CN: 复制对话文本
-Copy debug ID:
-  zh-CN: 复制调试 ID
-Copy debugging ID:
-  zh-CN: 复制调试 ID
-Copy debugging link:
-  zh-CN: 复制调试链接
-Copy filtered output:
-  zh-CN: 复制筛选后的输出
-Copy id:
-  zh-CN: 复制id
-Copy link:
-  zh-CN: 复制链接
-Copy output:
-  zh-CN: 复制输出
-Copy output as Markdown:
-  zh-CN: 复制输出 as Markdown
-Copy path:
-  zh-CN: 复制路径
-Copy plan ID:
-  zh-CN: 复制计划 ID
-Copy prompt:
-  zh-CN: 复制提示
-Copy relative path:
-  zh-CN: 复制相对路径
-Copy right prompt:
-  zh-CN: 复制右侧提示
-Copy secret:
-  zh-CN: 复制密钥
-Copy session sharing link:
-  zh-CN: 复制会话共享链接
-Copy share link:
-  zh-CN: 复制共享链接
-Copy text:
-  zh-CN: 复制文本
-Copy transcript to clipboard:
-  zh-CN: 复制对话记录 to clipboard
-Copy variables:
-  zh-CN: 复制变量
-Copy workflow text:
-  zh-CN: 复制工作流文本
-Copy working directory:
-  zh-CN: 复制工作目录
-Copy {title}:
-  zh-CN: 复制{title}
-Could not find cloud template:
-  zh-CN: 找不到云端模板
-Could not read {display_name}:
-  zh-CN: 无法读取 {display_name}
-Could not submit comments to the agent:
-  zh-CN: 无法向智能体提交评论
-'Couldn''t connect SuperGrok: {err}':
-  zh-CN: 无法连接 SuperGrok：{err}
-Couldn't continue this cloud task.:
-  zh-CN: 无法继续此云端任务。
-Couldn't navigate to conversation.:
-  zh-CN: 无法导航到对话。
-'Couldn''t start Grok login: {err}':
-  zh-CN: 无法启动 Grok 登录：{err}
-Crash reporting helps Warp's engineering team understand stability and improve performance.:
-  zh-CN: 崩溃报告帮助 Warp 工程团队了解稳定性并改进性能。
-Create:
-  zh-CN: 创建
-'Create New Tab: {short_name}':
-  zh-CN: 新建标签页：{short_name}
-'Create New Window: {short_name}':
-  zh-CN: 新建窗口：{short_name}
-Create PR:
-  zh-CN: 创建PR
-Create a Matrix-styled custom theme:
-  zh-CN: 创建a Matrix 风格 自定义主题
-Create a file named {file_name}…:
-  zh-CN: 创建一个名为 {file_name} 的文件…
-Create a snake game in Python from scratch:
-  zh-CN: 创建a 贪吃蛇游戏 in Python from scratch
-Create a team:
-  zh-CN: 创建a 团队
-Create an environment:
-  zh-CN: 创建an 环境
-Create and initialize a brand new project:
-  zh-CN: 创建并初始化一个全新项目
-Create environment:
-  zh-CN: 创建环境
-Create environment using the current working dir as repo:
-  zh-CN: 创建环境 using the current 工作目录 as 仓库
-Create environment without any repos:
-  zh-CN: 创建不带任何仓库的环境
-'Create file: {file_name}':
-  zh-CN: '创建文件: {file_name}'
-Create group from tabs:
-  zh-CN: 从标签页创建组
-Create key:
-  zh-CN: 创建密钥
-Create new branch "{}":
-  zh-CN: 创建新分支 "{}"
-Create team:
-  zh-CN: 创建团队
-'Created: {created_formatted}':
-  zh-CN: 创建时间：{created_formatted}
-'Created: {formatted}':
-  zh-CN: 创建时间：{formatted}
-Creating block...:
-  zh-CN: 正在创建块...
-Creator Name:
-  zh-CN: 创建者名称
-Credential refresh was interrupted:
-  zh-CN: 凭据刷新被中断
-'Credits used: {credits}':
-  zh-CN: 已使用额度：{credits}
-'Credits used: {num_requests_used} / {request_limit}.':
-  zh-CN: 已使用额度：{num_requests_used} / {request_limit}。
-'Credits used: {usage}':
-  zh-CN: 已使用额度：{usage}
-Current Directory:
-  zh-CN: 当前目录
-'Current backend: {to_label}':
-  zh-CN: 当前后端：{to_label}
-Current conversation has not been synced to the server yet:
-  zh-CN: 当前对话尚未同步到服务器
-Current state (no rewind):
-  zh-CN: 当前状态（无回退）
-'Currently running AI interaction: {prompt}':
-  zh-CN: 当前正在运行的 AI 交互：{prompt}
-Currently running {running_command}:
-  zh-CN: 当前正在运行 {running_command}
-Custom URI is invalid.:
-  zh-CN: 自定义 URI 无效。
-'Custom URI is invalid: {e}':
-  zh-CN: 自定义 URI 无效：{e}
-Custom models:
-  zh-CN: 自定义模型
-Custom · {name}:
-  zh-CN: 自定义 · {name}
-Custom...:
-  zh-CN: 自定义...
-'Custom: {display}':
-  zh-CN: 自定义：{display}
-Cut:
-  zh-CN: 剪切
-'Debug information: {debug_info}':
-  zh-CN: 调试信息：{debug_info}
-Debug output:
-  zh-CN: 调试输出
-'Default: {default_value}':
-  zh-CN: 默认：{default_value}
-Delete '{}'?:
-  zh-CN: 删除'{}'？
-Delete API key {name}:
-  zh-CN: 删除 API 密钥 {name}
-Delete MCP:
-  zh-CN: 删除 MCP
-Delete MCP server?:
-  zh-CN: 删除 MCP 服务器？
-Delete conversation?:
-  zh-CN: 删除对话？
-Delete environment:
-  zh-CN: 删除环境
-Delete environment?:
-  zh-CN: 删除环境？
-Delete forever:
-  zh-CN: 永久删除
-Delete profile:
-  zh-CN: 删除配置文件
-Delete rule:
-  zh-CN: 删除规则
-Delete secret:
-  zh-CN: 删除密钥
-Delete shared MCP server?:
-  zh-CN: 删除共享 MCP 服务器？
-Deleted conversation:
-  zh-CN: 已删除的对话
-Demote from admin:
-  zh-CN: 取消管理员权限
-Description for item {}:
-  zh-CN: 项 {} 的描述
-'Description: {description}':
-  zh-CN: 描述：{description}
-Detected from {display_name}:
-  zh-CN: 从 {display_name} 检测到
-Did you know that Warp can directly display Markdown files?:
-  zh-CN: 您知道 Warp 可以直接显示 Markdown 文件吗？
-Did you know that Warp can directly edit code?:
-  zh-CN: 您知道 Warp 可以直接编辑代码吗？
-Diff removed:
-  zh-CN: 差异已移除
-'Directory allowlist:':
-  zh-CN: 目录允许列表：
-'Directory: {display_dir}':
-  zh-CN: 目录：{display_dir}
-'Directory: {display}':
-  zh-CN: 目录：{display}
-Disable {description_suffix}:
-  zh-CN: 禁用 {description_suffix}
-Disabled all synchronized inputs.:
-  zh-CN: 已禁用所有同步输入。
-Disabled in terminal mode, re-enable in settings:
-  zh-CN: 在终端模式下已禁用，请在设置中重新启用
-Discard all:
-  zh-CN: 全部放弃
-Discard all changes to file?:
-  zh-CN: 放弃对文件的所有更改？
-Discard all changes?:
-  zh-CN: 放弃所有更改？
-Discard all uncommitted changes to file?:
-  zh-CN: 放弃对文件的所有未提交更改？
-Discard changes:
-  zh-CN: 放弃更改
-Discard this version:
-  zh-CN: 放弃此版本
-Discard uncommitted changes?:
-  zh-CN: 放弃未提交的更改？
-Disconnect:
-  zh-CN: 断开连接
-Discovered {total_nodes} chunks:
-  zh-CN: 发现了 {total_nodes} 个分块
-Divider:
-  zh-CN: 分隔符
-Do not show again:
-  zh-CN: 不再显示
-Do you want to save the changes you made to {}? Your changes will be discarded if you don't save them.:
-  zh-CN: 您要保存对 {} 所做的更改吗？如果不保存，您的更改将被放弃。
-Docker Sandbox:
-  zh-CN: Docker 沙盒
-'Docker sandbox setup failed: {e}':
-  zh-CN: Docker 沙盒设置失败：{e}
-Docker sandbox shells are not supported on Windows:
-  zh-CN: Windows 不支持 Docker 沙盒 shell
-Dockerfile:
-  zh-CN: Dockerfile
-Document {document_id} does not exist.:
-  zh-CN: 文档 {document_id} 不存在。
-'Document(s) not found: {missing_list}':
-  zh-CN: 未找到文档：{missing_list}
-Documentation:
-  zh-CN: 文档
-'Domain restrictions added: {len}':
-  zh-CN: 已添加域名限制：{len}
-Don't Save:
-  zh-CN: 不保存
-Don't show again:
-  zh-CN: 不再显示
-'Download failed with status {status}: {body}':
-  zh-CN: 下载失败，状态码 {status}：{body}
-Downloaded {toast_filename}.:
-  zh-CN: 已下载 {toast_filename}。
-Drag an image into the pane to attach it as agent context.:
-  zh-CN: 将图片拖到窗格中以将其作为智能体上下文附加。
-Duplicate:
-  zh-CN: 复制
-Early adopter:
-  zh-CN: 早期采用者
-Easily discover everything you can do in Warp without your hands leaving the keyboard.:
-  zh-CN: 手不离键盘即可轻松发现 Warp 中的一切功能。
-Edit CLI agent toolbelt:
-  zh-CN: 编辑 CLI 智能体工具带
-Edit MCP Server:
-  zh-CN: 编辑 MCP 服务器
-Edit Markdown file:
-  zh-CN: 编辑 Markdown 文件
-Edit Variables:
-  zh-CN: 编辑变量
-Edit agent toolbelt:
-  zh-CN: 编辑智能体工具带
-Edit prompt:
-  zh-CN: 编辑提示
-Edit rule:
-  zh-CN: 编辑规则
-Edit {file_names}:
-  zh-CN: 编辑{file_names}
-Edited {time_ago}:
-  zh-CN: 编辑于 {time_ago}
-Editing permissions were revoked because the sharer is idle:
-  zh-CN: 由于共享者空闲，编辑权限已被撤销
-Editing skills is not supported in this build:
-  zh-CN: 此构建版本不支持编辑技能
-Embed:
-  zh-CN: 嵌入
-Embed code copied.:
-  zh-CN: 嵌入代码已复制。
-Enable:
-  zh-CN: 启用
-Enable notifications:
-  zh-CN: 启用通知
-Enable {binary_name}:
-  zh-CN: 启用 {binary_name}
-Enable {description_suffix}:
-  zh-CN: 启用 {description_suffix}
-Enable {} support:
-  zh-CN: 启用 {} 支持
-Export failed:
-  zh-CN: 导出失败
-Exported object:
-  zh-CN: 已导出的对象
-Exported {name}:
-  zh-CN: 已导出 {name}
-'Failed to build agent configuration: {err}':
-  zh-CN: 构建智能体配置 失败：{err}
-'Failed to build request proxy: {e}':
-  zh-CN: 构建请求代理 失败：{e}
-'Failed to cancel task: {e}':
-  zh-CN: 取消任务 失败：{e}
-Failed to capture initial screenshot:
-  zh-CN: 捕获initial 截图 失败
-'Failed to connect to D-Bus session bus: {e}':
-  zh-CN: 连接to D-Bus 会话总线 失败：{e}
-'Failed to connect to X11: {e}':
-  zh-CN: 连接to X11 失败：{e}
-Failed to connect to proxy {}:{}:
-  zh-CN: 连接to proxy {} 失败：{}
-Failed to convert conversation data to AIConversation:
-  zh-CN: 转换对话数据 to AIConversation 失败
-Failed to convert {format:?} {uid}:
-  zh-CN: 转换{format:?} {uid} 失败
-Failed to create Codex config dir at {display}:
-  zh-CN: 创建Codex 配置 dir at {display} 失败
-'Failed to create RemoteDesktop session: {e}':
-  zh-CN: 创建RemoteDesktop 会话 失败：{e}
-'Failed to create base dir: {e}':
-  zh-CN: 创建基础目录 失败：{e}
-'Failed to create config directory: {e}':
-  zh-CN: 创建配置目录 失败：{e}
-Failed to create dir {}:
-  zh-CN: 创建dir {} 失败
-Failed to create download directory '{display}':
-  zh-CN: 创建download 目录 '{display}' 失败
-Failed to create download file '{}':
-  zh-CN: 创建download 文件 '{}' 失败
-'Failed to create environment: {error_message}':
-  zh-CN: 创建环境 失败：{error_message}
-'Failed to create file: {:?}':
-  zh-CN: 创建文件 失败：{:?}
-'Failed to create install directory: {:?}':
-  zh-CN: 创建安装目录 失败：{:?}
-Failed to create key down event for keycode {}:
-  zh-CN: 创建按下事件 for keycode {} 失败
-Failed to create key up event for keycode {}:
-  zh-CN: 创建松开事件 for keycode {} 失败
-'Failed to create local child task: {error}':
-  zh-CN: 创建local 子任务 失败：{error}
-'Failed to create log bundle: {err}':
-  zh-CN: 创建日志包 失败：{err}
-'Failed to create request proxy: {e}':
-  zh-CN: 创建请求代理 失败：{e}
-'Failed to create screenshot portal proxy: {e}':
-  zh-CN: 创建截图门户 proxy 失败：{e}
-'Failed to create subdir {subdir_name}: {e}':
-  zh-CN: 创建子目录 {subdir_name} 失败：{e}
-'Failed to create temp dir: {e}':
-  zh-CN: 创建临时目录 失败：{e}
-Failed to create temp file for {}:
-  zh-CN: 创建临时文件 for {} 失败
-'Failed to create temporary directory for screenshot: {e}':
-  zh-CN: 创建临时目录 for 截图 失败：{e}
-Failed to create {}:
-  zh-CN: 创建{} 失败
-'Failed to create {}: {e}':
-  zh-CN: 创建{} 失败：{e}
-'Failed to decode screenshot: {e}':
-  zh-CN: 解码截图 失败：{e}
-'Failed to delete API key ''{name}'': {error}':
-  zh-CN: 删除API 密钥 '{name}' 失败：{error}
-'Failed to delete file: {e:?}':
-  zh-CN: 删除文件 失败：{e:?}
-Failed to deserialize Claude transcript for wake task {task_id}:
-  zh-CN: 反序列化Claude 对话记录 for wake 任务 {task_id} 失败
-Failed to deserialize response from {url}:
-  zh-CN: 反序列化响应 from {url} 失败
-Failed to determine home directory:
-  zh-CN: 确定主目录 失败
-Failed to download {toast_filename}.:
-  zh-CN: 下载 {toast_filename} 失败。
-'Failed to encode screenshot to PNG: {e}':
-  zh-CN: 编码截图 to PNG 失败：{e}
-'Failed to establish connection: {}':
-  zh-CN: 建立连接 失败：{}
-'Failed to execute command: {e}':
-  zh-CN: 执行命令 失败：{e}
-'Failed to export to {display}: {e}':
-  zh-CN: 导出to {display} 失败：{e}
-Failed to fetch Claude transcript for task {task_id}:
-  zh-CN: 获取Claude 对话记录 for 任务 {task_id} 失败
-Failed to fetch npm info for {}:
-  zh-CN: 获取npm 信息 for {} 失败
-'Failed to fetch task secrets: {err}':
-  zh-CN: 获取任务 secrets 失败：{err}
-'Failed to flush X11 connection: {e}':
-  zh-CN: 刷新X11 连接 失败：{e}
-'Failed to flush file: {:?}':
-  zh-CN: 刷新文件 失败：{:?}
-Failed to flush temp file for {}:
-  zh-CN: 刷新临时文件 for {} 失败
-Failed to flush {:?}:
-  zh-CN: 刷新{:?} 失败
-'Failed to get URI from response: {e}':
-  zh-CN: 获取URI from 响应 失败：{e}
-Failed to get artifact '{artifact_uid}':
-  zh-CN: 获取产物 '{artifact_uid}' 失败
-Failed to get current working directory:
-  zh-CN: 获取当前工作目录 失败
-'Failed to get keyboard mapping: {e}':
-  zh-CN: 获取键盘 mapping 失败：{e}
-Failed to get metadata for {:?}:
-  zh-CN: 获取元数据 for {:?} 失败
-'Failed to get response arguments: {e}':
-  zh-CN: 获取响应 arguments 失败：{e}
-'Failed to get screenshot reply: {e}':
-  zh-CN: 获取截图 reply 失败：{e}
-Failed to get transcript upload target for {conversation_id}:
-  zh-CN: 获取对话记录 upload target for {conversation_id} 失败
-'Failed to initialize client: {}':
-  zh-CN: 初始化客户端 失败：{}
-'Failed to initialize server: {}':
-  zh-CN: 初始化服务器 失败：{}
-'Failed to initiate delete: {err}':
-  zh-CN: 发起delete 失败：{err}
-'Failed to initiate write: {err}':
-  zh-CN: 发起write 失败：{err}
-'Failed to install Oz command: {error}':
-  zh-CN: 安装Oz 命令 失败：{error}
-Failed to load GitHub repositories:
-  zh-CN: 加载GitHub 仓库 失败
-'Failed to load buffer: {error}':
-  zh-CN: 加载缓冲区 失败：{error}
-Failed to load conversation data.:
-  zh-CN: 加载对话数据. 失败
-Failed to load conversation for forking.:
-  zh-CN: 加载对话 for forking. 失败
-'Failed to load conversation with id: {conversation_id}':
-  zh-CN: 加载对话 with id 失败：{conversation_id}
-Failed to load conversation.:
-  zh-CN: 加载对话. 失败
-'Failed to load conversation: {msg}':
-  zh-CN: 加载对话 失败：{msg}
-'Failed to load directory: {e}':
-  zh-CN: 加载目录 失败：{e}
-Failed to load invite link.:
-  zh-CN: 加载邀请链接. 失败
-Failed to mark agent message {message_id} as delivered:
-  zh-CN: 标记智能体消息 {message_id} as delivered 失败
-'Failed to move mouse: {e}':
-  zh-CN: 移动鼠标 失败：{e}
-Failed to open artifact file '{}':
-  zh-CN: 打开产物 文件 '{}' 失败
-'Failed to open screenshot file: {e}':
-  zh-CN: 打开截图文件 失败：{e}
-Failed to open {}:
-  zh-CN: 打开{} 失败
-Failed to open {} for writing:
-  zh-CN: 打开{} for writing 失败
-'Failed to parse MCP server JSON configuration: {msg}':
-  zh-CN: 解析MCP 服务器 JSON 配置 失败：{msg}
-'Failed to parse MCP server: {err:#}':
-  zh-CN: 解析MCP 服务器 失败：{err:#}
-'Failed to parse Node.js version: {}':
-  zh-CN: 解析节点.js 版本 失败：{}
-'Failed to parse file: {e}':
-  zh-CN: 解析文件 失败：{e}
-'Failed to parse markdown: {e:?}':
-  zh-CN: 解析markdown 失败：{e:?}
-Failed to parse npm info for {}:
-  zh-CN: 解析npm 信息 for {} 失败
-'Failed to parse screenshot URI: {e}':
-  zh-CN: 解析截图 URI 失败：{e}
-'Failed to parse skill file {}: {message}':
-  zh-CN: 解析技能文件 {} 失败：{message}
-Failed to parse {}:
-  zh-CN: 解析{} 失败
-Failed to persist temporary {prefix} file:
-  zh-CN: 持久化temporary {prefix} 文件 失败
-'Failed to prepare cloud handoff: {error_message}':
-  zh-CN: 准备云端交接 失败：{error_message}
-Failed to prepare file download.:
-  zh-CN: 准备文件下载失败。
-'Failed to press mouse button: {e}':
-  zh-CN: 按下鼠标按钮 失败：{e}
-'Failed to press shift: {e}':
-  zh-CN: 按下Shift 失败：{e}
-'Failed to read MCP config file ''{}'': {e}':
-  zh-CN: 读取MCP 配置文件 '{}' 失败：{e}
-Failed to read agent message {message_id}:
-  zh-CN: 读取智能体消息 {message_id} 失败
-Failed to read artifact file '{}':
-  zh-CN: 读取产物 文件 '{}' 失败
-Failed to read config file '{}':
-  zh-CN: 读取配置文件 '{}' 失败
-'Failed to read file ''{file_path}'': {e:#}':
-  zh-CN: 读取文件 '{file_path}' 失败：{e:#}
-Failed to read files:
-  zh-CN: 读取文件失败
-Failed to read lead-agent message {}:
-  zh-CN: 读取主智能体消息 {} 失败
-Failed to read line from {}:
-  zh-CN: 读取line from {} 失败
-'Failed to read remote search result files: {failed}':
-  zh-CN: 读取远程搜索 结果 files 失败：{failed}
-'Failed to read secret value from: {display}':
-  zh-CN: 读取密钥值 from 失败：{display}
-Failed to read subagents dir {}:
-  zh-CN: 读取子智能体目录 {} 失败
-Failed to read todos dir {}:
-  zh-CN: 读取待办目录 {} 失败
-Failed to read transcript for session {session_id}:
-  zh-CN: 读取对话记录 for 会话 {session_id} 失败
-Failed to read {}:
-  zh-CN: 读取{} 失败
-'Failed to receive map result: {e}':
-  zh-CN: 接收map 结果 失败：{e}
-'Failed to release mouse button: {e}':
-  zh-CN: 释放鼠标按钮 失败：{e}
-'Failed to release shift: {e}':
-  zh-CN: 释放Shift 失败：{e}
-'Failed to remove tab config: {e}':
-  zh-CN: 移除标签页配置失败：{e}
-Failed to remove {}:
-  zh-CN: 移除{} 失败
-'Failed to rename conversation: {e}':
-  zh-CN: 重命名对话失败：{e}
-Failed to report driver error for task {task_id}:
-  zh-CN: 报告驱动程序 错误 for 任务 {task_id} 失败
-'Failed to request screenshot: {e}':
-  zh-CN: 请求截图 失败：{e}
-Failed to resolve Claude wake prompt for task {task_id}:
-  zh-CN: 解决Claude 唤醒提示 for 任务 {task_id} 失败
-'Failed to resolve child agent skills: review-comments':
-  zh-CN: '解决子智能体技能: review-comments 失败'
-'Failed to resolve conflict: {err}':
-  zh-CN: 解决conflict 失败：{err}
-'Failed to resolve prompt for the run: {err}':
-  zh-CN: 解决提示 for the run 失败：{err}
-'Failed to run screencapture: {e}':
-  zh-CN: 运行screencapture 失败：{e}
-Failed to sample process (check logs):
-  zh-CN: 采样进程 (check 日志) 失败
-'Failed to save API key: {error}':
-  zh-CN: 保存API 密钥 失败：{error}
-'Failed to save file {path:?}: {error}':
-  zh-CN: 保存文件 {path:?} 失败：{error}
-'Failed to save file: {e:?}':
-  zh-CN: 保存文件 失败：{e:?}
-'Failed to save: {err}':
-  zh-CN: 保存 失败：{err}
-'Failed to scroll: {e}':
-  zh-CN: 滚动 失败：{e}
-'Failed to select devices: {e}':
-  zh-CN: 选择devices 失败：{e}
-Failed to send API request to {url}:
-  zh-CN: 发送API 请求 to {url} 失败
-'Failed to send button down: {e}':
-  zh-CN: 发送按下按钮 失败：{e}
-'Failed to send button up: {e}':
-  zh-CN: 发送松开按钮 失败：{e}
-'Failed to send key down: {e}':
-  zh-CN: 发送按下 失败：{e}
-'Failed to send key press: {e}':
-  zh-CN: 发送按键 失败：{e}
-'Failed to send key release: {e}':
-  zh-CN: 发送释放按键 失败：{e}
-'Failed to send key up: {e}':
-  zh-CN: 发送松开 失败：{e}
-'Failed to send message to {recipients}: {error}':
-  zh-CN: 发送消息 to {recipients} 失败：{error}
-'Failed to set input focus: {e}':
-  zh-CN: 设置输入 focus 失败：{e}
-Failed to set permissions for {:?}:
-  zh-CN: 设置权限 for {:?} 失败
-Failed to set permissions on {}:
-  zh-CN: 设置权限 on {} 失败
-Failed to spawn agent:
-  zh-CN: 派生智能体 失败
-Failed to start SSH extension:
-  zh-CN: 启动SSH 扩展 失败
-Failed to start orchestration:
-  zh-CN: 启动orchestration 失败
-'Failed to start orchestration: {error}':
-  zh-CN: 启动orchestration 失败：{error}
-'Failed to start session request: {e}':
-  zh-CN: 启动会话 请求 失败：{e}
-'Failed to uninstall Oz command: {error}':
-  zh-CN: 卸载Oz 命令 失败：{error}
-Failed to update permissions for shared session:
-  zh-CN: 更新权限 for shared 会话 失败
-Failed to upload file to server:
-  zh-CN: 上传文件 to 服务器 失败
-Failed to upload folder to server:
-  zh-CN: 上传文件夹 to 服务器 失败
-Failed to upload manifest '{manifest_filename}':
-  zh-CN: 上传manifest '{manifest_filename}' 失败
-Failed to write download file '{}':
-  zh-CN: 写入download 文件 '{}' 失败
-'Failed to write file: {:?}':
-  zh-CN: 写入文件 失败：{:?}
-Failed to write temp file for {}:
-  zh-CN: 写入临时文件 for {} 失败
-Failed to write to command.:
-  zh-CN: 写入命令失败。
-Failed to write to {:?}:
-  zh-CN: 写入to {:?} 失败
-Failed to write {}:
-  zh-CN: 写入{} 失败
-'Failed to write {}: {e}':
-  zh-CN: 写入{} 失败：{e}
-'Failed: {message}':
-  zh-CN: 失败：{message}
-File explorer:
-  zh-CN: 文件浏览器
-Finish:
-  zh-CN: 完成
-Finished exporting objects:
-  zh-CN: 已完成导出对象
-Fork:
-  zh-CN: 分叉
-Forked "{title}":
-  zh-CN: 已分叉 "{title}"
-From another device:
-  zh-CN: 来自其他设备
-'Gallery Id: None':
-  zh-CN: 图库 ID：无
-Grepping for patterns:
-  zh-CN: 正在 grep 模式
-'Grepping for patterns: {joined}':
-  zh-CN: 正在 grep 模式：{joined}
-Handed session off to the cloud:
-  zh-CN: 已将会话交给云端
-'IAP credential refresh failed: {message}':
-  zh-CN: IAP 凭据刷新失败：{message}
-Install:
-  zh-CN: 安装
-Install nvm for me:
-  zh-CN: 为我安装 nvm
-Install {name}:
-  zh-CN: 安装 {name}
-Just now:
-  zh-CN: 刚刚
-Last 24 hours:
-  zh-CN: 最近 24 小时
-Last week:
-  zh-CN: 上周
-Learn More:
-  zh-CN: 了解更多
-Learn about file support and formatting:
-  zh-CN: 了解文件支持和格式
-Learn more:
-  zh-CN: 了解更多
-Link copied to clipboard:
-  zh-CN: 链接已复制到剪贴板
-Listing messages:
-  zh-CN: 正在列出消息
-Loading {display_name}...:
-  zh-CN: 正在加载{display_name}...
-Looks like you're out of AI credits.:
-  zh-CN: 看起来您的 AI 额度已用完。
-Manage AI Autonomy permissions:
-  zh-CN: 管理 AI 自主权限
-Manage privacy settings:
-  zh-CN: 管理隐私设置
-Mark all as read:
-  zh-CN: 全部标记为已读
-Monthly AI credits reset!:
-  zh-CN: 每月 AI 额度已重置！
-New conversation:
-  zh-CN: 新对话
-New environment:
-  zh-CN: 新环境
-New file:
-  zh-CN: 新建文件
-New session:
-  zh-CN: 新会话
-Next:
-  zh-CN: 下一个
-No MCP Server specified.:
-  zh-CN: 未指定 MCP 服务器。
-No changes to discard:
-  zh-CN: 没有可放弃的更改
-No file name:
-  zh-CN: 无文件名
-No output:
-  zh-CN: 没有输出
-No plugin manager available:
-  zh-CN: 无可用插件管理器
-No result in OpenBuffer response:
-  zh-CN: 没有结果 in OpenBuffer 响应
-No results:
-  zh-CN: 无结果
-No results found:
-  zh-CN: 未找到结果
-No tools available:
-  zh-CN: 无可用的工具
-None:
-  zh-CN: 无
-Not implemented:
-  zh-CN: 未实现
-Not logged in:
-  zh-CN: 未登录
-Not yet loaded:
-  zh-CN: 尚未加载
-Notifications setup instructions:
-  zh-CN: 通知设置说明
-Open PR:
-  zh-CN: 打开PR
-Open Tab:
-  zh-CN: 打开标签页
-Open an existing local folder or repository:
-  zh-CN: 打开现有的本地文件夹或仓库
-Open conversation:
-  zh-CN: 打开对话
-Open image at {docker_hub_url}:
-  zh-CN: 打开图片 at {docker_hub_url}
-Open in Oz:
-  zh-CN: 打开in Oz
-Open in Warp:
-  zh-CN: 在 Warp 中打开
-Open in editor:
-  zh-CN: 在编辑器中打开
-Open in new pane:
-  zh-CN: 打开in new 窗格
-Open in new tab:
-  zh-CN: 打开in new 标签页
-Open in terminal session:
-  zh-CN: 打开in terminal 会话
-'Open link: {arg0}':
-  zh-CN: '打开链接: {arg0}'
-Open on Desktop:
-  zh-CN: 在桌面打开
-PR successfully created.:
-  zh-CN: PR 已成功创建。
-Parent conversation:
-  zh-CN: 父对话
-Past 3 days:
-  zh-CN: 过去 3 天
-Plan ID copied to clipboard:
-  zh-CN: 计划 ID 已复制到剪贴板
-Plan and Todo List:
-  zh-CN: 计划和待办列表
-Plan auto-sync:
-  zh-CN: 计划自动同步
-Plugin update instructions:
-  zh-CN: 插件更新说明
-PowerShell subshells not supported:
-  zh-CN: 不支持 PowerShell 子外壳
-Previous:
-  zh-CN: 上一个
-QR code downloaded.:
-  zh-CN: 二维码已下载。
-Refresh:
-  zh-CN: 刷新
-Remote control link copied.:
-  zh-CN: 远程控制链接已复制。
-Remove '{}'?:
-  zh-CN: 移除'{}'?
-Remove domain:
-  zh-CN: 移除域名
-Remove from team:
-  zh-CN: 从团队中移除
-Remove queued prompt:
-  zh-CN: 移除排队中的提示
-Remove shared MCP server from team?:
-  zh-CN: 从团队中移除共享 MCP 服务器？
-Requires a local session:
-  zh-CN: 需要本地会话
-Requires the GitHub CLI:
-  zh-CN: 需要 GitHub CLI
-Requires the `{command}` command:
-  zh-CN: 需要 `{command}` 命令
-Restore environment variables from trash:
-  zh-CN: 从废纸篓还原环境变量
-Retry:
-  zh-CN: 重试
-Rewind:
-  zh-CN: 回退
-Rich Input:
-  zh-CN: 富输入
-Save as markdown file:
-  zh-CN: 保存为 Markdown 文件
-Save as new config:
-  zh-CN: 保存as new 配置
-Save as prompt:
-  zh-CN: 保存as 提示
-Save changes:
-  zh-CN: 保存更改
-Search files and directories:
-  zh-CN: 搜索文件和目录
-'Selected folder is not a Git repository: {path}':
-  zh-CN: 所选文件夹不是 Git 仓库：{path}
-Send a prompt below to start a new conversation:
-  zh-CN: 在下方发送提示以开始新对话
-Server update available:
-  zh-CN: 有可用的服务器更新
-Session type:
-  zh-CN: 会话类型
-Setting up environment:
-  zh-CN: 正在设置环境
-Settings sync:
-  zh-CN: 设置同步
-Share server:
-  zh-CN: 共享服务器
-Shared by a team member:
-  zh-CN: 由团队成员共享
-'Shared by: {creator}':
-  zh-CN: 共享者：{creator}
-Show in Warp Drive:
-  zh-CN: 在 Warp Drive 中显示
-Show logs:
-  zh-CN: 显示日志
-Sign in:
-  zh-CN: 登录
-Skip:
-  zh-CN: 跳过
-Staging IAP credentials:
-  zh-CN: 正在准备 IAP 凭据
-Stop agent task:
-  zh-CN: 停止智能体任务
-Stopped task:
-  zh-CN: 已停止的任务
-Tasks:
-  zh-CN: 任务
-This response won't count towards your usage.:
-  zh-CN: 此回复不会计入您的使用量。
-Try again:
-  zh-CN: 重试
-Unable to download QR code.:
-  zh-CN: 无法下载二维码。
-Undo:
-  zh-CN: 撤销
-Untitled conversation:
-  zh-CN: 未命名对话
-Update Warp plugin:
-  zh-CN: 更新 Warp 插件
-Using injected token (WARP_IAP_TOKEN):
-  zh-CN: 使用注入的令牌 (WARP_IAP_TOKEN)
-View:
-  zh-CN: 查看
-View details:
-  zh-CN: 查看详情
-View screenshot:
-  zh-CN: 查看截图
-
-# Additional translations
-
-Could not determine parent directory of file when running grep:
-  zh-CN: 无法determine 父 目录 of 文件 when 运行中 grep
-No active conversation to export:
-  zh-CN: 没有活跃 对话 to export
-No directory selected:
-  zh-CN: 没有目录 已选择
-No remote server client available:
-  zh-CN: 没有远程 服务器 客户端 可用
-Open New Window:
-  zh-CN: 打开新 窗口
-Successfully created environment:
-  zh-CN: 成功已创建 环境
-Successfully shared environment:
-  zh-CN: 成功共享 环境
-Successfully updated environment:
-  zh-CN: 成功已更新 环境
-
-# Additional translations (post-fmt fix)
-
-Could not resolve a working directory for the local {} child.:
-  zh-CN: 无法resolve a 工作目录 for the 本地 {} 子.
-'Failed to build client with headers: {e}':
-  zh-CN: 构建客户端 with headers 失败：{e}
-Failed to create Codex config dir at {}:
-  zh-CN: 创建Codex 配置 dir at {} 失败
-'Failed to create local {} child task: {error}':
-  zh-CN: 创建本地 {} 子任务 失败：{error}
-Failed to create remote-server tarball cache directory '{}':
-  zh-CN: 创建远程-服务器 tarball cache 目录 '{}' 失败
-'Failed to deserialize {harness_label} transcript for {conversation_id}: {err:#}':
-  zh-CN: 反序列化{harness_label} 对话记录 for {conversation_id} 失败：{err:#}
-Failed to download artifact '{}' from signed URL:
-  zh-CN: 下载产物 '{}' from signed URL 失败
-'Failed to install {}: {e}':
-  zh-CN: 安装{} 失败：{e}
-'Failed to install {}: {}':
-  zh-CN: 安装{} 失败：{}
-'Failed to load tab config {friendly_path}: {}':
-  zh-CN: 加载标签页 配置 {friendly_path} 失败：{}
-'Failed to move cursor to ({}, {}): {e}':
-  zh-CN: 移动cursor to ({}, {}) 失败：{e}
-Failed to move message bridge record {} to {}:
-  zh-CN: 移动消息 bridge record {} to {} 失败
-Failed to parse Codex config.toml at {}:
-  zh-CN: 解析Codex 配置.toml at {} 失败
-Failed to parse bundled skill at {}:
-  zh-CN: 解析bundled 技能 at {} 失败
-Failed to parse config file '{}' as JSON or YAML:
-  zh-CN: 解析配置文件 '{}' as JSON or YAML 失败
-Failed to read Codex config.toml at {}:
-  zh-CN: 读取Codex 配置.toml at {} 失败
-'Failed to read files: {failed}':
-  zh-CN: 读取files 失败：{failed}
-'Failed to remove existing install directory: {:?}':
-  zh-CN: 移除existing 安装目录 失败：{:?}
-Failed to rename {} to {}:
-  zh-CN: 重命名{} to {} 失败
-'Failed to resolve child agent skills: {}':
-  zh-CN: 解决子智能体技能 失败：{}
-Failed to run git {:?} in {}:
-  zh-CN: 运行git {:?} in {} 失败
-Failed to save file {file_path_clone}:
-  zh-CN: 保存文件 {file_path_clone} 失败
-Failed to start LSP server for {workspace_root_display} with error {e}:
-  zh-CN: 启动LSP 服务器 for {workspace_root_display} with 错误 {e} 失败
-Failed to write Codex config.toml at {}:
-  zh-CN: 写入Codex 配置.toml at {} 失败
-Failed to write Codex system prompt to {}:
-  zh-CN: 写入Codex system 提示 to {} 失败
-Failed to write Gemini system prompt to {}:
-  zh-CN: 写入Gemini system 提示 to {} 失败
-Failed to write {} to storage:
-  zh-CN: 写入{} to storage 失败
+for more credits.:
+  zh-CN: 以获取更多积分。
+the page manually.:
+  zh-CN: 手动打开页面。
+you can adjust your:
+  zh-CN: 您可以调整您的
+'{count} queued':
+  zh-CN: '{count} 个已排队'
+'{count} team members':
+  zh-CN: '{count} 名团队成员'
+'{credits} credits / {dollars}':
+  zh-CN: '{credits} 积分 / {dollars}'
+'{credits} free cloud agent credits':
+  zh-CN: '{credits} 个免费云 Agent 积分'
+'{days_left} days until permanent deletion':
+  zh-CN: 距永久删除还有 {days_left} 天
+'{days} days ago':
+  zh-CN: '{days} 天前'
+'{discount}% off':
+  zh-CN: '{discount}% 折扣'
+'{display_name} is not available for free users.':
+  zh-CN: '{display_name} 对免费用户不可用。'
+'{editor} is editing':
+  zh-CN: '{editor} 正在编辑'
+'{excess_images} images weren''t attached - limit is {limit_value} images {limit_name}.':
+  zh-CN: 有 {excess_images} 张图片未附加 - 上限为 {limit_value} 张图片 {limit_name}。
+'{filename} is too large to send to the agent (limit {limit_mb}MB).':
+  zh-CN: '{filename} 过大，无法发送给 Agent（上限为 {limit_mb}MB）。'
+'{file} does not exist. Is the path correct?':
+  zh-CN: '{file} 不存在。路径是否正确？'
+'{hours} hours ago':
+  zh-CN: '{hours} 小时前'
+'{images_removed} images were removed - limit is 20 per conversation.':
+  zh-CN: 已移除 {images_removed} 张图片 - 每个对话上限为 20 张。
+'{mins} minutes ago':
+  zh-CN: '{mins} 分钟前'
+'{name} edited {time_ago}':
+  zh-CN: '{name} 于 {time_ago} 编辑'
+'{name} requires AI to be enabled':
+  zh-CN: '{name} 需要启用 AI'
+'{num_days} days ago':
+  zh-CN: '{num_days} 天前'
+'{num_excess_images} images weren''t attached - {limit_reason}.':
+  zh-CN: 有 {num_excess_images} 张图片未附加 - {limit_reason}。
+'{num_hours} hours ago':
+  zh-CN: '{num_hours} 小时前'
+'{num_minutes} minutes ago':
+  zh-CN: '{num_minutes} 分钟前'
+'{num_oversized_images} images weren''t attached — files are too large.':
+  zh-CN: 有 {num_oversized_images} 张图片未附加 — 文件过大。
+'{num_read_errors} images weren''t attached - failed to read files.':
+  zh-CN: 有 {num_read_errors} 张图片未附加 - 读取文件失败。
+'{num_unprocessed_images} images weren''t attached - error processing.':
+  zh-CN: 有 {num_unprocessed_images} 张图片未附加 - 处理出错。
+'{num_unsupported_images} images weren''t attached - supported types are PNG, JPG, GIF, WEBP.':
+  zh-CN: 有 {num_unsupported_images} 张图片未附加 - 支持的类型为 PNG、JPG、GIF、WEBP。
+'{n} results in {files} {file_word}':
+  zh-CN: 在 {files} {file_word} 中有 {n} 个结果
+'{remaining_pct}% context remaining':
+  zh-CN: 剩余 {remaining_pct}% 上下文
+'{truncated_int} {unit} ago':
+  zh-CN: '{truncated_int} {unit}前'
+'{truncated_int} {unit}s ago':
+  zh-CN: '{truncated_int} {unit}前'
+'{whole} credit':
+  zh-CN: '{whole} 积分'
+'{whole} credits':
+  zh-CN: '{whole} 积分'
+'{} AI credits per month':
+  zh-CN: 每月 {} AI 积分
+'{} Be sure to run these commands on your remote machine.':
+  zh-CN: '{} 请务必在您的远程机器上运行这些命令。'
+'{} CLI is not installed':
+  zh-CN: '{} CLI 未安装'
+'{} Credits per month':
+  zh-CN: 每月 {} 积分
+'{} Reload Credits have been added to your {}.':
+  zh-CN: '{} 充值积分已添加到您的 {}。'
+'{} base credits per month':
+  zh-CN: 每月 {} 基础积分
+'{} credits remaining':
+  zh-CN: 剩余 {} 积分
+'{} installed and enabled successfully.':
+  zh-CN: '{} 已成功安装并启用。'
+'{} language support enabled':
+  zh-CN: 已启用 {} 语言支持
+'{} min ago':
+  zh-CN: '{} 分钟前'
+'{} needs attention':
+  zh-CN: '{} 需要关注'
+'{} other settings':
+  zh-CN: '{} 项其他设置'

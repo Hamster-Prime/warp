@@ -577,7 +577,7 @@ impl BuyCreditsBanner {
                     FormattedTextFragment::plain_text(
                         "Purchasing these credits would take you over your monthly spend limit. ",
                     ),
-                    FormattedTextFragment::hyperlink_action("Increase it", Action::ManageBilling),
+                    FormattedTextFragment::hyperlink_action(i18n::t!("Increase it"), Action::ManageBilling),
                     FormattedTextFragment::plain_text(" to continue."),
                 ];
 

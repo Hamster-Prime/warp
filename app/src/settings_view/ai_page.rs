@@ -6131,7 +6131,7 @@ impl AIInputWidget {
             static AUTODETECTION_DESCRIPTION_FRAGMENTS: LazyLock<Vec<FormattedTextFragment>> =
                 LazyLock::new(|| {
                     vec![
-                        FormattedTextFragment::plain_text("Encountered an incorrect detection? "),
+                        FormattedTextFragment::plain_text(i18n::t!("Encountered an incorrect detection? ")),
                         FormattedTextFragment::hyperlink(
                             "Let us know",
                             "https://warpdotdev.typeform.com/to/offrTIpq",

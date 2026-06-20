@@ -465,7 +465,7 @@ impl FileUpload {
             FormattedTextElement::new(
                 FormattedText::new(vec![FormattedTextLine::Heading(FormattedTextHeader {
                     heading_size: 3,
-                    text: vec![FormattedTextFragment::plain_text("File Uploads")],
+                    text: vec![FormattedTextFragment::plain_text(i18n::t!("File Uploads"))],
                 })]),
                 appearance.ui_font_size(),
                 appearance.ui_font_family(),

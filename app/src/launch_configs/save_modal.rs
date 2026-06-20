@@ -549,7 +549,7 @@ impl LaunchConfigSaveModal {
             SaveState::Success => header
                 .with_child(
                     self.render_formatted_text_line(appearance, vec![
-                        FormattedTextFragment::plain_text("Saved successfully to "),
+                        FormattedTextFragment::plain_text(i18n::t!("Saved successfully to ")),
                         FormattedTextFragment::inline_code(self.file_name.clone().unwrap_or_default()),
                         FormattedTextFragment::plain_text(".")
                     ])

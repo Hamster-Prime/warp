@@ -330,9 +330,9 @@ impl SearchCodebaseExecutor {
                 // main thread since its just for telemetry.
                 let _ = ctx.spawn(async move { search_dir.exists() }, |_, exists, ctx| {
                     let error = if exists {
-                        "The codebase isn't indexed".to_string()
+                        i18n::t!("The codebase isn't indexed").to_string()
                     } else {
-                        "The codebase doesn't exist".to_string()
+                        i18n::t!("The codebase doesn't exist").to_string()
                     };
                     send_telemetry_from_ctx!(
                         TelemetryEvent::SearchCodebaseRepoUnavailable { action_id, error },
@@ -389,13 +389,13 @@ impl SearchCodebaseExecutor {
 
                     let error_message = match e {
                             GetRelevantFilesError::Pending => {
-                                "The current git repository is still being indexed, so search is unavailable right now. You can try again later".to_owned()
+                                i18n::t!("The current git repository is still being indexed, so search is unavailable right now. You can try again later").to_string()
                             }
                             GetRelevantFilesError::CreateFailed => {
-                                "Relevant file search in the current directory is not available".to_owned()
+                                i18n::t!("Relevant file search in the current directory is not available").to_string()
                             }
                             GetRelevantFilesError::Missing => {
-                                "The current directory isn't within a git repository, which is necessary to search for relevant files.".to_owned()
+                                i18n::t!("The current directory isn't within a git repository, which is necessary to search for relevant files.").to_string()
                             }
                         };
                     ActionExecution::Sync(AIAgentActionResultType::SearchCodebase(

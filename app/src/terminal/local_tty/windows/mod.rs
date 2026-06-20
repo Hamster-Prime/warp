@@ -168,7 +168,7 @@ pub(super) fn spawn(
             // sandbox starter degrades gracefully on Windows.
             log::error!("Docker sandbox shell starter reached the Windows PTY spawn path");
             return Err(PtySpawnError::UnsupportedShellStarter(
-                "Docker sandbox shells are not supported on Windows".to_owned(),
+                i18n::t!("Docker sandbox shells are not supported on Windows").to_string(),
             ));
         }
     };

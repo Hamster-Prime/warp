@@ -163,7 +163,7 @@ impl View for SummarizationCancelDialog {
 
         // Build dialog content
         let dialog_core = Dialog::new(
-            "Cancel summarization?".to_string(),
+            i18n::t!("Cancel summarization?").to_string(),
             Some("Summarization is already running. If you cancel now, the request may still incur cost, any progress so far will be lost, and restarting will take longer.\n\nAre you sure you want to cancel?".to_string()),
             UiComponentStyles {
                 padding: Some(Coords::uniform(24.)),

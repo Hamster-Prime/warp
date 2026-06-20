@@ -354,7 +354,7 @@ impl View for ExternalEditorView {
         }
 
         column.add_child(render_body_item::<ExternalEditorAction>(
-            "Open Markdown files in Warp's Markdown Viewer by default".to_string(),
+            i18n::t!("Open Markdown files in Warp's Markdown Viewer by default").to_string(),
             Some(AdditionalInfo {
                 mouse_state: self.markdown_viewer_mouse_state.clone(),
                 on_click_action: Some(ExternalEditorAction::OpenUrl(

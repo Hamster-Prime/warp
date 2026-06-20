@@ -265,14 +265,14 @@ impl TerminalView {
         if ChannelState::channel().is_dogfood() {
             vec![
                 (
-                    "Copy debugging link".to_string(),
+                    i18n::t!("Copy debugging link").to_string(),
                     ContextMenuAction::CopyAIDebuggingLink {
                         conversation_token: conversation_token.clone(),
                         request_id: server_output_id,
                     },
                 ),
                 (
-                    "Copy conversation ID".to_string(),
+                    i18n::t!("Copy conversation ID").to_string(),
                     ContextMenuAction::CopyConversationId {
                         conversation_id: conversation_token,
                     },
@@ -280,7 +280,7 @@ impl TerminalView {
             ]
         } else {
             vec![(
-                "Copy debugging ID".to_string(),
+                i18n::t!("Copy debugging ID").to_string(),
                 ContextMenuAction::CopyExternalDebuggingId {
                     request_id: server_output_id,
                     conversation_id: conversation_token,

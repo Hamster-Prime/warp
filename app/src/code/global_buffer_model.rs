@@ -825,7 +825,7 @@ impl GlobalBufferModel {
                             full: ("[remote-buffer] No remote server client for save: host={host_id:?}")
                         );
                         return Err(FileSaveError::RemoteError(
-                            "No remote server client available".to_string(),
+                            i18n::t!("No remote server client available").to_string(),
                         ));
                     };
                     batch.flush(client, &path);
@@ -1803,7 +1803,7 @@ impl GlobalBufferModel {
                     safe: ("[remote-buffer] No result in OpenBuffer response"),
                     full: ("[remote-buffer] No result in OpenBuffer response for file_id={file_id:?}")
                 );
-                "No result in OpenBuffer response".to_string()
+                i18n::t!("No result in OpenBuffer response").to_string()
             })
         });
         match res {

@@ -27,7 +27,7 @@ pub fn classify_driver_error(error: &AgentDriverError) -> (AgentTaskState, TaskS
         AgentDriverError::ShareSessionFailed { error: share_err } => {
             let message = match share_err {
                 ShareSessionError::Internal(_) => {
-                    "Failed to share agent session due to an internal error. Please try running your task again.".to_string()
+                    i18n::t!("Failed to share agent session due to an internal error. Please try running your task again.").to_string()
                 }
                 ShareSessionError::Failed(reason) => {
                     // The reason string comes from the session-sharing layer and is aimed at
@@ -49,7 +49,7 @@ pub fn classify_driver_error(error: &AgentDriverError) -> (AgentTaskState, TaskS
                     .to_string()
                 }
                 ShareSessionError::Interrupted => {
-                    "Session sharing was interrupted before it could complete. Please try running your task again.".to_string()
+                    i18n::t!("Session sharing was interrupted before it could complete. Please try running your task again.").to_string()
                 }
             };
             (

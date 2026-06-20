@@ -129,7 +129,7 @@ impl EnvironmentSetupModeSelector {
         let theme = appearance.theme();
 
         let title = Text::new(
-            "Choose how you'd like to set up your environment".to_string(),
+            i18n::t!("Choose how you'd like to set up your environment").to_string(),
             appearance.ui_font_family(),
             TITLE_FONT_SIZE,
         )

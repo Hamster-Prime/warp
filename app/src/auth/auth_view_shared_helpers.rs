@@ -468,7 +468,7 @@ pub fn render_privacy_settings_toggles<A: Action + Clone + 'static>(
 
     let telemetry_description = render_description(
         appearance,
-        "High-level feature usage data helps Warp's product team prioritize the roadmap.".into(),
+        i18n::t!("High-level feature usage data helps Warp's product team prioritize the roadmap.").to_string(),
     );
 
     let telemetry_link = Flex::row()
@@ -476,7 +476,7 @@ pub fn render_privacy_settings_toggles<A: Action + Clone + 'static>(
             appearance
                 .ui_builder()
                 .link(
-                    "Learn more".into(),
+                    i18n::t!("Learn more").to_string(),
                     Some(PRIVACY_URL.into()),
                     None,
                     handles.telemetry_docs_mouse.clone(),
@@ -513,7 +513,7 @@ pub fn render_privacy_settings_toggles<A: Action + Clone + 'static>(
 
     let crash_reporting_description = render_description(
         appearance,
-        "Crash reporting helps Warp's engineering team understand stability and improve performance.".into(),
+        i18n::t!("Crash reporting helps Warp's engineering team understand stability and improve performance.").to_string(),
     );
 
     let toggle_cloud = actions.toggle_cloud_conversation_storage.clone();

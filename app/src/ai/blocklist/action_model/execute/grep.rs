@@ -355,12 +355,12 @@ async fn run_grep(
         // remote path with the local platform's path separators.
         let Ok(standardized) = StandardizedPath::try_new(&absolute_path) else {
             return Err(GrepError::new(
-                "Could not determine parent directory of file when running grep".to_string(),
+                i18n::t!("Could not determine parent directory of file when running grep").to_string(),
             ));
         };
         let Some(parent) = standardized.parent() else {
             return Err(GrepError::new(
-                "Could not determine parent directory of file when running grep".to_string(),
+                i18n::t!("Could not determine parent directory of file when running grep").to_string(),
             ));
         };
         Cow::Owned(parent.as_str().to_owned())

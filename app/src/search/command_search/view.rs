@@ -507,13 +507,13 @@ impl CommandSearchView {
 
             let (a11y_content, a11y_help_content) = if was_immediately_executed {
                 (
-                    "Result executed".to_owned(),
-                    "Press Cmd-Up to navigate to the command's output.".to_owned(),
+                    i18n::t!("Result executed").to_string(),
+                    i18n::t!("Press Cmd-Up to navigate to the command's output.").to_string(),
                 )
             } else {
                 (
-                    "Result accepted.".to_owned(),
-                    "You can edit the command here before pressing Enter to execute it.".to_owned(),
+                    i18n::t!("Result accepted.").to_string(),
+                    i18n::t!("You can edit the command here before pressing Enter to execute it.").to_string(),
                 )
             };
             ctx.emit_a11y_content(AccessibilityContent::new(
@@ -992,8 +992,8 @@ impl View for CommandSearchView {
 
     fn accessibility_contents(&self, _ctx: &AppContext) -> Option<AccessibilityContent> {
         Some(AccessibilityContent::new(
-            "Command Search".to_owned(),
-            "Search your history, workflows, and more.  Use the Up and Down arrows to browse search results after typing.  Press Enter to accept a selected result, inserting it into the terminal input.  Press Escape to close.".to_owned(),
+            i18n::t!("Command Search").to_string(),
+            i18n::t!("Search your history, workflows, and more.  Use the Up and Down arrows to browse search results after typing.  Press Enter to accept a selected result, inserting it into the terminal input.  Press Escape to close.").to_string(),
             WarpA11yRole::MenuRole,
         ))
     }

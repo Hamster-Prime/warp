@@ -256,7 +256,7 @@ impl PromptRenderHelper {
                         progress_percent: None,
                     } => "Installing Warp SSH Extension...".to_string(),
                     RemoteServerSetupState::Updating => {
-                        "Updating Warp SSH Extension...".to_string()
+                        i18n::t!("Updating Warp SSH Extension...").to_string()
                     }
                     RemoteServerSetupState::Initializing => "Initializing...".to_string(),
                     RemoteServerSetupState::Ready => "Starting shell...".to_string(),
@@ -270,7 +270,7 @@ impl PromptRenderHelper {
         }
 
         if !sessions.is_empty() {
-            "Starting shell...".to_string()
+            i18n::t!("Starting shell...").to_string()
         } else {
             format!("Starting {}...", model.shell_launch_state().display_name())
         }

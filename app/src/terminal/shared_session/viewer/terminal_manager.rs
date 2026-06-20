@@ -969,7 +969,7 @@ impl TerminalManager {
                 Self::shared_session_ended(&view, model.clone(), ctx);
                 view.update(ctx, |terminal_view, ctx| {
                     terminal_view.show_persistent_toast(
-                        "Failed to reconnect. Please try again later.".to_owned(),
+                        i18n::t!("Failed to reconnect. Please try again later.").to_string(),
                         ToastFlavor::Error,
                         ctx,
                     );
@@ -1274,7 +1274,7 @@ impl TerminalManager {
                     }
                     LinkAccessLevelUpdateResponse::Error => {
                         terminal_view.show_persistent_toast(
-                            "Failed to update permissions for shared session".to_owned(),
+                            i18n::t!("Failed to update permissions for shared session").to_string(),
                             ToastFlavor::Error,
                             ctx,
                         );
@@ -1303,7 +1303,7 @@ impl TerminalManager {
                     }
                     TeamAccessLevelUpdateResponse::Error(_) => {
                         terminal_view.show_persistent_toast(
-                            "Something went wrong. Please try again.".to_owned(),
+                            i18n::t!("Something went wrong. Please try again.").to_string(),
                             ToastFlavor::Error,
                             ctx,
                         );
@@ -1318,10 +1318,10 @@ impl TerminalManager {
                     view.update(ctx, |terminal_view, ctx| {
                         let reason_string = match reason {
                             session_sharing_protocol::common::FailedToAddGuestsReason::NotWarpUsers => {
-                                "One or more of the emails are not Warp users.".to_owned()
+                                i18n::t!("One or more of the emails are not Warp users.").to_string()
                             }
                             session_sharing_protocol::common::FailedToAddGuestsReason::GuestAlreadyAdded => {
-                                "One or more of the guests has already been added.".to_owned()
+                                i18n::t!("One or more of the guests has already been added.").to_string()
                             }
                             _ => "Something went wrong. Please try again.".to_owned(),
                         };
@@ -1336,7 +1336,7 @@ impl TerminalManager {
                     };
                     view.update(ctx, |terminal_view, ctx| {
                         terminal_view.show_persistent_toast(
-                            "Something went wrong. Please try again.".to_owned(),
+                            i18n::t!("Something went wrong. Please try again.").to_string(),
                             ToastFlavor::Error,
                             ctx,
                         );
@@ -1350,7 +1350,7 @@ impl TerminalManager {
                     };
                     view.update(ctx, |terminal_view, ctx| {
                         terminal_view.show_persistent_toast(
-                            "Something went wrong. Please try again.".to_owned(),
+                            i18n::t!("Something went wrong. Please try again.").to_string(),
                             ToastFlavor::Error,
                             ctx,
                         );

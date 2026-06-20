@@ -1194,7 +1194,7 @@ impl BillingAndUsagePageV2View {
                     )
                 }
                 None => {
-                    "Your admin has enabled auto-reload for add-on credits. When your personal add-on credit balance runs low, Warp will automatically purchase add-on credits and add them to your balance.".to_string()
+                    i18n::t!("Your admin has enabled auto-reload for add-on credits. When your personal add-on credit balance runs low, Warp will automatically purchase add-on credits and add them to your balance.").to_string()
                 }
             };
             return AddonCreditsPanelState::AutoreloadNonAdmin {
@@ -1386,7 +1386,7 @@ impl BillingAndUsagePageV2View {
                     on_click_action: None,
                     secondary_text: None,
                     tooltip_override_text: Some(
-                        "Sets the monthly limit spent on add-on credits".to_string(),
+                        i18n::t!("Sets the monthly limit spent on add-on credits").to_string(),
                     ),
                 },
             );
@@ -2123,7 +2123,7 @@ impl TypedActionView for BillingAndUsagePageV2View {
                         "Auto-reload enabled. We'll refill with {credits} credits when your balance runs low."
                     )
                 } else {
-                    "Auto-reload disabled.".to_string()
+                    i18n::t!("Auto-reload disabled.").to_string()
                 });
                 UserWorkspaces::handle(ctx).update(ctx, |ws, ctx| {
                     ws.update_addon_credits_settings(

@@ -331,7 +331,7 @@ impl CommentEditor {
             .finish();
 
         let label = Text::new(
-            "Comment imported from GitHub".to_string(),
+            i18n::t!("Comment imported from GitHub").to_string(),
             appearance.ui_font_family(),
             appearance.ui_font_size(),
         )

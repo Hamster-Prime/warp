@@ -187,7 +187,7 @@ impl FindBar {
         if searcher.has_query() {
             let match_count = searcher.match_count();
             let text = if match_count == 0 {
-                "No matches".to_string()
+                i18n::t!("No matches").to_string()
             } else {
                 let mut text = String::new();
                 match searcher.selected_match() {

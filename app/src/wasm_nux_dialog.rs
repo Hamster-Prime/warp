@@ -152,7 +152,7 @@ impl View for WasmNUXDialog {
 
         let dialog = if self.requested_download {
             Dialog::new(
-                "Open in Warp Desktop?".to_string(),
+                i18n::t!("Open in Warp Desktop?").to_string(),
                 Some(i18n::t!("Future links will automatically open on desktop.").to_string()),
                 dialog_styles,
             )
@@ -191,7 +191,7 @@ impl View for WasmNUXDialog {
                                 appearance
                                     .ui_builder()
                                     .link(
-                                        "Learn more".to_string(),
+                                        i18n::t!("Learn more").to_string(),
                                         None,
                                         Some(Box::new(|ctx| {
                                             ctx.dispatch_typed_action(

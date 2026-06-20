@@ -1008,7 +1008,7 @@ impl WorkflowsMoreInfoView {
             appearance
                 .ui_builder()
                 .link(
-                    "View Context".into(),
+                    i18n::t!("View Context").to_string(),
                     Some(workflow_source),
                     None,
                     self.button_mouse_states.view_context.clone(),

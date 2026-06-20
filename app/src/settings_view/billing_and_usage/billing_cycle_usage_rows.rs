@@ -431,7 +431,7 @@ fn render_usage_tooltip_content(row: &MemberUsageRow, appearance: &Appearance) -
 fn render_service_account_info_tooltip(appearance: &Appearance) -> Box<dyn Element> {
     let theme = appearance.theme();
     let text = Text::new_inline(
-        "This is an automated agent on your team.".to_string(),
+        i18n::t!("This is an automated agent on your team.").to_string(),
         appearance.ui_font_family(),
         12.,
     )

@@ -2651,7 +2651,7 @@ impl SettingsWidget for AutoOpenCodeReviewPaneCodeWidget {
     ) -> Box<dyn Element> {
         let general_settings = GeneralSettings::as_ref(app);
         render_body_item::<CodeSettingsPageAction>(
-            "Auto open code review panel".into(),
+            i18n::t!("Auto open code review panel").to_string(),
             None,
             LocalOnlyIconState::Hidden,
             ToggleState::Enabled,
@@ -2728,7 +2728,7 @@ impl SettingsWidget for CodeReviewPanelToggleWidget {
         let tab_settings = TabSettings::as_ref(app);
 
         render_body_item::<CodeSettingsPageAction>(
-            "Show code review button".into(),
+            i18n::t!("Show code review button").to_string(),
             None,
             LocalOnlyIconState::Hidden,
             ToggleState::Enabled,
@@ -2771,7 +2771,7 @@ impl SettingsWidget for CodeReviewDiffStatsToggleWidget {
         let tab_settings = TabSettings::as_ref(app);
 
         render_body_item::<CodeSettingsPageAction>(
-            "Show diff stats on code review button".into(),
+            i18n::t!("Show diff stats on code review button").to_string(),
             None,
             LocalOnlyIconState::Hidden,
             ToggleState::Enabled,
@@ -2813,7 +2813,7 @@ impl SettingsWidget for ProjectExplorerToggleWidget {
         let code_settings = CodeSettings::as_ref(app);
 
         render_body_item::<CodeSettingsPageAction>(
-            "Project explorer".into(),
+            i18n::t!("Project explorer").to_string(),
             None,
             LocalOnlyIconState::Hidden,
             ToggleState::Enabled,
@@ -2856,7 +2856,7 @@ impl SettingsWidget for GlobalSearchToggleWidget {
         let code_settings = CodeSettings::as_ref(app);
 
         render_body_item::<CodeSettingsPageAction>(
-            "Global file search".into(),
+            i18n::t!("Global file search").to_string(),
             None,
             LocalOnlyIconState::Hidden,
             ToggleState::Enabled,
@@ -2896,7 +2896,7 @@ impl SettingsWidget for ShowHiddenFilesToggleWidget {
         let code_settings = CodeSettings::as_ref(app);
 
         render_body_item::<CodeSettingsPageAction>(
-            "Show hidden files in project explorer".into(),
+            i18n::t!("Show hidden files in project explorer").to_string(),
             None,
             LocalOnlyIconState::Hidden,
             ToggleState::Enabled,
@@ -2911,7 +2911,7 @@ impl SettingsWidget for ShowHiddenFilesToggleWidget {
                 })
                 .finish(),
             Some(
-                "Show dotfiles and hidden files (starting with .) in the project explorer.".into(),
+                i18n::t!("Show dotfiles and hidden files (starting with .) in the project explorer.").to_string(),
             ),
         )
     }
@@ -2938,7 +2938,7 @@ impl SettingsWidget for FormatOnSaveToggleWidget {
         let code_settings = CodeSettings::as_ref(app);
 
         render_body_item::<CodeSettingsPageAction>(
-            "Format on save (requires an active language server)".into(),
+            i18n::t!("Format on save (requires an active language server)").to_string(),
             None,
             LocalOnlyIconState::Hidden,
             ToggleState::Enabled,

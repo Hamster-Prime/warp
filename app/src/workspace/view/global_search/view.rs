@@ -2151,7 +2151,7 @@ impl View for GlobalSearchView {
         } else if self.is_search_in_progress && self.total_match_count == 0 {
             "Searching…".to_string()
         } else if !self.is_search_in_progress && self.total_match_count == 0 {
-            "No results found. Review your gitignore files.".to_string()
+            i18n::t!("No results found. Review your gitignore files.").to_string()
         } else {
             match self.total_match_count {
                 1 => format!("1 result in {files} {file_word}"),

@@ -662,7 +662,7 @@ impl View for OrchestrationConfigBlockView {
             };
             let disabled_text_color = blended_colors::text_disabled(theme, theme.background());
             let details_text = Text::new(
-                "View details".to_string(),
+                i18n::t!("View details").to_string(),
                 appearance.ui_font_family(),
                 appearance.monospace_font_size() + 1.,
             )

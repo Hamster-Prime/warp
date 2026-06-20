@@ -306,11 +306,11 @@ impl MCPServersEditPageView {
     fn render_header(&self, app: &AppContext) -> Box<dyn Element> {
         let appearance = Appearance::as_ref(app);
         let title = if self.server_card_item_id.is_none() {
-            "Add New MCP Server".to_string()
+            i18n::t!("Add New MCP Server").to_string()
         } else if let Some(name) = self.server_model.name() {
             format!("Edit {name} MCP Server")
         } else {
-            "Edit MCP Server".to_string()
+            i18n::t!("Edit MCP Server").to_string()
         };
 
         let ui_builder = appearance.ui_builder().clone();
@@ -615,7 +615,7 @@ impl MCPServersEditPageView {
             });
 
             return Err(
-                "Cannot add multiple MCP servers while editing a single server.".to_string(),
+                i18n::t!("Cannot add multiple MCP servers while editing a single server.").to_string(),
             );
         }
 

@@ -127,7 +127,7 @@ impl AgentTypeSelector {
         let theme = appearance.theme();
 
         let title = Text::new(
-            "Choose your agent".to_string(),
+            i18n::t!("Choose your agent").to_string(),
             appearance.ui_font_family(),
             TITLE_FONT_SIZE,
         )

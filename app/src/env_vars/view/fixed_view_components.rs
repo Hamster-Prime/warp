@@ -113,7 +113,7 @@ impl EnvVarCollectionView {
                             .with_tooltip(move || {
                                 ui_builder
                                     .tool_tip(
-                                        "Restore environment variables from trash".to_string(),
+                                        i18n::t!("Restore environment variables from trash").to_string(),
                                     )
                                     .build()
                                     .finish()

@@ -112,7 +112,7 @@ impl View for RemoveTabConfigConfirmationDialog {
         let dialog = Dialog::new(
             title,
             Some(
-                "This tab config will be permanently deleted. This action cannot be undone.".into(),
+                i18n::t!("This tab config will be permanently deleted. This action cannot be undone.").to_string(),
             ),
             UiComponentStyles {
                 width: Some(DIALOG_WIDTH),

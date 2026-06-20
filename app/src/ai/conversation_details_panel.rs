@@ -1391,7 +1391,7 @@ impl ConversationDetailsPanel {
         let oz_link = appearance
             .ui_builder()
             .link(
-                "Open in Oz".to_string(),
+                i18n::t!("Open in Oz").to_string(),
                 Some(skill_url),
                 None,
                 self.mouse_states.skill_link.clone(),
@@ -1427,7 +1427,7 @@ impl ConversationDetailsPanel {
                 let source_link = appearance
                     .ui_builder()
                     .link(
-                        "Open in GitHub".to_string(),
+                        i18n::t!("Open in GitHub").to_string(),
                         Some(github_url),
                         None,
                         self.mouse_states.skill_source_link.clone(),
@@ -1498,7 +1498,7 @@ impl ConversationDetailsPanel {
         let ui_font_size = appearance.ui_font_size();
 
         let header_text = Text::new(
-            "Environment setup commands".to_string(),
+            i18n::t!("Environment setup commands").to_string(),
             appearance.ui_font_family(),
             ui_font_size,
         )
@@ -1563,7 +1563,7 @@ impl ConversationDetailsPanel {
 
         // Section header
         let header = Text::new(
-            "Environment details".to_string(),
+            i18n::t!("Environment details").to_string(),
             appearance.ui_font_family(),
             ui_font_size,
         )

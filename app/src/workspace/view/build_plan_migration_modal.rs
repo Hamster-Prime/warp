@@ -306,7 +306,7 @@ impl BuildPlanMigrationModal {
         let button_text = if self.is_updating {
             "Saving...".to_string()
         } else {
-            "Get Started".to_string()
+            i18n::t!("Get Started").to_string()
         };
 
         let button_font_color = self.is_updating.then_some(
@@ -354,7 +354,7 @@ impl BuildPlanMigrationModal {
         let theme = appearance.theme();
 
         let title = Self::create_text(
-            "Use auto-reload to never miss a beat.".to_string(),
+            i18n::t!("Use auto-reload to never miss a beat.").to_string(),
             appearance.ui_font_family(),
             16.,
             blended_colors::text_main(theme, blended_colors::neutral_2(theme)),
@@ -362,7 +362,7 @@ impl BuildPlanMigrationModal {
         );
 
         let description = Self::create_text(
-            "Auto-reload will automatically purchase credits at your selected rate when your account balance reaches 100 credits. Your monthly spend limit is set at your legacy plan's monthly cost and can be updated in Settings > Billing & usage.".to_string(),
+            i18n::t!("Auto-reload will automatically purchase credits at your selected rate when your account balance reaches 100 credits. Your monthly spend limit is set at your legacy plan's monthly cost and can be updated in Settings > Billing & usage.").to_string(),
             appearance.ui_font_family(),
             14.,
             blended_colors::text_sub(theme, blended_colors::neutral_4(theme)),
@@ -589,14 +589,14 @@ impl BuildPlanMigrationModal {
         );
 
         let reload_credits = Self::create_bullet_item(
-            "Access to Reload credits and volume-based discounts".to_string(),
+            i18n::t!("Access to Reload credits and volume-based discounts").to_string(),
             font_family,
             14.,
             text_color,
         );
 
         let byok = Self::create_bullet_item(
-            "Bring your own API key".to_string(),
+            i18n::t!("Bring your own API key").to_string(),
             font_family,
             14.,
             text_color,
@@ -618,7 +618,7 @@ impl BuildPlanMigrationModal {
             features_list.add_child(sso);
 
             let zdr = Self::create_bullet_item(
-                "Automatically enforced team-wide Zero Data Retention".to_string(),
+                i18n::t!("Automatically enforced team-wide Zero Data Retention").to_string(),
                 font_family,
                 14.,
                 text_color,

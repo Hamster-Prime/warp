@@ -343,7 +343,7 @@ impl AgentNotificationsModel {
                 let artifacts = self.flush_pending_artifacts(conversation_id);
                 self.add_notification(
                     title,
-                    "Task completed.".to_owned(),
+                    i18n::t!("Task completed.").to_string(),
                     NotificationCategory::Complete,
                     oz_agent,
                     origin,
@@ -357,7 +357,7 @@ impl AgentNotificationsModel {
                 let artifacts = self.flush_pending_artifacts(conversation_id);
                 self.add_notification(
                     title,
-                    "Task was cancelled.".to_owned(),
+                    i18n::t!("Task was cancelled.").to_string(),
                     NotificationCategory::Complete,
                     oz_agent,
                     origin,
@@ -384,7 +384,7 @@ impl AgentNotificationsModel {
                 let artifacts = self.flush_pending_artifacts(conversation_id);
                 self.add_notification(
                     title,
-                    "Something went wrong.".to_owned(),
+                    i18n::t!("Something went wrong.").to_string(),
                     NotificationCategory::Error,
                     oz_agent,
                     origin,

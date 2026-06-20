@@ -2572,7 +2572,7 @@ impl Workspace {
                     me.shown_staging_banner_count += 1;
                     me.toast_stack.update(ctx, |toast_stack, ctx| {
                         let toast = DismissibleToast::error(
-                            "Staging API call failed. Did your IP address change?".to_string(),
+                            i18n::t!("Staging API call failed. Did your IP address change?").to_string(),
                         )
                         .with_object_id("staging_access_blocked_toast".to_string());
                         toast_stack.add_ephemeral_toast(toast, ctx);
@@ -4298,7 +4298,7 @@ impl Workspace {
                     log::error!("Failed to load conversation from server");
                     me.toast_stack.update(ctx, |view, ctx| {
                         let new_toast = DismissibleToast::error(
-                            "Failed to load conversation data.".to_string(),
+                            i18n::t!("Failed to load conversation data.").to_string(),
                         );
                         view.add_ephemeral_toast(new_toast, ctx);
                     });
@@ -5569,7 +5569,7 @@ impl Workspace {
                     .unwrap_or_else(|| {
                         let title = configuration.title().trim();
                         if title.is_empty() {
-                            "Untitled pane".to_string()
+                            i18n::t!("Untitled pane").to_string()
                         } else {
                             title.to_string()
                         }
@@ -13065,7 +13065,7 @@ impl Workspace {
                 log::error!("Failed to load Oz conversation {conversation_id} for forking.");
                 WorkspaceToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     let toast = DismissibleToast::error(
-                        "Failed to load conversation for forking.".to_owned(),
+                        i18n::t!("Failed to load conversation for forking.").to_string(),
                     );
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });
@@ -13707,7 +13707,7 @@ impl Workspace {
                         let url = NOTIFICATIONS_TROUBLESHOOT_URL.to_string();
                         view.toast_stack.update(ctx, |toast_stack, ctx| {
                             let toast = DismissibleToast::error(
-                                "Warp doesn't have permission to send desktop notifications.".to_string(),
+                                i18n::t!("Warp doesn't have permission to send desktop notifications.").to_string(),
                             )
                             .with_link(ToastLink::new("Troubleshoot notifications".to_string()).with_href(url));
                             toast_stack.add_persistent_toast(toast, ctx);
@@ -14846,7 +14846,7 @@ impl Workspace {
         WorkspaceToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
             toast_stack.add_ephemeral_toast(
                 DismissibleToast::default(
-                    "Starting cloud environment for this session...".to_owned(),
+                    i18n::t!("Starting cloud environment for this session...").to_string(),
                 ),
                 window_id,
                 ctx,
@@ -17078,7 +17078,7 @@ impl Workspace {
             let window_id = ctx.window_id();
             WorkspaceToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                 let toast = DismissibleToast::default(
-                    "No terminal pane open. Open a new pane to attach as context.".to_owned(),
+                    i18n::t!("No terminal pane open. Open a new pane to attach as context.").to_string(),
                 );
                 toast_stack.add_ephemeral_toast(toast, window_id, ctx);
             });
@@ -17445,7 +17445,7 @@ impl Workspace {
                                     self.toast_stack.update(ctx, |view, ctx| {
                                         view.add_ephemeral_toast(
                                             DismissibleToast::error(
-                                                "This workflow is no longer available.".to_string(),
+                                                i18n::t!("This workflow is no longer available.").to_string(),
                                             ),
                                             ctx,
                                         );
@@ -17630,7 +17630,7 @@ impl Workspace {
                                             },
                                         ) {
                                             new_toast = DismissibleToast::success(
-                                                "Plan synced to your Warp Drive".to_string(),
+                                                i18n::t!("Plan synced to your Warp Drive").to_string(),
                                             )
                                             .with_object_id(object_id_clone)
                                             .with_link(
@@ -19133,7 +19133,7 @@ impl Workspace {
         let body = appearance
             .ui_builder()
             .wrappable_text(
-                "Ask Warp AI to explain errors, suggest commands or write scripts.".to_owned(),
+                i18n::t!("Ask Warp AI to explain errors, suggest commands or write scripts.").to_string(),
                 true,
             )
             .with_style(UiComponentStyles {
@@ -19530,7 +19530,7 @@ impl Workspace {
                         icons::Icon::Grid,
                         &self.mouse_states.agent_management_view_button,
                         WorkspaceAction::ToggleAgentManagementView,
-                        "Agent management panel".to_string(),
+                        i18n::t!("Agent management panel").to_string(),
                         keybinding_name_to_display_string(
                             "workspace:toggle_agent_management_view",
                             ctx,
@@ -19790,7 +19790,7 @@ impl Workspace {
             button
                 .with_tooltip(self.render_tab_bar_icon_button_tooltip(
                     appearance,
-                    "Code review panel".to_string(),
+                    i18n::t!("Code review panel").to_string(),
                     keybinding_name_to_display_string("workspace:toggle_right_panel", ctx),
                 ))
                 .build()
@@ -20849,7 +20849,7 @@ impl Workspace {
                 icons::Icon::Lightbulb,
                 &self.mouse_states.resource_center_icon,
                 WorkspaceAction::ToggleResourceCenter,
-                "Warp Essentials".to_string(),
+                i18n::t!("Warp Essentials").to_string(),
                 self.cached_keybindings[TOGGLE_RESOURCE_CENTER_KEYBINDING_NAME].clone(),
                 false,
                 false,
@@ -21437,7 +21437,7 @@ impl Workspace {
                         if is_incoming_version_past_current(new_version.soft_cutoff.as_deref()) {
                             VERSION_DEPRECATION_WITHOUT_PERMISSIONS_BANNER_TEXT.to_owned()
                         } else {
-                            "Warp was unable to launch the new installed version.".to_owned()
+                            i18n::t!("Warp was unable to launch the new installed version.").to_string()
                         };
 
                     Some(WorkspaceBannerFields {
@@ -24939,15 +24939,15 @@ impl TypedActionView for Workspace {
                             Ok(Ok(output)) => {
                                 let stderr = String::from_utf8_lossy(&output.stderr);
                                 log::error!("sample command failed ({}): {stderr}", output.status);
-                                "Failed to sample process (check logs)".to_string()
+                                i18n::t!("Failed to sample process (check logs)").to_string()
                             }
                             Ok(Err(io_err)) => {
                                 log::error!("Failed to run sample command: {io_err}");
-                                "Failed to sample process (check logs)".to_string()
+                                i18n::t!("Failed to sample process (check logs)").to_string()
                             }
                             Err(join_err) => {
                                 log::error!("Sample task panicked: {join_err}");
-                                "Failed to sample process (check logs)".to_string()
+                                i18n::t!("Failed to sample process (check logs)").to_string()
                             }
                         };
                         me.toast_stack.update(ctx, |view, ctx| {
@@ -25106,7 +25106,7 @@ impl TypedActionView for Workspace {
                         ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                             toast_stack.add_ephemeral_toast(
                                 DismissibleToast::error(
-                                    "Failed to delete conversation. Please exit the agent view and try again.".to_string(),
+                                    i18n::t!("Failed to delete conversation. Please exit the agent view and try again.").to_string(),
                                 ),
                                 window_id,
                                 ctx,

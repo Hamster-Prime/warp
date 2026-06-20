@@ -1325,7 +1325,7 @@ impl ServerModel {
         if !FeatureFlag::RemoteCodebaseIndexing.is_enabled() {
             return fragment_metadata_lookup_error_response(
                 FragmentMetadataLookupErrorCode::RemoteCodebaseIndexingNotEnabled,
-                "Remote codebase indexing is not enabled".to_string(),
+                i18n::t!("Remote codebase indexing is not enabled").to_string(),
                 None,
             );
         }
@@ -1392,7 +1392,7 @@ impl ServerModel {
                 }
                 None => missing_hashes.push(missing_fragment_metadata(
                     content_hash_string,
-                    "No fragment metadata found for content hash".to_string(),
+                    i18n::t!("No fragment metadata found for content hash").to_string(),
                 )),
             }
         }
@@ -3720,12 +3720,12 @@ fn fragment_metadata_lookup_error_response_from_error(
     let (code, message, current_root_hash) = match error {
         LocalFragmentMetadataLookupError::IndexNotFound => (
             FragmentMetadataLookupErrorCode::IndexNotFound,
-            "Codebase index not found".to_string(),
+            i18n::t!("Codebase index not found").to_string(),
             None,
         ),
         LocalFragmentMetadataLookupError::IndexNotSynced => (
             FragmentMetadataLookupErrorCode::IndexNotSynced,
-            "Codebase index has no synced root hash".to_string(),
+            i18n::t!("Codebase index has no synced root hash").to_string(),
             None,
         ),
         LocalFragmentMetadataLookupError::RootHashMismatch { requested, current } => (

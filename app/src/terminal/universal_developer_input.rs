@@ -84,11 +84,11 @@ impl AtContextMenuDisabledReason {
         match self {
             #[cfg(not(target_family = "wasm"))]
             AtContextMenuDisabledReason::NoObjectsAvailable => {
-                "No available objects in the current context.".to_string()
+                i18n::t!("No available objects in the current context.").to_string()
             }
             #[cfg(not(target_family = "wasm"))]
             AtContextMenuDisabledReason::SshWithoutRemoteServer => {
-                "Not supported in SSH sessions without remote server".to_string()
+                i18n::t!("Not supported in SSH sessions without remote server").to_string()
             }
             #[cfg(not(target_family = "wasm"))]
             AtContextMenuDisabledReason::Subshell => "Not supported in subshells".to_string(),
@@ -96,7 +96,7 @@ impl AtContextMenuDisabledReason {
             AtContextMenuDisabledReason::Wasm => "Requires a filesystem".to_string(),
             #[cfg(not(target_family = "wasm"))]
             AtContextMenuDisabledReason::DisabledInTerminalMode => {
-                "Disabled in terminal mode, re-enable in settings".to_string()
+                i18n::t!("Disabled in terminal mode, re-enable in settings").to_string()
             }
         }
     }

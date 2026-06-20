@@ -29,7 +29,7 @@ pub enum StartAgentOutcome {
 fn invalid_local_child_harness_error(harness_type: &str) -> String {
     let harness_name = harness_type.trim();
     if harness_name.is_empty() {
-        "Local child harness type is missing.".to_string()
+        i18n::t!("Local child harness type is missing.").to_string()
     } else {
         format!("Unsupported local child harness '{harness_name}'.")
     }
@@ -188,7 +188,7 @@ impl StartAgentExecutor {
                     "No agent identifier found for child conversation {child_conversation_id:?}"
                 );
                 let _ = pending.sender.try_send(StartAgentOutcome::Error(
-                    "Server did not assign an agent identifier".to_string(),
+                    i18n::t!("Server did not assign an agent identifier").to_string(),
                 ));
             }
         }
@@ -604,7 +604,7 @@ fn start_agent_error_message_for_status(
         ConversationStatus::Blocked { blocked_action } => {
             let blocked_action = blocked_action.trim();
             Some(if blocked_action.is_empty() {
-                "Child agent startup was blocked before initialization".to_string()
+                i18n::t!("Child agent startup was blocked before initialization").to_string()
             } else {
                 blocked_action.to_string()
             })

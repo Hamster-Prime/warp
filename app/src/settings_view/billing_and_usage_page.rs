@@ -1370,7 +1370,7 @@ impl BillingAndUsagePageView {
         let spend_limit_text = if let Some(cents) = usage_settings.max_monthly_spend_cents {
             format!("${:.2}", cents as f64 / 100.0)
         } else {
-            "Not set".to_string()
+            i18n::t!("Not set").to_string()
         };
 
         let info_icon = render_info_icon(
@@ -1380,7 +1380,7 @@ impl BillingAndUsagePageView {
                 on_click_action: None,
                 secondary_text: None,
                 tooltip_override_text: Some(
-                    "Sets the monthly overage spending limit beyond the plan amount".to_string(),
+                    i18n::t!("Sets the monthly overage spending limit beyond the plan amount").to_string(),
                 ),
             },
         );
@@ -1785,7 +1785,7 @@ impl BillingAndUsagePageView {
                 on_click_action: None,
                 secondary_text: None,
                 tooltip_override_text: Some(
-                    "Sets the monthly limit spent on add-on credits".to_string(),
+                    i18n::t!("Sets the monthly limit spent on add-on credits").to_string(),
                 ),
             },
         );
@@ -1915,7 +1915,7 @@ impl BillingAndUsagePageView {
         };
 
         let auto_reload_switch = Container::new(render_body_item::<BillingAndUsagePageAction>(
-            "Auto reload".into(),
+            i18n::t!("Auto reload").to_string(),
             None,
             Default::default(),
             Default::default(),
@@ -2278,7 +2278,7 @@ impl BillingAndUsagePageView {
         }
 
         let request_count_label = if workspace_is_delinquent_due_to_payment_issue {
-            "Restricted due to billing issue".to_string()
+            i18n::t!("Restricted due to billing issue").to_string()
         } else {
             match divisor {
                 Some(Divisor::Unlimited) => {
@@ -2944,7 +2944,7 @@ impl BillingAndUsagePageView {
             };
 
             usage.add_child(self.render_ai_usage_limit_row(
-                "Team total".to_string(),
+                i18n::t!("Team total").to_string(),
                 team_total_used,
                 team_divisor,
                 ai_request_usage_model.refresh_duration_to_string(),

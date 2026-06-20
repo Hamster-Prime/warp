@@ -131,7 +131,7 @@ impl DiffApplicationError {
             }
             DiffApplicationError::EmptyDiff => "No diffs could be applied.".to_string(),
             DiffApplicationError::RemoteFileOperationsUnsupported => {
-                "The file read/edit tool is not available on this remote session. Try using a different tool.".to_string()
+                i18n::t!("The file read/edit tool is not available on this remote session. Try using a different tool.").to_string()
             }
         }
     }

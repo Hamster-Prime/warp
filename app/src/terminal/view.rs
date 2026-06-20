@@ -827,7 +827,7 @@ impl NotificationsTrigger {
 
                 (
                     format!(" {status} after {duration_seconds}s"),
-                    "Latest output: ".to_string(),
+                    i18n::t!("Latest output: ").to_string(),
                 )
             }
             AgentTaskCompleted(command_succeeded) => {
@@ -840,7 +840,7 @@ impl NotificationsTrigger {
             NotificationsTrigger::NeedsAttention => (" blocked".to_string(), "".to_string()),
             PasswordPrompt => (
                 " is waiting for a password".to_string(),
-                "Latest output: ".to_string(),
+                i18n::t!("Latest output: ").to_string(),
             ),
         };
 
@@ -3865,7 +3865,7 @@ impl TerminalView {
                     FormattedTextFragment::hyperlink("More info", KNOWN_ISSUES_URL),
                 ]),
                 vec![BannerTextButton::new(
-                    "Show initialization block".to_string(),
+                    i18n::t!("Show initialization block").to_string(),
                     Rc::new(|event_ctx, _ctx, _position| {
                         event_ctx.dispatch_typed_action(BannerAction::<TerminalAction>::Action(
                             TerminalAction::ShowInitializationBlock,
@@ -3969,7 +3969,7 @@ impl TerminalView {
                         }),
                     ),
                     BannerTextButton::new(
-                        "Don't show again".to_string(),
+                        i18n::t!("Don't show again").to_string(),
                         Rc::new(|event_ctx, _ctx, _position| {
                             event_ctx.dispatch_typed_action(
                                 BannerAction::<TerminalAction>::Dismiss(DismissalType::Permanent),
@@ -7532,13 +7532,13 @@ impl TerminalView {
                         format!("Oz needs your permission to run `{command}`")
                     }
                     AIAgentActionType::ReadFiles(..) => {
-                        "Oz needs your permission to read files".to_string()
+                        i18n::t!("Oz needs your permission to read files").to_string()
                     }
                     AIAgentActionType::SearchCodebase(..) => {
-                        "Oz needs your permission to search your codebase".to_string()
+                        i18n::t!("Oz needs your permission to search your codebase").to_string()
                     }
                     AIAgentActionType::RequestFileEdits { .. } => {
-                        "Oz needs your permission to edit a file".to_string()
+                        i18n::t!("Oz needs your permission to edit a file").to_string()
                     }
                     AIAgentActionType::WriteToLongRunningShellCommand { .. } => {
                         "Oz needs your permission to interact with a running shell command"
@@ -14187,7 +14187,7 @@ impl TerminalView {
 
             if is_repo {
                 (
-                    "Create environment using the current working dir as repo".to_string(),
+                    i18n::t!("Create environment using the current working dir as repo").to_string(),
                     true,
                 )
             } else {
@@ -14527,7 +14527,7 @@ fn build_onboarding_keybindings(ctx: &AppContext) -> OnboardingKeybindings {
 /// Builds the context-menu label for forking an AI conversation from a given query.
 fn fork_label_for_query(query: &str) -> String {
     if query.is_empty() {
-        "Fork from last query".to_string()
+        i18n::t!("Fork from last query").to_string()
     } else {
         let first_line = query.lines().next().unwrap_or(query).trim();
         let chars: Vec<char> = first_line.chars().take(21).collect();
@@ -21001,7 +21001,7 @@ impl TerminalView {
                     let password_trigger = NotificationsTrigger::NeedsAttention;
                     let notification_content = password_trigger.create_notification_content(
                         active_block.command_to_string(),
-                        "Command is waiting for a password".to_string(),
+                        i18n::t!("Command is waiting for a password").to_string(),
                     );
                     ctx.emit(Event::SendNotification(notification_content));
                     send_telemetry_from_ctx!(
@@ -23281,9 +23281,9 @@ impl TerminalView {
                         && input_mode.is_inverted_blocklist()
                         && is_long_running_command
                     {
-                        "Lock scrolling at bottom of block".to_string()
+                        i18n::t!("Lock scrolling at bottom of block").to_string()
                     } else {
-                        "Jump to the bottom of this block".to_string()
+                        i18n::t!("Jump to the bottom of this block").to_string()
                     };
 
                     let tool_tip = appearance
@@ -25777,15 +25777,15 @@ impl TypedActionView for TerminalView {
                 WarpA11yRole::TextRole,
             )),
             ScrollToBottomOfSelectedBlocks => Custom(AccessibilityContent::new_without_help(
-                "Scrolled to bottom of selected block".to_string(),
+                i18n::t!("Scrolled to bottom of selected block").to_string(),
                 WarpA11yRole::TextRole,
             )),
             ScrollToTopOfSelectedBlocks => Custom(AccessibilityContent::new_without_help(
-                "Scrolled to top of selected block".to_string(),
+                i18n::t!("Scrolled to top of selected block").to_string(),
                 WarpA11yRole::TextRole,
             )),
             ScrollToBottomOfOverhangingBlock(_) => Custom(AccessibilityContent::new_without_help(
-                "Scrolled to bottom of bottommost visible block".to_string(),
+                i18n::t!("Scrolled to bottom of bottommost visible block").to_string(),
                 WarpA11yRole::TextRole,
             )),
             CopyOutputs => {
@@ -25927,11 +25927,11 @@ impl TypedActionView for TerminalView {
             OpenCodeInWarp { .. } => ActionAccessibilityContent::from_debug(),
             OpenInWarpBanner(action) => self.open_in_warp_banner_accessibility_content(*action),
             OpenAIBlockAttachedBlocksMenu { .. } => Custom(AccessibilityContent::new_without_help(
-                "Open list of blocks attached as context to this AI query.".to_owned(),
+                i18n::t!("Open list of blocks attached as context to this AI query.").to_string(),
                 WarpA11yRole::PopoverRole,
             )),
             OpenAIBlockOverflowMenu { .. } => Custom(AccessibilityContent::new_without_help(
-                "Open overflow menu with copy options for this AI block.".to_owned(),
+                i18n::t!("Open overflow menu with copy options for this AI block.").to_string(),
                 WarpA11yRole::PopoverRole,
             )),
             RewindAIConversation { .. } => Custom(AccessibilityContent::new_without_help(
@@ -25940,15 +25940,15 @@ impl TypedActionView for TerminalView {
                 WarpA11yRole::ButtonRole,
             )),
             ExecuteRewindAIConversation { .. } => Custom(AccessibilityContent::new_without_help(
-                "Execute rewind to before this point in the AI conversation.".to_owned(),
+                i18n::t!("Execute rewind to before this point in the AI conversation.").to_string(),
                 WarpA11yRole::ButtonRole,
             )),
             SelectAIAttachedBlock(_) => Custom(AccessibilityContent::new_without_help(
-                "Click on a block attached as context to this AI query.".to_owned(),
+                i18n::t!("Click on a block attached as context to this AI query.").to_string(),
                 WarpA11yRole::ButtonRole,
             )),
             PickRepoToOpen => Custom(AccessibilityContent::new_without_help(
-                "Use file picker to select a git repository".to_owned(),
+                i18n::t!("Use file picker to select a git repository").to_string(),
                 WarpA11yRole::PopoverRole,
             )),
             #[cfg(feature = "voice_input")]
@@ -26993,7 +26993,7 @@ impl TypedActionView for TerminalView {
                             ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                                 toast_stack.add_ephemeral_toast(
                                     DismissibleToast::error(
-                                        "Bundled skills cannot be edited".to_string(),
+                                        i18n::t!("Bundled skills cannot be edited").to_string(),
                                     ),
                                     window_id,
                                     ctx,
@@ -27010,7 +27010,7 @@ impl TypedActionView for TerminalView {
                     ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                         toast_stack.add_ephemeral_toast(
                             DismissibleToast::error(
-                                "Editing skills is not supported in this build".to_string(),
+                                i18n::t!("Editing skills is not supported in this build").to_string(),
                             ),
                             window_id,
                             ctx,

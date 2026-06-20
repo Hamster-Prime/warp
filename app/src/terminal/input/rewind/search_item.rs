@@ -141,7 +141,7 @@ impl SearchItem for RewindSearchItem {
         let changes_element: Box<dyn Element> = if self.is_current {
             // "Current" item shows "No code to be restored"
             Text::new_inline(
-                "No code to be restored".to_string(),
+                i18n::t!("No code to be restored").to_string(),
                 appearance.ui_font_family(),
                 secondary_font_size,
             )
@@ -174,7 +174,7 @@ impl SearchItem for RewindSearchItem {
             row.finish()
         } else {
             Text::new_inline(
-                "No code to be restored".to_string(),
+                i18n::t!("No code to be restored").to_string(),
                 appearance.ui_font_family(),
                 secondary_font_size,
             )
@@ -218,7 +218,7 @@ impl SearchItem for RewindSearchItem {
 
     fn accessibility_label(&self) -> String {
         if self.is_current {
-            "Current state (no rewind)".to_string()
+            i18n::t!("Current state (no rewind)").to_string()
         } else if self.has_code_changes() {
             format!(
                 "Rewind to: {} (+{} -{})",

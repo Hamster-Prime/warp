@@ -663,7 +663,7 @@ impl ShareBlockModal {
             TextAndIconAlignment::TextFirst,
             if let ShareRequestState::Pending(pending_share_type) = self.request_state {
                 if pending_share_type == share_type {
-                    "Creating block...".to_string()
+                    i18n::t!("Creating block...").to_string()
                 } else {
                     text_label.to_string()
                 }
@@ -870,7 +870,7 @@ impl ShareBlockModal {
             if link_generated {
                 self.block_title_editor.as_ref(app).buffer_text(app)
             } else {
-                "Share block".to_string()
+                i18n::t!("Share block").to_string()
             },
             appearance.ui_font_family(),
             24.,

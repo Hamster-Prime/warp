@@ -101,7 +101,7 @@ pub fn human_readable_approx_duration(duration: Duration, sentence_case: bool) -
         return format!("{} min ago", minutes as i32);
     }
     if sentence_case {
-        "Just now".to_owned()
+        i18n::t!("Just now").to_string()
     } else {
         "just now".to_owned()
     }
@@ -124,7 +124,7 @@ pub fn format_elapsed_since(created_at: instant::Instant) -> String {
     let secs = created_at.elapsed().as_secs();
 
     if secs < 60 {
-        "Just now".to_string()
+        i18n::t!("Just now").to_string()
     } else if secs < 3600 {
         let mins = secs / 60;
         if mins == 1 {

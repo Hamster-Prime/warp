@@ -224,7 +224,7 @@ where
     let on_accent_bg = bg.is_some();
 
     let label = Text::new_inline(
-        "Select directory".to_string(),
+        i18n::t!("Select directory").to_string(),
         appearance.ui_font_family(),
         12.,
     )
@@ -356,7 +356,7 @@ where
             if state.is_hovered() {
                 let tooltip = Container::new(
                     Text::new_inline(
-                        "Select a git repository to enable worktree support".to_string(),
+                        i18n::t!("Select a git repository to enable worktree support").to_string(),
                         font_family,
                         12.,
                     )

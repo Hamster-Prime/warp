@@ -741,7 +741,7 @@ impl AuthSecretFtuxView {
 
         let main_text = {
             let description = if self.current_type_info().is_some() {
-                "Enter your credentials below.".to_string()
+                i18n::t!("Enter your credentials below.").to_string()
             } else {
                 let display_name = harness_display::display_name(self.harness);
                 format!("Select an API key type to use {display_name} in the cloud with Oz.")
@@ -753,7 +753,7 @@ impl AuthSecretFtuxView {
         };
 
         let privacy_text = Text::new_inline(
-            "Your credentials are encrypted end-to-end. ".to_string(),
+            i18n::t!("Your credentials are encrypted end-to-end. ").to_string(),
             font_family,
             TYPE_DESCRIPTION_FONT_SIZE,
         )
@@ -874,7 +874,7 @@ impl AuthSecretFtuxView {
         let theme = appearance.theme();
         let label_color = internal_colors::text_sub(theme, theme.surface_1());
         let label = Text::new_inline(
-            "Share with team".to_string(),
+            i18n::t!("Share with team").to_string(),
             appearance.ui_font_family(),
             TYPE_DESCRIPTION_FONT_SIZE,
         )

@@ -348,7 +348,7 @@ impl SearchItem for SkillSearchItem {
             let badge_text_color =
                 inline_styles::disabled_text_color(theme, background_color.into());
             let badge_text = Text::new_inline(
-                "Project Skill".to_string(),
+                i18n::t!("Project Skill").to_string(),
                 appearance.ui_font_family(),
                 badge_font_size,
             )

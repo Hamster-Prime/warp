@@ -393,7 +393,7 @@ impl InitStepBlock {
                 false,
             ),
             simple_navigation_button(
-                "Skip for now.".to_string(),
+                i18n::t!("Skip for now.").to_string(),
                 mouse_states.skip_button.clone(),
                 InitProjectBlockAction::SkipLanguageServers,
                 false,
@@ -407,13 +407,13 @@ impl InitStepBlock {
     ) -> Vec<KeyboardNavigableButtonBuilder> {
         vec![
             simple_navigation_button(
-                "Yes, index this codebase.".to_string(),
+                i18n::t!("Yes, index this codebase.").to_string(),
                 mouse_states.index_button.clone(),
                 InitProjectBlockAction::IndexCodebase(pwd_path.to_path_buf()),
                 false,
             ),
             simple_navigation_button(
-                "Skip for now.".to_string(),
+                i18n::t!("Skip for now.").to_string(),
                 mouse_states.skip_button.clone(),
                 InitProjectBlockAction::SkipIndex,
                 false,
@@ -439,13 +439,13 @@ impl InitStepBlock {
         }
 
         buttons.push(simple_navigation_button(
-            "Generate AGENTS.md file".to_string(),
+            i18n::t!("Generate AGENTS.md file").to_string(),
             mouse_states.generate_button.clone(),
             InitProjectBlockAction::GenerateRules,
             false,
         ));
         buttons.push(simple_navigation_button(
-            "Skip AGENTS.md generation for now".to_string(),
+            i18n::t!("Skip AGENTS.md generation for now").to_string(),
             mouse_states.skip_button.clone(),
             InitProjectBlockAction::SkipRules,
             false,
@@ -459,13 +459,13 @@ impl InitStepBlock {
     ) -> Vec<KeyboardNavigableButtonBuilder> {
         vec![
             simple_navigation_button(
-                "Create an environment".to_string(),
+                i18n::t!("Create an environment").to_string(),
                 mouse_states.create_button.clone(),
                 InitProjectBlockAction::StartCreateEnvironment,
                 false,
             ),
             simple_navigation_button(
-                "Skip for now".to_string(),
+                i18n::t!("Skip for now").to_string(),
                 mouse_states.skip_button.clone(),
                 InitProjectBlockAction::SkipCreateEnvironment,
                 false,
@@ -788,14 +788,14 @@ impl InitStepBlock {
                 servers_to_install,
             } => {
                 let label = if !servers_to_install.is_empty() {
-                    "Started installation for language support".to_string()
+                    i18n::t!("Started installation for language support").to_string()
                 } else if enabled_servers.len() == 1 {
                     format!(
                         "{} language support enabled",
                         enabled_servers[0].language_name()
                     )
                 } else {
-                    "Language support enabled".to_string()
+                    i18n::t!("Language support enabled").to_string()
                 };
                 Self::render_success_completion(&label, app)
             }

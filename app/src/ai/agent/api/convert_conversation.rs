@@ -713,7 +713,7 @@ pub(crate) fn convert_tool_call_result_to_input(
                     UploadArtifactResult::Error(error.message.clone())
                 }
                 None => UploadArtifactResult::Error(
-                    "Upload artifact tool call returned no result".to_string(),
+                    i18n::t!("Upload artifact tool call returned no result").to_string(),
                 ),
             };
 

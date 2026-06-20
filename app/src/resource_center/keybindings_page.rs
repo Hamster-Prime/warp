@@ -384,7 +384,7 @@ impl KeybindingsView {
         Container::new(
             column
                 .with_child(self.render_text(
-                    "Go to settings > keyboard shortcuts to configure custom keybindings".into(),
+                    i18n::t!("Go to settings > keyboard shortcuts to configure custom keybindings").to_string(),
                     None,
                     appearance,
                 ))

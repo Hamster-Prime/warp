@@ -1588,7 +1588,7 @@ impl WorkflowView {
         // Block saving if secrets are detected in the workflow when secret redaction is enabled.
         if self.workflow_contains_secrets(ctx) {
             self.display_error_toast(
-                "This workflow cannot be saved because it contains secrets".to_string(),
+                i18n::t!("This workflow cannot be saved because it contains secrets").to_string(),
                 ctx,
             );
             return;
@@ -1733,9 +1733,9 @@ impl WorkflowView {
         crate::workspace::ToastStack::handle(ctx).update(ctx, |stack, ctx| {
             stack.add_ephemeral_toast(
                 DismissibleToast::success(if self.is_for_agent_mode {
-                    "Prompt copied.".to_string()
+                    i18n::t!("Prompt copied.").to_string()
                 } else {
-                    "Command copied.".to_string()
+                    i18n::t!("Command copied.").to_string()
                 }),
                 window_id,
                 ctx,
@@ -2450,7 +2450,7 @@ impl WorkflowView {
                     .finish();
 
                 let button_with_tool_tip = appearance.ui_builder().tool_tip_on_element(
-                    "Generate a title, descriptions, or parameters with Warp AI".to_string(),
+                    i18n::t!("Generate a title, descriptions, or parameters with Warp AI").to_string(),
                     self.ui_state_handles.ai_assist_tool_tip.clone(),
                     rendered_button,
                     ParentAnchor::TopMiddle,
@@ -2654,7 +2654,7 @@ impl WorkflowView {
                                         pane.display_upgrade_error(Some(team.uid), current_user_id, ctx);
                                     } else {
                                         pane.display_error_toast(
-                                            "Looks like you're out of AI credits. Contact a team admin to upgrade for more credits.".to_string(),
+                                            i18n::t!("Looks like you're out of AI credits. Contact a team admin to upgrade for more credits.").to_string(),
                                             ctx,
                                         );
                                     }

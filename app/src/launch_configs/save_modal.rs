@@ -529,7 +529,7 @@ impl LaunchConfigSaveModal {
                 appearance
                     .ui_builder()
                     .link(
-                        "Link to Documentation".to_string(),
+                        i18n::t!("Link to Documentation").to_string(),
                         Some(
                             "https://docs.warp.dev/terminal/sessions/launch-configurations"
                                 .to_string(),
@@ -564,7 +564,7 @@ impl LaunchConfigSaveModal {
                     appearance,
                     match failure_type {
                         FailureType::FileAlreadyExists => {
-                            "Failed to save. A launch configuration with the same name already exists.".to_string()
+                            i18n::t!("Failed to save. A launch configuration with the same name already exists.").to_string()
                         }
                         FailureType::Other => "An issue was encountered while saving.".to_string(),
                     },

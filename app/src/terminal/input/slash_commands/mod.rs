@@ -497,7 +497,7 @@ impl Input {
                     .filter(|name| !name.is_empty())
                 else {
                     show_error_toast(
-                        "Please provide a tab name after /rename-tab".to_owned(),
+                        i18n::t!("Please provide a tab name after /rename-tab").to_string(),
                         ctx,
                     );
                     return true;
@@ -671,7 +671,7 @@ impl Input {
                 #[cfg(not(feature = "local_fs"))]
                 {
                     show_error_toast(
-                        "The /open-file command is not supported in this build".to_owned(),
+                        i18n::t!("The /open-file command is not supported in this build").to_string(),
                         ctx,
                     );
                     return true;
@@ -713,7 +713,7 @@ impl Input {
                 #[cfg(target_family = "wasm")]
                 {
                     show_error_toast(
-                        "Export conversation to file unsupported in web".to_owned(),
+                        i18n::t!("Export conversation to file unsupported in web").to_string(),
                         ctx,
                     );
                     return true;
@@ -911,17 +911,17 @@ impl Input {
                     .active_conversation(self.terminal_view_id);
                 if conversation.is_none() {
                     show_error_toast(
-                        "Cannot show conversation cost: no active conversation".to_owned(),
+                        i18n::t!("Cannot show conversation cost: no active conversation").to_string(),
                         ctx,
                     );
                 } else if conversation.is_some_and(|c| c.is_empty()) {
                     show_error_toast(
-                        "Cannot show conversation cost: conversation is empty".to_owned(),
+                        i18n::t!("Cannot show conversation cost: conversation is empty").to_string(),
                         ctx,
                     );
                 } else if conversation.is_some_and(|c| !c.status().is_done()) {
                     show_error_toast(
-                        "Cannot show conversation cost: conversation is in progress".to_owned(),
+                        i18n::t!("Cannot show conversation cost: conversation is in progress").to_string(),
                         ctx,
                     );
                 } else {
@@ -969,7 +969,7 @@ impl Input {
                     // back to `&` compose mode here; the slash-command flow
                     // does not because it has no compose-draft state to seed.
                     show_error_toast(
-                        "Nothing to hand off — start a conversation first.".to_owned(),
+                        i18n::t!("Nothing to hand off — start a conversation first.").to_string(),
                         ctx,
                     );
                 }

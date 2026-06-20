@@ -46,7 +46,7 @@ fn aws_profile_reference_for_message(profile: &str, capitalize_first_word: bool)
     let profile = profile.trim();
     if profile.is_empty() {
         if capitalize_first_word {
-            "The default AWS profile".to_string()
+            i18n::t!("The default AWS profile").to_string()
         } else {
             "the default AWS profile".to_string()
         }
@@ -63,7 +63,7 @@ fn user_facing_aws_credentials_error_message(err: &CredentialsError, profile: &s
             aws_profile_reference_for_message(profile, false)
         ),
         CredentialsError::ProviderTimedOut(_) => {
-            "Timed out while loading AWS credentials. Refresh and try again.".to_string()
+            i18n::t!("Timed out while loading AWS credentials. Refresh and try again.").to_string()
         }
         CredentialsError::InvalidConfiguration(_) => format!(
             "{} is invalid or incomplete in your local AWS configuration. Update your AWS profile settings and credentials, then refresh.",

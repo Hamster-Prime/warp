@@ -524,7 +524,7 @@ impl LoginSlideView {
             .with_child(
                 ui_builder
                     .link(
-                        "Terms of Service".into(),
+                        i18n::t!("Terms of Service").to_string(),
                         Some(TOS_URL.into()),
                         None,
                         self.tos_mouse_state.clone(),
@@ -550,7 +550,7 @@ impl LoginSlideView {
             .with_child(
                 ui_builder
                     .link(
-                        "Privacy Settings".into(),
+                        i18n::t!("Privacy Settings").to_string(),
                         None,
                         Some(Box::new(|ctx| {
                             ctx.dispatch_typed_action(LoginSlideAction::ShowPrivacySettings);
@@ -774,7 +774,7 @@ impl LoginSlideView {
                 .with_child(
                     ui_builder
                         .link(
-                            "Click here to paste your token from the browser".into(),
+                            i18n::t!("Click here to paste your token from the browser").to_string(),
                             None,
                             Some(Box::new(|ctx| {
                                 ctx.dispatch_typed_action(LoginSlideAction::EnterToken);

@@ -125,33 +125,33 @@ impl TipsView {
 
         let tip_items = vec![
             TipItem::new(
-                "Command Palette".to_string(),
-                "Easily discover everything you can do in Warp without your hands leaving the keyboard.".to_string(),
+                i18n::t!("Command Palette").to_string(),
+                i18n::t!("Easily discover everything you can do in Warp without your hands leaving the keyboard.").to_string(),
                 TipAction::CommandPalette,
                 ctx,
             ),
             TipItem::new(
-                "Split Pane".to_string(),
+                i18n::t!("Split Pane").to_string(),
                 "Split tabs into multiple panes to make your ideal layout."
                     .to_string(),
                 TipAction::SplitPane,
                 ctx,
             ),
             TipItem::new(
-                "History Search".to_string(),
-                "Find, edit and re-run previously executed commands.".to_string(),
+                i18n::t!("History Search").to_string(),
+                i18n::t!("Find, edit and re-run previously executed commands.").to_string(),
                 TipAction::HistorySearch,
                 ctx,
             ),
             TipItem::new(
                 "AI Command Search".to_string(),
-                "Generate shell commands with natural language.".to_string(),
+                i18n::t!("Generate shell commands with natural language.").to_string(),
                 TipAction::AiCommandSearch,
                 ctx,
             ),
             TipItem::new(
-                "Theme Picker".to_string(),
-                "Make Warp your own by choosing a built-in theme. Or create your own.".to_string(),
+                i18n::t!("Theme Picker").to_string(),
+                i18n::t!("Make Warp your own by choosing a built-in theme. Or create your own.").to_string(),
                 TipAction::ThemePicker,
                 ctx,
             ),

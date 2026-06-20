@@ -99,7 +99,7 @@ impl View for DeleteAuthSecretConfirmationDialog {
         );
 
         let dialog = Dialog::new(
-            "Delete secret".to_string(),
+            i18n::t!("Delete secret").to_string(),
             Some(description),
             dialog_styles(appearance),
         )

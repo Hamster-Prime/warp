@@ -170,7 +170,7 @@ impl ChipDisabledReason {
         match self {
             Self::RequiresLocalSession => "Requires a local session".to_string(),
             Self::RequiresExecutable { command } if command == "gh" => {
-                "Requires the GitHub CLI".to_string()
+                i18n::t!("Requires the GitHub CLI").to_string()
             }
             Self::RequiresExecutable { command } => format!("Requires the `{command}` command"),
         }

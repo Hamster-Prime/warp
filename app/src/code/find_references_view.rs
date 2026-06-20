@@ -496,7 +496,7 @@ fn render_header(
 
     // "Showing X references" title
     let title_text = if total_refs == 1 {
-        "Showing 1 reference".to_string()
+        i18n::t!("Showing 1 reference").to_string()
     } else {
         format!("Showing {total_refs} references")
     };

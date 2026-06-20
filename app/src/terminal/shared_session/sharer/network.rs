@@ -1719,7 +1719,7 @@ pub fn session_terminated_reason_string(
             format!("Session limit ({max_bytes}) exceeded. Please reshare to continue.")
         }
         SessionTerminatedReason::InternalServerError { .. } => {
-            "Session ended due to an internal error. Please try sharing again.".to_string()
+            i18n::t!("Session ended due to an internal error. Please try sharing again.").to_string()
         }
     }
 }

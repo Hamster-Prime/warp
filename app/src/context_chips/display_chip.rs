@@ -811,7 +811,7 @@ impl DisplayChip {
                             "Uninstall existing Node.js installation and install nvm for me"
                                 .to_string()
                         } else {
-                            "Install nvm for me".to_string()
+                            i18n::t!("Install nvm for me").to_string()
                         }));
                         me.close_node_version_popup(ctx);
                     }
@@ -833,7 +833,7 @@ impl DisplayChip {
 
         let quota_reset_popup = ctx.add_typed_action_view(|_| {
             FeaturePopup::alert_icon(NewFeaturePopupLabel::FromString(
-                "Monthly AI credits reset!".to_string(),
+                i18n::t!("Monthly AI credits reset!").to_string(),
             ))
         });
 

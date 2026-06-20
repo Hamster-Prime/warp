@@ -174,7 +174,7 @@ impl View for UndoCloseView {
         let mut column = Flex::column()
             .with_cross_axis_alignment(CrossAxisAlignment::Stretch)
             .with_child(render_body_item::<Action>(
-                "Enable reopening of closed sessions".into(),
+                i18n::t!("Enable reopening of closed sessions").to_string(),
                 None,
                 LocalOnlyIconState::for_setting(
                     UndoCloseEnabled::storage_key(),

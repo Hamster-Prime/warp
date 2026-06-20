@@ -255,7 +255,7 @@ impl AuthViewBody {
             .with_child(
                 ui_builder
                     .link(
-                        "Click here to paste your token from the browser".into(),
+                        i18n::t!("Click here to paste your token from the browser").to_string(),
                         None,
                         Some(Box::new(|ctx| {
                             ctx.dispatch_typed_action(AuthViewBodyAction::EnterToken);
@@ -336,7 +336,7 @@ impl AuthViewBody {
                 .with_child(
                     ui_builder
                         .link(
-                            "Terms of Service".into(),
+                            i18n::t!("Terms of Service").to_string(),
                             Some(TOS_URL.into()),
                             None,
                             self.mouse_state_handles.tos_mouse_state_handle.clone(),
@@ -356,7 +356,7 @@ impl AuthViewBody {
             Align::new(
                 ui_builder
                     .link(
-                        "Privacy Settings".into(),
+                        i18n::t!("Privacy Settings").to_string(),
                         None,
                         Some(Box::new(|ctx| {
                             ctx.dispatch_typed_action(AuthViewBodyAction::ShowOverlay(
@@ -394,7 +394,7 @@ impl AuthViewBody {
                         .with_child(
                             ui_builder
                                 .link(
-                                    "Privacy Settings".into(),
+                                    i18n::t!("Privacy Settings").to_string(),
                                     None,
                                     Some(Box::new(|ctx| {
                                         ctx.dispatch_typed_action(AuthViewBodyAction::ShowOverlay(
@@ -493,7 +493,7 @@ impl AuthViewBody {
             .with_child(
                 ui_builder
                     .link(
-                        "Sign in".into(),
+                        i18n::t!("Sign in").to_string(),
                         None,
                         Some(Box::new(|ctx| {
                             ctx.dispatch_typed_action(AuthViewBodyAction::Login);
@@ -521,7 +521,7 @@ impl AuthViewBody {
                 .with_child(
                     ui_builder
                         .link(
-                            "Skip for now".into(),
+                            i18n::t!("Skip for now").to_string(),
                             None,
                             Some(Box::new(|ctx| {
                                 ctx.dispatch_typed_action(AuthViewBodyAction::InitiateLoginLater);
@@ -566,7 +566,7 @@ impl AuthViewBody {
                         .with_child(
                             ui_builder
                                 .link(
-                                    "Yes, skip login".into(),
+                                    i18n::t!("Yes, skip login").to_string(),
                                     None,
                                     Some(Box::new(|ctx| {
                                         ctx.dispatch_typed_action(AuthViewBodyAction::LoginLater);

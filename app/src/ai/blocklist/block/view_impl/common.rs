@@ -831,7 +831,7 @@ fn render_stop_button(props: ButtonProps, appearance: &Appearance) -> Box<dyn El
         appearance,
         stop_icon,
         props.keystroke,
-        "Stop agent task".to_string(),
+        i18n::t!("Stop agent task").to_string(),
         props.is_active,
         false,
         |ctx: &mut EventContext<'_>| {
@@ -2176,7 +2176,7 @@ fn render_mermaid_diagram_section<A: Action>(
         .finish();
 
     render_visual_card(
-        "Mermaid diagram".to_string(),
+        i18n::t!("Mermaid diagram").to_string(),
         Icon::Dataflow,
         Container::new(mermaid_canvas)
             .with_background(theme.background())
@@ -3065,7 +3065,7 @@ pub fn render_failed_output(props: FailedOutputProps, app: &AppContext) -> Box<d
             }
         }
         RenderableAIError::ServerOverloaded => {
-            "Warp is currently overloaded. Please try again later.".to_string()
+            i18n::t!("Warp is currently overloaded. Please try again later.").to_string()
         }
         RenderableAIError::InternalWarpError => {
             format!("{ERROR_APOLOGY_TEXT}\n\n{INTERNAL_WARP_ERROR}")
@@ -3409,7 +3409,7 @@ pub(crate) fn render_debug_footer<V: View>(
     })
     .finish();
     let copy_button_with_tooltip = appearance.ui_builder().tool_tip_on_element(
-        "Copy debug ID".to_string(),
+        i18n::t!("Copy debug ID").to_string(),
         props.debug_copy_button_handle,
         copy_button,
         warpui::elements::ParentAnchor::TopRight,

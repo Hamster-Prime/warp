@@ -205,9 +205,9 @@ where
     .with_tooltip(move || {
         ui_builder
             .tool_tip(if is_sidebar_expanded {
-                "Hide file navigation".to_owned()
+                i18n::t!("Hide file navigation").to_string()
             } else {
-                "Show file navigation".to_owned()
+                i18n::t!("Show file navigation").to_string()
             })
             .build()
             .finish()
@@ -275,7 +275,7 @@ pub fn get_discard_button_disabled_tooltip(git_operation_blocked: bool) -> Strin
         "Cannot discard changes while a git operation (merge, rebase, etc.) is in progress"
             .to_string()
     } else {
-        "No changes to discard".to_string()
+        i18n::t!("No changes to discard").to_string()
     }
 }
 
@@ -469,14 +469,14 @@ impl DiscardOperationType {
     pub fn title(&self) -> String {
         match self {
             DiscardOperationType::AllUncommittedChanges => {
-                "Discard uncommitted changes?".to_string()
+                i18n::t!("Discard uncommitted changes?").to_string()
             }
             DiscardOperationType::FileUncommittedChanges => {
-                "Discard all uncommitted changes to file?".to_string()
+                i18n::t!("Discard all uncommitted changes to file?").to_string()
             }
             DiscardOperationType::AllChangesAgainstBranch(_) => "Discard all changes?".to_string(),
             DiscardOperationType::FileChangesAgainstBranch(_) => {
-                "Discard all changes to file?".to_string()
+                i18n::t!("Discard all changes to file?").to_string()
             }
         }
     }
@@ -2597,7 +2597,7 @@ impl CodeReviewView {
         let discard_tooltip_text = if git_operation_blocked {
             get_discard_button_disabled_tooltip(git_operation_blocked)
         } else {
-            "Discard changes".to_string()
+            i18n::t!("Discard changes").to_string()
         };
 
         let mut file_states = vec![];
@@ -5634,7 +5634,7 @@ impl CodeReviewView {
                 let toast_id = self.revert_hunk_toast_id(ctx);
                 crate::workspace::ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     let toast = crate::view_components::DismissibleToast::default(
-                        "Diff removed".to_string(),
+                        i18n::t!("Diff removed").to_string(),
                     )
                     .with_object_id(toast_id)
                     .with_action_button(self.undo_action_button.clone());
@@ -5736,7 +5736,7 @@ impl CodeReviewView {
                 let toast_id = self.attach_context_not_allowed_toast_id(ctx);
                 crate::workspace::ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     let toast = crate::view_components::DismissibleToast::default(
-                        "Cannot attach context when terminal is running".to_string(),
+                        i18n::t!("Cannot attach context when terminal is running").to_string(),
                     )
                     .with_object_id(toast_id);
                     toast_stack.add_ephemeral_toast(toast, self.window_id, ctx);
@@ -5844,7 +5844,7 @@ impl CodeReviewView {
                 let toast_id = self.attach_diff_not_allowed_toast_id(ctx);
                 ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     let toast = DismissibleToast::default(
-                        "Cannot attach diff while input is not available".to_string(),
+                        i18n::t!("Cannot attach diff while input is not available").to_string(),
                     )
                     .with_object_id(toast_id);
                     toast_stack.add_ephemeral_toast(toast, self.window_id, ctx);

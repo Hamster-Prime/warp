@@ -302,7 +302,7 @@ fn render_buttons<A: Action + Clone + Copy + 'static>(
     );
 
     let save_button = render_primary_button(
-        "Save changes".to_string(),
+        i18n::t!("Save changes").to_string(),
         ButtonVariant::Accent,
         !config.is_dirty,
         &config.mouse_handles.save,

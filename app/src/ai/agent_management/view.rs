@@ -246,7 +246,7 @@ impl AgentManagementView {
         });
 
         let setup_guide_button = CompactibleActionButton::new(
-            "Get started".to_string(),
+            i18n::t!("Get started").to_string(),
             None,
             ButtonSize::Small,
             AgentManagementViewAction::ToggleSetupGuide,
@@ -321,7 +321,7 @@ impl AgentManagementView {
         });
 
         let new_agent_button = CompactibleActionButton::new(
-            "New agent".to_string(),
+            i18n::t!("New agent").to_string(),
             None,
             ButtonSize::Small,
             AgentManagementViewAction::ShowAgentTypeSelector,

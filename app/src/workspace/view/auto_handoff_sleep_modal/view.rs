@@ -145,7 +145,7 @@ impl AutoHandoffSleepModal {
         let text_color: ColorU = red.into();
         let background_color = appearance.theme().ansi_overlay_2(red);
         let text = Text::new_inline(
-            "Run Connection Lost".to_string(),
+            i18n::t!("Run Connection Lost").to_string(),
             appearance.ui_font_family(),
             14.,
         )

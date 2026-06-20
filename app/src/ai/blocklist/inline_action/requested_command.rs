@@ -774,7 +774,7 @@ impl RequestedCommandView {
                             appearance
                                 .ui_builder()
                                 .link(
-                                    "Manage command execution setting".into(),
+                                    i18n::t!("Manage command execution setting").to_string(),
                                     None,
                                     Some(Box::new(move |ctx| {
                                         ctx.dispatch_typed_action(

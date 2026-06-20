@@ -3282,7 +3282,7 @@ impl Input {
                     ToastStack::handle(ctx).update(ctx, |ts, ctx| {
                         ts.add_ephemeral_toast(
                             DismissibleToast::error(
-                                "Attached images were removed — the selected model does not support images.".to_string(),
+                                i18n::t!("Attached images were removed — the selected model does not support images.").to_string(),
                             ),
                             window_id,
                             ctx,
@@ -13221,7 +13221,7 @@ impl Input {
                         ToastStack::handle(ctx).update(ctx, |ts, ctx| {
                             ts.add_ephemeral_toast(
                                 DismissibleToast::default(
-                                    "Preparing handoff — try again in a moment.".to_owned(),
+                                    i18n::t!("Preparing handoff — try again in a moment.").to_string(),
                                 )
                                 .with_object_id("local-to-cloud-handoff-not-ready".to_owned()),
                                 window_id,
@@ -13979,7 +13979,7 @@ impl Input {
                 ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     toast_stack.add_ephemeral_toast(
                         DismissibleToast::error(
-                            "Cannot send queries as a read-only viewer.".to_string(),
+                            i18n::t!("Cannot send queries as a read-only viewer.").to_string(),
                         ),
                         window_id,
                         ctx,
@@ -14387,7 +14387,7 @@ impl Input {
                         ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                             toast_stack.add_ephemeral_toast(
                                 DismissibleToast::error(
-                                    "Too many attachments for this conversation.".to_string(),
+                                    i18n::t!("Too many attachments for this conversation.").to_string(),
                                 ),
                                 window_id,
                                 ctx,
@@ -15740,7 +15740,7 @@ impl TypedActionView for Input {
                     ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                         toast_stack.add_ephemeral_toast(
                             DismissibleToast::error(
-                                "Cannot start a new conversation while agent is monitoring a command.".to_string()
+                                i18n::t!("Cannot start a new conversation while agent is monitoring a command.").to_string()
                             ),
                             window_id,
                             ctx,

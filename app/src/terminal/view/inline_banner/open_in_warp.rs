@@ -48,7 +48,7 @@ impl OpenInWarpBannerState {
 fn file_title_text(openable_path: &OpenablePath) -> String {
     match openable_path.file_type {
         OpenableFileType::Markdown => {
-            "Did you know that Warp can directly display Markdown files?".to_string()
+            i18n::t!("Did you know that Warp can directly display Markdown files?").to_string()
         }
         OpenableFileType::Code | OpenableFileType::Text => {
             cfg_if::cfg_if! {
@@ -65,7 +65,7 @@ fn file_title_text(openable_path: &OpenablePath) -> String {
                     }
                 } else {
                     // The `languages` crate is not available on WASM, so use a fallback message.
-                    "Did you know that Warp can directly edit code?".to_string()
+                    i18n::t!("Did you know that Warp can directly edit code?").to_string()
                 }
             }
         }

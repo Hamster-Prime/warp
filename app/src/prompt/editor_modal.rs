@@ -794,7 +794,7 @@ impl EditorModal {
             || (matches!(self.prompt_type, PromptType::Warp)
                 && self.chip_configurator.used_chips.is_empty());
         let save_button = self.render_primary_button(
-            "Save changes".to_string(),
+            i18n::t!("Save changes").to_string(),
             ButtonVariant::Accent,
             save_disabled,
             self.mouse_state_handles.save_button_handle.clone(),

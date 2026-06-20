@@ -741,7 +741,7 @@ impl AskUserQuestionView {
             ctx,
         );
         let skip_button = CompactibleActionButton::new(
-            "Skip all".to_string(),
+            i18n::t!("Skip all").to_string(),
             Some(KeystrokeSource::Fixed(CTRL_C_KEYSTROKE.clone())),
             ButtonSize::InlineActionHeader,
             AskUserQuestionViewAction::SkipAll,
@@ -1361,12 +1361,12 @@ impl AskUserQuestionView {
             }
             AskUserQuestionResult::Error(_) | AskUserQuestionResult::Cancelled => (
                 None,
-                "Questions skipped".to_string(),
+                i18n::t!("Questions skipped").to_string(),
                 inline_action_icons::reverted_icon(appearance),
             ),
             AskUserQuestionResult::SkippedByAutoApprove { .. } => (
                 None,
-                "Questions skipped due to auto-approve".to_string(),
+                i18n::t!("Questions skipped due to auto-approve").to_string(),
                 inline_action_icons::reverted_icon(appearance),
             ),
         };
@@ -1823,7 +1823,7 @@ fn ask_user_question_completion_state(
     } else {
         let label = if answered_count == total {
             if total == 1 {
-                "Answered question".to_string()
+                i18n::t!("Answered question").to_string()
             } else {
                 format!("Answered all {total} questions")
             }

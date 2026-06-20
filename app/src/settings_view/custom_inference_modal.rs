@@ -864,7 +864,7 @@ impl View for CustomEndpointModal {
             .with_text_label(if is_editing {
                 "Save".to_string()
             } else {
-                "Add endpoint".to_string()
+                i18n::t!("Add endpoint").to_string()
             })
             .with_style(button_style);
         if !is_valid {

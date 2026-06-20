@@ -449,7 +449,7 @@ pub(super) fn render(props: Props, app: &AppContext) -> Box<dyn Element> {
                                             // action so the user sees the error instead
                                             // of an empty box.
                                             let formatted_text = render_requested_action_body_text(
-                                                "Failed to read files".into(),
+                                                i18n::t!("Failed to read files"),
                                                 appearance.ui_font_family(),
                                                 app,
                                             );
@@ -1173,7 +1173,7 @@ pub(super) fn render(props: Props, app: &AppContext) -> Box<dyn Element> {
                     output_items.add_child(
                         render_informational_footer(
                             app,
-                            "This response won't count towards your usage.".to_string(),
+                            i18n::t!("This response won't count towards your usage.").to_string(),
                         )
                         .with_agent_output_item_spacing(app)
                         .finish(),
@@ -1372,7 +1372,7 @@ fn render_search_codebase(
                                 appearance
                                     .ui_builder()
                                     .link(
-                                        "Manage AI Autonomy permissions".into(),
+                                        i18n::t!("Manage AI Autonomy permissions").to_string(),
                                         None,
                                         Some(Box::new(move |ctx| {
                                             ctx.dispatch_typed_action(
@@ -3751,7 +3751,7 @@ fn render_collapsible_debug_output(
         // "Debug output" label
         row.add_child(
             Text::new(
-                "Debug output".to_string(),
+                i18n::t!("Debug output").to_string(),
                 appearance.ai_font_family(),
                 appearance.monospace_font_size(),
             )

@@ -332,7 +332,7 @@ impl ResourceCenterView {
                 if FeatureFlag::AvatarInTabBar.is_enabled() {
                     String::new()
                 } else {
-                    "Warp Essentials".to_string()
+                    i18n::t!("Warp Essentials").to_string()
                 }
             }
         };

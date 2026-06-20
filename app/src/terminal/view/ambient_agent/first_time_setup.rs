@@ -222,7 +222,7 @@ impl FirstTimeCloudAgentSetupView {
 
         // Banner text - dynamic based on credits
         let credits_text = if credits == 1 {
-            "You have 1 free credit to use on Oz cloud agents.".to_string()
+            i18n::t!("You have 1 free credit to use on Oz cloud agents.").to_string()
         } else {
             format!(
                 "You have {} free credits to use on Oz cloud agents.",

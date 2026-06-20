@@ -510,7 +510,7 @@ impl AccountWidget {
                         appearance
                             .ui_builder()
                             .link(
-                                "Contact support".into(),
+                                i18n::t!("Contact support").to_string(),
                                 Some("mailto:support@warp.dev".into()),
                                 None,
                                 self.ui_state_handles.enterprise_contact_us_link.clone(),
@@ -527,7 +527,7 @@ impl AccountWidget {
                             appearance
                                 .ui_builder()
                                 .link(
-                                    "Manage billing".into(),
+                                    i18n::t!("Manage billing").to_string(),
                                     None,
                                     Some(Box::new(move |ctx| {
                                         ctx.dispatch_typed_action(
@@ -583,7 +583,7 @@ impl AccountWidget {
                 appearance
                     .ui_builder()
                     .link(
-                        "Compare plans".into(),
+                        i18n::t!("Compare plans").to_string(),
                         None,
                         Some(Box::new(move |ctx| {
                             ctx.dispatch_typed_action(MainPageAction::Upgrade {
@@ -713,7 +713,7 @@ impl SettingsWidget for SettingsSyncWidget {
         };
 
         Container::new(render_body_item::<MainPageAction>(
-            "Settings sync".to_string(),
+            i18n::t!("Settings sync").to_string(),
             Some(label_info),
             // Cloud prefs are always synced, so no need to show the local-only icon.
             LocalOnlyIconState::Hidden,
@@ -797,7 +797,7 @@ impl SettingsWidget for EarnRewardsWidget {
                 appearance
                     .ui_builder()
                     .link(
-                        "Refer a friend".into(),
+                        i18n::t!("Refer a friend").to_string(),
                         None,
                         Some(Box::new(move |ctx| {
                             ctx.dispatch_typed_action(WorkspaceAction::ShowReferralSettingsPage);
@@ -1122,7 +1122,7 @@ impl SettingsWidget for IapCredentialsWidget {
 
         let label = Align::new(
             Text::new_inline(
-                "Staging IAP credentials".to_string(),
+                i18n::t!("Staging IAP credentials").to_string(),
                 appearance.ui_font_family(),
                 REGULAR_TEXT_FONT_SIZE,
             )

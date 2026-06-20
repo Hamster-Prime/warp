@@ -1062,10 +1062,10 @@ impl From<session_sharing_protocol::viewer::FailedToJoinReason> for FailedToJoin
 pub fn session_ended_reason_string(reason: &SessionEndedReason) -> String {
     match reason {
         SessionEndedReason::InternalServerError => {
-            "Something went wrong. Please ask sharer to reshare to continue.".to_owned()
+            i18n::t!("Something went wrong. Please ask sharer to reshare to continue.").to_string()
         }
         SessionEndedReason::InactivityLimitReached => {
-            "Sharing ended due to sharer inactivity".to_owned()
+            i18n::t!("Sharing ended due to sharer inactivity").to_string()
         }
         _ => "Session ended.".to_owned(),
     }
@@ -1084,7 +1084,7 @@ pub fn viewer_removed_reason_string(reason: &ViewerRemovedReason) -> String {
 pub fn command_execution_failure_reason_string(reason: &CommandExecutionFailureReason) -> String {
     match reason {
         CommandExecutionFailureReason::InsufficientPermissions => {
-            "Insufficient permissions. Please request edit access.".to_owned()
+            i18n::t!("Insufficient permissions. Please request edit access.").to_string()
         }
         _ => "Failed to execute command. Please try again.".to_owned(),
     }
@@ -1094,7 +1094,7 @@ pub fn command_execution_failure_reason_string(reason: &CommandExecutionFailureR
 pub fn write_to_pty_failure_reason_string(reason: &WriteToPtyFailureReason) -> String {
     match reason {
         WriteToPtyFailureReason::InsufficientPermissions => {
-            "Insufficient permissions. Please request edit access.".to_owned()
+            i18n::t!("Insufficient permissions. Please request edit access.").to_string()
         }
         _ => "Failed to make edit. Please try again.".to_owned(),
     }
@@ -1104,10 +1104,10 @@ pub fn write_to_pty_failure_reason_string(reason: &WriteToPtyFailureReason) -> S
 pub fn agent_prompt_failure_reason_string(reason: &AgentPromptFailureReason) -> String {
     match reason {
         AgentPromptFailureReason::InsufficientPermissions => {
-            "Insufficient permissions. Please request edit access.".to_owned()
+            i18n::t!("Insufficient permissions. Please request edit access.").to_string()
         }
         AgentPromptFailureReason::InvalidConversation => {
-            "Invalid conversation. Please try again.".to_owned()
+            i18n::t!("Invalid conversation. Please try again.").to_string()
         }
         AgentPromptFailureReason::CommandInProgress => {
             "A long running command is currently in progress. Please wait for it to complete before sending an agent prompt.".to_owned()
@@ -1119,7 +1119,7 @@ pub fn agent_prompt_failure_reason_string(reason: &AgentPromptFailureReason) -> 
 pub fn control_action_failure_reason_string(reason: &ControlActionFailureReason) -> String {
     match reason {
         ControlActionFailureReason::InsufficientPermissions => {
-            "Insufficient permissions. Please request edit access.".to_owned()
+            i18n::t!("Insufficient permissions. Please request edit access.").to_string()
         }
         _ => "Failed to perform action. Please try again.".to_owned(),
     }

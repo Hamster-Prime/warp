@@ -265,7 +265,7 @@ impl CLISubagentView {
         );
 
         let take_over_button = CompactibleActionButton::new(
-            "Take over".to_string(),
+            i18n::t!("Take over").to_string(),
             Some(KeystrokeSource::Binding(
                 SET_INPUT_MODE_TERMINAL_ACTION_NAME,
             )),
@@ -278,7 +278,7 @@ impl CLISubagentView {
             ctx,
         );
         let transfer_control_button = CompactibleActionButton::new(
-            "Take control".to_string(),
+            i18n::t!("Take control").to_string(),
             Some(KeystrokeSource::Binding(
                 SET_INPUT_MODE_TERMINAL_ACTION_NAME,
             )),

@@ -984,7 +984,7 @@ impl View for RunAgentsCardView {
         // because restored blocks have no pending action status.
         if self.block_model.is_restored() {
             return render_status_only_card(
-                "Spawn agents cancelled".to_string(),
+                i18n::t!("Spawn agents cancelled").to_string(),
                 appearance,
                 StatusKind::Cancelled,
                 app,
@@ -996,7 +996,7 @@ impl View for RunAgentsCardView {
         // and the action is queued for user confirmation).
         if !matches!(status, Some(AIActionStatus::Blocked)) {
             return render_status_only_card(
-                "Configuring agents\u{2026}".to_string(),
+                i18n::t!("Configuring agents\u{2026}").to_string(),
                 appearance,
                 StatusKind::Spawning,
                 app,
@@ -1366,7 +1366,7 @@ pub(crate) fn format_terminal_state(result: &RunAgentsResult) -> (String, Status
                 .count();
             if launched == total {
                 let label = if total == 1 {
-                    "Spawned 1 agent".to_string()
+                    i18n::t!("Spawned 1 agent").to_string()
                 } else {
                     format!("Spawned {total} agents")
                 };
@@ -1375,7 +1375,7 @@ pub(crate) fn format_terminal_state(result: &RunAgentsResult) -> (String, Status
                 // Every child failed to launch: surface a terminal failure
                 // rather than the in-progress-looking mixed state.
                 let label = if total == 1 {
-                    "Failed to spawn agent".to_string()
+                    i18n::t!("Failed to spawn agent").to_string()
                 } else {
                     format!("Failed to spawn {total} agents")
                 };
@@ -1400,7 +1400,7 @@ pub(crate) fn format_terminal_state(result: &RunAgentsResult) -> (String, Status
         }
         RunAgentsResult::Failure { error } => {
             let label = if error.is_empty() {
-                "Failed to start orchestration".to_string()
+                i18n::t!("Failed to start orchestration").to_string()
             } else {
                 format!("Failed to start orchestration: {error}")
             };
@@ -1426,7 +1426,7 @@ fn render_spawning_card(
 ) -> Box<dyn Element> {
     let total = snapshot.agent_count;
     let label = if total == 1 {
-        "Spawning 1 agent\u{2026}".to_string()
+        i18n::t!("Spawning 1 agent\u{2026}").to_string()
     } else {
         format!("Spawning {total} agents\u{2026}")
     };

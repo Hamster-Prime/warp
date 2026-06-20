@@ -683,7 +683,7 @@ impl CodeEditorView {
                         Err(_) => {
                             self.goto_line_dialog.update(ctx, |dialog, ctx| {
                                 dialog.set_error(
-                                    "Please enter a valid column number".to_string(),
+                                    i18n::t!("Please enter a valid column number").to_string(),
                                     ctx,
                                 );
                             });

@@ -741,7 +741,7 @@ impl EnvVarCollectionView {
                     crate::workspace::ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                         toast_stack.add_ephemeral_toast(
                             DismissibleToast::error(
-                                "An error occurred while trying to invoke the env var".to_owned(),
+                                i18n::t!("An error occurred while trying to invoke the env var").to_string(),
                             ),
                             window_id,
                             ctx,

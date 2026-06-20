@@ -1704,7 +1704,7 @@ impl ImageContextOptions {
             }
         }
 
-        "Attach images".into()
+        i18n::t!("Attach images").to_string()
     }
 
     pub fn num_images_attached(&self) -> usize {
@@ -5085,7 +5085,7 @@ impl EditorView {
                 ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     toast_stack.add_ephemeral_toast(
                         DismissibleToast::error(
-                            "The selected model does not support images as context".to_owned(),
+                            i18n::t!("The selected model does not support images as context").to_string(),
                         ),
                         window_id,
                         ctx,
@@ -5143,7 +5143,7 @@ impl EditorView {
             move |this, (images, num_unsupported_images, num_read_errors), ctx| {
                 if num_unsupported_images > 0 {
                     let message = if num_unsupported_images == 1 && num_images_user_attached == 1 {
-                        "Image cannot be attached - supported types are PNG, JPG, GIF, WEBP.".into()
+                        i18n::t!("Image cannot be attached - supported types are PNG, JPG, GIF, WEBP.").to_string()
                     } else if num_unsupported_images == 1 {
                         "1 image wasn't attached - supported types are PNG, JPG, GIF, WEBP.".into()
                     } else {
@@ -5161,7 +5161,7 @@ impl EditorView {
 
                 if num_read_errors > 0 {
                     let message = if num_read_errors == 1 && num_images_user_attached == 1 {
-                        "Image cannot be attached - failed to read file.".into()
+                        i18n::t!("Image cannot be attached - failed to read file.").to_string()
                     } else if num_read_errors == 1 {
                         "1 image wasn't attached - failed to read file.".into()
                     } else {
@@ -5200,7 +5200,7 @@ impl EditorView {
                 ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     toast_stack.add_ephemeral_toast(
                         DismissibleToast::error(
-                            "The selected model does not support images as context".to_owned(),
+                            i18n::t!("The selected model does not support images as context").to_string(),
                         ),
                         window_id,
                         ctx,
@@ -5269,7 +5269,7 @@ impl EditorView {
 
                 if num_oversized_images > 0 {
                     let message = if num_oversized_images == 1 && num_images_user_attached == 1 {
-                        "Image cannot be attached - file is too large.".into()
+                        i18n::t!("Image cannot be attached - file is too large.").to_string()
                     } else if num_oversized_images == 1 {
                         "1 image wasn't attached — file is too large.".into()
                     } else {
@@ -5289,7 +5289,7 @@ impl EditorView {
 
                 if num_unprocessed_images > 0 {
                     let message = if num_unprocessed_images == 1 && num_images_user_attached == 1 {
-                        "Image cannot be attached - error processing.".into()
+                        i18n::t!("Image cannot be attached - error processing.").to_string()
                     } else if num_unprocessed_images == 1 {
                         "1 image wasn't attached - error processing.".into()
                     } else {
@@ -8061,7 +8061,7 @@ impl EditorView {
             button
                 .with_tooltip_position(ButtonTooltipPosition::Above)
                 .with_tooltip(self.render_menu_button_tooltip(
-                    "Search files and directories".to_string(),
+                    i18n::t!("Search files and directories").to_string(),
                     appearance,
                 ))
                 .build()

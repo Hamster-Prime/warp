@@ -785,7 +785,7 @@ fn render_directory_allowlist(
 ) -> Box<dyn Element> {
     with_standard_vertical_margin(render_pathbuf_allowlist_row(
         Icon::Check,
-        "Directory allowlist:".to_string(),
+        i18n::t!("Directory allowlist:").to_string(),
         &profile.directory_allowlist,
         appearance,
         is_ai_enabled,
@@ -799,7 +799,7 @@ fn render_command_allowlist(
 ) -> Box<dyn Element> {
     with_standard_vertical_margin(render_command_predicate_row(
         Icon::Check,
-        "Command allowlist:".to_string(),
+        i18n::t!("Command allowlist:").to_string(),
         &profile.command_allowlist,
         appearance,
         is_ai_enabled,
@@ -813,7 +813,7 @@ fn render_command_denylist(
 ) -> Box<dyn Element> {
     with_standard_vertical_margin(render_command_predicate_row(
         Icon::SlashCircle,
-        "Command denylist:".to_string(),
+        i18n::t!("Command denylist:").to_string(),
         &profile.command_denylist,
         appearance,
         is_ai_enabled,

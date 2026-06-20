@@ -130,7 +130,7 @@ impl View for RemoveCustomEndpointConfirmationDialog {
         .finish();
 
         let dialog = Dialog::new(
-            "Remove endpoint?".to_string(),
+            i18n::t!("Remove endpoint?").to_string(),
             Some(description),
             dialog_styles(appearance),
         )

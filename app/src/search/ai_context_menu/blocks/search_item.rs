@@ -26,7 +26,7 @@ fn time_ago_string(timestamp: Option<&DateTime<Local>>) -> String {
     let duration = now.signed_duration_since(*timestamp);
 
     if duration.num_seconds() < 60 {
-        "Just now".to_string()
+        i18n::t!("Just now").to_string()
     } else if duration.num_minutes() < 60 {
         format!("{} minutes ago", duration.num_minutes())
     } else if duration.num_hours() < 24 {
@@ -135,7 +135,7 @@ impl SearchItem for BlockSearchItem {
 
         // Create sub text: last 3 lines of output
         let sub_text = if self.output_lines.is_empty() {
-            "No output".to_string()
+            i18n::t!("No output").to_string()
         } else {
             let joined = self.output_lines.join("\n").trim().to_string();
             // Additional safety truncation for the hover card

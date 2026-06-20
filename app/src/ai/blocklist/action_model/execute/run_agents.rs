@@ -259,7 +259,7 @@ impl RunAgentsExecutor {
                 && parent_run_id.is_none()
             {
                 slots.push(ChildSlot::Failed(
-                    "Remote child agents require the parent run_id to be available.".to_string(),
+                    i18n::t!("Remote child agents require the parent run_id to be available.").to_string(),
                 ));
                 continue;
             }
@@ -503,7 +503,7 @@ fn prepare_request_for_execution(
         .is_never_allow()
     {
         return Some(
-            "Running child agents is disabled by the active execution profile.".to_string(),
+            i18n::t!("Running child agents is disabled by the active execution profile.").to_string(),
         );
     }
 
@@ -768,7 +768,7 @@ pub fn run_agents_to_start_agent_mode(
             // OpenCode is unsupported on Remote.
             if run_harness_type.eq_ignore_ascii_case("opencode") {
                 return Err(
-                    "Remote child agents do not support the opencode harness yet.".to_string(),
+                    i18n::t!("Remote child agents do not support the opencode harness yet.").to_string(),
                 );
             }
             Ok(StartAgentExecutionMode::Remote {

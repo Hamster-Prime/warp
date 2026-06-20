@@ -40,7 +40,7 @@ impl TelemetryExt for warpui::telemetry::Event {
             } => form_rudder_track_message(
                 user_id.map(|uid| UserUid::new(uid.as_str())),
                 anonymous_id,
-                "Active App Usage".to_string(),
+                i18n::t!("Active App Usage").to_string(),
                 None,
                 self.timestamp,
                 self.session_created_at,

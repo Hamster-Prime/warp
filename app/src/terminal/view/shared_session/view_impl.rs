@@ -982,7 +982,7 @@ impl TerminalView {
             ctx,
         );
         self.show_persistent_toast(
-            "Sharing ended due to inactivity".to_owned(),
+            i18n::t!("Sharing ended due to inactivity").to_string(),
             ToastFlavor::Error,
             ctx,
         );
@@ -1033,7 +1033,7 @@ impl TerminalView {
                 ctx,
             );
             self.show_persistent_toast(
-                "Shared editing permissions were revoked due to inactivity".to_owned(),
+                i18n::t!("Shared editing permissions were revoked due to inactivity").to_string(),
                 ToastFlavor::Error,
                 ctx,
             );
@@ -1663,7 +1663,7 @@ impl TerminalView {
             && matches!(reason, RoleUpdatedReason::InactivityLimitReached)
         {
             self.show_persistent_toast(
-                "Editing permissions were revoked because the sharer is idle".to_owned(),
+                i18n::t!("Editing permissions were revoked because the sharer is idle").to_string(),
                 ToastFlavor::Error,
                 ctx,
             );

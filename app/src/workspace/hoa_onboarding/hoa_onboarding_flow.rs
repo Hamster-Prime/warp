@@ -424,7 +424,7 @@ impl HoaOnboardingFlow {
             .finish();
 
         let checkbox_label = Text::new_inline(
-            "Switch back to horizontal tabs".to_string(),
+            i18n::t!("Switch back to horizontal tabs").to_string(),
             appearance.ui_font_family(),
             12.,
         )

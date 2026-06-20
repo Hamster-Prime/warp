@@ -926,7 +926,7 @@ pub fn set_kitty_png_size(mut image: KittyImage) -> Result<KittyImage, KittyPngE
         Some(image_size) => image_size,
         None => {
             return Err(KittyPngError::InvalidBytes(
-                "Could not retrieve image size from ImageType for Kitty PNG.".to_string(),
+                i18n::t!("Could not retrieve image size from ImageType for Kitty PNG.").to_string(),
             ))
         }
     };

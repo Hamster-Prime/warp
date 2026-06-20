@@ -93,7 +93,7 @@ fn parse_yaml(input: &str) -> anyhow::Result<AgentConfigSnapshotFile> {
 }
 
 fn supported_keys_context() -> String {
-    "Supported keys: name, environment_id, model_id, base_prompt, mcp_servers, host, computer_use_enabled".to_string()
+    i18n::t!("Supported keys: name, environment_id, model_id, base_prompt, mcp_servers, host, computer_use_enabled").to_string()
 }
 
 /// Convert an unwrapped `mcp_servers` map into runtime MCP specs for AgentDriver.

@@ -286,7 +286,7 @@ pub fn render_breakdown_tooltip(
 
     column.add_child(render_tooltip_row(
         /* no swatch on the total row */ None,
-        "Total usage".to_string(),
+        i18n::t!("Total usage").to_string(),
         total_credits,
         total_cost_cents,
         main,

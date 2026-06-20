@@ -122,7 +122,7 @@ impl UploadArtifactExecutor {
             let Some(server_conversation_token) = server_conversation_token else {
                 return ActionExecution::<()>::Sync(AIAgentActionResultType::UploadArtifact(
                     UploadArtifactResult::Error(
-                        "Current conversation has not been synced to the server yet".to_string(),
+                        i18n::t!("Current conversation has not been synced to the server yet").to_string(),
                     ),
                 ))
                 .into();

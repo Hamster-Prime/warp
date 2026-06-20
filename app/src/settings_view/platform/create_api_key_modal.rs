@@ -328,7 +328,7 @@ impl CreateApiKeyModal {
         let name = self.name_editor.as_ref(ctx).buffer_text(ctx);
 
         let final_name = if name.trim().is_empty() {
-            "Warp API Key".to_string()
+            i18n::t!("Warp API Key").to_string()
         } else {
             name.trim().to_string()
         };
@@ -670,7 +670,7 @@ impl View for CreateApiKeyModal {
                     .with_text_label(if is_pending {
                         "Creating…".to_string()
                     } else {
-                        "Create key".to_string()
+                        i18n::t!("Create key").to_string()
                     })
                     .with_style(button_style)
                     .build()
@@ -860,7 +860,7 @@ impl TypedActionView for CreateApiKeyModal {
                 let window_id = ctx.window_id();
                 crate::ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     let toast = crate::view_components::DismissibleToast::success(
-                        "Secret key copied.".to_string(),
+                        i18n::t!("Secret key copied.").to_string(),
                     );
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });

@@ -361,7 +361,7 @@ impl ProfileModelSelector {
                     }
                     label
                 } else {
-                    "New models available".to_string()
+                    i18n::t!("New models available").to_string()
                 }
             })))
         });
@@ -1946,7 +1946,7 @@ impl ProfileModelSelector {
                             .with_child(
                                 Container::new(
                                     Text::new(
-                                        "Billed to API".to_string(),
+                                        i18n::t!("Billed to API").to_string(),
                                         appearance.ui_font_family(),
                                         14.,
                                     )
@@ -2006,8 +2006,8 @@ impl ProfileModelSelector {
         let appearance = Appearance::as_ref(app);
         let theme = appearance.theme();
         let header = self.render_model_spec_header(
-            "Model Specs".to_string(),
-            "Warp’s benchmarks for how well a model performs in our harness, the rate at which it consumes credits, and task speed.".to_string(),
+            i18n::t!("Model Specs").to_string(),
+            i18n::t!("Warp’s benchmarks for how well a model performs in our harness, the rate at which it consumes credits, and task speed.").to_string(),
             app,
         );
         let spec = self.render_all_model_spec_values(

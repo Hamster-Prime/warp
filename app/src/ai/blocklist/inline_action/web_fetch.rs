@@ -118,7 +118,7 @@ impl WebFetchView {
 
         if pages.is_empty() {
             let no_results = Text::new_inline(
-                "No URLs fetched".to_string(),
+                i18n::t!("No URLs fetched").to_string(),
                 appearance.ui_font_family(),
                 appearance.monospace_font_size(),
             )

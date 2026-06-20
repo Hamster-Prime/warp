@@ -175,7 +175,7 @@ pub(super) async fn prepare_local_harness_child_launch(
     let Some(harness) = normalize_local_child_harness(&harness_type) else {
         let harness_name = harness_type.trim();
         return Err(if harness_name.is_empty() {
-            "Local child harness type is missing.".to_string()
+            i18n::t!("Local child harness type is missing.").to_string()
         } else {
             format!("Unsupported local child harness '{harness_name}'.")
         });

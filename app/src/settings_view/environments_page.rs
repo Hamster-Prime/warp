@@ -651,7 +651,7 @@ impl EnvironmentsPageView {
                 if let Some(result_client_id) = &result.client_id {
                     if *result_client_id == pending_client_id {
                         self.show_success_toast(
-                            "Successfully created environment".to_string(),
+                            i18n::t!("Successfully created environment").to_string(),
                             ctx,
                         );
                     }
@@ -668,7 +668,7 @@ impl EnvironmentsPageView {
                 if let Some(server_id) = &result.server_id {
                     if server_id.uid() == pending_env_id.uid() {
                         self.show_success_toast(
-                            "Environment deleted successfully".to_string(),
+                            i18n::t!("Environment deleted successfully").to_string(),
                             ctx,
                         );
                     }
@@ -763,7 +763,7 @@ impl EnvironmentsPageView {
 
                 let Some(owner) = owner else {
                     self.show_error_toast(
-                        "Unable to create environment: not logged in.".to_string(),
+                        i18n::t!("Unable to create environment: not logged in.").to_string(),
                         ctx,
                     );
                     return;
@@ -790,7 +790,7 @@ impl EnvironmentsPageView {
                 let Some(existing_env) = CloudAmbientAgentEnvironment::get_by_id(env_id, ctx)
                 else {
                     self.show_error_toast(
-                        "Unable to save: environment no longer exists.".to_string(),
+                        i18n::t!("Unable to save: environment no longer exists.").to_string(),
                         ctx,
                     );
                     return;
@@ -959,7 +959,7 @@ impl TypedActionView for EnvironmentsPageView {
             EnvironmentsPageAction::ShareToTeam(env_id) => {
                 let Some(team_uid) = UserWorkspaces::as_ref(ctx).current_team_uid() else {
                     self.show_error_toast(
-                        "Unable to share environment: you are not currently on a team.".to_string(),
+                        i18n::t!("Unable to share environment: you are not currently on a team.").to_string(),
                         ctx,
                     );
                     return;
@@ -967,7 +967,7 @@ impl TypedActionView for EnvironmentsPageView {
 
                 let SyncId::ServerId(server_id) = *env_id else {
                     self.show_error_toast(
-                        "Unable to share environment: environment is not yet synced.".to_string(),
+                        i18n::t!("Unable to share environment: environment is not yet synced.").to_string(),
                         ctx,
                     );
                     return;
@@ -1856,7 +1856,7 @@ impl EnvironmentsPageWidget {
             let view_runs_link = appearance
                 .ui_builder()
                 .link(
-                    "View my runs".to_string(),
+                    i18n::t!("View my runs").to_string(),
                     None,
                     Some(Box::new(move |ctx| {
                         ctx.dispatch_typed_action(WorkspaceAction::ViewAgentRunsForEnvironment {

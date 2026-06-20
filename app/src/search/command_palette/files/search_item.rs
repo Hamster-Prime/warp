@@ -105,9 +105,9 @@ impl SearchItem for FileSearchItem {
 
     fn accessibility_help_message(&self) -> Option<String> {
         Some(if self.is_directory {
-            "Press Enter to navigate to this directory".to_string()
+            i18n::t!("Press Enter to navigate to this directory").to_string()
         } else {
-            "Press Enter to open this file".to_string()
+            i18n::t!("Press Enter to open this file").to_string()
         })
     }
 

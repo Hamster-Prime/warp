@@ -324,7 +324,7 @@ impl View for NewWorktreeModal {
         // ── Header (custom — Modal wrapper has no title) ────────────────
         let header = {
             let title = Text::new_inline(
-                "New worktree".to_string(),
+                i18n::t!("New worktree").to_string(),
                 appearance.ui_font_family(),
                 HEADER_TITLE_FONT_SIZE,
             )
@@ -463,7 +463,7 @@ impl View for NewWorktreeModal {
             .with_child(checkbox_element)
             .with_child(
                 Text::new_inline(
-                    "Autogenerate worktree branch name".to_string(),
+                    i18n::t!("Autogenerate worktree branch name").to_string(),
                     appearance.ui_font_family(),
                     appearance.ui_font_size(),
                 )

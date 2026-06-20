@@ -168,7 +168,7 @@ impl GenericMenuItem for NewEnvironmentMenuItem {
     }
 
     fn name(&self) -> String {
-        "New environment".to_string()
+        i18n::t!("New environment").to_string()
     }
 
     fn icon(&self, _app: &AppContext) -> Option<Icon> {
@@ -432,7 +432,7 @@ impl EnvironmentSelector {
                 .map(|env| env.model().string_model.display_name())
                 .unwrap_or_else(|| "New environment".to_string())
         } else {
-            "New environment".to_string()
+            i18n::t!("New environment").to_string()
         };
 
         let is_configuring = self.is_configuring(ctx);

@@ -115,11 +115,11 @@ impl RequestComputerUseExecutor {
                     }),
                     None,
                 ) => AIAgentActionResultType::RequestComputerUse(RequestComputerUseResult::Error(
-                    "Unknown platform".to_string(),
+                    i18n::t!("Unknown platform").to_string(),
                 )),
                 (Ok(_), _) => {
                     AIAgentActionResultType::RequestComputerUse(RequestComputerUseResult::Error(
-                        "Failed to capture initial screenshot".to_string(),
+                        i18n::t!("Failed to capture initial screenshot").to_string(),
                     ))
                 }
                 (Err(err), _) => AIAgentActionResultType::RequestComputerUse(

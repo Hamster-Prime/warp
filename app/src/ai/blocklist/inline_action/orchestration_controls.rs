@@ -1819,7 +1819,7 @@ pub fn render_mode_toggle<A: OrchestrationControlAction>(
 ) -> Box<dyn Element> {
     let theme = appearance.theme();
     let label = Text::new(
-        "Agent location".to_string(),
+        i18n::t!("Agent location").to_string(),
         appearance.ui_font_family(),
         appearance.monospace_font_size() - 1.,
     )
@@ -2125,8 +2125,8 @@ pub fn empty_env_recommendation_message(
     }
     let env_count = CloudAmbientAgentEnvironment::get_all(app).len();
     Some(if env_count > 0 {
-        "We recommend selecting an environment for cloud agents.".to_string()
+        i18n::t!("We recommend selecting an environment for cloud agents.").to_string()
     } else {
-        "We recommend creating an environment for cloud agents.".to_string()
+        i18n::t!("We recommend creating an environment for cloud agents.").to_string()
     })
 }

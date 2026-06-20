@@ -479,7 +479,7 @@ impl ServerCardView {
 
         if tools.is_empty() {
             return Text::new(
-                "No tools available".to_string(),
+                i18n::t!("No tools available").to_string(),
                 appearance.ui_font_family(),
                 appearance.ui_font_size(),
             )
@@ -750,7 +750,7 @@ impl ServerCardView {
                     self.build_icon_button(
                         appearance,
                         Icon::Code1,
-                        "Show logs".to_string(),
+                        i18n::t!("Show logs").to_string(),
                         self.mouse_handles.show_logs_icon_button.clone(),
                     )
                     .on_click(move |ctx, _, _| {
@@ -765,7 +765,7 @@ impl ServerCardView {
                     self.build_icon_button(
                         appearance,
                         Icon::LogOut,
-                        "Log out".to_string(),
+                        i18n::t!("Log out").to_string(),
                         self.mouse_handles.logout_icon_button.clone(),
                     )
                     .on_click(move |ctx, _, _| {
@@ -780,7 +780,7 @@ impl ServerCardView {
                     self.build_icon_button(
                         appearance,
                         Icon::Share,
-                        "Share server".to_string(),
+                        i18n::t!("Share server").to_string(),
                         self.mouse_handles.share_icon_button.clone(),
                     )
                     .on_click(move |ctx, _, _| {
@@ -897,7 +897,7 @@ impl ServerCardView {
             .build_icon_button(
                 appearance,
                 Icon::Refresh,
-                "Server update available".to_string(),
+                i18n::t!("Server update available").to_string(),
                 self.mouse_handles.update_icon_button.clone(),
             )
             .on_click(move |ctx, _, _| {

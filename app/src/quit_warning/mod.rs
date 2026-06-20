@@ -414,7 +414,7 @@ impl<'a> QuitWarningDialog<'a> {
         if let Some(callback) = on_show_processes {
             if state.total_long_running_commands > 0 {
                 buttons.push(ModalButton::for_app(
-                    "Show running processes".to_string(),
+                    i18n::t!("Show running processes").to_string(),
                     move |app| {
                         callback(app);
                     },

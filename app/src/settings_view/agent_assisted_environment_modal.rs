@@ -634,7 +634,7 @@ impl AgentAssistedEnvironmentModal {
             .finish();
 
         let dialog = Dialog::new(
-            "Select repos for your environment".to_string(),
+            i18n::t!("Select repos for your environment").to_string(),
             Some(description),
             dialog_styles(appearance),
         )

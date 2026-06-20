@@ -179,7 +179,7 @@ impl CloudSetupGuideView {
                 appearance
                     .ui_builder()
                     .link(
-                        "Oz documentation".to_string(),
+                        i18n::t!("Oz documentation").to_string(),
                         None,
                         Some(Box::new(|ctx| {
                             ctx.dispatch_typed_action(CloudSetupGuideAction::OpenDocs {

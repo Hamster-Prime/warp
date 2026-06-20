@@ -1577,7 +1577,7 @@ impl TeamsPageView {
             .collect();
 
         let message = if unique_emails.len() == 1 {
-            "Your invite is on the way!".to_string()
+            i18n::t!("Your invite is on the way!").to_string()
         } else {
             format!("Your {} invites are on the way!", unique_emails.len())
         };
@@ -2793,7 +2793,7 @@ impl TeamsWidget {
                         appearance
                             .ui_builder()
                             .link(
-                                "Reset links".into(),
+                                i18n::t!("Reset links").to_string(),
                                 None,
                                 Some(Box::new(move |ctx| {
                                     ctx.dispatch_typed_action(TeamsPageAction::ResetInviteLinks {
@@ -3387,7 +3387,7 @@ impl TeamsWidget {
             let link = appearance
                 .ui_builder()
                 .link(
-                    "Manage plan".into(),
+                    i18n::t!("Manage plan").to_string(),
                     None,
                     Some(Box::new(move |ctx| {
                         ctx.dispatch_typed_action(
@@ -4042,7 +4042,7 @@ impl TeamsWidget {
             page.add_child(render_separator(appearance));
             page.add_child(self.render_sub_header_with_subtext_color(
                 appearance,
-                "Or, join an existing team within your company".to_string(),
+                i18n::t!("Or, join an existing team within your company").to_string(),
             ));
 
             // Team discovery

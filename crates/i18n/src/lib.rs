@@ -25,6 +25,11 @@ rust_i18n::i18n!("_locales", fallback = "en");
 //
 // 行为对齐 `rust_i18n::_tr!`：查到 → 返回译文；查不到 → 返回 key 本身（而非
 // `_rust_i18n_translate` 的 `"{locale}.{key}"` fallback）。
+//
+// 支持三种形式：
+//   t!("key")                    — 用当前 locale 查
+//   t!("key", locale = "zh-CN")  — 用指定 locale 查
+//   t!("key", a=1, b=2)          — 查翻译后用 rust-i18n 的占位符替换
 #[doc(hidden)]
 pub fn __locale() -> String {
     rust_i18n::locale().to_string()
@@ -38,11 +43,44 @@ pub fn __tr<'a>(locale: &str, key: &'a str) -> std::borrow::Cow<'a, str> {
     }
 }
 
+/// Translate + substitute placeholders via `rust_i18n::_rust_i18n_translate`.
+///
+/// After looking up the translation, this replaces `{name}` placeholders in the
+/// translated string with the provided values. Used by the `t!` macro when
+/// callers pass named arguments.
+#[doc(hidden)]
+pub fn __tr_with_args<'a>(
+    locale: &str,
+    key: &'a str,
+    args: &[(&'static str, String)],
+) -> std::borrow::Cow<'a, str> {
+    let translated = __tr(locale, key);
+    let mut result = translated.into_owned();
+    for (name, value) in args {
+        result = result.replace(&format!("{{{name}}}"), value);
+    }
+    std::borrow::Cow::Owned(result)
+}
+
 #[macro_export]
 macro_rules! t {
+    // Locale + named args: t!("key", locale = "zh-CN", a = 1, b = 2)
+    ($key:expr, locale = $locale:expr, $($name:ident = $val:expr),* $(,)?) => {
+        $crate::__tr_with_args($locale, $key, &[
+            $((stringify!($name), ($val).to_string())),*
+        ])
+    };
+    // Locale only: t!("key", locale = "zh-CN")
     ($key:expr, locale = $locale:expr $(,)?) => {
         $crate::__tr($locale, $key)
     };
+    // Named args only (current locale): t!("key", a = 1, b = 2)
+    ($key:expr, $($name:ident = $val:expr),+ $(,)?) => {
+        $crate::__tr_with_args(&$crate::__locale(), $key, &[
+            $((stringify!($name), ($val).to_string())),+
+        ])
+    };
+    // Simple: t!("key")
     ($key:expr $(,)?) => {
         $crate::__tr(&$crate::__locale(), $key)
     };

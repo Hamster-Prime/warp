@@ -530,6 +530,8 @@ Done:
   zh-CN: 完成
 Dracula:
   zh-CN: Dracula
+Dump heap profile (can only be done once):
+  zh-CN: 导出堆分析（仅可执行一次）
 ESC:
   zh-CN: ESC
 Edit:
@@ -910,6 +912,8 @@ Loading...:
   zh-CN: 加载中...
 Local Docker Sandbox:
   zh-CN: 本地 Docker 沙盒
+Log editor state:
+  zh-CN: 记录编辑器状态
 Log out:
   zh-CN: 退出登录
 'Looks like you''re out of credits. ':
@@ -1192,6 +1196,8 @@ Open theme picker:
   zh-CN: 打开主题选择器
 Open this conversation in the Warp desktop app:
   zh-CN: 在 Warp 桌面应用中打开此对话
+Open view tree debugger:
+  zh-CN: 打开视图树调试器
 'OpenAI base URL (optional, press Enter to skip):':
   zh-CN: OpenAI base URL（可选，按 Enter 跳过）：
 Opening the completion menu is unbound.:
@@ -2059,6 +2065,8 @@ Working directory:
   zh-CN: 工作目录
 Working directory for new sessions:
   zh-CN: 新会话的工作目录
+Write current codebase index snapshot:
+  zh-CN: 写入当前代码库索引快照
 You can Warpify this {lowercase_title} for more Warp features.:
   zh-CN: 您可以 Warpify 此 {lowercase_title} 以获得更多 Warp 功能。
 You can change this at any time in settings.:

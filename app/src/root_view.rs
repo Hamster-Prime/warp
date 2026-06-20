@@ -2130,7 +2130,7 @@ impl RootView {
                     let theme_name = appearance
                         .theme()
                         .name()
-                        .unwrap_or_else(|| "Dark".to_string());
+                        .unwrap_or_else(|| i18n::t!("Dark").to_string());
                     let (use_vertical_tabs, intention) = match selected_settings {
                         SelectedSettings::AgentDrivenDevelopment {
                             ui_customization, ..
@@ -2265,7 +2265,7 @@ impl RootView {
                 let theme_name = appearance
                     .theme()
                     .name()
-                    .unwrap_or_else(|| "Dark".to_string());
+                    .unwrap_or_else(|| i18n::t!("Dark").to_string());
                 // Match the theme slide's image: read the onboarding view's in-progress
                 // customization rather than the globally-applied TabSettings, which still
                 // holds the user's pre-onboarding (or default) value until the flow
@@ -2313,7 +2313,7 @@ impl RootView {
                 let theme_name = appearance
                     .theme()
                     .name()
-                    .unwrap_or_else(|| "Dark".to_string());
+                    .unwrap_or_else(|| i18n::t!("Dark").to_string());
                 let use_vertical_tabs = *TabSettings::as_ref(ctx).use_vertical_tabs;
 
                 // Open the sign-in URL in the browser for existing users.

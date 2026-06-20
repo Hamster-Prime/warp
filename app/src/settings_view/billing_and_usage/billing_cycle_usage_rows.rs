@@ -214,7 +214,7 @@ impl MemberUsageRow {
                 display_name: entry
                     .subject_display_name
                     .clone()
-                    .unwrap_or_else(|| "Unknown".to_string()),
+                    .unwrap_or_else(|| i18n::t!("Unknown").to_string()),
                 entries: Vec::new(),
             });
             group.entries.push(entry.clone());

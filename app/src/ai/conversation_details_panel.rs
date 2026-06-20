@@ -343,7 +343,7 @@ impl ConversationDetailsData {
             },
             title: conversation
                 .title()
-                .unwrap_or_else(|| "Conversation".to_string()),
+                .unwrap_or_else(|| i18n::t!("Conversation").to_string()),
             creator,
             executor: None,
             created_at,

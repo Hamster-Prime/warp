@@ -1779,7 +1779,7 @@ impl AgentManagementView {
             .creator
             .name
             .clone()
-            .unwrap_or_else(|| "Unknown".to_string());
+            .unwrap_or_else(|| i18n::t!("Unknown").to_string());
         let avatar = Self::render_avatar_with_tooltip(
             &creator_name,
             appearance,

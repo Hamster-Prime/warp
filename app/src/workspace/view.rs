@@ -13486,7 +13486,7 @@ impl Workspace {
             .conversation(&conversation_id)
             .and_then(|c| c.title())
             .map(|s| s.to_string())
-            .unwrap_or_else(|| "Conversation".to_string());
+            .unwrap_or_else(|| i18n::t!("Conversation").to_string());
 
         let title = if source_title.chars().count() > MAX_FORK_TOAST_TITLE_LENGTH {
             let truncated: String = source_title

@@ -314,7 +314,7 @@ impl FileNotebookView {
             .as_ref()
             .map(|location| location.name.clone())
             .or_else(|| self.file_state.display_name())
-            .unwrap_or_else(|| "Untitled".to_string())
+            .unwrap_or_else(|| i18n::t!("Untitled").to_string())
     }
 
     pub fn focus(&self, ctx: &mut ViewContext<Self>) {
@@ -1299,7 +1299,7 @@ impl FileLocation {
         let name = path
             .file_name()
             .map(|name| name.to_string_lossy().into_owned())
-            .unwrap_or_else(|| "Unnamed".to_string());
+            .unwrap_or_else(|| i18n::t!("Unnamed").to_string());
 
         Self { breadcrumbs, name }
     }

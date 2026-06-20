@@ -718,7 +718,7 @@ fn orchestrator_label(orchestrator: &AIConversation) -> String {
         .agent_name()
         .filter(|n| !n.is_empty())
         .map(|n| n.to_string())
-        .unwrap_or_else(|| "Orchestrator".to_string())
+        .unwrap_or_else(|| i18n::t!("Orchestrator").to_string())
 }
 
 impl OrchestrationPillBar {
@@ -1326,7 +1326,7 @@ fn render_hover_card(
         .filter(|n| !n.is_empty())
         .map(|n| n.to_string())
         .or_else(|| conversation.title())
-        .unwrap_or_else(|| "Agent".to_string());
+        .unwrap_or_else(|| i18n::t!("Agent").to_string());
 
     // Header: small avatar disc + bold agent name on the left, status
     // badge right-aligned. We use the conversation's `ConversationStatus`
@@ -2266,7 +2266,7 @@ pub fn render_orchestration_breadcrumbs(
                 .filter(|t| !t.is_empty())
                 .or_else(|| p.agent_name().map(str::to_string))
         })
-        .unwrap_or_else(|| "Orchestrator".to_string());
+        .unwrap_or_else(|| i18n::t!("Orchestrator").to_string());
 
     // Treat empty `agent_name` as missing so the label, avatar color, and
     // initial all consistently fall back to "Agent". Without the

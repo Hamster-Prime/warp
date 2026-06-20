@@ -646,7 +646,7 @@ impl<'a> WarpDriveRow<'a> {
         Span::new(
             self.item
                 .display_name()
-                .unwrap_or_else(|| "Untitled".to_string()),
+                .unwrap_or_else(|| i18n::t!("Untitled").to_string()),
             style,
         )
         .build()

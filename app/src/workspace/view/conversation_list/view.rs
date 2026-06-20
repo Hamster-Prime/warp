@@ -1007,7 +1007,7 @@ impl TypedActionView for ConversationListView {
                     .as_ref(ctx)
                     .get_item_by_id(&id, ctx)
                     .map(|entry| entry.display.title)
-                    .unwrap_or_else(|| "Conversation".to_string());
+                    .unwrap_or_else(|| i18n::t!("Conversation").to_string());
                 ctx.emit(Event::ShowDeleteConfirmationDialog {
                     conversation_id: *conversation_id,
                     conversation_title,

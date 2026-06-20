@@ -848,7 +848,7 @@ impl LocalDiffStateModel {
         };
         let current_repository_path = current_repository.as_ref(ctx).root_dir().clone();
 
-        let branch = branch_name.unwrap_or_else(|| "HEAD".to_string());
+        let branch = branch_name.unwrap_or_else(|| i18n::t!("HEAD").to_string());
         ctx.spawn(
             async move {
                 Self::discard_files_impl(

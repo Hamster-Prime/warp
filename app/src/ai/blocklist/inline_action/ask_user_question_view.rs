@@ -1045,7 +1045,7 @@ impl AskUserQuestionView {
             number,
             accepted_text
                 .clone()
-                .unwrap_or_else(|| "Other...".to_string()),
+                .unwrap_or_else(|| i18n::t!("Other...").to_string()),
             accepted_text.is_some(),
             false,
             true,
@@ -1864,7 +1864,7 @@ fn render_answers(
             "A: {}",
             answer
                 .map(AskUserQuestionAnswerItem::display_text)
-                .unwrap_or_else(|| "Skipped".to_string())
+                .unwrap_or_else(|| i18n::t!("Skipped").to_string())
         );
         let answer_label =
             render_text_with_markdown_support(&answer_text, font_size, muted_color, appearance);

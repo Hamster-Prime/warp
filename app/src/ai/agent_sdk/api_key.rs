@@ -293,12 +293,12 @@ impl TableFormat for ApiKeyInfo {
             Cell::new(
                 self.last_used_at
                     .map(format_approx_duration_from_now_utc)
-                    .unwrap_or_else(|| "Never".to_string()),
+                    .unwrap_or_else(|| i18n::t!("Never").to_string()),
             ),
             Cell::new(
                 self.expires_at
                     .map(|dt| dt.format("%Y-%m-%d %H:%M:%S UTC").to_string())
-                    .unwrap_or_else(|| "Never".to_string()),
+                    .unwrap_or_else(|| i18n::t!("Never").to_string()),
             ),
         ]
     }

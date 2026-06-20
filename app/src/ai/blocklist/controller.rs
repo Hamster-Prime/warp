@@ -3234,7 +3234,7 @@ impl BlocklistAIController {
                         LlmProvider::AwsBedrock | LlmProvider::Unknown => None,
                     });
                     RenderableAIError::InvalidApiKey {
-                        provider: provider.unwrap_or("Unknown").to_string(),
+                        provider: provider.unwrap_or(&i18n::t!("Unknown")).to_string(),
                         model_name: details.model_name,
                     }
                 };

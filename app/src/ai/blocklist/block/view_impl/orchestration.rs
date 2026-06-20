@@ -121,7 +121,10 @@ fn participant_for_conversation(
         return OrchestrationParticipant::orchestrator();
     }
 
-    let display_name = conversation.agent_name().unwrap_or("Agent").to_string();
+    let display_name = conversation
+        .agent_name()
+        .unwrap_or(&i18n::t!("Agent"))
+        .to_string();
     OrchestrationParticipant {
         display_name: display_name.clone(),
         avatar: OrchestrationAvatar::agent(display_name),
@@ -812,7 +815,10 @@ fn child_conversation_card_data_for_result(
             let conversation_id = conversation_id_for_agent_id(agent_id, app)?;
             let conversation =
                 BlocklistAIHistoryModel::as_ref(app).conversation(&conversation_id)?;
-            let agent_name = conversation.agent_name().unwrap_or("Agent").to_string();
+            let agent_name = conversation
+                .agent_name()
+                .unwrap_or(&i18n::t!("Agent"))
+                .to_string();
             let status = conversation.status().clone();
             let title = available_conversation_title_for_id(conversation_id, app)?;
             Some(ChildConversationCardData {

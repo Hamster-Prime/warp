@@ -1024,7 +1024,7 @@ impl AIDocumentView {
         let title = AIDocumentModel::as_ref(ctx)
             .get_current_document(&self.document_id)
             .map(|doc| doc.title.clone())
-            .unwrap_or_else(|| "Untitled".to_string());
+            .unwrap_or_else(|| i18n::t!("Untitled").to_string());
 
         // Sanitize the title for use as a filename
         let sanitized_title = safe_filename(&title);

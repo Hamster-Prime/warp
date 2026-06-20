@@ -456,7 +456,7 @@ impl EmailValidationError {
     /// The user-readable error descriptions.
     fn ui_message(&self) -> String {
         match self {
-            EmailValidationError::Empty => "Please enter an email.".to_owned(),
+            EmailValidationError::Empty => i18n::t!("Please enter an email.").to_string(),
             EmailValidationError::Invalid(invalid_email) => {
                 format!("Please ensure the following email is valid: {invalid_email}")
             }

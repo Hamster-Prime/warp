@@ -346,7 +346,7 @@ impl KeybindingsView {
                         .build()
                         .finish(),
                 )
-                .with_child(self.render_text("To toggle this panel".into(), None, appearance))
+                .with_child(self.render_text(i18n::t!("To toggle this panel").to_string(), None, appearance))
                 .with_cross_axis_alignment(CrossAxisAlignment::Center)
                 .finish();
 

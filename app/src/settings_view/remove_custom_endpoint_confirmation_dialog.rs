@@ -99,7 +99,7 @@ impl View for RemoveCustomEndpointConfirmationDialog {
         let appearance = Appearance::as_ref(app);
         let theme = appearance.theme();
 
-        let description = "Are you sure you want to remove this endpoint? You won't be able to use its models in your agent sessions moving forward.".to_string();
+        let description = i18n::t!("Are you sure you want to remove this endpoint? You won't be able to use its models in your agent sessions moving forward.").to_string();
 
         let endpoint_title = Text::new_inline(
             self.endpoint_name.clone(),

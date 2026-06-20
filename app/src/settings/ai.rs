@@ -266,7 +266,7 @@ impl VoiceInputToggleKey {
                 };
                 format!("Voice input (hold {key_name} key)")
             }
-            None => "Voice input".to_string(),
+            None => i18n::t!("Voice input").to_string(),
         }
     }
 

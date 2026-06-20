@@ -327,7 +327,7 @@ impl DiffViewer for InlineDiffView {
                 .diff()
                 .as_ref(_ctx)
                 .base()
-                .ok_or_else(|| "Missing base content".to_string())?
+                .ok_or_else(|| i18n::t!("Missing base content").to_string())?
                 .to_string();
 
             let version = self.editor.as_ref(_ctx).version(_ctx);

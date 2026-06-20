@@ -619,14 +619,14 @@ impl ServerCardView {
                     let gallery_uuid = installation.gallery_uuid();
                     let gallery_uuid_text = match gallery_uuid {
                         Some(uuid) => format!("Gallery Id: {uuid}"),
-                        None => "Gallery Id: None".to_string(),
+                        None => i18n::t!("Gallery Id: None").to_string(),
                     };
                     let cloud_server = CloudTemplatableMCPServer::get_by_uuid(&template_uuid, app);
                     let template_sync_id_text = match cloud_server {
                         Some(cloud_server) => {
                             format!("Template sync id: {}", cloud_server.sync_id())
                         }
-                        None => "Could not find cloud template".to_string(),
+                        None => i18n::t!("Could not find cloud template").to_string(),
                     };
                     lines.push(format!(
                         "{}",

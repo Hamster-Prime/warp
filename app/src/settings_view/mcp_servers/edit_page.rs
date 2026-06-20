@@ -537,7 +537,7 @@ impl MCPServersEditPageView {
                     ctx,
                 );
             });
-            return Err("This MCP server contains secrets. Visit Settings > Privacy to modify your secret redaction settings.".to_string());
+            return Err(i18n::t!("This MCP server contains secrets. Visit Settings > Privacy to modify your secret redaction settings.").to_string());
         }
 
         Ok(())
@@ -598,7 +598,7 @@ impl MCPServersEditPageView {
                 );
             });
 
-            return Err("No MCP Server specified.".to_string());
+            return Err(i18n::t!("No MCP Server specified.").to_string());
         }
 
         if parsed_templatable_mcp_servers.len() > 1 {

@@ -407,7 +407,7 @@ impl View for AgentViewZeroStateBlock {
             }
         } else {
             let mut local_description =
-                "Send a prompt below to start a new conversation".to_owned();
+                i18n::t!("Send a prompt below to start a new conversation").to_string();
             let active_session = self.active_session(app);
             let location_label = active_session.as_deref().and_then(|session| {
                 format_session_location(session, self.current_working_directory.as_deref())

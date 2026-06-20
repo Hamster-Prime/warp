@@ -683,7 +683,7 @@ impl Input {
                     .as_ref(ctx)
                     .active_conversation(self.terminal_view_id)
                 else {
-                    show_error_toast("No active conversation to export".to_owned(), ctx);
+                    show_error_toast(i18n::t!("No active conversation to export").to_string(), ctx);
                     return true;
                 };
 
@@ -899,7 +899,7 @@ impl Input {
                     .shared_session_status()
                     .is_sharer_or_viewer()
                 {
-                    show_error_toast("Session is already being shared".to_owned(), ctx);
+                    show_error_toast(i18n::t!("Session is already being shared").to_string(), ctx);
                     return true;
                 }
                 ctx.emit(Event::StartRemoteControl);

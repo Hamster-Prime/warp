@@ -489,6 +489,6 @@ impl CodeReviewHeader {
     fn get_header_text(diff_state_model: &ModelHandle<DiffStateModel>, app: &AppContext) -> String {
         let branch_name =
             diff_state_model.read(app, |model, ctx| model.get_current_branch_name(ctx));
-        branch_name.unwrap_or("Reviewing open changes".to_string())
+        branch_name.unwrap_or(i18n::t!("Reviewing open changes").to_string())
     }
 }

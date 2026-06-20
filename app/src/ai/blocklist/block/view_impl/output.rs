@@ -852,7 +852,7 @@ pub(super) fn render(props: Props, app: &AppContext) -> Box<dyn Element> {
                             SummarizationType::ConversationSummary
                         ) && !are_all_text_sections_empty(&text.sections) =>
                         {
-                            let header_text = "Conversation summarized".to_string();
+                            let header_text = i18n::t!("Conversation summarized").to_string();
                             if let Some(element) = render_collapsible_block(
                                 output_message,
                                 header_text,
@@ -2845,7 +2845,7 @@ fn render_use_computer(
             btn.render(
                 appearance,
                 button::Params {
-                    content: button::Content::Label("View screenshot".into()),
+                    content: button::Content::Label(i18n::t!("View screenshot")),
                     theme: &button::themes::Secondary,
                     options: button::Options {
                         size: button::Size::Small,
@@ -3894,10 +3894,10 @@ fn conversation_search_phase(task: &crate::ai::agent::task::Task) -> Conversatio
 
 fn format_conversation_search_phase(phase: &ConversationSearchPhase) -> String {
     match phase {
-        ConversationSearchPhase::ListingMessages => "Listing messages".to_string(),
+        ConversationSearchPhase::ListingMessages => i18n::t!("Listing messages").to_string(),
         ConversationSearchPhase::Grepping { patterns } => {
             if patterns.is_empty() {
-                return "Grepping for patterns".to_string();
+                return i18n::t!("Grepping for patterns").to_string();
             }
             let joined = truncate_from_end(&patterns.join(", "), 60);
             format!("Grepping for patterns: {joined}")

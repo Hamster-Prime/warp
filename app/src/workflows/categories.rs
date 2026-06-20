@@ -165,10 +165,10 @@ impl WorkflowViewType {
                     self.as_str(category_names)
                 )
             }
-            WorkflowViewType::All => "Showing all workflows".into(),
-            WorkflowViewType::LocalPersonal => "Showing my workflows".into(),
-            WorkflowViewType::Project => "Showing project workflows".into(),
-            WorkflowViewType::Team => "Showing team workflows".into(),
+            WorkflowViewType::All => i18n::t!("Showing all workflows").to_string(),
+            WorkflowViewType::LocalPersonal => i18n::t!("Showing my workflows").to_string(),
+            WorkflowViewType::Project => i18n::t!("Showing project workflows").to_string(),
+            WorkflowViewType::Team => i18n::t!("Showing team workflows").to_string(),
         };
 
         AccessibilityContent::new_without_help(a11y_content, WarpA11yRole::UserAction)

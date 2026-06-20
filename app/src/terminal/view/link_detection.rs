@@ -463,7 +463,7 @@ impl super::TerminalView {
                 // scanning job will be dropped once there is a new scanning job created.
                 let (tx, rx) = futures::channel::oneshot::channel();
                 self.file_link_scanning_join_handle = std::thread::Builder::new()
-                    .name("Compute file paths".into())
+                    .name(i18n::t!("Compute file paths").to_string())
                     .spawn(move || {
                         let paths = Self::compute_valid_paths(
                             &path,

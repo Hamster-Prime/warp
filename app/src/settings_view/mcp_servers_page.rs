@@ -149,7 +149,7 @@ impl MCPServersSettingsPageView {
     ) {
         let message = match server_name {
             Some(name) => format!("Successfully logged out of {name} MCP server"),
-            None => "Successfully logged out of MCP server".to_string(),
+            None => i18n::t!("Successfully logged out of MCP server").to_string(),
         };
         match item_id {
             ServerCardItemId::TemplatableMCP(_) => {

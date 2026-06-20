@@ -20,7 +20,7 @@ mod non_mac {
 
     /// Sets Warp as the default terminal
     pub fn set_warp_as_default_terminal() -> Result<(), String> {
-        Err("Not implemented".to_string())
+        Err(i18n::t!("Not implemented").to_string())
     }
 }
 

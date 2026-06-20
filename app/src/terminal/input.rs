@@ -5998,15 +5998,15 @@ impl Input {
         ctx: &mut ViewContext<Self>,
     ) -> Result<(), String> {
         let Some(session_id) = self.active_block_session_id() else {
-            return Err("Tried to open file in code editor without a session id".to_string());
+            return Err(i18n::t!("Tried to open file in code editor without a session id").to_string());
         };
 
         let Some(session) = self.sessions.as_ref(ctx).get(session_id) else {
-            return Err("Tried to open file in code editor without a session".to_string());
+            return Err(i18n::t!("Tried to open file in code editor without a session").to_string());
         };
 
         if !session.is_local() {
-            return Err("Tried to open file in code editor for a remote session".to_string());
+            return Err(i18n::t!("Tried to open file in code editor for a remote session").to_string());
         }
 
         #[cfg(feature = "local_fs")]
@@ -6017,7 +6017,7 @@ impl Input {
                 .as_ref()
                 .and_then(|metadata| metadata.current_working_directory())
                 .map(std::path::PathBuf::from)
-                .ok_or("Failed to get current working directory".to_string())?;
+                .ok_or(i18n::t!("Failed to get current working directory").to_string())?;
             let file_path = current_dir.join(_file_name);
             // Create a CodeSource for the file
             let code_source = CodeSource::Link {
@@ -6685,7 +6685,7 @@ impl Input {
                     .selected_environment_id()
                     .and_then(|id| CloudAmbientAgentEnvironment::get_by_id(id, ctx))
                     .map(|env| format!("Hand off to {}", env.model().string_model.display_name()))
-                    .unwrap_or_else(|| "Handoff to cloud".to_owned())
+                    .unwrap_or_else(|| i18n::t!("Handoff to cloud").to_string())
             };
             self.editor.update(ctx, |editor, ctx| {
                 editor.set_placeholder_text(&hint, ctx);

@@ -212,7 +212,7 @@ impl ThemeCreatorBody {
             #[cfg(not(feature = "local_fs"))]
             log::warn!("Tried to save theme without a local filesystem.");
             if errored {
-                self.send_error_toast("Something went wrong".to_string(), ctx);
+                self.send_error_toast(i18n::t!("Something went wrong").to_string(), ctx);
             }
         }
     }

@@ -590,7 +590,7 @@ impl AgentAssistedEnvironmentModal {
             move |paths_result, ctx| {
                 let result = paths_result.and_then(|paths| {
                     paths.into_iter().next().map(PathBuf::from).ok_or_else(|| {
-                        FilePickerError::DialogFailed("No directory selected".to_string())
+                        FilePickerError::DialogFailed(i18n::t!("No directory selected").to_string())
                     })
                 });
 

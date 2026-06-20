@@ -566,7 +566,7 @@ impl LaunchConfigSaveModal {
                         FailureType::FileAlreadyExists => {
                             i18n::t!("Failed to save. A launch configuration with the same name already exists.").to_string()
                         }
-                        FailureType::Other => "An issue was encountered while saving.".to_string(),
+                        FailureType::Other => i18n::t!("An issue was encountered while saving.").to_string(),
                     },
                 )
                 .with_padding_bottom(24.)

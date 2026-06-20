@@ -2105,7 +2105,7 @@ impl TerminalManager {
                     }
                     LinkAccessLevelUpdateResponse::Error => {
                         let reason_string =
-                            "Failed to update permissions for shared session".to_owned();
+                            i18n::t!("Failed to update permissions for shared session").to_string();
                         view.show_persistent_toast(reason_string, ToastFlavor::Error, ctx);
                     }
                 });

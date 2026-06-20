@@ -316,7 +316,7 @@ impl View for AgentViewEntryBlock {
                     Text::new(
                         conversation
                             .title()
-                            .unwrap_or("Untitled conversation".to_string()),
+                            .unwrap_or(i18n::t!("Untitled conversation").to_string()),
                         appearance.ui_font_family(),
                         appearance.monospace_font_size(),
                     )

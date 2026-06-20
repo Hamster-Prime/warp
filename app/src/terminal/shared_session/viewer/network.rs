@@ -1067,7 +1067,7 @@ pub fn session_ended_reason_string(reason: &SessionEndedReason) -> String {
         SessionEndedReason::InactivityLimitReached => {
             i18n::t!("Sharing ended due to sharer inactivity").to_string()
         }
-        _ => "Session ended.".to_owned(),
+        _ => i18n::t!("Session ended.").to_string(),
     }
 }
 
@@ -1086,7 +1086,7 @@ pub fn command_execution_failure_reason_string(reason: &CommandExecutionFailureR
         CommandExecutionFailureReason::InsufficientPermissions => {
             i18n::t!("Insufficient permissions. Please request edit access.").to_string()
         }
-        _ => "Failed to execute command. Please try again.".to_owned(),
+        _ => i18n::t!("Failed to execute command. Please try again.").to_string(),
     }
 }
 
@@ -1096,7 +1096,7 @@ pub fn write_to_pty_failure_reason_string(reason: &WriteToPtyFailureReason) -> S
         WriteToPtyFailureReason::InsufficientPermissions => {
             i18n::t!("Insufficient permissions. Please request edit access.").to_string()
         }
-        _ => "Failed to make edit. Please try again.".to_owned(),
+        _ => i18n::t!("Failed to make edit. Please try again.").to_string(),
     }
 }
 
@@ -1121,7 +1121,7 @@ pub fn control_action_failure_reason_string(reason: &ControlActionFailureReason)
         ControlActionFailureReason::InsufficientPermissions => {
             i18n::t!("Insufficient permissions. Please request edit access.").to_string()
         }
-        _ => "Failed to perform action. Please try again.".to_owned(),
+        _ => i18n::t!("Failed to perform action. Please try again.").to_string(),
     }
 }
 

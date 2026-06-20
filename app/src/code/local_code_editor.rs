@@ -2126,12 +2126,12 @@ impl DiffViewer for LocalCodeEditorView {
             .diff()
             .as_ref(ctx)
             .base()
-            .ok_or_else(|| "Missing base content".to_string())?
+            .ok_or_else(|| i18n::t!("Missing base content").to_string())?
             .to_string();
 
         let file_id = self
             .file_id()
-            .ok_or_else(|| "Missing file_id".to_string())?;
+            .ok_or_else(|| i18n::t!("Missing file_id").to_string())?;
 
         let buffer_version = self.editor.as_ref(ctx).version(ctx);
 

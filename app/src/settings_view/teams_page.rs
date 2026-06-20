@@ -1001,7 +1001,7 @@ impl TeamsPageView {
                     .user_workspaces
                     .as_ref(ctx)
                     .current_team()
-                    .map_or("Successfully joined team".to_string(), |team| {
+                    .map_or(i18n::t!("Successfully joined team").to_string(), |team| {
                         format!("Successfully joined {}", team.name)
                     });
                 self.show_success(message, ctx);
@@ -1150,7 +1150,7 @@ impl TeamsPageView {
     ) {
         match event {
             TeamUpdateManagerEvent::LeaveError => {
-                let error = "Error leaving team".to_string();
+                let error = i18n::t!("Error leaving team").to_string();
                 self.show_error(error, None, ctx);
             }
             TeamUpdateManagerEvent::LeaveSuccess => {
@@ -2585,7 +2585,7 @@ impl TeamsWidget {
             if !policy.is_unlimited {
                 let mut shared_notebooks_column = Flex::column();
                 shared_notebooks_column.add_child(
-                    self.render_plan_usage_header("Shared Notebooks".into(), appearance),
+                    self.render_plan_usage_header(i18n::t!("Shared Notebooks").to_string(), appearance),
                 );
                 let num_shared_notebooks = cloud_model
                     .active_notebooks_in_space(Space::Team { team_uid: team.uid }, app)
@@ -2610,7 +2610,7 @@ impl TeamsWidget {
             if !policy.is_unlimited {
                 let mut shared_workflows_column = Flex::column();
                 shared_workflows_column.add_child(
-                    self.render_plan_usage_header("Shared Workflows".into(), appearance),
+                    self.render_plan_usage_header(i18n::t!("Shared Workflows").to_string(), appearance),
                 );
                 let num_shared_workflows = cloud_model
                     .active_workflows_in_space(Space::Team { team_uid: team.uid }, app)
@@ -2663,7 +2663,7 @@ impl TeamsWidget {
 
         invitation_section.add_child(
             Container::new(
-                self.render_subsection_header("Invite team members".to_owned(), appearance),
+                self.render_subsection_header(i18n::t!("Invite team members").to_string(), appearance),
             )
             .with_padding_bottom(16.)
             .finish(),
@@ -2735,7 +2735,7 @@ impl TeamsWidget {
 
         // Header + admin-only subtext on the left, toggle on the right. The
         // text is stacked so the toggle centers against the whole block.
-        let header = self.render_subsubsection_header("By link".to_owned(), appearance);
+        let header = self.render_subsubsection_header(i18n::t!("By link").to_string(), appearance);
         let text_column = if has_admin_permissions {
             Flex::column()
                 .with_child(header)
@@ -2839,7 +2839,7 @@ impl TeamsWidget {
 
         // "By email" subsection header
         section.add_child(
-            Container::new(self.render_subsubsection_header("By email".to_owned(), appearance))
+            Container::new(self.render_subsubsection_header(i18n::t!("By email").to_string(), appearance))
                 .with_padding_top(CONTENT_SEPARATION_PADDING)
                 .with_padding_bottom(8.)
                 .finish(),
@@ -2912,7 +2912,7 @@ impl TeamsWidget {
             .with_main_axis_size(MainAxisSize::Max)
             .with_main_axis_alignment(MainAxisAlignment::SpaceBetween)
             .with_cross_axis_alignment(CrossAxisAlignment::Center)
-            .with_child(self.render_subsection_header("Team members".to_owned(), appearance))
+            .with_child(self.render_subsection_header(i18n::t!("Team members").to_string(), appearance))
             .with_child(self.render_team_members_count(team, appearance))
             .finish();
         section.add_child(
@@ -3038,7 +3038,7 @@ impl TeamsWidget {
 
         let team_uid = team.uid;
         let (link_text, suffix) = Self::outgrow_upgrade_line_copy(&team.billing_metadata);
-        let prefix = self.render_sub_text("Need more seats? ".to_string(), appearance, None);
+        let prefix = self.render_sub_text(i18n::t!("Need more seats? ").to_string(), appearance, None);
         let link = appearance
             .ui_builder()
             .link(
@@ -3246,7 +3246,7 @@ impl TeamsWidget {
     ) -> Box<dyn Element> {
         // Same layout as the "By link" header row: text column on the left,
         // toggle on the right.
-        let header = self.render_subsubsection_header("By discovery".to_owned(), appearance);
+        let header = self.render_subsubsection_header(i18n::t!("By discovery").to_string(), appearance);
 
         let domain = current_user_email.split('@').nth(1).unwrap_or("");
         let team_discoverability_instructions =
@@ -3685,7 +3685,7 @@ impl TeamsWidget {
                 );
                 (link, true)
             }
-            None => ("Failed to load invite link.".into(), false),
+            None => (i18n::t!("Failed to load invite link.").to_string(), false),
         };
         let theme = appearance.theme();
 
@@ -3982,7 +3982,7 @@ impl TeamsWidget {
         // Title, subtitle, and description
         page.add_child(render_sub_header(appearance, "Teams".to_string(), None));
         page.add_child(
-            self.render_sub_header_with_subtext_color(appearance, "Create a team".to_string()),
+            self.render_sub_header_with_subtext_color(appearance, i18n::t!("Create a team").to_string()),
         );
         page.add_child(
             Container::new(

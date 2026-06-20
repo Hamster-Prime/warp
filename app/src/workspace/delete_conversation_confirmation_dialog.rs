@@ -102,7 +102,7 @@ impl View for DeleteConversationConfirmationDialog {
             .source
             .as_ref()
             .map(|s| format!("Delete '{}'?", s.conversation_title))
-            .unwrap_or_else(|| "Delete conversation?".into());
+            .unwrap_or_else(|| i18n::t!("Delete conversation?").to_string());
 
         let dialog = Dialog::new(
             title,

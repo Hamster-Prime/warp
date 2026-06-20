@@ -355,10 +355,10 @@ impl CommandRenderInfo {
                 },
                 command_text: Some(last_run_command),
                 hint_text: match mins_since_completion {
-                    Some(mins) if mins >= 60 => "Completed over 1 hour ago".to_string(),
+                    Some(mins) if mins >= 60 => i18n::t!("Completed over 1 hour ago").to_string(),
                     Some(mins) if mins == 1 => format!("Completed {mins} minute ago"),
                     Some(mins) => format!("Completed {mins} minutes ago"),
-                    None => "No timestamp found".to_string(),
+                    None => i18n::t!("No timestamp found").to_string(),
                 },
             },
             CommandContext::RunningAIBlock { prompt } => CommandRenderInfo {

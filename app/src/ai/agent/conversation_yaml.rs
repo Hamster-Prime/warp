@@ -48,7 +48,7 @@ pub fn materialize_tasks_to_yaml(tasks: &[api::Task]) -> Result<String, String> 
                 .as_ref()
                 .is_none_or(|d| d.parent_task_id.is_empty())
         })
-        .ok_or_else(|| "No root task found".to_string())?;
+        .ok_or_else(|| i18n::t!("No root task found").to_string())?;
 
     let mut index: u32 = 0;
     if let Err(e) = write_task_messages(root, &dir, &mut index, &task_map) {

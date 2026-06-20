@@ -1151,7 +1151,7 @@ impl ServerModel {
                         );
                         not_enabled_codebase_index_status(repo_path.to_string_lossy().to_string())
                     } else if !manager.can_create_new_indices() {
-                        let failure_message = "Cannot index remote codebase because the maximum number of codebase indexes has been reached.".to_string();
+                        let failure_message = i18n::t!("Cannot index remote codebase because the maximum number of codebase indexes has been reached.").to_string();
                         log::warn!(
                             "[Remote codebase indexing] Daemon cannot start IndexCodebase: repo_path={} reason={failure_message}",
                             repo_path.display()

@@ -428,7 +428,7 @@ impl<'a> WarpDriveRow<'a> {
             .permissions()
             .owner;
 
-        let mut owner_label = "From ".to_string();
+        let mut owner_label = i18n::t!("From ").to_string();
         match owner {
             Owner::User { user_uid } => {
                 match UserProfiles::as_ref(app).displayable_identifier_for_uid(user_uid) {

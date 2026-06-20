@@ -287,7 +287,7 @@ impl CustomerType {
             CustomerType::Turbo => "Turbo".to_string(),
             CustomerType::SelfServe => "Team".to_string(),
             CustomerType::Prosumer => "Pro".to_string(),
-            CustomerType::Legacy => "Early adopter".to_string(),
+            CustomerType::Legacy => i18n::t!("Early adopter").to_string(),
             CustomerType::Enterprise => "Enterprise".to_string(),
             CustomerType::Business => "Business".to_string(),
             CustomerType::Lightspeed => "Lightspeed".to_string(),

@@ -449,7 +449,7 @@ pub(crate) fn build_worktree_config_toml(
         param.insert("type".into(), Value::String("text".into()));
         param.insert(
             "description".into(),
-            Value::String("Worktree branch name".to_string()),
+            Value::String(i18n::t!("Worktree branch name").to_string()),
         );
         let mut params = toml::map::Map::new();
         params.insert("worktree_branch_name".into(), Value::Table(param));

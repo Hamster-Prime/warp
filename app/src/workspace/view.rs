@@ -12431,7 +12431,7 @@ impl Workspace {
         self.add_tab_with_pane_layout(
             Default::default(),
             Arc::new(HashMap::new()),
-            Some("Install Update".to_owned()),
+            Some(i18n::t!("Install Update").to_string()),
             ctx,
         );
 
@@ -14723,7 +14723,7 @@ impl Workspace {
             AuthSecretFtuxViewEvent::Failed { .. } => {}
         });
 
-        let title = "New API key".to_string();
+        let title = i18n::t!("New API key").to_string();
         let modal = ctx.add_typed_action_view(|ctx| {
             Modal::new(Some(title), body, ctx).with_modal_style(UiComponentStyles {
                 width: Some(520.),
@@ -18564,7 +18564,7 @@ impl Workspace {
                 });
 
                 // Enter agent view and submit the initial prompt
-                let initial_prompt = "Hello, Agent Mode x Codex!".to_string();
+                let initial_prompt = i18n::t!("Hello, Agent Mode x Codex!").to_string();
                 terminal_view.update(ctx, |terminal_view, ctx| {
                     terminal_view.enter_agent_view_for_new_conversation(
                         Some(initial_prompt),
@@ -20607,10 +20607,10 @@ impl Workspace {
         const BUTTON_WIDTH: f32 = 24. + SIDE_MENU_WIDTH;
         const BUTTON_LEFT_MARGIN: f32 = 4.;
 
-        let new_tab_tool_tip_label_text = "New Tab".to_string();
+        let new_tab_tool_tip_label_text = i18n::t!("New Tab").to_string();
         let new_tab_tool_tip_sublabel_text =
             keybinding_name_to_display_string(NEW_TAB_BINDING_NAME, ctx);
-        let tab_configs_tool_tip_label_text = "Tab configs".to_string();
+        let tab_configs_tool_tip_label_text = i18n::t!("Tab configs").to_string();
         let tab_configs_tool_tip_sublabel_text =
             keybinding_name_to_display_string(TOGGLE_TAB_CONFIGS_MENU_BINDING_NAME, ctx);
         let appearance = Appearance::as_ref(ctx);
@@ -20990,7 +20990,7 @@ impl Workspace {
     fn render_offline_button(&self, appearance: &Appearance) -> Box<dyn Element> {
         let ui_builder = appearance.ui_builder().clone();
 
-        let tool_tip_label_text = "Some features may be unavailable offline".to_string();
+        let tool_tip_label_text = i18n::t!("Some features may be unavailable offline").to_string();
         let icon = ConstrainedBox::new(
             Container::new(
                 icons::Icon::CloudOffline
@@ -24853,7 +24853,7 @@ impl TypedActionView for Workspace {
                         let entry = format!("file://{}", plugin_path.display());
                         set_opencode_warp_plugin(&entry)
                     }
-                    None => "Failed to determine home directory".to_string(),
+                    None => i18n::t!("Failed to determine home directory").to_string(),
                 };
                 self.toast_stack.update(ctx, |view, ctx| {
                     view.add_ephemeral_toast(DismissibleToast::default(message), ctx);
@@ -28083,7 +28083,7 @@ fn compute_default_panel_widths(
 #[cfg(debug_assertions)]
 fn set_opencode_warp_plugin(new_entry: &str) -> String {
     let Some(home) = dirs::home_dir() else {
-        return "Failed to determine home directory".to_string();
+        return i18n::t!("Failed to determine home directory").to_string();
     };
 
     let config_dir = home.join(".config/opencode");

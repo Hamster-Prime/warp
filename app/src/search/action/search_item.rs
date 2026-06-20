@@ -161,7 +161,7 @@ impl SearchItem for MatchedBinding {
         self.binding
             .trigger
             .as_ref()
-            .map_or("Press enter to confirm.".into(), |trigger| {
+            .map_or(i18n::t!("Press enter to confirm.").to_string(), |trigger| {
                 format!(
                     "Press enter to confirm. Use {} binding to run this action in the future.",
                     trigger.normalized()

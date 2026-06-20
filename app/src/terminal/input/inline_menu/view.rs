@@ -1039,7 +1039,7 @@ impl<A: InlineMenuAction, T: 'static + Send + Sync> View for InlineMenuView<A, T
             content = if self.mixer.as_ref(app).is_loading() {
                 self.render_no_results_state("Loading...".into(), app)
             } else {
-                self.render_no_results_state("No results".into(), app)
+                self.render_no_results_state(i18n::t!("No results").to_string(), app)
             };
         } else {
             let results_list = self.render_results_list(app);

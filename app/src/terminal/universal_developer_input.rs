@@ -91,9 +91,9 @@ impl AtContextMenuDisabledReason {
                 i18n::t!("Not supported in SSH sessions without remote server").to_string()
             }
             #[cfg(not(target_family = "wasm"))]
-            AtContextMenuDisabledReason::Subshell => "Not supported in subshells".to_string(),
+            AtContextMenuDisabledReason::Subshell => i18n::t!("Not supported in subshells").to_string(),
             #[cfg(target_family = "wasm")]
-            AtContextMenuDisabledReason::Wasm => "Requires a filesystem".to_string(),
+            AtContextMenuDisabledReason::Wasm => i18n::t!("Requires a filesystem").to_string(),
             #[cfg(not(target_family = "wasm"))]
             AtContextMenuDisabledReason::DisabledInTerminalMode => {
                 i18n::t!("Disabled in terminal mode, re-enable in settings").to_string()

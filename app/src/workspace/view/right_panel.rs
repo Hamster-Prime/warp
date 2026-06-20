@@ -814,7 +814,7 @@ impl RightPanelView {
 
         let tooltip = if let Some(keybinding) = tooltip_keybinding {
             ui_builder
-                .tool_tip_with_sublabel("Close panel".to_string(), keybinding)
+                .tool_tip_with_sublabel(i18n::t!("Close panel").to_string(), keybinding)
                 .build()
                 .finish()
         } else {
@@ -1087,7 +1087,7 @@ impl RightPanelView {
 
         let title = Shrinkable::new(
             1.0,
-            Text::new_inline("Code review".to_string(), appearance.ui_font_family(), 12.)
+            Text::new_inline(i18n::t!("Code review").to_string(), appearance.ui_font_family(), 12.)
                 .with_style(Properties::default().weight(Weight::Bold))
                 .with_color(sub_text_color.into())
                 .finish(),

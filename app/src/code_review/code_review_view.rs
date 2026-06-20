@@ -474,7 +474,7 @@ impl DiscardOperationType {
             DiscardOperationType::FileUncommittedChanges => {
                 i18n::t!("Discard all uncommitted changes to file?").to_string()
             }
-            DiscardOperationType::AllChangesAgainstBranch(_) => "Discard all changes?".to_string(),
+            DiscardOperationType::AllChangesAgainstBranch(_) => i18n::t!("Discard all changes?").to_string(),
             DiscardOperationType::FileChangesAgainstBranch(_) => {
                 i18n::t!("Discard all changes to file?").to_string()
             }
@@ -4290,7 +4290,7 @@ impl CodeReviewView {
             }
             ReviewSubmissionResult::Error => {
                 log::error!("Failed to submit review comments");
-                let error_message = "Could not submit comments to the agent".to_string();
+                let error_message = i18n::t!("Could not submit comments to the agent").to_string();
                 ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     let toast = DismissibleToast::error(error_message);
                     toast_stack.add_ephemeral_toast(toast, self.window_id, ctx);

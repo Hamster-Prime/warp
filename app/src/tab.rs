@@ -666,7 +666,7 @@ impl TabData {
                             Some(id) => id.to_ansi_color(&terminal_colors).into(),
                         };
                         let tooltip = match ansi_id {
-                            None => "Default (no color)".to_string(),
+                            None => i18n::t!("Default (no color)").to_string(),
                             Some(id) => id.to_string(),
                         };
 

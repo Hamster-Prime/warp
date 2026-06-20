@@ -197,7 +197,7 @@ impl EnvironmentDisplayData {
                 "Last used: {}",
                 format_approx_duration_from_now_utc(ts.utc())
             ),
-            None => "Last used: never".to_string(),
+            None => i18n::t!("Last used: never").to_string(),
         };
         match last_edited_part {
             Some(edited) => format!("{} · {}", edited, last_used_part),
@@ -633,7 +633,7 @@ impl EnvironmentsPageView {
 
             if should_handle {
                 self.pending_save_env_id = None;
-                self.show_success_toast("Successfully updated environment".to_string(), ctx);
+                self.show_success_toast(i18n::t!("Successfully updated environment").to_string(), ctx);
 
                 // No need to force a global cloud-object refresh here: on update success the
                 // sync pipeline updates this environment's `revision_ts` (used for "Last edited")
@@ -691,9 +691,9 @@ impl EnvironmentsPageView {
             self.pending_share_server_id = None;
 
             if matches!(result.success_type, OperationSuccessType::Success) {
-                self.show_success_toast("Successfully shared environment".to_string(), ctx);
+                self.show_success_toast(i18n::t!("Successfully shared environment").to_string(), ctx);
             } else {
-                self.show_error_toast("Failed to share environment with team".to_string(), ctx);
+                self.show_error_toast(i18n::t!("Failed to share environment with team").to_string(), ctx);
             }
 
             ctx.notify();

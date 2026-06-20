@@ -1103,7 +1103,7 @@ impl SettingsWidget for IapCredentialsWidget {
         let disabled: ColorU = appearance.theme().disabled_ui_text_color().into();
         let active: ColorU = appearance.theme().active_ui_text_color().into();
         let (status_text, status_color): (String, ColorU) = match &state {
-            IapCredentialsState::Missing => ("Not yet loaded".to_string(), disabled),
+            IapCredentialsState::Missing => (i18n::t!("Not yet loaded").to_string(), disabled),
             IapCredentialsState::Refreshing { .. } => ("Refreshing…".to_string(), active),
             IapCredentialsState::Loaded(cached) => {
                 let remaining = cached
@@ -1114,7 +1114,7 @@ impl SettingsWidget for IapCredentialsWidget {
             }
             IapCredentialsState::Failed { message, .. } => (format!("Failed: {message}"), ansi_red),
             IapCredentialsState::EnvInjected { .. } => {
-                ("Using injected token (WARP_IAP_TOKEN)".to_string(), active)
+                (i18n::t!("Using injected token (WARP_IAP_TOKEN)").to_string(), active)
             }
         };
 

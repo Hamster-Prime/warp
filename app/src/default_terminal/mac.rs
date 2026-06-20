@@ -56,7 +56,7 @@ pub fn is_warp_default_terminal() -> bool {
 pub fn set_warp_as_default_terminal() -> Result<(), String> {
     log::debug!("Setting Warp as default terminal");
 
-    let bundle_id = get_warp_bundle_id().ok_or("No bundle ID".to_string())?;
+    let bundle_id = get_warp_bundle_id().ok_or(i18n::t!("No bundle ID").to_string())?;
 
     set_default_terminal(&bundle_id)
 }

@@ -394,7 +394,7 @@ impl ExportManager {
             ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                 let message = match export.key().display_name(ctx) {
                     Some(name) => format!("Exported {name}"),
-                    None => "Exported object".to_string(),
+                    None => i18n::t!("Exported object").to_string(),
                 };
 
                 let link_label = if cfg!(target_os = "macos") {

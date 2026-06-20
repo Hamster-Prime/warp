@@ -136,7 +136,7 @@ async fn read_remote_file(
                     )) => FileReadResult::Found(content),
                     Some(remote_server::proto::file_context_proto::Content::BinaryContent(_)) => {
                         // apply-diff only works with text files
-                        FileReadResult::ReadError("File is binary".to_string())
+                        FileReadResult::ReadError(i18n::t!("File is binary").to_string())
                     }
                     None => FileReadResult::Found(String::new()),
                 }

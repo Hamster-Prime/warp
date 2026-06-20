@@ -408,7 +408,7 @@ impl<'a> QuitWarningDialog<'a> {
         }
 
         if let Some(callback) = on_discard_changes {
-            buttons.push(ModalButton::for_app("Don't Save".to_string(), callback));
+            buttons.push(ModalButton::for_app(i18n::t!("Don't Save").to_string(), callback));
         }
 
         if let Some(callback) = on_show_processes {

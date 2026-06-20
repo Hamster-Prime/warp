@@ -2097,9 +2097,9 @@ impl AIBlock {
                     action: AIAgentActionType::SuggestNewConversation { .. },
                     ..
                 } => {
-                    let start_new_conversation_button_text = "Start a new conversation".to_owned();
+                    let start_new_conversation_button_text = i18n::t!("Start a new conversation").to_string();
                     let continue_current_conversation_button_text =
-                        "Continue current conversation".to_owned();
+                        i18n::t!("Continue current conversation").to_string();
 
                     let server_output_id = self.model.server_output_id(ctx);
                     let accept_action = AIBlockAction::StartNewConversationButtonClicked {

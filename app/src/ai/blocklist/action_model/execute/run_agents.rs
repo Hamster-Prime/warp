@@ -704,7 +704,7 @@ fn validate_request(request: &RunAgentsRequest) -> Result<(), String> {
         RunAgentsExecutionMode::Remote { .. }
     ) && request.harness_type.eq_ignore_ascii_case("opencode")
     {
-        return Err("Remote child agents do not support the opencode harness yet.".to_string());
+        return Err(i18n::t!("Remote child agents do not support the opencode harness yet.").to_string());
     }
     Ok(())
 }

@@ -1018,7 +1018,7 @@ pub(crate) fn convert_tool_call_result_to_input(
                         let context = FileContext::from(content.clone());
                         ReadSkillResult::Success { content: context }
                     } else {
-                        ReadSkillResult::Error("FileContent is None".to_string())
+                        ReadSkillResult::Error(i18n::t!("FileContent is None").to_string())
                     }
                 }
                 Some(api::read_skill_result::Result::Error(error)) => {

@@ -2126,7 +2126,7 @@ impl DriveIndex {
         appearance: &Appearance,
         app: &AppContext,
     ) -> Box<dyn Element> {
-        let button_text = "Create team".to_owned();
+        let button_text = i18n::t!("Create team").to_string();
         let create_button = if UserWorkspaces::as_ref(app).total_teammates_in_joinable_teams() == 0
         {
             appearance

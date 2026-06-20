@@ -832,9 +832,9 @@ impl NotificationsTrigger {
             }
             AgentTaskCompleted(command_succeeded) => {
                 if *command_succeeded {
-                    (" finished".to_string(), "Latest output: ".to_string())
+                    (" finished".to_string(), i18n::t!("Latest output: ").to_string())
                 } else {
-                    (" failed".to_string(), "Error: ".to_string())
+                    (" failed".to_string(), i18n::t!("Error: ").to_string())
                 }
             }
             NotificationsTrigger::NeedsAttention => (" blocked".to_string(), "".to_string()),
@@ -7544,9 +7544,9 @@ impl TerminalView {
                         "Oz needs your permission to interact with a running shell command"
                             .to_string()
                     }
-                    _ => "Oz needs your confirmation to continue".to_string(),
+                    _ => i18n::t!("Oz needs your confirmation to continue").to_string(),
                 })
-                .unwrap_or("Oz needs your confirmation to continue".to_string());
+                .unwrap_or(i18n::t!("Oz needs your confirmation to continue").to_string());
             return Some(AIBlockNotificationSummary {
                 success: false,
                 title,
@@ -12780,7 +12780,7 @@ impl TerminalView {
                         } => "Installing...".to_string(),
                         RemoteServerSetupState::Updating => "Updating...".to_string(),
                         RemoteServerSetupState::Initializing => "Initializing...".to_string(),
-                        _ => "Starting shell...".to_string(),
+                        _ => i18n::t!("Starting shell...").to_string(),
                     })
             })
             .unwrap_or_else(|| i18n::t!("Starting shell...").to_string());
@@ -14191,7 +14191,7 @@ impl TerminalView {
                     true,
                 )
             } else {
-                ("Create environment without any repos".to_string(), false)
+                (i18n::t!("Create environment without any repos").to_string(), false)
             }
         };
 
@@ -21082,13 +21082,13 @@ impl TerminalView {
 
         let Some(ambient_agent_view_model) = self.ambient_agent_view_model.clone() else {
             self.restore_followup_prompt_after_failed_submission(&prompt, ctx);
-            self.show_error_toast("Couldn't continue this cloud task.".to_string(), ctx);
+            self.show_error_toast(i18n::t!("Couldn't continue this cloud task.").to_string(), ctx);
             return true;
         };
 
         if ambient_agent_view_model.as_ref(ctx).task_id() != Some(task_id) {
             self.restore_followup_prompt_after_failed_submission(&prompt, ctx);
-            self.show_error_toast("Couldn't continue this cloud task.".to_string(), ctx);
+            self.show_error_toast(i18n::t!("Couldn't continue this cloud task.").to_string(), ctx);
             return true;
         }
 
@@ -21169,7 +21169,7 @@ impl TerminalView {
                 {
                     return;
                 }
-                self.show_error_toast("Couldn't continue this cloud task.".to_string(), ctx);
+                self.show_error_toast(i18n::t!("Couldn't continue this cloud task.").to_string(), ctx);
             }
             InputEvent::CancelSharedSessionConversation {
                 server_conversation_token,

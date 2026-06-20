@@ -204,7 +204,7 @@ impl SecretManager {
                 let (link, link_message) = match self {
                     SecretManager::OnePassword => (
                         Some(ONEPASSWORD_DOCS_LINK.to_owned()),
-                        Some("Integrate 1Password app with CLI".to_owned()),
+                        Some(i18n::t!("Integrate 1Password app with CLI").to_string()),
                     ),
                     SecretManager::LastPass => (None, None),
                 };

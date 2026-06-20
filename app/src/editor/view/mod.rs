@@ -1683,7 +1683,7 @@ impl ImageContextOptions {
         } = self
         {
             if *unsupported_model {
-                return "Image attachment isn't supported by this model".into();
+                return i18n::t!("Image attachment isn't supported by this model").to_string();
             }
 
             if *is_processing_attached_images {

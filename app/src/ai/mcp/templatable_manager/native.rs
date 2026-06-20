@@ -763,7 +763,7 @@ impl TemplatableMCPServerManager {
                     if mode.is_reconnect() {
                         self.notify_reconnect_waiters(
                             installation_uuid,
-                            Err("Template contains no servers".to_string()),
+                            Err(i18n::t!("Template contains no servers").to_string()),
                         );
                     }
                     return;
@@ -1711,7 +1711,7 @@ impl TemplatableMCPServerManager {
         else {
             self.notify_reconnect_waiters(
                 installation_uuid,
-                Err("Installation not found".to_string()),
+                Err(i18n::t!("Installation not found").to_string()),
             );
             return;
         };

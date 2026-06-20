@@ -205,7 +205,7 @@ impl<P: BackingView> PaneHeader<P> {
                     "Share".to_string(),
                 )
             } else {
-                (Icon::Link, false, "Copy link".to_string())
+                (Icon::Link, false, i18n::t!("Copy link").to_string())
             };
 
         let ui_builder = appearance.ui_builder().clone();

@@ -738,7 +738,7 @@ impl ShareBlockModal {
         } else {
             let embed_snippet = self
                 .generate_embed_snippet(app)
-                .unwrap_or("Error generating embed snippet".to_string());
+                .unwrap_or(i18n::t!("Error generating embed snippet").to_string());
             col.add_child(self.render_embed_label(appearance, embed_snippet));
             col.add_child(
                 Align::new(

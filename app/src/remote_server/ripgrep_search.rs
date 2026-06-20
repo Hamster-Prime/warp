@@ -26,7 +26,7 @@ pub(super) struct RipgrepSearchParams {
 
 pub(super) fn validate_request(msg: RipgrepSearchRequest) -> Result<RipgrepSearchParams, String> {
     if msg.pattern.is_empty() || msg.roots.is_empty() {
-        return Err("RipgrepSearch requires a pattern and at least one root".to_string());
+        return Err(i18n::t!("RipgrepSearch requires a pattern and at least one root").to_string());
     }
     if let Some(root) = msg.roots.iter().find(|root| !Path::new(root).is_absolute()) {
         return Err(format!("RipgrepSearch root must be absolute: {root}"));

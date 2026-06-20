@@ -189,7 +189,7 @@ impl AgentNotificationsModel {
                         title,
                         message
                             .clone()
-                            .unwrap_or_else(|| "Waiting for input.".to_owned()),
+                            .unwrap_or_else(|| i18n::t!("Waiting for input.").to_string()),
                         NotificationCategory::Request,
                         NotificationSourceAgent::CLI {
                             agent: *agent,
@@ -319,7 +319,7 @@ impl AgentNotificationsModel {
             return;
         }
 
-        let title = latest_query.unwrap_or_else(|| "Agent task".to_owned());
+        let title = latest_query.unwrap_or_else(|| i18n::t!("Agent task").to_string());
         let metadata = TerminalViewMetadata::lookup(terminal_view_id, ctx);
         let oz_agent = NotificationSourceAgent::Oz {
             is_ambient: metadata.is_ambient,

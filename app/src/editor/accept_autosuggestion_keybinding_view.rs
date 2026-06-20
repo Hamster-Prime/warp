@@ -215,7 +215,7 @@ impl TypedActionView for AcceptAutosuggestionKeybinding {
             }
             AcceptAutosuggestionKeybindingAction::OpenSettingsForCustomKeybinding => ctx
                 .dispatch_typed_action(&WorkspaceAction::ConfigureKeybindingSettings {
-                    keybinding_name: Some("Accept Autosuggestion".to_owned()),
+                    keybinding_name: Some(i18n::t!("Accept Autosuggestion").to_string()),
                 }),
             AcceptAutosuggestionKeybindingAction::OpenMenu => {
                 self.is_menu_open = true;
@@ -338,7 +338,7 @@ impl View for AcceptAutosuggestionKeybinding {
             if !is_menu_open && state.is_hovered() {
                 let tool_tip = appearance
                     .ui_builder()
-                    .autosuggestion_tool_tip("Change keybinding".into())
+                    .autosuggestion_tool_tip(i18n::t!("Change keybinding").to_string())
                     .build()
                     .finish();
                 stack.add_positioned_overlay_child(

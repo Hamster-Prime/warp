@@ -19,7 +19,7 @@ use crate::util::truncation::truncate_from_end;
 /// Calculate how long ago a timestamp was
 fn time_ago_string(timestamp: Option<&DateTime<Local>>) -> String {
     let Some(timestamp) = timestamp else {
-        return "Just now".to_string();
+        return i18n::t!("Just now").to_string();
     };
 
     let now = Local::now();

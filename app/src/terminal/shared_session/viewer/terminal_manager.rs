@@ -1323,7 +1323,7 @@ impl TerminalManager {
                             session_sharing_protocol::common::FailedToAddGuestsReason::GuestAlreadyAdded => {
                                 i18n::t!("One or more of the guests has already been added.").to_string()
                             }
-                            _ => "Something went wrong. Please try again.".to_owned(),
+                            _ => i18n::t!("Something went wrong. Please try again.").to_string(),
                         };
                         terminal_view.show_persistent_toast(reason_string, ToastFlavor::Error, ctx);
                     });

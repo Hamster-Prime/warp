@@ -61,7 +61,7 @@ fn file_title_text(openable_path: &OpenablePath) -> String {
                         Some(display_name) => {
                             format!("Did you know that Warp can directly edit {display_name} files?")
                         }
-                        None => "Did you know that Warp can directly edit code?".to_string(),
+                        None => i18n::t!("Did you know that Warp can directly edit code?").to_string(),
                     }
                 } else {
                     // The `languages` crate is not available on WASM, so use a fallback message.

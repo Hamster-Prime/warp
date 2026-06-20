@@ -1964,10 +1964,10 @@ impl GlobalBufferModel {
         ctx: &mut ModelContext<Self>,
     ) -> Result<(), FileSaveError> {
         let Some(state) = self.buffers.get(&file_id) else {
-            return Err(FileSaveError::RemoteError("Buffer not found".to_string()));
+            return Err(FileSaveError::RemoteError(i18n::t!("Buffer not found").to_string()));
         };
         let Some(buffer) = state.buffer.upgrade(ctx) else {
-            return Err(FileSaveError::RemoteError("Buffer deallocated".to_string()));
+            return Err(FileSaveError::RemoteError(i18n::t!("Buffer deallocated").to_string()));
         };
         let content = buffer.as_ref(ctx).text().into_string();
         let version = buffer.as_ref(ctx).version();
@@ -1988,7 +1988,7 @@ impl GlobalBufferModel {
         ctx: &mut ModelContext<Self>,
     ) -> Result<(), FileSaveError> {
         let Some(state) = self.buffers.get_mut(&file_id) else {
-            return Err(FileSaveError::RemoteError("Buffer not found".to_string()));
+            return Err(FileSaveError::RemoteError(i18n::t!("Buffer not found").to_string()));
         };
 
         if let BufferSource::ServerLocal { sync_clock, .. } = &mut state.source {
@@ -1997,7 +1997,7 @@ impl GlobalBufferModel {
         }
 
         let Some(buffer) = state.buffer.upgrade(ctx) else {
-            return Err(FileSaveError::RemoteError("Buffer deallocated".to_string()));
+            return Err(FileSaveError::RemoteError(i18n::t!("Buffer deallocated").to_string()));
         };
 
         let new_version = ContentVersion::new();

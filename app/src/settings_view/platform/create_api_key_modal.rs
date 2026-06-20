@@ -402,7 +402,7 @@ impl CreateApiKeyModal {
                     }
                     Ok(warp_graphql::mutations::generate_api_key::GenerateApiKeyResult::Unknown) | Err(_) => {
                         me.request_state = RequestState::Idle;
-                        ctx.emit(CreateApiKeyModalEvent::Error { message: "Failed to create API key. Please try again.".to_string() });
+                        ctx.emit(CreateApiKeyModalEvent::Error { message: i18n::t!("Failed to create API key. Please try again.").to_string() });
                         ctx.notify();
                     }
                 }

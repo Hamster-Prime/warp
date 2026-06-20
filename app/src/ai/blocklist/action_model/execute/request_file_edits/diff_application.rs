@@ -129,7 +129,7 @@ impl DiffApplicationError {
             DiffApplicationError::MutatedDeletedFile { file } => {
                 format!("Could not mutate a deleted file {file}.")
             }
-            DiffApplicationError::EmptyDiff => "No diffs could be applied.".to_string(),
+            DiffApplicationError::EmptyDiff => i18n::t!("No diffs could be applied.").to_string(),
             DiffApplicationError::RemoteFileOperationsUnsupported => {
                 i18n::t!("The file read/edit tool is not available on this remote session. Try using a different tool.").to_string()
             }

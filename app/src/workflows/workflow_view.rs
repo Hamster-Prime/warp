@@ -1578,7 +1578,7 @@ impl WorkflowView {
     fn save_aliases(&mut self, ctx: &mut ViewContext<Self>) {
         if let Err(e) = self.alias_bar.update(ctx, |bar, ctx| bar.save(ctx)) {
             log::error!("Error saving aliases: {e:?}");
-            self.display_error_toast("Error saving aliases".to_string(), ctx);
+            self.display_error_toast(i18n::t!("Error saving aliases").to_string(), ctx);
         }
     }
 

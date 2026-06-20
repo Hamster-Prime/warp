@@ -727,7 +727,7 @@ impl RemoteCodebaseIndexModel {
         let mut updated = false;
         for (key, status) in &mut self.statuses {
             if key.host == host_label {
-                let failure_message = "The remote host is currently disconnected.".to_string();
+                let failure_message = i18n::t!("The remote host is currently disconnected.").to_string();
                 if status.state != RemoteCodebaseIndexState::Unavailable
                     || status.failure_message.as_ref() != Some(&failure_message)
                 {

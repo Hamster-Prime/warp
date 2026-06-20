@@ -847,11 +847,11 @@ fn find_secret_type(
 
 fn format_secret_type(type_: &ManagedSecretType) -> String {
     match type_ {
-        ManagedSecretType::RawValue => "Raw Value".to_string(),
+        ManagedSecretType::RawValue => i18n::t!("Raw Value").to_string(),
         ManagedSecretType::Dotenvx => "dotenvx".to_string(),
-        ManagedSecretType::AnthropicApiKey => "Anthropic API Key".to_string(),
-        ManagedSecretType::AnthropicBedrockAccessKey => "Anthropic Bedrock Access Key".to_string(),
-        ManagedSecretType::AnthropicBedrockApiKey => "Anthropic Bedrock API Key".to_string(),
-        ManagedSecretType::OpenaiApiKey => "OpenAI API Key".to_string(),
+        ManagedSecretType::AnthropicApiKey => i18n::t!("Anthropic API Key").to_string(),
+        ManagedSecretType::AnthropicBedrockAccessKey => i18n::t!("Anthropic Bedrock Access Key").to_string(),
+        ManagedSecretType::AnthropicBedrockApiKey => i18n::t!("Anthropic Bedrock API Key").to_string(),
+        ManagedSecretType::OpenaiApiKey => i18n::t!("OpenAI API Key").to_string(),
     }
 }

@@ -1069,7 +1069,7 @@ fn render_fallback_explanation<V: View>(
         Some(primary) => {
             format!("The primary model ({primary}) failed. Retrying with the fallback model.")
         }
-        None => "The primary model failed. Retrying with the fallback model.".to_owned(),
+        None => i18n::t!("The primary model failed. Retrying with the fallback model.").to_string(),
     };
     let appearance = Appearance::as_ref(app);
     Text::new_inline(
@@ -1123,7 +1123,7 @@ fn resolve_fallback_warping_message<V: View>(
     }
     Some(match display_name.as_deref() {
         Some(name) => format!("Warping with {name}."),
-        None => "Warping with another model.".to_owned(),
+        None => i18n::t!("Warping with another model.").to_string(),
     })
 }
 

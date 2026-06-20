@@ -1406,7 +1406,7 @@ pub(crate) fn format_terminal_state(result: &RunAgentsResult) -> (String, Status
             };
             (label, StatusKind::Failure)
         }
-        RunAgentsResult::Cancelled => ("Spawn agents cancelled".to_string(), StatusKind::Cancelled),
+        RunAgentsResult::Cancelled => (i18n::t!("Spawn agents cancelled").to_string(), StatusKind::Cancelled),
     }
 }
 

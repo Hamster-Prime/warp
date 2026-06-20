@@ -82,7 +82,7 @@ impl ReconnectingPeer {
         // Wait for reconnection to complete.
         let peer = rx
             .await
-            .map_err(|_| ReconnectingPeerError::ReconnectionFailed("Channel closed".to_string()))?
+            .map_err(|_| ReconnectingPeerError::ReconnectionFailed(i18n::t!("Channel closed").to_string()))?
             .map_err(|e| ReconnectingPeerError::ReconnectionFailed(e.to_string()))?;
 
         log::debug!("Reconnection completed for MCP server {installation_uuid}");

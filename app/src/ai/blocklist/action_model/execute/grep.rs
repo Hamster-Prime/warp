@@ -266,7 +266,7 @@ impl GrepExecutor {
                     .await
                 {
                     Ok(result) => result,
-                    Err(_) => Err(GrepError::new("Grep operation timed out".to_string())),
+                    Err(_) => Err(GrepError::new(i18n::t!("Grep operation timed out").to_string())),
                 }
             },
             move |result, ctx| match result {
@@ -342,10 +342,10 @@ async fn run_grep(
     shell_launch_data: Option<ShellLaunchData>,
 ) -> Result<GrepResult, GrepError> {
     if queries.is_empty() {
-        return Err(GrepError::new("No queries provided to grep".to_string()));
+        return Err(GrepError::new(i18n::t!("No queries provided to grep").to_string()));
     }
     let Some(session) = session else {
-        return Err(GrepError::new("No session provided to grep".to_string()));
+        return Err(GrepError::new(i18n::t!("No session provided to grep").to_string()));
     };
 
     let is_file = is_file_path(&absolute_path, &session).await;

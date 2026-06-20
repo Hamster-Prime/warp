@@ -178,7 +178,7 @@ impl ApiKeyCommandRunner {
                     let prompt = i18n::t!("Expire API key '{key}'?", key = key).to_string();
                     let should_expire = match Confirm::new(&prompt)
                         .with_default(false)
-                        .with_help_message("This action takes effect immediately")
+                        .with_help_message(&i18n::t!("This action takes effect immediately"))
                         .prompt()
                     {
                         Ok(should_expire) => should_expire,

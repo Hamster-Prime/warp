@@ -154,7 +154,7 @@ impl WarpifyPageView {
                 i18n::t!("Subshells").to_string(),
                 vec![Box::new(SubshellsWidget::default())],
             )
-            .with_subtitle("Subshells supported: bash, zsh, and fish."),
+            .with_subtitle(i18n::t!("Subshells supported: bash, zsh, and fish.").to_string()),
         ];
 
         let warpify_settings = WarpifySettings::as_ref(ctx);
@@ -167,7 +167,7 @@ impl WarpifyPageView {
                     i18n::t!("SSH").to_string(),
                     vec![Box::new(SSHWidget::default())],
                 )
-                .with_subtitle("Warpify your interactive SSH sessions."),
+                .with_subtitle(i18n::t!("Warpify your interactive SSH sessions.").to_string()),
             );
         }
         PageType::new_categorized(categories, None)

@@ -407,7 +407,9 @@ fn net_braces(line: &str) -> i32 {
 /// 收集文件内容里所有 `t!("key")` / `i18n::t!("key")` 调用的 key（解码转义后）。
 pub fn collect_t_keys(content: &str) -> Vec<String> {
     static RE: OnceLock<Regex> = OnceLock::new();
-    let re = RE.get_or_init(|| Regex::new(r#"(?:i18n::)?t!\("((?:[^"\\]|\\.)*)"\)"#).unwrap());
+    // Matches t!("...") or i18n::t!("...", ...) — captures the first string literal
+    // as the key. Supports named-args form: t!("key", a = 1, b = 2)
+    let re = RE.get_or_init(|| Regex::new(r#"(?:i18n::)?t!\("((?:[^"\\]|\\.)*)"(?:\s*,|\s*\))"#).unwrap());
     re.captures_iter(content)
         .map(|c| unescape_rust_string(&c[1]))
         .collect()

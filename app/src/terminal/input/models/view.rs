@@ -192,10 +192,10 @@ impl InlineModelSelectorView {
                         cli_ctrl.as_ref(app).is_agent_in_control_or_tagged_in();
                     let message = match active_tab {
                         InlineModelSelectorTab::FullTerminalUse if main_agent_in_progress && !is_cli_agent_in_control_or_tagged_in => {
-                            Some("You're using the base agent. Full terminal use models only apply to the full terminal use agent.")
+                            Some(i18n::t!("You're using the base agent. Full terminal use models only apply to the full terminal use agent."))
                         }
                         InlineModelSelectorTab::BaseAgent if is_cli_agent_in_control_or_tagged_in => {
-                            Some("You're using the full terminal use agent. Base models only apply to the base agent.")
+                            Some(i18n::t!("You're using the full terminal use agent. Base models only apply to the base agent."))
                         }
                         _ => None,
                     };

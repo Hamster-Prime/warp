@@ -1,3 +1,5 @@
+use std::borrow::Cow;
+
 use warp_core::ui::appearance::Appearance;
 use warp_core::ui::color::contrast::MinimumAllowedContrast;
 use warp_core::ui::color::ContrastingColor;
@@ -48,7 +50,7 @@ pub(super) trait GutterButton {
     fn is_enabled(&self) -> bool;
 
     /// The tooltip text displayed when the button is hovered.
-    fn tooltip_text(&self) -> Option<&'static str>;
+    fn tooltip_text(&self) -> Option<Cow<'static, str>>;
 
     /// The icon of the button.
     fn icon(&self) -> Icon;
@@ -70,11 +72,11 @@ impl GutterButton for AddAsContextButton {
         self.is_enabled
     }
 
-    fn tooltip_text(&self) -> Option<&'static str> {
+    fn tooltip_text(&self) -> Option<Cow<'static, str>> {
         if self.is_enabled {
-            Some("Add diff hunk as context")
+            Some(i18n::t!("Add diff hunk as context"))
         } else {
-            Some("Save changes to attach as context.")
+            Some(i18n::t!("Save changes to attach as context."))
         }
     }
 
@@ -99,11 +101,11 @@ impl GutterButton for RevertHunkButton {
         self.is_enabled
     }
 
-    fn tooltip_text(&self) -> Option<&'static str> {
+    fn tooltip_text(&self) -> Option<Cow<'static, str>> {
         if self.is_enabled {
-            Some("Revert diff hunk")
+            Some(i18n::t!("Revert diff hunk"))
         } else {
-            Some("Save changes to revert")
+            Some(i18n::t!("Save changes to revert"))
         }
     }
 
@@ -152,11 +154,11 @@ impl GutterButton for CommentButton {
         )
     }
 
-    fn tooltip_text(&self) -> Option<&'static str> {
+    fn tooltip_text(&self) -> Option<Cow<'static, str>> {
         match self {
-            CommentButton::CreateNewComment => Some("Add comment on line"),
-            CommentButton::Disabled => Some("Save changes to add comment"),
-            CommentButton::AddedComment => Some("Show saved comment"),
+            CommentButton::CreateNewComment => Some(i18n::t!("Add comment on line")),
+            CommentButton::Disabled => Some(i18n::t!("Save changes to add comment")),
+            CommentButton::AddedComment => Some(i18n::t!("Show saved comment")),
             CommentButton::EditorOpenedToCreateNewComment
             | CommentButton::EditorOpenedToUpdateComment => None,
         }

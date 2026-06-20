@@ -276,7 +276,7 @@ impl CommentEditor {
         self.is_imported_comment = origin.is_imported_from_github();
 
         self.save_button.update(ctx, |button, ctx| {
-            button.set_label("Update", ctx);
+            button.set_label(i18n::t!("Update"), ctx);
         });
         ctx.notify();
 
@@ -295,7 +295,7 @@ impl CommentEditor {
         self.is_imported_comment = false;
 
         self.save_button.update(ctx, |button, ctx| {
-            button.set_label("Comment", ctx);
+            button.set_label(i18n::t!("Comment"), ctx);
         });
         ctx.notify();
 

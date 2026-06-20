@@ -187,7 +187,7 @@ pub async fn clone_repo_for_skill(
         .map_err(|e| ResolveSkillError::CloneFailed {
             org: org.to_string(),
             repo: repo.to_string(),
-            message: format!("Failed to execute git clone: {e}"),
+            message: i18n::t!("Failed to execute git clone: {e}", e = e).to_string(),
         })?;
 
     if !output.status.success() {

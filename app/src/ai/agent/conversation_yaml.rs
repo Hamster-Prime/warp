@@ -31,10 +31,10 @@ pub(crate) fn base_dir() -> PathBuf {
 /// Returns the path to the root directory, or an error string.
 pub fn materialize_tasks_to_yaml(tasks: &[api::Task]) -> Result<String, String> {
     let base_dir = base_dir();
-    fs::create_dir_all(&base_dir).map_err(|e| format!("Failed to create base dir: {e}"))?;
+    fs::create_dir_all(&base_dir).map_err(|e| i18n::t!("Failed to create base dir: {e}", e = e).to_string())?;
 
     let dir = tempfile::tempdir_in(&base_dir)
-        .map_err(|e| format!("Failed to create temp dir: {e}"))?
+        .map_err(|e| i18n::t!("Failed to create temp dir: {e}", e = e).to_string())?
         .keep();
 
     // Build task lookup by id.

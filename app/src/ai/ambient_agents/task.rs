@@ -535,7 +535,7 @@ pub fn cancel_task_with_toast<V: View>(task_id: AmbientAgentTaskId, ctx: &mut Vi
                 Ok(()) => i18n::t!("Task cancelled").to_string(),
                 Err(e) => {
                     log::error!("Failed to cancel task: {e}");
-                    format!("Failed to cancel task: {e}")
+                    i18n::t!("Failed to cancel task: {e}", e = e).to_string()
                 }
             };
             ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {

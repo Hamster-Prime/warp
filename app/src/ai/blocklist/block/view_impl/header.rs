@@ -86,7 +86,7 @@ pub(super) fn render(props: Props, app: &AppContext) -> Option<Box<dyn Element>>
         ) {
             (true, _) => "selected text".to_owned(),
             (false, 1) => "1 block".to_owned(),
-            (false, n) => format!("{n} blocks"),
+            (false, n) => i18n::t!("{n} blocks", n = n).to_string(),
         };
 
         left_row.add_child(render_attached_context_chip(

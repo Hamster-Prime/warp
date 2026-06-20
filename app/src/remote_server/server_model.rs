@@ -1925,7 +1925,7 @@ impl ServerModel {
                         log::warn!("RunCommand failed (request_id={request_id_for_response}): {e}");
                         run_command_response::Result::Error(RunCommandError {
                             code: RunCommandErrorCode::ExecutionFailed.into(),
-                            message: format!("Failed to execute command: {e}"),
+                            message: i18n::t!("Failed to execute command: {e}", e = e).to_string(),
                         })
                     }
                 };
@@ -1964,7 +1964,7 @@ impl ServerModel {
                 log::warn!("Invalid path for NavigatedToDirectory: {e}");
                 return HandlerOutcome::Sync(server_message::Message::Error(ErrorResponse {
                     code: ErrorCode::InvalidRequest.into(),
-                    message: format!("Invalid path: {e}"),
+                    message: i18n::t!("Invalid path: {e}", e = e).to_string(),
                 }));
             }
         };
@@ -2119,7 +2119,7 @@ impl ServerModel {
             Err(e) => {
                 return HandlerOutcome::Sync(server_message::Message::Error(ErrorResponse {
                     code: ErrorCode::InvalidRequest.into(),
-                    message: format!("Invalid repo_path: {e}"),
+                    message: i18n::t!("Invalid repo_path: {e}", e = e).to_string(),
                 }));
             }
         };
@@ -2129,7 +2129,7 @@ impl ServerModel {
             Err(e) => {
                 return HandlerOutcome::Sync(server_message::Message::Error(ErrorResponse {
                     code: ErrorCode::InvalidRequest.into(),
-                    message: format!("Invalid dir_path: {e}"),
+                    message: i18n::t!("Invalid dir_path: {e}", e = e).to_string(),
                 }));
             }
         };
@@ -2153,7 +2153,7 @@ impl ServerModel {
             log::warn!("LoadRepoMetadataDirectory failed: {e}");
             return HandlerOutcome::Sync(server_message::Message::Error(ErrorResponse {
                 code: ErrorCode::Internal.into(),
-                message: format!("Failed to load directory: {e}"),
+                message: i18n::t!("Failed to load directory: {e}", e = e).to_string(),
             }));
         }
 
@@ -2615,7 +2615,7 @@ impl ServerModel {
                 log::warn!("Invalid repo_path for GetDiffState: {e}");
                 return HandlerOutcome::Sync(server_message::Message::Error(ErrorResponse {
                     code: ErrorCode::InvalidRequest.into(),
-                    message: format!("Invalid repo_path: {e}"),
+                    message: i18n::t!("Invalid repo_path: {e}", e = e).to_string(),
                 }));
             }
         };
@@ -2848,7 +2848,7 @@ impl ServerModel {
                     GetBranchesResponse {
                         result: Some(super::proto::get_branches_response::Result::Error(
                             GetBranchesError {
-                                message: format!("Invalid repo_path: {e}"),
+                                message: i18n::t!("Invalid repo_path: {e}", e = e).to_string(),
                             },
                         )),
                     },
@@ -2979,7 +2979,7 @@ impl ServerModel {
             Err(e) => {
                 return HandlerOutcome::Sync(server_message::Message::Error(ErrorResponse {
                     code: ErrorCode::InvalidRequest.into(),
-                    message: format!("Invalid repo_path: {e}"),
+                    message: i18n::t!("Invalid repo_path: {e}", e = e).to_string(),
                 }));
             }
         };

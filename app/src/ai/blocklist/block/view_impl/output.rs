@@ -1024,7 +1024,7 @@ pub(super) fn render(props: Props, app: &AppContext) -> Box<dyn Element> {
                             match query {
                                 Some(q) => {
                                     fragments
-                                        .push(FormattedTextFragment::plain_text(format!(": {q}")));
+                                        .push(FormattedTextFragment::plain_text(i18n::t!(": {q}", q = q).to_string()));
                                 }
                                 None if !done => {
                                     fragments.push(FormattedTextFragment::plain_text("..."));

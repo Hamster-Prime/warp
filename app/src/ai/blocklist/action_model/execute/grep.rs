@@ -445,7 +445,7 @@ async fn run_ripgrep(queries: &[String], absolute_path: String) -> Result<GrepRe
                 .collect();
             Ok(GrepResult::Success { matched_files })
         }
-        Err(e) => Err(GrepError::new(format!("Ripgrep search failed: {e}"))),
+        Err(e) => Err(GrepError::new(i18n::t!("Ripgrep search failed: {e}", e = e).to_string())),
     }
 }
 

@@ -15223,7 +15223,7 @@ impl Workspace {
         let source_conversation_id = source_token.as_str().to_string();
         let title_for_fork = source_conversation
             .title()
-            .map(|t| format!("{t} (Moved to cloud)"));
+            .map(|t| i18n::t!("{t} (Moved to cloud)", t = t).to_string());
         ctx.spawn(
             async move {
                 ai_client
@@ -15297,7 +15297,7 @@ impl Workspace {
         // Materialize the fork locally so the new pane can restore it.
         let title_override = source_conversation
             .title()
-            .map(|t| format!("{t} (Moved to cloud)"));
+            .map(|t| i18n::t!("{t} (Moved to cloud)", t = t).to_string());
         let local_fork = match history_model.update(ctx, |history_model, ctx| {
             history_model.fork_conversation(
                 &source_conversation,
@@ -28093,9 +28093,9 @@ fn set_opencode_warp_plugin(new_entry: &str) -> String {
         match std::fs::read_to_string(&config_path) {
             Ok(contents) => match serde_json::from_str(&contents) {
                 Ok(val) => val,
-                Err(e) => return format!("Failed to parse opencode.json: {e}"),
+                Err(e) => return i18n::t!("Failed to parse opencode.json: {e}", e = e).to_string(),
             },
-            Err(e) => return format!("Failed to read opencode.json: {e}"),
+            Err(e) => return i18n::t!("Failed to read opencode.json: {e}", e = e).to_string(),
         }
     } else {
         serde_json::json!({
@@ -28122,14 +28122,14 @@ fn set_opencode_warp_plugin(new_entry: &str) -> String {
     plugins.push(serde_json::Value::String(new_entry.to_string()));
 
     if let Err(e) = std::fs::create_dir_all(&config_dir) {
-        return format!("Failed to create config directory: {e}");
+        return i18n::t!("Failed to create config directory: {e}", e = e).to_string();
     }
 
     match serde_json::to_string_pretty(&config) {
         Ok(json_str) => match std::fs::write(&config_path, format!("{json_str}\n")) {
             Ok(()) => format!("OpenCode plugin set to: {new_entry}"),
-            Err(e) => format!("Failed to write opencode.json: {e}"),
+            Err(e) => i18n::t!("Failed to write opencode.json: {e}", e = e).to_string(),
         },
-        Err(e) => format!("Failed to serialize opencode.json: {e}"),
+        Err(e) => i18n::t!("Failed to serialize opencode.json: {e}", e = e).to_string(),
     }
 }

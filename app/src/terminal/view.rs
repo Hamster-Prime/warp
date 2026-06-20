@@ -12774,7 +12774,7 @@ impl TerminalView {
                         RemoteServerSetupState::Checking => "Checking...".to_string(),
                         RemoteServerSetupState::Installing {
                             progress_percent: Some(p),
-                        } => format!("Installing... ({p}%)"),
+                        } => i18n::t!("Installing... ({p}%)", p = p).to_string(),
                         RemoteServerSetupState::Installing {
                             progress_percent: None,
                         } => "Installing...".to_string(),
@@ -22937,15 +22937,15 @@ impl TerminalView {
                 "{}{}{}{}{}",
                 block
                     .conda_env()
-                    .map_or_else(String::new, |b| format!("({b}) ")),
+                    .map_or_else(String::new, |b| i18n::t!("({b}) ", b = b).to_string()),
                 block
                     .virtual_env_short_name()
-                    .map_or_else(String::new, |b| format!("({b}) ")),
+                    .map_or_else(String::new, |b| i18n::t!("({b}) ", b = b).to_string()),
                 user_and_host_name_string.unwrap_or_default(),
                 prompt::display_path_string(block.pwd(), home_dir.as_deref()),
                 block
                     .git_branch()
-                    .map_or_else(String::new, |b| format!(" git:({b})")),
+                    .map_or_else(String::new, |b| i18n::t!(" git:({b})", b = b).to_string()),
             )
         };
 

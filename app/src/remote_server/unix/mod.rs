@@ -247,7 +247,7 @@ pub(super) async fn handle_daemon_connection(
                 message: Some(remote_server::proto::server_message::Message::Error(
                     remote_server::proto::ErrorResponse {
                         code: remote_server::proto::ErrorCode::Internal.into(),
-                        message: format!("Response could not be delivered: {e}"),
+                        message: i18n::t!("Response could not be delivered: {e}", e = e).to_string(),
                     },
                 )),
             };

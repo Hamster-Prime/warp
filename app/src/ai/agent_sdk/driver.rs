@@ -2390,7 +2390,7 @@ impl AgentDriver {
                 if required {
                     return Err(Self::required_platform_plugin_error(
                         harness_name,
-                        format!("Required platform plugin update failed: {e}"),
+                        i18n::t!("Required platform plugin update failed: {e}", e = e).to_string(),
                     ));
                 }
                 log::warn!("Platform plugin update failed (continuing): {e}");
@@ -2400,7 +2400,7 @@ impl AgentDriver {
                 if required {
                     return Err(Self::required_platform_plugin_error(
                         harness_name,
-                        format!("Required platform plugin installation failed: {e}"),
+                        i18n::t!("Required platform plugin installation failed: {e}", e = e).to_string(),
                     ));
                 }
                 log::warn!("Platform plugin installation failed (continuing): {e}");

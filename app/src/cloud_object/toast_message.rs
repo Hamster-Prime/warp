@@ -113,7 +113,7 @@ impl CloudObjectToastMessage {
         let count_objects_message = match num_objects {
             1 => "1 object".to_string(),
             n => {
-                format!("{n} objects")
+                i18n::t!("{n} objects", n = n).to_string()
             }
         };
         match (operation, success_type) {

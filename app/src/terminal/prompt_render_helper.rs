@@ -251,7 +251,7 @@ impl PromptRenderHelper {
                     RemoteServerSetupState::Checking => i18n::t!("Starting shell...").to_string(),
                     RemoteServerSetupState::Installing {
                         progress_percent: Some(p),
-                    } => format!("Installing Warp SSH Extension... ({p}%)"),
+                    } => i18n::t!("Installing Warp SSH Extension... ({p}%)", p = p).to_string(),
                     RemoteServerSetupState::Installing {
                         progress_percent: None,
                     } => i18n::t!("Installing Warp SSH Extension...").to_string(),

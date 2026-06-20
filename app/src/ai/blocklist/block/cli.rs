@@ -2037,7 +2037,7 @@ fn render_search_action_input(
             } else {
                 let patterns_list = queries
                     .iter()
-                    .map(|q| format!(" - `{q}`"))
+                    .map(|q| i18n::t!(" - `{q}`", q = q).to_string())
                     .collect::<Vec<_>>()
                     .join("\n");
                 format!("Grep for the following patterns in {display_path}:\n{patterns_list}")
@@ -2057,7 +2057,7 @@ fn render_search_action_input(
             } else {
                 let patterns_list = patterns
                     .iter()
-                    .map(|p| format!(" - `{p}`"))
+                    .map(|p| i18n::t!(" - `{p}`", p = p).to_string())
                     .collect::<Vec<_>>()
                     .join("\n");
                 format!(

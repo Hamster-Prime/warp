@@ -2509,7 +2509,7 @@ impl LocalDiffStateModel {
             Err(error) => {
                 log::info!(
                     "Failed to get file diff for {file_path}{}: {error}",
-                    commit.map(|c| format!(" vs {c}")).unwrap_or_default()
+                    commit.map(|c| i18n::t!(" vs {c}", c = c).to_string()).unwrap_or_default()
                 );
                 // If diff fails, treat as binary or empty
                 return Ok(FileDiff {

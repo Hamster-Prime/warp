@@ -6924,7 +6924,7 @@ impl Workspace {
         let seed_text = group
             .name
             .clone()
-            .unwrap_or_else(|| "New Group".to_string());
+            .unwrap_or_else(|| i18n::t!("New Group").to_string());
 
         self.current_workspace_state
             .set_tab_group_being_renamed(group_id);
@@ -19364,7 +19364,7 @@ impl Workspace {
             let title = group
                 .name
                 .clone()
-                .unwrap_or_else(|| "New Group".to_string());
+                .unwrap_or_else(|| i18n::t!("New Group").to_string());
             // Cap width so long names ellipsize and the tab bar's unbounded
             // measurement stays finite.
             ConstrainedBox::new(

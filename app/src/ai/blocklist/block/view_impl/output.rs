@@ -2024,7 +2024,7 @@ fn render_stopped_output(props: Props, app: &AppContext) -> Box<dyn Element> {
                 .initial_query()
                 .map(|task_name| format!("Stopped task: \"{task_name}\""))
         })
-        .unwrap_or_else(|| "Stopped task".to_string());
+        .unwrap_or_else(|| i18n::t!("Stopped task").to_string());
 
     let stop_icon = Container::new(
         ConstrainedBox::new(gray_stop_icon(appearance).finish())

@@ -144,7 +144,7 @@ async fn read_remote_file(
                 let message = failed
                     .error
                     .map(|e| e.message)
-                    .unwrap_or_else(|| "Unknown error".to_string());
+                    .unwrap_or_else(|| i18n::t!("Unknown error").to_string());
                 if message.contains("not found") || message.contains("Not found") {
                     FileReadResult::NotFound
                 } else {

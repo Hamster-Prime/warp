@@ -2700,7 +2700,7 @@ fn render_grouped_tabs_header(
             let title_text = group
                 .name
                 .clone()
-                .unwrap_or_else(|| "New Group".to_string());
+                .unwrap_or_else(|| i18n::t!("New Group").to_string());
             Text::new_inline(title_text, font_family, 12.)
                 .with_clip(ClipConfig::ellipsis())
                 .with_color(main_text_color.into())

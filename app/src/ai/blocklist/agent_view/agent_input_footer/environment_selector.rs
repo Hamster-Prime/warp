@@ -430,7 +430,7 @@ impl EnvironmentSelector {
         let label = if let Some(id) = self.target.selected_environment_id(ctx) {
             CloudAmbientAgentEnvironment::get_by_id(&id, ctx)
                 .map(|env| env.model().string_model.display_name())
-                .unwrap_or_else(|| "New environment".to_string())
+                .unwrap_or_else(|| i18n::t!("New environment").to_string())
         } else {
             i18n::t!("New environment").to_string()
         };

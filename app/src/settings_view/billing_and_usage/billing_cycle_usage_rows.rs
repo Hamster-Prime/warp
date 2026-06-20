@@ -90,7 +90,7 @@ fn viewer_identity(app: &AppContext) -> (Option<String>, String) {
         .display_name()
         .or_else(|| auth_state.username_for_display())
         .or_else(|| auth_state.user_email())
-        .unwrap_or_else(|| "Your usage".to_string());
+        .unwrap_or_else(|| i18n::t!("Your usage").to_string());
     (viewer_uid, display_name)
 }
 

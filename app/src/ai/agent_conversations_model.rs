@@ -389,7 +389,7 @@ impl AgentRunDisplayStatus {
                     .status_message
                     .as_ref()
                     .map(|m| m.message.clone())
-                    .unwrap_or_else(|| "Task blocked".to_string()),
+                    .unwrap_or_else(|| i18n::t!("Task blocked").to_string()),
             },
             AmbientAgentTaskState::Cancelled => Self::TaskCancelled,
             AmbientAgentTaskState::Unknown => Self::TaskUnknown,

@@ -12783,7 +12783,7 @@ impl TerminalView {
                         _ => "Starting shell...".to_string(),
                     })
             })
-            .unwrap_or_else(|| "Starting shell...".to_string());
+            .unwrap_or_else(|| i18n::t!("Starting shell...").to_string());
 
         let shimmer_element = shimmering_warp_loading_text(
             message,

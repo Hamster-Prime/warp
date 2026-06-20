@@ -1437,7 +1437,7 @@ impl View for RequestedCommandView {
                 // If we have a result, show the JSON response.
                 let result_text = match result {
                     CallMCPToolResult::Success { result } => serde_json::to_string_pretty(result)
-                        .unwrap_or_else(|_| "Error formatting JSON".to_string()),
+                        .unwrap_or_else(|_| i18n::t!("Error formatting JSON").to_string()),
                     CallMCPToolResult::Error(error) => {
                         format!("Error: {error}")
                     }

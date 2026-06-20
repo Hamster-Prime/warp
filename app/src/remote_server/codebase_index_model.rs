@@ -944,7 +944,7 @@ fn search_availability_for_status(
             message: status
                 .failure_message
                 .clone()
-                .unwrap_or_else(|| "Remote codebase search is not available.".to_string()),
+                .unwrap_or_else(|| i18n::t!("Remote codebase search is not available.").to_string()),
         },
     }
 }

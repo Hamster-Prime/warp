@@ -295,7 +295,7 @@ fn refresh_aws_credentials_local_chain(
     );
     Box::pin(async move {
         rx.await
-            .unwrap_or_else(|_| Err("Credential refresh was interrupted".to_string()))
+            .unwrap_or_else(|_| Err(i18n::t!("Credential refresh was interrupted").to_string()))
     })
 }
 
@@ -406,7 +406,7 @@ fn refresh_aws_credentials_oidc(
     );
     Box::pin(async move {
         rx.await
-            .unwrap_or_else(|_| Err("Credential refresh was interrupted".to_string()))
+            .unwrap_or_else(|_| Err(i18n::t!("Credential refresh was interrupted").to_string()))
     })
 }
 

@@ -216,7 +216,7 @@ fn render_deleted_state(
         .with_main_axis_size(MainAxisSize::Max)
         .with_child(
             Text::new(
-                cached_title.unwrap_or_else(|| "Deleted conversation".to_string()),
+                cached_title.unwrap_or_else(|| i18n::t!("Deleted conversation").to_string()),
                 appearance.ui_font_family(),
                 appearance.monospace_font_size(),
             )

@@ -144,7 +144,7 @@ pub(crate) fn parent_conversation_navigation_card(
     let parent_title = BlocklistAIHistoryModel::as_ref(app)
         .conversation(&parent_conversation_id)
         .and_then(|conversation| conversation.title())
-        .unwrap_or_else(|| "Parent conversation".to_string());
+        .unwrap_or_else(|| i18n::t!("Parent conversation").to_string());
     let action = conversation_navigation_action(parent_conversation_id, app)?;
     Some(conversation_navigation_card(
         parent_title,

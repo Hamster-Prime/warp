@@ -166,7 +166,7 @@ impl InlineHistoryMenuDataSource {
             };
             let title = conversation
                 .title()
-                .unwrap_or_else(|| "Untitled conversation".to_string());
+                .unwrap_or_else(|| i18n::t!("Untitled conversation").to_string());
             let match_result = if trimmed_query.is_empty() {
                 None
             } else {

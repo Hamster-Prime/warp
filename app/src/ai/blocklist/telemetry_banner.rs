@@ -15,9 +15,6 @@ use crate::workspaces::user_workspaces::UserWorkspaces;
 use crate::workspaces::workspace::UgcCollectionEnablementSetting;
 use crate::{Appearance, FeatureFlag, WorkspaceAction};
 
-const TITLE_EXISTING_USERS: &str = "We've updated our telemetry policy.";
-const TITLE_NEW_USERS: &str = "Help improve Warp.";
-const DESCRIPTION: &str = "We may collect certain console interactions to improve Warp's AI capabilities. You can opt out any time.";
 const PRIVACY_URL: &str = "https://warp.dev/privacy";
 
 #[derive(Default, Debug, Clone)]
@@ -50,9 +47,9 @@ impl View for TelemetryBanner {
         let ui_builder = appearance.ui_builder();
 
         let title = if self.is_onboarded {
-            TITLE_EXISTING_USERS
+            i18n::t!("We've updated our telemetry policy.")
         } else {
-            TITLE_NEW_USERS
+            i18n::t!("Help improve Warp.")
         };
 
         let left = Flex::row()
@@ -82,7 +79,11 @@ impl View for TelemetryBanner {
                                 .finish(),
                         )
                         .with_child(
-                            Text::new(DESCRIPTION, ui_builder.ui_font_family(), 12.)
+                            Text::new(
+                                i18n::t!("We may collect certain console interactions to improve Warp's AI capabilities. You can opt out any time."),
+                                ui_builder.ui_font_family(),
+                                12.,
+                            )
                                 .with_color(theme.nonactive_ui_text_color().into_solid())
                                 .soft_wrap(true)
                                 .finish(),

@@ -116,17 +116,6 @@ use crate::workspace::ToastStack;
 use crate::workspace::WorkspaceAction;
 use crate::workspaces::user_workspaces::UserWorkspaces;
 
-const ENABLE_NLD_TOOLTIP: &str = "Enable terminal command autodetection";
-const DISABLE_NLD_TOOLTIP: &str = "Disable terminal command autodetection";
-
-const FAST_FORWARD_ON_TOOLTIP: &str = "Turn off auto-approve all agent actions";
-const FAST_FORWARD_OFF_TOOLTIP: &str = "Auto-approve all agent actions for this task";
-const FAST_FORWARD_LOCKED_TOOLTIP: &str =
-    "Fast forward is always enabled for cloud agent conversations";
-
-const START_REMOTE_CONTROL_TOOLTIP: &str = "Start remote control";
-const START_REMOTE_CONTROL_LOGIN_REQUIRED_TOOLTIP: &str = "Log in to use /remote-control";
-
 const CLOUD_MODE_V2_FOOTER_GAP: f32 = 4.;
 
 /// Voice input state for the CLI agent footer. Unlike the editor-based voice
@@ -278,9 +267,9 @@ impl AgentInputFooter {
             button.set_active(is_nld_enabled, ctx);
             button.set_tooltip(
                 Some(if is_nld_enabled {
-                    DISABLE_NLD_TOOLTIP
+                    i18n::t!("Disable terminal command autodetection").to_string()
                 } else {
-                    ENABLE_NLD_TOOLTIP
+                    i18n::t!("Enable terminal command autodetection").to_string()
                 }),
                 ctx,
             );
@@ -295,9 +284,9 @@ impl AgentInputFooter {
                 button.set_active(is_nld_enabled, ctx);
                 button.set_tooltip(
                     Some(if is_nld_enabled {
-                        DISABLE_NLD_TOOLTIP
+                        i18n::t!("Disable terminal command autodetection").to_string()
                     } else {
-                        ENABLE_NLD_TOOLTIP
+                        i18n::t!("Enable terminal command autodetection").to_string()
                     }),
                     ctx,
                 );
@@ -357,7 +346,7 @@ impl AgentInputFooter {
         let fast_forward_button = ctx.add_typed_action_view(|_ctx| {
             ActionButton::new("", FastForwardButtonTheme)
                 .with_icon(Icon::FastForward)
-                .with_tooltip(FAST_FORWARD_OFF_TOOLTIP)
+                .with_tooltip(i18n::t!("Auto-approve all agent actions for this task").to_string())
                 .with_size(button_size)
                 .with_tooltip_alignment(TooltipAlignment::Left)
                 .with_disabled_theme(FastForwardLockedTheme)
@@ -584,7 +573,7 @@ impl AgentInputFooter {
         let start_remote_control_button = ctx.add_typed_action_view(|_ctx| {
             ActionButton::new("/remote-control", RemoteControlButtonTheme)
                 .with_icon(Icon::Phone01)
-                .with_tooltip(START_REMOTE_CONTROL_TOOLTIP)
+                .with_tooltip(i18n::t!("Start remote control").to_string())
                 .with_size(cli_button_size)
                 .with_tooltip_alignment(TooltipAlignment::Left)
                 .on_click(|ctx| {
@@ -1990,11 +1979,11 @@ impl AgentInputFooter {
             Icon::FastForward
         };
         let tooltip = if is_force_enabled {
-            FAST_FORWARD_LOCKED_TOOLTIP
+            i18n::t!("Fast forward is always enabled for cloud agent conversations").to_string()
         } else if is_active {
-            FAST_FORWARD_ON_TOOLTIP
+            i18n::t!("Turn off auto-approve all agent actions").to_string()
         } else {
-            FAST_FORWARD_OFF_TOOLTIP
+            i18n::t!("Auto-approve all agent actions for this task").to_string()
         };
 
         self.fast_forward_button.update(ctx, |button, ctx| {
@@ -2013,9 +2002,9 @@ impl AgentInputFooter {
             .get()
             .is_anonymous_or_logged_out();
         let tooltip = if login_required {
-            START_REMOTE_CONTROL_LOGIN_REQUIRED_TOOLTIP
+            i18n::t!("Log in to use /remote-control").to_string()
         } else {
-            START_REMOTE_CONTROL_TOOLTIP
+            i18n::t!("Start remote control").to_string()
         };
         self.start_remote_control_button.update(ctx, |button, ctx| {
             button.set_disabled(login_required, ctx);

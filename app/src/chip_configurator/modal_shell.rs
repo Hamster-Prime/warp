@@ -5,6 +5,8 @@
 //! Modal consumers wrap those sections in a title, cancel/save buttons, and blur
 //! overlay, while settings consumers can render the sections inline.
 
+use std::borrow::Cow;
+
 use pathfinder_geometry::vector::vec2f;
 use warp_core::ui::theme::Fill;
 use warpui::elements::{
@@ -39,8 +41,8 @@ pub struct ChipEditorMouseHandles {
 }
 /// Everything that varies between chip editor modal-shell consumers.
 pub struct ChipEditorModalConfig<'a, A> {
-    pub title: &'a str,
-    pub available_section_label: &'a str,
+    pub title: Cow<'a, str>,
+    pub available_section_label: Cow<'a, str>,
     pub is_at_defaults: bool,
     pub is_dirty: bool,
     pub cancel_action: A,
@@ -52,7 +54,7 @@ pub struct ChipEditorModalConfig<'a, A> {
 }
 /// Everything needed to render the editable chip sections without the modal shell.
 pub struct ChipEditorSectionsConfig<'a, A> {
-    pub available_section_label: &'a str,
+    pub available_section_label: Cow<'a, str>,
     pub is_at_defaults: bool,
     pub reset_action: A,
     pub activate_action: A,
@@ -72,7 +74,7 @@ pub fn render_chip_editor_modal<A: Action + Clone + Copy + 'static>(
     let column = Flex::column()
         .with_cross_axis_alignment(CrossAxisAlignment::Stretch)
         .with_child(
-            Container::new(render_header(config.title, appearance))
+            Container::new(render_header(config.title.clone(), appearance))
                 .with_margin_bottom(MARGIN_BETWEEN_MODAL_SECTIONS)
                 .finish(),
         )
@@ -80,7 +82,7 @@ pub fn render_chip_editor_modal<A: Action + Clone + Copy + 'static>(
             Container::new(render_chip_editor_sections(
                 chip_configurator,
                 ChipEditorSectionsConfig {
-                    available_section_label: config.available_section_label,
+                    available_section_label: config.available_section_label.clone(),
                     is_at_defaults: config.is_at_defaults,
                     reset_action: config.reset_action,
                     activate_action: config.activate_action,
@@ -123,7 +125,7 @@ pub fn render_chip_editor_modal<A: Action + Clone + Copy + 'static>(
         .finish()
 }
 
-fn render_header(title: &str, appearance: &Appearance) -> Box<dyn Element> {
+fn render_header(title: Cow<'_, str>, appearance: &Appearance) -> Box<dyn Element> {
     appearance
         .ui_builder()
         .span(title.to_string())
@@ -163,10 +165,10 @@ fn render_restore_default_button<A: Action + Clone + Copy + 'static>(
     }
 }
 
-fn render_section_label(label: &str, appearance: &Appearance) -> Box<dyn Element> {
+fn render_section_label(label: Cow<'_, str>, appearance: &Appearance) -> Box<dyn Element> {
     appearance
         .ui_builder()
-        .span(label.to_string())
+        .span(label.into_owned())
         .with_style(UiComponentStyles {
             font_size: Some(MODAL_CONTENT_FONT_SIZE),
             font_weight: Some(warpui::fonts::Weight::Semibold),
@@ -204,7 +206,7 @@ pub fn render_chip_editor_sections<A: Action + Clone + Copy + 'static>(
     );
 
     let left_section = Flex::column()
-        .with_child(render_section_label("Left side", appearance))
+        .with_child(render_section_label(i18n::t!("Left side"), appearance))
         .with_child(
             Container::new(chip_configurator.render_left_drop_zone(
                 config.activate_action,
@@ -217,7 +219,7 @@ pub fn render_chip_editor_sections<A: Action + Clone + Copy + 'static>(
         .finish();
 
     let right_section = Flex::column()
-        .with_child(render_section_label("Right side", appearance))
+        .with_child(render_section_label(i18n::t!("Right side"), appearance))
         .with_child(
             Container::new(chip_configurator.render_right_drop_zone(
                 config.activate_action,

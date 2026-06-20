@@ -36,30 +36,18 @@ use crate::{safe_info, send_telemetry_from_ctx};
 
 const HEADER_FONT_SIZE: f32 = 18.;
 const HEADER_MARGIN_BOTTOM: f32 = 32.;
-const HEADER_TEXT: &str = "Invite a friend to Warp";
-const ANONYMOUS_USER_HEADER_TEXT: &str = "Sign up to participate in Warp's referral program";
 
 const INVITE_FIELD_LABEL_BOTTOM_MARGIN: f32 = 8.;
 
 const LINK_BOTTOM_MARGIN: f32 = 12.;
 const LINK_TEXT_PADDING: f32 = 10.;
 const LINK_CORNER_RADIUS: Radius = Radius::Pixels(4.);
-const LINK_ERROR_TEXT: &str = "Failed to load referral code.";
 
 const BUTTON_WIDTH: f32 = 98.;
 const BUTTON_HEIGHT: f32 = 36.;
 const BUTTON_LEFT_MARGIN: f32 = 8.;
 const BUTTON_FONT_SIZE: f32 = 12.;
-const LINK_BUTTON_TEXT: &str = "Copy link";
-const EMAIL_BUTTON_TEXT: &str = "Send";
-const EMAIL_BUTTON_SENDING_TEXT: &str = "Sending...";
-const LOADING_TEXT: &str = "Loading...";
 
-const LINK_COPIED_TOAST: &str = "Link copied.";
-const EMAIL_SUCCESS_TOAST: &str = "Successfully sent emails.";
-const EMAIL_FAILURE_TOAST: &str = "Failed to send emails. Please try again.";
-
-const REWARD_INTRO: &str = "Get exclusive Warp goodies when you refer someone*";
 const REWARD_INTRO_FONT_SIZE: f32 = 14.;
 const REWARD_SECTION_VERTICAL_SPACING: f32 = 24.;
 
@@ -81,8 +69,6 @@ const METER_TOP_MARGIN: f32 = 16.;
 const METER_RIGHT_MARGIN: f32 = 12.;
 
 const CLAIMED_REFERRALS_LABEL_HORIZONTAL_SPACING: f32 = 4.;
-const CLAIMED_REFERRALS_COUNT_LABEL_SINGULAR: &str = "Current referral";
-const CLAIMED_REFERRALS_COUNT_LABEL_PLURAL: &str = "Current referrals";
 const CLAIMED_REFERRALS_LABEL_WIDTH: f32 = 52.;
 const CLAIMED_REFERRALS_LABEL_FONT_SIZE: f32 = 14.;
 const CLAIMED_REFERRALS_COUNT_FONT_SIZE: f32 = 48.;
@@ -90,7 +76,6 @@ const CLAIMED_REFERRAL_COUNT_LEFT_MARGIN: f32 = 40.;
 
 const CLAIMED_REFERRAL_CLIP: usize = 999;
 
-const TERMS_LINK_TEXT: &str = "Certain restrictions apply.";
 const TERMS_URL: &str =
     "https://docs.warp.dev/support-and-community/community/refer-a-friend#referral-program-terms-and-conditions";
 const TERMS_CONTACT_TEXT: &str =
@@ -217,7 +202,11 @@ impl ReferralsPageView {
             me.handle_editor_event(event, ctx);
         });
 
-        let page = PageType::new_monolith(ReferralsWidget::default(), Some(HEADER_TEXT), true);
+        let page = PageType::new_monolith(
+            ReferralsWidget::default(),
+            Some("Invite a friend to Warp"),
+            true,
+        );
         Self {
             page,
             referrals_client,
@@ -281,7 +270,7 @@ impl ReferralsPageView {
                 ctx.clipboard()
                     .write(ClipboardContent::plain_text(referral_info.url.to_string()));
                 ctx.emit(ReferralsPageEvent::ShowToast {
-                    message: LINK_COPIED_TOAST.to_owned(),
+                    message: i18n::t!("Link copied.").into_owned(),
                     flavor: ToastFlavor::Default,
                 });
             }
@@ -334,14 +323,14 @@ impl ReferralsPageView {
                     full: ("Successfully sent invites to: {:?}", successful)
                 );
                 ctx.emit(ReferralsPageEvent::ShowToast {
-                    message: EMAIL_SUCCESS_TOAST.to_owned(),
+                    message: i18n::t!("Successfully sent emails.").into_owned(),
                     flavor: ToastFlavor::Success,
                 });
             }
             Err(err) => {
                 log::error!("Error sending referral emails: {err}");
                 ctx.emit(ReferralsPageEvent::ShowToast {
-                    message: EMAIL_FAILURE_TOAST.to_owned(),
+                    message: i18n::t!("Failed to send emails. Please try again.").into_owned(),
                     flavor: ToastFlavor::Error,
                 });
             }
@@ -522,8 +511,11 @@ impl ReferralsWidget {
     ) -> Box<dyn Element> {
         let (link_text, button_enabled) = match &view.api_state {
             ApiState::Ready { referral_info, .. } => (referral_info.url.clone(), true),
-            ApiState::Loading => (LOADING_TEXT.into(), false),
-            ApiState::Failed => (LINK_ERROR_TEXT.into(), false),
+            ApiState::Loading => (i18n::t!("Loading...").into_owned(), false),
+            ApiState::Failed => (
+                i18n::t!("Failed to load referral code.").into_owned(),
+                false,
+            ),
         };
         let theme = appearance.theme();
 
@@ -559,7 +551,7 @@ impl ReferralsWidget {
                 )
                 .with_child(self.render_button(
                     button_enabled,
-                    LINK_BUTTON_TEXT,
+                    &i18n::t!("Copy link"),
                     self.copy_link_mouse_state.clone(),
                     |ctx, _, _| ctx.dispatch_typed_action(ReferralsPageAction::CopyLink),
                     appearance,
@@ -580,12 +572,12 @@ impl ReferralsWidget {
             ApiState::Ready {
                 email_state: SendEmailState::Idle,
                 ..
-            } => (EMAIL_BUTTON_TEXT, true),
+            } => (i18n::t!("Send"), true),
             ApiState::Ready {
                 email_state: SendEmailState::Sending,
                 ..
-            } => (EMAIL_BUTTON_SENDING_TEXT, false),
-            _ => (EMAIL_BUTTON_TEXT, false),
+            } => (i18n::t!("Sending..."), false),
+            _ => (i18n::t!("Send"), false),
         };
 
         Flex::row()
@@ -607,7 +599,7 @@ impl ReferralsWidget {
             )
             .with_child(self.render_button(
                 button_enabled,
-                button_text,
+                &button_text,
                 self.send_email_mouse_state.clone(),
                 |ctx, _, _| ctx.dispatch_typed_action(ReferralsPageAction::SendEmailInvite),
                 appearance,
@@ -665,7 +657,7 @@ impl ReferralsWidget {
                 Container::new(
                     appearance
                         .ui_builder()
-                        .span(ANONYMOUS_USER_HEADER_TEXT)
+                        .span(i18n::t!("Sign up to participate in Warp's referral program"))
                         .with_style(UiComponentStyles {
                             font_size: Some(HEADER_FONT_SIZE),
                             ..Default::default()
@@ -737,7 +729,7 @@ impl ReferralsWidget {
             Container::new(
                 appearance
                     .ui_builder()
-                    .span(REWARD_INTRO)
+                    .span(i18n::t!("Get exclusive Warp goodies when you refer someone*"))
                     .with_style(UiComponentStyles {
                         font_size: Some(REWARD_INTRO_FONT_SIZE),
                         ..Default::default()
@@ -777,7 +769,10 @@ impl ReferralsWidget {
                     FormattedTextElement::new(
                         FormattedText::new([FormattedTextLine::Line(vec![
                             FormattedTextFragment::plain_text("*"),
-                            FormattedTextFragment::hyperlink(TERMS_LINK_TEXT, TERMS_URL),
+                            FormattedTextFragment::hyperlink(
+                                i18n::t!("Certain restrictions apply."),
+                                TERMS_URL,
+                            ),
                             FormattedTextFragment::plain_text(TERMS_CONTACT_TEXT),
                         ])]),
                         12.,
@@ -1060,8 +1055,8 @@ impl ReferralsWidget {
         };
 
         let current_referrals_label = match claimed_count {
-            1 => CLAIMED_REFERRALS_COUNT_LABEL_SINGULAR,
-            _ => CLAIMED_REFERRALS_COUNT_LABEL_PLURAL,
+            1 => i18n::t!("Current referral"),
+            _ => i18n::t!("Current referrals"),
         };
 
         Some(
@@ -1089,7 +1084,7 @@ impl ReferralsWidget {
                     ConstrainedBox::new(
                         appearance
                             .ui_builder()
-                            .wrappable_text(current_referrals_label.to_string(), true)
+                            .wrappable_text(current_referrals_label, true)
                             .with_style(UiComponentStyles {
                                 font_size: Some(CLAIMED_REFERRALS_LABEL_FONT_SIZE),
                                 font_color: Some(blended_colors::text_sub(

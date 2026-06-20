@@ -42,7 +42,6 @@ use crate::terminal::view::TerminalAction;
 use crate::ui_components::blended_colors;
 use crate::ui_components::icons::Icon;
 
-const GENERATING_TITLE_PLACEHOLDER: &str = "Generating title...";
 const ORCHESTRATION_COLLAPSED_MAX_HEIGHT: f32 = 200.;
 #[derive(Clone, Debug, PartialEq, Eq)]
 struct OrchestrationParticipant {
@@ -837,7 +836,7 @@ fn available_conversation_title_for_id(
         Some(title) if conversation.initial_query().as_deref() != Some(title.as_str()) => {
             Some(title)
         }
-        _ => Some(GENERATING_TITLE_PLACEHOLDER.to_string()),
+        _ => Some(i18n::t!("Generating title...").to_string()),
     }
 }
 

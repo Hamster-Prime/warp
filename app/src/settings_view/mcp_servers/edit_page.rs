@@ -484,7 +484,7 @@ impl MCPServersEditPageView {
                 .with_cross_axis_alignment(CrossAxisAlignment::Stretch)
                 .with_child(
                     Container::new(
-                        Container::new(Text::new("JSON", ui_font_family, font_size).finish())
+                        Container::new(Text::new(i18n::t!("JSON"), ui_font_family, font_size).finish())
                             .with_vertical_padding(10.)
                             .with_horizontal_padding(16.)
                             .finish(),

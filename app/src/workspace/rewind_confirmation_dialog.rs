@@ -105,7 +105,7 @@ impl View for RewindConfirmationDialog {
         let rewind_button_label = Flex::row()
             .with_cross_axis_alignment(CrossAxisAlignment::Center)
             .with_child(
-                Text::new_inline("Rewind", appearance.ui_font_family(), 14.)
+                Text::new_inline(i18n::t!("Rewind"), appearance.ui_font_family(), 14.)
                     .with_color(text_color)
                     .finish(),
             )
@@ -159,7 +159,7 @@ impl View for RewindConfirmationDialog {
                 } else {
                     cancel_text_color
                 };
-                Text::new_inline("Cancel", appearance.ui_font_family(), 14.)
+                Text::new_inline(i18n::t!("Cancel"), appearance.ui_font_family(), 14.)
                     .with_color(color.into_solid())
                     .finish()
             })

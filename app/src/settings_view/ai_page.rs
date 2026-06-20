@@ -4310,7 +4310,7 @@ impl SettingsWidget for GlobalAIWidget {
             row.add_child(
                 ConstrainedBox::new(
                     Container::new(
-                        Text::new("Your organization disallows AI when the active pane contains content from a remote session", appearance.ui_font_family(), 12.)
+                        Text::new(i18n::t!("Your organization disallows AI when the active pane contains content from a remote session"), appearance.ui_font_family(), 12.)
                             .with_color(appearance.theme().ui_warning_color())
                             .finish()
                     )
@@ -8046,7 +8046,7 @@ impl ApiKeysWidget {
             .with_cross_axis_alignment(CrossAxisAlignment::Center)
             .with_spacing(4.)
             .with_child(
-                Text::new_inline("Use your", appearance.ui_font_family(), CONTENT_FONT_SIZE)
+                Text::new_inline(i18n::t!("Use your"), appearance.ui_font_family(), CONTENT_FONT_SIZE)
                     .with_color(text_color.into())
                     .finish(),
             )

@@ -893,7 +893,7 @@ fn render_new_environment_footer<A: OrchestrationControlAction>(
                         .finish(),
                 )
                 .with_child(
-                    Text::new_inline("New environment", font_family, font_size)
+                    Text::new_inline(i18n::t!("New environment"), font_family, font_size)
                         .with_color(text_color.into())
                         .finish(),
                 )

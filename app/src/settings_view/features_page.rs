@@ -4120,7 +4120,7 @@ impl FeaturesPageView {
                     Shrinkable::new(
                         2.,
                         Align::new(
-                            Text::new_inline("Keybinding", appearance.ui_font_family(), 13.)
+                            Text::new_inline(i18n::t!("Keybinding"), appearance.ui_font_family(), 13.)
                                 .with_color(appearance.theme().active_ui_text_color().into())
                                 .finish(),
                         )
@@ -4283,7 +4283,7 @@ impl FeaturesPageView {
                 }
 
                 Container::new(
-                    Text::new_inline("Change keybinding", appearance.ui_font_family(), 12.)
+                    Text::new_inline(i18n::t!("Change keybinding"), appearance.ui_font_family(), 12.)
                         .with_color(button_color)
                         .finish(),
                 )

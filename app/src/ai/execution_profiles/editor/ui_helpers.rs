@@ -104,7 +104,7 @@ pub fn render_header_section(
 }
 
 fn render_header_title(appearance: &Appearance) -> Box<dyn Element> {
-    Text::new_inline("Edit Profile", appearance.ui_font_family(), 16.)
+    Text::new_inline(i18n::t!("Edit Profile"), appearance.ui_font_family(), 16.)
         .with_style(Properties::default().weight(Weight::Bold))
         .with_color(appearance.theme().active_ui_text_color().into())
         .finish()
@@ -112,7 +112,7 @@ fn render_header_title(appearance: &Appearance) -> Box<dyn Element> {
 
 fn render_header_name_label(appearance: &Appearance) -> Box<dyn Element> {
     Container::new(
-        Text::new("Name", appearance.ui_font_family(), 13.)
+        Text::new(i18n::t!("Name"), appearance.ui_font_family(), 13.)
             .with_color(appearance.theme().active_ui_text_color().into())
             .finish(),
     )

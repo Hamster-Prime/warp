@@ -634,7 +634,7 @@ impl View for CreateApiKeyModal {
                     .finish()
                 };
 
-                let name_label = Text::new("Name", appearance.ui_font_family(), LABEL_FONT_SIZE)
+                let name_label = Text::new(i18n::t!("Name"), appearance.ui_font_family(), LABEL_FONT_SIZE)
                     .with_color(theme.active_ui_text_color().into())
                     .finish();
 
@@ -699,7 +699,7 @@ impl View for CreateApiKeyModal {
 
                 if self.has_team || self.has_named_agents {
                     let type_label =
-                        Text::new("Type", appearance.ui_font_family(), LABEL_FONT_SIZE)
+                        Text::new(i18n::t!("Type"), appearance.ui_font_family(), LABEL_FONT_SIZE)
                             .with_color(theme.active_ui_text_color().into())
                             .finish();
                     col.add_child(Container::new(type_label).with_margin_bottom(4.).finish());
@@ -718,7 +718,7 @@ impl View for CreateApiKeyModal {
 
                 if selected_key_type == ApiKeyType::Agent {
                     let agent_label =
-                        Text::new("Agent", appearance.ui_font_family(), LABEL_FONT_SIZE)
+                        Text::new(i18n::t!("Agent"), appearance.ui_font_family(), LABEL_FONT_SIZE)
                             .with_color(theme.active_ui_text_color().into())
                             .finish();
                     col.add_child(Container::new(agent_label).with_margin_bottom(4.).finish());
@@ -800,7 +800,7 @@ impl View for CreateApiKeyModal {
                 );
 
                 let expiration_label =
-                    Text::new("Expiration", appearance.ui_font_family(), LABEL_FONT_SIZE)
+                    Text::new(i18n::t!("Expiration"), appearance.ui_font_family(), LABEL_FONT_SIZE)
                         .with_color(theme.active_ui_text_color().into())
                         .finish();
 

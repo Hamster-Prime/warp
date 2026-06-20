@@ -170,7 +170,7 @@ pub(super) fn render_beta_chip(appearance: &Appearance) -> Box<dyn Element> {
     let theme = appearance.theme();
     let chip_color = theme.sub_text_color(theme.surface_3()).into_solid();
     Container::new(
-        Text::new_inline("BETA", appearance.ui_font_family(), 10.)
+        Text::new_inline(i18n::t!("BETA"), appearance.ui_font_family(), 10.)
             .with_color(chip_color)
             .finish(),
     )

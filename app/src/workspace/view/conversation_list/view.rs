@@ -792,7 +792,7 @@ fn render_zero_state(
         .with_cross_axis_alignment(CrossAxisAlignment::Center)
         .with_spacing(4.)
         .with_child(
-            Text::new("No conversations yet", appearance.ui_font_family(), 14.)
+            Text::new(i18n::t!("No conversations yet"), appearance.ui_font_family(), 14.)
                 .with_color(theme.sub_text_color(theme.background()).into_solid())
                 .with_style(Properties::default().weight(Weight::Semibold))
                 .finish(),
@@ -815,7 +815,7 @@ fn render_zero_state(
 
     let new_conversation_button =
         Hoverable::new(zero_state_button_mouse_state, move |mouse_state| {
-            let label = Text::new_inline("New conversation", appearance.ui_font_family(), 12.)
+            let label = Text::new_inline(i18n::t!("New conversation"), appearance.ui_font_family(), 12.)
                 .with_color(theme.main_text_color(theme.background()).into_solid())
                 .finish();
 

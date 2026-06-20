@@ -1649,7 +1649,7 @@ impl UpdateEnvironmentForm {
                         theme.active_ui_text_color()
                     };
 
-                    Text::new_inline("Share with team", font_family, font_size)
+                    Text::new_inline(i18n::t!("Share with team"), font_family, font_size)
                         .with_color(color.into())
                         .finish()
                 },

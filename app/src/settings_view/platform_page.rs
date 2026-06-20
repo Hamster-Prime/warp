@@ -528,7 +528,7 @@ impl PlatformPageWidget {
             Flex::row()
                 .with_cross_axis_alignment(CrossAxisAlignment::Center)
                 .with_child(
-                    Text::new_inline("Oz Cloud API Keys", appearance.ui_font_family(), 16.)
+                    Text::new_inline(i18n::t!("Oz Cloud API Keys"), appearance.ui_font_family(), 16.)
                         .with_style(Properties::default().weight(Weight::Bold))
                         .with_color(appearance.theme().active_ui_text_color().into())
                         .with_clip(ClipConfig::end())

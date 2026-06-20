@@ -2654,7 +2654,7 @@ impl BillingAndUsagePageView {
                 )
                 .with_child(
                     Container::new(
-                        Text::new("No usage history", appearance.ui_font_family(), 14.)
+                        Text::new(i18n::t!("No usage history"), appearance.ui_font_family(), 14.)
                             .with_color(blended_colors::text_sub(
                                 appearance.theme(),
                                 appearance.theme().surface_1(),

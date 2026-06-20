@@ -567,7 +567,7 @@ impl BillingAndUsagePageV2View {
             .with_main_axis_size(MainAxisSize::Max);
 
         plan_header.add_child(
-            Text::new_inline("Plan", appearance.ui_font_family(), HEADER_FONT_SIZE)
+            Text::new_inline(i18n::t!("Plan"), appearance.ui_font_family(), HEADER_FONT_SIZE)
                 .with_style(Properties::default().weight(Weight::Bold))
                 .with_color(appearance.theme().active_ui_text_color().into())
                 .finish(),
@@ -851,7 +851,7 @@ impl BillingAndUsagePageV2View {
             Flex::column()
                 .with_child(
                     Container::new(
-                        Text::new_inline("Balance", appearance.ui_font_family(), HEADER_FONT_SIZE)
+                        Text::new_inline(i18n::t!("Balance"), appearance.ui_font_family(), HEADER_FONT_SIZE)
                             .with_style(Properties::default().weight(Weight::Bold))
                             .with_color(theme.active_ui_text_color().into())
                             .finish(),
@@ -1282,7 +1282,7 @@ impl BillingAndUsagePageV2View {
                 .build()
                 .finish(),
         };
-        let header = Text::new_inline("Buy credits", appearance.ui_font_family(), HEADER_FONT_SIZE)
+        let header = Text::new_inline(i18n::t!("Buy credits"), appearance.ui_font_family(), HEADER_FONT_SIZE)
             .with_color(theme.foreground().into())
             .with_style(Properties::default().weight(Weight::Medium))
             .finish();
@@ -1375,7 +1375,7 @@ impl BillingAndUsagePageV2View {
         let theme = appearance.theme();
         let bg = theme.background();
         let ui_builder = appearance.ui_builder();
-        let header = Text::new_inline("Buy credits", appearance.ui_font_family(), HEADER_FONT_SIZE)
+        let header = Text::new_inline(i18n::t!("Buy credits"), appearance.ui_font_family(), HEADER_FONT_SIZE)
             .with_color(theme.foreground().into())
             .with_style(Properties::default().weight(Weight::Medium))
             .finish();
@@ -1478,7 +1478,7 @@ impl BillingAndUsagePageV2View {
         let cost_dollars = bonus_grants.cents_spent as f64 / 100.0;
         let theme = appearance.theme();
 
-        let label = Text::new_inline("Purchased this month", appearance.ui_font_family(), 12.)
+        let label = Text::new_inline(i18n::t!("Purchased this month"), appearance.ui_font_family(), 12.)
             .with_color(theme.active_ui_text_color().into())
             .finish();
 
@@ -1619,7 +1619,7 @@ impl BillingAndUsagePageV2View {
             );
 
             right_group.add_children([
-                Text::new_inline("Auto-reload", appearance.ui_font_family(), 14.)
+                Text::new_inline(i18n::t!("Auto-reload"), appearance.ui_font_family(), 14.)
                     .with_color(fg.into())
                     .with_style(Properties::default().weight(Weight::Semibold))
                     .finish(),
@@ -1756,7 +1756,7 @@ impl BillingAndUsagePageV2View {
             .with_main_axis_alignment(MainAxisAlignment::Center)
             .with_child(
                 Container::new(
-                    Text::new_inline("Last 30 days", appearance.ui_font_family(), 14.)
+                    Text::new_inline(i18n::t!("Last 30 days"), appearance.ui_font_family(), 14.)
                         .with_color(blended_colors::text_sub(
                             appearance.theme(),
                             appearance.theme().surface_1(),
@@ -1865,7 +1865,7 @@ impl BillingAndUsagePageV2View {
                 )
                 .with_child(
                     Container::new(
-                        Text::new("No usage history", appearance.ui_font_family(), 14.)
+                        Text::new(i18n::t!("No usage history"), appearance.ui_font_family(), 14.)
                             .with_color(blended_colors::text_sub(
                                 appearance.theme(),
                                 appearance.theme().surface_1(),

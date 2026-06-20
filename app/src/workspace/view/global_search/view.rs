@@ -2090,7 +2090,7 @@ impl View for GlobalSearchView {
         let appearance = Appearance::as_ref(app);
         let theme = appearance.theme();
 
-        let search_label = Text::new_inline("Search", appearance.ui_font_family(), 14.)
+        let search_label = Text::new_inline(i18n::t!("Search"), appearance.ui_font_family(), 14.)
             .with_color(blended_colors::text_sub(theme, theme.background()))
             .finish();
 

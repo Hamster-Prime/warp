@@ -1389,7 +1389,7 @@ impl AppAnalyticsWidget {
             let background_color = appearance.theme().accent();
 
             let badge = Container::new(
-                Text::new_inline("ZDR", appearance.ui_font_family(), CONTENT_FONT_SIZE - 2.)
+                Text::new_inline(i18n::t!("ZDR"), appearance.ui_font_family(), CONTENT_FONT_SIZE - 2.)
                     .with_color(theme.active_ui_text_color().into())
                     .finish(),
             )

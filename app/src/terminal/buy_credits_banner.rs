@@ -250,7 +250,7 @@ impl BuyCreditsBanner {
 
         let sub_text_color = theme.sub_text_color(theme.surface_1());
 
-        let label = Text::new_inline("Auto reload", appearance.ui_font_family(), 12.)
+        let label = Text::new_inline(i18n::t!("Auto reload"), appearance.ui_font_family(), 12.)
             .with_color(sub_text_color.into())
             .finish();
 

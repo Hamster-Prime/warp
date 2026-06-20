@@ -2148,7 +2148,9 @@ impl Workspace {
                     log::warn!("Failed to remove tab config file: {e:?}");
                     self.toast_stack.update(ctx, |toast_stack, ctx| {
                         toast_stack.add_ephemeral_toast(
-                            DismissibleToast::error(format!("Failed to remove tab config: {e}")),
+                            DismissibleToast::error(
+                                i18n::t!("Failed to remove tab config: {e}", e = e).to_string(),
+                            ),
                             ctx,
                         );
                     });
@@ -13444,7 +13446,7 @@ impl Workspace {
         };
 
         WorkspaceToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
-            let toast = DismissibleToast::default(format!("Forked \"{title}\""));
+            let toast = DismissibleToast::default(i18n::t!("Forked \"{title}\"", title = title).to_string());
             toast_stack.add_ephemeral_toast(toast, window_id, ctx);
         });
     }

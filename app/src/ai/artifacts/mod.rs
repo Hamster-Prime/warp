@@ -447,16 +447,19 @@ fn open_file_download_picker<V: warpui::View>(
                 move |_me, result, ctx| match result {
                     Ok(()) => show_file_download_toast(
                         &artifact_uid,
-                        DismissibleToast::success(format!("Downloaded {toast_filename}.")),
+                        DismissibleToast::success(
+                            i18n::t!("Downloaded {toast_filename}.", toast_filename = toast_filename).to_string(),
+                        ),
                         ctx,
                     ),
                     Err(error) => {
                         log::warn!("Failed to download file artifact {artifact_uid}: {error}");
                         show_file_download_toast(
                             &artifact_uid,
-                            DismissibleToast::error(format!(
-                                "Failed to download {toast_filename}."
-                            )),
+                            DismissibleToast::error(
+                                i18n::t!("Failed to download {toast_filename}.", toast_filename = toast_filename)
+                                    .to_string(),
+                            ),
                             ctx,
                         );
                     }

@@ -99,7 +99,9 @@ pub(crate) fn rename_conversation<T: View>(
                     });
                     ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                         toast_stack.add_ephemeral_toast(
-                            DismissibleToast::success(format!("Conversation renamed to {title}")),
+                            DismissibleToast::success(
+                                i18n::t!("Conversation renamed to {title}", title = title).to_string(),
+                            ),
                             window_id,
                             ctx,
                         );
@@ -111,7 +113,9 @@ pub(crate) fn rename_conversation<T: View>(
                     });
                     ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                         toast_stack.add_ephemeral_toast(
-                            DismissibleToast::error(format!("Failed to rename conversation: {e}")),
+                            DismissibleToast::error(
+                                i18n::t!("Failed to rename conversation: {e}", e = e).to_string(),
+                            ),
                             window_id,
                             ctx,
                         );

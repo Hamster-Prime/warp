@@ -2207,7 +2207,9 @@ impl AISettingsPageView {
                 let window_id = ctx.window_id();
                 ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     let toast =
-                        DismissibleToast::error(format!("Couldn't start Grok login: {err}"));
+                        DismissibleToast::error(
+                            i18n::t!("Couldn't start Grok login: {err}", err = err).to_string(),
+                        );
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });
                 return;
@@ -2285,7 +2287,9 @@ impl AISettingsPageView {
                         },
                         ctx
                     );
-                    DismissibleToast::error(format!("Couldn't connect SuperGrok: {err}"))
+                    DismissibleToast::error(
+                        i18n::t!("Couldn't connect SuperGrok: {err}", err = err).to_string(),
+                    )
                 }
             };
             ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
@@ -2353,7 +2357,9 @@ impl AISettingsPageView {
                             },
                             ctx
                         );
-                        DismissibleToast::error(format!("Couldn't connect SuperGrok: {err}"))
+                        DismissibleToast::error(
+                        i18n::t!("Couldn't connect SuperGrok: {err}", err = err).to_string(),
+                    )
                     }
                 };
                 ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {

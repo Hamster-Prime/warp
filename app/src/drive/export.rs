@@ -372,8 +372,8 @@ impl ExportManager {
         let window_id = export.remove().window_id;
         ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
             let message = match id.display_name(ctx) {
-                Some(name) => format!("Failed to export {name}"),
-                None => "Export failed".to_string(),
+                Some(name) => i18n::t!("Failed to export {name}", name = name).to_string(),
+                None => i18n::t!("Export failed").to_string(),
             };
             toast_stack.add_persistent_toast(DismissibleToast::error(message), window_id, ctx);
         });

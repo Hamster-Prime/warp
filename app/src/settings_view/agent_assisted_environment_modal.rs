@@ -544,7 +544,9 @@ impl AgentAssistedEnvironmentModal {
         let path = home_relative_path(selected_path);
         ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
             let toast =
-                DismissibleToast::error(format!("Selected folder is not a Git repository: {path}"))
+                DismissibleToast::error(
+                    i18n::t!("Selected folder is not a Git repository: {path}", path = path).to_string(),
+                )
                     .with_object_id("agent_assisted_env_add_repo_not_git_repo".to_string());
             toast_stack.add_ephemeral_toast(toast, window_id, ctx);
         });

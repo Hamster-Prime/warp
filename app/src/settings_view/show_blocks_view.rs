@@ -306,9 +306,10 @@ impl GetBlocksForUserRequestState {
                 .label(i18n::t!("You don't have any shared blocks yet."))
                 .build()
                 .finish()),
-            GetBlocksForUserRequestState::InFlight => {
-                pad(ui_builder.label(i18n::t!("Getting blocks...")).build().finish())
-            }
+            GetBlocksForUserRequestState::InFlight => pad(ui_builder
+                .label(i18n::t!("Getting blocks..."))
+                .build()
+                .finish()),
             GetBlocksForUserRequestState::Failed => pad(ui_builder
                 .label(i18n::t!("Failed to load blocks. Please try again."))
                 .build()
@@ -424,7 +425,8 @@ impl ShowBlocksView {
 
             menu.set_items(
                 vec![MenuItem::Item(
-                    MenuItemFields::new("Unshare").with_on_select_action(ShowBlocksAction::Unshare),
+                    MenuItemFields::new(i18n::t!("Unshare").to_string())
+                        .with_on_select_action(ShowBlocksAction::Unshare),
                 )],
                 ctx,
             );

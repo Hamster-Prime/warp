@@ -675,7 +675,7 @@ impl WorkflowModal {
 
         // Add "Copy workflow text" to menu
         menu_items.push(
-            MenuItemFields::new("Copy workflow text")
+            MenuItemFields::new(i18n::t!("Copy workflow text").to_string())
                 .with_on_select_action(WorkflowModalAction::CopyObjectToClipboard)
                 .with_icon(Icon::CopyMenuItem)
                 .into_item(),
@@ -684,7 +684,7 @@ impl WorkflowModal {
         // Add "Trash" to menu
         if self.is_online(app) {
             menu_items.push(
-                MenuItemFields::new("Trash")
+                MenuItemFields::new(i18n::t!("Trash").to_string())
                     .with_on_select_action(WorkflowModalAction::TrashObject)
                     .with_icon(Icon::Trash)
                     .into_item(),

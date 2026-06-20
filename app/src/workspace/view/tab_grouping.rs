@@ -426,14 +426,17 @@ impl Workspace {
     /// group" only when there's a destination group worth offering.
     fn tab_selection_menu_items(&self) -> Vec<MenuItem<WorkspaceAction>> {
         let shared_group = self.selection_shared_group();
-        let mut menu_items = vec![MenuItemFields::new("Create group from tabs")
-            .with_on_select_action(WorkspaceAction::NewTabGroupFromSelectedTabs)
-            .into_item()];
+        let mut menu_items =
+            vec![
+                MenuItemFields::new(i18n::t!("Create group from tabs").to_string())
+                    .with_on_select_action(WorkspaceAction::NewTabGroupFromSelectedTabs)
+                    .into_item(),
+            ];
 
         // Only single-group selections have an unambiguous group to leave.
         if shared_group.is_some() {
             menu_items.push(
-                MenuItemFields::new("Remove from group")
+                MenuItemFields::new(i18n::t!("Remove from group").to_string())
                     .with_on_select_action(WorkspaceAction::RemoveSelectedTabsFromGroup)
                     .into_item(),
             );

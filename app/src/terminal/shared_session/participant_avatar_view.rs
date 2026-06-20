@@ -163,18 +163,22 @@ impl ParticipantAvatarView {
             .into_item()];
 
         match self.role {
-            Some(Role::Reader) => items.extend([MenuItemFields::new("Make editor")
-                .with_on_select_action(ParticipantAvatarAction::UpdateRole {
-                    participant_id,
-                    role: Role::Executor,
-                })
-                .into_item()]),
-            Some(Role::Executor) => items.extend([MenuItemFields::new("Make viewer")
-                .with_on_select_action(ParticipantAvatarAction::UpdateRole {
-                    participant_id,
-                    role: Role::Reader,
-                })
-                .into_item()]),
+            Some(Role::Reader) => {
+                items.extend([MenuItemFields::new(i18n::t!("Make editor").to_string())
+                    .with_on_select_action(ParticipantAvatarAction::UpdateRole {
+                        participant_id,
+                        role: Role::Executor,
+                    })
+                    .into_item()])
+            }
+            Some(Role::Executor) => {
+                items.extend([MenuItemFields::new(i18n::t!("Make viewer").to_string())
+                    .with_on_select_action(ParticipantAvatarAction::UpdateRole {
+                        participant_id,
+                        role: Role::Reader,
+                    })
+                    .into_item()])
+            }
             // Sharer does not have context menu
             _ => {}
         }

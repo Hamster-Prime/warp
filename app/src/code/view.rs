@@ -2040,7 +2040,7 @@ impl CodeView {
             if active_location.is_some() {
                 items.push(MenuItem::Separator);
                 items.push(
-                    MenuItemFields::new("Copy file path")
+                    MenuItemFields::new(i18n::t!("Copy file path").to_string())
                         .with_on_select_action(CodeViewAction::CopyFilePath)
                         .into_item(),
                 );
@@ -2071,7 +2071,7 @@ impl CodeView {
                 });
             if is_md {
                 items.push(
-                    MenuItemFields::new("View Markdown preview")
+                    MenuItemFields::new(i18n::t!("View Markdown preview").to_string())
                         .with_on_select_action(CodeViewAction::RenderMarkdown)
                         .into_item(),
                 );

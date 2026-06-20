@@ -372,7 +372,7 @@ impl EnvVarCollectionView {
         // Add "Copy Link" to menu
         if let Some(link) = self.env_var_collection_link(ctx) {
             menu_items.push(
-                MenuItemFields::new("Copy link")
+                MenuItemFields::new(i18n::t!("Copy link").to_string())
                     .with_on_select_action(EnvVarCollectionAction::CopyLink(link))
                     .with_icon(Icon::Link)
                     .into_item(),
@@ -382,7 +382,7 @@ impl EnvVarCollectionView {
         // Add "Duplicate" to menu
         if space != Some(Space::Shared) {
             menu_items.push(
-                MenuItemFields::new("Duplicate")
+                MenuItemFields::new(i18n::t!("Duplicate").to_string())
                     .with_on_select_action(EnvVarCollectionAction::Duplicate)
                     .with_icon(Icon::Duplicate)
                     .into_item(),
@@ -394,7 +394,7 @@ impl EnvVarCollectionView {
             && (!FeatureFlag::SharedWithMe.is_enabled() || access_level.can_trash())
         {
             menu_items.push(
-                MenuItemFields::new("Trash")
+                MenuItemFields::new(i18n::t!("Trash").to_string())
                     .with_on_select_action(EnvVarCollectionAction::Trash)
                     .with_icon(Icon::Trash)
                     .into_item(),
@@ -403,7 +403,7 @@ impl EnvVarCollectionView {
 
         #[cfg(feature = "local_fs")]
         menu_items.push(
-            MenuItemFields::new("Export")
+            MenuItemFields::new(i18n::t!("Export").to_string())
                 .with_on_select_action(EnvVarCollectionAction::Export)
                 .with_icon(Icon::Download)
                 .into_item(),

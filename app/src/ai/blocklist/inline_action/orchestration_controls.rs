@@ -1237,12 +1237,13 @@ pub fn populate_auth_secret_picker_for_harness<A: OrchestrationControlAction, V:
             }
             AuthSecretFetchState::NotFetched | AuthSecretFetchState::Loading => {
                 items.push(MenuItem::Item(
-                    MenuItemFields::new("Loading…").with_disabled(true),
+                    MenuItemFields::new(i18n::t!("Loading…").to_string()).with_disabled(true),
                 ));
             }
             AuthSecretFetchState::Failed(_) => {
                 items.push(MenuItem::Item(
-                    MenuItemFields::new("Unable to load secrets").with_disabled(true),
+                    MenuItemFields::new(i18n::t!("Unable to load secrets").to_string())
+                        .with_disabled(true),
                 ));
             }
         }

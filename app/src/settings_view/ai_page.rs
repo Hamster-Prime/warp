@@ -2233,7 +2233,8 @@ impl AISettingsPageView {
             // id), and the OAuth attempt itself times out when the callback
             // never arrives.
             let toast = DismissibleToast::default(
-                i18n::t!("Opening your browser to connect your SuperGrok subscription…").to_string(),
+                i18n::t!("Opening your browser to connect your SuperGrok subscription…")
+                    .to_string(),
             )
             .with_object_id(CONNECT_TOAST_OBJECT_ID.to_string())
             .with_link(
@@ -2265,7 +2266,9 @@ impl AISettingsPageView {
                     ApiKeyManager::handle(ctx).update(ctx, move |manager, ctx| {
                         manager.store_grok_tokens(tokens, ctx);
                     });
-                    DismissibleToast::success(i18n::t!("SuperGrok subscription connected").to_string())
+                    DismissibleToast::success(
+                        i18n::t!("SuperGrok subscription connected").to_string(),
+                    )
                 }
                 Err(err) => {
                     me.grok_oauth_attempt = None;
@@ -2334,7 +2337,9 @@ impl AISettingsPageView {
                         ApiKeyManager::handle(ctx).update(ctx, move |manager, ctx| {
                             manager.store_grok_tokens(tokens, ctx);
                         });
-                        DismissibleToast::success(i18n::t!("SuperGrok subscription connected").to_string())
+                        DismissibleToast::success(
+                            i18n::t!("SuperGrok subscription connected").to_string(),
+                        )
                     }
                     Err(err) => {
                         // Keep the row open so the user can correct the code.
@@ -3069,7 +3074,7 @@ impl AISettingsPageView {
                     }
 
                     items.push(
-                        MenuItemFields::new("Other")
+                        MenuItemFields::new(i18n::t!("Other").to_string())
                             .with_on_select_action(DropdownAction::select_action_and_close(
                                 AISettingsPageAction::SetCLIAgentForCommand {
                                     pattern: pattern_clone.clone(),
@@ -6821,7 +6826,9 @@ impl SettingsWidget for OtherAIWidget {
         column.add_child(render_dropdown_item(
             appearance,
             "Agent thinking display",
-            Some(&i18n::t!("Controls how reasoning/thinking traces are displayed.")),
+            Some(&i18n::t!(
+                "Controls how reasoning/thinking traces are displayed."
+            )),
             None,
             LocalOnlyIconState::for_setting(
                 ThinkingDisplayMode::storage_key(),
@@ -6836,7 +6843,9 @@ impl SettingsWidget for OtherAIWidget {
         column.add_child(render_dropdown_item(
             appearance,
             "Orchestration message display",
-            Some(&i18n::t!("Controls whether orchestration messages stay expanded.")),
+            Some(&i18n::t!(
+                "Controls whether orchestration messages stay expanded."
+            )),
             None,
             LocalOnlyIconState::for_setting(
                 OrchestrationMessageDisplayMode::storage_key(),

@@ -93,7 +93,7 @@ impl AcceptAutosuggestionKeybinding {
                     },
                 )
                 .into_item(),
-            MenuItemFields::new("Custom...")
+            MenuItemFields::new(i18n::t!("Custom...").to_string())
                 .with_on_select_action(
                     AcceptAutosuggestionKeybindingAction::OpenSettingsForCustomKeybinding,
                 )

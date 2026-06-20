@@ -120,6 +120,8 @@ Activate previous pane:
   zh-CN: 激活上一个窗格
 Activate previous tab:
   zh-CN: 激活上一个标签页
+Active AI:
+  zh-CN: Active AI
 Active App Usage:
   zh-CN: 活跃应用使用情况
 Active Screen:
@@ -189,6 +191,8 @@ Agent B init failed:
   zh-CN: 智能体 B 初始化失败
 Agent conversations:
   zh-CN: 智能体对话
+Agent decides:
+  zh-CN: 由 Agent 决定
 Agent failed:
   zh-CN: 智能体失败
 Agent is unaware of recent plan edits:
@@ -221,6 +225,8 @@ All uncommitted changes in the working directory:
   zh-CN: 工作目录中的所有未提交更改
 Allow Warp users with an @{domain} email to find and join the team.:
   zh-CN: 允许使用 @{domain} 邮箱的 Warp 用户查找并加入团队。
+Allow in specific directories:
+  zh-CN: 在特定目录中允许
 'Already have an account? ':
   zh-CN: '已经有账号了？ '
 Already shared with {}:
@@ -233,6 +239,8 @@ Always:
   zh-CN: 始终
 Always allow:
   zh-CN: 始终允许
+Always ask:
+  zh-CN: 始终询问
 Always open {object_kind} on the web?:
   zh-CN: 始终在网页端打开 {object_kind}？
 Always show tab bar:
@@ -293,6 +301,8 @@ Ask Warp AI about last block:
   zh-CN: 就上一个 Block 询问 Warp AI
 Ask Warp AI to explain errors, suggest commands or write scripts.:
   zh-CN: 让 Warp AI 解释错误、建议命令或编写脚本。
+Ask on first write:
+  zh-CN: 首次写入时询问
 Ask the Warp agent to assist:
   zh-CN: 请求 Warp Agent 协助
 Ask the Warp agent to resume:
@@ -2293,10 +2303,16 @@ Have Warp installed but redirecting to download page?:
   zh-CN: 已安装 Warp 但被重定向到下载页面？
 Header toolbar layout:
   zh-CN: 标题栏工具栏布局
+Hide "Use Agent" footer:
+  zh-CN: 隐藏"使用 Agent"页脚
 Hide Others:
   zh-CN: 隐藏其他
+Hide Oz changelog in new agent conversation view:
+  zh-CN: 在新 Agent 对话视图中隐藏 Oz 更新日志
 Hide Warp:
   zh-CN: 隐藏 Warp
+Hide agent tips:
+  zh-CN: 隐藏 Agent 提示
 Hide code review button in tab bar:
   zh-CN: 在标签页栏中隐藏代码审查按钮
 Hide file navigation:
@@ -2639,6 +2655,18 @@ Left:
   zh-CN: 左侧面板：Warp Drive
 Left {object_name}:
   zh-CN: 已离开 {object_name}
+Let AI generate a title for your shared block based on the command and output.:
+  zh-CN: 让 AI 根据命令和输出为您的共享代码块生成标题。
+Let AI generate commit messages and pull request titles and descriptions.:
+  zh-CN: 让 AI 生成提交信息以及 Pull Request 的标题和描述。
+Let AI suggest code diffs and queries as inline banners in the blocklist, based on recent commands and their outputs.:
+  zh-CN: 让 AI 根据最近的命令及其输出，在代码块列表中以行内横幅的形式建议代码差异和查询。
+Let AI suggest natural language autosuggestions, based on recent commands and their outputs.:
+  zh-CN: 让 AI 根据最近的命令及其输出提供自然语言自动建议。
+Let AI suggest natural language prompts, as inline banners in the input, based on recent commands and their outputs.:
+  zh-CN: 让 AI 根据最近的命令及其输出，在输入框中以行内横幅的形式建议自然语言提示。
+Let AI suggest the next command to run based on your command history, outputs, and common workflows.:
+  zh-CN: 让 AI 根据您的命令历史、输出和常用工作流，建议下一条要运行的命令。
 Ligatures may reduce performance:
   zh-CN: 连字可能降低性能
 Light:
@@ -2829,6 +2857,14 @@ Move cursor up:
   zh-CN: 向上移动光标
 Move forward one word:
   zh-CN: 向前移动一个单词
+Move group down:
+  zh-CN: 向下移动分组
+Move group left:
+  zh-CN: 向左移动分组
+Move group right:
+  zh-CN: 向右移动分组
+Move group up:
+  zh-CN: 向上移动分组
 Move tab left:
   zh-CN: 左移标签页
 Move tab right:
@@ -2949,6 +2985,8 @@ New worktree:
   zh-CN: 新建工作树
 New worktree branch name:
   zh-CN: 新工作树分支名
+New worktree config:
+  zh-CN: 新建工作树配置
 'New worktree: {repo_display_name}':
   zh-CN: 新工作树：{repo_display_name}
 'New worktree: {repo_display_name}, {base_branch}':
@@ -2959,6 +2997,8 @@ New {display_name}:
   zh-CN: 新建 {display_name}
 Next:
   zh-CN: 下一个
+Next Command:
+  zh-CN: 下一条命令
 Nice work on finishing the welcome tips!:
   zh-CN: 恭喜完成欢迎提示！
 No AI features:
@@ -3591,6 +3631,10 @@ Remove the previous character:
   zh-CN: 删除前一个字符
 Rename:
   zh-CN: 重命名
+Rename active pane:
+  zh-CN: 重命名活动窗格
+Rename pane:
+  zh-CN: 重命名窗格
 Rename tab:
   zh-CN: 重命名标签页
 Rename the current pane:
@@ -3645,12 +3689,16 @@ Requires the `{command}` command:
   zh-CN: 需要 `{command}` 命令
 Reset:
   zh-CN: 重置
+Reset active pane name:
+  zh-CN: 重置活动窗格名称
 Reset font size to default:
   zh-CN: 将字体大小重置为默认
 Reset links:
   zh-CN: 重置链接
 Reset notebook font size:
   zh-CN: 重置 Notebook 字体大小
+Reset pane name:
+  zh-CN: 重置窗格名称
 Reset tab name:
   zh-CN: 重置标签页名称
 Reset to Warp defaults:
@@ -4160,12 +4208,20 @@ Shell process exited:
   zh-CN: Shell 进程已退出
 Shell process exited prematurely!:
   zh-CN: Shell 进程意外退出！
+Show "Use Agent" footer:
+  zh-CN: 显示"使用 Agent"页脚
 Show Global Workflows in Command Search (ctrl-r):
   zh-CN: 在命令搜索中显示全局 Workflow（ctrl-r）
+Show Oz changelog in new agent conversation view:
+  zh-CN: 在新 Agent 对话视图中显示 Oz 更新日志
+Show Oz changelog in new conversation view:
+  zh-CN: 在新对话视图中显示 Oz 更新日志
 Show Vim status bar:
   zh-CN: 显示 Vim 状态栏
 Show Warp network log:
   zh-CN: 显示 Warp 网络日志
+Show agent tips:
+  zh-CN: 显示 Agent 提示
 Show autosuggestion ignore button:
   zh-CN: 显示自动建议忽略按钮
 Show autosuggestion keybinding hint:
@@ -4417,6 +4473,8 @@ Successfully updated permissions for {object_name_lowercase}:
   zh-CN: 已成功更新 {object_name_lowercase} 的权限
 Suggest corrected commands:
   zh-CN: 建议更正后的命令
+Suggested Rules:
+  zh-CN: 建议的规则
 'Suggested corrected command: {command}':
   zh-CN: 建议的修正命令：{command}
 'Suggested prompt:':
@@ -5078,6 +5136,8 @@ Warp:
   zh-CN: Warp AI：{}
 Warp API Key:
   zh-CN: Warp API Key
+Warp Drive as agent context:
+  zh-CN: 将 Warp Drive 作为 Agent 上下文
 ? Warp Drive is a workspace in your terminal where you can save Workflows, Notebooks,
   Prompts, and Environment Variables for personal use or to share with a team.
 : zh-CN: Warp Drive 是终端中的工作区，您可以保存工作流、笔记本、提示和环境变量供个人使用或与团队共享。
@@ -5091,6 +5151,8 @@ Warp Settings:
   zh-CN: Warp 设置
 Warp can auto-expand aliases.:
   zh-CN: Warp 可以自动展开别名。
+Warp credit fallback:
+  zh-CN: Warp 积分备用方案
 Warp doesn't have permission to send desktop notifications.:
   zh-CN: Warp 没有发送桌面通知的权限。
 Warp instance {}:

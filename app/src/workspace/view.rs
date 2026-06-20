@@ -6541,7 +6541,7 @@ impl Workspace {
         if FeatureFlag::TabConfigs.is_enabled() {
             menu_items.push(MenuItem::Separator);
             menu_items.push(
-                MenuItemFields::new_submenu("New worktree config")
+                MenuItemFields::new_submenu(i18n::t!("New worktree config").to_string())
                     .with_icon(icons::Icon::Dataflow02)
                     .into_item(),
             );
@@ -7544,13 +7544,13 @@ impl Workspace {
         let pane_name_target = match target {
             VerticalTabsPaneContextMenuTarget::ClickedPane(locator) => PaneNameMenuTarget {
                 locator,
-                rename_label: "Rename pane",
-                reset_label: "Reset pane name",
+                rename_label: i18n::t!("Rename pane").to_string(),
+                reset_label: i18n::t!("Reset pane name").to_string(),
             },
             VerticalTabsPaneContextMenuTarget::ActivePane(locator) => PaneNameMenuTarget {
                 locator,
-                rename_label: "Rename active pane",
-                reset_label: "Reset active pane name",
+                rename_label: i18n::t!("Rename active pane").to_string(),
+                reset_label: i18n::t!("Reset active pane name").to_string(),
             },
         };
         let can_move_left = self.can_move_tab(tab_index, TabMovement::Left);
@@ -9536,9 +9536,9 @@ impl Workspace {
             let mut items = vec![];
             if can_move_up {
                 let label = if is_vertical {
-                    "Move group up"
+                    i18n::t!("Move group up").to_string()
                 } else {
-                    "Move group left"
+                    i18n::t!("Move group left").to_string()
                 };
                 items.push(
                     MenuItemFields::new(label)
@@ -9548,9 +9548,9 @@ impl Workspace {
             }
             if can_move_down {
                 let label = if is_vertical {
-                    "Move group down"
+                    i18n::t!("Move group down").to_string()
                 } else {
-                    "Move group right"
+                    i18n::t!("Move group right").to_string()
                 };
                 items.push(
                     MenuItemFields::new(label)
@@ -10175,8 +10175,10 @@ impl Workspace {
             return;
         };
 
+        let new_worktree_config_label = i18n::t!("New worktree config").to_string();
+        let new_tab_config_label = i18n::t!("New tab config").to_string();
         match label.as_str() {
-            "New worktree config" => {
+            s if s == new_worktree_config_label.as_str() => {
                 self.tab_config_action_sidecar_item = None;
                 let auto_select_first_repo = self.new_session_dropdown_menu.read(ctx, |menu, _| {
                     menu.last_selection_source() != Some(MenuSelectionSource::Pointer)
@@ -10188,7 +10190,7 @@ impl Workspace {
                 );
             }
             // Items that don't get any sidecar.
-            "New tab config" => {
+            s if s == new_tab_config_label.as_str() => {
                 self.tab_config_action_sidecar_item = None;
                 if self.show_new_session_sidecar {
                     self.show_new_session_sidecar = false;

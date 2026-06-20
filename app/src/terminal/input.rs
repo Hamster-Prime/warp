@@ -932,7 +932,7 @@ fn render_prompt_chip_shell_command(
 ) -> String {
     match command {
         PromptChipShellCommand::GitCheckout { branch_name } => {
-            format!("git checkout {}", shell_quote_arg(branch_name, shell_type))
+            i18n::t!("git checkout {arg0}", arg0 = shell_quote_arg(branch_name, shell_type)).to_string()
         }
         PromptChipShellCommand::GitCreateAndCheckoutBranch { branch_name } => {
             format!(
@@ -941,14 +941,14 @@ fn render_prompt_chip_shell_command(
             )
         }
         PromptChipShellCommand::ChangeDirectory { dir_name } => {
-            format!("cd {}", shell_quote_arg(dir_name, shell_type))
+            i18n::t!("cd {arg0}", arg0 = shell_quote_arg(dir_name, shell_type)).to_string()
         }
         PromptChipShellCommand::NvmUse { version } => {
-            format!("nvm use {}", shell_quote_arg(version, shell_type))
+            i18n::t!("nvm use {arg0}", arg0 = shell_quote_arg(version, shell_type)).to_string()
         }
         PromptChipShellCommand::NvmInstallLatestNode => "nvm install node".to_string(),
         PromptChipShellCommand::Echo { message } => {
-            format!("echo {}", shell_quote_arg(message, shell_type))
+            i18n::t!("echo {arg0}", arg0 = shell_quote_arg(message, shell_type)).to_string()
         }
     }
 }
@@ -5690,10 +5690,10 @@ impl Input {
                         )
                     }
                     std::io::ErrorKind::AlreadyExists => {
-                        format!("File {} already exists", file_path.display())
+                        i18n::t!("File {display} already exists", display = file_path.display()).to_string()
                     }
                     _ => {
-                        format!("Failed to export to {}: {}", file_path.display(), e)
+                        i18n::t!("Failed to export to {display}: {e}", display = file_path.display(), e = e).to_string()
                     }
                 };
 
@@ -6684,7 +6684,7 @@ impl Input {
                     .as_ref(ctx)
                     .selected_environment_id()
                     .and_then(|id| CloudAmbientAgentEnvironment::get_by_id(id, ctx))
-                    .map(|env| format!("Hand off to {}", env.model().string_model.display_name()))
+                    .map(|env| i18n::t!("Hand off to {display_name}", display_name = env.model().string_model.display_name()).to_string())
                     .unwrap_or_else(|| i18n::t!("Handoff to cloud").to_string())
             };
             self.editor.update(ctx, |editor, ctx| {
@@ -6729,7 +6729,7 @@ impl Input {
                     .and_then(|argument| argument.hint_text)
                 {
                     editor.set_placeholder_text_with_prefix(
-                        format!("{} ", command.name),
+                        i18n::t!("{name} ", name = command.name).to_string(),
                         hint_text,
                         ctx,
                     );
@@ -7843,7 +7843,7 @@ impl Input {
         // Emit the a11y content as the last step so that it overwrites any of the a11y content
         // emitted by the editor (if multiple `AccessibilityContent`s are emitted within the same
         // event loop, the last one wins).
-        let mut accessibility_text = format!("Workflow command {} inserted.", &command_to_insert);
+        let mut accessibility_text = i18n::t!("Workflow command {arg0} inserted.", arg0 = &command_to_insert).to_string();
         if let Some(a11y_content) = self.selected_workflow_a11y_text(ctx) {
             let _ = write!(accessibility_text, " {a11y_content}");
         }
@@ -7949,7 +7949,7 @@ impl Input {
             .and_then(|selected_workflow_state| {
                 selected_workflow_state.more_info_view.read(ctx, |view, _| {
                     view.selected_argument()
-                        .map(|argument| format!("Selected Workflow argument {}", argument.name()))
+                        .map(|argument| i18n::t!("Selected Workflow argument {name}", name = argument.name()).to_string())
                 })
             })
     }
@@ -15499,7 +15499,7 @@ impl Input {
         // search, update its buffer accordingly.
         let buffer_starts_with_trigger = self.editor_starts_with_command_search_trigger(ctx);
         if !buffer_starts_with_trigger {
-            let updated_text = format!("{AI_COMMAND_SEARCH_TRIGGER} {}", self.buffer_text(ctx));
+            let updated_text = i18n::t!("{AI_COMMAND_SEARCH_TRIGGER} {arg0}", arg0 = self.buffer_text(ctx)).to_string();
             self.editor.update(ctx, |editor, ctx| {
                 editor.set_buffer_text(&updated_text, ctx);
             });

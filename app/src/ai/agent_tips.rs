@@ -39,7 +39,7 @@ pub trait AITip: Clone {
     /// Converts the tip to formatted text fragments for rendering.
     /// Default implementation adds "Tip: " prefix and parses backtick-wrapped text as inline code.
     fn to_formatted_text(&self, _app: &AppContext) -> Vec<FormattedTextFragment> {
-        let text = format!("Tip: {}", self.description());
+        let text = i18n::t!("Tip: {description}", description = self.description()).to_string();
 
         // Style backtick-wrapped text as inline code
         let parts: Vec<&str> = text.split('`').collect();
@@ -383,7 +383,7 @@ impl AITip for AgentTip {
     }
 
     fn to_formatted_text(&self, app: &AppContext) -> Vec<FormattedTextFragment> {
-        let mut text = format!("Tip: {}", self.description);
+        let mut text = i18n::t!("Tip: {description}", description = self.description).to_string();
 
         // Replace <keybinding> with the actual keybinding string
         if let Some(keystroke) = self.keystroke(app) {

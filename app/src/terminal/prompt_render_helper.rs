@@ -272,7 +272,7 @@ impl PromptRenderHelper {
         if !sessions.is_empty() {
             i18n::t!("Starting shell...").to_string()
         } else {
-            format!("Starting {}...", model.shell_launch_state().display_name())
+            i18n::t!("Starting {display_name}...", display_name = model.shell_launch_state().display_name()).to_string()
         }
     }
 

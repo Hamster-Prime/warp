@@ -1234,7 +1234,7 @@ async fn upload_entry(
     };
 
     let upload_target = merge_content_type(target, &file.mime_type);
-    let operation = format!("snapshot upload '{}'", file.filename);
+    let operation = i18n::t!("snapshot upload '{filename}'", filename = file.filename).to_string();
     match upload_with_retry(http, &upload_target, file.content.clone(), &operation).await {
         Ok(()) => EntryResult {
             label: file.filename.clone(),

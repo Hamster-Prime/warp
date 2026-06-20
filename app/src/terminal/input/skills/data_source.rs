@@ -401,6 +401,6 @@ impl SearchItem for SkillSearchItem {
     }
 
     fn accessibility_label(&self) -> String {
-        format!("Skill: {}", self.skill_name)
+        i18n::t!("Skill: {skill_name}", skill_name = self.skill_name).to_string()
     }
 }

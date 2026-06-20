@@ -14981,7 +14981,7 @@ impl TerminalView {
             });
 
             let a11y_content = AccessibilityContent::new(
-                format!("Suggested corrected command: {}", correction.command),
+                i18n::t!("Suggested corrected command: {command}", command = correction.command).to_string(),
                 "Press right arrow to insert or keep editing to ignore",
                 WarpA11yRole::HelpRole,
             );
@@ -20216,7 +20216,7 @@ impl TerminalView {
             }
             AIBlockEvent::InsertForkSlashCommand => {
                 self.input.update(ctx, |input, ctx| {
-                    input.replace_buffer_content(&format!("{} ", commands::FORK.name), ctx);
+                    input.replace_buffer_content(&i18n::t!("{name} ", name = commands::FORK.name).to_string(), ctx);
                     ctx.focus_self();
                 });
             }
@@ -22996,10 +22996,10 @@ impl TerminalView {
         };
 
         let start = block.start_ts().map_or_else(String::new, |b| {
-            format!("Started at: {}", b.format("%a %b %-d at %-I:%M:%S %p"))
+            i18n::t!("Started at: {arg0}", arg0 = b.format("%a %b %-d at %-I:%M:%S %p")).to_string()
         });
         let end = block.completed_ts().map_or_else(String::new, |b| {
-            format!("\nCompleted at: {}", b.format("%a %b %-d at %-I:%M:%S %p"))
+            i18n::t!("\nCompleted at: {arg0}", arg0 = b.format("%a %b %-d at %-I:%M:%S %p")).to_string()
         });
         format!("{start}{end}")
     }
@@ -24818,7 +24818,7 @@ impl TerminalView {
         let model = self.model.lock();
         model.block_list().block_at(index).map(|block| {
             let status = if block.has_failed() {
-                format!("failed, status code {}", block.exit_code().value())
+                i18n::t!("failed, status code {value}", value = block.exit_code().value()).to_string()
             } else if block.is_background() {
                 "background".to_string()
             } else if block.is_done() {
@@ -25762,7 +25762,7 @@ impl TypedActionView for TerminalView {
                     .and_then(|index| self.selected_block_accessibility_content(index))
                 {
                     let num_selected_text =
-                        format!("Selected {} blocks.", self.num_non_hidden_selected_blocks());
+                        i18n::t!("Selected {num_non_hidden_selected_blocks} blocks.", num_non_hidden_selected_blocks = self.num_non_hidden_selected_blocks()).to_string();
                     content.value = format!("{}\n{}", num_selected_text, content.value);
                     Custom(content)
                 } else {
@@ -25823,7 +25823,7 @@ impl TypedActionView for TerminalView {
                     },
                     ctx,
                 );
-                let text = format!("Copied {} blocks.\n{}", blocks.len(), blocks.join("\n"));
+                let text = i18n::t!("Copied {len} blocks.\n{arg1}", len = blocks.len(), arg1 = blocks.join("\n")).to_string();
                 Custom(AccessibilityContent::new_without_help(
                     text,
                     WarpA11yRole::TextRole,

@@ -580,7 +580,7 @@ impl AIAgentOutput {
                 AIAgentOutputMessageType::CommentsAddressed {
                     comments: comment_ids,
                 } => {
-                    result.push(format!("Addressed {} comments", comment_ids.len()));
+                    result.push(i18n::t!("Addressed {len} comments", len = comment_ids.len()).to_string());
                     last_was_action = false;
                 }
                 AIAgentOutputMessageType::Reasoning { .. } => continue,
@@ -594,11 +594,11 @@ impl AIAgentOutput {
                 AIAgentOutputMessageType::ArtifactCreated(_) => continue,
                 AIAgentOutputMessageType::SkillInvoked(_) => continue,
                 AIAgentOutputMessageType::MessagesReceivedFromAgents { messages } => {
-                    result.push(format!("Received {} messages", messages.len()));
+                    result.push(i18n::t!("Received {len} messages", len = messages.len()).to_string());
                     last_was_action = false;
                 }
                 AIAgentOutputMessageType::EventsFromAgents { event_ids } => {
-                    result.push(format!("Received {} agent events", event_ids.len()));
+                    result.push(i18n::t!("Received {len} agent events", len = event_ids.len()).to_string());
                     last_was_action = false;
                 }
             }
@@ -2838,7 +2838,7 @@ impl AIAgentInput {
                     if user_query.query.is_empty() {
                         Some(format!("/{}", skill.name))
                     } else {
-                        Some(format!("/{} {}", skill.name, user_query.query))
+                        Some(i18n::t!("/{name} {query}", name = skill.name, query = user_query.query).to_string())
                     }
                 } else {
                     Some(format!("/{}", skill.name))

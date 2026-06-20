@@ -882,7 +882,7 @@ impl AmbientAgentRunner {
 
             // Session link (if available)
             if let Some(session_join_info) = SessionJoinInfo::from_task(task) {
-                table.add_row(vec![format!("Session: {}", session_join_info.session_link)]);
+                table.add_row(vec![i18n::t!("Session: {session_link}", session_link = session_join_info.session_link).to_string()]);
             }
 
             println!("{table}");
@@ -903,12 +903,12 @@ impl AmbientAgentRunner {
                     ..
                 } => {
                     let pr_display = match (repo, number) {
-                        (Some(repo), Some(num)) => format!("  PR: {} #{}", repo, num),
+                        (Some(repo), Some(num)) => i18n::t!("  PR: {repo} #{num}", repo = repo, num = num).to_string(),
                         _ => "  PR:".to_string(),
                     };
                     lines.push(pr_display);
-                    lines.push(format!("    Branch: {}", branch));
-                    lines.push(format!("    Link: {}", url));
+                    lines.push(i18n::t!("    Branch: {branch}", branch = branch).to_string());
+                    lines.push(i18n::t!("    Link: {url}", url = url).to_string());
                 }
                 Artifact::Plan {
                     notebook_uid,
@@ -916,7 +916,7 @@ impl AmbientAgentRunner {
                     ..
                 } => {
                     let plan_title = title.as_deref().unwrap_or("Untitled Plan");
-                    lines.push(format!("  Plan: {}", plan_title));
+                    lines.push(i18n::t!("  Plan: {plan_title}", plan_title = plan_title).to_string());
                     if let Some(id) = notebook_uid {
                         lines.push(format!(
                             "    Link: {}/drive/notebook/{}",
@@ -931,7 +931,7 @@ impl AmbientAgentRunner {
                     ..
                 } => {
                     let desc = description.as_deref().unwrap_or("No description");
-                    lines.push(format!("  Screenshot: {} ({})", artifact_uid, desc));
+                    lines.push(i18n::t!("  Screenshot: {artifact_uid} ({desc})", artifact_uid = artifact_uid, desc = desc).to_string());
                 }
                 Artifact::File {
                     filename,
@@ -940,10 +940,10 @@ impl AmbientAgentRunner {
                     ..
                 } => {
                     let label = super::super::artifacts::file_button_label(filename, filepath);
-                    lines.push(format!("  File: {}", label));
-                    lines.push(format!("    Path: {}", filepath));
+                    lines.push(i18n::t!("  File: {label}", label = label).to_string());
+                    lines.push(i18n::t!("    Path: {filepath}", filepath = filepath).to_string());
                     if let Some(description) = description {
-                        lines.push(format!("    Description: {}", description));
+                        lines.push(i18n::t!("    Description: {description}", description = description).to_string());
                     }
                 }
             }

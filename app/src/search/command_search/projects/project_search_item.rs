@@ -140,7 +140,7 @@ impl SearchItem for ProjectSearchItem {
     }
 
     fn accessibility_label(&self) -> String {
-        format!("Project: {}", self.name)
+        i18n::t!("Project: {name}", name = self.name).to_string()
     }
 }
 

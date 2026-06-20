@@ -77,7 +77,7 @@ impl CommandContext {
             Self::None => None,
             Self::LastRunCommand {
                 last_run_command, ..
-            } => Some(format!("Last run command {}", last_run_command.clone())),
+            } => Some(i18n::t!("Last run command {clone}", clone = last_run_command.clone()).to_string()),
             Self::LastRunAIBlock { prompt } => Some(format!("Last AI interaction: {prompt}")),
             Self::RunningCommand { running_command } => {
                 Some(format!("Currently running {running_command}"))

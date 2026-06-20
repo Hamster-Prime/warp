@@ -2033,7 +2033,7 @@ fn render_search_action_input(
             };
 
             if queries.len() == 1 {
-                format!("Grep for `{}` in {}", queries[0], display_path)
+                i18n::t!("Grep for `{arg0}` in {display_path}", arg0 = queries[0], display_path = display_path).to_string()
             } else {
                 let patterns_list = queries
                     .iter()

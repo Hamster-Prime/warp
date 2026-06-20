@@ -366,7 +366,7 @@ impl CodeFooterView {
         // Create a button that dispatches EnableLSP action
         // The action handler will check lsp_repo_status to decide whether to install first
         let enable_lsp_button = server_type.map(|st| {
-            let label = format!("Enable {}", st.binary_name());
+            let label = i18n::t!("Enable {binary_name}", binary_name = st.binary_name()).to_string();
             ctx.add_typed_action_view(|_ctx| {
                 ActionButton::new(label, NakedTheme)
                     .with_size(ButtonSize::Small)
@@ -653,10 +653,10 @@ impl CodeFooterView {
     fn button_label_for_status(status: &LspRepoStatus) -> Option<String> {
         match status {
             LspRepoStatus::DisabledAndNotInstalled { server_type } => {
-                Some(format!("Install {}", server_type.binary_name()))
+                Some(i18n::t!("Install {binary_name}", binary_name = server_type.binary_name()).to_string())
             }
             LspRepoStatus::DisabledAndInstalled { server_type } => {
-                Some(format!("Enable {}", server_type.binary_name()))
+                Some(i18n::t!("Enable {binary_name}", binary_name = server_type.binary_name()).to_string())
             }
             _ => None,
         }
@@ -1480,9 +1480,9 @@ impl CodeFooterView {
                 .filter(|msg| !msg.trim().is_empty())
                 .map(|msg| format!("{}: {msg}", server.server_name())),
             LspModelState::Stopped { .. } | LspModelState::Stopping { .. } => {
-                Some(format!("{}: stopped", server.server_name()))
+                Some(i18n::t!("{server_name}: stopped", server_name = server.server_name()).to_string())
             }
-            LspModelState::Failed { .. } => Some(format!("{}: error", server.server_name())),
+            LspModelState::Failed { .. } => Some(i18n::t!("{server_name}: error", server_name = server.server_name()).to_string()),
         }
     }
 
@@ -1565,7 +1565,7 @@ impl CodeFooterView {
                     LspModelState::Stopped { .. } | LspModelState::Stopping { .. }
                 ) {
                     return (
-                        Some(format!("{}: stopped", server_ref.server_name())),
+                        Some(i18n::t!("{server_name}: stopped", server_name = server_ref.server_name()).to_string()),
                         false,
                     );
                 }
@@ -1611,7 +1611,7 @@ impl CodeFooterView {
                         true,
                     ),
                     LspRepoStatus::Installing { server_type } => (
-                        Some(format!("Installing {}...", server_type.binary_name())),
+                        Some(i18n::t!("Installing {binary_name}...", binary_name = server_type.binary_name()).to_string()),
                         false,
                     ),
                 },
@@ -1641,7 +1641,7 @@ impl CodeFooterView {
                 for status in lsp_repo_statuses.values() {
                     if let LspRepoStatus::Installing { server_type } = status {
                         return (
-                            Some(format!("Installing {}...", server_type.binary_name())),
+                            Some(i18n::t!("Installing {binary_name}...", binary_name = server_type.binary_name()).to_string()),
                             false,
                         );
                     }

@@ -438,7 +438,7 @@ impl SearchItem for ModelSearchItem {
             let discount_percentage = self.discount_percentage.unwrap_or(0.);
             let chip = Container::new(
                 Text::new_inline(
-                    format!("{}% off!", discount_percentage.round() as u32),
+                    i18n::t!("{arg0}% off!", arg0 = discount_percentage.round() as u32).to_string(),
                     appearance.ui_font_family(),
                     font_size,
                 )
@@ -659,7 +659,7 @@ impl SearchItem for ModelSearchItem {
     }
 
     fn accessibility_label(&self) -> String {
-        let mut label = format!("Model: {}", self.display_text);
+        let mut label = i18n::t!("Model: {display_text}", display_text = self.display_text).to_string();
         if self.is_selected {
             label.push_str(" (selected)");
         }

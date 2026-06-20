@@ -226,6 +226,6 @@ impl SearchItem for RuleSearchItem {
     }
 
     fn accessibility_label(&self) -> String {
-        format!("Rule: {}", self.rule_content)
+        i18n::t!("Rule: {rule_content}", rule_content = self.rule_content).to_string()
     }
 }

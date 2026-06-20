@@ -2491,7 +2491,7 @@ impl ServerModel {
             return HandlerOutcome::Sync(server_message::Message::SaveBufferResponse(
                 SaveBufferResponse {
                     result: Some(save_buffer_response::Result::Error(FileOperationError {
-                        message: format!("Buffer not open: {}", msg.path),
+                        message: i18n::t!("Buffer not open: {path}", path = msg.path).to_string(),
                     })),
                 },
             ));
@@ -2544,7 +2544,7 @@ impl ServerModel {
                 ResolveConflictResponse {
                     result: Some(resolve_conflict_response::Result::Error(
                         FileOperationError {
-                            message: format!("Buffer not open: {}", msg.path),
+                            message: i18n::t!("Buffer not open: {path}", path = msg.path).to_string(),
                         },
                     )),
                 },

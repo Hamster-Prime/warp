@@ -608,7 +608,7 @@ impl LocalDiffStateModel {
                     let context = if relative_paths.len() == 1 {
                         relative_paths[0].clone()
                     } else {
-                        format!("{} files", relative_paths.len())
+                        i18n::t!("{len} files", len = relative_paths.len()).to_string()
                     };
                     Err(anyhow!(
                         "Failed to stash changes for {}: {}",

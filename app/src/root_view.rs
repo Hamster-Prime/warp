@@ -250,7 +250,7 @@ impl CreateEnvironmentArg {
             // Include a trailing space to trigger slash command syntax highlighting and ghost text.
             "/create-environment ".to_string()
         } else {
-            format!("/create-environment {}", safe_repos)
+            i18n::t!("/create-environment {safe_repos}", safe_repos = safe_repos).to_string()
         }
     }
 }

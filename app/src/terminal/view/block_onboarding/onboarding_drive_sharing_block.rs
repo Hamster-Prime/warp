@@ -93,8 +93,8 @@ impl View for OnboardingDriveSharingBlock {
         }
 
         let button_label = match CloudModel::as_ref(app).get_by_uid(&self.object_id.uid()) {
-            Some(object) => format!("Share {}", object.display_name()),
-            None => format!("Share this {}", self.object_id.object_type()),
+            Some(object) => i18n::t!("Share {display_name}", display_name = object.display_name()).to_string(),
+            None => i18n::t!("Share this {object_type}", object_type = self.object_id.object_type()).to_string(),
         };
         let object_id = self.object_id;
         let button = appearance

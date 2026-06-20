@@ -6515,7 +6515,7 @@ impl Workspace {
                     if *seen == 1 {
                         tab_config.name.clone()
                     } else {
-                        format!("{} ({})", tab_config.name, *seen - 1)
+                        i18n::t!("{name} ({arg1})", name = tab_config.name, arg1 = *seen - 1).to_string()
                     }
                 } else {
                     tab_config.name.clone()
@@ -6742,7 +6742,7 @@ impl Workspace {
                 .and_then(|view| view.as_ref(ctx).pwd())
                 .map(PathBuf::from);
 
-            let modal_title = format!("Open: {}", tab_config.name);
+            let modal_title = i18n::t!("Open: {name}", name = tab_config.name).to_string();
             self.tab_config_params_modal.view.update(ctx, |modal, ctx| {
                 modal.body().update(ctx, |body, ctx| {
                     body.set_title(modal_title);
@@ -7587,12 +7587,12 @@ impl Workspace {
                 match autoupdate::get_update_state(ctx) {
                     AutoupdateStage::UpdateReady { new_version, .. }
                     | AutoupdateStage::UpdatedPendingRestart { new_version } => menu_items.push(
-                        MenuItemFields::new(format!("Install update ({})", new_version.version))
+                        MenuItemFields::new(i18n::t!("Install update ({version})", version = new_version.version).to_string())
                             .with_on_select_action(WorkspaceAction::ApplyUpdate)
                             .into_item(),
                     ),
                     AutoupdateStage::Updating { new_version, .. } => menu_items.push(
-                        MenuItemFields::new(format!("Updating to ({})", new_version.version))
+                        MenuItemFields::new(i18n::t!("Updating to ({version})", version = new_version.version).to_string())
                             .with_disabled(true)
                             .into_item(),
                     ),
@@ -8278,7 +8278,7 @@ impl Workspace {
             return;
         };
 
-        let cd_command = format!("cd {}", shell_words::quote(path_str));
+        let cd_command = i18n::t!("cd {arg0}", arg0 = shell_words::quote(path_str)).to_string();
         input_handle.update(ctx, |input_view, ctx| {
             input_view.replace_buffer_content(&cd_command, ctx);
         });
@@ -9292,7 +9292,7 @@ impl Workspace {
                     ) =>
                 {
                     items.push(
-                        MenuItemFields::new(format!("Updating to ({})", new_version.version))
+                        MenuItemFields::new(i18n::t!("Updating to ({version})", version = new_version.version).to_string())
                             .with_disabled(true)
                             .into_item(),
                     )
@@ -24623,7 +24623,7 @@ impl TypedActionView for Workspace {
                         terminal_view.update(ctx, |terminal, ctx| {
                             terminal.input().update(ctx, |input, ctx| {
                                 input.replace_buffer_content(
-                                    &format!("{} ", commands::FORK.name),
+                                    &i18n::t!("{name} ", name = commands::FORK.name).to_string(),
                                     ctx,
                                 );
                                 ctx.focus_self();

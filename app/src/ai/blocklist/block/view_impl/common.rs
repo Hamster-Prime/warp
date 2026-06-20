@@ -302,7 +302,7 @@ pub fn render_warping_indicator<V: View>(
         // summarization
         if matches!(summarization_type, SummarizationType::ConversationSummary) {
             let timer_text = if let Some(start_time) = props.summarization_start_time {
-                format!(" • {}", format_elapsed_seconds(start_time.elapsed()))
+                i18n::t!(" • {arg0}", arg0 = format_elapsed_seconds(start_time.elapsed())).to_string()
             } else {
                 String::new()
             };

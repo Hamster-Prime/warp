@@ -41,7 +41,7 @@ pub fn render_rich_history(entry: &HistoryEntry, ctx: &AppContext) -> Box<dyn El
         flex_column.add_child(
             Container::new(render_row_with_icon_and_paragraph(
                 icon.into(),
-                format!("Exit code {}", exit_code.value()),
+                i18n::t!("Exit code {value}", value = exit_code.value()).to_string(),
                 appearance,
             ))
             .with_margin_top(DETAILS_PARAGRAPH_SPACING)

@@ -1311,7 +1311,7 @@ impl CurrentPrompt {
                 if has_value && chip_kind.is_copyable() {
                     if let Some(chip) = chip_kind.to_chip() {
                         Some(
-                            MenuItemFields::new(format!("Copy {}", chip.title()))
+                            MenuItemFields::new(i18n::t!("Copy {title}", title = chip.title()).to_string())
                                 .with_on_select_action(TerminalAction::ContextMenu(
                                     ContextMenuAction::CopyPrompt {
                                         position,

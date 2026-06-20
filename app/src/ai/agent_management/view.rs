@@ -766,7 +766,7 @@ impl AgentManagementView {
     ) {
         dropdown.set_menu_width(160., ctx);
         dropdown.set_main_axis_size(MainAxisSize::Min, ctx);
-        dropdown.set_menu_header_text_override(move |text| format!("{}: {}", label_prefix, text));
+        dropdown.set_menu_header_text_override(move |text| i18n::t!("{label_prefix}: {text}", label_prefix = label_prefix, text = text).to_string());
         dropdown.set_style(DropdownStyle::ActionButtonSecondary, ctx);
     }
 
@@ -778,7 +778,7 @@ impl AgentManagementView {
     ) {
         dropdown.set_menu_width(320., ctx);
         dropdown.set_main_axis_size(MainAxisSize::Min, ctx);
-        dropdown.set_menu_header_text_override(move |text| format!("{}: {}", label_prefix, text));
+        dropdown.set_menu_header_text_override(move |text| i18n::t!("{label_prefix}: {text}", label_prefix = label_prefix, text = text).to_string());
         dropdown.set_button_variant(ButtonVariant::Secondary);
     }
 
@@ -1814,7 +1814,7 @@ impl AgentManagementView {
         let mut metadata_parts = Vec::new();
 
         if let Some(source) = &entry.display.source {
-            metadata_parts.push(format!("Source: {}", source.display_name()));
+            metadata_parts.push(i18n::t!("Source: {display_name}", display_name = source.display_name()).to_string());
         }
 
         let availability = HarnessAvailabilityModel::as_ref(app);

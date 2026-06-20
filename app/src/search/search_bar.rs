@@ -690,7 +690,7 @@ impl<T: Action + Clone> SearchBar<T> {
         if let Some(loading_filters) = self.mixer.as_ref(ctx).loading_query_filters() {
             for loading_filter in loading_filters.into_iter() {
                 ctx.emit_a11y_content(AccessibilityContent::new_without_help(
-                    format!("Loading {} suggestions", loading_filter.display_name()),
+                    i18n::t!("Loading {display_name} suggestions", display_name = loading_filter.display_name()).to_string(),
                     WarpA11yRole::MenuItemRole,
                 ));
             }
@@ -708,7 +708,7 @@ impl<T: Action + Clone> SearchBar<T> {
         }
 
         if let Some(selected_result) = self.state.as_ref(ctx).selected_result() {
-            let a11y_content_text = format!("Selected {}", selected_result.accessibility_label(),);
+            let a11y_content_text = i18n::t!("Selected {accessibility_label}", accessibility_label = selected_result.accessibility_label()).to_string();
             let a11y_content = match selected_result.accessibility_help_message() {
                 None => AccessibilityContent::new_without_help(
                     a11y_content_text,

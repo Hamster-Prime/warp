@@ -260,7 +260,7 @@ impl SlashCommandRequest {
                 let display_query = if repos.is_empty() {
                     "/create-environment".to_string()
                 } else {
-                    format!("/create-environment {}", repos.join(" "))
+                    i18n::t!("/create-environment {arg0}", arg0 = repos.join(" ")).to_string()
                 };
 
                 // Add "." to represent the current working directory

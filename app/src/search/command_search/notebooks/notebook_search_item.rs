@@ -136,6 +136,6 @@ impl SearchItem for NotebookSearchItem {
     }
 
     fn accessibility_label(&self) -> String {
-        format!("Notebook: {}", self.model.title)
+        i18n::t!("Notebook: {title}", title = self.model.title).to_string()
     }
 }

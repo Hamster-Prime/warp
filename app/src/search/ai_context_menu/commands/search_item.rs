@@ -81,6 +81,6 @@ impl SearchItem for CommandSearchItem {
     }
 
     fn accessibility_label(&self) -> String {
-        format!("Command: {}", self.command)
+        i18n::t!("Command: {command}", command = self.command).to_string()
     }
 }

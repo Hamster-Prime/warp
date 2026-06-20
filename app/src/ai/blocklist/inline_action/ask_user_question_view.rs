@@ -1854,7 +1854,7 @@ fn render_answers(
     let mut content = Flex::column().with_cross_axis_alignment(CrossAxisAlignment::Stretch);
     for (index, question) in questions.iter().enumerate() {
         let answer = answers.and_then(|answers| answers.get(index));
-        let question_text = format!("Q: {}", question.question);
+        let question_text = i18n::t!("Q: {question}", question = question.question).to_string();
         let question_label =
             render_text_with_markdown_support(&question_text, font_size, text_color, appearance);
         let answer_text = format!(

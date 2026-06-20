@@ -349,7 +349,7 @@ pub(super) fn render(props: Props, app: &AppContext) -> Box<dyn Element> {
                             && props.thinking_display_mode.should_render() =>
                         {
                             let header_text = if let Some(dur) = finished_duration {
-                                format!("Thought for {}", format_elapsed_seconds(*dur))
+                                i18n::t!("Thought for {arg0}", arg0 = format_elapsed_seconds(*dur)).to_string()
                             } else {
                                 "Thinking".to_string()
                             };
@@ -1420,7 +1420,7 @@ fn render_search_codebase(
                         renderable_action(
                             props,
                             id,
-                            format!("Search in {}", root_repo_path.to_string_lossy()).as_str(),
+                            i18n::t!("Search in {to_string_lossy}", to_string_lossy = root_repo_path.to_string_lossy()).to_string().as_str(),
                             app,
                             footer,
                             appearance,
@@ -1470,7 +1470,7 @@ fn render_search_codebase(
                     renderable_action(
                         props,
                         id,
-                        format!("Searching in {}", root_repo_path.to_string_lossy()).as_str(),
+                        i18n::t!("Searching in {to_string_lossy}", to_string_lossy = root_repo_path.to_string_lossy()).to_string().as_str(),
                         app,
                         footer,
                         appearance,
@@ -1536,7 +1536,7 @@ fn render_search_codebase(
                                     root_repo_path.to_string_lossy(),
                                 ),
                                 _ => {
-                                    format!("Search in {} failed", root_repo_path.to_string_lossy())
+                                    i18n::t!("Search in {to_string_lossy} failed", to_string_lossy = root_repo_path.to_string_lossy()).to_string()
                                 }
                             };
                             renderable_action(
@@ -1556,7 +1556,7 @@ fn render_search_codebase(
                             renderable_action(
                                 props,
                                 id,
-                                format!("Search in {} cancelled", root_repo_path.to_string_lossy())
+                                i18n::t!("Search in {to_string_lossy} cancelled", to_string_lossy = root_repo_path.to_string_lossy()).to_string()
                                     .as_str(),
                                 app,
                                 footer,
@@ -1575,7 +1575,7 @@ fn render_search_codebase(
             renderable_action(
                 props,
                 id,
-                format!("Search in {}", root_repo_path.to_string_lossy()).as_str(),
+                i18n::t!("Search in {to_string_lossy}", to_string_lossy = root_repo_path.to_string_lossy()).to_string().as_str(),
                 app,
                 footer,
                 appearance,
@@ -2732,7 +2732,7 @@ fn format_upload_artifact_text(
     request: &UploadArtifactRequest,
     result: Option<&UploadArtifactResult>,
 ) -> String {
-    let mut lines = vec![format!("Upload artifact: {}", request.file_path)];
+    let mut lines = vec![i18n::t!("Upload artifact: {file_path}", file_path = request.file_path).to_string()];
 
     if let Some(description) = request.description.as_deref() {
         lines.push(format!("Description: {description}"));

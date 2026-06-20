@@ -66,7 +66,7 @@ impl SearchItem for SeparatorSearchItem {
     }
 
     fn accessibility_label(&self) -> String {
-        format!("Section: {}", self.title)
+        i18n::t!("Section: {title}", title = self.title).to_string()
     }
 
     fn is_static_separator(&self) -> bool {

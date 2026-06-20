@@ -282,7 +282,7 @@ impl LLMInfo {
             // This is a temporary implementation that won't scale well for longer
             // descriptions. We should implement a better approach for displaying
             // model descriptions, maybe through subtext.
-            Some(desc) => format!("{} ({})", self.display_name, desc),
+            Some(desc) => i18n::t!("{display_name} ({desc})", display_name = self.display_name, desc = desc).to_string(),
             None => self.display_name.clone(),
         }
     }
@@ -1346,7 +1346,7 @@ fn custom_llm_info_from(endpoint: &CustomEndpoint, model: &CustomEndpointModel) 
             request_multiplier: 1,
             credit_multiplier: None,
         },
-        description: Some(format!("Custom · {}", endpoint.name)),
+        description: Some(i18n::t!("Custom · {name}", name = endpoint.name).to_string()),
         disable_reason: None,
         vision_supported: true,
         spec: None,

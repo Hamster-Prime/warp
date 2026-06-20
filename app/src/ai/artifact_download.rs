@@ -72,7 +72,7 @@ pub(crate) async fn download_artifact_bytes(
         .filter(|parent| !parent.as_os_str().is_empty())
     {
         tokio::fs::create_dir_all(parent).await.with_context(|| {
-            format!("Failed to create download directory '{}'", parent.display())
+            i18n::t!("Failed to create download directory '{display}'", display = parent.display()).to_string()
         })?;
     }
 

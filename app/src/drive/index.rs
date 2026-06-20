@@ -4642,7 +4642,7 @@ impl DriveIndex {
                                 match space {
                                     Space::Personal | Space::Shared => None,
                                     Space::Team { .. } => Some(
-                                        MenuItemFields::new(format!("Move to {}", space.name(app)))
+                                        MenuItemFields::new(i18n::t!("Move to {arg0}", arg0 = space.name(app)).to_string())
                                             .with_on_select_action(DriveIndexAction::MoveObject {
                                                 cloud_object_type_and_id: *cloud_object_type_and_id,
                                                 new_space: *space,

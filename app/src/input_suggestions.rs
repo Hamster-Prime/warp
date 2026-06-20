@@ -539,7 +539,7 @@ impl InputSuggestions {
             .and_then(|details| match details {
                 DetailContent::RichHistory(entry) => entry
                     .start_ts
-                    .map(|ts| format!("Last ran {}", format_approx_duration_from_now(ts))),
+                    .map(|ts| i18n::t!("Last ran {arg0}", arg0 = format_approx_duration_from_now(ts)).to_string()),
                 DetailContent::Description(desc) => Some(desc.clone()),
                 DetailContent::AIQueryHistory(entry) => Some(format!(
                     "Last ran {}",

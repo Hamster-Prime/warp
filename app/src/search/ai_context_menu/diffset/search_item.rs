@@ -112,7 +112,7 @@ impl SearchItem for DiffSetSearchItem {
     }
 
     fn accessibility_label(&self) -> String {
-        format!("{} - {}", self.name(), self.description())
+        i18n::t!("{name} - {description}", name = self.name(), description = self.description()).to_string()
     }
 }
 

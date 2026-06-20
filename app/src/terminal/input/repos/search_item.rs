@@ -91,7 +91,7 @@ impl SearchItem for RepoSearchItem {
         let branch_suffix = self
             .git_summary
             .as_ref()
-            .map(|s| format!("  {}", s.branch.to_lowercase()))
+            .map(|s| i18n::t!("  {to_lowercase}", to_lowercase = s.branch.to_lowercase()).to_string())
             .unwrap_or_default();
 
         let stats_suffix = self
@@ -99,7 +99,7 @@ impl SearchItem for RepoSearchItem {
             .as_ref()
             .and_then(|s| {
                 if s.lines_added > 0 || s.lines_removed > 0 {
-                    Some(format!(" +{} -{}", s.lines_added, s.lines_removed))
+                    Some(i18n::t!(" +{lines_added} -{lines_removed}", lines_added = s.lines_added, lines_removed = s.lines_removed).to_string())
                 } else {
                     None
                 }
@@ -191,6 +191,6 @@ impl SearchItem for RepoSearchItem {
     }
 
     fn accessibility_label(&self) -> String {
-        format!("Indexed repository: {}", self.display_name)
+        i18n::t!("Indexed repository: {display_name}", display_name = self.display_name).to_string()
     }
 }

@@ -101,7 +101,7 @@ impl View for SshRemoteServerFailedBanner {
             let error_text_color = theme.ansi_fg_red();
 
             let error_description = if let Some(detail) = &self.error.detail {
-                format!("{}. {}", self.error.body, detail)
+                i18n::t!("{body}. {detail}", body = self.error.body, detail = detail).to_string()
             } else {
                 format!("{}.", self.error.body)
             };

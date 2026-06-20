@@ -54,7 +54,7 @@ impl SearchItemTrait for SearchItem {
         let appearance = Appearance::as_ref(app);
 
         let title_text = Text::new_inline(
-            format!("[Tab {}] {}", self.tab.tab_index, self.tab.title),
+            i18n::t!("[Tab {tab_index}] {title}", tab_index = self.tab.tab_index, title = self.tab.title).to_string(),
             appearance.ui_font_family(),
             appearance.monospace_font_size(),
         )
@@ -99,7 +99,7 @@ impl SearchItemTrait for SearchItem {
     }
 
     fn accessibility_label(&self) -> String {
-        format!("Selected tab: {}.", self.tab.title)
+        i18n::t!("Selected tab: {title}.", title = self.tab.title).to_string()
     }
 
     fn accessibility_help_message(&self) -> Option<String> {

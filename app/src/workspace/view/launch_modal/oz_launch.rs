@@ -141,7 +141,7 @@ impl Slide for OzLaunchSlide {
             | OzLaunchSlide::AgentAutomations
             | OzLaunchSlide::AgentManagement => {
                 let next = self.next().expect("Non-final slides should have a next");
-                CTAButton::next_slide(next, format!("Next: {}", next.short_label()))
+                CTAButton::next_slide(next, i18n::t!("Next: {short_label}", short_label = next.short_label()).to_string())
             }
             OzLaunchSlide::LaunchCredits => CTAButton::custom("Try it out", |ctx| {
                 send_telemetry_from_ctx!(

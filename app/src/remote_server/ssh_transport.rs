@@ -192,7 +192,7 @@ impl RemoteTransport for SshTransport {
             // exists, something was installed there before, so any mismatch
             // with the client's expected binary path should be auto-updated
             // rather than surfaced as a first-time install prompt.
-            let cmd = format!("test -d {}", remote_server::setup::remote_server_dir());
+            let cmd = i18n::t!("test -d {arg0}", arg0 = remote_server::setup::remote_server_dir()).to_string();
             let output = remote_server::ssh::run_ssh_command(
                 &socket_path,
                 &cmd,

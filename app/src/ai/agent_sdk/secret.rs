@@ -528,7 +528,7 @@ fn list_secrets(
 fn read_simple_secret_value(args: &ValueArgs) -> Result<Option<String>> {
     if let Some(value_file) = args.value_file.as_ref() {
         let value = fs::read_to_string(value_file).with_context(|| {
-            format!("Failed to read secret value from: {}", value_file.display())
+            i18n::t!("Failed to read secret value from: {display}", display = value_file.display()).to_string()
         })?;
         if value.is_empty() {
             Ok(None)

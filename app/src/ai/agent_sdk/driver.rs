@@ -2283,9 +2283,9 @@ impl AgentDriver {
         if !exit_code.was_successful() {
             let output_text = Self::fetch_preflight_block_output(&block_id, foreground).await;
             let detail = if output_text.is_empty() {
-                format!("exit code {}", exit_code.value())
+                i18n::t!("exit code {value}", value = exit_code.value()).to_string()
             } else {
-                format!("exit code {}: {}", exit_code.value(), output_text)
+                i18n::t!("exit code {value}: {output_text}", value = exit_code.value(), output_text = output_text).to_string()
             };
             safe_error!(
                 safe: (

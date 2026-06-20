@@ -407,7 +407,7 @@ fn fetch_iap_token(
         service_account_email,
         "--include-email",
     ];
-    let cmd_display = format!("{GCLOUD_PROGRAM} {}", args.join(" "));
+    let cmd_display = i18n::t!("{GCLOUD_PROGRAM} {arg0}", arg0 = args.join(" ")).to_string();
 
     let mut cmd = command::blocking::Command::new(GCLOUD_PROGRAM);
     cmd

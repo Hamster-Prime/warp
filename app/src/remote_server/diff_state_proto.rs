@@ -182,7 +182,7 @@ impl TryFrom<&proto::DiffLine> for DiffLine {
 
     fn try_from(l: &proto::DiffLine) -> Result<Self, Self::Error> {
         let line_type = proto::DiffLineType::try_from(l.line_type)
-            .map_err(|_| format!("invalid DiffLineType value {}", l.line_type))
+            .map_err(|_| i18n::t!("invalid DiffLineType value {line_type}", line_type = l.line_type).to_string())
             .and_then(DiffLineType::try_from)?;
 
         Ok(DiffLine {
@@ -252,7 +252,7 @@ impl TryFrom<&proto::FileDiff> for FileDiff {
             .map(DiffHunk::try_from)
             .collect::<Result<Vec<_>, _>>()?;
         let size = proto::DiffSize::try_from(file.size)
-            .map_err(|_| format!("invalid DiffSize value {}", file.size))
+            .map_err(|_| i18n::t!("invalid DiffSize value {size}", size = file.size).to_string())
             .and_then(DiffSize::try_from)?;
 
         Ok(FileDiff {

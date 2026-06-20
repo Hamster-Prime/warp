@@ -501,7 +501,7 @@ impl ServerCardView {
                 .with_cross_axis_alignment(CrossAxisAlignment::Center)
                 .with_child(
                     Text::new(
-                        format!("{} tools available", tools.len()),
+                        i18n::t!("{len} tools available", len = tools.len()).to_string(),
                         appearance.ui_font_family(),
                         appearance.ui_font_size(),
                     )
@@ -608,7 +608,7 @@ impl ServerCardView {
             ServerCardItemId::TemplatableMCP(template_uuid) => {
                 let cloud_server = CloudTemplatableMCPServer::get_by_uuid(&template_uuid, app);
                 if let Some(cloud_server) = cloud_server {
-                    lines.push(format!("Template sync id: {}", cloud_server.sync_id()));
+                    lines.push(i18n::t!("Template sync id: {sync_id}", sync_id = cloud_server.sync_id()).to_string());
                 }
             }
             ServerCardItemId::TemplatableMCPInstallation(installation_uuid) => {
@@ -624,7 +624,7 @@ impl ServerCardView {
                     let cloud_server = CloudTemplatableMCPServer::get_by_uuid(&template_uuid, app);
                     let template_sync_id_text = match cloud_server {
                         Some(cloud_server) => {
-                            format!("Template sync id: {}", cloud_server.sync_id())
+                            i18n::t!("Template sync id: {sync_id}", sync_id = cloud_server.sync_id()).to_string()
                         }
                         None => i18n::t!("Could not find cloud template").to_string(),
                     };

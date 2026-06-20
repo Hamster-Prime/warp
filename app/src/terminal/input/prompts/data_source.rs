@@ -224,6 +224,6 @@ impl SearchItem for PromptSearchItem {
     }
 
     fn accessibility_label(&self) -> String {
-        format!("Prompt: {}", self.name)
+        i18n::t!("Prompt: {name}", name = self.name).to_string()
     }
 }

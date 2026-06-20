@@ -3132,7 +3132,7 @@ impl TypedActionView for RichTextEditorView {
             }
             EditorViewAction::Paste | EditorViewAction::MiddleClickPaste => {
                 ActionAccessibilityContent::Custom(AccessibilityContent::new_without_help(
-                    format!("Pasting: {}", ctx.clipboard().read().plain_text),
+                    i18n::t!("Pasting: {plain_text}", plain_text = ctx.clipboard().read().plain_text).to_string(),
                     WarpA11yRole::UserAction,
                 ))
             }
@@ -3159,13 +3159,13 @@ impl TypedActionView for RichTextEditorView {
             ),
             EditorViewAction::OpenTooltipLink(link) => {
                 ActionAccessibilityContent::Custom(AccessibilityContent::new_without_help(
-                    format!("Open link: {}", **link),
+                    i18n::t!("Open link: {arg0}", arg0 = **link).to_string(),
                     WarpA11yRole::UserAction,
                 ))
             }
             EditorViewAction::SecondaryLinkAction(link) => {
                 let content = link.secondary_action().map_or_else(
-                    || format!("Secondary click on {}", **link),
+                    || i18n::t!("Secondary click on {arg0}", arg0 = **link).to_string(),
                     |action| action.accessibility_content.into_owned(),
                 );
                 ActionAccessibilityContent::Custom(AccessibilityContent::new_without_help(
@@ -3234,7 +3234,7 @@ impl TypedActionView for RichTextEditorView {
             }
             EditorViewAction::InsertBlock(block_type) => {
                 ActionAccessibilityContent::Custom(AccessibilityContent::new_without_help(
-                    format!("Insert {} block", BlockType::from(block_type).label()),
+                    i18n::t!("Insert {label} block", label = BlockType::from(block_type).label()).to_string(),
                     WarpA11yRole::UserAction,
                 ))
             }

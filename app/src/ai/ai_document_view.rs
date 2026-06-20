@@ -907,7 +907,7 @@ impl AIDocumentView {
             .iter()
             .map(|entry| {
                 let label = if let Some(from_version) = entry.restored_from {
-                    format!("{} (restored from {})", entry.version, from_version)
+                    i18n::t!("{version} (restored from {from_version})", version = entry.version, from_version = from_version).to_string()
                 } else {
                     entry.version.to_string()
                 };

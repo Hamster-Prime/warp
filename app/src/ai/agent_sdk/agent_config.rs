@@ -255,7 +255,7 @@ impl AgentConfigRunner {
                 let mut table = super::output::standard_table();
 
                 // ID
-                table.add_row(vec![format!("ID: {}", variant.id)]);
+                table.add_row(vec![i18n::t!("ID: {id}", id = variant.id).to_string()]);
 
                 // Description
                 if !variant.description.is_empty() {
@@ -295,9 +295,9 @@ impl AgentConfigRunner {
                     let env_entries: Vec<_> = variant
                         .environments
                         .iter()
-                        .map(|e| format!("{} ({})", e.name, e.uid))
+                        .map(|e| i18n::t!("{name} ({uid})", name = e.name, uid = e.uid).to_string())
                         .collect();
-                    table.add_row(vec![format!("Environments: {}", env_entries.join(", "))]);
+                    table.add_row(vec![i18n::t!("Environments: {arg0}", arg0 = env_entries.join(", ")).to_string()]);
                 }
 
                 println!("{table}");

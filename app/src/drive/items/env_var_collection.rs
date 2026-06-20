@@ -122,10 +122,10 @@ impl WarpDriveItem for WarpDriveEnvVarCollection {
                     appearance
                         .ui_builder()
                         .label(match &var.value {
-                            EnvVarValue::Constant(val) => format!("{}: {}", var.name, val),
-                            EnvVarValue::Command(cmd) => format!("{}: {}", var.name, cmd.name),
+                            EnvVarValue::Constant(val) => i18n::t!("{name}: {val}", name = var.name, val = val).to_string(),
+                            EnvVarValue::Command(cmd) => i18n::t!("{name}: {name_1}", name = var.name, name_1 = cmd.name).to_string(),
                             EnvVarValue::Secret(sec) => {
-                                format!("{}: {}", var.name, sec.get_display_name())
+                                i18n::t!("{name}: {get_display_name}", name = var.name, get_display_name = sec.get_display_name()).to_string()
                             }
                         })
                         .with_style(UiComponentStyles {

@@ -204,7 +204,7 @@ impl GrantBucket {
             .all(|e| e.date_naive() == first.date_naive())
         {
             let local = first.with_timezone(&Local);
-            format!("Expires {}", local.format("%b %d, %Y"))
+            i18n::t!("Expires {arg0}", arg0 = local.format("%b %d, %Y")).to_string()
         } else {
             String::new()
         }
@@ -1135,7 +1135,7 @@ impl BillingAndUsagePageV2View {
             })
             .unwrap_or_default();
         let auto_reload_credit_amount = selected_credit_option
-            .map(|o| format!("{} credits", o.credits.separate_with_commas()))
+            .map(|o| i18n::t!("{separate_with_commas} credits", separate_with_commas = o.credits.separate_with_commas()).to_string())
             .unwrap_or_else(|| "selected credit amount".to_string());
         let auto_reload_tooltip_text = format!(
             "When any member on your team’s credit balance reaches 100 credits remaining, \
@@ -1469,7 +1469,7 @@ impl BillingAndUsagePageV2View {
         let credits_text = if credits_purchased == 1 {
             "1 credit".to_string()
         } else {
-            format!("{} credits", credits_purchased.separate_with_commas())
+            i18n::t!("{separate_with_commas} credits", separate_with_commas = credits_purchased.separate_with_commas()).to_string()
         };
 
         let credits_component = Container::new(
@@ -2210,7 +2210,7 @@ fn render_balance_card(
     .finish();
 
     let remaining_label_text = match total {
-        Some(limit) => format!("/ {} remaining", limit.separate_with_commas()),
+        Some(limit) => i18n::t!("/ {separate_with_commas} remaining", separate_with_commas = limit.separate_with_commas()).to_string(),
         None => "remaining".to_string(),
     };
     let remaining_label = Text::new_inline(remaining_label_text, appearance.ui_font_family(), 14.)

@@ -210,7 +210,7 @@ impl ScheduleInfo {
             .unwrap_or("-".to_string());
 
         if self.last_spawn_error.is_some() {
-            format!("❌ {}", timestamp)
+            i18n::t!("❌ {timestamp}", timestamp = timestamp).to_string()
         } else {
             timestamp
         }

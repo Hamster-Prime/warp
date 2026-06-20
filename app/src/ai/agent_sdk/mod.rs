@@ -221,7 +221,7 @@ fn format_skill_resolution_error(err: ResolveSkillError) -> String {
                 "Skill '{skill}' is ambiguous; specify as repo:skill_name\n\nCandidates:\n"
             );
             for path in candidates {
-                msg.push_str(&format!("- {}\n", path.display()));
+                msg.push_str(&i18n::t!("- {display}\n", display = path.display()).to_string());
             }
             msg
         }

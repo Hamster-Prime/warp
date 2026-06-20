@@ -594,9 +594,9 @@ fn build_git_grep_command(queries: &[String], target_path: &str, shell_type: She
     for query in queries {
         // Queries can originate from model output and project instructions. Keep
         // them as grep arguments so shell substitutions like $() are inert.
-        grep_command.push_str(format!(" -e {}", shell_quote_arg(query, shell_type)).as_str());
+        grep_command.push_str(i18n::t!(" -e {arg0}", arg0 = shell_quote_arg(query, shell_type)).to_string().as_str());
     }
-    grep_command.push_str(format!(" {}", shell_quote_arg(target_path, shell_type)).as_str());
+    grep_command.push_str(i18n::t!(" {arg0}", arg0 = shell_quote_arg(target_path, shell_type)).to_string().as_str());
     grep_command
 }
 
@@ -612,9 +612,9 @@ fn build_grep_command(queries: &[String], target_path: &str, shell_type: ShellTy
     for query in queries {
         // Queries can originate from model output and project instructions. Keep
         // them as grep arguments so shell substitutions like $() are inert.
-        grep_command.push_str(format!(" -e {}", shell_quote_arg(query, shell_type)).as_str());
+        grep_command.push_str(i18n::t!(" -e {arg0}", arg0 = shell_quote_arg(query, shell_type)).to_string().as_str());
     }
-    grep_command.push_str(format!(" {}", shell_quote_arg(target_path, shell_type)).as_str());
+    grep_command.push_str(i18n::t!(" {arg0}", arg0 = shell_quote_arg(target_path, shell_type)).to_string().as_str());
     grep_command
 }
 

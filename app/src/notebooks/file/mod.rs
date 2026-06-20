@@ -732,7 +732,7 @@ impl FileNotebookView {
                 let workflow_type = workflow.named_workflow(|| {
                     self.location
                         .as_ref()
-                        .map(|location| format!("Command from {}", location.name))
+                        .map(|location| i18n::t!("Command from {name}", name = location.name).to_string())
                 });
                 let source = workflow.source.unwrap_or(WorkflowSource::Notebook {
                     notebook_id: None,
@@ -856,7 +856,7 @@ impl FileNotebookView {
             .with_child(
                 appearance
                     .ui_builder()
-                    .paragraph(format!("Could not read {}", source.display_name()))
+                    .paragraph(i18n::t!("Could not read {display_name}", display_name = source.display_name()).to_string())
                     .with_style(self.state_style(appearance))
                     .build()
                     .finish(),
@@ -895,7 +895,7 @@ impl FileNotebookView {
         Align::new(
             appearance
                 .ui_builder()
-                .paragraph(format!("Loading {}...", source.display_name()))
+                .paragraph(i18n::t!("Loading {display_name}...", display_name = source.display_name()).to_string())
                 .with_style(self.state_style(appearance))
                 .build()
                 .finish(),
@@ -961,7 +961,7 @@ impl View for FileNotebookView {
 
     fn accessibility_contents(&self, _ctx: &AppContext) -> Option<AccessibilityContent> {
         Some(AccessibilityContent::new_without_help(
-            format!("{} notebook", self.title()),
+            i18n::t!("{title} notebook", title = self.title()).to_string(),
             WarpA11yRole::TextRole,
         ))
     }

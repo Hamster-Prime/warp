@@ -29,7 +29,7 @@ pub fn shimmering_warp_loading_text(
 
     // Create a single shimmering element with glyph and text
     ShimmeringTextElement::new(
-        format!("{} {}", WARP_GLYPH, text.into()),
+        i18n::t!("{arg0} {into}", arg0 = WARP_GLYPH, into = text.into()).to_string(),
         appearance.ui_font_family(),
         font_size,
         base_color,

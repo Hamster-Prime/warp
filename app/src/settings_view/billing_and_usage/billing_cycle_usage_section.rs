@@ -802,7 +802,7 @@ fn format_period_range(start: DateTime<Utc>, end: DateTime<Utc>) -> String {
     let start = start.with_timezone(&Local);
     let end = end.with_timezone(&Local);
     if start.year() == end.year() {
-        format!("{} - {}", start.format("%b %d"), end.format("%b %d, %Y"))
+        i18n::t!("{arg0} - {arg1}", arg0 = start.format("%b %d"), arg1 = end.format("%b %d, %Y")).to_string()
     } else {
         format!(
             "{} - {}",

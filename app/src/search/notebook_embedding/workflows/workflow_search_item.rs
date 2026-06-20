@@ -179,7 +179,7 @@ impl SearchItem for WorkflowSearchItem {
     fn accessibility_label(&self) -> String {
         let workflow = &self.cloud_workflow.model().data;
 
-        format!("Workflow: {}", workflow.name())
+        i18n::t!("Workflow: {name}", name = workflow.name()).to_string()
     }
 }
 

@@ -327,7 +327,7 @@ impl<T: FindModel + Entity<Event = FindEvent> + 'static> Find<T> {
         if model.is_scanning() {
             let match_count = model.match_count();
             let label = if match_count > 0 {
-                format!("{}+ ...", match_count)
+                i18n::t!("{match_count}+ ...", match_count = match_count).to_string()
             } else {
                 "Scanning...".to_string()
             };

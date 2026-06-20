@@ -130,7 +130,7 @@ fn write_gh_hosts_yml(credentials: &[GitCredential], home: &std::path::Path) -> 
     let mut yaml = String::new();
     for cred in github_credentials {
         yaml.push_str(&format!("{}:\n", cred.host));
-        yaml.push_str(&format!("    oauth_token: {}\n", cred.token));
+        yaml.push_str(&i18n::t!("    oauth_token: {token}\n", token = cred.token).to_string());
         yaml.push_str("    git_protocol: https\n");
         if let Some(username) = &cred.username {
             yaml.push_str(&format!("    user: {username}\n"));

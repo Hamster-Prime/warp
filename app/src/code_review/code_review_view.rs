@@ -6677,7 +6677,7 @@ impl CodeReviewView {
         let diff_state = self.diff_state_model.as_ref(app);
         let is_pr_info_refreshing = self.is_pr_info_refreshing(app);
         if let Some(pr_info) = self.pr_info(app) {
-            MenuItemFields::new(format!("PR #{}", pr_info.number))
+            MenuItemFields::new(i18n::t!("PR #{number}", number = pr_info.number).to_string())
                 .with_icon(Icon::Github)
                 .with_on_select_action(CodeReviewAction::ViewPr(pr_info.url))
                 .with_disabled(is_pr_info_refreshing)

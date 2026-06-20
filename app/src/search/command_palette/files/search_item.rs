@@ -97,9 +97,9 @@ impl SearchItem for FileSearchItem {
 
     fn accessibility_label(&self) -> String {
         if self.is_directory {
-            format!("Directory: {}", self.path.display())
+            i18n::t!("Directory: {display}", display = self.path.display()).to_string()
         } else {
-            format!("File: {}", self.path.display())
+            i18n::t!("File: {display}", display = self.path.display()).to_string()
         }
     }
 
@@ -161,7 +161,7 @@ impl SearchItem for CreateFileSearchItem {
         let text_color = highlight_state.sub_text_fill(appearance).into_solid();
 
         let label = Text::new_inline(
-            format!("Create a file named {}…", &self.file_name),
+            i18n::t!("Create a file named {file_name}…", file_name = &self.file_name).to_string(),
             appearance.ui_font_family(),
             appearance.monospace_font_size(),
         )
@@ -195,7 +195,7 @@ impl SearchItem for CreateFileSearchItem {
     }
 
     fn accessibility_label(&self) -> String {
-        format!("Create file: {}", self.file_name)
+        i18n::t!("Create file: {file_name}", file_name = self.file_name).to_string()
     }
 
     fn accessibility_help_message(&self) -> Option<String> {

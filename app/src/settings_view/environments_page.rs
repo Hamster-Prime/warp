@@ -200,7 +200,7 @@ impl EnvironmentDisplayData {
             None => i18n::t!("Last used: never").to_string(),
         };
         match last_edited_part {
-            Some(edited) => format!("{} · {}", edited, last_used_part),
+            Some(edited) => i18n::t!("{edited} · {last_used_part}", edited = edited, last_used_part = last_used_part).to_string(),
             None => last_used_part,
         }
     }
@@ -1314,7 +1314,7 @@ impl EnvironmentsPageWidget {
             EnvironmentListScope::Team => {
                 let shared_by_text = UserWorkspaces::as_ref(app)
                     .current_team()
-                    .map(|team| format!("Shared by Warp and {}", team.name))
+                    .map(|team| i18n::t!("Shared by Warp and {name}", name = team.name).to_string())
                     .unwrap_or_else(|| i18n::t!("Shared by Warp and your team").to_string());
                 Self::render_overline_header(&shared_by_text, appearance)
             }
@@ -1756,7 +1756,7 @@ impl EnvironmentsPageWidget {
             // since it returns a Box<dyn Element> that can only be consumed once
             let env_id_str_copy = env_id_str.clone();
             let env_id_with_copy = render_copyable_text_field(
-                CopyableTextFieldConfig::new(format!("Env ID: {}", env_id_str.clone()))
+                CopyableTextFieldConfig::new(i18n::t!("Env ID: {clone}", clone = env_id_str.clone()).to_string())
                     .with_font_size(appearance.ui_font_size() * 0.9)
                     .with_text_color(blended_colors::text_sub(theme, theme.surface_1()))
                     .with_icon_size(12.)

@@ -200,7 +200,7 @@ impl Input {
             );
         } else {
             self.editor.update(ctx, |editor, ctx| {
-                editor.set_buffer_text(&format!("{} ", command.name), ctx);
+                editor.set_buffer_text(&i18n::t!("{name} ", name = command.name).to_string(), ctx);
             });
         }
     }
@@ -385,7 +385,7 @@ impl Input {
         if command.availability.contains(Availability::AI_ENABLED)
             && !AISettings::as_ref(ctx).is_any_ai_enabled(ctx)
         {
-            show_error_toast(format!("{} requires AI to be enabled", command.name), ctx);
+            show_error_toast(i18n::t!("{name} requires AI to be enabled", name = command.name).to_string(), ctx);
             return true;
         }
 
@@ -653,7 +653,7 @@ impl Input {
                             }
                             Err(_) => {
                                 show_error_toast(
-                                    format!("File not found: {}", file_path.display()),
+                                    i18n::t!("File not found: {display}", display = file_path.display()).to_string(),
                                     ctx,
                                 );
                                 return true;

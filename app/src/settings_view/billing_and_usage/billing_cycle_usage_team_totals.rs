@@ -221,7 +221,7 @@ fn build_team_total_card(
     .finish();
 
     let credits_text = Text::new_inline(
-        format!("({} credits)", format_credits(summary.total_credits)),
+        i18n::t!("({arg0} credits)", arg0 = format_credits(summary.total_credits)).to_string(),
         appearance.ui_font_family(),
         13.,
     )
@@ -237,7 +237,7 @@ fn build_team_total_card(
     let totals_row: Box<dyn Element> = match summary.limit_cents {
         Some(limit) => {
             let limit_text = Text::new_inline(
-                format!("Limit: {}", format_cost_cents(limit)),
+                i18n::t!("Limit: {arg0}", arg0 = format_cost_cents(limit)).to_string(),
                 appearance.ui_font_family(),
                 12.,
             )

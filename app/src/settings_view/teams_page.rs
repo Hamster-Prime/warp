@@ -1002,7 +1002,7 @@ impl TeamsPageView {
                     .as_ref(ctx)
                     .current_team()
                     .map_or(i18n::t!("Successfully joined team").to_string(), |team| {
-                        format!("Successfully joined {}", team.name)
+                        i18n::t!("Successfully joined {name}", name = team.name).to_string()
                     });
                 self.show_success(message, ctx);
                 ctx.notify();
@@ -1510,7 +1510,7 @@ impl TeamsPageView {
         // Verify no invalid domains before continuing
         let invalid_domains = editor.get_list_of_invalid_words(ctx);
         if !invalid_domains.is_empty() {
-            let error = format!("Invalid domains: {}", invalid_domains.len());
+            let error = i18n::t!("Invalid domains: {len}", len = invalid_domains.len()).to_string();
             self.show_error(error, None, ctx);
             return;
         }
@@ -1530,7 +1530,7 @@ impl TeamsPageView {
             .collect();
 
         self.show_success(
-            format!("Domain restrictions added: {}", unique_domains.len()),
+            i18n::t!("Domain restrictions added: {len}", len = unique_domains.len()).to_string(),
             ctx,
         );
         self.user_workspaces
@@ -1557,7 +1557,7 @@ impl TeamsPageView {
         // Verify no invalid emails before continuing
         let invalid_emails = editor.get_list_of_invalid_words(ctx);
         if !invalid_emails.is_empty() {
-            let error = format!("Invalid emails: {}", invalid_emails.len());
+            let error = i18n::t!("Invalid emails: {len}", len = invalid_emails.len()).to_string();
             self.show_error(error, None, ctx);
             return;
         }
@@ -1579,7 +1579,7 @@ impl TeamsPageView {
         let message = if unique_emails.len() == 1 {
             i18n::t!("Your invite is on the way!").to_string()
         } else {
-            format!("Your {} invites are on the way!", unique_emails.len())
+            i18n::t!("Your {len} invites are on the way!", len = unique_emails.len()).to_string()
         };
         self.show_success(message, ctx);
         self.user_workspaces
@@ -4122,7 +4122,7 @@ impl TeamsWidget {
         let teammate_string = if team_state.team.num_members == 1 {
             "1 teammate".to_string()
         } else {
-            format!("{} teammates", team_state.team.num_members)
+            i18n::t!("{num_members} teammates", num_members = team_state.team.num_members).to_string()
         };
         single_team.add_child(self.render_sub_text(teammate_string, appearance, None));
 

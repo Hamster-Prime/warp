@@ -28,11 +28,11 @@ fn time_ago_string(timestamp: Option<&DateTime<Local>>) -> String {
     if duration.num_seconds() < 60 {
         i18n::t!("Just now").to_string()
     } else if duration.num_minutes() < 60 {
-        format!("{} minutes ago", duration.num_minutes())
+        i18n::t!("{num_minutes} minutes ago", num_minutes = duration.num_minutes()).to_string()
     } else if duration.num_hours() < 24 {
-        format!("{} hours ago", duration.num_hours())
+        i18n::t!("{num_hours} hours ago", num_hours = duration.num_hours()).to_string()
     } else {
-        format!("{} days ago", duration.num_days())
+        i18n::t!("{num_days} days ago", num_days = duration.num_days()).to_string()
     }
 }
 
@@ -206,6 +206,6 @@ impl SearchItem for BlockSearchItem {
     }
 
     fn accessibility_label(&self) -> String {
-        format!("Block: {}", self.command)
+        i18n::t!("Block: {command}", command = self.command).to_string()
     }
 }

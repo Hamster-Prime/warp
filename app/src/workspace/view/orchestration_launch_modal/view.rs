@@ -184,7 +184,7 @@ impl OrchestrationLaunchModal {
         });
 
         let learn_more_button = ctx.add_view(|_ctx| {
-            ActionButton::new("Learn more", LearnMoreButtonTheme)
+            ActionButton::new(i18n::t!("Learn more"), LearnMoreButtonTheme)
                 .with_icon(Icon::LinkExternal)
                 .with_full_width(true)
                 .on_click(|ctx| {
@@ -193,7 +193,7 @@ impl OrchestrationLaunchModal {
         });
 
         let go_to_warp_button = ctx.add_view(|_ctx| {
-            ActionButton::new("Close", CtaButtonTheme)
+            ActionButton::new(i18n::t!("Close"), CtaButtonTheme)
                 .with_full_width(true)
                 .on_click(|ctx| ctx.dispatch_typed_action(OrchestrationLaunchModalAction::Close))
         });

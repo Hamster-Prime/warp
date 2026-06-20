@@ -1629,7 +1629,7 @@ impl AISettingsPageView {
         let profile_views = Self::create_profile_views(ctx);
 
         let add_profile_button = ctx.add_typed_action_view(|_| {
-            ActionButton::new("Add Profile", SecondaryTheme)
+            ActionButton::new(i18n::t!("Add Profile"), SecondaryTheme)
                 .with_icon(Icon::Plus)
                 .with_size(ButtonSize::Small)
                 .on_click(|ctx| {
@@ -1896,7 +1896,7 @@ impl AISettingsPageView {
         (0..count)
             .map(|index| {
                 let button = ctx.add_typed_action_view(move |_| {
-                    ActionButton::new("Edit", SecondaryTheme)
+                    ActionButton::new(i18n::t!("Edit"), SecondaryTheme)
                         .with_icon(Icon::Pencil)
                         .with_size(ButtonSize::Small)
                         .on_click(move |ctx| {
@@ -7717,20 +7717,20 @@ impl ApiKeysWidget {
         });
 
         let grok_connect_button = ctx.add_typed_action_view(|_| {
-            ActionButton::new("Connect", SecondaryTheme)
+            ActionButton::new(i18n::t!("Connect"), SecondaryTheme)
                 .with_size(ButtonSize::Small)
                 .on_click(|ctx| {
                     ctx.dispatch_typed_action(AISettingsPageAction::ConnectGrokSubscription);
                 })
         });
         let grok_connecting_button = ctx.add_typed_action_view(|_| {
-            ActionButton::new("Connecting", SecondaryTheme).with_size(ButtonSize::Small)
+            ActionButton::new(i18n::t!("Connecting"), SecondaryTheme).with_size(ButtonSize::Small)
         });
         grok_connecting_button.update(ctx, |button, ctx| {
             button.set_disabled(true, ctx);
         });
         let grok_disconnect_button = ctx.add_typed_action_view(|_| {
-            ActionButton::new("Disconnect", DangerSecondaryTheme)
+            ActionButton::new(i18n::t!("Disconnect"), DangerSecondaryTheme)
                 .with_size(ButtonSize::Small)
                 .on_click(|ctx| {
                     ctx.dispatch_typed_action(AISettingsPageAction::DisconnectGrokSubscription);
@@ -8546,7 +8546,7 @@ impl AwsBedrockWidget {
         });
 
         let refresh_credentials_button = ctx.add_typed_action_view(|_| {
-            ActionButton::new("Refresh", SecondaryTheme)
+            ActionButton::new(i18n::t!("Refresh"), SecondaryTheme)
                 .with_icon(Icon::RefreshCw04)
                 .with_size(ButtonSize::Small)
                 .on_click(|ctx| {

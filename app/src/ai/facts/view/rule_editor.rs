@@ -134,7 +134,7 @@ impl RuleEditorView {
         });
 
         let save_button = ctx.add_typed_action_view(|ctx| {
-            let mut button = ActionButton::new("Save", PrimaryTheme)
+            let mut button = ActionButton::new(i18n::t!("Save"), PrimaryTheme)
                 .with_icon(Icon::Check)
                 .on_click(|ctx| {
                     ctx.dispatch_typed_action(RuleEditorViewAction::Save);
@@ -145,7 +145,7 @@ impl RuleEditorView {
         });
 
         let delete_button = ctx.add_typed_action_view(|_| {
-            ActionButton::new("Delete rule", DangerSecondaryTheme)
+            ActionButton::new(i18n::t!("Delete rule"), DangerSecondaryTheme)
                 .with_icon(Icon::Trash)
                 .on_click(|ctx| {
                     ctx.dispatch_typed_action(RuleEditorViewAction::Delete);

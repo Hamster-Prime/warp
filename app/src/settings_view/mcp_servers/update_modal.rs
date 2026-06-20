@@ -57,14 +57,14 @@ pub struct UpdateModalBody {
 impl UpdateModalBody {
     pub fn new(ctx: &mut ViewContext<Self>) -> Self {
         let cancel_button = ctx.add_typed_action_view(|_ctx| {
-            ActionButton::new("Cancel", NakedTheme).on_click(|ctx| {
+            ActionButton::new(i18n::t!("Cancel"), NakedTheme).on_click(|ctx| {
                 ctx.dispatch_typed_action(UpdateModalBodyAction::Cancel);
             })
         });
 
         let enter_keystroke = Keystroke::parse("enter").expect("valid keystroke");
         let update_button = ctx.add_typed_action_view(|ctx| {
-            let mut button = ActionButton::new("Update", PrimaryTheme)
+            let mut button = ActionButton::new(i18n::t!("Update"), PrimaryTheme)
                 .with_keybinding(KeystrokeSource::Fixed(enter_keystroke), ctx)
                 .on_click(|ctx| {
                     ctx.dispatch_typed_action(UpdateModalBodyAction::Update);

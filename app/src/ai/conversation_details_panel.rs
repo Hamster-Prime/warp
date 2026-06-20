@@ -671,7 +671,7 @@ impl ConversationDetailsPanel {
 
         #[cfg(not(target_family = "wasm"))]
         let continue_locally_button = ctx.add_typed_action_view(|_| {
-            ActionButton::new("Continue locally", PrimaryTheme)
+            ActionButton::new(i18n::t!("Continue locally"), PrimaryTheme)
                 .with_tooltip(i18n::t!("Fork this conversation locally").to_string())
                 .with_size(ButtonSize::Small)
                 .on_click(|ctx| {
@@ -679,7 +679,7 @@ impl ConversationDetailsPanel {
                 })
         });
         let open_in_oz_button = ctx.add_typed_action_view(|_| {
-            ActionButton::new("View in Oz", SecondaryTheme)
+            ActionButton::new(i18n::t!("View in Oz"), SecondaryTheme)
                 .with_tooltip(i18n::t!("View this run in the Oz web app").to_string())
                 .with_size(ButtonSize::Small)
                 .on_click(|ctx| {

@@ -199,7 +199,7 @@ impl ConversationEndedTombstoneView {
         let continue_in_cloud_button = match tombstone_cta {
             Some(TombstoneCta::ContinueInCloud { task_id }) => {
                 Some(ctx.add_typed_action_view(move |_| {
-                    ActionButton::new("Continue", PrimaryTheme)
+                    ActionButton::new(i18n::t!("Continue"), PrimaryTheme)
                         .with_tooltip(i18n::t!("Continue this cloud conversation").to_string())
                         .on_click(move |ctx| {
                             ctx.dispatch_typed_action(
@@ -215,7 +215,7 @@ impl ConversationEndedTombstoneView {
         let continue_locally_button = match tombstone_cta {
             Some(TombstoneCta::ContinueLocally { conversation_id }) => {
                 Some(ctx.add_typed_action_view(move |_| {
-                    ActionButton::new("Continue locally", PrimaryTheme)
+                    ActionButton::new(i18n::t!("Continue locally"), PrimaryTheme)
                         .with_tooltip(i18n::t!("Fork this conversation locally").to_string())
                         .on_click(move |ctx| {
                             ctx.dispatch_typed_action(
@@ -236,7 +236,7 @@ impl ConversationEndedTombstoneView {
             } else {
                 conversation_id.map(|conv_id| {
                     ctx.add_typed_action_view(move |_| {
-                        ActionButton::new("Open in Warp", PrimaryTheme)
+                        ActionButton::new(i18n::t!("Open in Warp"), PrimaryTheme)
                             .with_tooltip(i18n::t!("Open this conversation in the Warp desktop app").to_string())
                             .on_click(move |ctx| {
                                 ctx.dispatch_typed_action(

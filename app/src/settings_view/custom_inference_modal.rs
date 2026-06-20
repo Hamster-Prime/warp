@@ -204,7 +204,7 @@ impl CustomEndpointModal {
             });
         }
         let remove_endpoint_button = ctx.add_typed_action_view(|_| {
-            ActionButton::new("Remove", DangerSecondaryTheme)
+            ActionButton::new(i18n::t!("Remove"), DangerSecondaryTheme)
                 .with_icon(Icon::Trash)
                 .on_click(|ctx| {
                     ctx.dispatch_typed_action(CustomEndpointModalAction::RemoveEndpoint);

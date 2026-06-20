@@ -509,7 +509,7 @@ impl RightPanelView {
 
         #[cfg(feature = "local_fs")]
         let open_repository_button = ctx.add_typed_action_view(|_| {
-            ActionButton::new("Open repository", NakedTheme)
+            ActionButton::new(i18n::t!("Open repository"), NakedTheme)
                 .with_size(crate::view_components::action_button::ButtonSize::Small)
                 .with_tooltip(i18n::t!("Navigate to a repo and initialize it for coding").to_string())
                 .with_tooltip_alignment(TooltipAlignment::Center)

@@ -84,14 +84,14 @@ impl AutoHandoffSleepModal {
         });
 
         let enable_button = ctx.add_view(|_ctx| {
-            ActionButton::new("Enable", PrimaryTheme)
+            ActionButton::new(i18n::t!("Enable"), PrimaryTheme)
                 .with_full_width(true)
                 .with_size(ButtonSize::Default)
                 .on_click(|ctx| ctx.dispatch_typed_action(AutoHandoffSleepModalAction::Enable))
         });
 
         let dismiss_button = ctx.add_view(|_ctx| {
-            ActionButton::new("Dismiss", SecondaryTheme)
+            ActionButton::new(i18n::t!("Dismiss"), SecondaryTheme)
                 .with_full_width(true)
                 .with_size(ButtonSize::Default)
                 .on_click(|ctx| ctx.dispatch_typed_action(AutoHandoffSleepModalAction::Dismiss))

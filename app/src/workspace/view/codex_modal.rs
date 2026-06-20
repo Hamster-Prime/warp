@@ -71,7 +71,7 @@ pub struct CodexModal {
 impl CodexModal {
     pub fn new(ctx: &mut ViewContext<Self>) -> Self {
         let cta_button = ctx.add_view(|_| {
-            ActionButton::new("Use latest codex model", WhiteButtonTheme)
+            ActionButton::new(i18n::t!("Use latest codex model"), WhiteButtonTheme)
                 .with_icon(Icon::OpenAILogo)
                 .with_full_width(true)
                 .on_click(|ctx| {

@@ -231,7 +231,7 @@ impl From<&str> for CommandTemplate {
 // TODO add extra elements to the mock (split panes, multiple tabs, multiple windows)
 pub fn make_mock_single_window_launch_config() -> LaunchConfig {
     LaunchConfig {
-        name: "Mocked Config".to_string(),
+        name: i18n::t!("Mocked Config").to_string(),
         active_window_index: Some(0),
         windows: vec![WindowTemplate {
             active_tab_index: Some(0),

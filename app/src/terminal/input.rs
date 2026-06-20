@@ -4626,7 +4626,7 @@ impl Input {
                     ctx.dispatch_typed_action_deferred(action);
                 } else {
                     ctx.emit(Event::ShowToast {
-                        message: "Couldn't navigate to conversation.".to_string(),
+                        message: i18n::t!("Couldn't navigate to conversation.").to_string(),
                         flavor: ToastFlavor::Error,
                     });
                 }

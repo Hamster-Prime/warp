@@ -36,7 +36,7 @@ impl Default for ITermImageMetadata {
             desired_width: None,
             desired_height: None,
             preserve_aspect_ratio: true,
-            name: "Unnamed file".into(),
+            name: i18n::t!("Unnamed file").to_string(),
             inline: false,
             image_size: Vector2F::default(),
         }

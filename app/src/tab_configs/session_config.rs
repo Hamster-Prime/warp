@@ -215,7 +215,7 @@ pub fn tab_config_from_pane_snapshot(
     snapshot_to_flat_panes(snapshot, &mut panes, &mut counter);
 
     TabConfig {
-        name: "My Tab Config".to_string(),
+        name: i18n::t!("My Tab Config").to_string(),
         title: custom_title,
         color,
         panes,

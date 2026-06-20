@@ -64,7 +64,7 @@ impl OrchestrationParticipant {
 
     fn unknown_child() -> Self {
         Self {
-            display_name: "Unknown agent".to_string(),
+            display_name: i18n::t!("Unknown agent").to_string(),
             avatar: OrchestrationAvatar::agent("Unknown agent".to_string()),
             conversation_id: None,
         }

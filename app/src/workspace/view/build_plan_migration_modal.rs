@@ -193,7 +193,7 @@ impl BuildPlanMigrationModal {
             UserWorkspacesEvent::UpdateWorkspaceSettingsRejected(_err) => {
                 self.is_updating = false;
                 ctx.emit(BuildPlanMigrationModalEvent::ShowToast {
-                    message: "Failed to enable auto-reload. Please try updating your settings in Billing & usage.".to_string(),
+                    message: i18n::t!("Failed to enable auto-reload. Please try updating your settings in Billing & usage.").to_string(),
                     flavor: ToastFlavor::Error,
                 });
                 ctx.notify();

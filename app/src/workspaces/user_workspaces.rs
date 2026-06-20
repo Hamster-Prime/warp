@@ -1609,11 +1609,11 @@ impl UserWorkspaces {
 
         let workspace = Workspace {
             uid: workspace_uid,
-            name: "Test Workspace".to_string(),
+            name: i18n::t!("Test Workspace").to_string(),
             stripe_customer_id: None,
             teams: vec![Team {
                 uid: ServerId::from(2),
-                name: "Test Team".to_string(),
+                name: i18n::t!("Test Team").to_string(),
                 organization_settings: workspace_settings.clone(),
                 billing_metadata: BillingMetadata::default(),
                 members: vec![],

@@ -39,7 +39,7 @@ pub fn render_alias_expansion_banner(
     let accent_color = appearance.theme().accent().into_solid();
 
     let buttons = vec![InlineBannerTextButton {
-        text: "Enable alias expansion".to_owned(),
+        text: i18n::t!("Enable alias expansion").to_string(),
         text_color: active_ui_text_color.into_solid(),
         button_state: InlineBannerButtonState {
             on_click_event: TerminalAction::AliasExpansionBanner(
@@ -88,7 +88,7 @@ pub fn render_alias_expansion_banner(
         InlineBannerStyle::VeryLowPriority,
         appearance,
         InlineBannerContent {
-            title: "Warp can auto-expand aliases.".into(),
+            title: i18n::t!("Warp can auto-expand aliases.").to_string(),
             buttons,
             content: Some(content),
             close_button: Some(close_button),

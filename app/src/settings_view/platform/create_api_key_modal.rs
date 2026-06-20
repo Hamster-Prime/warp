@@ -352,7 +352,7 @@ impl CreateApiKeyModal {
                 None => {
                     self.request_state = RequestState::Idle;
                     ctx.emit(CreateApiKeyModalEvent::Error {
-                        message: "Please select an agent.".to_string(),
+                        message: i18n::t!("Please select an agent.").to_string(),
                     });
                     ctx.notify();
                     return;

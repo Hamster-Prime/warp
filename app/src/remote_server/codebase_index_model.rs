@@ -924,7 +924,7 @@ fn search_availability_for_status(
             else {
                 return RemoteCodebaseSearchAvailability::Unavailable {
                     remote_path,
-                    message: "The remote codebase index is missing its root hash.".to_string(),
+                    message: i18n::t!("The remote codebase index is missing its root hash.").to_string(),
                 };
             };
             RemoteCodebaseSearchAvailability::Ready(RemoteCodebaseSearchContext {

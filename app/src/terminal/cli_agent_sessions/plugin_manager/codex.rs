@@ -171,7 +171,7 @@ impl CliAgentPluginManager for CodexPluginManager {
         if still_outdated {
             log.push_str("Post-update version check: plugin is still outdated\n");
             return Err(PluginInstallError {
-                message: "Plugin update did not take effect".to_owned(),
+                message: i18n::t!("Plugin update did not take effect").to_string(),
                 log,
             });
         }
@@ -219,7 +219,7 @@ impl CliAgentPluginManager for CodexPluginManager {
         if !updated {
             log.push_str("Post-install version check: platform plugin is still outdated\n");
             return Err(PluginInstallError {
-                message: "Platform plugin installation did not take effect".to_owned(),
+                message: i18n::t!("Platform plugin installation did not take effect").to_string(),
                 log,
             });
         }
@@ -243,7 +243,7 @@ impl CliAgentPluginManager for CodexPluginManager {
         if !updated {
             log.push_str("Post-update version check: platform plugin is still outdated\n");
             return Err(PluginInstallError {
-                message: "Platform plugin update did not take effect".to_owned(),
+                message: i18n::t!("Platform plugin update did not take effect").to_string(),
                 log,
             });
         }

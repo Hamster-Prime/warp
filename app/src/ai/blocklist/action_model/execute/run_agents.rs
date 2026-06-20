@@ -305,7 +305,7 @@ impl RunAgentsExecutor {
                                 )) => RunAgentsAgentOutcomeKind::Failed { error },
                                 futures::future::Either::Left((Err(_), _)) => {
                                     RunAgentsAgentOutcomeKind::Failed {
-                                        error: "Cancelled before launch".to_string(),
+                                        error: i18n::t!("Cancelled before launch").to_string(),
                                     }
                                 }
                                 futures::future::Either::Right((_, _)) => {

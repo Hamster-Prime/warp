@@ -173,7 +173,7 @@ impl MemberUsageRow {
             subject_type: AiCreditsUsageAndCostSubjectType::Team,
             subject_key: OTHER_MEMBERS_KEY.to_string(),
             subject_uid: None,
-            display_name: "Other members".to_string(),
+            display_name: i18n::t!("Other members").to_string(),
             total_credits,
             total_cost_cents,
             segments,

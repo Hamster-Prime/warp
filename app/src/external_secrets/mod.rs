@@ -218,7 +218,7 @@ impl SecretManager {
                 }
             }
             SecretErrorType::InvalidPlatform => ErrorMessageAndCommand {
-                message: "Platform not supported".to_owned(),
+                message: i18n::t!("Platform not supported").to_string(),
                 link: None,
                 link_message: None,
             },

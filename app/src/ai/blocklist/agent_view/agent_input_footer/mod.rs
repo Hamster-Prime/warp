@@ -1294,7 +1294,7 @@ impl AgentInputFooter {
                 else {
                     return Err((
                         PluginInstallError {
-                            message: "No plugin manager available".to_owned(),
+                            message: i18n::t!("No plugin manager available").to_string(),
                             log: String::new(),
                         },
                         None,

@@ -228,7 +228,7 @@ impl SearchCodebaseExecutor {
                 return ActionExecution::Sync(AIAgentActionResultType::SearchCodebase(
                     SearchCodebaseResult::Failed {
                         reason: SearchCodebaseFailureReason::CodebaseNotIndexed,
-                        message: "The search failed because the codebase is not available. Try another way to locate the relevant files.".to_owned(),
+                        message: i18n::t!("The search failed because the codebase is not available. Try another way to locate the relevant files.").to_string(),
                     },
                 ));
             };
@@ -277,7 +277,7 @@ impl SearchCodebaseExecutor {
                     ActionExecution::Sync(AIAgentActionResultType::SearchCodebase(
                         SearchCodebaseResult::Failed {
                             reason: SearchCodebaseFailureReason::CodebaseNotIndexed,
-                            message: "Remote codebase search is unavailable.".to_owned(),
+                            message: i18n::t!("Remote codebase search is unavailable.").to_string(),
                         },
                     ))
                 }
@@ -340,7 +340,7 @@ impl SearchCodebaseExecutor {
                     );
                 });
                 return ActionExecution::Sync(AIAgentActionResultType::SearchCodebase(SearchCodebaseResult::Failed {
-                    message: "The search failed because the codebase is not available. Try another way to locate the relevant files.".to_owned(),
+                    message: i18n::t!("The search failed because the codebase is not available. Try another way to locate the relevant files.").to_string(),
                     reason: SearchCodebaseFailureReason::CodebaseNotIndexed
                 }));
             };

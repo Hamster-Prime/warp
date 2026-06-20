@@ -845,7 +845,7 @@ pub mod json {
                     ))),
                     WriteToLongRunningShellCommandResult::Error(_) => {
                         Some(JsonMessage::ToolError {
-                            error: "Failed to write to command.".into(),
+                            error: i18n::t!("Failed to write to command."),
                         })
                     }
                     WriteToLongRunningShellCommandResult::Cancelled => {

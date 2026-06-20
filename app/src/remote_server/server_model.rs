@@ -897,7 +897,7 @@ impl ServerModel {
                         );
                         HandlerOutcome::Sync(server_message::Message::Error(ErrorResponse {
                             code: ErrorCode::InvalidRequest.into(),
-                            message: "HostScopedRequest had no message variant set".to_string(),
+                            message: i18n::t!("HostScopedRequest had no message variant set").to_string(),
                         }))
                     }
                 };
@@ -934,7 +934,7 @@ impl ServerModel {
                         );
                         HandlerOutcome::Sync(server_message::Message::Error(ErrorResponse {
                             code: ErrorCode::InvalidRequest.into(),
-                            message: "SessionScopedRequest had no message variant set".to_string(),
+                            message: i18n::t!("SessionScopedRequest had no message variant set").to_string(),
                         }))
                     }
                 };
@@ -986,7 +986,7 @@ impl ServerModel {
                 (
                     HandlerOutcome::Sync(server_message::Message::Error(ErrorResponse {
                         code: ErrorCode::InvalidRequest.into(),
-                        message: "ClientMessage had no message variant set".to_string(),
+                        message: i18n::t!("ClientMessage had no message variant set").to_string(),
                     })),
                     false,
                 )
@@ -2403,7 +2403,7 @@ impl ServerModel {
                     OpenBufferResponse {
                         result: Some(remote_server::proto::open_buffer_response::Result::Error(
                             FileOperationError {
-                                message: "Buffer loaded but has no file content".to_string(),
+                                message: i18n::t!("Buffer loaded but has no file content").to_string(),
                             },
                         )),
                     },
@@ -2418,7 +2418,7 @@ impl ServerModel {
                     OpenBufferResponse {
                         result: Some(remote_server::proto::open_buffer_response::Result::Error(
                             FileOperationError {
-                                message: "Buffer loaded but has no sync clock".to_string(),
+                                message: i18n::t!("Buffer loaded but has no sync clock").to_string(),
                             },
                         )),
                     },
@@ -2605,7 +2605,7 @@ impl ServerModel {
         let Some(mode_proto) = &msg.mode else {
             return HandlerOutcome::Sync(server_message::Message::Error(ErrorResponse {
                 code: ErrorCode::InvalidRequest.into(),
-                message: "Missing mode in GetDiffState".to_string(),
+                message: i18n::t!("Missing mode in GetDiffState").to_string(),
             }));
         };
 
@@ -2987,7 +2987,7 @@ impl ServerModel {
         let Some(mode_proto) = &msg.mode else {
             return HandlerOutcome::Sync(server_message::Message::Error(ErrorResponse {
                 code: ErrorCode::InvalidRequest.into(),
-                message: "Missing mode in DiscardFiles".to_string(),
+                message: i18n::t!("Missing mode in DiscardFiles").to_string(),
             }));
         };
 
@@ -3016,7 +3016,7 @@ impl ServerModel {
             return HandlerOutcome::Sync(server_message::Message::DiscardFilesResponse(
                 DiscardFilesResponse {
                     result: Some(discard_files_response::Result::Error(DiscardFilesError {
-                        message: "No files specified in DiscardFilesRequest".to_string(),
+                        message: i18n::t!("No files specified in DiscardFilesRequest").to_string(),
                     })),
                 },
             ));
@@ -3038,7 +3038,7 @@ impl ServerModel {
             return HandlerOutcome::Sync(server_message::Message::DiscardFilesResponse(
                 DiscardFilesResponse {
                     result: Some(discard_files_response::Result::Error(DiscardFilesError {
-                        message: "No valid files after path validation".to_string(),
+                        message: i18n::t!("No valid files after path validation").to_string(),
                     })),
                 },
             ));
@@ -3789,7 +3789,7 @@ fn file_context_result_to_proto(result: ReadFileContextResult) -> ReadFileContex
         .map(|path| FailedFileRead {
             path,
             error: Some(FileOperationError {
-                message: "File not found or could not be read".to_string(),
+                message: i18n::t!("File not found or could not be read").to_string(),
             }),
         })
         .collect();

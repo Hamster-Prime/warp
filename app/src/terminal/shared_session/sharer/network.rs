@@ -210,11 +210,11 @@ impl StartupFailure {
             Self::ServerRejected(reason) => reason.clone(),
             Self::WebsocketClosedBeforeStarted => {
                 FailedToInitializeSessionReason::InternalServerError {
-                    details: "Websocket closed before starting session".to_string(),
+                    details: i18n::t!("Websocket closed before starting session").to_string(),
                 }
             }
             Self::Timeout => FailedToInitializeSessionReason::InternalServerError {
-                details: "Timed out creating shared session".to_string(),
+                details: i18n::t!("Timed out creating shared session").to_string(),
             },
             Self::Transport | Self::InitializeSend | Self::WebsocketError => {
                 FailedToInitializeSessionReason::internal_server_error_without_details()

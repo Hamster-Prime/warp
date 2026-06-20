@@ -64,7 +64,7 @@ pub(super) fn send_request(
     if !should_use_codebase_indexing(CodebaseAutoIndexingSurface::Remote, ctx) {
         return RemoteSearchRequest::Ready(SearchCodebaseResult::Failed {
             reason: SearchCodebaseFailureReason::CodebaseNotIndexed,
-            message: "Remote codebase search is not enabled.".to_string(),
+            message: i18n::t!("Remote codebase search is not enabled.").to_string(),
         });
     }
 
@@ -413,7 +413,7 @@ fn remote_availability_failure(
         },
         RemoteCodebaseSearchAvailability::NoActiveRepo => SearchCodebaseResult::Failed {
             reason: SearchCodebaseFailureReason::CodebaseNotIndexed,
-            message: "The current remote directory is not in a known codebase.".to_string(),
+            message: i18n::t!("The current remote directory is not in a known codebase.").to_string(),
         },
         RemoteCodebaseSearchAvailability::NotIndexed { remote_path } => {
             SearchCodebaseResult::Failed {
@@ -445,7 +445,7 @@ fn remote_availability_failure(
         },
         RemoteCodebaseSearchAvailability::Ready(_) => SearchCodebaseResult::Failed {
             reason: SearchCodebaseFailureReason::ClientError,
-            message: "Remote codebase search was unexpectedly unavailable.".to_string(),
+            message: i18n::t!("Remote codebase search was unexpectedly unavailable.").to_string(),
         },
     }
 }

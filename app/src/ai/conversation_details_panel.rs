@@ -537,7 +537,7 @@ impl ConversationDetailsData {
                 environment_id: None,
                 conversation_id: None,
             },
-            title: "Cloud agent run".to_string(),
+            title: i18n::t!("Cloud agent run").to_string(),
             creator: None,
             executor: None,
             created_at: None,

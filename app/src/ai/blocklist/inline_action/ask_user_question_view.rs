@@ -1817,7 +1817,7 @@ fn ask_user_question_completion_state(
 
     if answered_count == 0 {
         AskUserQuestionCompletionState {
-            label: "Questions skipped".to_string(),
+            label: i18n::t!("Questions skipped").to_string(),
             status_icon: inline_action_icons::reverted_icon(appearance),
         }
     } else {

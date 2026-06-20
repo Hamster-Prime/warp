@@ -389,7 +389,7 @@ impl GlobalSearch {
         if active.completed_sources == 0 {
             ctx.emit(GlobalSearchEvent::Failed {
                 search_id,
-                error: "Global search failed.".to_string(),
+                error: i18n::t!("Global search failed.").to_string(),
             });
         } else {
             ctx.emit(GlobalSearchEvent::Completed {

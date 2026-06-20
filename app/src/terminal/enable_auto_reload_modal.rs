@@ -99,7 +99,7 @@ impl EnableAutoReloadModalBody {
                             );
 
                             ctx.emit(EnableAutoReloadModalBodyEvent::ShowToast {
-                                message: "Auto-reload settings updated".to_string(),
+                                message: i18n::t!("Auto-reload settings updated").to_string(),
                                 flavor: ToastFlavor::Success,
                             });
                             ctx.emit(EnableAutoReloadModalBodyEvent::Close);
@@ -109,7 +109,7 @@ impl EnableAutoReloadModalBody {
                         if me.update_workspace_settings_loading {
                             me.update_workspace_settings_loading = false;
                             ctx.emit(EnableAutoReloadModalBodyEvent::ShowToast {
-                                message: "Failed to enable auto-reload. Please try updating your settings in Billing & usage.".to_string(),
+                                message: i18n::t!("Failed to enable auto-reload. Please try updating your settings in Billing & usage.").to_string(),
                                 flavor: ToastFlavor::Error,
                             });
                             ctx.notify();

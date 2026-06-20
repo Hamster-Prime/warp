@@ -49,16 +49,16 @@ impl LinkTarget {
     pub fn secondary_action(&self) -> Option<SecondaryAction> {
         match self {
             LinkTarget::LocalDirectory { .. } => Some(SecondaryAction {
-                label: "New session".into(),
+                label: i18n::t!("New session"),
                 tooltip: Some(i18n::t!("Open a new terminal session in this directory")),
-                accessibility_content: "Open in terminal session".into(),
+                accessibility_content: i18n::t!("Open in terminal session"),
             }),
             LinkTarget::LocalFile {
                 is_markdown: true, ..
             } => Some(SecondaryAction {
-                label: "Open in editor".into(),
+                label: i18n::t!("Open in editor"),
                 tooltip: None,
-                accessibility_content: "Edit Markdown file".into(),
+                accessibility_content: i18n::t!("Edit Markdown file"),
             }),
             LinkTarget::Url(_) | LinkTarget::LocalFile { .. } => None,
         }

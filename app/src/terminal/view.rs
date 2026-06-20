@@ -4500,7 +4500,7 @@ impl TerminalView {
                             me.show_ssh_remote_server_failed_banner(
                                 *session_id,
                                 remote_server::transport::UserFacingError {
-                                    body: "Failed to start SSH extension".into(),
+                                    body: i18n::t!("Failed to start SSH extension").to_string(),
                                     detail: if error.is_empty() {
                                         None
                                     } else {
@@ -5358,7 +5358,7 @@ impl TerminalView {
                     let suggestion = AgentModePromptSuggestion::Success(PromptSuggestion {
                         id: Uuid::new_v4().to_string(),
                         label: Some(i18n::t!("Execute this plan").to_string()),
-                        prompt: "Execute this plan".to_string(),
+                        prompt: i18n::t!("Execute this plan").to_string(),
                         coding_query_context: None,
                         static_prompt_suggestion_name: Some(
                             i18n::t!("EXECUTE_CREATED_PLAN").to_string(),
@@ -7603,7 +7603,7 @@ impl TerminalView {
                     _ => Some(AIBlockNotificationSummary {
                         success: false,
                         title,
-                        description: "An unknown error occurred".to_string(),
+                        description: i18n::t!("An unknown error occurred").to_string(),
                     }),
                 }
             }
@@ -23173,7 +23173,7 @@ impl TerminalView {
             render_hoverable_block_button(
                 icon,
                 Some(ToolbeltButtonTooltip {
-                    label: "Filter block output".to_string(),
+                    label: i18n::t!("Filter block output").to_string(),
                     tool_tip_below_button,
                 }),
                 should_disable_filter_button,
@@ -23221,7 +23221,7 @@ impl TerminalView {
         render_hoverable_block_button(
             icon,
             Some(ToolbeltButtonTooltip {
-                label: "Bookmark this block to quickly scroll to it".to_string(),
+                label: i18n::t!("Bookmark this block to quickly scroll to it").to_string(),
                 tool_tip_below_button,
             }),
             false,

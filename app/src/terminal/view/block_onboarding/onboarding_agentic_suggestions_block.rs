@@ -150,9 +150,9 @@ impl OnboardingAgenticSuggestionsBlock {
         let agent_suggestions = vec![
             (
                 AgenticSuggestionsContent {
-                    title: "Create a snake game in Python from scratch".to_string(),
-                    description: "Have Agent Mode walk you through creating a snake game from end-to-end".to_string(),
-                    prompt: "Make a snake game for playing in the terminal using python. Use the code tool and requested commands to do it for me. Before deciding on a solution, make sure I have all the prerequisites installed. At the end of our conversation, the app should run without any additional steps.".to_string(),
+                    title: i18n::t!("Create a snake game in Python from scratch").to_string(),
+                    description: i18n::t!("Have Agent Mode walk you through creating a snake game from end-to-end").to_string(),
+                    prompt: i18n::t!("Make a snake game for playing in the terminal using python. Use the code tool and requested commands to do it for me. Before deciding on a solution, make sure I have all the prerequisites installed. At the end of our conversation, the app should run without any additional steps.").to_string(),
                     chip_type: OnboardingChipType::PythonSnakeGame,
                     icon: UIIcon::Icon::GamingPad,
                 },
@@ -161,7 +161,7 @@ impl OnboardingAgenticSuggestionsBlock {
             (
                 AgenticSuggestionsContent {
                     title: format!("Explore git history in {git_repo_trimmed}"),
-                    description: "Work with Agent Mode to understand recent changes to a git repository".to_string(),
+                    description: i18n::t!("Work with Agent Mode to understand recent changes to a git repository").to_string(),
                     prompt: format!("Explore my git history in {git_repo_path} and provide me a summary."),
                     chip_type: OnboardingChipType::ExploreGitHistory,
                     icon: UIIcon::Icon::BookOpen,
@@ -170,8 +170,8 @@ impl OnboardingAgenticSuggestionsBlock {
             ),
             (
                 AgenticSuggestionsContent {
-                    title: "Create a Matrix-styled custom theme".to_string(),
-                    description: "Make your terminal look like you entered the Matrix".to_string(),
+                    title: i18n::t!("Create a Matrix-styled custom theme").to_string(),
+                    description: i18n::t!("Make your terminal look like you entered the Matrix").to_string(),
                     prompt: format!("First check if {matrix_save_directory} exists, and create this path if it doesn't already exist. Then create a matrix theme for my Warp terminal without a background image field, following exact YAML structure on the warp website without any extra or missing fields. Call it matrix.yaml and save it in the directory we previously created. Once you've verified that the theme is correct and ready to be applied, let me know by only saying 'The matrix theme is now available at <path>.'."),
                     chip_type: OnboardingChipType::MatrixThemePicker,
                     icon: UIIcon::Icon::PaintBrush,
@@ -180,9 +180,9 @@ impl OnboardingAgenticSuggestionsBlock {
             ),
             (
                 AgenticSuggestionsContent {
-                    title: "Something else?".to_string(),
-                    description: "Pair with an Agent to accomplish another task".to_string(),
-                    prompt: "What can you help with me on?".to_string(),
+                    title: i18n::t!("Something else?").to_string(),
+                    description: i18n::t!("Pair with an Agent to accomplish another task").to_string(),
+                    prompt: i18n::t!("What can you help with me on?").to_string(),
                     chip_type: OnboardingChipType::Other,
                     icon: UIIcon::Icon::Stars,
                 },

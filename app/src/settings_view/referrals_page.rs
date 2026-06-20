@@ -149,14 +149,14 @@ lazy_static! {
             icon_path: "bundled/svg/referral-theme.svg",
             icon_width: 64.,
             icon_height: 64.,
-            label: "Exclusive theme".to_owned(),
+            label: i18n::t!("Exclusive theme").to_string(),
         },
         Reward {
             required_referral_count: 5,
             icon_path: "bundled/svg/referral-keycaps.svg",
             icon_width: 56.,
             icon_height: 56.,
-            label: "Keycaps + stickers".to_owned(),
+            label: i18n::t!("Keycaps + stickers").to_string(),
         },
         Reward {
             required_referral_count: 10,
@@ -177,7 +177,7 @@ lazy_static! {
             icon_path: "bundled/svg/referral-hat.svg",
             icon_width: 64.,
             icon_height: 64.,
-            label: "Baseball cap".to_owned(),
+            label: i18n::t!("Baseball cap").to_string(),
         },
         Reward {
             required_referral_count: 50,
@@ -191,7 +191,7 @@ lazy_static! {
             icon_path: "bundled/svg/referral-hydroflask.svg",
             icon_width: 48.,
             icon_height: 48.,
-            label: "Premium Hydro Flask".to_owned(),
+            label: i18n::t!("Premium Hydro Flask").to_string(),
         },
         Reward {
             required_referral_count: 100,

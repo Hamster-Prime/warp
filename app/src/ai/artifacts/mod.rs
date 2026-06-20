@@ -386,7 +386,9 @@ pub fn download_file_artifact<V: warpui::View>(
                 log::warn!("Failed to load file artifact {artifact_uid}: {error}");
                 show_file_download_toast(
                     &artifact_uid,
-                    DismissibleToast::error(i18n::t!("Failed to prepare file download.").to_string()),
+                    DismissibleToast::error(
+                        i18n::t!("Failed to prepare file download.").to_string(),
+                    ),
                     ctx,
                 );
             }
@@ -448,7 +450,11 @@ fn open_file_download_picker<V: warpui::View>(
                     Ok(()) => show_file_download_toast(
                         &artifact_uid,
                         DismissibleToast::success(
-                            i18n::t!("Downloaded {toast_filename}.", toast_filename = toast_filename).to_string(),
+                            i18n::t!(
+                                "Downloaded {toast_filename}.",
+                                toast_filename = toast_filename
+                            )
+                            .to_string(),
                         ),
                         ctx,
                     ),
@@ -457,8 +463,11 @@ fn open_file_download_picker<V: warpui::View>(
                         show_file_download_toast(
                             &artifact_uid,
                             DismissibleToast::error(
-                                i18n::t!("Failed to download {toast_filename}.", toast_filename = toast_filename)
-                                    .to_string(),
+                                i18n::t!(
+                                    "Failed to download {toast_filename}.",
+                                    toast_filename = toast_filename
+                                )
+                                .to_string(),
                             ),
                             ctx,
                         );

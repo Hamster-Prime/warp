@@ -1382,7 +1382,12 @@ pub(crate) fn format_terminal_state(result: &RunAgentsResult) -> (String, Status
                 (label, StatusKind::Failure)
             } else {
                 (
-                    i18n::t!("Spawned {launched} of {total} agents", launched = launched, total = total).to_string(),
+                    i18n::t!(
+                        "Spawned {launched} of {total} agents",
+                        launched = launched,
+                        total = total
+                    )
+                    .to_string(),
                     StatusKind::Mixed,
                 )
             }
@@ -1406,7 +1411,10 @@ pub(crate) fn format_terminal_state(result: &RunAgentsResult) -> (String, Status
             };
             (label, StatusKind::Failure)
         }
-        RunAgentsResult::Cancelled => (i18n::t!("Spawn agents cancelled").to_string(), StatusKind::Cancelled),
+        RunAgentsResult::Cancelled => (
+            i18n::t!("Spawn agents cancelled").to_string(),
+            StatusKind::Cancelled,
+        ),
     }
 }
 

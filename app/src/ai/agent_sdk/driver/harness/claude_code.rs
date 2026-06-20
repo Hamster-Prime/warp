@@ -207,14 +207,25 @@ fn claude_command(
     resuming: bool,
 ) -> String {
     let flag = if resuming { "--resume" } else { "--session-id" };
-    let mut cmd = i18n::t!("{cli_name} {flag} {session_id} --dangerously-skip-permissions", cli_name = cli_name, flag = flag, session_id = session_id).to_string();
+    let mut cmd = i18n::t!(
+        "{cli_name} {flag} {session_id} --dangerously-skip-permissions",
+        cli_name = cli_name,
+        flag = flag,
+        session_id = session_id
+    )
+    .to_string();
     if let Some(sp_path) = system_prompt_path {
         let _ = write!(cmd, " --append-system-prompt-file '{sp_path}'");
     }
     if let Some(mcp_path) = mcp_config_path {
         let _ = write!(cmd, " --mcp-config '{mcp_path}'");
     }
-    i18n::t!("{cmd} < '{prompt_path}'", cmd = cmd, prompt_path = prompt_path).to_string()
+    i18n::t!(
+        "{cmd} < '{prompt_path}'",
+        cmd = cmd,
+        prompt_path = prompt_path
+    )
+    .to_string()
 }
 
 /// Runtime state of a [`ClaudeHarnessRunner`].

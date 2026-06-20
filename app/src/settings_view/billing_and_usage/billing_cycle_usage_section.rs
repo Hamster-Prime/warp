@@ -689,7 +689,9 @@ impl BillingCycleUsageSectionView {
         let body = FormattedTextElement::new(
             FormattedText::new([FormattedTextLine::Line(vec![
                 FormattedTextFragment::hyperlink_action(link_text, action),
-                FormattedTextFragment::plain_text(i18n::t!(" {trailing_copy}", trailing_copy = trailing_copy).to_string()),
+                FormattedTextFragment::plain_text(
+                    i18n::t!(" {trailing_copy}", trailing_copy = trailing_copy).to_string(),
+                ),
             ])]),
             appearance.ui_font_size(),
             appearance.ui_font_family(),
@@ -802,7 +804,12 @@ fn format_period_range(start: DateTime<Utc>, end: DateTime<Utc>) -> String {
     let start = start.with_timezone(&Local);
     let end = end.with_timezone(&Local);
     if start.year() == end.year() {
-        i18n::t!("{arg0} - {arg1}", arg0 = start.format("%b %d"), arg1 = end.format("%b %d, %Y")).to_string()
+        i18n::t!(
+            "{arg0} - {arg1}",
+            arg0 = start.format("%b %d"),
+            arg1 = end.format("%b %d, %Y")
+        )
+        .to_string()
     } else {
         format!(
             "{} - {}",

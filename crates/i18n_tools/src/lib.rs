@@ -409,7 +409,8 @@ pub fn collect_t_keys(content: &str) -> Vec<String> {
     static RE: OnceLock<Regex> = OnceLock::new();
     // Matches t!("...") or i18n::t!("...", ...) — captures the first string literal
     // as the key. Supports named-args form: t!("key", a = 1, b = 2)
-    let re = RE.get_or_init(|| Regex::new(r#"(?:i18n::)?t!\("((?:[^"\\]|\\.)*)"(?:\s*,|\s*\))"#).unwrap());
+    let re = RE
+        .get_or_init(|| Regex::new(r#"(?:i18n::)?t!\("((?:[^"\\]|\\.)*)"(?:\s*,|\s*\))"#).unwrap());
     re.captures_iter(content)
         .map(|c| unescape_rust_string(&c[1]))
         .collect()

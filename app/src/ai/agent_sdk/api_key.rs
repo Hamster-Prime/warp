@@ -327,7 +327,11 @@ fn resolve_api_key_identifier(
 
     if io::stdin().is_terminal() {
         return match Select::new(
-            &i18n::t!("Multiple API keys match '{key_identifier}'. Select a key to expire:", key_identifier = key_identifier).to_string(),
+            &i18n::t!(
+                "Multiple API keys match '{key_identifier}'. Select a key to expire:",
+                key_identifier = key_identifier
+            )
+            .to_string(),
             matches,
         )
         .prompt()

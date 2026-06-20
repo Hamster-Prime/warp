@@ -369,7 +369,14 @@ impl PackageManager {
                 // install the new version.
                 let command = format!("sudo apt update{and}sudo apt install {package_name}");
                 if *distribution_update_disabled_repository {
-                    i18n::t!("{dist_upgrade_fn} {repo_name}{or}{command}", dist_upgrade_fn = dist_upgrade_fn, repo_name = repo_name, or = or, command = command).to_string()
+                    i18n::t!(
+                        "{dist_upgrade_fn} {repo_name}{or}{command}",
+                        dist_upgrade_fn = dist_upgrade_fn,
+                        repo_name = repo_name,
+                        or = or,
+                        command = command
+                    )
+                    .to_string()
                 } else {
                     command
                 }
@@ -404,7 +411,13 @@ impl PackageManager {
                 } else {
                     String::new()
                 };
-                i18n::t!("{key_prefix}{repo_prefix}sudo pacman -Sy {package_name}", key_prefix = key_prefix, repo_prefix = repo_prefix, package_name = package_name).to_string()
+                i18n::t!(
+                    "{key_prefix}{repo_prefix}sudo pacman -Sy {package_name}",
+                    key_prefix = key_prefix,
+                    repo_prefix = repo_prefix,
+                    package_name = package_name
+                )
+                .to_string()
             }
         };
 
@@ -412,7 +425,14 @@ impl PackageManager {
             ShellType::Zsh | ShellType::Bash | ShellType::Fish => "warp_finish_update",
             ShellType::PowerShell => "Warp-Finish-Update",
         };
-        i18n::t!("{base_command}{and}{finish_update_fn} {update_id}", base_command = base_command, and = and, finish_update_fn = finish_update_fn, update_id = update_id).to_string()
+        i18n::t!(
+            "{base_command}{and}{finish_update_fn} {update_id}",
+            base_command = base_command,
+            and = and,
+            finish_update_fn = finish_update_fn,
+            update_id = update_id
+        )
+        .to_string()
     }
 
     fn package_name() -> &'static str {

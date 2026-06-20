@@ -166,8 +166,8 @@ pub(super) fn show_pr_created_toast(pr_info: &PrInfo, ctx: &mut ViewContext<GitD
     let url = pr_info.url.clone();
     ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
         let link = ToastLink::new(i18n::t!("Open PR").to_string()).with_href(url);
-        let toast =
-            DismissibleToast::default(i18n::t!("PR successfully created.").to_string()).with_link(link);
+        let toast = DismissibleToast::default(i18n::t!("PR successfully created.").to_string())
+            .with_link(link);
         toast_stack.add_ephemeral_toast(toast, window_id, ctx);
     });
 }

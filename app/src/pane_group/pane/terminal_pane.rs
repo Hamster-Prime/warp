@@ -1751,7 +1751,11 @@ fn launch_local_no_harness_child(
                         parent_conversation_id,
                         request_id: Some(request_id),
                         orchestration_harness: Some(Harness::Oz),
-                        error_message: i18n::t!("Failed to create local child task: {error}", error = error).to_string(),
+                        error_message: i18n::t!(
+                            "Failed to create local child task: {error}",
+                            error = error
+                        )
+                        .to_string(),
                     },
                     ctx,
                 );

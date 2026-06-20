@@ -245,7 +245,13 @@ impl TerminalView {
             let mut open_in_warp = None;
             let mut show_in_file_explorer = None;
             let modifier_string = directly_open_link_keybinding_string();
-            let mut detail = Some(i18n::t!("[{modifier_string} Click]", modifier_string = modifier_string).to_string());
+            let mut detail = Some(
+                i18n::t!(
+                    "[{modifier_string} Click]",
+                    modifier_string = modifier_string
+                )
+                .to_string(),
+            );
 
             #[cfg(feature = "local_fs")]
             {

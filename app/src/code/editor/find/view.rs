@@ -927,7 +927,9 @@ impl View for CodeEditorFind {
         let match_count = self.searcher.as_ref(app).match_count();
         let selected_match = self.searcher.as_ref(app).selected_match();
         let description = match (match_count, selected_match) {
-            (0, _) | (_, None) => i18n::t!("Find bar for searching text in the editor.").to_string(),
+            (0, _) | (_, None) => {
+                i18n::t!("Find bar for searching text in the editor.").to_string()
+            }
             (count, Some(current)) => format!(
                 "Find bar with {} matches found. Currently on match {} of {}.",
                 count,

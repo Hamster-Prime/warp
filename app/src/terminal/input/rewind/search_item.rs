@@ -163,7 +163,11 @@ impl SearchItem for RewindSearchItem {
 
             row.add_child(
                 Text::new_inline(
-                    i18n::t!(" -{lines_removed}", lines_removed = self.file_changes.lines_removed).to_string(),
+                    i18n::t!(
+                        " -{lines_removed}",
+                        lines_removed = self.file_changes.lines_removed
+                    )
+                    .to_string(),
                     appearance.ui_font_family(),
                     secondary_font_size,
                 )
@@ -225,7 +229,11 @@ impl SearchItem for RewindSearchItem {
                 self.query_text, self.file_changes.lines_added, self.file_changes.lines_removed
             )
         } else {
-            i18n::t!("Rewind to: {query_text} (no code changes)", query_text = self.query_text).to_string()
+            i18n::t!(
+                "Rewind to: {query_text} (no code changes)",
+                query_text = self.query_text
+            )
+            .to_string()
         }
     }
 }

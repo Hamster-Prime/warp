@@ -105,7 +105,8 @@ fn parse_github_pr_number(number: &str) -> Option<i32> {
 }
 
 pub(crate) fn github_pr_display_text_from_url(url: &str) -> Option<String> {
-    github_pr_number_from_url(url).map(|number| i18n::t!("PR #{number}", number = number).to_string())
+    github_pr_number_from_url(url)
+        .map(|number| i18n::t!("PR #{number}", number = number).to_string())
 }
 
 /// The refresh settings for the date context chip.
@@ -392,7 +393,9 @@ impl ContextChipKind {
             Self::SvnDirtyItems => ChipValue::Text("3".to_string()),
             Self::Ssh => ChipValue::Text("alice@127.0.0.1".to_string()),
             Self::Subshell => ChipValue::Text("bash".to_string()),
-            Self::AgentPlanAndTodoList => ChipValue::Text(i18n::t!("Plan and Todo List").to_string()),
+            Self::AgentPlanAndTodoList => {
+                ChipValue::Text(i18n::t!("Plan and Todo List").to_string())
+            }
         }
     }
 

@@ -2206,10 +2206,9 @@ impl AISettingsPageView {
                 );
                 let window_id = ctx.window_id();
                 ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
-                    let toast =
-                        DismissibleToast::error(
-                            i18n::t!("Couldn't start Grok login: {err}", err = err).to_string(),
-                        );
+                    let toast = DismissibleToast::error(
+                        i18n::t!("Couldn't start Grok login: {err}", err = err).to_string(),
+                    );
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });
                 return;
@@ -2358,8 +2357,8 @@ impl AISettingsPageView {
                             ctx
                         );
                         DismissibleToast::error(
-                        i18n::t!("Couldn't connect SuperGrok: {err}", err = err).to_string(),
-                    )
+                            i18n::t!("Couldn't connect SuperGrok: {err}", err = err).to_string(),
+                        )
                     }
                 };
                 ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
@@ -4588,7 +4587,13 @@ impl SettingsWidget for UsageWidget {
                 .with_child(
                     appearance
                         .ui_builder()
-                        .paragraph(i18n::t!("Resets {formatted_next_refresh_time}", formatted_next_refresh_time = formatted_next_refresh_time).to_string())
+                        .paragraph(
+                            i18n::t!(
+                                "Resets {formatted_next_refresh_time}",
+                                formatted_next_refresh_time = formatted_next_refresh_time
+                            )
+                            .to_string(),
+                        )
                         .with_style(UiComponentStyles {
                             font_color: Some(blended_colors::text_sub(
                                 appearance.theme(),

@@ -4064,8 +4064,12 @@ fn cloud_agent_working_directory_and_env(
     let setup_status: Option<&str> = model_ref.agent_progress().map(|p| p.setup_status_text());
 
     match (env_name, setup_status, working_directory) {
-        (Some(env), Some(status), _) => Some(i18n::t!("{env} · {status}", env = env, status = status).to_string()),
-        (Some(env), None, Some(wd)) => Some(i18n::t!("{env} · {wd}", env = env, wd = wd).to_string()),
+        (Some(env), Some(status), _) => {
+            Some(i18n::t!("{env} · {status}", env = env, status = status).to_string())
+        }
+        (Some(env), None, Some(wd)) => {
+            Some(i18n::t!("{env} · {wd}", env = env, wd = wd).to_string())
+        }
         (Some(env), None, None) => Some(env),
         (None, Some(status), _) => Some(status.to_string()),
         (None, None, _) => None,

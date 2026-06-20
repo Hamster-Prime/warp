@@ -716,7 +716,9 @@ fn spawn_docker_sandbox(
     // the PTY process spawns below.
     if let Err(e) = prepare_docker_sandbox(&docker_starter) {
         log::error!("Failed to prepare Docker sandbox: {e}");
-        return Err(Error::msg(i18n::t!("Docker sandbox setup failed: {e}", e = e).to_string()));
+        return Err(Error::msg(
+            i18n::t!("Docker sandbox setup failed: {e}", e = e).to_string(),
+        ));
     }
 
     let PtyOptions {

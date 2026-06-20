@@ -2572,7 +2572,8 @@ impl Workspace {
                     me.shown_staging_banner_count += 1;
                     me.toast_stack.update(ctx, |toast_stack, ctx| {
                         let toast = DismissibleToast::error(
-                            i18n::t!("Staging API call failed. Did your IP address change?").to_string(),
+                            i18n::t!("Staging API call failed. Did your IP address change?")
+                                .to_string(),
                         )
                         .with_object_id("staging_access_blocked_toast".to_string());
                         toast_stack.add_ephemeral_toast(toast, ctx);
@@ -2659,12 +2660,11 @@ impl Workspace {
                         let toast = DismissibleToast::error(message)
                             .with_object_id(object_id.clone())
                             .with_link(
-                                ToastLink::new(i18n::t!("Open file").to_string()).with_onclick_action(
-                                    WorkspaceAction::OpenTabConfigErrorFile {
+                                ToastLink::new(i18n::t!("Open file").to_string())
+                                    .with_onclick_action(WorkspaceAction::OpenTabConfigErrorFile {
                                         path,
                                         toast_object_id: object_id,
-                                    },
-                                ),
+                                    }),
                             );
                         toast_stack.update(ctx, |toast_stack, ctx| {
                             toast_stack.add_persistent_toast(toast, ctx);
@@ -4464,7 +4464,8 @@ impl Workspace {
         ));
 
         self.toast_stack.update(ctx, |toast_stack, ctx| {
-            let toast = DismissibleToast::default(i18n::t!("Remote control link copied.").to_string());
+            let toast =
+                DismissibleToast::default(i18n::t!("Remote control link copied.").to_string());
             toast_stack.add_ephemeral_toast(toast, ctx);
         });
     }
@@ -5915,9 +5916,11 @@ impl Workspace {
         if !FeatureFlag::ConfigurableToolbar.is_enabled() {
             return;
         }
-        let items = vec![MenuItemFields::new(i18n::t!("Re-arrange toolbar items").to_string())
-            .with_on_select_action(WorkspaceAction::OpenHeaderToolbarEditor)
-            .into_item()];
+        let items = vec![
+            MenuItemFields::new(i18n::t!("Re-arrange toolbar items").to_string())
+                .with_on_select_action(WorkspaceAction::OpenHeaderToolbarEditor)
+                .into_item(),
+        ];
         self.header_toolbar_context_menu
             .update(ctx, |menu, ctx| menu.set_items(items, ctx));
         self.show_header_toolbar_context_menu = Some(position);
@@ -6343,7 +6346,8 @@ impl Workspace {
                     ctx.open_file_path_in_explorer(&path);
                 }
                 Ok(Err(err)) => {
-                    let error_message = i18n::t!("Failed to create log bundle: {err}", err = err).to_string();
+                    let error_message =
+                        i18n::t!("Failed to create log bundle: {err}", err = err).to_string();
                     log::error!("{error_message}");
                     me.toast_stack.update(ctx, |toast_stack, ctx| {
                         let toast = DismissibleToast::error(error_message);
@@ -6351,7 +6355,8 @@ impl Workspace {
                     });
                 }
                 Err(err) => {
-                    let error_message = i18n::t!("Failed to create log bundle: {err}", err = err).to_string();
+                    let error_message =
+                        i18n::t!("Failed to create log bundle: {err}", err = err).to_string();
                     log::error!("{error_message}");
                     me.toast_stack.update(ctx, |toast_stack, ctx| {
                         let toast = DismissibleToast::error(error_message);
@@ -6515,7 +6520,8 @@ impl Workspace {
                     if *seen == 1 {
                         tab_config.name.clone()
                     } else {
-                        i18n::t!("{name} ({arg1})", name = tab_config.name, arg1 = *seen - 1).to_string()
+                        i18n::t!("{name} ({arg1})", name = tab_config.name, arg1 = *seen - 1)
+                            .to_string()
                     }
                 } else {
                     tab_config.name.clone()
@@ -7580,21 +7586,29 @@ impl Workspace {
         if FeatureFlag::Autoupdate.is_enabled() && ChannelState::show_autoupdate_menu_items() {
             if let Some(version) = ChannelState::app_version() {
                 menu_items.push(
-                    MenuItemFields::new(i18n::t!("Current version is {version}", version = version).to_string())
-                        .with_disabled(true)
-                        .into_item(),
+                    MenuItemFields::new(
+                        i18n::t!("Current version is {version}", version = version).to_string(),
+                    )
+                    .with_disabled(true)
+                    .into_item(),
                 );
                 match autoupdate::get_update_state(ctx) {
                     AutoupdateStage::UpdateReady { new_version, .. }
                     | AutoupdateStage::UpdatedPendingRestart { new_version } => menu_items.push(
-                        MenuItemFields::new(i18n::t!("Install update ({version})", version = new_version.version).to_string())
-                            .with_on_select_action(WorkspaceAction::ApplyUpdate)
-                            .into_item(),
+                        MenuItemFields::new(
+                            i18n::t!("Install update ({version})", version = new_version.version)
+                                .to_string(),
+                        )
+                        .with_on_select_action(WorkspaceAction::ApplyUpdate)
+                        .into_item(),
                     ),
                     AutoupdateStage::Updating { new_version, .. } => menu_items.push(
-                        MenuItemFields::new(i18n::t!("Updating to ({version})", version = new_version.version).to_string())
-                            .with_disabled(true)
-                            .into_item(),
+                        MenuItemFields::new(
+                            i18n::t!("Updating to ({version})", version = new_version.version)
+                                .to_string(),
+                        )
+                        .with_disabled(true)
+                        .into_item(),
                     ),
                     AutoupdateStage::UnableToUpdateToNewVersion { .. } => menu_items.push(
                         MenuItemFields::new(i18n::t!("Update Warp manually").to_string())
@@ -8690,7 +8704,9 @@ impl Workspace {
                     });
                 }
                 Err(error) => {
-                    let error_message = i18n::t!("Failed to uninstall Oz command: {error}", error = error).to_string();
+                    let error_message =
+                        i18n::t!("Failed to uninstall Oz command: {error}", error = error)
+                            .to_string();
                     log::error!("{error_message}");
                     view.toast_stack.update(ctx, |toast_stack, ctx| {
                         let toast = DismissibleToast::error(error_message);
@@ -9292,9 +9308,12 @@ impl Workspace {
                     ) =>
                 {
                     items.push(
-                        MenuItemFields::new(i18n::t!("Updating to ({version})", version = new_version.version).to_string())
-                            .with_disabled(true)
-                            .into_item(),
+                        MenuItemFields::new(
+                            i18n::t!("Updating to ({version})", version = new_version.version)
+                                .to_string(),
+                        )
+                        .with_disabled(true)
+                        .into_item(),
                     )
                 }
                 AutoupdateStage::UnableToUpdateToNewVersion { new_version }
@@ -9543,9 +9562,12 @@ impl Workspace {
         };
 
         let close_section = {
-            let mut items = vec![MenuItemFields::new(i18n::t!("Close all tabs in group").to_string())
-                .with_on_select_action(WorkspaceAction::CloseTabGroup(group_id))
-                .into_item()];
+            let mut items =
+                vec![
+                    MenuItemFields::new(i18n::t!("Close all tabs in group").to_string())
+                        .with_on_select_action(WorkspaceAction::CloseTabGroup(group_id))
+                        .into_item(),
+                ];
             if has_tabs_outside {
                 items.push(
                     MenuItemFields::new(i18n::t!("Close other tabs").to_string())
@@ -9582,9 +9604,15 @@ impl Workspace {
 
         let pin_section = if FeatureFlag::PinnedTabs.is_enabled() {
             let (label, action) = if self.tab_groups.get(&group_id).is_some_and(|g| g.pinned) {
-                (i18n::t!("Unpin group").to_string(), WorkspaceAction::UnpinTabGroup(group_id))
+                (
+                    i18n::t!("Unpin group").to_string(),
+                    WorkspaceAction::UnpinTabGroup(group_id),
+                )
             } else {
-                (i18n::t!("Pin group").to_string(), WorkspaceAction::PinTabGroup(group_id))
+                (
+                    i18n::t!("Pin group").to_string(),
+                    WorkspaceAction::PinTabGroup(group_id),
+                )
             };
             vec![MenuItemFields::new(label)
                 .with_on_select_action(action)
@@ -10466,13 +10494,23 @@ impl Workspace {
             .map(|n| n.to_string_lossy().to_string())
             .unwrap_or_else(|| repo.to_string());
         let config_name = match worktree_branch_name {
-            Some(name) if !name.is_empty() => {
-                i18n::t!("New worktree: {repo_display_name}, {name}", repo_display_name = repo_display_name, name = name).to_string()
-            }
-            _ if !base_branch.is_empty() => {
-                i18n::t!("New worktree: {repo_display_name}, {base_branch}", repo_display_name = repo_display_name, base_branch = base_branch).to_string()
-            }
-            _ => i18n::t!("New worktree: {repo_display_name}", repo_display_name = repo_display_name).to_string(),
+            Some(name) if !name.is_empty() => i18n::t!(
+                "New worktree: {repo_display_name}, {name}",
+                repo_display_name = repo_display_name,
+                name = name
+            )
+            .to_string(),
+            _ if !base_branch.is_empty() => i18n::t!(
+                "New worktree: {repo_display_name}, {base_branch}",
+                repo_display_name = repo_display_name,
+                base_branch = base_branch
+            )
+            .to_string(),
+            _ => i18n::t!(
+                "New worktree: {repo_display_name}",
+                repo_display_name = repo_display_name
+            )
+            .to_string(),
         };
 
         let filename_hint = if let Some(name) = worktree_branch_name {
@@ -10592,7 +10630,11 @@ impl Workspace {
             .file_name()
             .map(|name| name.to_string_lossy().to_string())
             .unwrap_or_else(|| repo_path.clone());
-        let config_name = i18n::t!("Worktree: {repo_display_name}", repo_display_name = repo_display_name).to_string();
+        let config_name = i18n::t!(
+            "Worktree: {repo_display_name}",
+            repo_display_name = repo_display_name
+        )
+        .to_string();
         // Use the user's default session mode to decide pane type.
         let pane_type = if AISettings::as_ref(ctx).is_any_ai_enabled(ctx)
             && AISettings::as_ref(ctx).default_session_mode(ctx) == DefaultSessionMode::Agent
@@ -10737,12 +10779,13 @@ impl Workspace {
                     .unwrap_or_else(|| UserWorkspaces::upgrade_link(*user_id));
 
                 self.toast_stack.update(ctx, |view, ctx| {
-                    let new_toast =
-                        DismissibleToast::error(i18n::t!("Looks like you're out of AI credits.").to_string())
-                            .with_link(
-                                ToastLink::new(i18n::t!("Upgrade for more credits.").to_string())
-                                    .with_href(upgrade_link),
-                            );
+                    let new_toast = DismissibleToast::error(
+                        i18n::t!("Looks like you're out of AI credits.").to_string(),
+                    )
+                    .with_link(
+                        ToastLink::new(i18n::t!("Upgrade for more credits.").to_string())
+                            .with_href(upgrade_link),
+                    );
                     view.add_ephemeral_toast(new_toast, ctx);
                 });
             }
@@ -12816,7 +12859,9 @@ impl Workspace {
                     ctx.notify();
                 });
                 WorkspaceToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
-                    let toast = DismissibleToast::error(i18n::t!("Failed to load conversation.").to_string());
+                    let toast = DismissibleToast::error(
+                        i18n::t!("Failed to load conversation.").to_string(),
+                    );
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });
                 return;
@@ -12877,7 +12922,9 @@ impl Workspace {
             let Some(conversation) = conversation else {
                 log::warn!("Failed to load conversation {conversation_id}");
                 WorkspaceToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
-                    let toast = DismissibleToast::error(i18n::t!("Failed to load conversation.").to_string());
+                    let toast = DismissibleToast::error(
+                        i18n::t!("Failed to load conversation.").to_string(),
+                    );
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });
                 // Close the loading pane
@@ -12946,7 +12993,9 @@ impl Workspace {
             let Some(conversation) = conversation else {
                 log::warn!("Failed to load conversation {conversation_id}");
                 WorkspaceToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
-                    let toast = DismissibleToast::error(i18n::t!("Failed to load conversation.").to_string());
+                    let toast = DismissibleToast::error(
+                        i18n::t!("Failed to load conversation.").to_string(),
+                    );
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });
                 // Close the loading tab
@@ -13184,7 +13233,9 @@ impl Workspace {
             Err(e) => {
                 log::error!("Conversation forking failed. {e}.");
                 WorkspaceToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
-                    let toast = DismissibleToast::error(i18n::t!("Conversation forking failed.").to_string());
+                    let toast = DismissibleToast::error(
+                        i18n::t!("Conversation forking failed.").to_string(),
+                    );
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });
                 return;
@@ -13446,7 +13497,9 @@ impl Workspace {
         };
 
         WorkspaceToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
-            let toast = DismissibleToast::default(i18n::t!("Forked \"{title}\"", title = title).to_string());
+            let toast = DismissibleToast::default(
+                i18n::t!("Forked \"{title}\"", title = title).to_string(),
+            );
             toast_stack.add_ephemeral_toast(toast, window_id, ctx);
         });
     }
@@ -17078,7 +17131,8 @@ impl Workspace {
             let window_id = ctx.window_id();
             WorkspaceToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                 let toast = DismissibleToast::default(
-                    i18n::t!("No terminal pane open. Open a new pane to attach as context.").to_string(),
+                    i18n::t!("No terminal pane open. Open a new pane to attach as context.")
+                        .to_string(),
                 );
                 toast_stack.add_ephemeral_toast(toast, window_id, ctx);
             });
@@ -17097,8 +17151,9 @@ impl Workspace {
             {
                 let window_id = ctx.window_id();
                 WorkspaceToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
-                    let toast =
-                        DismissibleToast::default(i18n::t!("This plan is already in context.").to_string());
+                    let toast = DismissibleToast::default(
+                        i18n::t!("This plan is already in context.").to_string(),
+                    );
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });
                 return;
@@ -17202,8 +17257,9 @@ impl Workspace {
 
         if !ContextFlag::CreateNewSession.is_enabled() {
             self.toast_stack.update(ctx, |toast_stack, ctx| {
-                let toast =
-                    DismissibleToast::error(i18n::t!("Cannot open a new terminal session").to_string());
+                let toast = DismissibleToast::error(
+                    i18n::t!("Cannot open a new terminal session").to_string(),
+                );
                 toast_stack.add_ephemeral_toast(toast, ctx);
             });
             return None;
@@ -17445,7 +17501,8 @@ impl Workspace {
                                     self.toast_stack.update(ctx, |view, ctx| {
                                         view.add_ephemeral_toast(
                                             DismissibleToast::error(
-                                                i18n::t!("This workflow is no longer available.").to_string(),
+                                                i18n::t!("This workflow is no longer available.")
+                                                    .to_string(),
                                             ),
                                             ctx,
                                         );
@@ -17630,7 +17687,8 @@ impl Workspace {
                                             },
                                         ) {
                                             new_toast = DismissibleToast::success(
-                                                i18n::t!("Plan synced to your Warp Drive").to_string(),
+                                                i18n::t!("Plan synced to your Warp Drive")
+                                                    .to_string(),
                                             )
                                             .with_object_id(object_id_clone)
                                             .with_link(
@@ -17656,22 +17714,26 @@ impl Workspace {
                                         || result.operation == ObjectOperation::Update
                                     {
                                         new_toast = new_toast.with_link(
-                                            ToastLink::new(i18n::t!("View").to_string()).with_onclick_action(
-                                                WorkspaceAction::ViewObjectInWarpDrive(
-                                                    WarpDriveItemId::Object(
-                                                        CloudObjectTypeAndId::Workflow(workflow.id),
+                                            ToastLink::new(i18n::t!("View").to_string())
+                                                .with_onclick_action(
+                                                    WorkspaceAction::ViewObjectInWarpDrive(
+                                                        WarpDriveItemId::Object(
+                                                            CloudObjectTypeAndId::Workflow(
+                                                                workflow.id,
+                                                            ),
+                                                        ),
                                                     ),
                                                 ),
-                                            ),
                                         )
                                     }
                                 }
 
                                 if result.operation == ObjectOperation::Trash {
                                     new_toast = new_toast.with_link(
-                                        ToastLink::new(i18n::t!("Undo").to_string()).with_onclick_action(
-                                            WorkspaceAction::UndoTrash(cloud_object_type_and_id),
-                                        ),
+                                        ToastLink::new(i18n::t!("Undo").to_string())
+                                            .with_onclick_action(WorkspaceAction::UndoTrash(
+                                                cloud_object_type_and_id,
+                                            )),
                                     )
                                 }
 
@@ -19133,7 +19195,8 @@ impl Workspace {
         let body = appearance
             .ui_builder()
             .wrappable_text(
-                i18n::t!("Ask Warp AI to explain errors, suggest commands or write scripts.").to_string(),
+                i18n::t!("Ask Warp AI to explain errors, suggest commands or write scripts.")
+                    .to_string(),
                 true,
             )
             .with_style(UiComponentStyles {
@@ -21389,7 +21452,10 @@ impl Workspace {
             banner_type: WorkspaceBanner::Reauth,
             severity: BannerSeverity::Warning,
             heading: Some(i18n::t!("Your login has expired.").into()),
-            description: i18n::t!("Please sign in again to restore access to cloud-based features.").to_string(),
+            description: i18n::t!(
+                "Please sign in again to restore access to cloud-based features."
+            )
+            .to_string(),
             secondary_button: None,
             button: Some(WorkspaceBannerButtonDetails {
                 text: i18n::t!("Sign in").to_string(),
@@ -21437,7 +21503,8 @@ impl Workspace {
                         if is_incoming_version_past_current(new_version.soft_cutoff.as_deref()) {
                             VERSION_DEPRECATION_WITHOUT_PERMISSIONS_BANNER_TEXT.to_owned()
                         } else {
-                            i18n::t!("Warp was unable to launch the new installed version.").to_string()
+                            i18n::t!("Warp was unable to launch the new installed version.")
+                                .to_string()
                         };
 
                     Some(WorkspaceBannerFields {
@@ -24092,7 +24159,9 @@ impl TypedActionView for Workspace {
                     status.is_syncing_all_inputs(window_id)
                 });
                 let verb = if enabled { "enabled" } else { "disabled" };
-                let mut message = i18n::t!("You {verb} synchronized inputs in all tabs.", verb = verb).to_string();
+                let mut message =
+                    i18n::t!("You {verb} synchronized inputs in all tabs.", verb = verb)
+                        .to_string();
                 if let Some(keystroke) = keybinding_name_to_keystroke(
                     "workspace:toggle_sync_all_terminal_inputs_in_all_tabs",
                     ctx,
@@ -24125,7 +24194,9 @@ impl TypedActionView for Workspace {
                     status.should_sync_this_pane_group(current_pane_group_id, window_id)
                 });
                 let verb = if enabled { "enabled" } else { "disabled" };
-                let mut message = i18n::t!("You {verb} synchronized inputs in this tab.", verb = verb).to_string();
+                let mut message =
+                    i18n::t!("You {verb} synchronized inputs in this tab.", verb = verb)
+                        .to_string();
                 if let Some(keystroke) = keybinding_name_to_keystroke(
                     "workspace:toggle_sync_terminal_inputs_in_tab",
                     ctx,
@@ -24149,8 +24220,9 @@ impl TypedActionView for Workspace {
                 self.process_updated_sync_state(ctx);
 
                 self.toast_stack.update(ctx, |view, ctx| {
-                    let new_toast =
-                        DismissibleToast::success(i18n::t!("Disabled all synchronized inputs.").to_string());
+                    let new_toast = DismissibleToast::success(
+                        i18n::t!("Disabled all synchronized inputs.").to_string(),
+                    );
                     view.add_ephemeral_toast(new_toast, ctx);
                 });
                 send_telemetry_from_ctx!(TelemetryEvent::DisableInputSync, ctx);
@@ -24873,7 +24945,9 @@ impl TypedActionView for Workspace {
 
                 self.toast_stack.update(ctx, |view, ctx| {
                     view.add_ephemeral_toast(
-                        DismissibleToast::default(i18n::t!("Sampling process for 3 seconds...").to_string()),
+                        DismissibleToast::default(
+                            i18n::t!("Sampling process for 3 seconds...").to_string(),
+                        ),
                         ctx,
                     );
                 });
@@ -28127,7 +28201,9 @@ fn set_opencode_warp_plugin(new_entry: &str) -> String {
 
     match serde_json::to_string_pretty(&config) {
         Ok(json_str) => match std::fs::write(&config_path, format!("{json_str}\n")) {
-            Ok(()) => i18n::t!("OpenCode plugin set to: {new_entry}", new_entry = new_entry).to_string(),
+            Ok(()) => {
+                i18n::t!("OpenCode plugin set to: {new_entry}", new_entry = new_entry).to_string()
+            }
             Err(e) => i18n::t!("Failed to write opencode.json: {e}", e = e).to_string(),
         },
         Err(e) => i18n::t!("Failed to serialize opencode.json: {e}", e = e).to_string(),

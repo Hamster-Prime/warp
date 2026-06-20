@@ -367,7 +367,10 @@ impl MessageProvider<Option<&AcceptHistoryItem>> for InlineHistoryMessageProduce
                 vec![enter, MessageItem::text(" to send")]
             }
             Some(AcceptHistoryItem::Conversation { title, .. }) => {
-                vec![enter, MessageItem::text(i18n::t!(" to open '{title}'", title = title).to_string())]
+                vec![
+                    enter,
+                    MessageItem::text(i18n::t!(" to open '{title}'", title = title).to_string()),
+                ]
             }
             None => {
                 vec![MessageItem::text("")]

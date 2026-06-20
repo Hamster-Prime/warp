@@ -1046,7 +1046,13 @@ impl CodeView {
             ctx
         );
         ctx.dispatch_typed_action(&WorkspaceAction::InsertInInput {
-            content: i18n::t!("{file_path}:{start_line}-{end_line} ", file_path = file_path, start_line = start_line, end_line = end_line).to_string(),
+            content: i18n::t!(
+                "{file_path}:{start_line}-{end_line} ",
+                file_path = file_path,
+                start_line = start_line,
+                end_line = end_line
+            )
+            .to_string(),
             replace_buffer: false,
             ensure_agent_mode: true,
         });
@@ -2022,9 +2028,12 @@ impl CodeView {
         };
 
         let mut items = vec![
-            MenuItemFields::new_with_label("Close saved", &i18n::t!("{modifier_keys} U", modifier_keys = modifier_keys).to_string())
-                .with_on_select_action(CodeViewAction::CloseSaved)
-                .into_item(),
+            MenuItemFields::new_with_label(
+                "Close saved",
+                &i18n::t!("{modifier_keys} U", modifier_keys = modifier_keys).to_string(),
+            )
+            .with_on_select_action(CodeViewAction::CloseSaved)
+            .into_item(),
             MenuItemFields::toggle_pane_action(is_maximized)
                 .with_on_select_action(CodeViewAction::ToggleMaximized)
                 .into_item(),

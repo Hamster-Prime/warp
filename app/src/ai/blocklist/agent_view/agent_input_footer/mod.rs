@@ -438,17 +438,20 @@ impl AgentInputFooter {
         });
 
         let plugin_instructions_button = ctx.add_typed_action_view(|_ctx| {
-            ActionButton::new(i18n::t!("Notifications setup instructions"), InstallPluginButtonTheme)
-                .with_icon(Icon::Info)
-                .with_tooltip(i18n::t!("View instructions to install the Warp plugin").to_string())
-                .with_size(cli_button_size)
-                .with_tooltip_alignment(TooltipAlignment::Left)
-                .with_adjoined_side(AdjoinedSide::Right)
-                .on_click(|ctx| {
-                    ctx.dispatch_typed_action(
-                        AgentInputFooterAction::OpenPluginInstallInstructionsPane,
-                    );
-                })
+            ActionButton::new(
+                i18n::t!("Notifications setup instructions"),
+                InstallPluginButtonTheme,
+            )
+            .with_icon(Icon::Info)
+            .with_tooltip(i18n::t!("View instructions to install the Warp plugin").to_string())
+            .with_size(cli_button_size)
+            .with_tooltip_alignment(TooltipAlignment::Left)
+            .with_adjoined_side(AdjoinedSide::Right)
+            .on_click(|ctx| {
+                ctx.dispatch_typed_action(
+                    AgentInputFooterAction::OpenPluginInstallInstructionsPane,
+                );
+            })
         });
 
         let update_plugin_button = ctx.add_typed_action_view(|_ctx| {
@@ -464,17 +467,18 @@ impl AgentInputFooter {
         });
 
         let update_instructions_button = ctx.add_typed_action_view(|_ctx| {
-            ActionButton::new(i18n::t!("Plugin update instructions"), InstallPluginButtonTheme)
-                .with_icon(Icon::Info)
-                .with_tooltip(i18n::t!("View instructions to update the Warp plugin").to_string())
-                .with_size(cli_button_size)
-                .with_tooltip_alignment(TooltipAlignment::Left)
-                .with_adjoined_side(AdjoinedSide::Right)
-                .on_click(|ctx| {
-                    ctx.dispatch_typed_action(
-                        AgentInputFooterAction::OpenPluginUpdateInstructionsPane,
-                    );
-                })
+            ActionButton::new(
+                i18n::t!("Plugin update instructions"),
+                InstallPluginButtonTheme,
+            )
+            .with_icon(Icon::Info)
+            .with_tooltip(i18n::t!("View instructions to update the Warp plugin").to_string())
+            .with_size(cli_button_size)
+            .with_tooltip_alignment(TooltipAlignment::Left)
+            .with_adjoined_side(AdjoinedSide::Right)
+            .on_click(|ctx| {
+                ctx.dispatch_typed_action(AgentInputFooterAction::OpenPluginUpdateInstructionsPane);
+            })
         });
 
         let dismiss_plugin_chip_button = ctx.add_typed_action_view(|_ctx| {
@@ -1345,8 +1349,14 @@ impl AgentInputFooter {
                                 "Failed plugin operation for {agent:?}: {err}\n{log}",
                                 log = err.log,
                             );
-                            let mut toast =
-                                DismissibleToast::error(i18n::t!("{error_label}: {err}", error_label = error_label, err = err).to_string());
+                            let mut toast = DismissibleToast::error(
+                                i18n::t!(
+                                    "{error_label}: {err}",
+                                    error_label = error_label,
+                                    err = err
+                                )
+                                .to_string(),
+                            );
                             if let Some(log_path) = log_path {
                                 toast = toast.with_link(
                                     ToastLink::new(i18n::t!("See logs for details").to_string())
@@ -2016,7 +2026,11 @@ impl AgentInputFooter {
             let usage = conversation.context_window_usage();
             let icon = icon_for_context_window_usage(usage);
             let remaining_pct = ((1.0 - usage) * 100.0).round() as i32;
-            let tooltip = i18n::t!("{remaining_pct}% context remaining", remaining_pct = remaining_pct).to_string();
+            let tooltip = i18n::t!(
+                "{remaining_pct}% context remaining",
+                remaining_pct = remaining_pct
+            )
+            .to_string();
 
             self.context_window_button.update(ctx, |button, ctx| {
                 button.set_icon(Some(icon), ctx);

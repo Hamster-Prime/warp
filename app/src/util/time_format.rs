@@ -112,9 +112,19 @@ pub fn human_readable_approx_duration(duration: Duration, sentence_case: bool) -
 fn truncated_quantity_with_unit(num: f64, unit: &str) -> String {
     let truncated_int = num as i32;
     if truncated_int == 1 {
-        i18n::t!("{truncated_int} {unit} ago", truncated_int = truncated_int, unit = unit).to_string()
+        i18n::t!(
+            "{truncated_int} {unit} ago",
+            truncated_int = truncated_int,
+            unit = unit
+        )
+        .to_string()
     } else {
-        i18n::t!("{truncated_int} {unit}s ago", truncated_int = truncated_int, unit = unit).to_string()
+        i18n::t!(
+            "{truncated_int} {unit}s ago",
+            truncated_int = truncated_int,
+            unit = unit
+        )
+        .to_string()
     }
 }
 

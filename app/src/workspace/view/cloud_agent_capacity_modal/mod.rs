@@ -194,7 +194,8 @@ impl CloudAgentCapacityModal {
                     "The Business plan starts at ${price}/month and includes everything on your current plan plus:"
                 )
             } else {
-                i18n::t!("The Business plan includes everything on your current plan plus:").to_string()
+                i18n::t!("The Business plan includes everything on your current plan plus:")
+                    .to_string()
             };
 
             let pricing = FormattedTextElement::new(

@@ -826,13 +826,21 @@ impl NotificationsTrigger {
                 };
 
                 (
-                    i18n::t!(" {status} after {duration_seconds}s", status = status, duration_seconds = duration_seconds).to_string(),
+                    i18n::t!(
+                        " {status} after {duration_seconds}s",
+                        status = status,
+                        duration_seconds = duration_seconds
+                    )
+                    .to_string(),
                     i18n::t!("Latest output: ").to_string(),
                 )
             }
             AgentTaskCompleted(command_succeeded) => {
                 if *command_succeeded {
-                    (" finished".to_string(), i18n::t!("Latest output: ").to_string())
+                    (
+                        " finished".to_string(),
+                        i18n::t!("Latest output: ").to_string(),
+                    )
                 } else {
                     (" failed".to_string(), i18n::t!("Error: ").to_string())
                 }
@@ -7528,9 +7536,11 @@ impl TerminalView {
                 .as_ref(app)
                 .get_pending_action(app)
                 .map(|action| match &action.action {
-                    AIAgentActionType::RequestCommandOutput { command, .. } => {
-                        i18n::t!("Oz needs your permission to run `{command}`", command = command).to_string()
-                    }
+                    AIAgentActionType::RequestCommandOutput { command, .. } => i18n::t!(
+                        "Oz needs your permission to run `{command}`",
+                        command = command
+                    )
+                    .to_string(),
                     AIAgentActionType::ReadFiles(..) => {
                         i18n::t!("Oz needs your permission to read files").to_string()
                     }
@@ -9684,7 +9694,11 @@ impl TerminalView {
                 keystroke.displayed(),
                 lowercase_title
             ),
-            None => i18n::t!("You can Warpify this {lowercase_title} for more Warp features.", lowercase_title = lowercase_title).to_string(),
+            None => i18n::t!(
+                "You can Warpify this {lowercase_title} for more Warp features.",
+                lowercase_title = lowercase_title
+            )
+            .to_string(),
         };
 
         model
@@ -14187,11 +14201,15 @@ impl TerminalView {
 
             if is_repo {
                 (
-                    i18n::t!("Create environment using the current working dir as repo").to_string(),
+                    i18n::t!("Create environment using the current working dir as repo")
+                        .to_string(),
                     true,
                 )
             } else {
-                (i18n::t!("Create environment without any repos").to_string(), false)
+                (
+                    i18n::t!("Create environment without any repos").to_string(),
+                    false,
+                )
             }
         };
 
@@ -14981,7 +14999,11 @@ impl TerminalView {
             });
 
             let a11y_content = AccessibilityContent::new(
-                i18n::t!("Suggested corrected command: {command}", command = correction.command).to_string(),
+                i18n::t!(
+                    "Suggested corrected command: {command}",
+                    command = correction.command
+                )
+                .to_string(),
                 "Press right arrow to insert or keep editing to ignore",
                 WarpA11yRole::HelpRole,
             );
@@ -17429,11 +17451,17 @@ impl TerminalView {
             };
             items.push(MenuItem::Separator);
             items.push(
-                MenuItemFields::new(i18n::t!("{inverse_action} input hint text", inverse_action = inverse_action).to_string())
-                    .with_on_select_action(TerminalAction::InputContextMenuItem(
-                        InputContextMenuAction::ToggleInputHintText,
-                    ))
-                    .into_item(),
+                MenuItemFields::new(
+                    i18n::t!(
+                        "{inverse_action} input hint text",
+                        inverse_action = inverse_action
+                    )
+                    .to_string(),
+                )
+                .with_on_select_action(TerminalAction::InputContextMenuItem(
+                    InputContextMenuAction::ToggleInputHintText,
+                ))
+                .into_item(),
             );
         }
         // Section 5: All Pane related
@@ -20216,7 +20244,10 @@ impl TerminalView {
             }
             AIBlockEvent::InsertForkSlashCommand => {
                 self.input.update(ctx, |input, ctx| {
-                    input.replace_buffer_content(&i18n::t!("{name} ", name = commands::FORK.name).to_string(), ctx);
+                    input.replace_buffer_content(
+                        &i18n::t!("{name} ", name = commands::FORK.name).to_string(),
+                        ctx,
+                    );
                     ctx.focus_self();
                 });
             }
@@ -21082,13 +21113,19 @@ impl TerminalView {
 
         let Some(ambient_agent_view_model) = self.ambient_agent_view_model.clone() else {
             self.restore_followup_prompt_after_failed_submission(&prompt, ctx);
-            self.show_error_toast(i18n::t!("Couldn't continue this cloud task.").to_string(), ctx);
+            self.show_error_toast(
+                i18n::t!("Couldn't continue this cloud task.").to_string(),
+                ctx,
+            );
             return true;
         };
 
         if ambient_agent_view_model.as_ref(ctx).task_id() != Some(task_id) {
             self.restore_followup_prompt_after_failed_submission(&prompt, ctx);
-            self.show_error_toast(i18n::t!("Couldn't continue this cloud task.").to_string(), ctx);
+            self.show_error_toast(
+                i18n::t!("Couldn't continue this cloud task.").to_string(),
+                ctx,
+            );
             return true;
         }
 
@@ -21169,7 +21206,10 @@ impl TerminalView {
                 {
                     return;
                 }
-                self.show_error_toast(i18n::t!("Couldn't continue this cloud task.").to_string(), ctx);
+                self.show_error_toast(
+                    i18n::t!("Couldn't continue this cloud task.").to_string(),
+                    ctx,
+                );
             }
             InputEvent::CancelSharedSessionConversation {
                 server_conversation_token,
@@ -22996,10 +23036,18 @@ impl TerminalView {
         };
 
         let start = block.start_ts().map_or_else(String::new, |b| {
-            i18n::t!("Started at: {arg0}", arg0 = b.format("%a %b %-d at %-I:%M:%S %p")).to_string()
+            i18n::t!(
+                "Started at: {arg0}",
+                arg0 = b.format("%a %b %-d at %-I:%M:%S %p")
+            )
+            .to_string()
         });
         let end = block.completed_ts().map_or_else(String::new, |b| {
-            i18n::t!("\nCompleted at: {arg0}", arg0 = b.format("%a %b %-d at %-I:%M:%S %p")).to_string()
+            i18n::t!(
+                "\nCompleted at: {arg0}",
+                arg0 = b.format("%a %b %-d at %-I:%M:%S %p")
+            )
+            .to_string()
         });
         format!("{start}{end}")
     }
@@ -25339,8 +25387,9 @@ impl TerminalView {
         let (shell_path_string, shell_type) = shell_session_info;
         if shell_type == ShellType::PowerShell {
             ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
-                let toast =
-                    DismissibleToast::error(i18n::t!("PowerShell subshells not supported").to_string());
+                let toast = DismissibleToast::error(
+                    i18n::t!("PowerShell subshells not supported").to_string(),
+                );
                 toast_stack.add_ephemeral_toast(toast, window_id, ctx);
             });
             return;
@@ -25761,8 +25810,11 @@ impl TypedActionView for TerminalView {
                     .tail()
                     .and_then(|index| self.selected_block_accessibility_content(index))
                 {
-                    let num_selected_text =
-                        i18n::t!("Selected {num_non_hidden_selected_blocks} blocks.", num_non_hidden_selected_blocks = self.num_non_hidden_selected_blocks()).to_string();
+                    let num_selected_text = i18n::t!(
+                        "Selected {num_non_hidden_selected_blocks} blocks.",
+                        num_non_hidden_selected_blocks = self.num_non_hidden_selected_blocks()
+                    )
+                    .to_string();
                     content.value = format!("{}\n{}", num_selected_text, content.value);
                     Custom(content)
                 } else {
@@ -25823,7 +25875,12 @@ impl TypedActionView for TerminalView {
                     },
                     ctx,
                 );
-                let text = i18n::t!("Copied {len} blocks.\n{arg1}", len = blocks.len(), arg1 = blocks.join("\n")).to_string();
+                let text = i18n::t!(
+                    "Copied {len} blocks.\n{arg1}",
+                    len = blocks.len(),
+                    arg1 = blocks.join("\n")
+                )
+                .to_string();
                 Custom(AccessibilityContent::new_without_help(
                     text,
                     WarpA11yRole::TextRole,
@@ -25849,7 +25906,11 @@ impl TypedActionView for TerminalView {
                 ))
             }
             OpenBlockFilterEditor(block_index) => Custom(AccessibilityContent::new_without_help(
-                i18n::t!("Open block filter editor for block {block_index}", block_index = block_index).to_string(),
+                i18n::t!(
+                    "Open block filter editor for block {block_index}",
+                    block_index = block_index
+                )
+                .to_string(),
                 WarpA11yRole::TextRole,
             )),
             ShowInitializationBlock => Custom(AccessibilityContent::new_without_help(
@@ -27010,7 +27071,8 @@ impl TypedActionView for TerminalView {
                     ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                         toast_stack.add_ephemeral_toast(
                             DismissibleToast::error(
-                                i18n::t!("Editing skills is not supported in this build").to_string(),
+                                i18n::t!("Editing skills is not supported in this build")
+                                    .to_string(),
                             ),
                             window_id,
                             ctx,
@@ -28028,7 +28090,12 @@ impl View for TerminalView {
                 let input_text = self.input.as_ref(ctx).buffer_text(ctx);
                 last_five_blocks_content
                     .into_iter()
-                    .chain([i18n::t!("{prompt_text} {input_text}", prompt_text = prompt_text, input_text = input_text).to_string()])
+                    .chain([i18n::t!(
+                        "{prompt_text} {input_text}",
+                        prompt_text = prompt_text,
+                        input_text = input_text
+                    )
+                    .to_string()])
                     .join("\n")
             } else {
                 last_five_blocks_content.join("\n")

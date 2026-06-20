@@ -31,7 +31,11 @@ fn main() -> Result<()> {
             Ok(c) => c,
             Err(_) => continue,
         };
-        if cfg.exclude_file_contains.iter().any(|m| content.contains(m.as_str())) {
+        if cfg
+            .exclude_file_contains
+            .iter()
+            .any(|m| content.contains(m.as_str()))
+        {
             continue;
         }
         for k in collect_t_keys(&content) {
@@ -49,7 +53,12 @@ fn main() -> Result<()> {
     }
 
     let missing: BTreeSet<&String> = code_keys.difference(&yaml_keys).collect();
-    println!("code: {}, yaml: {}, missing: {}", code_keys.len(), yaml_keys.len(), missing.len());
+    println!(
+        "code: {}, yaml: {}, missing: {}",
+        code_keys.len(),
+        yaml_keys.len(),
+        missing.len()
+    );
 
     // Build YAML using serde_yaml to ensure proper escaping of multi-line/special keys.
     use std::collections::BTreeMap;

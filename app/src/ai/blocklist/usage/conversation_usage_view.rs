@@ -362,7 +362,11 @@ impl ConversationUsageView {
             {
                 "Models".to_string()
             } else {
-                i18n::t!("Models ({arg0})", arg0 = token_usage_category_display_name(&category)).to_string()
+                i18n::t!(
+                    "Models ({arg0})",
+                    arg0 = token_usage_category_display_name(&category)
+                )
+                .to_string()
             };
 
             // For FULL_TERMINAL_USE_CATEGORY, add an info icon with tooltip
@@ -490,7 +494,8 @@ impl ConversationUsageView {
             .with_cross_axis_alignment(CrossAxisAlignment::Center)
             .with_child(
                 Text::new(
-                    i18n::t!("+ {lines_added}", lines_added = self.usage_info.lines_added).to_string(),
+                    i18n::t!("+ {lines_added}", lines_added = self.usage_info.lines_added)
+                        .to_string(),
                     appearance.ui_font_family(),
                     font_size,
                 )
@@ -512,7 +517,11 @@ impl ConversationUsageView {
             )
             .with_child(
                 Text::new(
-                    i18n::t!("- {lines_removed}", lines_removed = self.usage_info.lines_removed).to_string(),
+                    i18n::t!(
+                        "- {lines_removed}",
+                        lines_removed = self.usage_info.lines_removed
+                    )
+                    .to_string(),
                     appearance.ui_font_family(),
                     font_size,
                 )
@@ -907,7 +916,13 @@ fn render_section_header(header_label: String, appearance: &Appearance) -> Box<d
 /// Format a value and a label into one usage string,
 /// making the label plural if the value is not 1.
 fn format_value_text(value: i32, label: &str) -> String {
-    i18n::t!("{value} {label}{arg2}", value = value, label = label, arg2 = if value == 1 { "" } else { "s" }).to_string()
+    i18n::t!(
+        "{value} {label}{arg2}",
+        value = value,
+        label = label,
+        arg2 = if value == 1 { "" } else { "s" }
+    )
+    .to_string()
 }
 
 /// Helper to build a text element with consistent styling for labels.

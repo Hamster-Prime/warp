@@ -157,7 +157,12 @@ impl ImportModal {
             Some(folder) => {
                 let breadcrumbs = folder.breadcrumbs(app);
                 (
-                    i18n::t!("{breadcrumbs} / {display_name}", breadcrumbs = breadcrumbs, display_name = folder.display_name()).to_string(),
+                    i18n::t!(
+                        "{breadcrumbs} / {display_name}",
+                        breadcrumbs = breadcrumbs,
+                        display_name = folder.display_name()
+                    )
+                    .to_string(),
                     breadcrumbs.chars().count() + 3,
                 )
             }

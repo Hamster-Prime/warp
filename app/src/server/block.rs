@@ -216,10 +216,18 @@ impl Block {
         } else {
             let mut stylized_prompt = String::new();
             if let Some(conda_env) = block.conda_env() {
-                stylized_prompt.push_str(i18n::t!("({conda_env}) ", conda_env = conda_env).to_string().as_str());
+                stylized_prompt.push_str(
+                    i18n::t!("({conda_env}) ", conda_env = conda_env)
+                        .to_string()
+                        .as_str(),
+                );
             }
             if let Some(virtual_env) = block.virtual_env_short_name() {
-                stylized_prompt.push_str(i18n::t!("({virtual_env}) ", virtual_env = virtual_env).to_string().as_str());
+                stylized_prompt.push_str(
+                    i18n::t!("({virtual_env}) ", virtual_env = virtual_env)
+                        .to_string()
+                        .as_str(),
+                );
             }
             if let Some(pwd) = block.server_pwd().to_owned() {
                 stylized_prompt.push_str(i18n::t!("{pwd} ", pwd = pwd).to_string().as_str());

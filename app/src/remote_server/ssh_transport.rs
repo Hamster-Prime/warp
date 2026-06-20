@@ -90,7 +90,12 @@ impl SshTransport {
         let binary = remote_server::setup::remote_server_binary();
         let identity_key = self.auth_context.remote_server_identity_key();
         let quoted_identity_key = shell_words::quote(&identity_key);
-        i18n::t!("{binary} remote-server-proxy --identity-key {quoted_identity_key}", binary = binary, quoted_identity_key = quoted_identity_key).to_string()
+        i18n::t!(
+            "{binary} remote-server-proxy --identity-key {quoted_identity_key}",
+            binary = binary,
+            quoted_identity_key = quoted_identity_key
+        )
+        .to_string()
     }
 }
 
@@ -192,7 +197,11 @@ impl RemoteTransport for SshTransport {
             // exists, something was installed there before, so any mismatch
             // with the client's expected binary path should be auto-updated
             // rather than surfaced as a first-time install prompt.
-            let cmd = i18n::t!("test -d {arg0}", arg0 = remote_server::setup::remote_server_dir()).to_string();
+            let cmd = i18n::t!(
+                "test -d {arg0}",
+                arg0 = remote_server::setup::remote_server_dir()
+            )
+            .to_string();
             let output = remote_server::ssh::run_ssh_command(
                 &socket_path,
                 &cmd,

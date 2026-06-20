@@ -221,7 +221,11 @@ fn build_team_total_card(
     .finish();
 
     let credits_text = Text::new_inline(
-        i18n::t!("({arg0} credits)", arg0 = format_credits(summary.total_credits)).to_string(),
+        i18n::t!(
+            "({arg0} credits)",
+            arg0 = format_credits(summary.total_credits)
+        )
+        .to_string(),
         appearance.ui_font_family(),
         13.,
     )

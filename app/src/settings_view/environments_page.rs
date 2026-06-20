@@ -200,7 +200,12 @@ impl EnvironmentDisplayData {
             None => i18n::t!("Last used: never").to_string(),
         };
         match last_edited_part {
-            Some(edited) => i18n::t!("{edited} · {last_used_part}", edited = edited, last_used_part = last_used_part).to_string(),
+            Some(edited) => i18n::t!(
+                "{edited} · {last_used_part}",
+                edited = edited,
+                last_used_part = last_used_part
+            )
+            .to_string(),
             None => last_used_part,
         }
     }
@@ -633,7 +638,10 @@ impl EnvironmentsPageView {
 
             if should_handle {
                 self.pending_save_env_id = None;
-                self.show_success_toast(i18n::t!("Successfully updated environment").to_string(), ctx);
+                self.show_success_toast(
+                    i18n::t!("Successfully updated environment").to_string(),
+                    ctx,
+                );
 
                 // No need to force a global cloud-object refresh here: on update success the
                 // sync pipeline updates this environment's `revision_ts` (used for "Last edited")
@@ -691,9 +699,15 @@ impl EnvironmentsPageView {
             self.pending_share_server_id = None;
 
             if matches!(result.success_type, OperationSuccessType::Success) {
-                self.show_success_toast(i18n::t!("Successfully shared environment").to_string(), ctx);
+                self.show_success_toast(
+                    i18n::t!("Successfully shared environment").to_string(),
+                    ctx,
+                );
             } else {
-                self.show_error_toast(i18n::t!("Failed to share environment with team").to_string(), ctx);
+                self.show_error_toast(
+                    i18n::t!("Failed to share environment with team").to_string(),
+                    ctx,
+                );
             }
 
             ctx.notify();
@@ -959,7 +973,8 @@ impl TypedActionView for EnvironmentsPageView {
             EnvironmentsPageAction::ShareToTeam(env_id) => {
                 let Some(team_uid) = UserWorkspaces::as_ref(ctx).current_team_uid() else {
                     self.show_error_toast(
-                        i18n::t!("Unable to share environment: you are not currently on a team.").to_string(),
+                        i18n::t!("Unable to share environment: you are not currently on a team.")
+                            .to_string(),
                         ctx,
                     );
                     return;
@@ -967,7 +982,8 @@ impl TypedActionView for EnvironmentsPageView {
 
                 let SyncId::ServerId(server_id) = *env_id else {
                     self.show_error_toast(
-                        i18n::t!("Unable to share environment: environment is not yet synced.").to_string(),
+                        i18n::t!("Unable to share environment: environment is not yet synced.")
+                            .to_string(),
                         ctx,
                     );
                     return;
@@ -1756,13 +1772,15 @@ impl EnvironmentsPageWidget {
             // since it returns a Box<dyn Element> that can only be consumed once
             let env_id_str_copy = env_id_str.clone();
             let env_id_with_copy = render_copyable_text_field(
-                CopyableTextFieldConfig::new(i18n::t!("Env ID: {clone}", clone = env_id_str.clone()).to_string())
-                    .with_font_size(appearance.ui_font_size() * 0.9)
-                    .with_text_color(blended_colors::text_sub(theme, theme.surface_1()))
-                    .with_icon_size(12.)
-                    .with_mouse_state(copy_button_mouse_state.clone())
-                    .with_last_copied_at(last_copied_at.as_ref())
-                    .with_copy_button_placement(CopyButtonPlacement::NextToText),
+                CopyableTextFieldConfig::new(
+                    i18n::t!("Env ID: {clone}", clone = env_id_str.clone()).to_string(),
+                )
+                .with_font_size(appearance.ui_font_size() * 0.9)
+                .with_text_color(blended_colors::text_sub(theme, theme.surface_1()))
+                .with_icon_size(12.)
+                .with_mouse_state(copy_button_mouse_state.clone())
+                .with_last_copied_at(last_copied_at.as_ref())
+                .with_copy_button_placement(CopyButtonPlacement::NextToText),
                 move |ctx| {
                     ctx.dispatch_typed_action(EnvironmentsPageAction::CopyEnvId(
                         env_id,
@@ -1811,7 +1829,11 @@ impl EnvironmentsPageWidget {
                 }
             }
 
-            let mut details_parts = vec![i18n::t!("Image: {env_docker_image}", env_docker_image = env_docker_image).to_string()];
+            let mut details_parts = vec![i18n::t!(
+                "Image: {env_docker_image}",
+                env_docker_image = env_docker_image
+            )
+            .to_string()];
 
             if !env_github_repos.is_empty() {
                 let repos_text = env_github_repos
@@ -1819,12 +1841,19 @@ impl EnvironmentsPageWidget {
                     .map(|(owner, repo)| format!("{}/{}", owner, repo))
                     .collect::<Vec<_>>()
                     .join(", ");
-                details_parts.push(i18n::t!("Repos: {repos_text}", repos_text = repos_text).to_string());
+                details_parts
+                    .push(i18n::t!("Repos: {repos_text}", repos_text = repos_text).to_string());
             }
 
             if !env_setup_commands.is_empty() {
                 let commands_text = env_setup_commands.join(", ");
-                details_parts.push(i18n::t!("Setup commands: {commands_text}", commands_text = commands_text).to_string());
+                details_parts.push(
+                    i18n::t!(
+                        "Setup commands: {commands_text}",
+                        commands_text = commands_text
+                    )
+                    .to_string(),
+                );
             }
 
             // Create details section with Env ID on first line and other details below

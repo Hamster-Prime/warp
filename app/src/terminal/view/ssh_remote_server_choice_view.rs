@@ -120,11 +120,12 @@ impl SshRemoteServerChoiceView {
         // Match the Figma design: a plain title row, no icon / chevron /
         // action buttons. `HeaderConfig` without an `interaction_mode` set
         // renders exactly that.
-        HeaderConfig::new(i18n::t!("Choose your experience for this remote session:").to_string(), app)
-            .with_corner_radius_override(CornerRadius::with_top(Radius::Pixels(
-                PROMPT_BORDER_RADIUS,
-            )))
-            .render_header(app, None)
+        HeaderConfig::new(
+            i18n::t!("Choose your experience for this remote session:").to_string(),
+            app,
+        )
+        .with_corner_radius_override(CornerRadius::with_top(Radius::Pixels(PROMPT_BORDER_RADIUS)))
+        .render_header(app, None)
     }
 
     fn render_buttons(&self) -> Box<dyn Element> {

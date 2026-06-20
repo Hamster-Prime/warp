@@ -112,9 +112,7 @@ impl CloudObjectToastMessage {
     ) -> Option<String> {
         let count_objects_message = match num_objects {
             1 => "1 object".to_string(),
-            n => {
-                i18n::t!("{n} objects", n = n).to_string()
-            }
+            n => i18n::t!("{n} objects", n = n).to_string(),
         };
         match (operation, success_type) {
             // We should only show deletion failure toasts for user-initiated deletions.
@@ -123,7 +121,13 @@ impl CloudObjectToastMessage {
                     initiated_by: InitiatedBy::User,
                 },
                 OperationSuccessType::Success,
-            ) => Some(i18n::t!("{count_objects_message} deleted forever", count_objects_message = count_objects_message).to_string()),
+            ) => Some(
+                i18n::t!(
+                    "{count_objects_message} deleted forever",
+                    count_objects_message = count_objects_message
+                )
+                .to_string(),
+            ),
             (ObjectOperation::EmptyTrash, OperationSuccessType::Success) => Some(format!(
                 "Trash emptied: {count_objects_message} deleted forever"
             )),

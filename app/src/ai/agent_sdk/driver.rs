@@ -1156,7 +1156,12 @@ impl AgentDriver {
                         .get_server_error_message(*uuid)
                         .map(|message| i18n::t!(": {message}", message = message).to_string())
                         .unwrap_or_default();
-                    let detail = i18n::t!("'{name}' failed to start{error}", name = name, error = error).to_string();
+                    let detail = i18n::t!(
+                        "'{name}' failed to start{error}",
+                        name = name,
+                        error = error
+                    )
+                    .to_string();
                     log::warn!("MCP server {detail}");
                     if let Ok(mut failed_servers) = failed_for_subscription.lock() {
                         failed_servers.push(detail);
@@ -1496,7 +1501,17 @@ impl AgentDriver {
                             .get_server_error_message(*uuid)
                             .map(|message| format!(", error={message}"))
                             .unwrap_or_default();
-                        (*uuid, i18n::t!("{server_name} ({uuid}): {state}{error}", server_name = server_name, uuid = uuid, state = state, error = error).to_string())
+                        (
+                            *uuid,
+                            i18n::t!(
+                                "{server_name} ({uuid}): {state}{error}",
+                                server_name = server_name,
+                                uuid = uuid,
+                                state = state,
+                                error = error
+                            )
+                            .to_string(),
+                        )
                     })
                     .collect::<HashMap<_, _>>(),
             ))
@@ -1724,10 +1739,17 @@ impl AgentDriver {
                                 Some(IndexedRepoState::Pending(_)) => Some(format!(
                                     "Repository indexing is still pending: {repo_id_path}"
                                 )),
-                                Some(IndexedRepoState::Failed(error)) => {
-                                    Some(i18n::t!("Repository indexing failed: {error}", error = error).to_string())
-                                }
-                                None => Some(i18n::t!("Repository not found: {repo_id_path}", repo_id_path = repo_id_path).to_string()),
+                                Some(IndexedRepoState::Failed(error)) => Some(
+                                    i18n::t!("Repository indexing failed: {error}", error = error)
+                                        .to_string(),
+                                ),
+                                None => Some(
+                                    i18n::t!(
+                                        "Repository not found: {repo_id_path}",
+                                        repo_id_path = repo_id_path
+                                    )
+                                    .to_string(),
+                                ),
                             };
                             Some((repo_path, error))
                         })
@@ -2285,7 +2307,12 @@ impl AgentDriver {
             let detail = if output_text.is_empty() {
                 i18n::t!("exit code {value}", value = exit_code.value()).to_string()
             } else {
-                i18n::t!("exit code {value}: {output_text}", value = exit_code.value(), output_text = output_text).to_string()
+                i18n::t!(
+                    "exit code {value}: {output_text}",
+                    value = exit_code.value(),
+                    output_text = output_text
+                )
+                .to_string()
             };
             safe_error!(
                 safe: (
@@ -2400,7 +2427,8 @@ impl AgentDriver {
                 if required {
                     return Err(Self::required_platform_plugin_error(
                         harness_name,
-                        i18n::t!("Required platform plugin installation failed: {e}", e = e).to_string(),
+                        i18n::t!("Required platform plugin installation failed: {e}", e = e)
+                            .to_string(),
                     ));
                 }
                 log::warn!("Platform plugin installation failed (continuing): {e}");

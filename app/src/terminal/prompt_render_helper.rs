@@ -264,7 +264,9 @@ impl PromptRenderHelper {
                     // flow, so we render the same generic prompt as a normal
                     // SSH session that doesn't have the remote-server extension.
                     RemoteServerSetupState::Failed { .. }
-                    | RemoteServerSetupState::Unsupported { .. } => i18n::t!("Starting shell...").to_string(),
+                    | RemoteServerSetupState::Unsupported { .. } => {
+                        i18n::t!("Starting shell...").to_string()
+                    }
                 };
             }
         }
@@ -272,7 +274,11 @@ impl PromptRenderHelper {
         if !sessions.is_empty() {
             i18n::t!("Starting shell...").to_string()
         } else {
-            i18n::t!("Starting {display_name}...", display_name = model.shell_launch_state().display_name()).to_string()
+            i18n::t!(
+                "Starting {display_name}...",
+                display_name = model.shell_launch_state().display_name()
+            )
+            .to_string()
         }
     }
 

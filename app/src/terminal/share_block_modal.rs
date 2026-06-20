@@ -1059,7 +1059,10 @@ impl ShareBlockModal {
 
             let redact_secrets_description = appearance
                 .ui_builder()
-                .span(i18n::t!("Redact secrets (API keys, passwords, IP addresses, PII etc.)").to_string())
+                .span(
+                    i18n::t!("Redact secrets (API keys, passwords, IP addresses, PII etc.)")
+                        .to_string(),
+                )
                 .build()
                 .with_margin_left(4.)
                 .finish();

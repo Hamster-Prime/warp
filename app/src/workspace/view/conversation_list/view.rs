@@ -991,7 +991,8 @@ impl TypedActionView for ConversationListView {
                     ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                         toast_stack.add_ephemeral_toast(
                             DismissibleToast::error(
-                                i18n::t!("Conversations cannot be deleted while in progress.").to_string(),
+                                i18n::t!("Conversations cannot be deleted while in progress.")
+                                    .to_string(),
                             ),
                             window_id,
                             ctx,

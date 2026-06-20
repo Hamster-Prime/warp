@@ -182,7 +182,13 @@ impl TryFrom<&proto::DiffLine> for DiffLine {
 
     fn try_from(l: &proto::DiffLine) -> Result<Self, Self::Error> {
         let line_type = proto::DiffLineType::try_from(l.line_type)
-            .map_err(|_| i18n::t!("invalid DiffLineType value {line_type}", line_type = l.line_type).to_string())
+            .map_err(|_| {
+                i18n::t!(
+                    "invalid DiffLineType value {line_type}",
+                    line_type = l.line_type
+                )
+                .to_string()
+            })
             .and_then(DiffLineType::try_from)?;
 
         Ok(DiffLine {

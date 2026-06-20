@@ -916,9 +916,15 @@ impl CloudObjectMetadataExt for CloudObjectMetadata {
             .map(|r| format_approx_duration_from_now_utc(r.utc()));
 
         let full_string = match (editor_string, time_ago_string) {
-            (Some(name), Some(time_ago)) if name.is_empty() => i18n::t!("Edited {time_ago}", time_ago = time_ago).to_string(),
-            (Some(name), Some(time_ago)) => i18n::t!("{name} edited {time_ago}", name = name, time_ago = time_ago).to_string(),
-            (None, Some(time_ago)) => i18n::t!("Edited {time_ago}", time_ago = time_ago).to_string(),
+            (Some(name), Some(time_ago)) if name.is_empty() => {
+                i18n::t!("Edited {time_ago}", time_ago = time_ago).to_string()
+            }
+            (Some(name), Some(time_ago)) => {
+                i18n::t!("{name} edited {time_ago}", name = name, time_ago = time_ago).to_string()
+            }
+            (None, Some(time_ago)) => {
+                i18n::t!("Edited {time_ago}", time_ago = time_ago).to_string()
+            }
             (Some(name), None) => i18n::t!("Last edited by {name}", name = name).to_string(),
             _ => return None,
         };
@@ -948,7 +954,11 @@ impl CloudObjectMetadataExt for CloudObjectMetadata {
 
             let full_string = match days_left {
                 0 | 1 => "1 day until permanent deletion".to_string(),
-                _ => i18n::t!("{days_left} days until permanent deletion", days_left = days_left).to_string(),
+                _ => i18n::t!(
+                    "{days_left} days until permanent deletion",
+                    days_left = days_left
+                )
+                .to_string(),
             };
             Some(full_string)
         } else {

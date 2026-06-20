@@ -330,7 +330,13 @@ impl<'a> UnsavedStateSummary<'a> {
             if let QuitScope::EditorTab { ref file_name, .. } = self.scope {
                 info_text_lines.push(format!("Do you want to save the changes you made to {}? Your changes will be discarded if you don't save them.", file_name.clone().unwrap_or("this file".to_string())));
             } else {
-                info_text_lines.push(i18n::t!("You have unsaved file changes{scope_suffix}", scope_suffix = scope_suffix).to_string());
+                info_text_lines.push(
+                    i18n::t!(
+                        "You have unsaved file changes{scope_suffix}",
+                        scope_suffix = scope_suffix
+                    )
+                    .to_string(),
+                );
             }
         }
 
@@ -408,7 +414,10 @@ impl<'a> QuitWarningDialog<'a> {
         }
 
         if let Some(callback) = on_discard_changes {
-            buttons.push(ModalButton::for_app(i18n::t!("Don't Save").to_string(), callback));
+            buttons.push(ModalButton::for_app(
+                i18n::t!("Don't Save").to_string(),
+                callback,
+            ));
         }
 
         if let Some(callback) = on_show_processes {
@@ -423,7 +432,10 @@ impl<'a> QuitWarningDialog<'a> {
         }
 
         if let Some(callback) = on_cancel {
-            buttons.push(ModalButton::for_app(i18n::t!("Cancel").to_string(), callback));
+            buttons.push(ModalButton::for_app(
+                i18n::t!("Cancel").to_string(),
+                callback,
+            ));
         }
 
         let title = match &state.scope {

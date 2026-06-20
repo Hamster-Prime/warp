@@ -513,7 +513,8 @@ impl CommandSearchView {
             } else {
                 (
                     i18n::t!("Result accepted.").to_string(),
-                    i18n::t!("You can edit the command here before pressing Enter to execute it.").to_string(),
+                    i18n::t!("You can edit the command here before pressing Enter to execute it.")
+                        .to_string(),
                 )
             };
             ctx.emit_a11y_content(AccessibilityContent::new(

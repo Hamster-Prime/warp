@@ -373,7 +373,9 @@ fn build_find_command(patterns: &[String], target_path: &str, shell_type: ShellT
     // pattern a quoted `-name` argument instead of shell syntax.
     let pattern_args = patterns
         .iter()
-        .map(|pattern| i18n::t!("-name {arg0}", arg0 = shell_quote_arg(pattern, shell_type)).to_string())
+        .map(|pattern| {
+            i18n::t!("-name {arg0}", arg0 = shell_quote_arg(pattern, shell_type)).to_string()
+        })
         .join(" -o ");
     format!(
         "find {} -type f {pattern_args}",

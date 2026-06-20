@@ -468,7 +468,8 @@ pub fn render_privacy_settings_toggles<A: Action + Clone + 'static>(
 
     let telemetry_description = render_description(
         appearance,
-        i18n::t!("High-level feature usage data helps Warp's product team prioritize the roadmap.").to_string(),
+        i18n::t!("High-level feature usage data helps Warp's product team prioritize the roadmap.")
+            .to_string(),
     );
 
     let telemetry_link = Flex::row()

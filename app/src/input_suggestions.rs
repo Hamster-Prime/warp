@@ -537,9 +537,13 @@ impl InputSuggestions {
         self.get_selected_item()
             .and_then(|item| item.details.as_ref())
             .and_then(|details| match details {
-                DetailContent::RichHistory(entry) => entry
-                    .start_ts
-                    .map(|ts| i18n::t!("Last ran {arg0}", arg0 = format_approx_duration_from_now(ts)).to_string()),
+                DetailContent::RichHistory(entry) => entry.start_ts.map(|ts| {
+                    i18n::t!(
+                        "Last ran {arg0}",
+                        arg0 = format_approx_duration_from_now(ts)
+                    )
+                    .to_string()
+                }),
                 DetailContent::Description(desc) => Some(desc.clone()),
                 DetailContent::AIQueryHistory(entry) => Some(format!(
                     "Last ran {}",
@@ -884,7 +888,9 @@ impl InputSuggestions {
 
                                             let tooltip_element = appearance
                                                 .ui_builder()
-                                                .tool_tip(i18n::t!("Ignore this suggestion").to_string())
+                                                .tool_tip(
+                                                    i18n::t!("Ignore this suggestion").to_string(),
+                                                )
                                                 .build()
                                                 .finish();
 

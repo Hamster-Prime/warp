@@ -577,7 +577,11 @@ impl AIDocumentModel {
                 )
             })
             .ok_or_else(|| {
-                i18n::t!("Plan document {ai_document_id} was not found in Warp Drive.", ai_document_id = ai_document_id).to_string()
+                i18n::t!(
+                    "Plan document {ai_document_id} was not found in Warp Drive.",
+                    ai_document_id = ai_document_id
+                )
+                .to_string()
             })?;
         let (sync_id, title, content) = notebook;
         if sync_id.into_server().is_none() {

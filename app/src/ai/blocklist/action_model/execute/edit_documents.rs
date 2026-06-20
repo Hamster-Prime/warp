@@ -58,7 +58,13 @@ impl EditDocumentsExecutor {
             {
                 Some(content) => content,
                 None => {
-                    error_messages.push(i18n::t!("Document {document_id} does not exist.", document_id = diff.document_id).to_string());
+                    error_messages.push(
+                        i18n::t!(
+                            "Document {document_id} does not exist.",
+                            document_id = diff.document_id
+                        )
+                        .to_string(),
+                    );
                     continue;
                 }
             };
@@ -85,12 +91,24 @@ impl EditDocumentsExecutor {
                             diff.document_id
                         )
                     } else if failures.noop_deltas > 0 {
-                        i18n::t!("Changes to document {document_id} were already made", document_id = diff.document_id).to_string()
+                        i18n::t!(
+                            "Changes to document {document_id} were already made",
+                            document_id = diff.document_id
+                        )
+                        .to_string()
                     } else {
-                        i18n::t!("Failed to apply diff to document {document_id}", document_id = diff.document_id).to_string()
+                        i18n::t!(
+                            "Failed to apply diff to document {document_id}",
+                            document_id = diff.document_id
+                        )
+                        .to_string()
                     }
                 } else {
-                    i18n::t!("Unknown diff failure for document {document_id}", document_id = diff.document_id).to_string()
+                    i18n::t!(
+                        "Unknown diff failure for document {document_id}",
+                        document_id = diff.document_id
+                    )
+                    .to_string()
                 };
                 error_messages.push(error_msg);
                 continue;

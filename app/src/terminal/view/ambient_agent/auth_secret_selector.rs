@@ -430,7 +430,12 @@ impl AuthSecretSelector {
         // double-toasting if another surface also tried to delete.
         if removed_pending {
             let window_id = ctx.window_id();
-            let message = i18n::t!("Failed to delete API key '{name}': {error}", name = name, error = error).to_string();
+            let message = i18n::t!(
+                "Failed to delete API key '{name}': {error}",
+                name = name,
+                error = error
+            )
+            .to_string();
             ToastStack::handle(ctx).update(ctx, |ts, ctx| {
                 ts.add_ephemeral_toast(DismissibleToast::error(message), window_id, ctx);
             });
@@ -603,7 +608,9 @@ fn build_main_menu_items(
                         name: secret.name.clone(),
                         owner: secret.owner.clone(),
                     })
-                    .with_right_side_icon_a11y_label(i18n::t!("Delete API key {name}", name = secret.name).to_string())
+                    .with_right_side_icon_a11y_label(
+                        i18n::t!("Delete API key {name}", name = secret.name).to_string(),
+                    )
                     .with_right_side_icon_disabled(is_pending_delete);
                 items.push(MenuItem::Item(fields));
             }

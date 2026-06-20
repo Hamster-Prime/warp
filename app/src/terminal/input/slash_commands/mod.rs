@@ -350,7 +350,10 @@ impl Input {
             SlashCommandsEvent::SelectedSkill { name, reference: _ } => {
                 // Insert /{skill-name} into the buffer
                 self.editor.update(ctx, |editor, ctx| {
-                    editor.set_buffer_text(i18n::t!("/{name} ", name = name).to_string().as_str(), ctx);
+                    editor.set_buffer_text(
+                        i18n::t!("/{name} ", name = name).to_string().as_str(),
+                        ctx,
+                    );
                 });
                 self.close_slash_commands_menu(ctx);
             }
@@ -385,7 +388,10 @@ impl Input {
         if command.availability.contains(Availability::AI_ENABLED)
             && !AISettings::as_ref(ctx).is_any_ai_enabled(ctx)
         {
-            show_error_toast(i18n::t!("{name} requires AI to be enabled", name = command.name).to_string(), ctx);
+            show_error_toast(
+                i18n::t!("{name} requires AI to be enabled", name = command.name).to_string(),
+                ctx,
+            );
             return true;
         }
 
@@ -653,7 +659,11 @@ impl Input {
                             }
                             Err(_) => {
                                 show_error_toast(
-                                    i18n::t!("File not found: {display}", display = file_path.display()).to_string(),
+                                    i18n::t!(
+                                        "File not found: {display}",
+                                        display = file_path.display()
+                                    )
+                                    .to_string(),
                                     ctx,
                                 );
                                 return true;
@@ -671,7 +681,8 @@ impl Input {
                 #[cfg(not(feature = "local_fs"))]
                 {
                     show_error_toast(
-                        i18n::t!("The /open-file command is not supported in this build").to_string(),
+                        i18n::t!("The /open-file command is not supported in this build")
+                            .to_string(),
                         ctx,
                     );
                     return true;
@@ -683,7 +694,10 @@ impl Input {
                     .as_ref(ctx)
                     .active_conversation(self.terminal_view_id)
                 else {
-                    show_error_toast(i18n::t!("No active conversation to export").to_string(), ctx);
+                    show_error_toast(
+                        i18n::t!("No active conversation to export").to_string(),
+                        ctx,
+                    );
                     return true;
                 };
 
@@ -911,17 +925,20 @@ impl Input {
                     .active_conversation(self.terminal_view_id);
                 if conversation.is_none() {
                     show_error_toast(
-                        i18n::t!("Cannot show conversation cost: no active conversation").to_string(),
+                        i18n::t!("Cannot show conversation cost: no active conversation")
+                            .to_string(),
                         ctx,
                     );
                 } else if conversation.is_some_and(|c| c.is_empty()) {
                     show_error_toast(
-                        i18n::t!("Cannot show conversation cost: conversation is empty").to_string(),
+                        i18n::t!("Cannot show conversation cost: conversation is empty")
+                            .to_string(),
                         ctx,
                     );
                 } else if conversation.is_some_and(|c| !c.status().is_done()) {
                     show_error_toast(
-                        i18n::t!("Cannot show conversation cost: conversation is in progress").to_string(),
+                        i18n::t!("Cannot show conversation cost: conversation is in progress")
+                            .to_string(),
                         ctx,
                     );
                 } else {

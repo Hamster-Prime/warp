@@ -2033,14 +2033,24 @@ fn render_search_action_input(
             };
 
             if queries.len() == 1 {
-                i18n::t!("Grep for `{arg0}` in {display_path}", arg0 = queries[0], display_path = display_path).to_string()
+                i18n::t!(
+                    "Grep for `{arg0}` in {display_path}",
+                    arg0 = queries[0],
+                    display_path = display_path
+                )
+                .to_string()
             } else {
                 let patterns_list = queries
                     .iter()
                     .map(|q| i18n::t!(" - `{q}`", q = q).to_string())
                     .collect::<Vec<_>>()
                     .join("\n");
-                i18n::t!("Grep for the following patterns in {display_path}:\n{patterns_list}", display_path = display_path, patterns_list = patterns_list).to_string()
+                i18n::t!(
+                    "Grep for the following patterns in {display_path}:\n{patterns_list}",
+                    display_path = display_path,
+                    patterns_list = patterns_list
+                )
+                .to_string()
             }
         }
         AIAgentActionType::FileGlobV2 {

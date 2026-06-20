@@ -4809,7 +4809,10 @@ pub fn get_duplicate_object_name(original_name: &str) -> String {
                 i18n::t!("{original_name} (1)", original_name = original_name).to_string()
             } else {
                 DUPLICATE_OBJECT_NAME_REGEX
-                    .replace(original_name, i18n::t!(" ({new_num})", new_num = new_num).to_string())
+                    .replace(
+                        original_name,
+                        i18n::t!(" ({new_num})", new_num = new_num).to_string(),
+                    )
                     .to_string()
             }
         }

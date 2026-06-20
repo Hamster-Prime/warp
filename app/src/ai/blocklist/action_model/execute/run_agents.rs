@@ -259,7 +259,8 @@ impl RunAgentsExecutor {
                 && parent_run_id.is_none()
             {
                 slots.push(ChildSlot::Failed(
-                    i18n::t!("Remote child agents require the parent run_id to be available.").to_string(),
+                    i18n::t!("Remote child agents require the parent run_id to be available.")
+                        .to_string(),
                 ));
                 continue;
             }
@@ -503,7 +504,8 @@ fn prepare_request_for_execution(
         .is_never_allow()
     {
         return Some(
-            i18n::t!("Running child agents is disabled by the active execution profile.").to_string(),
+            i18n::t!("Running child agents is disabled by the active execution profile.")
+                .to_string(),
         );
     }
 
@@ -704,7 +706,9 @@ fn validate_request(request: &RunAgentsRequest) -> Result<(), String> {
         RunAgentsExecutionMode::Remote { .. }
     ) && request.harness_type.eq_ignore_ascii_case("opencode")
     {
-        return Err(i18n::t!("Remote child agents do not support the opencode harness yet.").to_string());
+        return Err(
+            i18n::t!("Remote child agents do not support the opencode harness yet.").to_string(),
+        );
     }
     Ok(())
 }
@@ -767,9 +771,10 @@ pub fn run_agents_to_start_agent_mode(
         } => {
             // OpenCode is unsupported on Remote.
             if run_harness_type.eq_ignore_ascii_case("opencode") {
-                return Err(
-                    i18n::t!("Remote child agents do not support the opencode harness yet.").to_string(),
-                );
+                return Err(i18n::t!(
+                    "Remote child agents do not support the opencode harness yet."
+                )
+                .to_string());
             }
             Ok(StartAgentExecutionMode::Remote {
                 environment_id: environment_id.clone(),

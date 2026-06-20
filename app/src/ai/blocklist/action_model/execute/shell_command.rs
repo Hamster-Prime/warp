@@ -190,13 +190,19 @@ impl ShellCommandExecutor {
         match self.active_session.as_ref(ctx).shell_type(ctx) {
             // If it's a posix shell, we can use parentheses as the grouping character. Add command to
             // avoid cases with aliases.
-            Some(ShellType::Zsh) | Some(ShellType::Bash) => i18n::t!("({command}) | command cat", command = command).to_string(),
+            Some(ShellType::Zsh) | Some(ShellType::Bash) => {
+                i18n::t!("({command}) | command cat", command = command).to_string()
+            }
             // Fish doesn't have grouping characters. We need to use begin; and end; to ensure the command
             // gets evaluated first.
-            Some(ShellType::Fish) => i18n::t!("begin; {command} ;end | command cat", command = command).to_string(),
+            Some(ShellType::Fish) => {
+                i18n::t!("begin; {command} ;end | command cat", command = command).to_string()
+            }
             // For powershell, we use Out-Host to send paged output to the
             // console. Add a backslash to avoid executing an alias.
-            Some(ShellType::PowerShell) => i18n::t!("({command}) | \\Out-Host", command = command).to_string(),
+            Some(ShellType::PowerShell) => {
+                i18n::t!("({command}) | \\Out-Host", command = command).to_string()
+            }
             // If we can't determine a shell type, run command as it is.
             None => command.clone(),
         }

@@ -850,7 +850,11 @@ impl AmbientAgentRunner {
             }
 
             if let Some(executor) = task.executor_display_name() {
-                table.add_row(vec![i18n::t!("Executed as: {executor}", executor = executor).to_string()]);
+                table.add_row(vec![i18n::t!(
+                    "Executed as: {executor}",
+                    executor = executor
+                )
+                .to_string()]);
             }
 
             // Agent config snapshot (if available)
@@ -862,7 +866,11 @@ impl AmbientAgentRunner {
 
             // Created time
             let created_formatted = format_approx_duration_from_now_utc(task.created_at);
-            table.add_row(vec![i18n::t!("Created: {created_formatted}", created_formatted = created_formatted).to_string()]);
+            table.add_row(vec![i18n::t!(
+                "Created: {created_formatted}",
+                created_formatted = created_formatted
+            )
+            .to_string()]);
 
             // Status message (if available) - single multi-line cell
             if let Some(status_msg) = &task.status_message {
@@ -882,7 +890,11 @@ impl AmbientAgentRunner {
 
             // Session link (if available)
             if let Some(session_join_info) = SessionJoinInfo::from_task(task) {
-                table.add_row(vec![i18n::t!("Session: {session_link}", session_link = session_join_info.session_link).to_string()]);
+                table.add_row(vec![i18n::t!(
+                    "Session: {session_link}",
+                    session_link = session_join_info.session_link
+                )
+                .to_string()]);
             }
 
             println!("{table}");
@@ -903,7 +915,9 @@ impl AmbientAgentRunner {
                     ..
                 } => {
                     let pr_display = match (repo, number) {
-                        (Some(repo), Some(num)) => i18n::t!("  PR: {repo} #{num}", repo = repo, num = num).to_string(),
+                        (Some(repo), Some(num)) => {
+                            i18n::t!("  PR: {repo} #{num}", repo = repo, num = num).to_string()
+                        }
                         _ => "  PR:".to_string(),
                     };
                     lines.push(pr_display);
@@ -916,7 +930,9 @@ impl AmbientAgentRunner {
                     ..
                 } => {
                     let plan_title = title.as_deref().unwrap_or("Untitled Plan");
-                    lines.push(i18n::t!("  Plan: {plan_title}", plan_title = plan_title).to_string());
+                    lines.push(
+                        i18n::t!("  Plan: {plan_title}", plan_title = plan_title).to_string(),
+                    );
                     if let Some(id) = notebook_uid {
                         lines.push(format!(
                             "    Link: {}/drive/notebook/{}",
@@ -931,7 +947,14 @@ impl AmbientAgentRunner {
                     ..
                 } => {
                     let desc = description.as_deref().unwrap_or("No description");
-                    lines.push(i18n::t!("  Screenshot: {artifact_uid} ({desc})", artifact_uid = artifact_uid, desc = desc).to_string());
+                    lines.push(
+                        i18n::t!(
+                            "  Screenshot: {artifact_uid} ({desc})",
+                            artifact_uid = artifact_uid,
+                            desc = desc
+                        )
+                        .to_string(),
+                    );
                 }
                 Artifact::File {
                     filename,
@@ -943,7 +966,10 @@ impl AmbientAgentRunner {
                     lines.push(i18n::t!("  File: {label}", label = label).to_string());
                     lines.push(i18n::t!("    Path: {filepath}", filepath = filepath).to_string());
                     if let Some(description) = description {
-                        lines.push(i18n::t!("    Description: {description}", description = description).to_string());
+                        lines.push(
+                            i18n::t!("    Description: {description}", description = description)
+                                .to_string(),
+                        );
                     }
                 }
             }

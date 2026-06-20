@@ -1110,12 +1110,19 @@ impl SettingsWidget for IapCredentialsWidget {
                     .expires_at
                     .saturating_duration_since(instant::Instant::now());
                 let mins = remaining.as_secs() / 60;
-                (i18n::t!("Loaded (refreshes in ~{mins}m)", mins = mins).to_string(), active)
+                (
+                    i18n::t!("Loaded (refreshes in ~{mins}m)", mins = mins).to_string(),
+                    active,
+                )
             }
-            IapCredentialsState::Failed { message, .. } => (i18n::t!("Failed: {message}", message = message).to_string(), ansi_red),
-            IapCredentialsState::EnvInjected { .. } => {
-                (i18n::t!("Using injected token (WARP_IAP_TOKEN)").to_string(), active)
-            }
+            IapCredentialsState::Failed { message, .. } => (
+                i18n::t!("Failed: {message}", message = message).to_string(),
+                ansi_red,
+            ),
+            IapCredentialsState::EnvInjected { .. } => (
+                i18n::t!("Using injected token (WARP_IAP_TOKEN)").to_string(),
+                active,
+            ),
         };
 
         let is_refreshing = matches!(state, IapCredentialsState::Refreshing { .. });

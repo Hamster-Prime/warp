@@ -189,9 +189,18 @@ impl SearchItem for NotebookSearchItem {
 
     fn accessibility_label(&self) -> String {
         if let Some(description) = &self.notebook_description {
-            i18n::t!("Notebook: {notebook_name} - {description}", notebook_name = self.notebook_name, description = description).to_string()
+            i18n::t!(
+                "Notebook: {notebook_name} - {description}",
+                notebook_name = self.notebook_name,
+                description = description
+            )
+            .to_string()
         } else {
-            i18n::t!("Notebook: {notebook_name}", notebook_name = self.notebook_name).to_string()
+            i18n::t!(
+                "Notebook: {notebook_name}",
+                notebook_name = self.notebook_name
+            )
+            .to_string()
         }
     }
 

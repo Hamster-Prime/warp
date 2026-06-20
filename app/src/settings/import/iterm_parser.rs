@@ -99,18 +99,38 @@ impl ITermTheme {
         ITermTheme {
             terminal_colors: (0..16)
                 .map(|color_idx| {
-                    dict.remove(i18n::t!("Ansi {color_idx} Color{suffix}", color_idx = color_idx, suffix = suffix).to_string().as_str())
-                        .and_then(|value| value.into_dictionary())
+                    dict.remove(
+                        i18n::t!(
+                            "Ansi {color_idx} Color{suffix}",
+                            color_idx = color_idx,
+                            suffix = suffix
+                        )
+                        .to_string()
+                        .as_str(),
+                    )
+                    .and_then(|value| value.into_dictionary())
                 })
                 .collect(),
             foreground: dict
-                .remove(i18n::t!("Foreground Color{suffix}", suffix = suffix).to_string().as_str())
+                .remove(
+                    i18n::t!("Foreground Color{suffix}", suffix = suffix)
+                        .to_string()
+                        .as_str(),
+                )
                 .and_then(|value| value.into_dictionary()),
             background: dict
-                .remove(i18n::t!("Background Color{suffix}", suffix = suffix).to_string().as_str())
+                .remove(
+                    i18n::t!("Background Color{suffix}", suffix = suffix)
+                        .to_string()
+                        .as_str(),
+                )
                 .and_then(|value| value.into_dictionary()),
             cursor: dict
-                .remove(i18n::t!("Cursor Color{suffix}", suffix = suffix).to_string().as_str())
+                .remove(
+                    i18n::t!("Cursor Color{suffix}", suffix = suffix)
+                        .to_string()
+                        .as_str(),
+                )
                 .and_then(|value| value.into_dictionary()),
         }
     }
@@ -754,7 +774,9 @@ impl ParseableConfig for ITermProfile {
                 SettingType::MouseAndScrollReporting,
             ),
             option_as_meta: ImportableSetting::new(option_as_meta, SettingType::OptionAsMeta),
-            description: self.profile_name.map(|name| i18n::t!("Profile: {name}", name = name).to_string()),
+            description: self
+                .profile_name
+                .map(|name| i18n::t!("Profile: {name}", name = name).to_string()),
             font: ImportableSetting::new(font, SettingType::Font),
             default_shell: ImportableSetting::new(default_shell, SettingType::DefaultShell),
             working_directory: ImportableSetting::new(

@@ -931,9 +931,11 @@ fn render_prompt_chip_shell_command(
     shell_type: ShellType,
 ) -> String {
     match command {
-        PromptChipShellCommand::GitCheckout { branch_name } => {
-            i18n::t!("git checkout {arg0}", arg0 = shell_quote_arg(branch_name, shell_type)).to_string()
-        }
+        PromptChipShellCommand::GitCheckout { branch_name } => i18n::t!(
+            "git checkout {arg0}",
+            arg0 = shell_quote_arg(branch_name, shell_type)
+        )
+        .to_string(),
         PromptChipShellCommand::GitCreateAndCheckoutBranch { branch_name } => {
             format!(
                 "git checkout -b {} --",
@@ -943,9 +945,11 @@ fn render_prompt_chip_shell_command(
         PromptChipShellCommand::ChangeDirectory { dir_name } => {
             i18n::t!("cd {arg0}", arg0 = shell_quote_arg(dir_name, shell_type)).to_string()
         }
-        PromptChipShellCommand::NvmUse { version } => {
-            i18n::t!("nvm use {arg0}", arg0 = shell_quote_arg(version, shell_type)).to_string()
-        }
+        PromptChipShellCommand::NvmUse { version } => i18n::t!(
+            "nvm use {arg0}",
+            arg0 = shell_quote_arg(version, shell_type)
+        )
+        .to_string(),
         PromptChipShellCommand::NvmInstallLatestNode => "nvm install node".to_string(),
         PromptChipShellCommand::Echo { message } => {
             i18n::t!("echo {arg0}", arg0 = shell_quote_arg(message, shell_type)).to_string()
@@ -1884,8 +1888,10 @@ pub fn init(app: &mut AppContext) {
 
     app.register_editable_bindings([EditableBinding::new(
         "workspace:edit_prompt",
-        BindingDescription::new(i18n::t!("Edit Prompt").to_string())
-            .with_custom_description(bindings::MAC_MENUS_CONTEXT, i18n::t!("Edit Prompt").to_string()),
+        BindingDescription::new(i18n::t!("Edit Prompt").to_string()).with_custom_description(
+            bindings::MAC_MENUS_CONTEXT,
+            i18n::t!("Edit Prompt").to_string(),
+        ),
         WorkspaceAction::OpenPromptEditor {
             open_source: PromptEditorOpenSource::CommandPalette,
         },
@@ -2246,7 +2252,11 @@ impl Input {
                     event
                 {
                     let window_id = ctx.window_id();
-                    let toast_message = i18n::t!("Failed to prepare cloud handoff: {error_message}", error_message = error_message).to_string();
+                    let toast_message = i18n::t!(
+                        "Failed to prepare cloud handoff: {error_message}",
+                        error_message = error_message
+                    )
+                    .to_string();
                     ToastStack::handle(ctx).update(ctx, |ts, ctx| {
                         ts.add_ephemeral_toast(
                             DismissibleToast::error(toast_message),
@@ -4856,7 +4866,16 @@ impl Input {
                 .map(|s| s.agent.skill_command_prefix())
                 .unwrap_or("/");
             self.editor.update(ctx, |editor, ctx| {
-                editor.set_buffer_text(i18n::t!("{prefix}{skill_name} ", prefix = prefix, skill_name = skill_name).to_string().as_str(), ctx);
+                editor.set_buffer_text(
+                    i18n::t!(
+                        "{prefix}{skill_name} ",
+                        prefix = prefix,
+                        skill_name = skill_name
+                    )
+                    .to_string()
+                    .as_str(),
+                    ctx,
+                );
             });
 
             // Close the menu but keep input focused so user can press Enter
@@ -5689,12 +5708,17 @@ impl Input {
                                 .unwrap_or_default()
                         )
                     }
-                    std::io::ErrorKind::AlreadyExists => {
-                        i18n::t!("File {display} already exists", display = file_path.display()).to_string()
-                    }
-                    _ => {
-                        i18n::t!("Failed to export to {display}: {e}", display = file_path.display(), e = e).to_string()
-                    }
+                    std::io::ErrorKind::AlreadyExists => i18n::t!(
+                        "File {display} already exists",
+                        display = file_path.display()
+                    )
+                    .to_string(),
+                    _ => i18n::t!(
+                        "Failed to export to {display}: {e}",
+                        display = file_path.display(),
+                        e = e
+                    )
+                    .to_string(),
                 };
 
                 log::error!(
@@ -5747,7 +5771,11 @@ impl Input {
             let message = if images_removed == 1 {
                 "1 image was removed - limit is 20 per conversation.".into()
             } else {
-                i18n::t!("{images_removed} images were removed - limit is 20 per conversation.", images_removed = images_removed).to_string()
+                i18n::t!(
+                    "{images_removed} images were removed - limit is 20 per conversation.",
+                    images_removed = images_removed
+                )
+                .to_string()
             };
 
             ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
@@ -5998,15 +6026,21 @@ impl Input {
         ctx: &mut ViewContext<Self>,
     ) -> Result<(), String> {
         let Some(session_id) = self.active_block_session_id() else {
-            return Err(i18n::t!("Tried to open file in code editor without a session id").to_string());
+            return Err(
+                i18n::t!("Tried to open file in code editor without a session id").to_string(),
+            );
         };
 
         let Some(session) = self.sessions.as_ref(ctx).get(session_id) else {
-            return Err(i18n::t!("Tried to open file in code editor without a session").to_string());
+            return Err(
+                i18n::t!("Tried to open file in code editor without a session").to_string(),
+            );
         };
 
         if !session.is_local() {
-            return Err(i18n::t!("Tried to open file in code editor for a remote session").to_string());
+            return Err(
+                i18n::t!("Tried to open file in code editor for a remote session").to_string(),
+            );
         }
 
         #[cfg(feature = "local_fs")]
@@ -6186,11 +6220,23 @@ impl Input {
                         let agent_name = conversation.agent_name().unwrap_or("child");
                         if conversation.status().is_in_progress() {
                             if is_queue_next_prompt_enabled {
-                                return i18n::t!("Queue a follow up for the {agent_name} agent", agent_name = agent_name).to_string();
+                                return i18n::t!(
+                                    "Queue a follow up for the {agent_name} agent",
+                                    agent_name = agent_name
+                                )
+                                .to_string();
                             }
-                            return i18n::t!("Steer the {agent_name} agent", agent_name = agent_name).to_string();
+                            return i18n::t!(
+                                "Steer the {agent_name} agent",
+                                agent_name = agent_name
+                            )
+                            .to_string();
                         }
-                        return i18n::t!("Ask the {agent_name} agent a follow up", agent_name = agent_name).to_string();
+                        return i18n::t!(
+                            "Ask the {agent_name} agent a follow up",
+                            agent_name = agent_name
+                        )
+                        .to_string();
                     }
                 }
 
@@ -6684,7 +6730,13 @@ impl Input {
                     .as_ref(ctx)
                     .selected_environment_id()
                     .and_then(|id| CloudAmbientAgentEnvironment::get_by_id(id, ctx))
-                    .map(|env| i18n::t!("Hand off to {display_name}", display_name = env.model().string_model.display_name()).to_string())
+                    .map(|env| {
+                        i18n::t!(
+                            "Hand off to {display_name}",
+                            display_name = env.model().string_model.display_name()
+                        )
+                        .to_string()
+                    })
                     .unwrap_or_else(|| i18n::t!("Handoff to cloud").to_string())
             };
             self.editor.update(ctx, |editor, ctx| {
@@ -7019,7 +7071,10 @@ impl Input {
             // and disallow edits.
             // TODO: the ◌ treatment is a stop-gap to rendering an svg
             // to the right of the buffer text.
-            editor.set_buffer_text_ignoring_undo(&i18n::t!("{buffer_text} ◌", buffer_text = buffer_text).to_string(), ctx);
+            editor.set_buffer_text_ignoring_undo(
+                &i18n::t!("{buffer_text} ◌", buffer_text = buffer_text).to_string(),
+                ctx,
+            );
             editor.set_interaction_state(InteractionState::Selectable, ctx);
 
             // We manually set the text color to appear disabled.
@@ -7843,7 +7898,11 @@ impl Input {
         // Emit the a11y content as the last step so that it overwrites any of the a11y content
         // emitted by the editor (if multiple `AccessibilityContent`s are emitted within the same
         // event loop, the last one wins).
-        let mut accessibility_text = i18n::t!("Workflow command {arg0} inserted.", arg0 = &command_to_insert).to_string();
+        let mut accessibility_text = i18n::t!(
+            "Workflow command {arg0} inserted.",
+            arg0 = &command_to_insert
+        )
+        .to_string();
         if let Some(a11y_content) = self.selected_workflow_a11y_text(ctx) {
             let _ = write!(accessibility_text, " {a11y_content}");
         }
@@ -7948,8 +8007,10 @@ impl Input {
             .as_ref()
             .and_then(|selected_workflow_state| {
                 selected_workflow_state.more_info_view.read(ctx, |view, _| {
-                    view.selected_argument()
-                        .map(|argument| i18n::t!("Selected Workflow argument {name}", name = argument.name()).to_string())
+                    view.selected_argument().map(|argument| {
+                        i18n::t!("Selected Workflow argument {name}", name = argument.name())
+                            .to_string()
+                    })
                 })
             })
     }
@@ -9577,7 +9638,8 @@ impl Input {
         alias_value: &str,
         ctx: &mut ViewContext<Self>,
     ) {
-        let alias_value_with_space = i18n::t!("{alias_value} ", alias_value = alias_value).to_string();
+        let alias_value_with_space =
+            i18n::t!("{alias_value} ", alias_value = alias_value).to_string();
         self.editor.update(ctx, |input, ctx| {
             input.select_and_replace(
                 &alias_value_with_space,
@@ -11269,7 +11331,12 @@ impl Input {
             };
 
             let message = if excess_images == 1 {
-                i18n::t!("1 image wasn't attached - limit is {limit_value} images {limit_name}.", limit_value = limit_value, limit_name = limit_name).to_string()
+                i18n::t!(
+                    "1 image wasn't attached - limit is {limit_value} images {limit_name}.",
+                    limit_value = limit_value,
+                    limit_name = limit_name
+                )
+                .to_string()
             } else {
                 format!(
                     "{excess_images} images weren't attached - limit is {limit_value} images {limit_name}."
@@ -12321,7 +12388,12 @@ impl Input {
                 && !completion_result.ends_with(self.path_separators(ctx).main)
                 && executing == Executing::No
             {
-                i18n::t!("{completion_result} ", completion_result = completion_result).to_string().into()
+                i18n::t!(
+                    "{completion_result} ",
+                    completion_result = completion_result
+                )
+                .to_string()
+                .into()
             } else {
                 completion_result.into()
             };
@@ -13221,7 +13293,8 @@ impl Input {
                         ToastStack::handle(ctx).update(ctx, |ts, ctx| {
                             ts.add_ephemeral_toast(
                                 DismissibleToast::default(
-                                    i18n::t!("Preparing handoff — try again in a moment.").to_string(),
+                                    i18n::t!("Preparing handoff — try again in a moment.")
+                                        .to_string(),
                                 )
                                 .with_object_id("local-to-cloud-handoff-not-ready".to_owned()),
                                 window_id,
@@ -14387,7 +14460,8 @@ impl Input {
                         ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                             toast_stack.add_ephemeral_toast(
                                 DismissibleToast::error(
-                                    i18n::t!("Too many attachments for this conversation.").to_string(),
+                                    i18n::t!("Too many attachments for this conversation.")
+                                        .to_string(),
                                 ),
                                 window_id,
                                 ctx,
@@ -15499,7 +15573,11 @@ impl Input {
         // search, update its buffer accordingly.
         let buffer_starts_with_trigger = self.editor_starts_with_command_search_trigger(ctx);
         if !buffer_starts_with_trigger {
-            let updated_text = i18n::t!("{AI_COMMAND_SEARCH_TRIGGER} {arg0}", arg0 = self.buffer_text(ctx)).to_string();
+            let updated_text = i18n::t!(
+                "{AI_COMMAND_SEARCH_TRIGGER} {arg0}",
+                arg0 = self.buffer_text(ctx)
+            )
+            .to_string();
             self.editor.update(ctx, |editor, ctx| {
                 editor.set_buffer_text(&updated_text, ctx);
             });

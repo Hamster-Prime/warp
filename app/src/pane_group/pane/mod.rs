@@ -158,13 +158,17 @@ impl Display for IPaneType {
             IPaneType::File => write!(f, "{}", i18n::t!("File")),
             IPaneType::Code => write!(f, "{}", i18n::t!("Code")),
             IPaneType::CodeDiff => write!(f, "{}", i18n::t!("Code Diff")),
-            IPaneType::EnvVarCollection => write!(f, "{}", i18n::t!("Environment Variable Collection")),
+            IPaneType::EnvVarCollection => {
+                write!(f, "{}", i18n::t!("Environment Variable Collection"))
+            }
             IPaneType::EnvironmentManagement => write!(f, "{}", i18n::t!("Environment Management")),
             IPaneType::Workflow => write!(f, "{}", i18n::t!("Workflow")),
             IPaneType::Settings => write!(f, "{}", i18n::t!("Settings")),
             IPaneType::AIFact => write!(f, "{}", i18n::t!("AI Fact")),
             IPaneType::AIDocument => write!(f, "{}", i18n::t!("AI Document")),
-            IPaneType::ExecutionProfileEditor => write!(f, "{}", i18n::t!("Execution Profile Editor")),
+            IPaneType::ExecutionProfileEditor => {
+                write!(f, "{}", i18n::t!("Execution Profile Editor"))
+            }
             IPaneType::GetStarted => write!(f, "{}", i18n::t!("GetStarted")),
             IPaneType::NetworkLog => write!(f, "{}", i18n::t!("Network Log")),
             IPaneType::DeferredPlaceholder => write!(f, "{}", i18n::t!("Placeholder")),

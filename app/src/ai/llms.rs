@@ -282,7 +282,12 @@ impl LLMInfo {
             // This is a temporary implementation that won't scale well for longer
             // descriptions. We should implement a better approach for displaying
             // model descriptions, maybe through subtext.
-            Some(desc) => i18n::t!("{display_name} ({desc})", display_name = self.display_name, desc = desc).to_string(),
+            Some(desc) => i18n::t!(
+                "{display_name} ({desc})",
+                display_name = self.display_name,
+                desc = desc
+            )
+            .to_string(),
             None => self.display_name.clone(),
         }
     }

@@ -458,7 +458,12 @@ pub(super) fn render_send_message(
                 );
             }
             SendMessageToAgentResult::Error(error) => {
-                let label = i18n::t!("Failed to send message to {recipients}: {error}", recipients = recipients, error = error).to_string();
+                let label = i18n::t!(
+                    "Failed to send message to {recipients}: {error}",
+                    recipients = recipients,
+                    error = error
+                )
+                .to_string();
                 let status_icon = inline_action_icons::red_x_icon(appearance).finish();
                 return render_requested_action_row_for_text(
                     label.into(),
@@ -475,7 +480,11 @@ pub(super) fn render_send_message(
                 .finish();
             }
             SendMessageToAgentResult::Cancelled => {
-                let label = i18n::t!("Send message to {recipients} cancelled.", recipients = recipients).to_string();
+                let label = i18n::t!(
+                    "Send message to {recipients} cancelled.",
+                    recipients = recipients
+                )
+                .to_string();
                 let status_icon = inline_action_icons::cancelled_icon(appearance).finish();
                 return render_requested_action_row_for_text(
                     label.into(),
@@ -588,7 +597,9 @@ pub(super) fn render_start_agent(
                 vec![
                     FormattedTextFragment::plain_text(start_agent_error_prefix(execution_mode)),
                     FormattedTextFragment::bold(name),
-                    FormattedTextFragment::plain_text(i18n::t!(": {error}", error = error).to_string()),
+                    FormattedTextFragment::plain_text(
+                        i18n::t!(": {error}", error = error).to_string(),
+                    ),
                 ],
                 inline_action_icons::red_x_icon(appearance).finish(),
             ),

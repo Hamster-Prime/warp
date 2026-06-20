@@ -115,9 +115,13 @@ pub fn create_discount_badge(discount: u32, appearance: &Appearance) -> Box<dyn 
     let bg_color: Fill = theme.terminal_colors().normal.green.into();
 
     Container::new(
-        Text::new_inline(i18n::t!("{discount}% off", discount = discount).to_string(), appearance.ui_font_family(), 10.)
-            .with_color(theme.main_text_color(bg_color).into())
-            .finish(),
+        Text::new_inline(
+            i18n::t!("{discount}% off", discount = discount).to_string(),
+            appearance.ui_font_family(),
+            10.,
+        )
+        .with_color(theme.main_text_color(bg_color).into())
+        .finish(),
     )
     .with_corner_radius(CornerRadius::with_all(Radius::Pixels(4.)))
     .with_background(bg_color)
@@ -1380,7 +1384,8 @@ impl BillingAndUsagePageView {
                 on_click_action: None,
                 secondary_text: None,
                 tooltip_override_text: Some(
-                    i18n::t!("Sets the monthly overage spending limit beyond the plan amount").to_string(),
+                    i18n::t!("Sets the monthly overage spending limit beyond the plan amount")
+                        .to_string(),
                 ),
             },
         );
@@ -1615,10 +1620,14 @@ impl BillingAndUsagePageView {
         let ui_builder = appearance.ui_builder();
         let theme = appearance.theme();
 
-        let header = Text::new_inline(i18n::t!("Add-on credits").to_string(), appearance.ui_font_family(), 16.)
-            .with_color(fg.into())
-            .with_style(Properties::default().weight(Weight::Bold))
-            .finish();
+        let header = Text::new_inline(
+            i18n::t!("Add-on credits").to_string(),
+            appearance.ui_font_family(),
+            16.,
+        )
+        .with_color(fg.into())
+        .with_style(Properties::default().weight(Weight::Bold))
+        .finish();
 
         let credits_value = Text::new_inline(
             bonus_credit_balance.separate_with_commas(),
@@ -1800,7 +1809,10 @@ impl BillingAndUsagePageView {
         let monthly_spend_row = Flex::row()
             .with_cross_axis_alignment(CrossAxisAlignment::Center)
             .with_children([
-                ui_builder.span(i18n::t!("Monthly spend limit")).build().finish(),
+                ui_builder
+                    .span(i18n::t!("Monthly spend limit"))
+                    .build()
+                    .finish(),
                 Shrinkable::new(1., Align::new(info_icon).left().finish()).finish(),
                 icon_button(
                     appearance,
@@ -1829,10 +1841,13 @@ impl BillingAndUsagePageView {
                 let cost_cents = bonus_grants.cents_spent;
                 let cost_dollars = cost_cents as f64 / 100.0;
 
-                let label =
-                    Text::new_inline(i18n::t!("Purchased this month").to_string(), appearance.ui_font_family(), 12.)
-                        .with_color(appearance.theme().active_ui_text_color().into())
-                        .finish();
+                let label = Text::new_inline(
+                    i18n::t!("Purchased this month").to_string(),
+                    appearance.ui_font_family(),
+                    12.,
+                )
+                .with_color(appearance.theme().active_ui_text_color().into())
+                .finish();
 
                 let credits_text = if credits_purchased == 1 {
                     "1 credit".to_string()
@@ -2076,7 +2091,10 @@ impl BillingAndUsagePageView {
                 .finish();
 
             let mut card_content_lower_children = vec![
-                ui_builder.span(i18n::t!("One-time purchase")).build().finish(),
+                ui_builder
+                    .span(i18n::t!("One-time purchase"))
+                    .build()
+                    .finish(),
                 buy_row.finish(),
             ];
 
@@ -2174,9 +2192,13 @@ impl BillingAndUsagePageView {
 
         let mut left_side_component =
             Flex::row().with_cross_axis_alignment(CrossAxisAlignment::Center);
-        let label = Text::new_inline(i18n::t!("Total overages").to_string(), appearance.ui_font_family(), 12.)
-            .with_color(appearance.theme().active_ui_text_color().into())
-            .finish();
+        let label = Text::new_inline(
+            i18n::t!("Total overages").to_string(),
+            appearance.ui_font_family(),
+            12.,
+        )
+        .with_color(appearance.theme().active_ui_text_color().into())
+        .finish();
 
         left_side_component.add_child(Container::new(label).with_margin_right(8.).finish());
 
@@ -2201,7 +2223,11 @@ impl BillingAndUsagePageView {
         if let Some(period_end) = total_overages_period_end {
             let local_period_end = period_end.with_timezone(&Local);
             let formatted_date = local_period_end.format("%b %d at %-I:%M %p").to_string();
-            let billing_date_text = i18n::t!("Usage resets on {formatted_date}", formatted_date = formatted_date).to_string();
+            let billing_date_text = i18n::t!(
+                "Usage resets on {formatted_date}",
+                formatted_date = formatted_date
+            )
+            .to_string();
             left_side_component.add_child(
                 Container::new(
                     Text::new_inline(billing_date_text, appearance.ui_font_family(), 12.)
@@ -2366,8 +2392,11 @@ impl BillingAndUsagePageView {
             .finish()
         } else {
             let header = "Credits";
-            let description =
-                i18n::t!("This is the {refresh_duration} limit of AI credits for your account.", refresh_duration = refresh_duration).to_string();
+            let description = i18n::t!(
+                "This is the {refresh_duration} limit of AI credits for your account.",
+                refresh_duration = refresh_duration
+            )
+            .to_string();
 
             let request_usage_description = FormattedTextElement::from_str(
                 description,
@@ -2508,12 +2537,16 @@ impl BillingAndUsagePageView {
             .with_main_axis_alignment(MainAxisAlignment::Center)
             .with_child(
                 Container::new(
-                    Text::new_inline(i18n::t!("Last 30 days").to_string(), appearance.ui_font_family(), 14.)
-                        .with_color(blended_colors::text_sub(
-                            appearance.theme(),
-                            appearance.theme().surface_1(),
-                        ))
-                        .finish(),
+                    Text::new_inline(
+                        i18n::t!("Last 30 days").to_string(),
+                        appearance.ui_font_family(),
+                        14.,
+                    )
+                    .with_color(blended_colors::text_sub(
+                        appearance.theme(),
+                        appearance.theme().surface_1(),
+                    ))
+                    .finish(),
                 )
                 .with_vertical_margin(12.)
                 .finish(),
@@ -2778,7 +2811,13 @@ impl BillingAndUsagePageView {
             .with_child(
                 appearance
                     .ui_builder()
-                    .paragraph(i18n::t!("Resets {formatted_next_refresh_time}", formatted_next_refresh_time = formatted_next_refresh_time).to_string())
+                    .paragraph(
+                        i18n::t!(
+                            "Resets {formatted_next_refresh_time}",
+                            formatted_next_refresh_time = formatted_next_refresh_time
+                        )
+                        .to_string(),
+                    )
                     .with_style(UiComponentStyles {
                         font_color: Some(blended_colors::text_sub(
                             appearance.theme(),
@@ -2828,8 +2867,9 @@ impl BillingAndUsagePageView {
                     let hoverable =
                         Hoverable::new(self.sort_icon_mouse_state.clone(), |mouse_state| {
                             if mouse_state.is_hovered() {
-                                let tooltip =
-                                    appearance.ui_builder().tool_tip(i18n::t!("Sort by").to_string());
+                                let tooltip = appearance
+                                    .ui_builder()
+                                    .tool_tip(i18n::t!("Sort by").to_string());
 
                                 button.add_positioned_overlay_child(
                                     tooltip.build().finish(),
@@ -3402,10 +3442,14 @@ impl BillingAndUsagePageView {
     }
 
     fn render_plan_header_text(&self, appearance: &Appearance) -> Box<dyn Element> {
-        Text::new_inline(i18n::t!("Plan").to_string(), appearance.ui_font_family(), HEADER_FONT_SIZE)
-            .with_style(Properties::default().weight(Weight::Bold))
-            .with_color(appearance.theme().active_ui_text_color().into())
-            .finish()
+        Text::new_inline(
+            i18n::t!("Plan").to_string(),
+            appearance.ui_font_family(),
+            HEADER_FONT_SIZE,
+        )
+        .with_style(Properties::default().weight(Weight::Bold))
+        .with_color(appearance.theme().active_ui_text_color().into())
+        .finish()
     }
 
     fn render_team_admin_actions(

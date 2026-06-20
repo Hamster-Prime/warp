@@ -410,14 +410,22 @@ pub(crate) fn classify_renderable_error(
         RenderableAIError::InvalidApiKey { provider, .. } => (
             AgentTaskState::Failed,
             Some(TaskStatusUpdate::with_error_code(
-                i18n::t!("Invalid API key for {provider}. Update your API key in settings.", provider = provider).to_string(),
+                i18n::t!(
+                    "Invalid API key for {provider}. Update your API key in settings.",
+                    provider = provider
+                )
+                .to_string(),
                 PlatformErrorCode::AuthenticationRequired,
             )),
         ),
         RenderableAIError::AwsBedrockCredentialsExpiredOrInvalid { model_name } => (
             AgentTaskState::Failed,
             Some(TaskStatusUpdate::with_error_code(
-                i18n::t!("AWS Bedrock credentials expired or invalid for {model_name}.", model_name = model_name).to_string(),
+                i18n::t!(
+                    "AWS Bedrock credentials expired or invalid for {model_name}.",
+                    model_name = model_name
+                )
+                .to_string(),
                 PlatformErrorCode::AuthenticationRequired,
             )),
         ),

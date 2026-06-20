@@ -1357,7 +1357,10 @@ impl AppearanceSettingsPageView {
                     Box::new(ThemeSelectWidget::default()),
                 ],
             ),
-            Category::new(i18n::t!("Language").to_string(), vec![Box::new(LanguageWidget)]),
+            Category::new(
+                i18n::t!("Language").to_string(),
+                vec![Box::new(LanguageWidget)],
+            ),
         ];
 
         if AppIconSettings::as_ref(ctx).is_supported_on_current_platform() {
@@ -1698,9 +1701,7 @@ impl AppearanceSettingsPageView {
         }
     }
 
-    fn tab_close_button_position_dropdown_item_label(
-        value: TabCloseButtonPosition,
-    ) -> String {
+    fn tab_close_button_position_dropdown_item_label(value: TabCloseButtonPosition) -> String {
         match value {
             TabCloseButtonPosition::Right => i18n::t!("Right").to_string(),
             TabCloseButtonPosition::Left => i18n::t!("Left").to_string(),
@@ -2988,7 +2989,9 @@ impl SettingsWidget for CustomAppIconWidget {
         let dropdown = render_dropdown_item(
             appearance,
             &i18n::t!("Customize your app icon"),
-            show_bundle_warning.then_some(&i18n::t!("Changing the app icon requires the app to be bundled.")),
+            show_bundle_warning.then_some(&i18n::t!(
+                "Changing the app icon requires the app to be bundled."
+            )),
             None,
             LocalOnlyIconState::Hidden,
             None,
@@ -3244,7 +3247,11 @@ impl SettingsWidget for WindowOpacityWidget {
 
         let opacity_value = *window_settings.background_opacity;
         let mut col = Flex::column().with_child(render_body_item::<AppearancePageAction>(
-            i18n::t!("Window Opacity: {opacity_value}", opacity_value = opacity_value).to_string(),
+            i18n::t!(
+                "Window Opacity: {opacity_value}",
+                opacity_value = opacity_value
+            )
+            .to_string(),
             // TODO(CORE-3384) add AdditionalInfo here.
             None,
             LocalOnlyIconState::for_setting(
@@ -4421,7 +4428,9 @@ impl SettingsWidget for LigaturesWidget {
                 mouse_state: self.info_mouse_state.clone(),
                 on_click_action: None,
                 secondary_text: None,
-                tooltip_override_text: Some(i18n::t!("Ligatures may reduce performance").to_string()),
+                tooltip_override_text: Some(
+                    i18n::t!("Ligatures may reduce performance").to_string(),
+                ),
             }),
             LocalOnlyIconState::for_setting(
                 LigatureRenderingEnabled::storage_key(),
@@ -5367,7 +5376,9 @@ impl SettingsWidget for ZoomLevelWidget {
         render_dropdown_item(
             appearance,
             "Zoom",
-            Some(&i18n::t!("Adjusts the default zoom level across all windows")),
+            Some(&i18n::t!(
+                "Adjusts the default zoom level across all windows"
+            )),
             Some(reset_button),
             LocalOnlyIconState::for_setting(
                 crate::window_settings::ZoomLevel::storage_key(),

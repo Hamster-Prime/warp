@@ -2074,7 +2074,12 @@ impl AIBlock {
                     let command_text = if display_input.is_null() {
                         i18n::t!("MCP Tool: {name}", name = name).to_string()
                     } else {
-                        i18n::t!("MCP Tool: {name} ({display_input})", name = name, display_input = display_input).to_string()
+                        i18n::t!(
+                            "MCP Tool: {name} ({display_input})",
+                            name = name,
+                            display_input = display_input
+                        )
+                        .to_string()
                     };
                     self.handle_mcp_tool_stream_update(action_id, &command_text, ctx);
                 }
@@ -2097,7 +2102,8 @@ impl AIBlock {
                     action: AIAgentActionType::SuggestNewConversation { .. },
                     ..
                 } => {
-                    let start_new_conversation_button_text = i18n::t!("Start a new conversation").to_string();
+                    let start_new_conversation_button_text =
+                        i18n::t!("Start a new conversation").to_string();
                     let continue_current_conversation_button_text =
                         i18n::t!("Continue current conversation").to_string();
 

@@ -314,7 +314,8 @@ fn init_sentry(user_id: Option<UserUid>, email: Option<String>, ctx: &mut AppCon
     fn scrub_message(message: &mut String) {
         for (regex, replacement) in ERROR_MESSAGES_TO_SCRUB.iter() {
             if regex.is_match(message) {
-                *message = i18n::t!("(REDACTED) {replacement}", replacement = replacement).to_string();
+                *message =
+                    i18n::t!("(REDACTED) {replacement}", replacement = replacement).to_string();
                 return;
             }
         }

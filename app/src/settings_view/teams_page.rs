@@ -1530,7 +1530,11 @@ impl TeamsPageView {
             .collect();
 
         self.show_success(
-            i18n::t!("Domain restrictions added: {len}", len = unique_domains.len()).to_string(),
+            i18n::t!(
+                "Domain restrictions added: {len}",
+                len = unique_domains.len()
+            )
+            .to_string(),
             ctx,
         );
         self.user_workspaces
@@ -1579,7 +1583,11 @@ impl TeamsPageView {
         let message = if unique_emails.len() == 1 {
             i18n::t!("Your invite is on the way!").to_string()
         } else {
-            i18n::t!("Your {len} invites are on the way!", len = unique_emails.len()).to_string()
+            i18n::t!(
+                "Your {len} invites are on the way!",
+                len = unique_emails.len()
+            )
+            .to_string()
         };
         self.show_success(message, ctx);
         self.user_workspaces
@@ -2048,7 +2056,12 @@ impl TeamsWidget {
                 }
             }
         };
-        let body_text = i18n::t!("{body_prefix} {cta_sentence}", body_prefix = body_prefix, cta_sentence = cta_sentence).to_string();
+        let body_text = i18n::t!(
+            "{body_prefix} {cta_sentence}",
+            body_prefix = body_prefix,
+            cta_sentence = cta_sentence
+        )
+        .to_string();
         let body = self.render_sub_text(body_text, appearance, None);
         let title_container = Container::new(title_element)
             .with_margin_bottom(4.)
@@ -2584,9 +2597,10 @@ impl TeamsWidget {
         if let Some(policy) = team.billing_metadata.tier.shared_notebooks_policy {
             if !policy.is_unlimited {
                 let mut shared_notebooks_column = Flex::column();
-                shared_notebooks_column.add_child(
-                    self.render_plan_usage_header(i18n::t!("Shared Notebooks").to_string(), appearance),
-                );
+                shared_notebooks_column.add_child(self.render_plan_usage_header(
+                    i18n::t!("Shared Notebooks").to_string(),
+                    appearance,
+                ));
                 let num_shared_notebooks = cloud_model
                     .active_notebooks_in_space(Space::Team { team_uid: team.uid }, app)
                     .count();
@@ -2609,9 +2623,10 @@ impl TeamsWidget {
         if let Some(policy) = team.billing_metadata.tier.shared_workflows_policy {
             if !policy.is_unlimited {
                 let mut shared_workflows_column = Flex::column();
-                shared_workflows_column.add_child(
-                    self.render_plan_usage_header(i18n::t!("Shared Workflows").to_string(), appearance),
-                );
+                shared_workflows_column.add_child(self.render_plan_usage_header(
+                    i18n::t!("Shared Workflows").to_string(),
+                    appearance,
+                ));
                 let num_shared_workflows = cloud_model
                     .active_workflows_in_space(Space::Team { team_uid: team.uid }, app)
                     .count();
@@ -2663,7 +2678,10 @@ impl TeamsWidget {
 
         invitation_section.add_child(
             Container::new(
-                self.render_subsection_header(i18n::t!("Invite team members").to_string(), appearance),
+                self.render_subsection_header(
+                    i18n::t!("Invite team members").to_string(),
+                    appearance,
+                ),
             )
             .with_padding_bottom(16.)
             .finish(),
@@ -2839,10 +2857,12 @@ impl TeamsWidget {
 
         // "By email" subsection header
         section.add_child(
-            Container::new(self.render_subsubsection_header(i18n::t!("By email").to_string(), appearance))
-                .with_padding_top(CONTENT_SEPARATION_PADDING)
-                .with_padding_bottom(8.)
-                .finish(),
+            Container::new(
+                self.render_subsubsection_header(i18n::t!("By email").to_string(), appearance),
+            )
+            .with_padding_top(CONTENT_SEPARATION_PADDING)
+            .with_padding_bottom(8.)
+            .finish(),
         );
 
         // Form stays visually unchanged when blocked; the chip editor is
@@ -2912,7 +2932,9 @@ impl TeamsWidget {
             .with_main_axis_size(MainAxisSize::Max)
             .with_main_axis_alignment(MainAxisAlignment::SpaceBetween)
             .with_cross_axis_alignment(CrossAxisAlignment::Center)
-            .with_child(self.render_subsection_header(i18n::t!("Team members").to_string(), appearance))
+            .with_child(
+                self.render_subsection_header(i18n::t!("Team members").to_string(), appearance),
+            )
             .with_child(self.render_team_members_count(team, appearance))
             .finish();
         section.add_child(
@@ -2984,8 +3006,12 @@ impl TeamsWidget {
         };
 
         let plan_display = team.billing_metadata.customer_type.to_display_string();
-        let tooltip_text =
-            i18n::t!("Your plan ({plan_display}) has a maximum capacity of {cap} members.", plan_display = plan_display, cap = cap).to_string();
+        let tooltip_text = i18n::t!(
+            "Your plan ({plan_display}) has a maximum capacity of {cap} members.",
+            plan_display = plan_display,
+            cap = cap
+        )
+        .to_string();
 
         let info_icon = Container::new(
             ConstrainedBox::new(Icon::Info.to_warpui_icon(muted_color).finish())
@@ -3038,7 +3064,8 @@ impl TeamsWidget {
 
         let team_uid = team.uid;
         let (link_text, suffix) = Self::outgrow_upgrade_line_copy(&team.billing_metadata);
-        let prefix = self.render_sub_text(i18n::t!("Need more seats? ").to_string(), appearance, None);
+        let prefix =
+            self.render_sub_text(i18n::t!("Need more seats? ").to_string(), appearance, None);
         let link = appearance
             .ui_builder()
             .link(
@@ -3246,11 +3273,15 @@ impl TeamsWidget {
     ) -> Box<dyn Element> {
         // Same layout as the "By link" header row: text column on the left,
         // toggle on the right.
-        let header = self.render_subsubsection_header(i18n::t!("By discovery").to_string(), appearance);
+        let header =
+            self.render_subsubsection_header(i18n::t!("By discovery").to_string(), appearance);
 
         let domain = current_user_email.split('@').nth(1).unwrap_or("");
-        let team_discoverability_instructions =
-            i18n::t!("Allow Warp users with an @{domain} email to find and join the team.", domain = domain).to_string();
+        let team_discoverability_instructions = i18n::t!(
+            "Allow Warp users with an @{domain} email to find and join the team.",
+            domain = domain
+        )
+        .to_string();
         let subtext = self.render_sub_text(
             team_discoverability_instructions,
             appearance,
@@ -3981,9 +4012,10 @@ impl TeamsWidget {
 
         // Title, subtitle, and description
         page.add_child(render_sub_header(appearance, "Teams".to_string(), None));
-        page.add_child(
-            self.render_sub_header_with_subtext_color(appearance, i18n::t!("Create a team").to_string()),
-        );
+        page.add_child(self.render_sub_header_with_subtext_color(
+            appearance,
+            i18n::t!("Create a team").to_string(),
+        ));
         page.add_child(
             Container::new(
                 self.render_description(CREATE_TEAM_DESCRIPTION.to_string(), appearance),
@@ -4009,7 +4041,11 @@ impl TeamsWidget {
             .with_margin_left(-4.)
             .finish();
             let checkbox_row_text = if let Some(domain) = view.auth_state.user_email_domain() {
-                i18n::t!("Allow Warp users with an @{domain} email to find and join the team.", domain = domain).to_string()
+                i18n::t!(
+                    "Allow Warp users with an @{domain} email to find and join the team.",
+                    domain = domain
+                )
+                .to_string()
             } else {
                 "Allow Warp users with the same email domain as you to find and join the team."
                     .to_string()
@@ -4122,7 +4158,11 @@ impl TeamsWidget {
         let teammate_string = if team_state.team.num_members == 1 {
             "1 teammate".to_string()
         } else {
-            i18n::t!("{num_members} teammates", num_members = team_state.team.num_members).to_string()
+            i18n::t!(
+                "{num_members} teammates",
+                num_members = team_state.team.num_members
+            )
+            .to_string()
         };
         single_team.add_child(self.render_sub_text(teammate_string, appearance, None));
 

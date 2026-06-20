@@ -324,16 +324,24 @@ impl InBandCommandExecutor {
                     shared::shell_escape_single_quotes(command, shell.shell_type());
 
                 let in_band_command = match shell.shell_type() {
-                    ShellType::PowerShell => {
-                        i18n::t!("Warp-Run-GeneratorCommand {id} '{escaped_command}' -ErrorAction Ignore", id = id, escaped_command = escaped_command).to_string()
-                    }
+                    ShellType::PowerShell => i18n::t!(
+                        "Warp-Run-GeneratorCommand {id} '{escaped_command}' -ErrorAction Ignore",
+                        id = id,
+                        escaped_command = escaped_command
+                    )
+                    .to_string(),
                     ShellType::Fish => {
                         // Add a leading space for in-band commands in fish, which omits them from
                         // history. Unlike bash and zsh, fish does not have a mechanism for
                         // specifying command patterns to be omitted from history. Ignoring
                         // commands with a leading space is default, non-configurable behavior in
                         // fish.
-                        i18n::t!(" warp_run_generator_command {id} '{escaped_command}'", id = id, escaped_command = escaped_command).to_string()
+                        i18n::t!(
+                            " warp_run_generator_command {id} '{escaped_command}'",
+                            id = id,
+                            escaped_command = escaped_command
+                        )
+                        .to_string()
                     }
                     _ => {
                         format!("warp_run_generator_command {id} '{escaped_command}'")

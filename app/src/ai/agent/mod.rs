@@ -580,7 +580,9 @@ impl AIAgentOutput {
                 AIAgentOutputMessageType::CommentsAddressed {
                     comments: comment_ids,
                 } => {
-                    result.push(i18n::t!("Addressed {len} comments", len = comment_ids.len()).to_string());
+                    result.push(
+                        i18n::t!("Addressed {len} comments", len = comment_ids.len()).to_string(),
+                    );
                     last_was_action = false;
                 }
                 AIAgentOutputMessageType::Reasoning { .. } => continue,
@@ -594,11 +596,15 @@ impl AIAgentOutput {
                 AIAgentOutputMessageType::ArtifactCreated(_) => continue,
                 AIAgentOutputMessageType::SkillInvoked(_) => continue,
                 AIAgentOutputMessageType::MessagesReceivedFromAgents { messages } => {
-                    result.push(i18n::t!("Received {len} messages", len = messages.len()).to_string());
+                    result.push(
+                        i18n::t!("Received {len} messages", len = messages.len()).to_string(),
+                    );
                     last_was_action = false;
                 }
                 AIAgentOutputMessageType::EventsFromAgents { event_ids } => {
-                    result.push(i18n::t!("Received {len} agent events", len = event_ids.len()).to_string());
+                    result.push(
+                        i18n::t!("Received {len} agent events", len = event_ids.len()).to_string(),
+                    );
                     last_was_action = false;
                 }
             }
@@ -2778,12 +2784,16 @@ impl Display for AIAgentInput {
             Self::ResumeConversation { .. } => write!(f, "{}", i18n::t!("ResumeConversation")),
             Self::InitProjectRules { .. } => write!(f, "{}", i18n::t!("InitProjectRules")),
             Self::CreateEnvironment { .. } => write!(f, "{}", i18n::t!("CreateEnvironment")),
-            Self::TriggerPassiveSuggestion { .. } => write!(f, "{}", i18n::t!("TriggerSuggestPrompt")),
+            Self::TriggerPassiveSuggestion { .. } => {
+                write!(f, "{}", i18n::t!("TriggerSuggestPrompt"))
+            }
             Self::CreateNewProject { .. } => write!(f, "{}", i18n::t!("CreateNewProject")),
             Self::CloneRepository { .. } => write!(f, "{}", i18n::t!("CloneRepository")),
             Self::CodeReview { .. } => write!(f, "{}", i18n::t!("CodeReview")),
             Self::FetchReviewComments { .. } => write!(f, "{}", i18n::t!("FetchReviewComments")),
-            Self::SummarizeConversation { .. } => write!(f, "{}", i18n::t!("SummarizeConversation")),
+            Self::SummarizeConversation { .. } => {
+                write!(f, "{}", i18n::t!("SummarizeConversation"))
+            }
             Self::InvokeSkill {
                 skill, user_query, ..
             } => {
@@ -2797,15 +2807,21 @@ impl Display for AIAgentInput {
                     write!(f, "InvokeSkill: {}", skill.name)
                 }
             }
-            Self::StartFromAmbientRunPrompt { .. } => write!(f, "{}", i18n::t!("StartFromAmbientRunPrompt")),
+            Self::StartFromAmbientRunPrompt { .. } => {
+                write!(f, "{}", i18n::t!("StartFromAmbientRunPrompt"))
+            }
             Self::MessagesReceivedFromAgents { messages } => {
                 write!(f, "MessagesReceivedFromAgents({} messages)", messages.len())
             }
             Self::EventsFromAgents { events } => {
                 write!(f, "EventsFromAgents({} events)", events.len())
             }
-            Self::PassiveSuggestionResult { .. } => write!(f, "{}", i18n::t!("PassiveSuggestionResult")),
-            Self::OrchestrationConfigUpdate { .. } => write!(f, "{}", i18n::t!("OrchestrationConfigUpdate")),
+            Self::PassiveSuggestionResult { .. } => {
+                write!(f, "{}", i18n::t!("PassiveSuggestionResult"))
+            }
+            Self::OrchestrationConfigUpdate { .. } => {
+                write!(f, "{}", i18n::t!("OrchestrationConfigUpdate"))
+            }
         }
     }
 }
@@ -2838,7 +2854,14 @@ impl AIAgentInput {
                     if user_query.query.is_empty() {
                         Some(format!("/{}", skill.name))
                     } else {
-                        Some(i18n::t!("/{name} {query}", name = skill.name, query = user_query.query).to_string())
+                        Some(
+                            i18n::t!(
+                                "/{name} {query}",
+                                name = skill.name,
+                                query = user_query.query
+                            )
+                            .to_string(),
+                        )
                     }
                 } else {
                     Some(format!("/{}", skill.name))

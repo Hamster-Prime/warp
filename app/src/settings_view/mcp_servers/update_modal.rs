@@ -267,7 +267,11 @@ impl UpdateModalBody {
                     .unwrap_or_else(Local::now);
                 let formatted_time = format_approx_duration_from_now(datetime);
                 (
-                    i18n::t!("Update from {publisher_string}", publisher_string = publisher_string).to_string(),
+                    i18n::t!(
+                        "Update from {publisher_string}",
+                        publisher_string = publisher_string
+                    )
+                    .to_string(),
                     formatted_time.to_string(),
                 )
             }

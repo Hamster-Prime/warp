@@ -528,7 +528,11 @@ fn list_secrets(
 fn read_simple_secret_value(args: &ValueArgs) -> Result<Option<String>> {
     if let Some(value_file) = args.value_file.as_ref() {
         let value = fs::read_to_string(value_file).with_context(|| {
-            i18n::t!("Failed to read secret value from: {display}", display = value_file.display()).to_string()
+            i18n::t!(
+                "Failed to read secret value from: {display}",
+                display = value_file.display()
+            )
+            .to_string()
         })?;
         if value.is_empty() {
             Ok(None)
@@ -850,8 +854,12 @@ fn format_secret_type(type_: &ManagedSecretType) -> String {
         ManagedSecretType::RawValue => i18n::t!("Raw Value").to_string(),
         ManagedSecretType::Dotenvx => "dotenvx".to_string(),
         ManagedSecretType::AnthropicApiKey => i18n::t!("Anthropic API Key").to_string(),
-        ManagedSecretType::AnthropicBedrockAccessKey => i18n::t!("Anthropic Bedrock Access Key").to_string(),
-        ManagedSecretType::AnthropicBedrockApiKey => i18n::t!("Anthropic Bedrock API Key").to_string(),
+        ManagedSecretType::AnthropicBedrockAccessKey => {
+            i18n::t!("Anthropic Bedrock Access Key").to_string()
+        }
+        ManagedSecretType::AnthropicBedrockApiKey => {
+            i18n::t!("Anthropic Bedrock API Key").to_string()
+        }
         ManagedSecretType::OpenaiApiKey => i18n::t!("OpenAI API Key").to_string(),
     }
 }

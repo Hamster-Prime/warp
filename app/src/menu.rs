@@ -2545,7 +2545,11 @@ impl<A: Action + Clone> SubMenu<A> {
                             let selected_item_text = items
                                 .get(self.selected_item_index.unwrap_or_default())
                                 .map_or_else(|| "", |item| item.get_a11y_text());
-                            i18n::t!("{selected_item_text} Selected", selected_item_text = selected_item_text).to_string()
+                            i18n::t!(
+                                "{selected_item_text} Selected",
+                                selected_item_text = selected_item_text
+                            )
+                            .to_string()
                         }
                         MenuItem::Separator => String::from(""),
                         MenuItem::Submenu { fields, .. } => {

@@ -377,7 +377,9 @@ impl AuthViewBody {
             Flex::column()
                 .with_child(
                     ui_builder
-                        .paragraph(i18n::t!("If you'd like to opt out of analytics and AI features,"))
+                        .paragraph(i18n::t!(
+                            "If you'd like to opt out of analytics and AI features,"
+                        ))
                         .with_style(disclaimer_styles)
                         .build()
                         .finish(),
@@ -551,7 +553,9 @@ impl AuthViewBody {
                 )
                 .with_child(
                     ui_builder
-                        .paragraph(i18n::t!("You can sign up later, but some features, such as AI,"))
+                        .paragraph(i18n::t!(
+                            "You can sign up later, but some features, such as AI,"
+                        ))
                         .build()
                         .finish(),
                 )

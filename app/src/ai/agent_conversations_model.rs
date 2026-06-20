@@ -496,7 +496,9 @@ impl std::fmt::Display for AgentRunDisplayStatus {
             AgentRunDisplayStatus::TaskPending => write!(f, "{}", i18n::t!("Pending")),
             AgentRunDisplayStatus::TaskClaimed => write!(f, "{}", i18n::t!("Claimed")),
             AgentRunDisplayStatus::TaskInProgress
-            | AgentRunDisplayStatus::ConversationInProgress => write!(f, "{}", i18n::t!("In progress")),
+            | AgentRunDisplayStatus::ConversationInProgress => {
+                write!(f, "{}", i18n::t!("In progress"))
+            }
             AgentRunDisplayStatus::TaskSucceeded | AgentRunDisplayStatus::ConversationSucceeded => {
                 write!(f, "{}", i18n::t!("Done"))
             }
@@ -505,7 +507,9 @@ impl std::fmt::Display for AgentRunDisplayStatus {
                 write!(f, "{}", i18n::t!("Error"))
             }
             AgentRunDisplayStatus::TaskBlocked { .. }
-            | AgentRunDisplayStatus::ConversationBlocked { .. } => write!(f, "{}", i18n::t!("Blocked")),
+            | AgentRunDisplayStatus::ConversationBlocked { .. } => {
+                write!(f, "{}", i18n::t!("Blocked"))
+            }
             AgentRunDisplayStatus::TaskCancelled | AgentRunDisplayStatus::ConversationCancelled => {
                 write!(f, "{}", i18n::t!("Cancelled"))
             }

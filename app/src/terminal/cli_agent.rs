@@ -431,14 +431,25 @@ pub fn build_review_prompt(review: &AgentReviewCommentBatch) -> String {
                     }
                     EditorLineLocation::Removed { line_number, .. } => {
                         let n = line_number.as_usize() + 1;
-                        i18n::t!("{path} (deleted, was L{n} — see `git diff`)", path = path, n = n).to_string()
+                        i18n::t!(
+                            "{path} (deleted, was L{n} — see `git diff`)",
+                            path = path,
+                            n = n
+                        )
+                        .to_string()
                     }
                     EditorLineLocation::Collapsed { line_range } => {
                         // line_range is [start, end) 0-indexed; convert to L<start>-L<end>
                         // where both start and end are 1-indexed inclusive.
                         let start = line_range.start.as_usize() + 1;
                         let end = line_range.end.as_usize();
-                        i18n::t!("{path} (collapsed hunk, L{start}-L{end} — see `git diff`)", path = path, start = start, end = end).to_string()
+                        i18n::t!(
+                            "{path} (collapsed hunk, L{start}-L{end} — see `git diff`)",
+                            path = path,
+                            start = start,
+                            end = end
+                        )
+                        .to_string()
                     }
                 }
             }
@@ -459,7 +470,9 @@ pub fn build_review_prompt(review: &AgentReviewCommentBatch) -> String {
             }
             AttachedReviewCommentTarget::General => "General".to_string(),
         };
-        text.push_str(&i18n::t!("\n- {location}: {body}", location = location, body = body).to_string());
+        text.push_str(
+            &i18n::t!("\n- {location}: {body}", location = location, body = body).to_string(),
+        );
     }
 
     text
@@ -537,7 +550,13 @@ pub fn build_diff_context_prompt(file_diffs: &HashMap<String, Vec<DiffSetHunk>>)
 /// # Format
 /// `<path> L<line>: <text>` where `line` is 1-indexed.
 pub fn build_selection_substring_prompt(file_path: &str, line: usize, text: &str) -> String {
-    i18n::t!("{file_path} L{line}: {text}", file_path = file_path, line = line, text = text).to_string()
+    i18n::t!(
+        "{file_path} L{line}: {text}",
+        file_path = file_path,
+        line = line,
+        text = text
+    )
+    .to_string()
 }
 
 /// Builds a prompt for a multi-line selection suitable for writing to a CLI agent's PTY.
@@ -550,7 +569,13 @@ pub fn build_selection_line_range_prompt(
     start_line: usize,
     end_line: usize,
 ) -> String {
-    i18n::t!("{file_path} L{start_line}-L{end_line}", file_path = file_path, start_line = start_line, end_line = end_line).to_string()
+    i18n::t!(
+        "{file_path} L{start_line}-L{end_line}",
+        file_path = file_path,
+        start_line = start_line,
+        end_line = end_line
+    )
+    .to_string()
 }
 
 impl From<CLIAgent> for CLIAgentType {

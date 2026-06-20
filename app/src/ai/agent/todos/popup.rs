@@ -141,7 +141,12 @@ impl AgentTodosPopupView {
         .with_style(Properties::default().weight(Weight::Semibold));
 
         header.add_text_with_highlights(
-            i18n::t!(" {completed_count}/{total_count}", completed_count = completed_count, total_count = total_count).to_string(),
+            i18n::t!(
+                " {completed_count}/{total_count}",
+                completed_count = completed_count,
+                total_count = total_count
+            )
+            .to_string(),
             theme.sub_text_color(theme.surface_1()).into(),
             Properties::default().weight(Weight::Semibold),
         );

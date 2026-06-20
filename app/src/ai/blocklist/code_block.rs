@@ -429,7 +429,12 @@ fn render_code_block_internal(
                     "{}{}",
                     file_path,
                     match (range_start, range_end) {
-                        (Some(ls), Some(le)) => i18n::t!(" ({line_num}-{line_num_1})", line_num = ls.line_num, line_num_1 = le.line_num).to_string(),
+                        (Some(ls), Some(le)) => i18n::t!(
+                            " ({line_num}-{line_num_1})",
+                            line_num = ls.line_num,
+                            line_num_1 = le.line_num
+                        )
+                        .to_string(),
                         _ => String::new(),
                     }
                 ),

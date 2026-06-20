@@ -302,7 +302,12 @@ fn init_subshell_script_for_shell(
         shell_init_script.replace(SESSION_ID_PLACEHOLDER, &session_id.as_u64().to_string());
 
     // Combine the environment setup script with the shell-specific init script
-    i18n::t!("{env_setup_script} {shell_init_script}", env_setup_script = env_setup_script, shell_init_script = shell_init_script).to_string()
+    i18n::t!(
+        "{env_setup_script} {shell_init_script}",
+        env_setup_script = env_setup_script,
+        shell_init_script = shell_init_script
+    )
+    .to_string()
 }
 
 /// Returns the init subshell script for an unknown shell which detects the shell type.

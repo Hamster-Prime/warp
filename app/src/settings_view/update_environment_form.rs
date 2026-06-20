@@ -2966,7 +2966,13 @@ impl UpdateEnvironmentForm {
                 let ui_builder = appearance.ui_builder().clone();
                 move || {
                     ui_builder
-                        .tool_tip(i18n::t!("Open image at {docker_hub_url}", docker_hub_url = docker_hub_url).to_string())
+                        .tool_tip(
+                            i18n::t!(
+                                "Open image at {docker_hub_url}",
+                                docker_hub_url = docker_hub_url
+                            )
+                            .to_string(),
+                        )
                         .build()
                         .finish()
                 }

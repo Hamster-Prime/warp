@@ -150,8 +150,11 @@ impl WarpifyPageView {
     fn build_page(ctx: &mut ViewContext<Self>) -> PageType<Self> {
         let mut categories = vec![
             Category::new("", vec![Box::new(TitleWidget::default())]),
-            Category::new(i18n::t!("Subshells").to_string(), vec![Box::new(SubshellsWidget::default())])
-                .with_subtitle("Subshells supported: bash, zsh, and fish."),
+            Category::new(
+                i18n::t!("Subshells").to_string(),
+                vec![Box::new(SubshellsWidget::default())],
+            )
+            .with_subtitle("Subshells supported: bash, zsh, and fish."),
         ];
 
         let warpify_settings = WarpifySettings::as_ref(ctx);
@@ -160,8 +163,11 @@ impl WarpifyPageView {
             .is_supported_on_current_platform()
         {
             categories.push(
-                Category::new(i18n::t!("SSH").to_string(), vec![Box::new(SSHWidget::default())])
-                    .with_subtitle("Warpify your interactive SSH sessions."),
+                Category::new(
+                    i18n::t!("SSH").to_string(),
+                    vec![Box::new(SSHWidget::default())],
+                )
+                .with_subtitle("Warpify your interactive SSH sessions."),
             );
         }
         PageType::new_categorized(categories, None)

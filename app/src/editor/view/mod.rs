@@ -549,11 +549,15 @@ pub fn init(ctx: &mut AppContext) {
         )
         .with_context_predicate(id!("EditorView") & !id!("IMEOpen"))
         .with_mac_key_binding("shift-ctrl-F"),
-        EditableBinding::new(SELECT_UP_ACTION_NAME, i18n::t!("Select up").to_string(), EditorAction::SelectUp)
-            .with_context_predicate(id!("EditorView") & !id!("IMEOpen"))
-            // Set this to Mac only since otherwise it could conflict with opening the command
-            // palette. NOTE `shift-up` still exists as a cross platform keybinding for this action.
-            .with_mac_key_binding("shift-ctrl-P"),
+        EditableBinding::new(
+            SELECT_UP_ACTION_NAME,
+            i18n::t!("Select up").to_string(),
+            EditorAction::SelectUp,
+        )
+        .with_context_predicate(id!("EditorView") & !id!("IMEOpen"))
+        // Set this to Mac only since otherwise it could conflict with opening the command
+        // palette. NOTE `shift-up` still exists as a cross platform keybinding for this action.
+        .with_mac_key_binding("shift-ctrl-P"),
         EditableBinding::new(
             SELECT_DOWN_ACTION_NAME,
             i18n::t!("Select down").to_string(),
@@ -615,15 +619,27 @@ pub fn init(ctx: &mut AppContext) {
         .with_context_predicate(id!("EditorView") & !id!("IMEOpen"))
         .with_mac_key_binding("cmd-shift-left"),
         // Navigation
-        EditableBinding::new("editor_view:up", i18n::t!("Move cursor up").to_string(), EditorAction::Up)
-            .with_context_predicate(id!("EditorView") & !id!("IMEOpen"))
-            .with_key_binding("ctrl-p"),
-        EditableBinding::new("editor_view:down", i18n::t!("Move cursor down").to_string(), EditorAction::Down)
-            .with_context_predicate(id!("EditorView") & !id!("IMEOpen"))
-            .with_key_binding("ctrl-n"),
-        EditableBinding::new("editor_view:left", i18n::t!("Move cursor left").to_string(), EditorAction::Left)
-            .with_context_predicate(id!("EditorView") & !id!("IMEOpen"))
-            .with_key_binding("ctrl-b"),
+        EditableBinding::new(
+            "editor_view:up",
+            i18n::t!("Move cursor up").to_string(),
+            EditorAction::Up,
+        )
+        .with_context_predicate(id!("EditorView") & !id!("IMEOpen"))
+        .with_key_binding("ctrl-p"),
+        EditableBinding::new(
+            "editor_view:down",
+            i18n::t!("Move cursor down").to_string(),
+            EditorAction::Down,
+        )
+        .with_context_predicate(id!("EditorView") & !id!("IMEOpen"))
+        .with_key_binding("ctrl-n"),
+        EditableBinding::new(
+            "editor_view:left",
+            i18n::t!("Move cursor left").to_string(),
+            EditorAction::Left,
+        )
+        .with_context_predicate(id!("EditorView") & !id!("IMEOpen"))
+        .with_key_binding("ctrl-b"),
         EditableBinding::new(
             "editor_view:right",
             i18n::t!("Move cursor right").to_string(),
@@ -652,14 +668,22 @@ pub fn init(ctx: &mut AppContext) {
         .with_mac_key_binding("ctrl-e"),
         // Match the behavior of both VSCode and Intellij by using `cmd-left/right` on Mac and
         // `home/end` on Windows and Linux. See https://www.jetbrains.com/help/idea/reference-keymap-win-default.html#caret_navigation.
-        EditableBinding::new("editor_view:home", i18n::t!("Home").to_string(), EditorAction::Home)
-            .with_context_predicate(id!("EditorView") & !id!("IMEOpen"))
-            .with_mac_key_binding("cmd-left")
-            .with_linux_or_windows_key_binding("home"),
-        EditableBinding::new("editor_view:end", i18n::t!("End").to_string(), EditorAction::End)
-            .with_context_predicate(id!("EditorView") & !id!("IMEOpen"))
-            .with_mac_key_binding("cmd-right")
-            .with_linux_or_windows_key_binding("end"),
+        EditableBinding::new(
+            "editor_view:home",
+            i18n::t!("Home").to_string(),
+            EditorAction::Home,
+        )
+        .with_context_predicate(id!("EditorView") & !id!("IMEOpen"))
+        .with_mac_key_binding("cmd-left")
+        .with_linux_or_windows_key_binding("home"),
+        EditableBinding::new(
+            "editor_view:end",
+            i18n::t!("End").to_string(),
+            EditorAction::End,
+        )
+        .with_context_predicate(id!("EditorView") & !id!("IMEOpen"))
+        .with_mac_key_binding("cmd-right")
+        .with_linux_or_windows_key_binding("end"),
         EditableBinding::new(
             "editor_view:cmd_down",
             i18n::t!("Move cursor to the bottom").to_string(),
@@ -766,9 +790,13 @@ pub fn init(ctx: &mut AppContext) {
         )
         .with_context_predicate(id!("EditorView") & !id!("IMEOpen"))
         .with_key_binding("alt-d"),
-        EditableBinding::new("editor_view:delete", i18n::t!("Delete").to_string(), EditorAction::Delete)
-            .with_context_predicate(id!("EditorView") & !id!("EditorView_SingleCursorBufferEnd"))
-            .with_key_binding("ctrl-d"),
+        EditableBinding::new(
+            "editor_view:delete",
+            i18n::t!("Delete").to_string(),
+            EditorAction::Delete,
+        )
+        .with_context_predicate(id!("EditorView") & !id!("EditorView_SingleCursorBufferEnd"))
+        .with_key_binding("ctrl-d"),
         EditableBinding::new(
             "editor:delete_word_right",
             i18n::t!("Delete word right").to_string(),
@@ -820,12 +848,20 @@ pub fn init(ctx: &mut AppContext) {
         .with_context_predicate(id!("EditorView") & !id!("IMEOpen"))
         .with_key_binding("ctrl-j"),
         // Folds
-        EditableBinding::new("editor_view:fold", i18n::t!("Fold").to_string(), EditorAction::Fold)
-            .with_context_predicate(id!("EditorView") & !id!("IMEOpen"))
-            .with_key_binding("alt-cmdorctrl-["),
-        EditableBinding::new("editor_view:unfold", i18n::t!("Unfold").to_string(), EditorAction::Unfold)
-            .with_context_predicate(id!("EditorView") & !id!("IMEOpen"))
-            .with_key_binding("alt-cmdorctrl-]"),
+        EditableBinding::new(
+            "editor_view:fold",
+            i18n::t!("Fold").to_string(),
+            EditorAction::Fold,
+        )
+        .with_context_predicate(id!("EditorView") & !id!("IMEOpen"))
+        .with_key_binding("alt-cmdorctrl-["),
+        EditableBinding::new(
+            "editor_view:unfold",
+            i18n::t!("Unfold").to_string(),
+            EditorAction::Unfold,
+        )
+        .with_context_predicate(id!("EditorView") & !id!("IMEOpen"))
+        .with_key_binding("alt-cmdorctrl-]"),
         EditableBinding::new(
             "editor_view:fold_selected_ranges",
             i18n::t!("Fold selected ranges").to_string(),
@@ -5010,7 +5046,11 @@ impl EditorView {
                             };
 
                             let message = if num_excess_images == 1 {
-                                i18n::t!("1 image wasn't attached - {limit_reason}.", limit_reason = limit_reason).to_string()
+                                i18n::t!(
+                                    "1 image wasn't attached - {limit_reason}.",
+                                    limit_reason = limit_reason
+                                )
+                                .to_string()
                             } else {
                                 format!(
                                     "{num_excess_images} images weren't attached - {limit_reason}."
@@ -5085,7 +5125,8 @@ impl EditorView {
                 ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     toast_stack.add_ephemeral_toast(
                         DismissibleToast::error(
-                            i18n::t!("The selected model does not support images as context").to_string(),
+                            i18n::t!("The selected model does not support images as context")
+                                .to_string(),
                         ),
                         window_id,
                         ctx,
@@ -5200,7 +5241,8 @@ impl EditorView {
                 ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     toast_stack.add_ephemeral_toast(
                         DismissibleToast::error(
-                            i18n::t!("The selected model does not support images as context").to_string(),
+                            i18n::t!("The selected model does not support images as context")
+                                .to_string(),
                         ),
                         window_id,
                         ctx,
@@ -8057,19 +8099,18 @@ impl EditorView {
             padding: Some(Coords::uniform(icon_size / 10.)),
             ..Default::default()
         });
-        let button =
-            button
-                .with_tooltip_position(ButtonTooltipPosition::Above)
-                .with_tooltip(self.render_menu_button_tooltip(
-                    i18n::t!("Search files and directories").to_string(),
-                    appearance,
-                ))
-                .build()
-                .with_cursor(Cursor::PointingHand)
-                .on_click(move |ctx, _, _| {
-                    ctx.dispatch_typed_action(EditorAction::SetAIContextMenuOpen(true));
-                })
-                .finish();
+        let button = button
+            .with_tooltip_position(ButtonTooltipPosition::Above)
+            .with_tooltip(self.render_menu_button_tooltip(
+                i18n::t!("Search files and directories").to_string(),
+                appearance,
+            ))
+            .build()
+            .with_cursor(Cursor::PointingHand)
+            .on_click(move |ctx, _, _| {
+                ctx.dispatch_typed_action(EditorAction::SetAIContextMenuOpen(true));
+            })
+            .finish();
 
         Some(button)
     }

@@ -907,7 +907,12 @@ impl AIDocumentView {
             .iter()
             .map(|entry| {
                 let label = if let Some(from_version) = entry.restored_from {
-                    i18n::t!("{version} (restored from {from_version})", version = entry.version, from_version = from_version).to_string()
+                    i18n::t!(
+                        "{version} (restored from {from_version})",
+                        version = entry.version,
+                        from_version = from_version
+                    )
+                    .to_string()
                 } else {
                     entry.version.to_string()
                 };
@@ -1159,7 +1164,9 @@ impl TypedActionView for AIDocumentView {
                 let window_id = ctx.window_id();
                 ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     toast_stack.add_ephemeral_toast(
-                        DismissibleToast::success(i18n::t!("Plan ID copied to clipboard").to_string()),
+                        DismissibleToast::success(
+                            i18n::t!("Plan ID copied to clipboard").to_string(),
+                        ),
                         window_id,
                         ctx,
                     );

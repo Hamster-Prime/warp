@@ -29,7 +29,9 @@ pub(super) fn validate_request(msg: RipgrepSearchRequest) -> Result<RipgrepSearc
         return Err(i18n::t!("RipgrepSearch requires a pattern and at least one root").to_string());
     }
     if let Some(root) = msg.roots.iter().find(|root| !Path::new(root).is_absolute()) {
-        return Err(i18n::t!("RipgrepSearch root must be absolute: {root}", root = root).to_string());
+        return Err(
+            i18n::t!("RipgrepSearch root must be absolute: {root}", root = root).to_string(),
+        );
     }
 
     let roots = msg.roots.iter().map(PathBuf::from).collect();

@@ -4504,7 +4504,8 @@ impl SettingsWidget for NativeRedirectWidget {
                 on_click_action: None,
                 secondary_text: None,
                 tooltip_override_text: Some(
-                    i18n::t!("Automatically open links in desktop app whenever possible.").to_string(),
+                    i18n::t!("Automatically open links in desktop app whenever possible.")
+                        .to_string(),
                 ),
             }),
             LocalOnlyIconState::for_setting(
@@ -7392,7 +7393,8 @@ impl SettingsWidget for LinuxSelectionClipboardWidget {
                 on_click_action: None,
                 secondary_text: None,
                 tooltip_override_text: Some(
-                    i18n::t!("Whether the Linux primary clipboard should be supported.").to_string(),
+                    i18n::t!("Whether the Linux primary clipboard should be supported.")
+                        .to_string(),
                 ),
             }),
             LocalOnlyIconState::for_setting(
@@ -7607,7 +7609,11 @@ impl SettingsWidget for GraphicsBackendWidget {
             col.add_child(
                 appearance
                     .ui_builder()
-                    .wrappable_text(i18n::t!("Current backend: {to_label}", to_label = backend.to_label()).to_string(), true)
+                    .wrappable_text(
+                        i18n::t!("Current backend: {to_label}", to_label = backend.to_label())
+                            .to_string(),
+                        true,
+                    )
                     .with_style(UiComponentStyles {
                         font_color: Some(theme.sub_text_color(theme.background()).into_solid()),
                         ..Default::default()

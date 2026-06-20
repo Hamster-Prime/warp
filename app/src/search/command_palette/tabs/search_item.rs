@@ -54,7 +54,12 @@ impl SearchItemTrait for SearchItem {
         let appearance = Appearance::as_ref(app);
 
         let title_text = Text::new_inline(
-            i18n::t!("[Tab {tab_index}] {title}", tab_index = self.tab.tab_index, title = self.tab.title).to_string(),
+            i18n::t!(
+                "[Tab {tab_index}] {title}",
+                tab_index = self.tab.tab_index,
+                title = self.tab.title
+            )
+            .to_string(),
             appearance.ui_font_family(),
             appearance.monospace_font_size(),
         )

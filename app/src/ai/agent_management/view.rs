@@ -766,7 +766,14 @@ impl AgentManagementView {
     ) {
         dropdown.set_menu_width(160., ctx);
         dropdown.set_main_axis_size(MainAxisSize::Min, ctx);
-        dropdown.set_menu_header_text_override(move |text| i18n::t!("{label_prefix}: {text}", label_prefix = label_prefix, text = text).to_string());
+        dropdown.set_menu_header_text_override(move |text| {
+            i18n::t!(
+                "{label_prefix}: {text}",
+                label_prefix = label_prefix,
+                text = text
+            )
+            .to_string()
+        });
         dropdown.set_style(DropdownStyle::ActionButtonSecondary, ctx);
     }
 
@@ -778,7 +785,14 @@ impl AgentManagementView {
     ) {
         dropdown.set_menu_width(320., ctx);
         dropdown.set_main_axis_size(MainAxisSize::Min, ctx);
-        dropdown.set_menu_header_text_override(move |text| i18n::t!("{label_prefix}: {text}", label_prefix = label_prefix, text = text).to_string());
+        dropdown.set_menu_header_text_override(move |text| {
+            i18n::t!(
+                "{label_prefix}: {text}",
+                label_prefix = label_prefix,
+                text = text
+            )
+            .to_string()
+        });
         dropdown.set_button_variant(ButtonVariant::Secondary);
     }
 
@@ -1236,7 +1250,8 @@ impl AgentManagementView {
 
                 let window_id = ctx.window_id();
                 ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
-                    let toast = DismissibleToast::default(i18n::t!("Copied branch name").to_string());
+                    let toast =
+                        DismissibleToast::default(i18n::t!("Copied branch name").to_string());
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });
             }
@@ -1814,7 +1829,13 @@ impl AgentManagementView {
         let mut metadata_parts = Vec::new();
 
         if let Some(source) = &entry.display.source {
-            metadata_parts.push(i18n::t!("Source: {display_name}", display_name = source.display_name()).to_string());
+            metadata_parts.push(
+                i18n::t!(
+                    "Source: {display_name}",
+                    display_name = source.display_name()
+                )
+                .to_string(),
+            );
         }
 
         let availability = HarnessAvailabilityModel::as_ref(app);
@@ -1840,7 +1861,8 @@ impl AgentManagementView {
                     } else {
                         "Executor"
                     };
-                    metadata_parts.push(i18n::t!("{label}: {name}", label = label, name = name).to_string());
+                    metadata_parts
+                        .push(i18n::t!("{label}: {name}", label = label, name = name).to_string());
                 }
             }
         }

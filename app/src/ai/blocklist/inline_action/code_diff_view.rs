@@ -1139,7 +1139,11 @@ impl CodeDiffView {
                 ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     toast_stack.add_ephemeral_toast(
                         DismissibleToast::error(
-                            i18n::t!("Failed to revert changes to {file_name}", file_name = file_name).to_string(),
+                            i18n::t!(
+                                "Failed to revert changes to {file_name}",
+                                file_name = file_name
+                            )
+                            .to_string(),
                         ),
                         window_id,
                         ctx,
@@ -1867,7 +1871,12 @@ impl CodeDiffView {
                             .file_name()
                             .and_then(|n| n.to_str())
                             .unwrap_or_default();
-                        i18n::t!("{file_name} → {rename_file_name}", file_name = file_name, rename_file_name = rename_file_name).to_string()
+                        i18n::t!(
+                            "{file_name} → {rename_file_name}",
+                            file_name = file_name,
+                            rename_file_name = rename_file_name
+                        )
+                        .to_string()
                     } else {
                         file_name
                     }

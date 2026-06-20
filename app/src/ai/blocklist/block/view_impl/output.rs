@@ -349,7 +349,8 @@ pub(super) fn render(props: Props, app: &AppContext) -> Box<dyn Element> {
                             && props.thinking_display_mode.should_render() =>
                         {
                             let header_text = if let Some(dur) = finished_duration {
-                                i18n::t!("Thought for {arg0}", arg0 = format_elapsed_seconds(*dur)).to_string()
+                                i18n::t!("Thought for {arg0}", arg0 = format_elapsed_seconds(*dur))
+                                    .to_string()
                             } else {
                                 "Thinking".to_string()
                             };
@@ -1004,7 +1005,9 @@ pub(super) fn render(props: Props, app: &AppContext) -> Box<dyn Element> {
                             let verb = if done { "Searched" } else { "Searching" };
 
                             let mut fragments: Vec<FormattedTextFragment> =
-                                vec![FormattedTextFragment::plain_text(i18n::t!("{verb} ", verb = verb).to_string())];
+                                vec![FormattedTextFragment::plain_text(
+                                    i18n::t!("{verb} ", verb = verb).to_string(),
+                                )];
                             match &target_label {
                                 Some((target_kind, name)) => {
                                     fragments.push(FormattedTextFragment::plain_text(format!(
@@ -1023,8 +1026,9 @@ pub(super) fn render(props: Props, app: &AppContext) -> Box<dyn Element> {
                             };
                             match query {
                                 Some(q) => {
-                                    fragments
-                                        .push(FormattedTextFragment::plain_text(i18n::t!(": {q}", q = q).to_string()));
+                                    fragments.push(FormattedTextFragment::plain_text(
+                                        i18n::t!(": {q}", q = q).to_string(),
+                                    ));
                                 }
                                 None if !done => {
                                     fragments.push(FormattedTextFragment::plain_text("..."));
@@ -1420,7 +1424,12 @@ fn render_search_codebase(
                         renderable_action(
                             props,
                             id,
-                            i18n::t!("Search in {to_string_lossy}", to_string_lossy = root_repo_path.to_string_lossy()).to_string().as_str(),
+                            i18n::t!(
+                                "Search in {to_string_lossy}",
+                                to_string_lossy = root_repo_path.to_string_lossy()
+                            )
+                            .to_string()
+                            .as_str(),
                             app,
                             footer,
                             appearance,
@@ -1470,7 +1479,12 @@ fn render_search_codebase(
                     renderable_action(
                         props,
                         id,
-                        i18n::t!("Searching in {to_string_lossy}", to_string_lossy = root_repo_path.to_string_lossy()).to_string().as_str(),
+                        i18n::t!(
+                            "Searching in {to_string_lossy}",
+                            to_string_lossy = root_repo_path.to_string_lossy()
+                        )
+                        .to_string()
+                        .as_str(),
                         app,
                         footer,
                         appearance,
@@ -1535,9 +1549,11 @@ fn render_search_codebase(
                                     "Search in {} failed because the codebase isn't indexed",
                                     root_repo_path.to_string_lossy(),
                                 ),
-                                _ => {
-                                    i18n::t!("Search in {to_string_lossy} failed", to_string_lossy = root_repo_path.to_string_lossy()).to_string()
-                                }
+                                _ => i18n::t!(
+                                    "Search in {to_string_lossy} failed",
+                                    to_string_lossy = root_repo_path.to_string_lossy()
+                                )
+                                .to_string(),
                             };
                             renderable_action(
                                 props,
@@ -1556,8 +1572,12 @@ fn render_search_codebase(
                             renderable_action(
                                 props,
                                 id,
-                                i18n::t!("Search in {to_string_lossy} cancelled", to_string_lossy = root_repo_path.to_string_lossy()).to_string()
-                                    .as_str(),
+                                i18n::t!(
+                                    "Search in {to_string_lossy} cancelled",
+                                    to_string_lossy = root_repo_path.to_string_lossy()
+                                )
+                                .to_string()
+                                .as_str(),
                                 app,
                                 footer,
                                 appearance,
@@ -1575,7 +1595,12 @@ fn render_search_codebase(
             renderable_action(
                 props,
                 id,
-                i18n::t!("Search in {to_string_lossy}", to_string_lossy = root_repo_path.to_string_lossy()).to_string().as_str(),
+                i18n::t!(
+                    "Search in {to_string_lossy}",
+                    to_string_lossy = root_repo_path.to_string_lossy()
+                )
+                .to_string()
+                .as_str(),
                 app,
                 footer,
                 appearance,
@@ -2325,9 +2350,10 @@ fn render_suggest_new_conversation(
     }
 
     if props.shared_session_status.is_viewer() {
-        let header_element = HeaderConfig::new(i18n::t!("Start a new conversation").to_string(), app)
-            .with_icon(gray_stop_icon(appearance))
-            .render(app);
+        let header_element =
+            HeaderConfig::new(i18n::t!("Start a new conversation").to_string(), app)
+                .with_icon(gray_stop_icon(appearance))
+                .render(app);
 
         return Some(
             header_element
@@ -2409,9 +2435,13 @@ fn create_formatted_text_for_grep(
             ]
         };
         fragments.push(if is_cancelled {
-            FormattedTextFragment::plain_text(i18n::t!(" in {display_path} cancelled", display_path = display_path).to_string())
+            FormattedTextFragment::plain_text(
+                i18n::t!(" in {display_path} cancelled", display_path = display_path).to_string(),
+            )
         } else {
-            FormattedTextFragment::plain_text(i18n::t!(" in {display_path}", display_path = display_path).to_string())
+            FormattedTextFragment::plain_text(
+                i18n::t!(" in {display_path}", display_path = display_path).to_string(),
+            )
         });
         FormattedText::new([FormattedTextLine::Line(fragments)])
     } else {
@@ -2506,7 +2536,9 @@ fn create_formatted_text_for_file_glob(
             ]
         };
         fragments.push(if is_cancelled {
-            FormattedTextFragment::plain_text(i18n::t!(" in {path} cancelled", path = path).to_string())
+            FormattedTextFragment::plain_text(
+                i18n::t!(" in {path} cancelled", path = path).to_string(),
+            )
         } else {
             FormattedTextFragment::plain_text(i18n::t!(" in {path}", path = path).to_string())
         });
@@ -2732,7 +2764,11 @@ fn format_upload_artifact_text(
     request: &UploadArtifactRequest,
     result: Option<&UploadArtifactResult>,
 ) -> String {
-    let mut lines = vec![i18n::t!("Upload artifact: {file_path}", file_path = request.file_path).to_string()];
+    let mut lines = vec![i18n::t!(
+        "Upload artifact: {file_path}",
+        file_path = request.file_path
+    )
+    .to_string()];
 
     if let Some(description) = request.description.as_deref() {
         lines.push(i18n::t!("Description: {description}", description = description).to_string());
@@ -2744,7 +2780,13 @@ fn format_upload_artifact_text(
             filepath,
             ..
         }) => {
-            lines.push(i18n::t!("Status: uploaded artifact {artifact_uid}", artifact_uid = artifact_uid).to_string());
+            lines.push(
+                i18n::t!(
+                    "Status: uploaded artifact {artifact_uid}",
+                    artifact_uid = artifact_uid
+                )
+                .to_string(),
+            );
             if let Some(filepath) = filepath.as_deref() {
                 lines.push(i18n::t!("Uploaded file: {filepath}", filepath = filepath).to_string());
             }

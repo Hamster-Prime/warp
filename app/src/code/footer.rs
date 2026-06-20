@@ -366,7 +366,8 @@ impl CodeFooterView {
         // Create a button that dispatches EnableLSP action
         // The action handler will check lsp_repo_status to decide whether to install first
         let enable_lsp_button = server_type.map(|st| {
-            let label = i18n::t!("Enable {binary_name}", binary_name = st.binary_name()).to_string();
+            let label =
+                i18n::t!("Enable {binary_name}", binary_name = st.binary_name()).to_string();
             ctx.add_typed_action_view(|_ctx| {
                 ActionButton::new(label, NakedTheme)
                     .with_size(ButtonSize::Small)
@@ -652,12 +653,20 @@ impl CodeFooterView {
     #[cfg_attr(target_arch = "wasm32", allow(dead_code))]
     fn button_label_for_status(status: &LspRepoStatus) -> Option<String> {
         match status {
-            LspRepoStatus::DisabledAndNotInstalled { server_type } => {
-                Some(i18n::t!("Install {binary_name}", binary_name = server_type.binary_name()).to_string())
-            }
-            LspRepoStatus::DisabledAndInstalled { server_type } => {
-                Some(i18n::t!("Enable {binary_name}", binary_name = server_type.binary_name()).to_string())
-            }
+            LspRepoStatus::DisabledAndNotInstalled { server_type } => Some(
+                i18n::t!(
+                    "Install {binary_name}",
+                    binary_name = server_type.binary_name()
+                )
+                .to_string(),
+            ),
+            LspRepoStatus::DisabledAndInstalled { server_type } => Some(
+                i18n::t!(
+                    "Enable {binary_name}",
+                    binary_name = server_type.binary_name()
+                )
+                .to_string(),
+            ),
             _ => None,
         }
     }
@@ -1479,10 +1488,12 @@ impl CodeFooterView {
                 .map(|update| update.to_display_message())
                 .filter(|msg| !msg.trim().is_empty())
                 .map(|msg| format!("{}: {msg}", server.server_name())),
-            LspModelState::Stopped { .. } | LspModelState::Stopping { .. } => {
-                Some(i18n::t!("{server_name}: stopped", server_name = server.server_name()).to_string())
-            }
-            LspModelState::Failed { .. } => Some(i18n::t!("{server_name}: error", server_name = server.server_name()).to_string()),
+            LspModelState::Stopped { .. } | LspModelState::Stopping { .. } => Some(
+                i18n::t!("{server_name}: stopped", server_name = server.server_name()).to_string(),
+            ),
+            LspModelState::Failed { .. } => Some(
+                i18n::t!("{server_name}: error", server_name = server.server_name()).to_string(),
+            ),
         }
     }
 
@@ -1565,7 +1576,13 @@ impl CodeFooterView {
                     LspModelState::Stopped { .. } | LspModelState::Stopping { .. }
                 ) {
                     return (
-                        Some(i18n::t!("{server_name}: stopped", server_name = server_ref.server_name()).to_string()),
+                        Some(
+                            i18n::t!(
+                                "{server_name}: stopped",
+                                server_name = server_ref.server_name()
+                            )
+                            .to_string(),
+                        ),
                         false,
                     );
                 }
@@ -1587,7 +1604,9 @@ impl CodeFooterView {
                 ..
             } => match PersistedWorkspace::as_ref(app).has_enabled_lsp_server_for_file_path(path) {
                 LSPEnablementResultForFile::UnsupportedLanguage => (
-                    Some(i18n::t!("Language support is unavailable for this file type").to_string()),
+                    Some(
+                        i18n::t!("Language support is unavailable for this file type").to_string(),
+                    ),
                     false,
                 ),
                 LSPEnablementResultForFile::LSPNotEnabled { root_name } => match lsp_repo_status {
@@ -1599,7 +1618,10 @@ impl CodeFooterView {
                         false,
                     ),
                     LspRepoStatus::Ready | LspRepoStatus::Enabled => (
-                        Some(i18n::t!("Language server is unavailable for this codebase").to_string()),
+                        Some(
+                            i18n::t!("Language server is unavailable for this codebase")
+                                .to_string(),
+                        ),
                         false,
                     ),
                     LspRepoStatus::DisabledAndNotInstalled { .. }
@@ -1611,7 +1633,13 @@ impl CodeFooterView {
                         true,
                     ),
                     LspRepoStatus::Installing { server_type } => (
-                        Some(i18n::t!("Installing {binary_name}...", binary_name = server_type.binary_name()).to_string()),
+                        Some(
+                            i18n::t!(
+                                "Installing {binary_name}...",
+                                binary_name = server_type.binary_name()
+                            )
+                            .to_string(),
+                        ),
                         false,
                     ),
                 },
@@ -1641,7 +1669,13 @@ impl CodeFooterView {
                 for status in lsp_repo_statuses.values() {
                     if let LspRepoStatus::Installing { server_type } = status {
                         return (
-                            Some(i18n::t!("Installing {binary_name}...", binary_name = server_type.binary_name()).to_string()),
+                            Some(
+                                i18n::t!(
+                                    "Installing {binary_name}...",
+                                    binary_name = server_type.binary_name()
+                                )
+                                .to_string(),
+                            ),
                             false,
                         );
                     }
@@ -1657,7 +1691,13 @@ impl CodeFooterView {
 
                 // All servers are enabled/ready but no live servers — unavailable
                 (
-                    Some(i18n::t!("Language support is unavailable for {root_name}", root_name = root_name).to_string()),
+                    Some(
+                        i18n::t!(
+                            "Language support is unavailable for {root_name}",
+                            root_name = root_name
+                        )
+                        .to_string(),
+                    ),
                     false,
                 )
             }

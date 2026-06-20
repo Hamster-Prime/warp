@@ -576,7 +576,9 @@ impl ThemePickerSlide {
         let privacy_line = Flex::row()
             .with_child(
                 ui_builder
-                    .span(i18n::t!("If you'd like to opt out of analytics, you can adjust your "))
+                    .span(i18n::t!(
+                        "If you'd like to opt out of analytics, you can adjust your "
+                    ))
                     .with_style(disclaimer_styles)
                     .build()
                     .finish(),

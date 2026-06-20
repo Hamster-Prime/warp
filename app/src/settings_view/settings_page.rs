@@ -608,7 +608,9 @@ pub fn render_local_only_icon(
         .ui_builder()
         .local_only_icon_with_tooltip(
             13.,
-            custom_tooltip.unwrap_or(i18n::t!("This setting is not synced to your other devices").to_string()),
+            custom_tooltip.unwrap_or(
+                i18n::t!("This setting is not synced to your other devices").to_string(),
+            ),
             mouse_state.clone(),
         )
         .finish();

@@ -1274,7 +1274,9 @@ impl MCPServersListPageView {
                         .current_team()
                         .map(|team| team.name.clone());
                     let shared_by_text = match team_name {
-                        Some(name) => i18n::t!("Shared by Warp and {name}", name = name).to_string(),
+                        Some(name) => {
+                            i18n::t!("Shared by Warp and {name}", name = name).to_string()
+                        }
                         None => i18n::t!("Shared by Warp and from other devices").to_string(),
                     };
 
@@ -1295,7 +1297,11 @@ impl MCPServersListPageView {
 
                 // Render one section per provider (e.g. "Detected from Claude").
                 for (provider, cards) in &filtered_file_based_cards {
-                    let section_title = i18n::t!("Detected from {display_name}", display_name = provider.display_name()).to_string();
+                    let section_title = i18n::t!(
+                        "Detected from {display_name}",
+                        display_name = provider.display_name()
+                    )
+                    .to_string();
                     page.add_child(self.render_server_cards_section(
                         &section_title,
                         cards,
@@ -1766,8 +1772,12 @@ impl MCPServersListPageView {
 
                 if is_shared {
                     match creator {
-                        Some(creator) => Some(TitleChip::text(i18n::t!("Shared by: {creator}", creator = creator).to_string())),
-                        None => Some(TitleChip::text(i18n::t!("Shared by a team member").to_string())),
+                        Some(creator) => Some(TitleChip::text(
+                            i18n::t!("Shared by: {creator}", creator = creator).to_string(),
+                        )),
+                        None => Some(TitleChip::text(
+                            i18n::t!("Shared by a team member").to_string(),
+                        )),
                     }
                 } else if matches!(item_id, ServerCardItemId::TemplatableMCP(_)) {
                     Some(TitleChip::text(i18n::t!("From another device").to_string()))

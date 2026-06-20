@@ -139,7 +139,8 @@ pub(super) fn relaunch() -> Result<()> {
     launch_command.push(bundle_path.as_os_str());
     // Pass a flag to the app to let it know it was restarted as part of the
     // autoupdate process.
-    launch_command.push(i18n::t!(" --args {arg0}", arg0 = warp_cli::finish_update_flag()).to_string());
+    launch_command
+        .push(i18n::t!(" --args {arg0}", arg0 = warp_cli::finish_update_flag()).to_string());
     // If we're testing with a local copy of channel_versions.json, have the
     // newly-started binary also reference that same file (so we can test
     // displaying an updated changelog after an autoupdate).

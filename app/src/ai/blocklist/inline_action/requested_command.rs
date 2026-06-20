@@ -1443,7 +1443,12 @@ impl View for RequestedCommandView {
                     }
                     CallMCPToolResult::Cancelled => i18n::t!("Tool call was cancelled").to_string(),
                 };
-                i18n::t!("{command_text}\n\nResponse: {result_text}", command_text = command_text, result_text = result_text).to_string()
+                i18n::t!(
+                    "{command_text}\n\nResponse: {result_text}",
+                    command_text = command_text,
+                    result_text = result_text
+                )
+                .to_string()
             } else if self.is_header_expanded {
                 command_text.to_string()
             } else {

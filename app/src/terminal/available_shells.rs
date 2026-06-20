@@ -139,7 +139,9 @@ impl AvailableShell {
             Config::Wsl { .. } => Cow::from("Windows Subsystem for Linux"),
             Config::Custom(LocalConfig {
                 executable_path, ..
-            }) => Cow::from(i18n::t!("Custom: {display}", display = executable_path.display()).to_string()),
+            }) => Cow::from(
+                i18n::t!("Custom: {display}", display = executable_path.display()).to_string(),
+            ),
             Config::DockerSandbox { .. } => Cow::from("Docker Sandbox"),
         }
     }
@@ -177,12 +179,24 @@ impl AvailableShell {
             Config::SystemDefault => "Default".to_string(),
             Config::KnownLocal(LocalConfig {
                 executable_path, ..
-            }) => i18n::t!("{short_name} ({display})", short_name = self.short_name(), display = executable_path.display()).to_string(),
+            }) => i18n::t!(
+                "{short_name} ({display})",
+                short_name = self.short_name(),
+                display = executable_path.display()
+            )
+            .to_string(),
             Config::Wsl { distro } => distro.to_string(),
-            Config::Custom(LocalConfig { command, .. }) => i18n::t!("Custom ({command})", command = command).to_string(),
+            Config::Custom(LocalConfig { command, .. }) => {
+                i18n::t!("Custom ({command})", command = command).to_string()
+            }
             Config::MSYS2(LocalConfig {
                 executable_path, ..
-            }) => i18n::t!("{short_name} ({display})", short_name = self.short_name(), display = executable_path.display()).to_string(),
+            }) => i18n::t!(
+                "{short_name} ({display})",
+                short_name = self.short_name(),
+                display = executable_path.display()
+            )
+            .to_string(),
             Config::DockerSandbox { .. } => i18n::t!("Docker Sandbox").to_string(),
         }
     }

@@ -117,7 +117,8 @@ pub(crate) fn run() -> anyhow::Result<()> {
 
 #[cfg(not(windows))]
 fn collect_output_or_suggest_install(full_command: &str) -> String {
-    let redirected_command = i18n::t!("{full_command} 2>&1", full_command = full_command).to_string();
+    let redirected_command =
+        i18n::t!("{full_command} 2>&1", full_command = full_command).to_string();
     let output = Command::new("sh")
         .args(["-c", &redirected_command])
         .output();

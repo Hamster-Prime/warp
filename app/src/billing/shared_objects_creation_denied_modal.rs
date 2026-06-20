@@ -125,9 +125,21 @@ impl SharedObjectsCreationDeniedModal {
         let appearance = Appearance::as_ref(ctx);
         self.team_uid = Some(team_uid);
         let title: Option<String> = if is_delinquent_due_to_payment_issue {
-            Some(i18n::t!("Shared {object_type}s restricted", object_type = object_type).to_string())
+            Some(
+                i18n::t!(
+                    "Shared {object_type}s restricted",
+                    object_type = object_type
+                )
+                .to_string(),
+            )
         } else {
-            Some(i18n::t!("Shared {object_type}s limit reached", object_type = object_type).to_string())
+            Some(
+                i18n::t!(
+                    "Shared {object_type}s limit reached",
+                    object_type = object_type
+                )
+                .to_string(),
+            )
         };
         let (icon, icon_color) = match object_type {
             DriveObjectType::Notebook { is_ai_document } => (

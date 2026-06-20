@@ -435,7 +435,9 @@ impl Debug for Event {
             Event::Bell => write!(f, "{}", i18n::t!("Bell")),
             Event::Exit { reason } => write!(f, "Exit({reason:?})"),
             Event::CursorBlinkingChange(blinking) => write!(f, "CursorBlinking({blinking})"),
-            Event::PreInteractiveSSHSession => write!(f, "{}", i18n::t!("Pre-Interactive SSH Session")),
+            Event::PreInteractiveSSHSession => {
+                write!(f, "{}", i18n::t!("Pre-Interactive SSH Session"))
+            }
             Event::SSH(remote_shell) => write!(f, "SSH(remote shell: {remote_shell}"),
             Event::SSHControlMasterError => write!(f, "{}", i18n::t!("SSH ControlMaster error")),
             Event::TerminalModeSwapped(_) => write!(f, "{}", i18n::t!("Terminal mode swapped")),

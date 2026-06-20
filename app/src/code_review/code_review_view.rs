@@ -288,7 +288,9 @@ fn file_nav_button_tooltip(is_sidebar_expanded: bool, app: &AppContext) -> Strin
         "Show file navigation"
     };
     match keybinding_name_to_display_string("code_review:toggle_file_navigation", app) {
-        Some(shortcut) => i18n::t!("{label} ({shortcut})", label = label, shortcut = shortcut).to_string(),
+        Some(shortcut) => {
+            i18n::t!("{label} ({shortcut})", label = label, shortcut = shortcut).to_string()
+        }
         None => label.to_string(),
     }
 }
@@ -474,7 +476,9 @@ impl DiscardOperationType {
             DiscardOperationType::FileUncommittedChanges => {
                 i18n::t!("Discard all uncommitted changes to file?").to_string()
             }
-            DiscardOperationType::AllChangesAgainstBranch(_) => i18n::t!("Discard all changes?").to_string(),
+            DiscardOperationType::AllChangesAgainstBranch(_) => {
+                i18n::t!("Discard all changes?").to_string()
+            }
             DiscardOperationType::FileChangesAgainstBranch(_) => {
                 i18n::t!("Discard all changes to file?").to_string()
             }
@@ -4135,7 +4139,11 @@ impl CodeReviewView {
                         zero_state_column.add_child(
                             Container::new(
                                 Text::new(
-                                    i18n::t!("Repo is initialized with a {file_name} file.", file_name = file_name).to_string(),
+                                    i18n::t!(
+                                        "Repo is initialized with a {file_name} file.",
+                                        file_name = file_name
+                                    )
+                                    .to_string(),
                                     appearance.ui_font_family(),
                                     12.,
                                 )
@@ -4282,7 +4290,8 @@ impl CodeReviewView {
 
                 self.clear_review_comments(ctx);
                 ToastStack::handle(ctx).update(ctx, |stack, ctx| {
-                    let toast = DismissibleToast::default(i18n::t!("Comments sent to agent").to_string());
+                    let toast =
+                        DismissibleToast::default(i18n::t!("Comments sent to agent").to_string());
                     stack.add_ephemeral_toast(toast, self.window_id, ctx);
                 });
                 ctx.emit(CodeReviewViewEvent::ReviewSubmitted);
@@ -4953,8 +4962,11 @@ impl CodeReviewView {
             if editor_state.has_unsaved_changes(app) {
                 let save_keystroke = Keystroke::parse("cmdorctrl-s").unwrap_or_default();
                 let save_shortcut = save_keystroke.displayed();
-                let tooltip_text =
-                    i18n::t!("This file has unsaved changes. {save_shortcut} to save", save_shortcut = save_shortcut).to_string();
+                let tooltip_text = i18n::t!(
+                    "This file has unsaved changes. {save_shortcut} to save",
+                    save_shortcut = save_shortcut
+                )
+                .to_string();
                 render_unsaved_circle_with_tooltip(
                     editor_state.unsaved_changes_mouse_state(),
                     tooltip_text,
@@ -5745,7 +5757,13 @@ impl CodeReviewView {
             }
 
             // Otherwise insert the location snippet into the input buffer (original behavior).
-            let location = i18n::t!("{file_path}:{start_line}-{end_line} ", file_path = file_path, start_line = start_line, end_line = end_line).to_string();
+            let location = i18n::t!(
+                "{file_path}:{start_line}-{end_line} ",
+                file_path = file_path,
+                start_line = start_line,
+                end_line = end_line
+            )
+            .to_string();
             send_telemetry_from_ctx!(
                 CodeReviewTelemetryEvent::AddToContext {
                     is_local: self.repo_is_local(),
@@ -5899,7 +5917,14 @@ impl CodeReviewView {
                 // Insert the reference into the terminal input
                 terminal_view.update(ctx, |terminal_view, ctx| {
                     terminal_view.input().update(ctx, |input, ctx| {
-                        input.append_to_buffer(&i18n::t!("{attachment_reference} ", attachment_reference = attachment_reference).to_string(), ctx);
+                        input.append_to_buffer(
+                            &i18n::t!(
+                                "{attachment_reference} ",
+                                attachment_reference = attachment_reference
+                            )
+                            .to_string(),
+                            ctx,
+                        );
                         input.ensure_agent_mode_for_ai_features(true, None, ctx);
                     });
                 });
@@ -6050,7 +6075,13 @@ impl CodeReviewView {
                 let full_path = repo_path.join(&file_path);
                 let start_line = line_range.start.as_usize() + 1;
                 let end_line = line_range.end.as_usize();
-                let path_with_range = i18n::t!("{full_path}:{start_line}-{end_line} ", full_path = full_path, start_line = start_line, end_line = end_line).to_string();
+                let path_with_range = i18n::t!(
+                    "{full_path}:{start_line}-{end_line} ",
+                    full_path = full_path,
+                    start_line = start_line,
+                    end_line = end_line
+                )
+                .to_string();
                 terminal_view.update(ctx, |terminal_view, ctx| {
                     terminal_view.handle_file_tree_drop_on_active_command(&path_with_range, ctx);
                 });
@@ -6080,7 +6111,14 @@ impl CodeReviewView {
                 // Insert the reference into the terminal input and lock into agent mode
                 terminal_view.update(ctx, |terminal_view, ctx| {
                     terminal_view.input().update(ctx, |input, ctx| {
-                        input.append_to_buffer(&i18n::t!("{attachment_reference} ", attachment_reference = attachment_reference).to_string(), ctx);
+                        input.append_to_buffer(
+                            &i18n::t!(
+                                "{attachment_reference} ",
+                                attachment_reference = attachment_reference
+                            )
+                            .to_string(),
+                            ctx,
+                        );
                         input.ensure_agent_mode_for_ai_features(true, None, ctx);
                     });
                 });

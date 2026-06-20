@@ -897,7 +897,8 @@ impl ServerModel {
                         );
                         HandlerOutcome::Sync(server_message::Message::Error(ErrorResponse {
                             code: ErrorCode::InvalidRequest.into(),
-                            message: i18n::t!("HostScopedRequest had no message variant set").to_string(),
+                            message: i18n::t!("HostScopedRequest had no message variant set")
+                                .to_string(),
                         }))
                     }
                 };
@@ -934,7 +935,8 @@ impl ServerModel {
                         );
                         HandlerOutcome::Sync(server_message::Message::Error(ErrorResponse {
                             code: ErrorCode::InvalidRequest.into(),
-                            message: i18n::t!("SessionScopedRequest had no message variant set").to_string(),
+                            message: i18n::t!("SessionScopedRequest had no message variant set")
+                                .to_string(),
                         }))
                     }
                 };
@@ -1202,7 +1204,9 @@ impl ServerModel {
         let mode = match CodebaseResyncMode::try_from(mode) {
             Ok(mode) => mode,
             Err(_) => {
-                return invalid_request_response(i18n::t!("Invalid ResyncCodebase mode: {mode}", mode = mode).to_string());
+                return invalid_request_response(
+                    i18n::t!("Invalid ResyncCodebase mode: {mode}", mode = mode).to_string(),
+                );
             }
         };
         let request = match self.prepare_codebase_index_request(
@@ -2253,7 +2257,8 @@ impl ServerModel {
             return HandlerOutcome::Sync(server_message::Message::DeleteFileResponse(
                 DeleteFileResponse {
                     result: Some(delete_file_response::Result::Error(FileOperationError {
-                        message: i18n::t!("Failed to initiate delete: {err}", err = err).to_string(),
+                        message: i18n::t!("Failed to initiate delete: {err}", err = err)
+                            .to_string(),
                     })),
                 },
             ));
@@ -2403,7 +2408,8 @@ impl ServerModel {
                     OpenBufferResponse {
                         result: Some(remote_server::proto::open_buffer_response::Result::Error(
                             FileOperationError {
-                                message: i18n::t!("Buffer loaded but has no file content").to_string(),
+                                message: i18n::t!("Buffer loaded but has no file content")
+                                    .to_string(),
                             },
                         )),
                     },
@@ -2418,7 +2424,8 @@ impl ServerModel {
                     OpenBufferResponse {
                         result: Some(remote_server::proto::open_buffer_response::Result::Error(
                             FileOperationError {
-                                message: i18n::t!("Buffer loaded but has no sync clock").to_string(),
+                                message: i18n::t!("Buffer loaded but has no sync clock")
+                                    .to_string(),
                             },
                         )),
                     },
@@ -2544,7 +2551,8 @@ impl ServerModel {
                 ResolveConflictResponse {
                     result: Some(resolve_conflict_response::Result::Error(
                         FileOperationError {
-                            message: i18n::t!("Buffer not open: {path}", path = msg.path).to_string(),
+                            message: i18n::t!("Buffer not open: {path}", path = msg.path)
+                                .to_string(),
                         },
                     )),
                 },
@@ -2571,7 +2579,8 @@ impl ServerModel {
                 ResolveConflictResponse {
                     result: Some(resolve_conflict_response::Result::Error(
                         FileOperationError {
-                            message: i18n::t!("Failed to resolve conflict: {err}", err = err).to_string(),
+                            message: i18n::t!("Failed to resolve conflict: {err}", err = err)
+                                .to_string(),
                         },
                     )),
                 },
@@ -3676,13 +3685,27 @@ fn requested_repo_path(repo_path: &str) -> Result<PathBuf, String> {
     }
     StandardizedPath::from_local_canonicalized(Path::new(repo_path))
         .map(|path| path.to_local_path_lossy())
-        .map_err(|error| i18n::t!("Invalid repo_path {repo_path}: {error}", repo_path = repo_path, error = error).to_string())
+        .map_err(|error| {
+            i18n::t!(
+                "Invalid repo_path {repo_path}: {error}",
+                repo_path = repo_path,
+                error = error
+            )
+            .to_string()
+        })
 }
 
 fn canonicalize_index_repo_path(repo_path: &str) -> Result<PathBuf, String> {
     requested_repo_path(repo_path)?;
     let standardized_path = StandardizedPath::from_local_canonicalized(Path::new(repo_path))
-        .map_err(|error| i18n::t!("Invalid repo_path {repo_path}: {error}", repo_path = repo_path, error = error).to_string())?;
+        .map_err(|error| {
+            i18n::t!(
+                "Invalid repo_path {repo_path}: {error}",
+                repo_path = repo_path,
+                error = error
+            )
+            .to_string()
+        })?;
     Ok(standardized_path
         .to_local_path()
         .unwrap_or_else(|| standardized_path.to_local_path_lossy()))
@@ -3730,7 +3753,12 @@ fn fragment_metadata_lookup_error_response_from_error(
         ),
         LocalFragmentMetadataLookupError::RootHashMismatch { requested, current } => (
             FragmentMetadataLookupErrorCode::RootHashMismatch,
-            i18n::t!("Codebase index root hash mismatch: requested {requested}, current {current}", requested = requested, current = current).to_string(),
+            i18n::t!(
+                "Codebase index root hash mismatch: requested {requested}, current {current}",
+                requested = requested,
+                current = current
+            )
+            .to_string(),
             Some(current.to_string()),
         ),
     };

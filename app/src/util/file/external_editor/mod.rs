@@ -206,10 +206,20 @@ pub fn generate_editor_command(
 
     // Add line/column support for common editors if provided
     let Some(line_and_col) = line_col else {
-        return i18n::t!("{editor_cmd} {quoted_path}", editor_cmd = editor_cmd, quoted_path = quoted_path).to_string();
+        return i18n::t!(
+            "{editor_cmd} {quoted_path}",
+            editor_cmd = editor_cmd,
+            quoted_path = quoted_path
+        )
+        .to_string();
     };
     let Some(editor_name) = editor else {
-        return i18n::t!("{editor_cmd} {quoted_path}", editor_cmd = editor_cmd, quoted_path = quoted_path).to_string();
+        return i18n::t!(
+            "{editor_cmd} {quoted_path}",
+            editor_cmd = editor_cmd,
+            quoted_path = quoted_path
+        )
+        .to_string();
     };
 
     let editor_base = std::path::Path::new(editor_name)
@@ -226,7 +236,13 @@ pub fn generate_editor_command(
             } else {
                 format!("+{}", line_and_col.line_num)
             };
-            i18n::t!("{editor_cmd} {line_arg} {quoted_path}", editor_cmd = editor_cmd, line_arg = line_arg, quoted_path = quoted_path).to_string()
+            i18n::t!(
+                "{editor_cmd} {line_arg} {quoted_path}",
+                editor_cmd = editor_cmd,
+                line_arg = line_arg,
+                quoted_path = quoted_path
+            )
+            .to_string()
         }
         // Emacs: +line:column
         "emacs" => {
@@ -235,7 +251,13 @@ pub fn generate_editor_command(
             } else {
                 format!("+{}", line_and_col.line_num)
             };
-            i18n::t!("{editor_cmd} {line_arg} {quoted_path}", editor_cmd = editor_cmd, line_arg = line_arg, quoted_path = quoted_path).to_string()
+            i18n::t!(
+                "{editor_cmd} {line_arg} {quoted_path}",
+                editor_cmd = editor_cmd,
+                line_arg = line_arg,
+                quoted_path = quoted_path
+            )
+            .to_string()
         }
         // Nano: +line,column
         "nano" => {
@@ -244,7 +266,13 @@ pub fn generate_editor_command(
             } else {
                 format!("+{}", line_and_col.line_num)
             };
-            i18n::t!("{editor_cmd} {line_arg} {quoted_path}", editor_cmd = editor_cmd, line_arg = line_arg, quoted_path = quoted_path).to_string()
+            i18n::t!(
+                "{editor_cmd} {line_arg} {quoted_path}",
+                editor_cmd = editor_cmd,
+                line_arg = line_arg,
+                quoted_path = quoted_path
+            )
+            .to_string()
         }
         // Pico: +line,column (same as nano)
         "pico" => {
@@ -253,7 +281,13 @@ pub fn generate_editor_command(
             } else {
                 format!("+{}", line_and_col.line_num)
             };
-            i18n::t!("{editor_cmd} {line_arg} {quoted_path}", editor_cmd = editor_cmd, line_arg = line_arg, quoted_path = quoted_path).to_string()
+            i18n::t!(
+                "{editor_cmd} {line_arg} {quoted_path}",
+                editor_cmd = editor_cmd,
+                line_arg = line_arg,
+                quoted_path = quoted_path
+            )
+            .to_string()
         }
         // Micro: +line:column
         "micro" => {
@@ -262,7 +296,13 @@ pub fn generate_editor_command(
             } else {
                 format!("+{}", line_and_col.line_num)
             };
-            i18n::t!("{editor_cmd} {line_arg} {quoted_path}", editor_cmd = editor_cmd, line_arg = line_arg, quoted_path = quoted_path).to_string()
+            i18n::t!(
+                "{editor_cmd} {line_arg} {quoted_path}",
+                editor_cmd = editor_cmd,
+                line_arg = line_arg,
+                quoted_path = quoted_path
+            )
+            .to_string()
         }
         // Helix: file:line:column
         "hx" | "helix" => {
@@ -283,7 +323,12 @@ pub fn generate_editor_command(
             format!("{editor_cmd} --goto {}", shell_words::quote(&goto_arg))
         }
         // For unknown editors, fall through to basic command without line support
-        _ => i18n::t!("{editor_cmd} {quoted_path}", editor_cmd = editor_cmd, quoted_path = quoted_path).to_string(),
+        _ => i18n::t!(
+            "{editor_cmd} {quoted_path}",
+            editor_cmd = editor_cmd,
+            quoted_path = quoted_path
+        )
+        .to_string(),
     }
 }
 

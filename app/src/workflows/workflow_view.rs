@@ -2450,7 +2450,8 @@ impl WorkflowView {
                     .finish();
 
                 let button_with_tool_tip = appearance.ui_builder().tool_tip_on_element(
-                    i18n::t!("Generate a title, descriptions, or parameters with Warp AI").to_string(),
+                    i18n::t!("Generate a title, descriptions, or parameters with Warp AI")
+                        .to_string(),
                     self.ui_state_handles.ai_assist_tool_tip.clone(),
                     rendered_button,
                     ParentAnchor::TopMiddle,
@@ -2712,13 +2713,16 @@ impl WorkflowView {
             ToastLink::new(i18n::t!("Upgrade for more credits.").to_string())
                 .with_onclick_action(WorkspaceAction::AttemptLoginGatedAIUpgrade)
         } else {
-            ToastLink::new(i18n::t!("Upgrade for more credits.").to_string()).with_href(upgrade_link)
+            ToastLink::new(i18n::t!("Upgrade for more credits.").to_string())
+                .with_href(upgrade_link)
         };
 
         crate::workspace::ToastStack::handle(ctx).update(ctx, |stack, ctx| {
             stack.add_ephemeral_toast(
-                DismissibleToast::error(i18n::t!("Looks like you're out of AI credits.").to_string())
-                    .with_link(toast_link),
+                DismissibleToast::error(
+                    i18n::t!("Looks like you're out of AI credits.").to_string(),
+                )
+                .with_link(toast_link),
                 window_id,
                 ctx,
             );

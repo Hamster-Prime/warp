@@ -594,7 +594,11 @@ pub(crate) async fn upload_block_snapshot(
         .get_block_snapshot_upload_target(&conversation_id)
         .await
         .with_context(|| {
-            i18n::t!("Unable to get block upload slot for conversation {conversation_id}", conversation_id = conversation_id).to_string()
+            i18n::t!(
+                "Unable to get block upload slot for conversation {conversation_id}",
+                conversation_id = conversation_id
+            )
+            .to_string()
         })?;
 
     let body = block

@@ -218,7 +218,11 @@ async fn execute_remote_codebase_search(
             .join(", ");
         return Ok(SearchCodebaseResult::Failed {
             reason: SearchCodebaseFailureReason::InvalidFilePaths,
-            message: i18n::t!("Failed to read remote search result files: {failed}", failed = failed).to_string(),
+            message: i18n::t!(
+                "Failed to read remote search result files: {failed}",
+                failed = failed
+            )
+            .to_string(),
         });
     }
     let file_contents = file_contents_from_response(response);
@@ -266,7 +270,11 @@ async fn execute_remote_codebase_search(
             .join(", ");
         return Ok(SearchCodebaseResult::Failed {
             reason: SearchCodebaseFailureReason::InvalidFilePaths,
-            message: i18n::t!("Failed to read remote search result files: {failed}", failed = failed).to_string(),
+            message: i18n::t!(
+                "Failed to read remote search result files: {failed}",
+                failed = failed
+            )
+            .to_string(),
         });
     }
     let files = response
@@ -413,7 +421,8 @@ fn remote_availability_failure(
         },
         RemoteCodebaseSearchAvailability::NoActiveRepo => SearchCodebaseResult::Failed {
             reason: SearchCodebaseFailureReason::CodebaseNotIndexed,
-            message: i18n::t!("The current remote directory is not in a known codebase.").to_string(),
+            message: i18n::t!("The current remote directory is not in a known codebase.")
+                .to_string(),
         },
         RemoteCodebaseSearchAvailability::NotIndexed { remote_path } => {
             SearchCodebaseResult::Failed {

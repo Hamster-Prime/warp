@@ -198,7 +198,11 @@ pub(crate) fn setting_toggle(
     let Some(value) = current.value.as_bool() else {
         return Err(ControlError::new(
             ErrorCode::InvalidParams,
-            i18n::t!("{key} is not a boolean setting and cannot be toggled", key = key).to_string(),
+            i18n::t!(
+                "{key} is not a boolean setting and cannot be toggled",
+                key = key
+            )
+            .to_string(),
         ));
     };
     set_allowlisted_setting(&key, json!(!value), ctx)?;

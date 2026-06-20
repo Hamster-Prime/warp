@@ -115,7 +115,9 @@ pub(crate) async fn fetch_and_download_handoff_snapshot_attachments(
     } else {
         let detail = failures
             .iter()
-            .map(|(filename, err)| i18n::t!("{filename}: {err}", filename = filename, err = err).to_string())
+            .map(|(filename, err)| {
+                i18n::t!("{filename}: {err}", filename = filename, err = err).to_string()
+            })
             .collect::<Vec<_>>()
             .join("; ");
         log::warn!(

@@ -52,7 +52,9 @@ fn with_cost_and_profile_info<A: Action + Clone>(
             if label.is_empty() {
                 label.push_str(&formatted_cost);
             } else {
-                label.push_str(&i18n::t!(" ({formatted_cost})", formatted_cost = formatted_cost).to_string());
+                label.push_str(
+                    &i18n::t!(" ({formatted_cost})", formatted_cost = formatted_cost).to_string(),
+                );
             }
         }
         _ => {}

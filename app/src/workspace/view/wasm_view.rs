@@ -59,9 +59,11 @@ impl Workspace {
     ) -> ViewHandle<ActionButton> {
         let url = build_oz_runs_url();
         ctx.add_typed_action_view(|_ctx| {
-            ActionButton::new(i18n::t!("View all cloud runs"), SecondaryTheme).on_click(move |ctx| {
-                ctx.dispatch_typed_action(WorkspaceAction::OpenLink(url.clone()));
-            })
+            ActionButton::new(i18n::t!("View all cloud runs"), SecondaryTheme).on_click(
+                move |ctx| {
+                    ctx.dispatch_typed_action(WorkspaceAction::OpenLink(url.clone()));
+                },
+            )
         })
     }
 

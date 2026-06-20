@@ -951,14 +951,18 @@ impl AgentSlide {
             .on_click(|ctx, _, _| ctx.dispatch_typed_action(AgentSlideAction::ToggleDisableOz))
             .finish();
 
-        let label = Text::new(i18n::t!("Disable Warp Agent"), appearance.ui_font_family(), 14.0)
-            .with_color(internal_colors::text_sub(theme, background_for_text))
-            .with_style(Properties {
-                weight: Weight::Normal,
-                ..Default::default()
-            })
-            .with_line_height_ratio(1.0)
-            .finish();
+        let label = Text::new(
+            i18n::t!("Disable Warp Agent"),
+            appearance.ui_font_family(),
+            14.0,
+        )
+        .with_color(internal_colors::text_sub(theme, background_for_text))
+        .with_style(Properties {
+            weight: Weight::Normal,
+            ..Default::default()
+        })
+        .with_line_height_ratio(1.0)
+        .finish();
 
         Flex::row()
             .with_cross_axis_alignment(CrossAxisAlignment::Center)
@@ -1266,7 +1270,9 @@ impl AgentSlide {
         .finish();
 
         let text = ui_builder
-            .span(i18n::t!("Plan successfully activated. All premium models are available."))
+            .span(i18n::t!(
+                "Plan successfully activated. All premium models are available."
+            ))
             .with_style(UiComponentStyles {
                 font_color: Some(text_color),
                 font_size: Some(FONT_SIZE),

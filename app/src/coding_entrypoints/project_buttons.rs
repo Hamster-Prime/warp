@@ -276,7 +276,8 @@ impl View for ProjectButtons {
                         Icon::Plus,
                         ProjectButtonsAction::CreateProject,
                         TooltipData {
-                            text: i18n::t!("Open an existing local folder or repository").to_string(),
+                            text: i18n::t!("Open an existing local folder or repository")
+                                .to_string(),
                             keybinding: keybinding_name_to_display_string(
                                 "project_buttons:open_repository",
                                 app,

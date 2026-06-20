@@ -659,7 +659,8 @@ impl SearchItem for ModelSearchItem {
     }
 
     fn accessibility_label(&self) -> String {
-        let mut label = i18n::t!("Model: {display_text}", display_text = self.display_text).to_string();
+        let mut label =
+            i18n::t!("Model: {display_text}", display_text = self.display_text).to_string();
         if self.is_selected {
             label.push_str(" (selected)");
         }

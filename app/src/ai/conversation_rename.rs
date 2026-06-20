@@ -100,7 +100,8 @@ pub(crate) fn rename_conversation<T: View>(
                     ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                         toast_stack.add_ephemeral_toast(
                             DismissibleToast::success(
-                                i18n::t!("Conversation renamed to {title}", title = title).to_string(),
+                                i18n::t!("Conversation renamed to {title}", title = title)
+                                    .to_string(),
                             ),
                             window_id,
                             ctx,

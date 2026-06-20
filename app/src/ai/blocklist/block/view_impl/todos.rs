@@ -194,13 +194,23 @@ pub(super) fn render_completed_todo_items(
                 )
                 .as_str()
             } else {
-                completed_text += i18n::t!("Completed {title}", title = completed_item.title).to_string().as_str()
+                completed_text += i18n::t!("Completed {title}", title = completed_item.title)
+                    .to_string()
+                    .as_str()
             }
         } else if let Some((index, list_len)) = index_and_len {
-            completed_text +=
-                i18n::t!(", {title} ({arg1}/{list_len})", title = completed_item.title, arg1 = index + 1, list_len = list_len).to_string().as_str()
+            completed_text += i18n::t!(
+                ", {title} ({arg1}/{list_len})",
+                title = completed_item.title,
+                arg1 = index + 1,
+                list_len = list_len
+            )
+            .to_string()
+            .as_str()
         } else {
-            completed_text += i18n::t!(", {title}", title = completed_item.title).to_string().as_str()
+            completed_text += i18n::t!(", {title}", title = completed_item.title)
+                .to_string()
+                .as_str()
         }
     }
     if completed_text.is_empty() {

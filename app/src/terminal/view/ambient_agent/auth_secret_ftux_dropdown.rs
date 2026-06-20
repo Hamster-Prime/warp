@@ -323,12 +323,15 @@ impl AuthSecretFtuxDropdown {
             // Compact (modal) mode: only render "+ New …" entries.
             for (index, info) in auth_secret_types_for_harness(harness).iter().enumerate() {
                 items.push(MenuItem::Item(
-                    MenuItemFields::new(i18n::t!("New {display_name}", display_name = info.display_name).to_string())
-                        .with_font_size_override(FONT_SIZE)
-                        .with_padding_override(MENU_ITEM_VERTICAL_PADDING, MENU_HORIZONTAL_PADDING)
-                        .with_override_hover_background_color(hover_background)
-                        .with_icon(Icon::Plus)
-                        .with_on_select_action(FtuxDropdownAction::SelectNewType(index)),
+                    MenuItemFields::new(
+                        i18n::t!("New {display_name}", display_name = info.display_name)
+                            .to_string(),
+                    )
+                    .with_font_size_override(FONT_SIZE)
+                    .with_padding_override(MENU_ITEM_VERTICAL_PADDING, MENU_HORIZONTAL_PADDING)
+                    .with_override_hover_background_color(hover_background)
+                    .with_icon(Icon::Plus)
+                    .with_on_select_action(FtuxDropdownAction::SelectNewType(index)),
                 ));
             }
             self.menu.update(ctx, |menu, ctx| {
@@ -396,12 +399,14 @@ impl AuthSecretFtuxDropdown {
 
         for (index, info) in auth_secret_types_for_harness(harness).iter().enumerate() {
             items.push(MenuItem::Item(
-                MenuItemFields::new(i18n::t!("New {display_name}", display_name = info.display_name).to_string())
-                    .with_font_size_override(FONT_SIZE)
-                    .with_padding_override(MENU_ITEM_VERTICAL_PADDING, MENU_HORIZONTAL_PADDING)
-                    .with_override_hover_background_color(hover_background)
-                    .with_icon(Icon::Plus)
-                    .with_on_select_action(FtuxDropdownAction::SelectNewType(index)),
+                MenuItemFields::new(
+                    i18n::t!("New {display_name}", display_name = info.display_name).to_string(),
+                )
+                .with_font_size_override(FONT_SIZE)
+                .with_padding_override(MENU_ITEM_VERTICAL_PADDING, MENU_HORIZONTAL_PADDING)
+                .with_override_hover_background_color(hover_background)
+                .with_icon(Icon::Plus)
+                .with_on_select_action(FtuxDropdownAction::SelectNewType(index)),
             ));
         }
 

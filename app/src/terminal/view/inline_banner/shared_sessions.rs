@@ -41,7 +41,12 @@ fn render_inline_shared_session_banner(
     // TODO: look into using the OS's locale to format the time according
     // to user's preferences.
     let time_str = datetime.format("%l:%M%P").to_string();
-    let datetime_str = i18n::t!("{day_str}, {time_str}", day_str = day_str, time_str = time_str).to_string();
+    let datetime_str = i18n::t!(
+        "{day_str}, {time_str}",
+        day_str = day_str,
+        time_str = time_str
+    )
+    .to_string();
 
     let pill = Container::new(
         Flex::row()

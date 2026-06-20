@@ -229,15 +229,23 @@ fn format_skill_resolution_error(err: ResolveSkillError) -> String {
             repo,
             expected,
             found,
-        } => {
-            i18n::t!("Repository '{repo}' found but belongs to org '{found}', expected '{expected}'", repo = repo, found = found, expected = expected).to_string()
-        }
+        } => i18n::t!(
+            "Repository '{repo}' found but belongs to org '{found}', expected '{expected}'",
+            repo = repo,
+            found = found,
+            expected = expected
+        )
+        .to_string(),
         ResolveSkillError::ParseFailed { path, message } => {
             format!("Failed to parse skill file {}: {message}", path.display())
         }
-        ResolveSkillError::CloneFailed { org, repo, message } => {
-            i18n::t!("Failed to clone repository '{org}/{repo}': {message}", org = org, repo = repo, message = message).to_string()
-        }
+        ResolveSkillError::CloneFailed { org, repo, message } => i18n::t!(
+            "Failed to clone repository '{org}/{repo}': {message}",
+            org = org,
+            repo = repo,
+            message = message
+        )
+        .to_string(),
     }
 }
 
@@ -1042,7 +1050,9 @@ impl AgentDriverRunner {
             // Extract the prompt text that we'll pass up to the server when we create the task.
             let prompt_for_task_creation = match &prompt {
                 Some(Prompt::PlainText(text)) => text.clone(),
-                Some(Prompt::SavedPrompt(id)) => i18n::t!("Saved prompt ({id})", id = id).to_string(),
+                Some(Prompt::SavedPrompt(id)) => {
+                    i18n::t!("Saved prompt ({id})", id = id).to_string()
+                }
                 None => skill
                     .as_ref()
                     .map(|s| format!("/{}", s.skill_identifier))
@@ -1342,7 +1352,8 @@ impl AgentDriverRunner {
                 )
                 .ok_or_else(|| {
                     AgentDriverError::ConversationLoadFailed(
-                        i18n::t!("Failed to convert conversation data to AIConversation").to_string(),
+                        i18n::t!("Failed to convert conversation data to AIConversation")
+                            .to_string(),
                     )
                 })?;
                 Ok(Some(driver::ResumeOptions::Oz(Box::new(

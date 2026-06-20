@@ -148,7 +148,9 @@ impl MCPServersSettingsPageView {
         ctx: &mut ViewContext<Self>,
     ) {
         let message = match server_name {
-            Some(name) => i18n::t!("Successfully logged out of {name} MCP server", name = name).to_string(),
+            Some(name) => {
+                i18n::t!("Successfully logged out of {name} MCP server", name = name).to_string()
+            }
             None => i18n::t!("Successfully logged out of MCP server").to_string(),
         };
         match item_id {
@@ -316,7 +318,8 @@ impl MCPServersSettingsPageView {
                 "Ignoring MCP deeplink autoinstall for '{autoinstall_param}': installation modal already open"
             );
             self.add_error_toast(
-                i18n::t!("Finish the current MCP install before opening another install link.").to_string(),
+                i18n::t!("Finish the current MCP install before opening another install link.")
+                    .to_string(),
                 ctx,
             );
             return;
@@ -331,7 +334,14 @@ impl MCPServersSettingsPageView {
             log::warn!(
                 "Unrecognized autoinstall value '{autoinstall_param}': no matching gallery item found"
             );
-            self.add_error_toast(i18n::t!("Unknown MCP server '{autoinstall_param}'", autoinstall_param = autoinstall_param).to_string(), ctx);
+            self.add_error_toast(
+                i18n::t!(
+                    "Unknown MCP server '{autoinstall_param}'",
+                    autoinstall_param = autoinstall_param
+                )
+                .to_string(),
+                ctx,
+            );
             return;
         };
 
@@ -359,7 +369,11 @@ impl MCPServersSettingsPageView {
             // gallery entry cannot be turned into a valid template. Surface the
             // failure to the user rather than silently returning.
             self.add_error_toast(
-                i18n::t!("MCP server '{gallery_title}' cannot be installed from this link.", gallery_title = gallery_title).to_string(),
+                i18n::t!(
+                    "MCP server '{gallery_title}' cannot be installed from this link.",
+                    gallery_title = gallery_title
+                )
+                .to_string(),
                 ctx,
             );
             return;

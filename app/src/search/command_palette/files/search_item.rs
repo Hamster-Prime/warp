@@ -161,7 +161,11 @@ impl SearchItem for CreateFileSearchItem {
         let text_color = highlight_state.sub_text_fill(appearance).into_solid();
 
         let label = Text::new_inline(
-            i18n::t!("Create a file named {file_name}…", file_name = &self.file_name).to_string(),
+            i18n::t!(
+                "Create a file named {file_name}…",
+                file_name = &self.file_name
+            )
+            .to_string(),
             appearance.ui_font_family(),
             appearance.monospace_font_size(),
         )

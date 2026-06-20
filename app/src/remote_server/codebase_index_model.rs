@@ -727,7 +727,8 @@ impl RemoteCodebaseIndexModel {
         let mut updated = false;
         for (key, status) in &mut self.statuses {
             if key.host == host_label {
-                let failure_message = i18n::t!("The remote host is currently disconnected.").to_string();
+                let failure_message =
+                    i18n::t!("The remote host is currently disconnected.").to_string();
                 if status.state != RemoteCodebaseIndexState::Unavailable
                     || status.failure_message.as_ref() != Some(&failure_message)
                 {
@@ -924,7 +925,8 @@ fn search_availability_for_status(
             else {
                 return RemoteCodebaseSearchAvailability::Unavailable {
                     remote_path,
-                    message: i18n::t!("The remote codebase index is missing its root hash.").to_string(),
+                    message: i18n::t!("The remote codebase index is missing its root hash.")
+                        .to_string(),
                 };
             };
             RemoteCodebaseSearchAvailability::Ready(RemoteCodebaseSearchContext {
@@ -941,10 +943,9 @@ fn search_availability_for_status(
         | RemoteCodebaseIndexState::Unavailable
         | RemoteCodebaseIndexState::Disabled => RemoteCodebaseSearchAvailability::Unavailable {
             remote_path,
-            message: status
-                .failure_message
-                .clone()
-                .unwrap_or_else(|| i18n::t!("Remote codebase search is not available.").to_string()),
+            message: status.failure_message.clone().unwrap_or_else(|| {
+                i18n::t!("Remote codebase search is not available.").to_string()
+            }),
         },
     }
 }

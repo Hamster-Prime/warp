@@ -931,7 +931,9 @@ impl BlocklistAIStatusBar {
                 error_color,
                 error_color,
                 vec![
-                    FormattedTextFragment::plain_text(i18n::t!("{error_message} ", error_message = error_message).to_string()),
+                    FormattedTextFragment::plain_text(
+                        i18n::t!("{error_message} ", error_message = error_message).to_string(),
+                    ),
                     FormattedTextFragment::hyperlink("Authenticate GitHub", auth_url.to_owned()),
                 ],
                 app,
@@ -1066,9 +1068,11 @@ fn render_fallback_explanation<V: View>(
         .and_then(|base_id| llm_prefs.get_llm_info(base_id))
         .map(|info| info.base_model_name.as_str());
     let text = match primary_name {
-        Some(primary) => {
-            i18n::t!("The primary model ({primary}) failed. Retrying with the fallback model.", primary = primary).to_string()
-        }
+        Some(primary) => i18n::t!(
+            "The primary model ({primary}) failed. Retrying with the fallback model.",
+            primary = primary
+        )
+        .to_string(),
         None => i18n::t!("The primary model failed. Retrying with the fallback model.").to_string(),
     };
     let appearance = Appearance::as_ref(app);

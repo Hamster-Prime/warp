@@ -182,7 +182,12 @@ impl View for RewardView {
 
     fn accessibility_contents(&self, _: &AppContext) -> Option<AccessibilityContent> {
         Some(AccessibilityContent::new(
-            i18n::t!("{arg0} {subtitle}", arg0 = TITLE, subtitle = self.subtitle()).to_string(),
+            i18n::t!(
+                "{arg0} {subtitle}",
+                arg0 = TITLE,
+                subtitle = self.subtitle()
+            )
+            .to_string(),
             ACCESSIBILITY_HELP,
             WarpA11yRole::WindowRole,
         ))

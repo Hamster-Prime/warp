@@ -135,7 +135,9 @@ impl ProjectSlide {
 
         let subtitle = appearance
             .ui_builder()
-            .paragraph(i18n::t!("Set up a project to optimize it for coding in Warp."))
+            .paragraph(i18n::t!(
+                "Set up a project to optimize it for coding in Warp."
+            ))
             .with_style(UiComponentStyles {
                 font_size: Some(20.),
                 font_weight: Some(Weight::Normal),

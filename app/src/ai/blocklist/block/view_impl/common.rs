@@ -302,7 +302,11 @@ pub fn render_warping_indicator<V: View>(
         // summarization
         if matches!(summarization_type, SummarizationType::ConversationSummary) {
             let timer_text = if let Some(start_time) = props.summarization_start_time {
-                i18n::t!(" • {arg0}", arg0 = format_elapsed_seconds(start_time.elapsed())).to_string()
+                i18n::t!(
+                    " • {arg0}",
+                    arg0 = format_elapsed_seconds(start_time.elapsed())
+                )
+                .to_string()
             } else {
                 String::new()
             };
@@ -402,7 +406,9 @@ pub fn render_warping_indicator<V: View>(
                             } else {
                                 format!("{}m", secs / 60)
                             };
-                            let suffix = i18n::t!(" · Next check in {formatted}", formatted = formatted).to_string();
+                            let suffix =
+                                i18n::t!(" · Next check in {formatted}", formatted = formatted)
+                                    .to_string();
 
                             // Keep the base message constant so the shimmering animation
                             // isn't interrupted every time the countdown ticks. The
@@ -975,7 +981,10 @@ fn render_force_refresh_inline(
         let mut stack = Stack::new().with_child(text_with_margin);
         if state.is_hovered() {
             let tool_tip = ui_builder
-                .tool_tip(i18n::t!("Ask the agent to check this command now, skipping its timer.").to_string())
+                .tool_tip(
+                    i18n::t!("Ask the agent to check this command now, skipping its timer.")
+                        .to_string(),
+                )
                 .build()
                 .finish();
             stack.add_positioned_overlay_child(

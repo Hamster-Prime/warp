@@ -1131,11 +1131,22 @@ impl BillingAndUsagePageV2View {
             .map(|opt| {
                 let credits = opt.credits.separate_with_commas();
                 let dollars = format!("${:.2}", opt.price_usd_cents as f64 / 100.0);
-                i18n::t!("{credits} credits / {dollars}", credits = credits, dollars = dollars).to_string()
+                i18n::t!(
+                    "{credits} credits / {dollars}",
+                    credits = credits,
+                    dollars = dollars
+                )
+                .to_string()
             })
             .unwrap_or_default();
         let auto_reload_credit_amount = selected_credit_option
-            .map(|o| i18n::t!("{separate_with_commas} credits", separate_with_commas = o.credits.separate_with_commas()).to_string())
+            .map(|o| {
+                i18n::t!(
+                    "{separate_with_commas} credits",
+                    separate_with_commas = o.credits.separate_with_commas()
+                )
+                .to_string()
+            })
             .unwrap_or_else(|| "selected credit amount".to_string());
         let auto_reload_tooltip_text = format!(
             "When any member on your team’s credit balance reaches 100 credits remaining, \
@@ -1252,7 +1263,9 @@ impl BillingAndUsagePageV2View {
             }
             AddonCreditsRestriction::ContactAccountExecutive => appearance
                 .ui_builder()
-                .paragraph(i18n::t!("Contact your Account Executive for more add-on credits."))
+                .paragraph(i18n::t!(
+                    "Contact your Account Executive for more add-on credits."
+                ))
                 .with_style(UiComponentStyles {
                     font_color: Some(theme.sub_text_color(bg).into()),
                     ..Default::default()
@@ -1399,7 +1412,10 @@ impl BillingAndUsagePageV2View {
             let spend_row = Flex::row()
                 .with_cross_axis_alignment(CrossAxisAlignment::Center)
                 .with_children([
-                    ui_builder.span(i18n::t!("Monthly spend limit")).build().finish(),
+                    ui_builder
+                        .span(i18n::t!("Monthly spend limit"))
+                        .build()
+                        .finish(),
                     Shrinkable::new(1., Align::new(info_icon).left().finish()).finish(),
                     icon_button(
                         appearance,
@@ -1469,7 +1485,11 @@ impl BillingAndUsagePageV2View {
         let credits_text = if credits_purchased == 1 {
             "1 credit".to_string()
         } else {
-            i18n::t!("{separate_with_commas} credits", separate_with_commas = credits_purchased.separate_with_commas()).to_string()
+            i18n::t!(
+                "{separate_with_commas} credits",
+                separate_with_commas = credits_purchased.separate_with_commas()
+            )
+            .to_string()
         };
 
         let credits_component = Container::new(
@@ -2210,7 +2230,11 @@ fn render_balance_card(
     .finish();
 
     let remaining_label_text = match total {
-        Some(limit) => i18n::t!("/ {separate_with_commas} remaining", separate_with_commas = limit.separate_with_commas()).to_string(),
+        Some(limit) => i18n::t!(
+            "/ {separate_with_commas} remaining",
+            separate_with_commas = limit.separate_with_commas()
+        )
+        .to_string(),
         None => "remaining".to_string(),
     };
     let remaining_label = Text::new_inline(remaining_label_text, appearance.ui_font_family(), 14.)

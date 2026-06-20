@@ -237,7 +237,10 @@ impl ConversationEndedTombstoneView {
                 conversation_id.map(|conv_id| {
                     ctx.add_typed_action_view(move |_| {
                         ActionButton::new(i18n::t!("Open in Warp"), PrimaryTheme)
-                            .with_tooltip(i18n::t!("Open this conversation in the Warp desktop app").to_string())
+                            .with_tooltip(
+                                i18n::t!("Open this conversation in the Warp desktop app")
+                                    .to_string(),
+                            )
                             .on_click(move |ctx| {
                                 ctx.dispatch_typed_action(
                                     ConversationEndedTombstoneAction::OpenInWarp(conv_id),

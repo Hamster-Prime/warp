@@ -360,7 +360,9 @@ impl<'a> WarpDriveRow<'a> {
             let action_history = self.item.action_summary(app);
 
             let full_object_history_text = match (editing_history, action_history) {
-                (Some(edits), Some(actions)) => i18n::t!("{edits}  |  {actions}", edits = edits, actions = actions).to_string(),
+                (Some(edits), Some(actions)) => {
+                    i18n::t!("{edits}  |  {actions}", edits = edits, actions = actions).to_string()
+                }
                 (Some(edits), None) => edits,
                 _ => return None,
             };

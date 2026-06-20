@@ -28,7 +28,11 @@ fn time_ago_string(timestamp: Option<&DateTime<Local>>) -> String {
     if duration.num_seconds() < 60 {
         i18n::t!("Just now").to_string()
     } else if duration.num_minutes() < 60 {
-        i18n::t!("{num_minutes} minutes ago", num_minutes = duration.num_minutes()).to_string()
+        i18n::t!(
+            "{num_minutes} minutes ago",
+            num_minutes = duration.num_minutes()
+        )
+        .to_string()
     } else if duration.num_hours() < 24 {
         i18n::t!("{num_hours} hours ago", num_hours = duration.num_hours()).to_string()
     } else {

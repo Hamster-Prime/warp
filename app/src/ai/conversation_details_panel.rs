@@ -786,7 +786,8 @@ impl ConversationDetailsPanel {
 
                 let window_id = ctx.window_id();
                 ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
-                    let toast = DismissibleToast::default(i18n::t!("Copied branch name").to_string());
+                    let toast =
+                        DismissibleToast::default(i18n::t!("Copied branch name").to_string());
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });
             }
@@ -1584,12 +1585,14 @@ impl ConversationDetailsPanel {
              copy_button_kind: CopyButtonKind,
              action: ConversationDetailsPanelAction| {
                 render_copyable_text_field(
-                    CopyableTextFieldConfig::new(i18n::t!("{label}: {value}", label = label, value = value).to_string())
-                        .with_font_size(ui_font_size)
-                        .with_text_color(theme.foreground().into())
-                        .with_icon_size(16.)
-                        .with_mouse_state(self.mouse_state_for_copy_button(copy_button_kind))
-                        .with_last_copied_at(self.copy_feedback_times.get(&copy_button_kind)),
+                    CopyableTextFieldConfig::new(
+                        i18n::t!("{label}: {value}", label = label, value = value).to_string(),
+                    )
+                    .with_font_size(ui_font_size)
+                    .with_text_color(theme.foreground().into())
+                    .with_icon_size(16.)
+                    .with_mouse_state(self.mouse_state_for_copy_button(copy_button_kind))
+                    .with_last_copied_at(self.copy_feedback_times.get(&copy_button_kind)),
                     move |ctx| {
                         ctx.dispatch_typed_action(action.clone());
                     },
@@ -1598,7 +1601,11 @@ impl ConversationDetailsPanel {
             };
 
         let name_text = Text::new(
-            i18n::t!("Name: {environment_name}", environment_name = environment_name).to_string(),
+            i18n::t!(
+                "Name: {environment_name}",
+                environment_name = environment_name
+            )
+            .to_string(),
             appearance.ui_font_family(),
             ui_font_size,
         )

@@ -136,7 +136,11 @@ impl NetworkLogItem {
             "[{}]: {:?}{}",
             timestamp.format("%Y-%m-%d %H:%M:%S,%3f"),
             request,
-            serialized_payload.map_or("".to_owned(), |payload| i18n::t!("\nBody {payload}", payload = payload).to_string())
+            serialized_payload.map_or("".to_owned(), |payload| i18n::t!(
+                "\nBody {payload}",
+                payload = payload
+            )
+            .to_string())
         ))
     }
 

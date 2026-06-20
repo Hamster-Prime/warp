@@ -119,7 +119,9 @@ impl ImportModalBody {
                 ImportQueueEvent::FileCompleted { file_id, server_id } => {
                     let result = match server_id {
                         Some(id) => UploadResult::Success(id.clone()),
-                        None => UploadResult::Error(i18n::t!("Failed to upload file to server").to_string()),
+                        None => UploadResult::Error(
+                            i18n::t!("Failed to upload file to server").to_string(),
+                        ),
                     };
 
                     // Update the upstream folder status with the upload success state.
@@ -133,9 +135,9 @@ impl ImportModalBody {
                 } => {
                     let result = match server_id {
                         Some(id) => UploadResult::Success(id.clone()),
-                        None => {
-                            UploadResult::Error(i18n::t!("Failed to upload folder to server").to_string())
-                        }
+                        None => UploadResult::Error(
+                            i18n::t!("Failed to upload folder to server").to_string(),
+                        ),
                     };
 
                     state.mark_folder_synced(result, *folder_id);

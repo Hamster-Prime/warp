@@ -754,7 +754,11 @@ fn prepare_codex_config_toml(
 
     if let Some(parent) = config_toml_path.parent() {
         fs::create_dir_all(parent).with_context(|| {
-            i18n::t!("Failed to create Codex config dir at {display}", display = parent.display()).to_string()
+            i18n::t!(
+                "Failed to create Codex config dir at {display}",
+                display = parent.display()
+            )
+            .to_string()
         })?;
     }
     fs::write(config_toml_path, doc.to_string()).with_context(|| {

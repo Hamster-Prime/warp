@@ -372,7 +372,9 @@ impl OnboardingAgenticSuggestionsBlock {
                     .iter()
                     .fold(std::collections::HashMap::new(), |mut counts, entry| {
                         for tool in TOOL_PATTERNS {
-                            if entry.command.starts_with(i18n::t!("{tool} ", tool = tool).to_string().as_str())
+                            if entry
+                                .command
+                                .starts_with(i18n::t!("{tool} ", tool = tool).to_string().as_str())
                                 || entry.command == tool
                             {
                                 *counts.entry(tool.to_string()).or_insert(0) += 1;

@@ -266,7 +266,9 @@ impl GrepExecutor {
                     .await
                 {
                     Ok(result) => result,
-                    Err(_) => Err(GrepError::new(i18n::t!("Grep operation timed out").to_string())),
+                    Err(_) => Err(GrepError::new(
+                        i18n::t!("Grep operation timed out").to_string(),
+                    )),
                 }
             },
             move |result, ctx| match result {
@@ -342,10 +344,14 @@ async fn run_grep(
     shell_launch_data: Option<ShellLaunchData>,
 ) -> Result<GrepResult, GrepError> {
     if queries.is_empty() {
-        return Err(GrepError::new(i18n::t!("No queries provided to grep").to_string()));
+        return Err(GrepError::new(
+            i18n::t!("No queries provided to grep").to_string(),
+        ));
     }
     let Some(session) = session else {
-        return Err(GrepError::new(i18n::t!("No session provided to grep").to_string()));
+        return Err(GrepError::new(
+            i18n::t!("No session provided to grep").to_string(),
+        ));
     };
 
     let is_file = is_file_path(&absolute_path, &session).await;
@@ -355,12 +361,14 @@ async fn run_grep(
         // remote path with the local platform's path separators.
         let Ok(standardized) = StandardizedPath::try_new(&absolute_path) else {
             return Err(GrepError::new(
-                i18n::t!("Could not determine parent directory of file when running grep").to_string(),
+                i18n::t!("Could not determine parent directory of file when running grep")
+                    .to_string(),
             ));
         };
         let Some(parent) = standardized.parent() else {
             return Err(GrepError::new(
-                i18n::t!("Could not determine parent directory of file when running grep").to_string(),
+                i18n::t!("Could not determine parent directory of file when running grep")
+                    .to_string(),
             ));
         };
         Cow::Owned(parent.as_str().to_owned())
@@ -445,7 +453,9 @@ async fn run_ripgrep(queries: &[String], absolute_path: String) -> Result<GrepRe
                 .collect();
             Ok(GrepResult::Success { matched_files })
         }
-        Err(e) => Err(GrepError::new(i18n::t!("Ripgrep search failed: {e}", e = e).to_string())),
+        Err(e) => Err(GrepError::new(
+            i18n::t!("Ripgrep search failed: {e}", e = e).to_string(),
+        )),
     }
 }
 
@@ -594,9 +604,17 @@ fn build_git_grep_command(queries: &[String], target_path: &str, shell_type: She
     for query in queries {
         // Queries can originate from model output and project instructions. Keep
         // them as grep arguments so shell substitutions like $() are inert.
-        grep_command.push_str(i18n::t!(" -e {arg0}", arg0 = shell_quote_arg(query, shell_type)).to_string().as_str());
+        grep_command.push_str(
+            i18n::t!(" -e {arg0}", arg0 = shell_quote_arg(query, shell_type))
+                .to_string()
+                .as_str(),
+        );
     }
-    grep_command.push_str(i18n::t!(" {arg0}", arg0 = shell_quote_arg(target_path, shell_type)).to_string().as_str());
+    grep_command.push_str(
+        i18n::t!(" {arg0}", arg0 = shell_quote_arg(target_path, shell_type))
+            .to_string()
+            .as_str(),
+    );
     grep_command
 }
 
@@ -612,9 +630,17 @@ fn build_grep_command(queries: &[String], target_path: &str, shell_type: ShellTy
     for query in queries {
         // Queries can originate from model output and project instructions. Keep
         // them as grep arguments so shell substitutions like $() are inert.
-        grep_command.push_str(i18n::t!(" -e {arg0}", arg0 = shell_quote_arg(query, shell_type)).to_string().as_str());
+        grep_command.push_str(
+            i18n::t!(" -e {arg0}", arg0 = shell_quote_arg(query, shell_type))
+                .to_string()
+                .as_str(),
+        );
     }
-    grep_command.push_str(i18n::t!(" {arg0}", arg0 = shell_quote_arg(target_path, shell_type)).to_string().as_str());
+    grep_command.push_str(
+        i18n::t!(" {arg0}", arg0 = shell_quote_arg(target_path, shell_type))
+            .to_string()
+            .as_str(),
+    );
     grep_command
 }
 

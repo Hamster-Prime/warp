@@ -218,7 +218,8 @@ impl AuthSecretFtuxView {
                         state.is_saving = false;
                         state.pending_name = None;
                         let window_id = ctx.window_id();
-                        let message = i18n::t!("Failed to save API key: {error}", error = error).to_string();
+                        let message =
+                            i18n::t!("Failed to save API key: {error}", error = error).to_string();
                         ToastStack::handle(ctx).update(ctx, |ts, ctx| {
                             ts.add_ephemeral_toast(
                                 DismissibleToast::error(message),
@@ -744,7 +745,11 @@ impl AuthSecretFtuxView {
                 i18n::t!("Enter your credentials below.").to_string()
             } else {
                 let display_name = harness_display::display_name(self.harness);
-                i18n::t!("Select an API key type to use {display_name} in the cloud with Oz.", display_name = display_name).to_string()
+                i18n::t!(
+                    "Select an API key type to use {display_name} in the cloud with Oz.",
+                    display_name = display_name
+                )
+                .to_string()
             };
             Text::new_inline(description, font_family, DESCRIPTION_FONT_SIZE)
                 .with_color(theme.foreground().into())
@@ -766,8 +771,11 @@ impl AuthSecretFtuxView {
             .current_type_info()
             .map(|info| info.learn_more_url)
             .unwrap_or_else(|| learn_more_url_for_harness(self.harness));
-        let learn_more_label =
-            i18n::t!("Learn more about authentication for {harness_name} in Warp.", harness_name = harness_name).to_string();
+        let learn_more_label = i18n::t!(
+            "Learn more about authentication for {harness_name} in Warp.",
+            harness_name = harness_name
+        )
+        .to_string();
         let learn_more = Hoverable::new(self.learn_more_mouse_state.clone(), move |state| {
             let color = if state.is_hovered() {
                 accent_color

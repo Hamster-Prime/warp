@@ -782,8 +782,16 @@ impl<T: Action + Clone> ToggleSettingActionPair<T> {
 
         ToggleSettingActionPair {
             descriptions: SettingActionPairDescriptions {
-                enable: i18n::t!("Enable {description_suffix}", description_suffix = description_suffix).to_string(),
-                disable: i18n::t!("Disable {description_suffix}", description_suffix = description_suffix).to_string(),
+                enable: i18n::t!(
+                    "Enable {description_suffix}",
+                    description_suffix = description_suffix
+                )
+                .to_string(),
+                disable: i18n::t!(
+                    "Disable {description_suffix}",
+                    description_suffix = description_suffix
+                )
+                .to_string(),
             },
             contexts: SettingActionPairContexts {
                 enable_predicate: context_prefix.to_owned() & !id!(context_boolean_flag),

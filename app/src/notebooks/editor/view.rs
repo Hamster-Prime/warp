@@ -424,9 +424,13 @@ pub fn init(app: &mut AppContext) {
         )
         .with_context_predicate(text_entry.clone())
         .with_key_binding("meta-b"),
-        EditableBinding::new("editor_view:up", i18n::t!("Move cursor up").to_string(), EditorViewAction::MoveUp)
-            .with_context_predicate(text_entry.clone())
-            .with_key_binding("ctrl-p"),
+        EditableBinding::new(
+            "editor_view:up",
+            i18n::t!("Move cursor up").to_string(),
+            EditorViewAction::MoveUp,
+        )
+        .with_context_predicate(text_entry.clone())
+        .with_key_binding("ctrl-p"),
         EditableBinding::new(
             "editor_view:down",
             i18n::t!("Move cursor down").to_string(),
@@ -473,10 +477,14 @@ pub fn init(app: &mut AppContext) {
         )
         .with_context_predicate(text_entry.clone())
         .with_mac_key_binding("ctrl-e"),
-        EditableBinding::new("editor_view:end", i18n::t!("End").to_string(), EditorViewAction::MoveToLineEnd)
-            .with_context_predicate(text_entry.clone())
-            .with_mac_key_binding("cmd-right")
-            .with_linux_or_windows_key_binding("end"),
+        EditableBinding::new(
+            "editor_view:end",
+            i18n::t!("End").to_string(),
+            EditorViewAction::MoveToLineEnd,
+        )
+        .with_context_predicate(text_entry.clone())
+        .with_mac_key_binding("cmd-right")
+        .with_linux_or_windows_key_binding("end"),
     ]);
 
     // Editable selection keybindings:
@@ -586,9 +594,13 @@ pub fn init(app: &mut AppContext) {
         )
         .with_context_predicate(text_entry.clone())
         .with_key_binding("ctrl-h"),
-        EditableBinding::new("editor_view:delete", i18n::t!("Delete").to_string(), EditorViewAction::Delete)
-            .with_context_predicate(text_entry.clone())
-            .with_key_binding("ctrl-d"),
+        EditableBinding::new(
+            "editor_view:delete",
+            i18n::t!("Delete").to_string(),
+            EditorViewAction::Delete,
+        )
+        .with_context_predicate(text_entry.clone())
+        .with_key_binding("ctrl-d"),
         EditableBinding::new(
             "editor_view:cut_word_left",
             i18n::t!("Cut word left").to_string(),
@@ -2390,7 +2402,10 @@ impl RichTextEditorView {
                     .ui_builder()
                     .copy_button(12., self.mouse_states.copy_link_mouse_handle.clone())
                     .with_tooltip(move || {
-                        ui_builder.tool_tip(i18n::t!("Copy link").to_string()).build().finish()
+                        ui_builder
+                            .tool_tip(i18n::t!("Copy link").to_string())
+                            .build()
+                            .finish()
                     })
                     .build()
                     .on_click(|ctx, _, _| ctx.dispatch_typed_action(EditorViewAction::CopyLink))
@@ -3132,7 +3147,11 @@ impl TypedActionView for RichTextEditorView {
             }
             EditorViewAction::Paste | EditorViewAction::MiddleClickPaste => {
                 ActionAccessibilityContent::Custom(AccessibilityContent::new_without_help(
-                    i18n::t!("Pasting: {plain_text}", plain_text = ctx.clipboard().read().plain_text).to_string(),
+                    i18n::t!(
+                        "Pasting: {plain_text}",
+                        plain_text = ctx.clipboard().read().plain_text
+                    )
+                    .to_string(),
                     WarpA11yRole::UserAction,
                 ))
             }
@@ -3234,7 +3253,11 @@ impl TypedActionView for RichTextEditorView {
             }
             EditorViewAction::InsertBlock(block_type) => {
                 ActionAccessibilityContent::Custom(AccessibilityContent::new_without_help(
-                    i18n::t!("Insert {label} block", label = BlockType::from(block_type).label()).to_string(),
+                    i18n::t!(
+                        "Insert {label} block",
+                        label = BlockType::from(block_type).label()
+                    )
+                    .to_string(),
                     WarpA11yRole::UserAction,
                 ))
             }
@@ -3268,7 +3291,11 @@ impl TypedActionView for RichTextEditorView {
             EditorViewAction::CodeBlockTypeSelectedAtOffset {
                 code_block_type, ..
             } => ActionAccessibilityContent::Custom(AccessibilityContent::new_without_help(
-                i18n::t!("Change code block language to {code_block_type}", code_block_type = code_block_type).to_string(),
+                i18n::t!(
+                    "Change code block language to {code_block_type}",
+                    code_block_type = code_block_type
+                )
+                .to_string(),
                 WarpA11yRole::UserAction,
             )),
             EditorViewAction::CopyTextToClipboard { .. } => ActionAccessibilityContent::Custom(

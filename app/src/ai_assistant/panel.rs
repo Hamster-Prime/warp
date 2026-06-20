@@ -781,7 +781,7 @@ impl AIAssistantPanelView {
                 ..Default::default()
             };
             ui_builder
-                .tool_tip("Copy transcript to clipboard".to_owned())
+                .tool_tip(i18n::t!("Copy transcript to clipboard").to_string())
                 .with_style(tool_tip_style)
                 .build()
                 .finish()

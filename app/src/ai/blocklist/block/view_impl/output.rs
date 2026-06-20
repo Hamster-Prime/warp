@@ -2325,7 +2325,7 @@ fn render_suggest_new_conversation(
     }
 
     if props.shared_session_status.is_viewer() {
-        let header_element = HeaderConfig::new("Start a new conversation", app)
+        let header_element = HeaderConfig::new(i18n::t!("Start a new conversation").to_string(), app)
             .with_icon(gray_stop_icon(appearance))
             .render(app);
 

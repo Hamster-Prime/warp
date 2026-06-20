@@ -1267,7 +1267,7 @@ impl AskUserQuestionView {
                 .finish(),
         );
         content.add_child(
-            HeaderConfig::new("Agent questions", app)
+            HeaderConfig::new(i18n::t!("Agent questions").to_string(), app)
                 .with_icon(yellow_stop_icon(appearance))
                 .with_corner_radius_override(CornerRadius::with_top(Radius::Pixels(8.)))
                 .render_header(app, Some(header_right.finish())),
@@ -1321,7 +1321,7 @@ impl AskUserQuestionView {
 
     fn render_unavailable(&self, appearance: &Appearance, app: &AppContext) -> Box<dyn Element> {
         wrap_with_agent_output_item_spacing(
-            HeaderConfig::new("Questions unavailable".to_string(), app)
+            HeaderConfig::new(i18n::t!("Questions unavailable").to_string(), app)
                 .with_icon(inline_action_icons::reverted_icon(appearance))
                 .render(app),
             app,

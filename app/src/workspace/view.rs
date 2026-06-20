@@ -2659,7 +2659,7 @@ impl Workspace {
                         let toast = DismissibleToast::error(message)
                             .with_object_id(object_id.clone())
                             .with_link(
-                                ToastLink::new("Open file".to_string()).with_onclick_action(
+                                ToastLink::new(i18n::t!("Open file").to_string()).with_onclick_action(
                                     WorkspaceAction::OpenTabConfigErrorFile {
                                         path,
                                         toast_object_id: object_id,
@@ -8657,7 +8657,7 @@ impl Workspace {
                     view.toast_stack.update(ctx, |toast_stack, ctx| {
                         let toast = DismissibleToast::success(message.to_string())
                             .with_link(
-                                ToastLink::new("Learn more".to_string()).with_href(
+                                ToastLink::new(i18n::t!("Learn more").to_string()).with_href(
                                     "https://docs.warp.dev/reference/cli".to_string(),
                                 ),
                             );
@@ -10740,7 +10740,7 @@ impl Workspace {
                     let new_toast =
                         DismissibleToast::error(i18n::t!("Looks like you're out of AI credits.").to_string())
                             .with_link(
-                                ToastLink::new("Upgrade for more credits.".into())
+                                ToastLink::new(i18n::t!("Upgrade for more credits.").to_string())
                                     .with_href(upgrade_link),
                             );
                     view.add_ephemeral_toast(new_toast, ctx);
@@ -13709,7 +13709,7 @@ impl Workspace {
                             let toast = DismissibleToast::error(
                                 i18n::t!("Warp doesn't have permission to send desktop notifications.").to_string(),
                             )
-                            .with_link(ToastLink::new("Troubleshoot notifications".to_string()).with_href(url));
+                            .with_link(ToastLink::new(i18n::t!("Troubleshoot notifications").to_string()).with_href(url));
                             toast_stack.add_persistent_toast(toast, ctx);
                         });
                     }
@@ -14365,7 +14365,7 @@ impl Workspace {
                                 .find(|binding| binding.name == "workspace:view_changelog")
                                 .and_then(|binding| trigger_to_keystroke(binding.trigger));
 
-                            let mut link = ToastLink::new("View changelog".to_owned())
+                            let mut link = ToastLink::new(i18n::t!("View changelog").to_string())
                                 .with_onclick_action(WorkspaceAction::ViewLatestChangelog);
                             if let Some(keystroke) = keystroke {
                                 link = link.with_keystroke(keystroke);
@@ -17634,7 +17634,7 @@ impl Workspace {
                                             )
                                             .with_object_id(object_id_clone)
                                             .with_link(
-                                                ToastLink::new("View".to_string())
+                                                ToastLink::new(i18n::t!("View").to_string())
                                                     .with_onclick_action(
                                                         WorkspaceAction::ViewObjectInWarpDrive(
                                                             WarpDriveItemId::Object(
@@ -17656,7 +17656,7 @@ impl Workspace {
                                         || result.operation == ObjectOperation::Update
                                     {
                                         new_toast = new_toast.with_link(
-                                            ToastLink::new("View".to_string()).with_onclick_action(
+                                            ToastLink::new(i18n::t!("View").to_string()).with_onclick_action(
                                                 WorkspaceAction::ViewObjectInWarpDrive(
                                                     WarpDriveItemId::Object(
                                                         CloudObjectTypeAndId::Workflow(workflow.id),
@@ -17669,7 +17669,7 @@ impl Workspace {
 
                                 if result.operation == ObjectOperation::Trash {
                                     new_toast = new_toast.with_link(
-                                        ToastLink::new("Undo".to_string()).with_onclick_action(
+                                        ToastLink::new(i18n::t!("Undo").to_string()).with_onclick_action(
                                             WorkspaceAction::UndoTrash(cloud_object_type_and_id),
                                         ),
                                     )

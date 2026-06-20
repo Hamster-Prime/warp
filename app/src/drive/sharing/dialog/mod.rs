@@ -1453,7 +1453,7 @@ impl SharingDialog {
                 ButtonVariant::Accent,
                 self.ui_state_handles.invite_button.clone(),
             )
-            .with_centered_text_label("Invite".into())
+            .with_centered_text_label(i18n::t!("Invite").to_string())
             .with_style(UiComponentStyles {
                 // Adjust the height to match the email editor's padding.
                 height: Some(style::ACL_ITEM_HEIGHT + 6.),

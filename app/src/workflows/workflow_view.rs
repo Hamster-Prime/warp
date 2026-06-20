@@ -2709,10 +2709,10 @@ impl WorkflowView {
 
         let window_id = ctx.window_id();
         let toast_link = if self.auth_state.is_anonymous_or_logged_out() {
-            ToastLink::new("Upgrade for more credits.".into())
+            ToastLink::new(i18n::t!("Upgrade for more credits.").to_string())
                 .with_onclick_action(WorkspaceAction::AttemptLoginGatedAIUpgrade)
         } else {
-            ToastLink::new("Upgrade for more credits.".into()).with_href(upgrade_link)
+            ToastLink::new(i18n::t!("Upgrade for more credits.").to_string()).with_href(upgrade_link)
         };
 
         crate::workspace::ToastStack::handle(ctx).update(ctx, |stack, ctx| {

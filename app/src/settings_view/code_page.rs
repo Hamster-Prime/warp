@@ -2347,7 +2347,7 @@ impl CodePageWidget {
                         background: Some(theme.surface_3().into()),
                         ..Default::default()
                     })
-                    .with_text_label("Restart server".to_owned())
+                    .with_text_label(i18n::t!("Restart server").to_string())
                     .build()
                     .with_cursor(Cursor::PointingHand)
                     .on_click(move |ctx, _, _| {
@@ -2378,7 +2378,7 @@ impl CodePageWidget {
                         font_size: Some(12.),
                         ..Default::default()
                     })
-                    .with_text_label("View logs".to_owned())
+                    .with_text_label(i18n::t!("View logs").to_string())
                     .build()
                     .with_cursor(Cursor::PointingHand)
                     .on_click(move |ctx, _, _| {

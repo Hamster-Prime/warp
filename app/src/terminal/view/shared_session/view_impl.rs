@@ -2033,7 +2033,7 @@ impl TerminalView {
         appearance
             .ui_builder()
             .button(ButtonVariant::Basic, button_handle)
-            .with_text_label("Request edit access".into())
+            .with_text_label(i18n::t!("Request edit access").to_string())
             .build()
             .on_click(move |ctx, _, _| {
                 ctx.dispatch_typed_action(TerminalAction::RequestSharedSessionRole(Role::Executor));

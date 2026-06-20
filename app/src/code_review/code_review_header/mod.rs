@@ -433,7 +433,7 @@ impl CodeReviewHeader {
             }))
             .with_tooltip(move || {
                 ui_builder
-                    .tool_tip("Add diff set as context".to_owned())
+                    .tool_tip(i18n::t!("Add diff set as context").to_string())
                     .build()
                     .finish()
             })

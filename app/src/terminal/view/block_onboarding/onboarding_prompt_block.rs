@@ -116,7 +116,7 @@ impl OnboardingPromptBlock {
                 font_size: Some(14.),
                 ..Default::default()
             })
-            .with_centered_text_label("Confirm".to_owned());
+            .with_centered_text_label(i18n::t!("Confirm").to_string());
         if self.selected_prompt.is_none() {
             confirm_button = confirm_button.disabled();
         }

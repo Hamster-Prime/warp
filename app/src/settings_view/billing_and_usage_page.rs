@@ -1615,7 +1615,7 @@ impl BillingAndUsagePageView {
         let ui_builder = appearance.ui_builder();
         let theme = appearance.theme();
 
-        let header = Text::new_inline("Add-on credits", appearance.ui_font_family(), 16.)
+        let header = Text::new_inline(i18n::t!("Add-on credits").to_string(), appearance.ui_font_family(), 16.)
             .with_color(fg.into())
             .with_style(Properties::default().weight(Weight::Bold))
             .finish();
@@ -1830,7 +1830,7 @@ impl BillingAndUsagePageView {
                 let cost_dollars = cost_cents as f64 / 100.0;
 
                 let label =
-                    Text::new_inline("Purchased this month", appearance.ui_font_family(), 12.)
+                    Text::new_inline(i18n::t!("Purchased this month").to_string(), appearance.ui_font_family(), 12.)
                         .with_color(appearance.theme().active_ui_text_color().into())
                         .finish();
 
@@ -2174,7 +2174,7 @@ impl BillingAndUsagePageView {
 
         let mut left_side_component =
             Flex::row().with_cross_axis_alignment(CrossAxisAlignment::Center);
-        let label = Text::new_inline("Total overages", appearance.ui_font_family(), 12.)
+        let label = Text::new_inline(i18n::t!("Total overages").to_string(), appearance.ui_font_family(), 12.)
             .with_color(appearance.theme().active_ui_text_color().into())
             .finish();
 
@@ -2508,7 +2508,7 @@ impl BillingAndUsagePageView {
             .with_main_axis_alignment(MainAxisAlignment::Center)
             .with_child(
                 Container::new(
-                    Text::new_inline("Last 30 days".to_string(), appearance.ui_font_family(), 14.)
+                    Text::new_inline(i18n::t!("Last 30 days").to_string(), appearance.ui_font_family(), 14.)
                         .with_color(blended_colors::text_sub(
                             appearance.theme(),
                             appearance.theme().surface_1(),
@@ -3342,7 +3342,7 @@ impl BillingAndUsagePageView {
                 self.anonymous_user_sign_up_button.clone(),
             )
             .with_style(button_styles)
-            .with_text_label("Sign up".to_owned())
+            .with_text_label(i18n::t!("Sign up").to_string())
             .build()
             .on_click(move |ctx, _, _| {
                 ctx.dispatch_typed_action(BillingAndUsagePageAction::SignupAnonymousUser);
@@ -3402,7 +3402,7 @@ impl BillingAndUsagePageView {
     }
 
     fn render_plan_header_text(&self, appearance: &Appearance) -> Box<dyn Element> {
-        Text::new_inline("Plan", appearance.ui_font_family(), HEADER_FONT_SIZE)
+        Text::new_inline(i18n::t!("Plan").to_string(), appearance.ui_font_family(), HEADER_FONT_SIZE)
             .with_style(Properties::default().weight(Weight::Bold))
             .with_color(appearance.theme().active_ui_text_color().into())
             .finish()

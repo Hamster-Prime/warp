@@ -148,7 +148,7 @@ impl UserOwnedBlock {
                 ButtonVariant::Basic,
                 self.copy_button_mouse_state_handle.clone(),
             )
-            .with_text_label("Copy link".into());
+            .with_text_label(i18n::t!("Copy link").to_string());
 
         let button = if self.unshare_request_status == UnshareBlockRequestState::InFlight {
             button.disabled().build()
@@ -694,7 +694,7 @@ impl ShowBlocksWidget {
                                                 ButtonVariant::Basic,
                                                 view.state_handles.cancel_dialog_handle.clone(),
                                             )
-                                            .with_text_label("Cancel".into())
+                                            .with_text_label(i18n::t!("Cancel").to_string())
                                             .build()
                                             .on_click(|ctx, _, _| {
                                                 ctx.dispatch_typed_action(
@@ -712,7 +712,7 @@ impl ShowBlocksWidget {
                                                         .confirm_dialog_handle
                                                         .clone(),
                                                 )
-                                                .with_text_label("Unshare".into())
+                                                .with_text_label(i18n::t!("Unshare").to_string())
                                                 .build()
                                                 .on_click(|ctx, _, _| {
                                                     ctx.dispatch_typed_action(

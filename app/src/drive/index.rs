@@ -2232,7 +2232,7 @@ impl DriveIndex {
         .finish();
 
         let or_text = Container::new(
-            Text::new_inline("Or", appearance.ui_font_family(), ITEM_FONT_SIZE)
+            Text::new_inline(i18n::t!("Or").to_string(), appearance.ui_font_family(), ITEM_FONT_SIZE)
                 .with_color(appearance.theme().nonactive_ui_text_color().into())
                 .with_style(Properties::default().weight(Weight::Medium))
                 .finish(),
@@ -3950,7 +3950,7 @@ impl DriveIndex {
             .with_cross_axis_alignment(CrossAxisAlignment::Start)
             .with_main_axis_alignment(MainAxisAlignment::SpaceBetween)
             .with_child(
-                Text::new_inline("Warp Drive".to_string(), appearance.ui_font_family(), 14.)
+                Text::new_inline(i18n::t!("Warp Drive").to_string(), appearance.ui_font_family(), 14.)
                     .with_color(theme.main_text_color(background_color).into())
                     .with_style(Properties {
                         weight: warpui::fonts::Weight::Bold,
@@ -4196,7 +4196,7 @@ impl DriveIndex {
                     .shared_object_limit_hit_banner_button_mouse_state
                     .clone(),
             )
-            .with_centered_text_label("Compare plans".into())
+            .with_centered_text_label(i18n::t!("Compare plans").to_string())
             .with_style(UiComponentStyles {
                 font_size: Some(14.),
                 font_weight: Some(Weight::Light),
@@ -4294,7 +4294,7 @@ impl DriveIndex {
                         .payment_issue_banner_button_mouse_state
                         .clone(),
                 )
-                .with_centered_text_label("Manage billing".into())
+                .with_centered_text_label(i18n::t!("Manage billing").to_string())
                 .with_style(UiComponentStyles {
                     font_size: Some(14.),
                     font_weight: Some(Weight::Light),

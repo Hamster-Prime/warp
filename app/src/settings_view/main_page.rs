@@ -350,7 +350,7 @@ impl AccountWidget {
                 self.ui_state_handles.anonymous_user_sign_up_button.clone(),
             )
             .with_style(button_styles)
-            .with_text_label("Sign up".to_owned())
+            .with_text_label(i18n::t!("Sign up").to_string())
             .build()
             .on_click(move |ctx, _, _| {
                 ctx.dispatch_typed_action(MainPageAction::SignupAnonymousUser);

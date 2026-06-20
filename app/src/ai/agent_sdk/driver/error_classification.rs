@@ -20,7 +20,7 @@ pub fn classify_driver_error(error: &AgentDriverError) -> (AgentTaskState, TaskS
         AgentDriverError::BootstrapFailed { error } => (
             AgentTaskState::Error,
             TaskStatusUpdate::with_error_code(
-                format!("Terminal session failed to start: {error}"),
+                i18n::t!("Terminal session failed to start: {error}", error = error).to_string(),
                 PlatformErrorCode::InternalError,
             ),
         ),
@@ -34,7 +34,7 @@ pub fn classify_driver_error(error: &AgentDriverError) -> (AgentTaskState, TaskS
                     // interactive users (e.g. "try sharing again"). Provide a cloud-agent-
                     // appropriate message instead of wrapping it, which would produce
                     // repetitive "try again" text.
-                    format!("Failed to share agent session: {reason}")
+                    i18n::t!("Failed to share agent session: {reason}", reason = reason).to_string()
                 }
                 ShareSessionError::Disabled => {
                     "Session sharing is not enabled for your account. This is likely because \
@@ -103,7 +103,7 @@ pub fn classify_driver_error(error: &AgentDriverError) -> (AgentTaskState, TaskS
         AgentDriverError::MCPStartupFailed { details } => {
             let server_lines = details
                 .iter()
-                .map(|detail| format!("- {detail}"))
+                .map(|detail| i18n::t!("- {detail}", detail = detail).to_string())
                 .collect::<Vec<_>>()
                 .join("\n");
             (
@@ -119,7 +119,7 @@ pub fn classify_driver_error(error: &AgentDriverError) -> (AgentTaskState, TaskS
         AgentDriverError::MCPJsonParseError(msg) => (
             AgentTaskState::Failed,
             TaskStatusUpdate::with_error_code(
-                format!("Failed to parse MCP server JSON configuration: {msg}"),
+                i18n::t!("Failed to parse MCP server JSON configuration: {msg}", msg = msg).to_string(),
                 PlatformErrorCode::EnvironmentSetupFailed,
             ),
         ),
@@ -218,42 +218,42 @@ pub fn classify_driver_error(error: &AgentDriverError) -> (AgentTaskState, TaskS
         AgentDriverError::SkillResolutionFailed(msg) => (
             AgentTaskState::Failed,
             TaskStatusUpdate::with_error_code(
-                format!("Skill resolution failed: {msg}"),
+                i18n::t!("Skill resolution failed: {msg}", msg = msg).to_string(),
                 PlatformErrorCode::ResourceNotFound,
             ),
         ),
         AgentDriverError::ConfigBuildFailed(err) => (
             AgentTaskState::Failed,
             TaskStatusUpdate::with_error_code(
-                format!("Failed to build agent configuration: {err}"),
+                i18n::t!("Failed to build agent configuration: {err}", err = err).to_string(),
                 PlatformErrorCode::EnvironmentSetupFailed,
             ),
         ),
         AgentDriverError::PromptResolutionFailed(err) => (
             AgentTaskState::Error,
             TaskStatusUpdate::with_error_code(
-                format!("Failed to resolve prompt for the run: {err}"),
+                i18n::t!("Failed to resolve prompt for the run: {err}", err = err).to_string(),
                 PlatformErrorCode::InternalError,
             ),
         ),
         AgentDriverError::SecretsFetchFailed(err) => (
             AgentTaskState::Error,
             TaskStatusUpdate::with_error_code(
-                format!("Failed to fetch task secrets: {err}"),
+                i18n::t!("Failed to fetch task secrets: {err}", err = err).to_string(),
                 PlatformErrorCode::InternalError,
             ),
         ),
         AgentDriverError::AwsBedrockCredentialsFailed(msg) => (
             AgentTaskState::Failed,
             TaskStatusUpdate::with_error_code(
-                format!("Failed to initialize AWS Bedrock credentials: {msg}"),
+                i18n::t!("Failed to initialize AWS Bedrock credentials: {msg}", msg = msg).to_string(),
                 PlatformErrorCode::EnvironmentSetupFailed,
             ),
         ),
         AgentDriverError::ConversationLoadFailed(msg) => (
             AgentTaskState::Error,
             TaskStatusUpdate::with_error_code(
-                format!("Failed to load conversation: {msg}"),
+                i18n::t!("Failed to load conversation: {msg}", msg = msg).to_string(),
                 PlatformErrorCode::InternalError,
             ),
         ),
@@ -301,21 +301,21 @@ pub fn classify_driver_error(error: &AgentDriverError) -> (AgentTaskState, TaskS
         AgentDriverError::HarnessCommandFailed { exit_code } => (
             AgentTaskState::Failed,
             TaskStatusUpdate::with_error_code(
-                format!("Harness command exited with code {exit_code}"),
+                i18n::t!("Harness command exited with code {exit_code}", exit_code = exit_code).to_string(),
                 PlatformErrorCode::InternalError,
             ),
         ),
         AgentDriverError::HarnessSetupFailed { harness, reason } => (
             AgentTaskState::Failed,
             TaskStatusUpdate::with_error_code(
-                format!("Harness '{harness}' validation failed: {reason}"),
+                i18n::t!("Harness '{harness}' validation failed: {reason}", harness = harness, reason = reason).to_string(),
                 PlatformErrorCode::EnvironmentSetupFailed,
             ),
         ),
         AgentDriverError::HarnessConfigSetupFailed { harness, error } => (
             AgentTaskState::Failed,
             TaskStatusUpdate::with_error_code(
-                format!("Harness '{harness}' config setup failed: {error}"),
+                i18n::t!("Harness '{harness}' config setup failed: {error}", harness = harness, error = error).to_string(),
                 PlatformErrorCode::EnvironmentSetupFailed,
             ),
         ),

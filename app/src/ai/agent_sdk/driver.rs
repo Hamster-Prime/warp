@@ -1154,9 +1154,9 @@ impl AgentDriver {
                     pending_servers.remove(uuid);
                     let error = TemplatableMCPServerManager::as_ref(ctx)
                         .get_server_error_message(*uuid)
-                        .map(|message| format!(": {message}"))
+                        .map(|message| i18n::t!(": {message}", message = message).to_string())
                         .unwrap_or_default();
-                    let detail = format!("'{name}' failed to start{error}");
+                    let detail = i18n::t!("'{name}' failed to start{error}", name = name, error = error).to_string();
                     log::warn!("MCP server {detail}");
                     if let Ok(mut failed_servers) = failed_for_subscription.lock() {
                         failed_servers.push(detail);
@@ -1496,7 +1496,7 @@ impl AgentDriver {
                             .get_server_error_message(*uuid)
                             .map(|message| format!(", error={message}"))
                             .unwrap_or_default();
-                        (*uuid, format!("{server_name} ({uuid}): {state}{error}"))
+                        (*uuid, i18n::t!("{server_name} ({uuid}): {state}{error}", server_name = server_name, uuid = uuid, state = state, error = error).to_string())
                     })
                     .collect::<HashMap<_, _>>(),
             ))
@@ -1725,9 +1725,9 @@ impl AgentDriver {
                                     "Repository indexing is still pending: {repo_id_path}"
                                 )),
                                 Some(IndexedRepoState::Failed(error)) => {
-                                    Some(format!("Repository indexing failed: {error}"))
+                                    Some(i18n::t!("Repository indexing failed: {error}", error = error).to_string())
                                 }
-                                None => Some(format!("Repository not found: {repo_id_path}")),
+                                None => Some(i18n::t!("Repository not found: {repo_id_path}", repo_id_path = repo_id_path).to_string()),
                             };
                             Some((repo_path, error))
                         })

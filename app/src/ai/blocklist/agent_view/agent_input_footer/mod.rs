@@ -1346,7 +1346,7 @@ impl AgentInputFooter {
                                 log = err.log,
                             );
                             let mut toast =
-                                DismissibleToast::error(format!("{error_label}: {err}"));
+                                DismissibleToast::error(i18n::t!("{error_label}: {err}", error_label = error_label, err = err).to_string());
                             if let Some(log_path) = log_path {
                                 toast = toast.with_link(
                                     ToastLink::new(i18n::t!("See logs for details").to_string())
@@ -2016,7 +2016,7 @@ impl AgentInputFooter {
             let usage = conversation.context_window_usage();
             let icon = icon_for_context_window_usage(usage);
             let remaining_pct = ((1.0 - usage) * 100.0).round() as i32;
-            let tooltip = format!("{remaining_pct}% context remaining");
+            let tooltip = i18n::t!("{remaining_pct}% context remaining", remaining_pct = remaining_pct).to_string();
 
             self.context_window_button.update(ctx, |button, ctx| {
                 button.set_icon(Some(icon), ctx);
@@ -2448,7 +2448,7 @@ impl TypedActionView for AgentInputFooter {
                         ctx
                     );
                 }
-                let path_with_space = format!("{path} ");
+                let path_with_space = i18n::t!("{path} ", path = path).to_string();
                 if self.has_active_cli_agent_input_session(ctx) {
                     ctx.emit(AgentInputFooterEvent::InsertIntoCLIRichInput(
                         path_with_space,

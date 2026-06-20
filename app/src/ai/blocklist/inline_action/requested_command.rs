@@ -671,7 +671,7 @@ impl RequestedCommandView {
                     .with_main_axis_size(MainAxisSize::Max)
                     .with_child(
                         Text::new(
-                            format!("{prefix} "),
+                            i18n::t!("{prefix} ", prefix = prefix).to_string(),
                             appearance.ui_font_family(),
                             appearance.monospace_font_size() - 1.,
                         )
@@ -1439,11 +1439,11 @@ impl View for RequestedCommandView {
                     CallMCPToolResult::Success { result } => serde_json::to_string_pretty(result)
                         .unwrap_or_else(|_| i18n::t!("Error formatting JSON").to_string()),
                     CallMCPToolResult::Error(error) => {
-                        format!("Error: {error}")
+                        i18n::t!("Error: {error}", error = error).to_string()
                     }
                     CallMCPToolResult::Cancelled => i18n::t!("Tool call was cancelled").to_string(),
                 };
-                format!("{command_text}\n\nResponse: {result_text}")
+                i18n::t!("{command_text}\n\nResponse: {result_text}", command_text = command_text, result_text = result_text).to_string()
             } else if self.is_header_expanded {
                 command_text.to_string()
             } else {

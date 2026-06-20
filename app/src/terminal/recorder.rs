@@ -103,7 +103,7 @@ impl PtyRecorder {
                 let display_path = warp_core::paths::home_relative_path(path);
                 let file_path = path.to_owned();
                 self.show_toast(
-                    format!("PTY recording started: {display_path}"),
+                    i18n::t!("PTY recording started: {display_path}", display_path = display_path).to_string(),
                     Some(file_path),
                     ctx,
                 );
@@ -112,7 +112,7 @@ impl PtyRecorder {
             let display_path = warp_core::paths::home_relative_path(&self.path);
             self.stop_recording();
             self.show_toast(
-                format!("PTY recording stopped: {display_path}"),
+                i18n::t!("PTY recording stopped: {display_path}", display_path = display_path).to_string(),
                 Some(self.path.clone()),
                 ctx,
             );

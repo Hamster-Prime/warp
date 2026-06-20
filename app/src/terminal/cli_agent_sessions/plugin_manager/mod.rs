@@ -98,7 +98,7 @@ pub(crate) async fn run_cli_command_logged(
     log: &mut String,
 ) -> Result<(), PluginInstallError> {
     let display_cmd = format!("{cli_name} {}", args.join(" "));
-    log.push_str(&format!("$ {display_cmd}\n"));
+    log.push_str(&i18n::t!("$ {display_cmd}\n", display_cmd = display_cmd).to_string());
     let result = executor
         .execute_local_command_in_login_shell(&display_cmd, None, env_vars)
         .await;
@@ -120,12 +120,12 @@ pub(crate) async fn run_cli_command_logged(
                 return Ok(());
             }
             Err(PluginInstallError {
-                message: format!("'{display_cmd}' failed"),
+                message: i18n::t!("'{display_cmd}' failed", display_cmd = display_cmd).to_string(),
                 log: log.to_owned(),
             })
         }
         Err(err) => {
-            log.push_str(&format!("error: {err}\n"));
+            log.push_str(&i18n::t!("error: {err}\n", err = err).to_string());
             Err(PluginInstallError {
                 message: format!("failed to run '{display_cmd}'"),
                 log: log.clone(),

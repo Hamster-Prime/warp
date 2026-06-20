@@ -180,18 +180,18 @@ impl VoiceInputToggleKey {
             VoiceInputToggleKey::None => "None",
             VoiceInputToggleKey::Fn => "Fn",
             VoiceInputToggleKey::AltLeft => {
-                Box::leak(format!("{alt_key_name} (Left)").into_boxed_str())
+                Box::leak(i18n::t!("{alt_key_name} (Left)", alt_key_name = alt_key_name).to_string().into_boxed_str())
             }
             VoiceInputToggleKey::AltRight => {
-                Box::leak(format!("{alt_key_name} (Right)").into_boxed_str())
+                Box::leak(i18n::t!("{alt_key_name} (Right)", alt_key_name = alt_key_name).to_string().into_boxed_str())
             }
             VoiceInputToggleKey::ControlLeft => "Control (Left)",
             VoiceInputToggleKey::ControlRight => "Control (Right)",
             VoiceInputToggleKey::SuperLeft => {
-                Box::leak(format!("{super_key_name} (Left)").into_boxed_str())
+                Box::leak(i18n::t!("{super_key_name} (Left)", super_key_name = super_key_name).to_string().into_boxed_str())
             }
             VoiceInputToggleKey::SuperRight => {
-                Box::leak(format!("{super_key_name} (Right)").into_boxed_str())
+                Box::leak(i18n::t!("{super_key_name} (Right)", super_key_name = super_key_name).to_string().into_boxed_str())
             }
             VoiceInputToggleKey::ShiftLeft => "Shift (Left)",
             VoiceInputToggleKey::ShiftRight => "Shift (Right)",
@@ -261,10 +261,10 @@ impl VoiceInputToggleKey {
                     VoiceInputToggleKey::None | VoiceInputToggleKey::Fn => None,
                 };
                 let key_name = match side {
-                    Some(side) => format!("{side} {symbol}"),
+                    Some(side) => i18n::t!("{side} {symbol}", side = side, symbol = symbol).to_string(),
                     None => symbol,
                 };
-                format!("Voice input (hold {key_name} key)")
+                i18n::t!("Voice input (hold {key_name} key)", key_name = key_name).to_string()
             }
             None => i18n::t!("Voice input").to_string(),
         }

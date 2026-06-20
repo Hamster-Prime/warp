@@ -198,7 +198,7 @@ pub(crate) fn setting_toggle(
     let Some(value) = current.value.as_bool() else {
         return Err(ControlError::new(
             ErrorCode::InvalidParams,
-            format!("{key} is not a boolean setting and cannot be toggled"),
+            i18n::t!("{key} is not a boolean setting and cannot be toggled", key = key).to_string(),
         ));
     };
     set_allowlisted_setting(&key, json!(!value), ctx)?;
@@ -225,7 +225,7 @@ fn color_value(action: &::local_control::Action) -> Result<AnsiColorIdentifier, 
     AnsiColorIdentifier::from_str(&color).map_err(|_| {
         ControlError::new(
             ErrorCode::InvalidParams,
-            format!("{color} is not a supported tab color"),
+            i18n::t!("{color} is not a supported tab color", color = color).to_string(),
         )
     })
 }
@@ -673,11 +673,11 @@ fn theme_kind_for_name(
         [theme] => Ok(theme.clone()),
         [] => Err(ControlError::new(
             ErrorCode::InvalidParams,
-            format!("{name} is not an available theme"),
+            i18n::t!("{name} is not an available theme", name = name).to_string(),
         )),
         _ => Err(ControlError::new(
             ErrorCode::InvalidParams,
-            format!("{name} matches multiple themes"),
+            i18n::t!("{name} matches multiple themes", name = name).to_string(),
         )),
     }
 }
@@ -713,7 +713,7 @@ fn bool_setting_value(key: &str, value: &serde_json::Value) -> Result<bool, Cont
     value.as_bool().ok_or_else(|| {
         ControlError::new(
             ErrorCode::InvalidParams,
-            format!("{key} requires a boolean value"),
+            i18n::t!("{key} requires a boolean value", key = key).to_string(),
         )
     })
 }
@@ -722,7 +722,7 @@ fn string_setting_value(key: &str, value: &serde_json::Value) -> Result<String, 
     value.as_str().map(str::to_owned).ok_or_else(|| {
         ControlError::new(
             ErrorCode::InvalidParams,
-            format!("{key} requires a string value"),
+            i18n::t!("{key} requires a string value", key = key).to_string(),
         )
     })
 }
@@ -733,7 +733,7 @@ fn u32_setting_value(key: &str, value: &serde_json::Value) -> Result<u32, Contro
     }
     Err(ControlError::new(
         ErrorCode::InvalidParams,
-        format!("{key} requires a non-negative integer value"),
+        i18n::t!("{key} requires a non-negative integer value", key = key).to_string(),
     ))
 }
 

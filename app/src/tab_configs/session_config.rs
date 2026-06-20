@@ -91,7 +91,7 @@ fn config_name(directory: &Path, enable_worktree: bool) -> String {
     } else {
         "New tab"
     };
-    format!("{prefix}: {repo}")
+    i18n::t!("{prefix}: {repo}", prefix = prefix, repo = repo).to_string()
 }
 
 /// Builds a `TabConfig` from the given session parameters.

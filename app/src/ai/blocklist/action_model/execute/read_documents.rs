@@ -73,7 +73,7 @@ impl ReadDocumentsExecutor {
                 .collect::<Vec<_>>()
                 .join(", ");
             return ActionExecution::Sync(
-                ReadDocumentsResult::Error(format!("Document(s) not found: {missing_list}")).into(),
+                ReadDocumentsResult::Error(i18n::t!("Document(s) not found: {missing_list}", missing_list = missing_list).to_string()).into(),
             );
         }
 

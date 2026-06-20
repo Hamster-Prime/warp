@@ -689,7 +689,7 @@ impl BillingCycleUsageSectionView {
         let body = FormattedTextElement::new(
             FormattedText::new([FormattedTextLine::Line(vec![
                 FormattedTextFragment::hyperlink_action(link_text, action),
-                FormattedTextFragment::plain_text(format!(" {trailing_copy}")),
+                FormattedTextFragment::plain_text(i18n::t!(" {trailing_copy}", trailing_copy = trailing_copy).to_string()),
             ])]),
             appearance.ui_font_size(),
             appearance.ui_font_family(),

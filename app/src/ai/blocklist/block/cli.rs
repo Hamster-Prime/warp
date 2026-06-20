@@ -2040,7 +2040,7 @@ fn render_search_action_input(
                     .map(|q| i18n::t!(" - `{q}`", q = q).to_string())
                     .collect::<Vec<_>>()
                     .join("\n");
-                format!("Grep for the following patterns in {display_path}:\n{patterns_list}")
+                i18n::t!("Grep for the following patterns in {display_path}:\n{patterns_list}", display_path = display_path, patterns_list = patterns_list).to_string()
             }
         }
         AIAgentActionType::FileGlobV2 {

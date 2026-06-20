@@ -618,7 +618,7 @@ impl ServerCardView {
                     let template_uuid = installation.template_uuid();
                     let gallery_uuid = installation.gallery_uuid();
                     let gallery_uuid_text = match gallery_uuid {
-                        Some(uuid) => format!("Gallery Id: {uuid}"),
+                        Some(uuid) => i18n::t!("Gallery Id: {uuid}", uuid = uuid).to_string(),
                         None => i18n::t!("Gallery Id: None").to_string(),
                     };
                     let cloud_server = CloudTemplatableMCPServer::get_by_uuid(&template_uuid, app);

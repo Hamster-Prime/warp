@@ -23,7 +23,7 @@ impl DiffSetSearchItem {
         match &self.diff_mode {
             DiffMode::Head => i18n::t!("Uncommitted changes").to_string(),
             DiffMode::MainBranch => i18n::t!("Changes vs. main branch").to_string(),
-            DiffMode::OtherBranch(branch) => format!("Changes vs. {branch}"),
+            DiffMode::OtherBranch(branch) => i18n::t!("Changes vs. {branch}", branch = branch).to_string(),
         }
     }
 
@@ -31,7 +31,7 @@ impl DiffSetSearchItem {
         match &self.diff_mode {
             DiffMode::Head => i18n::t!("All uncommitted changes in the working directory").to_string(),
             DiffMode::MainBranch => i18n::t!("All changes compared to the main branch").to_string(),
-            DiffMode::OtherBranch(branch) => format!("All changes compared to {branch}"),
+            DiffMode::OtherBranch(branch) => i18n::t!("All changes compared to {branch}", branch = branch).to_string(),
         }
     }
 }

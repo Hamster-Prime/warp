@@ -85,14 +85,14 @@ impl WebFetchView {
             let display_text = if title.is_empty() {
                 url.clone()
             } else {
-                format!("{title} ({url})")
+                i18n::t!("{title} ({url})", title = title, url = url).to_string()
             };
 
             // Show failed URLs with a different indicator
             let display_text = if *success {
                 display_text
             } else {
-                format!("✗ {display_text}")
+                i18n::t!("✗ {display_text}", display_text = display_text).to_string()
             };
 
             let text_color = if *success {

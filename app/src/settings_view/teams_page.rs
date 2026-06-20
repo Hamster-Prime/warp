@@ -2048,7 +2048,7 @@ impl TeamsWidget {
                 }
             }
         };
-        let body_text = format!("{body_prefix} {cta_sentence}");
+        let body_text = i18n::t!("{body_prefix} {cta_sentence}", body_prefix = body_prefix, cta_sentence = cta_sentence).to_string();
         let body = self.render_sub_text(body_text, appearance, None);
         let title_container = Container::new(title_element)
             .with_margin_bottom(4.)
@@ -2941,7 +2941,7 @@ impl TeamsWidget {
         let count_label = if count == 1 {
             "1 team member".to_string()
         } else {
-            format!("{count} team members")
+            i18n::t!("{count} team members", count = count).to_string()
         };
 
         // No capacity tooltip when the plan is unlimited (or workspace size
@@ -2985,7 +2985,7 @@ impl TeamsWidget {
 
         let plan_display = team.billing_metadata.customer_type.to_display_string();
         let tooltip_text =
-            format!("Your plan ({plan_display}) has a maximum capacity of {cap} members.");
+            i18n::t!("Your plan ({plan_display}) has a maximum capacity of {cap} members.", plan_display = plan_display, cap = cap).to_string();
 
         let info_icon = Container::new(
             ConstrainedBox::new(Icon::Info.to_warpui_icon(muted_color).finish())
@@ -3250,7 +3250,7 @@ impl TeamsWidget {
 
         let domain = current_user_email.split('@').nth(1).unwrap_or("");
         let team_discoverability_instructions =
-            format!("Allow Warp users with an @{domain} email to find and join the team.");
+            i18n::t!("Allow Warp users with an @{domain} email to find and join the team.", domain = domain).to_string();
         let subtext = self.render_sub_text(
             team_discoverability_instructions,
             appearance,
@@ -4009,7 +4009,7 @@ impl TeamsWidget {
             .with_margin_left(-4.)
             .finish();
             let checkbox_row_text = if let Some(domain) = view.auth_state.user_email_domain() {
-                format!("Allow Warp users with an @{domain} email to find and join the team.")
+                i18n::t!("Allow Warp users with an @{domain} email to find and join the team.", domain = domain).to_string()
             } else {
                 "Allow Warp users with the same email domain as you to find and join the team."
                     .to_string()

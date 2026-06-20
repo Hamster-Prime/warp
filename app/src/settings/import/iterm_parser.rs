@@ -99,18 +99,18 @@ impl ITermTheme {
         ITermTheme {
             terminal_colors: (0..16)
                 .map(|color_idx| {
-                    dict.remove(format!("Ansi {color_idx} Color{suffix}").as_str())
+                    dict.remove(i18n::t!("Ansi {color_idx} Color{suffix}", color_idx = color_idx, suffix = suffix).to_string().as_str())
                         .and_then(|value| value.into_dictionary())
                 })
                 .collect(),
             foreground: dict
-                .remove(format!("Foreground Color{suffix}").as_str())
+                .remove(i18n::t!("Foreground Color{suffix}", suffix = suffix).to_string().as_str())
                 .and_then(|value| value.into_dictionary()),
             background: dict
-                .remove(format!("Background Color{suffix}").as_str())
+                .remove(i18n::t!("Background Color{suffix}", suffix = suffix).to_string().as_str())
                 .and_then(|value| value.into_dictionary()),
             cursor: dict
-                .remove(format!("Cursor Color{suffix}").as_str())
+                .remove(i18n::t!("Cursor Color{suffix}", suffix = suffix).to_string().as_str())
                 .and_then(|value| value.into_dictionary()),
         }
     }
@@ -162,7 +162,7 @@ impl ITermTheme {
                 bright,
             },
             None,
-            Some(format!("Imported iTerm Theme{suffix}")),
+            Some(i18n::t!("Imported iTerm Theme{suffix}", suffix = suffix).to_string()),
         ))
     }
 }
@@ -754,7 +754,7 @@ impl ParseableConfig for ITermProfile {
                 SettingType::MouseAndScrollReporting,
             ),
             option_as_meta: ImportableSetting::new(option_as_meta, SettingType::OptionAsMeta),
-            description: self.profile_name.map(|name| format!("Profile: {name}")),
+            description: self.profile_name.map(|name| i18n::t!("Profile: {name}", name = name).to_string()),
             font: ImportableSetting::new(font, SettingType::Font),
             default_shell: ImportableSetting::new(default_shell, SettingType::DefaultShell),
             working_directory: ImportableSetting::new(

@@ -931,7 +931,7 @@ impl BlocklistAIStatusBar {
                 error_color,
                 error_color,
                 vec![
-                    FormattedTextFragment::plain_text(format!("{error_message} ")),
+                    FormattedTextFragment::plain_text(i18n::t!("{error_message} ", error_message = error_message).to_string()),
                     FormattedTextFragment::hyperlink("Authenticate GitHub", auth_url.to_owned()),
                 ],
                 app,
@@ -1067,7 +1067,7 @@ fn render_fallback_explanation<V: View>(
         .map(|info| info.base_model_name.as_str());
     let text = match primary_name {
         Some(primary) => {
-            format!("The primary model ({primary}) failed. Retrying with the fallback model.")
+            i18n::t!("The primary model ({primary}) failed. Retrying with the fallback model.", primary = primary).to_string()
         }
         None => i18n::t!("The primary model failed. Retrying with the fallback model.").to_string(),
     };
@@ -1122,7 +1122,7 @@ fn resolve_fallback_warping_message<V: View>(
         return None;
     }
     Some(match display_name.as_deref() {
-        Some(name) => format!("Warping with {name}."),
+        Some(name) => i18n::t!("Warping with {name}.", name = name).to_string(),
         None => i18n::t!("Warping with another model.").to_string(),
     })
 }

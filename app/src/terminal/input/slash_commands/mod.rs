@@ -350,7 +350,7 @@ impl Input {
             SlashCommandsEvent::SelectedSkill { name, reference: _ } => {
                 // Insert /{skill-name} into the buffer
                 self.editor.update(ctx, |editor, ctx| {
-                    editor.set_buffer_text(format!("/{name} ").as_str(), ctx);
+                    editor.set_buffer_text(i18n::t!("/{name} ", name = name).to_string().as_str(), ctx);
                 });
                 self.close_slash_commands_menu(ctx);
             }

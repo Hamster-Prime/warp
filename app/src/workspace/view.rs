@@ -6343,7 +6343,7 @@ impl Workspace {
                     ctx.open_file_path_in_explorer(&path);
                 }
                 Ok(Err(err)) => {
-                    let error_message = format!("Failed to create log bundle: {err}");
+                    let error_message = i18n::t!("Failed to create log bundle: {err}", err = err).to_string();
                     log::error!("{error_message}");
                     me.toast_stack.update(ctx, |toast_stack, ctx| {
                         let toast = DismissibleToast::error(error_message);
@@ -6351,7 +6351,7 @@ impl Workspace {
                     });
                 }
                 Err(err) => {
-                    let error_message = format!("Failed to create log bundle: {err}");
+                    let error_message = i18n::t!("Failed to create log bundle: {err}", err = err).to_string();
                     log::error!("{error_message}");
                     me.toast_stack.update(ctx, |toast_stack, ctx| {
                         let toast = DismissibleToast::error(error_message);
@@ -7580,7 +7580,7 @@ impl Workspace {
         if FeatureFlag::Autoupdate.is_enabled() && ChannelState::show_autoupdate_menu_items() {
             if let Some(version) = ChannelState::app_version() {
                 menu_items.push(
-                    MenuItemFields::new(format!("Current version is {version}"))
+                    MenuItemFields::new(i18n::t!("Current version is {version}", version = version).to_string())
                         .with_disabled(true)
                         .into_item(),
                 );
@@ -8653,7 +8653,7 @@ impl Workspace {
             match result {
                 Ok(_) => {
                     let command_name = ChannelState::channel().cli_command_name();
-                    let message = format!("Successfully installed the Oz CLI! You can now run '{command_name}' from the command line.");
+                    let message = i18n::t!("Successfully installed the Oz CLI! You can now run '{command_name}' from the command line.", command_name = command_name).to_string();
                     view.toast_stack.update(ctx, |toast_stack, ctx| {
                         let toast = DismissibleToast::success(message.to_string())
                             .with_link(
@@ -8665,7 +8665,7 @@ impl Workspace {
                     });
                 }
                 Err(error) => {
-                    let error_message = format!("Failed to install Oz command: {error}");
+                    let error_message = i18n::t!("Failed to install Oz command: {error}", error = error).to_string();
                     log::error!("{error_message}");
                     view.toast_stack.update(ctx, |toast_stack, ctx| {
                         let toast = DismissibleToast::error(error_message);
@@ -8690,7 +8690,7 @@ impl Workspace {
                     });
                 }
                 Err(error) => {
-                    let error_message = format!("Failed to uninstall Oz command: {error}");
+                    let error_message = i18n::t!("Failed to uninstall Oz command: {error}", error = error).to_string();
                     log::error!("{error_message}");
                     view.toast_stack.update(ctx, |toast_stack, ctx| {
                         let toast = DismissibleToast::error(error_message);
@@ -10467,12 +10467,12 @@ impl Workspace {
             .unwrap_or_else(|| repo.to_string());
         let config_name = match worktree_branch_name {
             Some(name) if !name.is_empty() => {
-                format!("New worktree: {repo_display_name}, {name}")
+                i18n::t!("New worktree: {repo_display_name}, {name}", repo_display_name = repo_display_name, name = name).to_string()
             }
             _ if !base_branch.is_empty() => {
-                format!("New worktree: {repo_display_name}, {base_branch}")
+                i18n::t!("New worktree: {repo_display_name}, {base_branch}", repo_display_name = repo_display_name, base_branch = base_branch).to_string()
             }
-            _ => format!("New worktree: {repo_display_name}"),
+            _ => i18n::t!("New worktree: {repo_display_name}", repo_display_name = repo_display_name).to_string(),
         };
 
         let filename_hint = if let Some(name) = worktree_branch_name {
@@ -10592,7 +10592,7 @@ impl Workspace {
             .file_name()
             .map(|name| name.to_string_lossy().to_string())
             .unwrap_or_else(|| repo_path.clone());
-        let config_name = format!("Worktree: {repo_display_name}");
+        let config_name = i18n::t!("Worktree: {repo_display_name}", repo_display_name = repo_display_name).to_string();
         // Use the user's default session mode to decide pane type.
         let pane_type = if AISettings::as_ref(ctx).is_any_ai_enabled(ctx)
             && AISettings::as_ref(ctx).default_session_mode(ctx) == DefaultSessionMode::Agent
@@ -17471,7 +17471,7 @@ impl Workspace {
                     }
                     TranslateUsingWarpAI => {
                         active_input_handle.update(ctx, |input, ctx| {
-                            let content = format!("# {query}");
+                            let content = i18n::t!("# {query}", query = query).to_string();
                             input.focus_input_box(ctx);
                             // Mimic the user replacing the editor text, as the replacement
                             // is done in response to an explicit user action.
@@ -18231,7 +18231,7 @@ impl Workspace {
         } else {
             "enabled"
         };
-        let mut message = format!("You {verb} mouse reporting.");
+        let mut message = i18n::t!("You {verb} mouse reporting.", verb = verb).to_string();
         if let Some(keystroke) =
             keybinding_name_to_keystroke("workspace:toggle_mouse_reporting", ctx)
         {
@@ -24092,7 +24092,7 @@ impl TypedActionView for Workspace {
                     status.is_syncing_all_inputs(window_id)
                 });
                 let verb = if enabled { "enabled" } else { "disabled" };
-                let mut message = format!("You {verb} synchronized inputs in all tabs.");
+                let mut message = i18n::t!("You {verb} synchronized inputs in all tabs.", verb = verb).to_string();
                 if let Some(keystroke) = keybinding_name_to_keystroke(
                     "workspace:toggle_sync_all_terminal_inputs_in_all_tabs",
                     ctx,
@@ -24125,7 +24125,7 @@ impl TypedActionView for Workspace {
                     status.should_sync_this_pane_group(current_pane_group_id, window_id)
                 });
                 let verb = if enabled { "enabled" } else { "disabled" };
-                let mut message = format!("You {verb} synchronized inputs in this tab.");
+                let mut message = i18n::t!("You {verb} synchronized inputs in this tab.", verb = verb).to_string();
                 if let Some(keystroke) = keybinding_name_to_keystroke(
                     "workspace:toggle_sync_terminal_inputs_in_tab",
                     ctx,
@@ -24934,7 +24934,7 @@ impl TypedActionView for Workspace {
                                     }
                                 }
 
-                                format!("Process sample saved to {output_path}")
+                                i18n::t!("Process sample saved to {output_path}", output_path = output_path).to_string()
                             }
                             Ok(Ok(output)) => {
                                 let stderr = String::from_utf8_lossy(&output.stderr);
@@ -28127,7 +28127,7 @@ fn set_opencode_warp_plugin(new_entry: &str) -> String {
 
     match serde_json::to_string_pretty(&config) {
         Ok(json_str) => match std::fs::write(&config_path, format!("{json_str}\n")) {
-            Ok(()) => format!("OpenCode plugin set to: {new_entry}"),
+            Ok(()) => i18n::t!("OpenCode plugin set to: {new_entry}", new_entry = new_entry).to_string(),
             Err(e) => i18n::t!("Failed to write opencode.json: {e}", e = e).to_string(),
         },
         Err(e) => i18n::t!("Failed to serialize opencode.json: {e}", e = e).to_string(),

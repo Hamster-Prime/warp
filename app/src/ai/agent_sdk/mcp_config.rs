@@ -142,7 +142,7 @@ fn validate_server_config(server_name: &str, config: &Value) -> anyhow::Result<(
         })?;
 
         uuid::Uuid::parse_str(warp_id).with_context(|| {
-            format!("MCP server '{server_name}' field 'warp_id' must be a UUID")
+            i18n::t!("MCP server '{server_name}' field 'warp_id' must be a UUID", server_name = server_name).to_string()
         })?;
     }
 

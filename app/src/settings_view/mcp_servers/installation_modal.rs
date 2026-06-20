@@ -257,7 +257,7 @@ impl InstallationModalBody {
 
         // Renders MCP title text
         let title = Text::new(
-            format!("Install {name}"),
+            i18n::t!("Install {name}", name = name).to_string(),
             appearance.ui_font_family(),
             appearance.header_font_size(),
         )

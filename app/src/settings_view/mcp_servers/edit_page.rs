@@ -308,7 +308,7 @@ impl MCPServersEditPageView {
         let title = if self.server_card_item_id.is_none() {
             i18n::t!("Add New MCP Server").to_string()
         } else if let Some(name) = self.server_model.name() {
-            format!("Edit {name} MCP Server")
+            i18n::t!("Edit {name} MCP Server", name = name).to_string()
         } else {
             i18n::t!("Edit MCP Server").to_string()
         };

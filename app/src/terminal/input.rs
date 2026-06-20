@@ -2246,7 +2246,7 @@ impl Input {
                     event
                 {
                     let window_id = ctx.window_id();
-                    let toast_message = format!("Failed to prepare cloud handoff: {error_message}");
+                    let toast_message = i18n::t!("Failed to prepare cloud handoff: {error_message}", error_message = error_message).to_string();
                     ToastStack::handle(ctx).update(ctx, |ts, ctx| {
                         ts.add_ephemeral_toast(
                             DismissibleToast::error(toast_message),
@@ -4856,7 +4856,7 @@ impl Input {
                 .map(|s| s.agent.skill_command_prefix())
                 .unwrap_or("/");
             self.editor.update(ctx, |editor, ctx| {
-                editor.set_buffer_text(format!("{prefix}{skill_name} ").as_str(), ctx);
+                editor.set_buffer_text(i18n::t!("{prefix}{skill_name} ", prefix = prefix, skill_name = skill_name).to_string().as_str(), ctx);
             });
 
             // Close the menu but keep input focused so user can press Enter
@@ -5747,7 +5747,7 @@ impl Input {
             let message = if images_removed == 1 {
                 "1 image was removed - limit is 20 per conversation.".into()
             } else {
-                format!("{images_removed} images were removed - limit is 20 per conversation.")
+                i18n::t!("{images_removed} images were removed - limit is 20 per conversation.", images_removed = images_removed).to_string()
             };
 
             ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
@@ -6186,11 +6186,11 @@ impl Input {
                         let agent_name = conversation.agent_name().unwrap_or("child");
                         if conversation.status().is_in_progress() {
                             if is_queue_next_prompt_enabled {
-                                return format!("Queue a follow up for the {agent_name} agent");
+                                return i18n::t!("Queue a follow up for the {agent_name} agent", agent_name = agent_name).to_string();
                             }
-                            return format!("Steer the {agent_name} agent");
+                            return i18n::t!("Steer the {agent_name} agent", agent_name = agent_name).to_string();
                         }
-                        return format!("Ask the {agent_name} agent a follow up");
+                        return i18n::t!("Ask the {agent_name} agent a follow up", agent_name = agent_name).to_string();
                     }
                 }
 
@@ -7019,7 +7019,7 @@ impl Input {
             // and disallow edits.
             // TODO: the ◌ treatment is a stop-gap to rendering an svg
             // to the right of the buffer text.
-            editor.set_buffer_text_ignoring_undo(&format!("{buffer_text} ◌"), ctx);
+            editor.set_buffer_text_ignoring_undo(&i18n::t!("{buffer_text} ◌", buffer_text = buffer_text).to_string(), ctx);
             editor.set_interaction_state(InteractionState::Selectable, ctx);
 
             // We manually set the text color to appear disabled.
@@ -8201,7 +8201,7 @@ impl Input {
                 self.try_execute_command(&command, ctx);
 
                 ctx.emit_a11y_content(AccessibilityContent::new_without_help(
-                    format!("Executed: {command}"),
+                    i18n::t!("Executed: {command}", command = command).to_string(),
                     WarpA11yRole::UserAction,
                 ));
             }
@@ -9577,7 +9577,7 @@ impl Input {
         alias_value: &str,
         ctx: &mut ViewContext<Self>,
     ) {
-        let alias_value_with_space = format!("{alias_value} ");
+        let alias_value_with_space = i18n::t!("{alias_value} ", alias_value = alias_value).to_string();
         self.editor.update(ctx, |input, ctx| {
             input.select_and_replace(
                 &alias_value_with_space,
@@ -9720,7 +9720,7 @@ impl Input {
 
                 // Insert the text, optionally with a space in AI mode
                 let text_to_insert = if is_ai_mode {
-                    format!("{text} ")
+                    i18n::t!("{text} ", text = text).to_string()
                 } else {
                     text.to_string()
                 };
@@ -9741,7 +9741,7 @@ impl Input {
                     editor.system_delete(replacement_range, ctx);
 
                     let text_to_insert = if is_ai_mode {
-                        format!("{text} ")
+                        i18n::t!("{text} ", text = text).to_string()
                     } else {
                         text.to_string()
                     };
@@ -11269,7 +11269,7 @@ impl Input {
             };
 
             let message = if excess_images == 1 {
-                format!("1 image wasn't attached - limit is {limit_value} images {limit_name}.")
+                i18n::t!("1 image wasn't attached - limit is {limit_value} images {limit_name}.", limit_value = limit_value, limit_name = limit_name).to_string()
             } else {
                 format!(
                     "{excess_images} images weren't attached - limit is {limit_value} images {limit_name}."
@@ -12321,7 +12321,7 @@ impl Input {
                 && !completion_result.ends_with(self.path_separators(ctx).main)
                 && executing == Executing::No
             {
-                format!("{completion_result} ").into()
+                i18n::t!("{completion_result} ", completion_result = completion_result).to_string().into()
             } else {
                 completion_result.into()
             };

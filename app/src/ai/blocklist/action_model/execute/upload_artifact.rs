@@ -29,7 +29,7 @@ fn format_upload_artifact_error(err: &anyhow::Error) -> String {
     let error_chain = format!("{err:#}");
 
     if error_chain != err.to_string() {
-        format!("Artifact upload failed: {error_chain}")
+        i18n::t!("Artifact upload failed: {error_chain}", error_chain = error_chain).to_string()
     } else {
         error_chain
     }

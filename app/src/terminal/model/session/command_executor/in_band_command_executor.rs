@@ -325,7 +325,7 @@ impl InBandCommandExecutor {
 
                 let in_band_command = match shell.shell_type() {
                     ShellType::PowerShell => {
-                        format!("Warp-Run-GeneratorCommand {id} '{escaped_command}' -ErrorAction Ignore")
+                        i18n::t!("Warp-Run-GeneratorCommand {id} '{escaped_command}' -ErrorAction Ignore", id = id, escaped_command = escaped_command).to_string()
                     }
                     ShellType::Fish => {
                         // Add a leading space for in-band commands in fish, which omits them from
@@ -333,7 +333,7 @@ impl InBandCommandExecutor {
                         // specifying command patterns to be omitted from history. Ignoring
                         // commands with a leading space is default, non-configurable behavior in
                         // fish.
-                        format!(" warp_run_generator_command {id} '{escaped_command}'")
+                        i18n::t!(" warp_run_generator_command {id} '{escaped_command}'", id = id, escaped_command = escaped_command).to_string()
                     }
                     _ => {
                         format!("warp_run_generator_command {id} '{escaped_command}'")

@@ -182,7 +182,7 @@ impl FreeTierLimitHitModal {
                             Container::new({
                                 let benefits_text = if let Some(plan) = Self::get_build_plan_details(app) {
                                     let price = plan.monthly_plan_price_per_month_usd_cents / 100;
-                                    format!("The Build plan is ${price}/month which includes everything in the free tier plus:")
+                                    i18n::t!("The Build plan is ${price}/month which includes everything in the free tier plus:", price = price).to_string()
                                 } else {
                                     i18n::t!("The Build plan includes everything in the free tier plus:").to_string()
                                 };

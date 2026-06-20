@@ -211,10 +211,10 @@ fn dispatch_command(
 fn format_skill_resolution_error(err: ResolveSkillError) -> String {
     match err {
         ResolveSkillError::NotFound { skill } => {
-            format!("Skill '{skill}' not found")
+            i18n::t!("Skill '{skill}' not found", skill = skill).to_string()
         }
         ResolveSkillError::RepoNotFound { repo } => {
-            format!("Repository '{repo}' not found")
+            i18n::t!("Repository '{repo}' not found", repo = repo).to_string()
         }
         ResolveSkillError::Ambiguous { skill, candidates } => {
             let mut msg = format!(
@@ -230,13 +230,13 @@ fn format_skill_resolution_error(err: ResolveSkillError) -> String {
             expected,
             found,
         } => {
-            format!("Repository '{repo}' found but belongs to org '{found}', expected '{expected}'")
+            i18n::t!("Repository '{repo}' found but belongs to org '{found}', expected '{expected}'", repo = repo, found = found, expected = expected).to_string()
         }
         ResolveSkillError::ParseFailed { path, message } => {
             format!("Failed to parse skill file {}: {message}", path.display())
         }
         ResolveSkillError::CloneFailed { org, repo, message } => {
-            format!("Failed to clone repository '{org}/{repo}': {message}")
+            i18n::t!("Failed to clone repository '{org}/{repo}': {message}", org = org, repo = repo, message = message).to_string()
         }
     }
 }
@@ -1042,7 +1042,7 @@ impl AgentDriverRunner {
             // Extract the prompt text that we'll pass up to the server when we create the task.
             let prompt_for_task_creation = match &prompt {
                 Some(Prompt::PlainText(text)) => text.clone(),
-                Some(Prompt::SavedPrompt(id)) => format!("Saved prompt ({id})"),
+                Some(Prompt::SavedPrompt(id)) => i18n::t!("Saved prompt ({id})", id = id).to_string(),
                 None => skill
                     .as_ref()
                     .map(|s| format!("/{}", s.skill_identifier))
@@ -1551,7 +1551,7 @@ fn launch_command(
                 let message = if auth_state.is_api_key_authenticated() {
                     i18n::t!("Your API key is invalid. Please provide a valid key via '--api-key' or the WARP_API_KEY environment variable.").to_string()
                 } else {
-                    format!("Your credentials are invalid. Please log in again with `{cli_name} login`.")
+                    i18n::t!("Your credentials are invalid. Please log in again with `{cli_name} login`.", cli_name = cli_name).to_string()
                 };
                 report_fatal_error(anyhow::anyhow!(message), ctx);
             }

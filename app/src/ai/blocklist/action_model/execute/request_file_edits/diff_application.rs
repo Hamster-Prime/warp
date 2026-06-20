@@ -112,22 +112,22 @@ impl DiffApplicationError {
                 message
             }
             DiffApplicationError::MissingFile { file } => {
-                format!("{file} does not exist. Is the path correct?")
+                i18n::t!("{file} does not exist. Is the path correct?", file = file).to_string()
             }
             DiffApplicationError::AlreadyExists { file } => {
-                format!("Could not create {file} because it already exists.")
+                i18n::t!("Could not create {file} because it already exists.", file = file).to_string()
             }
             DiffApplicationError::ReadFailed { file, .. } => {
-                format!("Could not read {file}")
+                i18n::t!("Could not read {file}", file = file).to_string()
             }
             DiffApplicationError::MultipleFileCreation { file } => {
-                format!("There can only be one attempt to create {file}.")
+                i18n::t!("There can only be one attempt to create {file}.", file = file).to_string()
             }
             DiffApplicationError::MultipleFileRenames { file } => {
-                format!("There can only be one attempt to rename {file}.")
+                i18n::t!("There can only be one attempt to rename {file}.", file = file).to_string()
             }
             DiffApplicationError::MutatedDeletedFile { file } => {
-                format!("Could not mutate a deleted file {file}.")
+                i18n::t!("Could not mutate a deleted file {file}.", file = file).to_string()
             }
             DiffApplicationError::EmptyDiff => i18n::t!("No diffs could be applied.").to_string(),
             DiffApplicationError::RemoteFileOperationsUnsupported => {

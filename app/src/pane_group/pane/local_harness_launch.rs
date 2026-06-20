@@ -177,7 +177,7 @@ pub(super) async fn prepare_local_harness_child_launch(
         return Err(if harness_name.is_empty() {
             i18n::t!("Local child harness type is missing.").to_string()
         } else {
-            format!("Unsupported local child harness '{harness_name}'.")
+            i18n::t!("Unsupported local child harness '{harness_name}'.", harness_name = harness_name).to_string()
         });
     };
     if let Some(message) = local_harness_product_disabled_message(harness) {

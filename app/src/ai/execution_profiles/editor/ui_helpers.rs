@@ -826,7 +826,7 @@ fn render_command_denylist_section(
 fn display_mcp_name(uuid: &Uuid, app: &AppContext) -> String {
     TemplatableMCPServerManager::get_mcp_name(uuid, app).unwrap_or({
         log::warn!("Expected a name for MCP server {uuid} but could not find one.");
-        format!("MCP Server {uuid}")
+        i18n::t!("MCP Server {uuid}", uuid = uuid).to_string()
     })
 }
 

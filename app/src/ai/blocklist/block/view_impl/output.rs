@@ -1004,7 +1004,7 @@ pub(super) fn render(props: Props, app: &AppContext) -> Box<dyn Element> {
                             let verb = if done { "Searched" } else { "Searching" };
 
                             let mut fragments: Vec<FormattedTextFragment> =
-                                vec![FormattedTextFragment::plain_text(format!("{verb} "))];
+                                vec![FormattedTextFragment::plain_text(i18n::t!("{verb} ", verb = verb).to_string())];
                             match &target_label {
                                 Some((target_kind, name)) => {
                                     fragments.push(FormattedTextFragment::plain_text(format!(
@@ -2409,9 +2409,9 @@ fn create_formatted_text_for_grep(
             ]
         };
         fragments.push(if is_cancelled {
-            FormattedTextFragment::plain_text(format!(" in {display_path} cancelled"))
+            FormattedTextFragment::plain_text(i18n::t!(" in {display_path} cancelled", display_path = display_path).to_string())
         } else {
-            FormattedTextFragment::plain_text(format!(" in {display_path}"))
+            FormattedTextFragment::plain_text(i18n::t!(" in {display_path}", display_path = display_path).to_string())
         });
         FormattedText::new([FormattedTextLine::Line(fragments)])
     } else {
@@ -2506,9 +2506,9 @@ fn create_formatted_text_for_file_glob(
             ]
         };
         fragments.push(if is_cancelled {
-            FormattedTextFragment::plain_text(format!(" in {path} cancelled"))
+            FormattedTextFragment::plain_text(i18n::t!(" in {path} cancelled", path = path).to_string())
         } else {
-            FormattedTextFragment::plain_text(format!(" in {path}"))
+            FormattedTextFragment::plain_text(i18n::t!(" in {path}", path = path).to_string())
         });
         FormattedText::new([FormattedTextLine::Line(fragments)])
     } else {
@@ -2735,7 +2735,7 @@ fn format_upload_artifact_text(
     let mut lines = vec![i18n::t!("Upload artifact: {file_path}", file_path = request.file_path).to_string()];
 
     if let Some(description) = request.description.as_deref() {
-        lines.push(format!("Description: {description}"));
+        lines.push(i18n::t!("Description: {description}", description = description).to_string());
     }
 
     match result {
@@ -2744,13 +2744,13 @@ fn format_upload_artifact_text(
             filepath,
             ..
         }) => {
-            lines.push(format!("Status: uploaded artifact {artifact_uid}"));
+            lines.push(i18n::t!("Status: uploaded artifact {artifact_uid}", artifact_uid = artifact_uid).to_string());
             if let Some(filepath) = filepath.as_deref() {
-                lines.push(format!("Uploaded file: {filepath}"));
+                lines.push(i18n::t!("Uploaded file: {filepath}", filepath = filepath).to_string());
             }
         }
         Some(UploadArtifactResult::Error(error)) => {
-            lines.push(format!("Status: upload failed: {error}"));
+            lines.push(i18n::t!("Status: upload failed: {error}", error = error).to_string());
         }
         Some(UploadArtifactResult::Cancelled) => {}
         None => {}
@@ -3900,10 +3900,10 @@ fn format_conversation_search_phase(phase: &ConversationSearchPhase) -> String {
                 return i18n::t!("Grepping for patterns").to_string();
             }
             let joined = truncate_from_end(&patterns.join(", "), 60);
-            format!("Grepping for patterns: {joined}")
+            i18n::t!("Grepping for patterns: {joined}", joined = joined).to_string()
         }
         ConversationSearchPhase::ReadingMessages { count } => {
-            format!("Reading {count} messages")
+            i18n::t!("Reading {count} messages", count = count).to_string()
         }
     }
 }

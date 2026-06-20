@@ -1131,7 +1131,7 @@ impl BillingAndUsagePageV2View {
             .map(|opt| {
                 let credits = opt.credits.separate_with_commas();
                 let dollars = format!("${:.2}", opt.price_usd_cents as f64 / 100.0);
-                format!("{credits} credits / {dollars}")
+                i18n::t!("{credits} credits / {dollars}", credits = credits, dollars = dollars).to_string()
             })
             .unwrap_or_default();
         let auto_reload_credit_amount = selected_credit_option

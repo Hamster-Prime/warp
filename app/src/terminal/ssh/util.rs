@@ -239,7 +239,7 @@ pub fn transfer_file_sftp_command(
 
     // "sftp -P 2222"
     if let Some(port) = ssh_port {
-        command += &format!("-P {port} ");
+        command += &i18n::t!("-P {port} ", port = port).to_string();
     }
 
     // "sftp -P 2222 sshuser@127.0.0.1 <<< "put "

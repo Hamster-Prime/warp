@@ -733,14 +733,14 @@ impl AgentManagementView {
         // displayed ID. (The dropdown menu still shows the full ID.)
         dropdown.set_menu_header_text_override(|text| {
             if matches!(text, "All" | "None") {
-                return format!("Environment: {text}");
+                return i18n::t!("Environment: {text}", text = text).to_string();
             }
 
             let abbreviated = text.chars().take(6).collect::<String>();
             if abbreviated == text {
-                format!("Environment: {text}")
+                i18n::t!("Environment: {text}", text = text).to_string()
             } else {
-                format!("Environment: {abbreviated}…")
+                i18n::t!("Environment: {abbreviated}…", abbreviated = abbreviated).to_string()
             }
         });
 
@@ -1840,17 +1840,17 @@ impl AgentManagementView {
                     } else {
                         "Executor"
                     };
-                    metadata_parts.push(format!("{label}: {name}"));
+                    metadata_parts.push(i18n::t!("{label}: {name}", label = label, name = name).to_string());
                 }
             }
         }
 
         if let Some(run_time) = &entry.display.run_time {
-            metadata_parts.push(format!("Run time: {run_time}"));
+            metadata_parts.push(i18n::t!("Run time: {run_time}", run_time = run_time).to_string());
         }
 
         if let Some(usage) = entry.display.request_usage.map(format_credits) {
-            metadata_parts.push(format!("Credits used: {usage}"));
+            metadata_parts.push(i18n::t!("Credits used: {usage}", usage = usage).to_string());
         }
 
         Text::new(metadata_parts.join(" • "), font_family, font_size)

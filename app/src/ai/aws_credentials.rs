@@ -52,7 +52,7 @@ fn aws_profile_reference_for_message(profile: &str, capitalize_first_word: bool)
         }
     } else {
         let article = if capitalize_first_word { "The" } else { "the" };
-        format!("{article} AWS profile `{profile}`")
+        i18n::t!("{article} AWS profile `{profile}`", article = article, profile = profile).to_string()
     }
 }
 

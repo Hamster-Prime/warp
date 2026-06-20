@@ -588,7 +588,7 @@ impl AIAgentOutput {
                 AIAgentOutputMessageType::WebSearch(_) => continue,
                 AIAgentOutputMessageType::WebFetch(_) => continue,
                 AIAgentOutputMessageType::DebugOutput { text } => {
-                    result.push(format!("[DEBUG] {text}"));
+                    result.push(i18n::t!("[DEBUG] {text}", text = text).to_string());
                     last_was_action = false;
                 }
                 AIAgentOutputMessageType::ArtifactCreated(_) => continue,
@@ -2322,7 +2322,7 @@ impl CurrentHead {
             CurrentHead::BranchName(name) => name.clone(),
             CurrentHead::HeadlessCommitSha(sha) => {
                 let short = sha.chars().take(7).collect::<String>();
-                format!("Commit {short}")
+                i18n::t!("Commit {short}", short = short).to_string()
             }
         }
     }
@@ -2755,7 +2755,7 @@ pub struct CloneRepositoryURL {
 impl CloneRepositoryURL {
     pub fn new(url: String) -> Self {
         Self {
-            query: format!("Clone {url}"),
+            query: i18n::t!("Clone {url}", url = url).to_string(),
             url,
         }
     }
@@ -2885,7 +2885,7 @@ impl AIAgentInput {
             && Some(&query) == initial_conversation_query
             && !self.has_custom_display_query()
         {
-            query = format!("/agent {query}");
+            query = i18n::t!("/agent {query}", query = query).to_string();
         }
         Some(query)
     }

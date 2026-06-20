@@ -199,7 +199,7 @@ struct TokenSnapshot {
 impl TokenSnapshot {
     /// Constructs a snapshot whose header redacts its value from standard debug formatting.
     fn new(token: String, expires_at: DateTime<Utc>) -> anyhow::Result<Self> {
-        let mut authorization_header = HeaderValue::from_str(&format!("Bearer {token}"))
+        let mut authorization_header = HeaderValue::from_str(&i18n::t!("Bearer {token}", token = token).to_string())
             .map_err(|_| anyhow!("Cloud-agent OTLP token cannot be used as an HTTP header"))?;
         authorization_header.set_sensitive(true);
         Ok(Self {

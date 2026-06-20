@@ -1004,7 +1004,7 @@ fn handle_terminal_view_event(
             }
             Event::PluggableNotification { title, body } => {
                 let message = if let Some(t) = title {
-                    format!("{t}: {body}")
+                    i18n::t!("{t}: {body}", t = t, body = body).to_string()
                 } else {
                     body.clone()
                 };
@@ -1751,7 +1751,7 @@ fn launch_local_no_harness_child(
                         parent_conversation_id,
                         request_id: Some(request_id),
                         orchestration_harness: Some(Harness::Oz),
-                        error_message: format!("Failed to create local child task: {error}"),
+                        error_message: i18n::t!("Failed to create local child task: {error}", error = error).to_string(),
                     },
                     ctx,
                 );

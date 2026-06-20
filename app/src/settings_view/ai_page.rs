@@ -4588,7 +4588,7 @@ impl SettingsWidget for UsageWidget {
                 .with_child(
                     appearance
                         .ui_builder()
-                        .paragraph(format!("Resets {formatted_next_refresh_time}"))
+                        .paragraph(i18n::t!("Resets {formatted_next_refresh_time}", formatted_next_refresh_time = formatted_next_refresh_time).to_string())
                         .with_style(UiComponentStyles {
                             font_color: Some(blended_colors::text_sub(
                                 appearance.theme(),

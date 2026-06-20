@@ -1657,7 +1657,7 @@ impl CodeFooterView {
 
                 // All servers are enabled/ready but no live servers — unavailable
                 (
-                    Some(format!("Language support is unavailable for {root_name}")),
+                    Some(i18n::t!("Language support is unavailable for {root_name}", root_name = root_name).to_string()),
                     false,
                 )
             }

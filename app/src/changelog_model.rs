@@ -142,7 +142,7 @@ impl ChangelogModel {
 
             let mut preview_flags_string = preview_flags_vec
                 .iter()
-                .map(|flag| format!("* ***Preview-exclusive***: {flag}"))
+                .map(|flag| i18n::t!("* ***Preview-exclusive***: {flag}", flag = flag).to_string())
                 .join("\n");
             preview_flags_string.push('\n');
 

@@ -1766,7 +1766,7 @@ impl AgentConversationsModel {
         }
         for (id, name) in &mut envs {
             if name_counts.get(name.as_str()).copied().unwrap_or(0) > 1 {
-                *name = format!("{name} ({id})");
+                *name = i18n::t!("{name} ({id})", name = name, id = id).to_string();
             }
         }
 

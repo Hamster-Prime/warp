@@ -326,7 +326,7 @@ fn delete_secret(ctx: &mut AppContext, args: DeleteSecretArgs) -> Result<()> {
                     Owner::Team { .. } => "team",
                 };
 
-                let should_delete = match Confirm::new(&format!("Delete {scope} secret '{name}'?"))
+                let should_delete = match Confirm::new(&i18n::t!("Delete {scope} secret '{name}'?", scope = scope, name = name).to_string())
                     .with_default(false)
                     .with_help_message("This action cannot be undone")
                     .prompt()

@@ -401,7 +401,7 @@ impl AuthSecretSelector {
         // window) shouldn't pop a duplicate confirmation here.
         if removed_pending {
             let window_id = ctx.window_id();
-            let message = format!("API key '{name}' deleted.");
+            let message = i18n::t!("API key '{name}' deleted.", name = name).to_string();
             ToastStack::handle(ctx).update(ctx, |ts, ctx| {
                 ts.add_ephemeral_toast(DismissibleToast::success(message), window_id, ctx);
             });
@@ -430,7 +430,7 @@ impl AuthSecretSelector {
         // double-toasting if another surface also tried to delete.
         if removed_pending {
             let window_id = ctx.window_id();
-            let message = format!("Failed to delete API key '{name}': {error}");
+            let message = i18n::t!("Failed to delete API key '{name}': {error}", name = name, error = error).to_string();
             ToastStack::handle(ctx).update(ctx, |ts, ctx| {
                 ts.add_ephemeral_toast(DismissibleToast::error(message), window_id, ctx);
             });

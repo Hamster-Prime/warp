@@ -194,7 +194,7 @@ impl FileUpload {
 
         // "sftp -P 2222"
         if let Some(port) = &file_upload.remote_port {
-            command += &format!("-P {port} ");
+            command += &i18n::t!("-P {port} ", port = port).to_string();
         }
 
         // "sftp -P 2222 sshuser@127.0.0.1 <<< "

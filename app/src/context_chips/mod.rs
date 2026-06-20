@@ -105,7 +105,7 @@ fn parse_github_pr_number(number: &str) -> Option<i32> {
 }
 
 pub(crate) fn github_pr_display_text_from_url(url: &str) -> Option<String> {
-    github_pr_number_from_url(url).map(|number| format!("PR #{number}"))
+    github_pr_number_from_url(url).map(|number| i18n::t!("PR #{number}", number = number).to_string())
 }
 
 /// The refresh settings for the date context chip.
@@ -454,7 +454,7 @@ impl ContextChipKind {
         match self {
             Self::ShellGitBranch => format!("git:({text})"),
             Self::GithubPullRequest => github_pr_display_text_from_url(&text).unwrap_or(text),
-            Self::KubernetesContext => format!("⎈ {text}"),
+            Self::KubernetesContext => i18n::t!("⎈ {text}", text = text).to_string(),
             Self::SvnBranch => format!("svn:({text})"),
             Self::SvnDirtyItems => format!("±{text}"),
             _ => text,

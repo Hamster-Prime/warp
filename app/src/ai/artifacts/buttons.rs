@@ -235,7 +235,7 @@ fn make_pr_button(
     theme: Arc<dyn ActionButtonTheme>,
 ) -> ActionButton {
     let display_text = match (repo, number) {
-        (Some(repo), Some(num)) => format!("{repo} #{num}"),
+        (Some(repo), Some(num)) => i18n::t!("{repo} #{num}", repo = repo, num = num).to_string(),
         // When we deserialize, we either get both values or neither, hence the
         // wildcard match here.
         _ => String::from("PR"),

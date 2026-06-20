@@ -2072,9 +2072,9 @@ impl AIBlock {
                         other => other.clone(),
                     };
                     let command_text = if display_input.is_null() {
-                        format!("MCP Tool: {name}")
+                        i18n::t!("MCP Tool: {name}", name = name).to_string()
                     } else {
-                        format!("MCP Tool: {name} ({display_input})")
+                        i18n::t!("MCP Tool: {name} ({display_input})", name = name, display_input = display_input).to_string()
                     };
                     self.handle_mcp_tool_stream_update(action_id, &command_text, ctx);
                 }

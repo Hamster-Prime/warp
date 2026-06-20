@@ -1584,7 +1584,7 @@ impl ConversationDetailsPanel {
              copy_button_kind: CopyButtonKind,
              action: ConversationDetailsPanelAction| {
                 render_copyable_text_field(
-                    CopyableTextFieldConfig::new(format!("{label}: {value}"))
+                    CopyableTextFieldConfig::new(i18n::t!("{label}: {value}", label = label, value = value).to_string())
                         .with_font_size(ui_font_size)
                         .with_text_color(theme.foreground().into())
                         .with_icon_size(16.)
@@ -1598,7 +1598,7 @@ impl ConversationDetailsPanel {
             };
 
         let name_text = Text::new(
-            format!("Name: {environment_name}"),
+            i18n::t!("Name: {environment_name}", environment_name = environment_name).to_string(),
             appearance.ui_font_family(),
             ui_font_size,
         )

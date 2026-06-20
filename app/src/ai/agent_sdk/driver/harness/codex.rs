@@ -67,7 +67,7 @@ impl ThirdPartyHarness for CodexHarness {
 
     fn auth_check_command(&self) -> Option<String> {
         let cli = self.cli_agent().command_prefix();
-        Some(format!("{cli} login status"))
+        Some(i18n::t!("{cli} login status", cli = cli).to_string())
     }
 
     fn runtime_error_patterns(&self) -> &'static [&'static str] {

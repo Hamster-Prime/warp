@@ -175,7 +175,7 @@ impl ApiKeyCommandRunner {
                         return;
                     }
 
-                    let prompt = format!("Expire API key '{key}'?");
+                    let prompt = i18n::t!("Expire API key '{key}'?", key = key).to_string();
                     let should_expire = match Confirm::new(&prompt)
                         .with_default(false)
                         .with_help_message("This action takes effect immediately")
@@ -327,7 +327,7 @@ fn resolve_api_key_identifier(
 
     if io::stdin().is_terminal() {
         return match Select::new(
-            &format!("Multiple API keys match '{key_identifier}'. Select a key to expire:"),
+            &i18n::t!("Multiple API keys match '{key_identifier}'. Select a key to expire:", key_identifier = key_identifier).to_string(),
             matches,
         )
         .prompt()

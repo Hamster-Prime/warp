@@ -182,7 +182,7 @@ impl TerminalView {
             ctx.spawn(future, move |me, conversation, ctx| {
                 let Some(conversation) = conversation else {
                     me.show_error_toast(
-                        format!("Failed to load conversation with id: {conversation_id}"),
+                        i18n::t!("Failed to load conversation with id: {conversation_id}", conversation_id = conversation_id).to_string(),
                         ctx,
                     );
                     return;

@@ -498,7 +498,7 @@ fn render_header(
     let title_text = if total_refs == 1 {
         i18n::t!("Showing 1 reference").to_string()
     } else {
-        format!("Showing {total_refs} references")
+        i18n::t!("Showing {total_refs} references", total_refs = total_refs).to_string()
     };
 
     let title = Align::new(

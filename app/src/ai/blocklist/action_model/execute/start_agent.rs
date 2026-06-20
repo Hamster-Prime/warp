@@ -31,7 +31,7 @@ fn invalid_local_child_harness_error(harness_type: &str) -> String {
     if harness_name.is_empty() {
         i18n::t!("Local child harness type is missing.").to_string()
     } else {
-        format!("Unsupported local child harness '{harness_name}'.")
+        i18n::t!("Unsupported local child harness '{harness_name}'.", harness_name = harness_name).to_string()
     }
 }
 

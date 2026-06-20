@@ -208,7 +208,7 @@ impl TerminalView {
             let mut open_in_warp = None;
             let mut show_in_file_explorer = None;
             let modifier = directly_open_link_keybinding_string();
-            let mut detail = Some(format!("[{modifier} Click]"));
+            let mut detail = Some(i18n::t!("[{modifier} Click]", modifier = modifier).to_string());
             #[cfg(feature = "local_fs")]
             {
                 if let GridHighlightedLink::File(file_link) = link {
@@ -245,7 +245,7 @@ impl TerminalView {
             let mut open_in_warp = None;
             let mut show_in_file_explorer = None;
             let modifier_string = directly_open_link_keybinding_string();
-            let mut detail = Some(format!("[{modifier_string} Click]"));
+            let mut detail = Some(i18n::t!("[{modifier_string} Click]", modifier_string = modifier_string).to_string());
 
             #[cfg(feature = "local_fs")]
             {

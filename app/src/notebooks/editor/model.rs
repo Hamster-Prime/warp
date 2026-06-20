@@ -1399,7 +1399,7 @@ impl NotebooksEditorModel {
 
         if let Some(command) = child_model.executable_command(ctx) {
             ctx.emit_a11y_content(AccessibilityContent::new_without_help(
-                format!("Selected workflow: {command}"),
+                i18n::t!("Selected workflow: {command}", command = command).to_string(),
                 WarpA11yRole::TextareaRole,
             ));
         }

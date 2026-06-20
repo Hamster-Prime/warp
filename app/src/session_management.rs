@@ -78,12 +78,12 @@ impl CommandContext {
             Self::LastRunCommand {
                 last_run_command, ..
             } => Some(i18n::t!("Last run command {clone}", clone = last_run_command.clone()).to_string()),
-            Self::LastRunAIBlock { prompt } => Some(format!("Last AI interaction: {prompt}")),
+            Self::LastRunAIBlock { prompt } => Some(i18n::t!("Last AI interaction: {prompt}", prompt = prompt).to_string()),
             Self::RunningCommand { running_command } => {
-                Some(format!("Currently running {running_command}"))
+                Some(i18n::t!("Currently running {running_command}", running_command = running_command).to_string())
             }
             Self::RunningAIBlock { prompt } => {
-                Some(format!("Currently running AI interaction: {prompt}"))
+                Some(i18n::t!("Currently running AI interaction: {prompt}", prompt = prompt).to_string())
             }
         }
     }

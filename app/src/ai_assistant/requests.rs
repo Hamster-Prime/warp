@@ -252,17 +252,17 @@ impl Requests {
                                 if team.billing_metadata.can_upgrade_to_higher_tier_plan() {
                                     if has_admin_permissions {
                                         let upgrade_url = UserWorkspaces::upgrade_link_for_team(team.uid);
-                                        format!("It seems you're out of credits. Please try again {next_time}.\n\n[Upgrade]({upgrade_url}) for more credits.")
+                                        i18n::t!("It seems you're out of credits. Please try again {next_time}.\n\n[Upgrade]({upgrade_url}) for more credits.", next_time = next_time, upgrade_url = upgrade_url).to_string()
                                     } else {
-                                        format!("It seems you're out of credits. Please try again {next_time}.\n\nContact a team admin to upgrade for more credits.")
+                                        i18n::t!("It seems you're out of credits. Please try again {next_time}.\n\nContact a team admin to upgrade for more credits.", next_time = next_time).to_string()
                                     }
                                 } else {
-                                    format!("It seems you're out of credits. Please try again {next_time}.")
+                                    i18n::t!("It seems you're out of credits. Please try again {next_time}.", next_time = next_time).to_string()
                                 }
                             } else {
                                 let user_id = auth_state.user_id().unwrap_or_default();
                                 let upgrade_url = UserWorkspaces::upgrade_link(user_id);
-                                format!("It seems you're out of credits. Please try again {next_time}.\n\n[Upgrade]({upgrade_url}) for more credits.")
+                                i18n::t!("It seems you're out of credits. Please try again {next_time}.\n\n[Upgrade]({upgrade_url}) for more credits.", next_time = next_time, upgrade_url = upgrade_url).to_string()
                             };
                             let response_in_markdown = markdown_segments_from_text(
                                 transcript_part_index,
@@ -400,11 +400,11 @@ impl Requests {
                 let num_hours = num_minutes / 60;
                 let num_days = num_hours / 24;
                 let remaining_text = if num_days > 0 {
-                    format!("{num_days} days")
+                    i18n::t!("{num_days} days", num_days = num_days).to_string()
                 } else if num_hours > 0 {
-                    format!("{num_hours} hours")
+                    i18n::t!("{num_hours} hours", num_hours = num_hours).to_string()
                 } else {
-                    format!("{num_minutes} minutes")
+                    i18n::t!("{num_minutes} minutes", num_minutes = num_minutes).to_string()
                 };
                 Some(remaining_text)
             }

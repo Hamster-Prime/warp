@@ -115,7 +115,7 @@ pub fn create_discount_badge(discount: u32, appearance: &Appearance) -> Box<dyn 
     let bg_color: Fill = theme.terminal_colors().normal.green.into();
 
     Container::new(
-        Text::new_inline(format!("{discount}% off"), appearance.ui_font_family(), 10.)
+        Text::new_inline(i18n::t!("{discount}% off", discount = discount).to_string(), appearance.ui_font_family(), 10.)
             .with_color(theme.main_text_color(bg_color).into())
             .finish(),
     )
@@ -2201,7 +2201,7 @@ impl BillingAndUsagePageView {
         if let Some(period_end) = total_overages_period_end {
             let local_period_end = period_end.with_timezone(&Local);
             let formatted_date = local_period_end.format("%b %d at %-I:%M %p").to_string();
-            let billing_date_text = format!("Usage resets on {formatted_date}");
+            let billing_date_text = i18n::t!("Usage resets on {formatted_date}", formatted_date = formatted_date).to_string();
             left_side_component.add_child(
                 Container::new(
                     Text::new_inline(billing_date_text, appearance.ui_font_family(), 12.)
@@ -2367,7 +2367,7 @@ impl BillingAndUsagePageView {
         } else {
             let header = "Credits";
             let description =
-                format!("This is the {refresh_duration} limit of AI credits for your account.");
+                i18n::t!("This is the {refresh_duration} limit of AI credits for your account.", refresh_duration = refresh_duration).to_string();
 
             let request_usage_description = FormattedTextElement::from_str(
                 description,
@@ -2778,7 +2778,7 @@ impl BillingAndUsagePageView {
             .with_child(
                 appearance
                     .ui_builder()
-                    .paragraph(format!("Resets {formatted_next_refresh_time}"))
+                    .paragraph(i18n::t!("Resets {formatted_next_refresh_time}", formatted_next_refresh_time = formatted_next_refresh_time).to_string())
                     .with_style(UiComponentStyles {
                         font_color: Some(blended_colors::text_sub(
                             appearance.theme(),

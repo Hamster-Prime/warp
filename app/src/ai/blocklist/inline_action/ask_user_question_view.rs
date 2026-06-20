@@ -1825,7 +1825,7 @@ fn ask_user_question_completion_state(
             if total == 1 {
                 i18n::t!("Answered question").to_string()
             } else {
-                format!("Answered all {total} questions")
+                i18n::t!("Answered all {total} questions", total = total).to_string()
             }
         } else {
             format!(

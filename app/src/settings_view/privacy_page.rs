@@ -698,7 +698,7 @@ impl SecretRedactionWidget {
                 .with_child(
                     Container::new(
                         Text::new_inline(
-                            format!(" {count}"),
+                            i18n::t!(" {count}", count = count).to_string(),
                             appearance.ui_font_family(),
                             FONT_SIZE,
                         )

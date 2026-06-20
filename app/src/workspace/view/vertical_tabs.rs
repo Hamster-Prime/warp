@@ -2709,7 +2709,7 @@ fn render_grouped_tabs_header(
     let subtitle_text = if member_count == 1 {
         "1 tab".to_string()
     } else {
-        format!("{member_count} tabs")
+        i18n::t!("{member_count} tabs", member_count = member_count).to_string()
     };
     let subtitle = Text::new_inline(subtitle_text, font_family, 10.)
         .with_clip(ClipConfig::ellipsis())
@@ -4064,8 +4064,8 @@ fn cloud_agent_working_directory_and_env(
     let setup_status: Option<&str> = model_ref.agent_progress().map(|p| p.setup_status_text());
 
     match (env_name, setup_status, working_directory) {
-        (Some(env), Some(status), _) => Some(format!("{env} · {status}")),
-        (Some(env), None, Some(wd)) => Some(format!("{env} · {wd}")),
+        (Some(env), Some(status), _) => Some(i18n::t!("{env} · {status}", env = env, status = status).to_string()),
+        (Some(env), None, Some(wd)) => Some(i18n::t!("{env} · {wd}", env = env, wd = wd).to_string()),
         (Some(env), None, None) => Some(env),
         (None, Some(status), _) => Some(status.to_string()),
         (None, None, _) => None,
@@ -4616,7 +4616,7 @@ fn render_summary_overflow_line(
     appearance: &Appearance,
 ) -> Box<dyn Element> {
     Text::new_inline(
-        format!("+ {hidden_count} more"),
+        i18n::t!("+ {hidden_count} more", hidden_count = hidden_count).to_string(),
         appearance.ui_font_family(),
         10.,
     )

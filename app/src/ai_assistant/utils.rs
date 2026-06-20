@@ -369,7 +369,7 @@ pub fn render_request_limit_info(
         row.add_child(
             Container::new(
                 Text::new_inline(
-                    format!("{next_refresh_time} until refresh."),
+                    i18n::t!("{next_refresh_time} until refresh.", next_refresh_time = next_refresh_time).to_string(),
                     appearance.ui_font_family(),
                     REQUEST_LIMIT_INFO_FONT_SIZE,
                 )

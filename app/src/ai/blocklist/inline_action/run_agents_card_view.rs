@@ -1368,7 +1368,7 @@ pub(crate) fn format_terminal_state(result: &RunAgentsResult) -> (String, Status
                 let label = if total == 1 {
                     i18n::t!("Spawned 1 agent").to_string()
                 } else {
-                    format!("Spawned {total} agents")
+                    i18n::t!("Spawned {total} agents", total = total).to_string()
                 };
                 (label, StatusKind::Success)
             } else if launched == 0 {
@@ -1377,12 +1377,12 @@ pub(crate) fn format_terminal_state(result: &RunAgentsResult) -> (String, Status
                 let label = if total == 1 {
                     i18n::t!("Failed to spawn agent").to_string()
                 } else {
-                    format!("Failed to spawn {total} agents")
+                    i18n::t!("Failed to spawn {total} agents", total = total).to_string()
                 };
                 (label, StatusKind::Failure)
             } else {
                 (
-                    format!("Spawned {launched} of {total} agents"),
+                    i18n::t!("Spawned {launched} of {total} agents", launched = launched, total = total).to_string(),
                     StatusKind::Mixed,
                 )
             }
@@ -1402,7 +1402,7 @@ pub(crate) fn format_terminal_state(result: &RunAgentsResult) -> (String, Status
             let label = if error.is_empty() {
                 i18n::t!("Failed to start orchestration").to_string()
             } else {
-                format!("Failed to start orchestration: {error}")
+                i18n::t!("Failed to start orchestration: {error}", error = error).to_string()
             };
             (label, StatusKind::Failure)
         }

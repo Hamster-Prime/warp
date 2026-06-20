@@ -288,7 +288,7 @@ fn file_nav_button_tooltip(is_sidebar_expanded: bool, app: &AppContext) -> Strin
         "Show file navigation"
     };
     match keybinding_name_to_display_string("code_review:toggle_file_navigation", app) {
-        Some(shortcut) => format!("{label} ({shortcut})"),
+        Some(shortcut) => i18n::t!("{label} ({shortcut})", label = label, shortcut = shortcut).to_string(),
         None => label.to_string(),
     }
 }
@@ -488,7 +488,7 @@ impl DiscardOperationType {
             DiscardOperationType::AllChangesAgainstBranch(None) => Some(i18n::t!("You're about to discard all committed and uncommitted changes.").to_string()),
             DiscardOperationType::FileChangesAgainstBranch(None) => Some(i18n::t!("This will restore this file to the main branch version and discard all committed and uncommitted edits.").to_string()),
             DiscardOperationType::AllChangesAgainstBranch(Some(_)) => Some(i18n::t!("You're about to discard all committed and uncommitted changes.").to_string()),
-            DiscardOperationType::FileChangesAgainstBranch(Some(branch)) => Some(format!("This will reset this file to the {branch} branch version and discard all committed and uncommitted edits.")),
+            DiscardOperationType::FileChangesAgainstBranch(Some(branch)) => Some(i18n::t!("This will reset this file to the {branch} branch version and discard all committed and uncommitted edits.", branch = branch).to_string()),
         }
     }
 
@@ -4135,7 +4135,7 @@ impl CodeReviewView {
                         zero_state_column.add_child(
                             Container::new(
                                 Text::new(
-                                    format!("Repo is initialized with a {file_name} file."),
+                                    i18n::t!("Repo is initialized with a {file_name} file.", file_name = file_name).to_string(),
                                     appearance.ui_font_family(),
                                     12.,
                                 )
@@ -4954,7 +4954,7 @@ impl CodeReviewView {
                 let save_keystroke = Keystroke::parse("cmdorctrl-s").unwrap_or_default();
                 let save_shortcut = save_keystroke.displayed();
                 let tooltip_text =
-                    format!("This file has unsaved changes. {save_shortcut} to save");
+                    i18n::t!("This file has unsaved changes. {save_shortcut} to save", save_shortcut = save_shortcut).to_string();
                 render_unsaved_circle_with_tooltip(
                     editor_state.unsaved_changes_mouse_state(),
                     tooltip_text,
@@ -5745,7 +5745,7 @@ impl CodeReviewView {
             }
 
             // Otherwise insert the location snippet into the input buffer (original behavior).
-            let location = format!("{file_path}:{start_line}-{end_line} ");
+            let location = i18n::t!("{file_path}:{start_line}-{end_line} ", file_path = file_path, start_line = start_line, end_line = end_line).to_string();
             send_telemetry_from_ctx!(
                 CodeReviewTelemetryEvent::AddToContext {
                     is_local: self.repo_is_local(),
@@ -5899,7 +5899,7 @@ impl CodeReviewView {
                 // Insert the reference into the terminal input
                 terminal_view.update(ctx, |terminal_view, ctx| {
                     terminal_view.input().update(ctx, |input, ctx| {
-                        input.append_to_buffer(&format!("{attachment_reference} "), ctx);
+                        input.append_to_buffer(&i18n::t!("{attachment_reference} ", attachment_reference = attachment_reference).to_string(), ctx);
                         input.ensure_agent_mode_for_ai_features(true, None, ctx);
                     });
                 });
@@ -6050,7 +6050,7 @@ impl CodeReviewView {
                 let full_path = repo_path.join(&file_path);
                 let start_line = line_range.start.as_usize() + 1;
                 let end_line = line_range.end.as_usize();
-                let path_with_range = format!("{full_path}:{start_line}-{end_line} ");
+                let path_with_range = i18n::t!("{full_path}:{start_line}-{end_line} ", full_path = full_path, start_line = start_line, end_line = end_line).to_string();
                 terminal_view.update(ctx, |terminal_view, ctx| {
                     terminal_view.handle_file_tree_drop_on_active_command(&path_with_range, ctx);
                 });
@@ -6080,7 +6080,7 @@ impl CodeReviewView {
                 // Insert the reference into the terminal input and lock into agent mode
                 terminal_view.update(ctx, |terminal_view, ctx| {
                     terminal_view.input().update(ctx, |input, ctx| {
-                        input.append_to_buffer(&format!("{attachment_reference} "), ctx);
+                        input.append_to_buffer(&i18n::t!("{attachment_reference} ", attachment_reference = attachment_reference).to_string(), ctx);
                         input.ensure_agent_mode_for_ai_features(true, None, ctx);
                     });
                 });
@@ -6598,7 +6598,7 @@ impl CodeReviewView {
                 if let Some(pr_info) = pr_info {
                     let url = pr_info.url.clone();
                     let number = pr_info.number;
-                    let label = format!("PR #{number}");
+                    let label = i18n::t!("PR #{number}", number = number).to_string();
                     self.git_primary_action_button.update(ctx, |button, ctx| {
                         button.set_label(label, ctx);
                         button.set_icon(Some(Icon::Github), ctx);

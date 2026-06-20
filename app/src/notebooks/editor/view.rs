@@ -2528,7 +2528,7 @@ impl RichTextEditorView {
                     force_open_in_warp: false,
                 });
             }),
-            detail: Some(format!("[{modifier} Click]")),
+            detail: Some(i18n::t!("[{modifier} Click]", modifier = modifier).to_string()),
             mouse_state: self.file_path_mouse_states.open_file_handle.clone(),
         }];
 
@@ -3268,7 +3268,7 @@ impl TypedActionView for RichTextEditorView {
             EditorViewAction::CodeBlockTypeSelectedAtOffset {
                 code_block_type, ..
             } => ActionAccessibilityContent::Custom(AccessibilityContent::new_without_help(
-                format!("Change code block language to {code_block_type}"),
+                i18n::t!("Change code block language to {code_block_type}", code_block_type = code_block_type).to_string(),
                 WarpA11yRole::UserAction,
             )),
             EditorViewAction::CopyTextToClipboard { .. } => ActionAccessibilityContent::Custom(

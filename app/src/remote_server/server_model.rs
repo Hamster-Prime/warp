@@ -609,7 +609,7 @@ impl ServerModel {
                             Some(&req.request_id),
                             server_message::Message::OpenBufferResponse(OpenBufferResponse{
                                         result: Some(remote_server::proto::open_buffer_response::Result::Error(FileOperationError {
-                                             message: format!("Failed to load buffer: {error}"),
+                                             message: i18n::t!("Failed to load buffer: {error}", error = error).to_string(),
                                         }))
                                     }),
                         );
@@ -1202,7 +1202,7 @@ impl ServerModel {
         let mode = match CodebaseResyncMode::try_from(mode) {
             Ok(mode) => mode,
             Err(_) => {
-                return invalid_request_response(format!("Invalid ResyncCodebase mode: {mode}"));
+                return invalid_request_response(i18n::t!("Invalid ResyncCodebase mode: {mode}", mode = mode).to_string());
             }
         };
         let request = match self.prepare_codebase_index_request(
@@ -1345,7 +1345,7 @@ impl ServerModel {
             Err(error) => {
                 return fragment_metadata_lookup_error_response(
                     FragmentMetadataLookupErrorCode::InvalidRootHash,
-                    format!("Invalid root_hash: {error}"),
+                    i18n::t!("Invalid root_hash: {error}", error = error).to_string(),
                     None,
                 );
             }
@@ -1361,7 +1361,7 @@ impl ServerModel {
                 Ok(parsed_hash) => valid_hashes.push((content_hash, parsed_hash)),
                 Err(error) => missing_hashes.push(missing_fragment_metadata(
                     content_hash,
-                    format!("Invalid content hash: {error}"),
+                    i18n::t!("Invalid content hash: {error}", error = error).to_string(),
                 )),
             }
         }
@@ -2210,7 +2210,7 @@ impl ServerModel {
             return HandlerOutcome::Sync(server_message::Message::WriteFileResponse(
                 WriteFileResponse {
                     result: Some(write_file_response::Result::Error(FileOperationError {
-                        message: format!("Failed to initiate write: {err}"),
+                        message: i18n::t!("Failed to initiate write: {err}", err = err).to_string(),
                     })),
                 },
             ));
@@ -2253,7 +2253,7 @@ impl ServerModel {
             return HandlerOutcome::Sync(server_message::Message::DeleteFileResponse(
                 DeleteFileResponse {
                     result: Some(delete_file_response::Result::Error(FileOperationError {
-                        message: format!("Failed to initiate delete: {err}"),
+                        message: i18n::t!("Failed to initiate delete: {err}", err = err).to_string(),
                     })),
                 },
             ));
@@ -2516,7 +2516,7 @@ impl ServerModel {
             Err(err) => HandlerOutcome::Sync(server_message::Message::SaveBufferResponse(
                 SaveBufferResponse {
                     result: Some(save_buffer_response::Result::Error(FileOperationError {
-                        message: format!("Failed to save: {err}"),
+                        message: i18n::t!("Failed to save: {err}", err = err).to_string(),
                     })),
                 },
             )),
@@ -2571,7 +2571,7 @@ impl ServerModel {
                 ResolveConflictResponse {
                     result: Some(resolve_conflict_response::Result::Error(
                         FileOperationError {
-                            message: format!("Failed to resolve conflict: {err}"),
+                            message: i18n::t!("Failed to resolve conflict: {err}", err = err).to_string(),
                         },
                     )),
                 },
@@ -3676,13 +3676,13 @@ fn requested_repo_path(repo_path: &str) -> Result<PathBuf, String> {
     }
     StandardizedPath::from_local_canonicalized(Path::new(repo_path))
         .map(|path| path.to_local_path_lossy())
-        .map_err(|error| format!("Invalid repo_path {repo_path}: {error}"))
+        .map_err(|error| i18n::t!("Invalid repo_path {repo_path}: {error}", repo_path = repo_path, error = error).to_string())
 }
 
 fn canonicalize_index_repo_path(repo_path: &str) -> Result<PathBuf, String> {
     requested_repo_path(repo_path)?;
     let standardized_path = StandardizedPath::from_local_canonicalized(Path::new(repo_path))
-        .map_err(|error| format!("Invalid repo_path {repo_path}: {error}"))?;
+        .map_err(|error| i18n::t!("Invalid repo_path {repo_path}: {error}", repo_path = repo_path, error = error).to_string())?;
     Ok(standardized_path
         .to_local_path()
         .unwrap_or_else(|| standardized_path.to_local_path_lossy()))
@@ -3730,7 +3730,7 @@ fn fragment_metadata_lookup_error_response_from_error(
         ),
         LocalFragmentMetadataLookupError::RootHashMismatch { requested, current } => (
             FragmentMetadataLookupErrorCode::RootHashMismatch,
-            format!("Codebase index root hash mismatch: requested {requested}, current {current}"),
+            i18n::t!("Codebase index root hash mismatch: requested {requested}, current {current}", requested = requested, current = current).to_string(),
             Some(current.to_string()),
         ),
     };

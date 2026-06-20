@@ -826,7 +826,7 @@ impl NotificationsTrigger {
                 };
 
                 (
-                    format!(" {status} after {duration_seconds}s"),
+                    i18n::t!(" {status} after {duration_seconds}s", status = status, duration_seconds = duration_seconds).to_string(),
                     i18n::t!("Latest output: ").to_string(),
                 )
             }
@@ -7529,7 +7529,7 @@ impl TerminalView {
                 .get_pending_action(app)
                 .map(|action| match &action.action {
                     AIAgentActionType::RequestCommandOutput { command, .. } => {
-                        format!("Oz needs your permission to run `{command}`")
+                        i18n::t!("Oz needs your permission to run `{command}`", command = command).to_string()
                     }
                     AIAgentActionType::ReadFiles(..) => {
                         i18n::t!("Oz needs your permission to read files").to_string()
@@ -9684,7 +9684,7 @@ impl TerminalView {
                 keystroke.displayed(),
                 lowercase_title
             ),
-            None => format!("You can Warpify this {lowercase_title} for more Warp features."),
+            None => i18n::t!("You can Warpify this {lowercase_title} for more Warp features.", lowercase_title = lowercase_title).to_string(),
         };
 
         model
@@ -9694,7 +9694,7 @@ impl TerminalView {
             )));
 
         let a11y_content = AccessibilityContent::new(
-            format!("{title} recognized."),
+            i18n::t!("{title} recognized.", title = title).to_string(),
             a11y_message,
             WarpA11yRole::TextRole,
         );
@@ -17429,7 +17429,7 @@ impl TerminalView {
             };
             items.push(MenuItem::Separator);
             items.push(
-                MenuItemFields::new(format!("{inverse_action} input hint text"))
+                MenuItemFields::new(i18n::t!("{inverse_action} input hint text", inverse_action = inverse_action).to_string())
                     .with_on_select_action(TerminalAction::InputContextMenuItem(
                         InputContextMenuAction::ToggleInputHintText,
                     ))
@@ -25849,7 +25849,7 @@ impl TypedActionView for TerminalView {
                 ))
             }
             OpenBlockFilterEditor(block_index) => Custom(AccessibilityContent::new_without_help(
-                format!("Open block filter editor for block {block_index}"),
+                i18n::t!("Open block filter editor for block {block_index}", block_index = block_index).to_string(),
                 WarpA11yRole::TextRole,
             )),
             ShowInitializationBlock => Custom(AccessibilityContent::new_without_help(
@@ -28028,7 +28028,7 @@ impl View for TerminalView {
                 let input_text = self.input.as_ref(ctx).buffer_text(ctx);
                 last_five_blocks_content
                     .into_iter()
-                    .chain([format!("{prompt_text} {input_text}")])
+                    .chain([i18n::t!("{prompt_text} {input_text}", prompt_text = prompt_text, input_text = input_text).to_string()])
                     .join("\n")
             } else {
                 last_five_blocks_content.join("\n")

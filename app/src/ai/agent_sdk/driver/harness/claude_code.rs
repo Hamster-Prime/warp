@@ -79,7 +79,7 @@ impl ThirdPartyHarness for ClaudeHarness {
 
     fn auth_check_command(&self) -> Option<String> {
         let cli = self.cli_agent().command_prefix();
-        Some(format!("{cli} auth status --json"))
+        Some(i18n::t!("{cli} auth status --json", cli = cli).to_string())
     }
 
     fn runtime_error_patterns(&self) -> &'static [&'static str] {
@@ -207,14 +207,14 @@ fn claude_command(
     resuming: bool,
 ) -> String {
     let flag = if resuming { "--resume" } else { "--session-id" };
-    let mut cmd = format!("{cli_name} {flag} {session_id} --dangerously-skip-permissions");
+    let mut cmd = i18n::t!("{cli_name} {flag} {session_id} --dangerously-skip-permissions", cli_name = cli_name, flag = flag, session_id = session_id).to_string();
     if let Some(sp_path) = system_prompt_path {
         let _ = write!(cmd, " --append-system-prompt-file '{sp_path}'");
     }
     if let Some(mcp_path) = mcp_config_path {
         let _ = write!(cmd, " --mcp-config '{mcp_path}'");
     }
-    format!("{cmd} < '{prompt_path}'")
+    i18n::t!("{cmd} < '{prompt_path}'", cmd = cmd, prompt_path = prompt_path).to_string()
 }
 
 /// Runtime state of a [`ClaudeHarnessRunner`].
@@ -391,7 +391,7 @@ impl ClaudeHarnessRunner {
         let cli_name = &self.cli_name;
         let output = session
             .execute_command(
-                &format!("{cli_name} --version"),
+                &i18n::t!("{cli_name} --version", cli_name = cli_name).to_string(),
                 None,
                 None,
                 ExecuteCommandOptions::default(),

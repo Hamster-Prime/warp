@@ -173,7 +173,7 @@ pub fn render_settings_error_alert(
     // drift out of sync.
     let (heading, description) = error.heading_and_description();
     let heading_char_count = heading.chars().count();
-    let combined_text = format!("{heading} {description}");
+    let combined_text = i18n::t!("{heading} {description}", heading = heading, description = description).to_string();
     // Soft-wrap (the `Text::new` default) is appropriate here since the
     // alert's vertical space grows to fit the text.
     let mut text_widget =

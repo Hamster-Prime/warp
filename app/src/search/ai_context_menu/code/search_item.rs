@@ -60,7 +60,7 @@ impl SearchItem for CodeSearchItem {
         // Build the symbol name with type prefix
         let mut symbol_name = String::new();
         if let Some(symbol_type) = &self.code_symbol.symbol.type_prefix {
-            symbol_name.push_str(&format!("{symbol_type} "));
+            symbol_name.push_str(&i18n::t!("{symbol_type} ", symbol_type = symbol_type).to_string());
         }
         symbol_name.push_str(&self.code_symbol.symbol.name);
 

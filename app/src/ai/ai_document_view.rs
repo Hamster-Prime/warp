@@ -402,7 +402,7 @@ impl AIDocumentView {
         let save_action = keybinding_name_to_keystroke(SAVE_FILE_BINDING_NAME, ctx)
             .map(|k| k.displayed())
             .unwrap_or("Click".to_string());
-        let tooltip_text = format!("This plan has changes the agent isn't aware of. {save_action} to stop the agent's current task and send the updated plan");
+        let tooltip_text = i18n::t!("This plan has changes the agent isn't aware of. {save_action} to stop the agent's current task and send the updated plan", save_action = save_action).to_string();
         let update_plan_button = ctx.add_typed_action_view(|_ctx| {
             ActionButton::new(i18n::t!("Update Agent"), PrimaryTheme)
                 .with_size(ButtonSize::Small)

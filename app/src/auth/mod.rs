@@ -142,7 +142,7 @@ pub fn maybe_log_out(app: &mut AppContext) {
             } else {
                 "session"
             };
-            info_text_vec.push(format!("You have {num_shared_sessions} shared {plural}."));
+            info_text_vec.push(i18n::t!("You have {num_shared_sessions} shared {plural}.", num_shared_sessions = num_shared_sessions, plural = plural).to_string());
         }
 
         if num_unsaved_objects > 0 {

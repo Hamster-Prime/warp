@@ -458,7 +458,7 @@ impl EmailValidationError {
         match self {
             EmailValidationError::Empty => i18n::t!("Please enter an email.").to_string(),
             EmailValidationError::Invalid(invalid_email) => {
-                format!("Please ensure the following email is valid: {invalid_email}")
+                i18n::t!("Please ensure the following email is valid: {invalid_email}", invalid_email = invalid_email).to_string()
             }
         }
     }

@@ -222,7 +222,7 @@ impl View for WasmNUXDialog {
             };
 
             Dialog::new(
-                format!("Always open {object_kind} on the web?"),
+                i18n::t!("Always open {object_kind} on the web?", object_kind = object_kind).to_string(),
                 Some(i18n::t!("You can change this at any time in settings.").to_string()),
                 dialog_styles,
             )

@@ -87,7 +87,7 @@ impl WebSearchView {
             let display_text = if title.is_empty() {
                 url.clone()
             } else {
-                format!("{title} ({url})")
+                i18n::t!("{title} ({url})", title = title, url = url).to_string()
             };
 
             let url_text = Text::new_inline(

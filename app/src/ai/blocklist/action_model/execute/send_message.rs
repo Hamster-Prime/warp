@@ -94,7 +94,7 @@ async fn send_agent_message_with_timeout(
         Either::Right(_) => Err(anyhow!(
             "Timed out sending orchestration message{}",
             task_id_for_timeout
-                .map(|task_id| format!(" for task {task_id}"))
+                .map(|task_id| i18n::t!(" for task {task_id}", task_id = task_id).to_string())
                 .unwrap_or_default()
         )),
     }

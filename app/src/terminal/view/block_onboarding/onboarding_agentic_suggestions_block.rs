@@ -160,9 +160,9 @@ impl OnboardingAgenticSuggestionsBlock {
             ),
             (
                 AgenticSuggestionsContent {
-                    title: format!("Explore git history in {git_repo_trimmed}"),
+                    title: i18n::t!("Explore git history in {git_repo_trimmed}", git_repo_trimmed = git_repo_trimmed).to_string(),
                     description: i18n::t!("Work with Agent Mode to understand recent changes to a git repository").to_string(),
-                    prompt: format!("Explore my git history in {git_repo_path} and provide me a summary."),
+                    prompt: i18n::t!("Explore my git history in {git_repo_path} and provide me a summary.", git_repo_path = git_repo_path).to_string(),
                     chip_type: OnboardingChipType::ExploreGitHistory,
                     icon: UIIcon::Icon::BookOpen,
                 },
@@ -172,7 +172,7 @@ impl OnboardingAgenticSuggestionsBlock {
                 AgenticSuggestionsContent {
                     title: i18n::t!("Create a Matrix-styled custom theme").to_string(),
                     description: i18n::t!("Make your terminal look like you entered the Matrix").to_string(),
-                    prompt: format!("First check if {matrix_save_directory} exists, and create this path if it doesn't already exist. Then create a matrix theme for my Warp terminal without a background image field, following exact YAML structure on the warp website without any extra or missing fields. Call it matrix.yaml and save it in the directory we previously created. Once you've verified that the theme is correct and ready to be applied, let me know by only saying 'The matrix theme is now available at <path>.'."),
+                    prompt: i18n::t!("First check if {matrix_save_directory} exists, and create this path if it doesn't already exist. Then create a matrix theme for my Warp terminal without a background image field, following exact YAML structure on the warp website without any extra or missing fields. Call it matrix.yaml and save it in the directory we previously created. Once you've verified that the theme is correct and ready to be applied, let me know by only saying 'The matrix theme is now available at <path>.'.", matrix_save_directory = matrix_save_directory).to_string(),
                     chip_type: OnboardingChipType::MatrixThemePicker,
                     icon: UIIcon::Icon::PaintBrush,
                 },
@@ -372,7 +372,7 @@ impl OnboardingAgenticSuggestionsBlock {
                     .iter()
                     .fold(std::collections::HashMap::new(), |mut counts, entry| {
                         for tool in TOOL_PATTERNS {
-                            if entry.command.starts_with(format!("{tool} ").as_str())
+                            if entry.command.starts_with(i18n::t!("{tool} ", tool = tool).to_string().as_str())
                                 || entry.command == tool
                             {
                                 *counts.entry(tool.to_string()).or_insert(0) += 1;

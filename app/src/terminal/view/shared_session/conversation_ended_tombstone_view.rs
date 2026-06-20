@@ -422,23 +422,23 @@ impl ConversationEndedTombstoneView {
 
         if let Some(dir) = &self.display_data.working_directory {
             let display_dir = home_relative_path(Path::new(dir));
-            parts.push(format!("Directory: {display_dir}"));
+            parts.push(i18n::t!("Directory: {display_dir}", display_dir = display_dir).to_string());
         }
 
         if let Some(source) = &self.display_data.source {
-            parts.push(format!("Source: {source}"));
+            parts.push(i18n::t!("Source: {source}", source = source).to_string());
         }
 
         if let Some(skill) = &self.display_data.skill_name {
-            parts.push(format!("Skill: {skill}"));
+            parts.push(i18n::t!("Skill: {skill}", skill = skill).to_string());
         }
 
         if let Some(run_time) = &self.display_data.run_time {
-            parts.push(format!("Run time: {run_time}"));
+            parts.push(i18n::t!("Run time: {run_time}", run_time = run_time).to_string());
         }
 
         if let Some(credits) = &self.display_data.credits {
-            parts.push(format!("Credits used: {credits}"));
+            parts.push(i18n::t!("Credits used: {credits}", credits = credits).to_string());
         }
 
         if parts.is_empty() {

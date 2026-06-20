@@ -430,7 +430,7 @@ impl InitStepBlock {
         for (i, linkable_file) in LINKABLE_FILES.iter().enumerate() {
             if let Some(path) = linkable_files.iter().find(|p| p.ends_with(linkable_file)) {
                 buttons.push(simple_navigation_button(
-                    format!("Link existing {linkable_file} to my AGENTS.md file"),
+                    i18n::t!("Link existing {linkable_file} to my AGENTS.md file", linkable_file = linkable_file).to_string(),
                     mouse_states.link_buttons[i].clone(),
                     InitProjectBlockAction::LinkFromExisting(path.clone()),
                     false,
@@ -921,7 +921,7 @@ impl InitStepBlock {
         let init_completed = self.model.as_ref(app).is_completed();
         match rules_result {
             ProjectScopedRulesResult::LinkedFromExisting(path) => {
-                Self::render_success_completion(&format!("Project rules linked from {path}"), app)
+                Self::render_success_completion(&i18n::t!("Project rules linked from {path}", path = path).to_string(), app)
             }
             ProjectScopedRulesResult::GenerateNew {
                 button_disabled, ..

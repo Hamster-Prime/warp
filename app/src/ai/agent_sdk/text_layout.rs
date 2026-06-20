@@ -62,7 +62,7 @@ pub fn render_labeled_wrapped_field(label: &str, text: &str, width: usize) -> St
     let indent = " ".repeat(label.len() + 2); // align under "{label}: "
     for (i, line) in wrapped.iter().enumerate() {
         if i == 0 {
-            out.push_str(&format!("{label}: {line}"));
+            out.push_str(&i18n::t!("{label}: {line}", label = label, line = line).to_string());
         } else {
             out.push('\n');
             out.push_str(&indent);

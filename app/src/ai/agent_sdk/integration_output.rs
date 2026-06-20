@@ -63,7 +63,7 @@ fn render_labeled_wrapped_lines(label: &str, lines: &[String], width: usize) -> 
                 out.push('\n');
             }
             if idx == 0 && widx == 0 {
-                out.push_str(&format!("{label}: {wline}"));
+                out.push_str(&i18n::t!("{label}: {wline}", label = label, wline = wline).to_string());
             } else {
                 out.push_str(&indent);
                 out.push_str(wline);
@@ -85,7 +85,7 @@ fn format_mcp_server_display(name: &str, config: &Value) -> String {
         .map(str::trim)
         .filter(|s| !s.is_empty())
     {
-        return format!("{name}: {url}");
+        return i18n::t!("{name}: {url}", name = name, url = url).to_string();
     }
 
     if let Some(command) = obj
@@ -106,7 +106,7 @@ fn format_mcp_server_display(name: &str, config: &Value) -> String {
             .unwrap_or_default();
 
         if args.is_empty() {
-            return format!("{name}: {command}");
+            return i18n::t!("{name}: {command}", name = name, command = command).to_string();
         }
 
         return format!("{name}: {command} {}", args.join(" "));
@@ -160,7 +160,7 @@ fn print_integration_card(integration: &SimpleIntegration) {
     // Row 2: Status: <emoji> Status description
     let emoji = status_emoji(integration.connection_status);
     let explanation = status_explanation(integration.connection_status);
-    let status_text = format!("{emoji} {explanation}");
+    let status_text = i18n::t!("{emoji} {explanation}", emoji = emoji, explanation = explanation).to_string();
     let status_row = crate::ai::agent_sdk::text_layout::render_labeled_wrapped_field(
         "Status",
         &status_text,
@@ -221,7 +221,7 @@ fn print_integration_card(integration: &SimpleIntegration) {
     if let Some(created) = integration.created_at {
         let dt = created.utc();
         let formatted = format_approx_duration_from_now_utc(dt);
-        created_updated.push_str(&format!("Created: {formatted}"));
+        created_updated.push_str(&i18n::t!("Created: {formatted}", formatted = formatted).to_string());
     }
     if let Some(updated) = integration.updated_at {
         let dt = updated.utc();
@@ -229,7 +229,7 @@ fn print_integration_card(integration: &SimpleIntegration) {
         if !created_updated.is_empty() {
             created_updated.push_str(" | ");
         }
-        created_updated.push_str(&format!("Updated: {formatted}"));
+        created_updated.push_str(&i18n::t!("Updated: {formatted}", formatted = formatted).to_string());
     }
     if !created_updated.is_empty() {
         let wrapped =

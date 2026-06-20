@@ -72,7 +72,7 @@ fn materialize_conversation(
     let Some(conversation) = conversation else {
         log::warn!("FetchConversation: failed to load conversation {server_conversation_id}");
         return AIAgentActionResultType::FetchConversation(FetchConversationResult::Error(
-            format!("Failed to load conversation {server_conversation_id}"),
+            i18n::t!("Failed to load conversation {server_conversation_id}", server_conversation_id = server_conversation_id).to_string(),
         ));
     };
 

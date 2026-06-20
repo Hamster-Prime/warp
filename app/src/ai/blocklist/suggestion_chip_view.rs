@@ -158,7 +158,7 @@ impl Suggestion {
                 } else {
                     workflow.prompt.clone()
                 };
-                format!("Suggested prompt:\n{prompt}")
+                i18n::t!("Suggested prompt:\n{prompt}", prompt = prompt).to_string()
             }
         }
     }

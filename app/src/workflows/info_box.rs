@@ -330,7 +330,7 @@ impl WorkflowsMoreInfoView {
         appearance: &Appearance,
     ) -> Box<dyn Element> {
         let title_string = match (arg.name(), arg.description()) {
-            (name, Some(description)) => format!("{name}: {description}"),
+            (name, Some(description)) => i18n::t!("{name}: {description}", name = name, description = description).to_string(),
             (name, None) => name.to_string(),
         };
 
@@ -685,7 +685,7 @@ impl WorkflowsMoreInfoView {
                     );
 
                 let full_object_history_text = match (editing_history, action_history) {
-                    (Some(edits), Some(actions)) => Some(format!("{edits}  |  {actions}")),
+                    (Some(edits), Some(actions)) => Some(i18n::t!("{edits}  |  {actions}", edits = edits, actions = actions).to_string()),
                     (Some(edits), None) => Some(edits),
                     _ => None,
                 };

@@ -282,9 +282,9 @@ pub(crate) fn validate_cli_installed(
     install_docs_url: Option<&str>,
 ) -> Result<(), AgentDriverError> {
     if resolve_executable(cli).is_none() {
-        let mut reason = format!("'{cli}' CLI not found on your machine.");
+        let mut reason = i18n::t!("'{cli}' CLI not found on your machine.", cli = cli).to_string();
         if let Some(url) = install_docs_url {
-            reason.push_str(&format!(" Install it first: {url}"));
+            reason.push_str(&i18n::t!(" Install it first: {url}", url = url).to_string());
         }
         return Err(AgentDriverError::HarnessSetupFailed {
             harness: cli.into(),
@@ -594,7 +594,7 @@ pub(crate) async fn upload_block_snapshot(
         .get_block_snapshot_upload_target(&conversation_id)
         .await
         .with_context(|| {
-            format!("Unable to get block upload slot for conversation {conversation_id}")
+            i18n::t!("Unable to get block upload slot for conversation {conversation_id}", conversation_id = conversation_id).to_string()
         })?;
 
     let body = block

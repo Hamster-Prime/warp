@@ -150,9 +150,9 @@ fn write_task_messages(
                         );
                         let mut content = String::new();
                         content.push_str("type: subagent\n");
-                        content.push_str(&format!("tool_call_id: {tool_call_id}\n"));
-                        content.push_str(&format!("task_id: {subtask_id}\n"));
-                        content.push_str(&format!("subagent_type: {subagent_type}\n"));
+                        content.push_str(&i18n::t!("tool_call_id: {tool_call_id}\n", tool_call_id = tool_call_id).to_string());
+                        content.push_str(&i18n::t!("task_id: {subtask_id}\n", subtask_id = subtask_id).to_string());
+                        content.push_str(&i18n::t!("subagent_type: {subagent_type}\n", subagent_type = subagent_type).to_string());
                         if !sub.payload.is_empty() {
                             content.push_str("payload: |\n");
                             write_block_scalar(&mut content, &sub.payload);
@@ -165,7 +165,7 @@ fn write_task_messages(
                             let subdir_name = format!("{:03}.{subtask_id}", subagent_index);
                             let subdir = dir.join(&subdir_name);
                             fs::create_dir_all(&subdir).map_err(|e| {
-                                format!("Failed to create subdir {subdir_name}: {e}")
+                                i18n::t!("Failed to create subdir {subdir_name}: {e}", subdir_name = subdir_name, e = e).to_string()
                             })?;
                             let mut sub_index: u32 = 0;
                             write_task_messages(subtask, &subdir, &mut sub_index, task_map)?;
@@ -179,8 +179,8 @@ fn write_task_messages(
                         );
                         let mut content = String::new();
                         content.push_str("type: tool_call\n");
-                        content.push_str(&format!("tool_name: {name}\n"));
-                        content.push_str(&format!("tool_call_id: {tool_call_id}\n"));
+                        content.push_str(&i18n::t!("tool_name: {name}\n", name = name).to_string());
+                        content.push_str(&i18n::t!("tool_call_id: {tool_call_id}\n", tool_call_id = tool_call_id).to_string());
                         write_tool_call_args(&mut content, tool);
                         write_yaml_file(dir, &filename, &content)?;
                         *index += 1;
@@ -203,8 +203,8 @@ fn write_task_messages(
                         );
                         let mut content = String::new();
                         content.push_str("type: subagent_result\n");
-                        content.push_str(&format!("tool_call_id: {tool_call_id}\n"));
-                        content.push_str(&format!("task_id: {tid}\n"));
+                        content.push_str(&i18n::t!("tool_call_id: {tool_call_id}\n", tool_call_id = tool_call_id).to_string());
+                        content.push_str(&i18n::t!("task_id: {tid}\n", tid = tid).to_string());
                         write_yaml_file(dir, &filename, &content)?;
                         *index += 1;
                     }
@@ -219,8 +219,8 @@ fn write_task_messages(
                         );
                         let mut content = String::new();
                         content.push_str("type: tool_call_result\n");
-                        content.push_str(&format!("tool_name: {name}\n"));
-                        content.push_str(&format!("tool_call_id: {tool_call_id}\n"));
+                        content.push_str(&i18n::t!("tool_name: {name}\n", name = name).to_string());
+                        content.push_str(&i18n::t!("tool_call_id: {tool_call_id}\n", tool_call_id = tool_call_id).to_string());
                         write_tool_call_result_content(&mut content, result);
                         write_yaml_file(dir, &filename, &content)?;
                         *index += 1;

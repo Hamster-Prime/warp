@@ -205,7 +205,7 @@ pub fn render_collapsible_search_results<F>(
 where
     F: Fn(&mut EventContext) + 'static,
 {
-    let right_label = format!("{results_count} {results_label}");
+    let right_label = i18n::t!("{results_count} {results_label}", results_count = results_count, results_label = results_label).to_string();
 
     let header = render_search_results_header(
         title_text,

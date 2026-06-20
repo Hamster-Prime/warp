@@ -1749,12 +1749,12 @@ impl CodePageWidget {
         if index_state.has_pending() {
             let text = match index_state.sync_progress() {
                 Some(SyncProgress::Discovering { total_nodes }) => {
-                    Cow::from(format!("Discovered {total_nodes} chunks"))
+                    Cow::from(i18n::t!("Discovered {total_nodes} chunks", total_nodes = total_nodes).to_string())
                 }
                 Some(SyncProgress::Syncing {
                     completed_nodes,
                     total_nodes,
-                }) => Cow::from(format!("Syncing - {completed_nodes} / {total_nodes}")),
+                }) => Cow::from(i18n::t!("Syncing - {completed_nodes} / {total_nodes}", completed_nodes = completed_nodes, total_nodes = total_nodes).to_string()),
                 None => Cow::from("Syncing..."),
             };
 
@@ -1864,10 +1864,10 @@ impl CodePageWidget {
             RemoteCodebaseIndexState::Indexing => {
                 let text = match (status.progress_completed, status.progress_total) {
                     (Some(completed), Some(total)) => {
-                        Cow::from(format!("Indexing - {completed} / {total}"))
+                        Cow::from(i18n::t!("Indexing - {completed} / {total}", completed = completed, total = total).to_string())
                     }
-                    (Some(completed), None) => Cow::from(format!("Indexing - {completed}")),
-                    (None, Some(total)) => Cow::from(format!("Indexing - 0 / {total}")),
+                    (Some(completed), None) => Cow::from(i18n::t!("Indexing - {completed}", completed = completed).to_string()),
+                    (None, Some(total)) => Cow::from(i18n::t!("Indexing - 0 / {total}", total = total).to_string()),
                     (None, None) => Cow::from("Indexing..."),
                 };
 

@@ -673,7 +673,7 @@ impl ObjectClient for ServerApi {
         // Session-cookie-authenticated clients rely on the websocket handshake cookies instead.
         let auth_token = self.get_or_refresh_access_token().await?;
         if let Some(token) = auth_token.as_bearer_token() {
-            let bearer_token = format!("Bearer {token}");
+            let bearer_token = i18n::t!("Bearer {token}", token = token).to_string();
             init_payload.insert(http_client::AUTHORIZATION.as_str(), bearer_token);
         }
 

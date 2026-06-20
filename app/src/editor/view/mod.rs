@@ -5010,7 +5010,7 @@ impl EditorView {
                             };
 
                             let message = if num_excess_images == 1 {
-                                format!("1 image wasn't attached - {limit_reason}.")
+                                i18n::t!("1 image wasn't attached - {limit_reason}.", limit_reason = limit_reason).to_string()
                             } else {
                                 format!(
                                     "{num_excess_images} images weren't attached - {limit_reason}."
@@ -5147,7 +5147,7 @@ impl EditorView {
                     } else if num_unsupported_images == 1 {
                         "1 image wasn't attached - supported types are PNG, JPG, GIF, WEBP.".into()
                     } else {
-                        format!("{num_unsupported_images} images weren't attached - supported types are PNG, JPG, GIF, WEBP.")
+                        i18n::t!("{num_unsupported_images} images weren't attached - supported types are PNG, JPG, GIF, WEBP.", num_unsupported_images = num_unsupported_images).to_string()
                     };
 
                     ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
@@ -5165,7 +5165,7 @@ impl EditorView {
                     } else if num_read_errors == 1 {
                         "1 image wasn't attached - failed to read file.".into()
                     } else {
-                        format!("{num_read_errors} images weren't attached - failed to read files.")
+                        i18n::t!("{num_read_errors} images weren't attached - failed to read files.", num_read_errors = num_read_errors).to_string()
                     };
 
                     ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {

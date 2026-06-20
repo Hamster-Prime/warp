@@ -1274,7 +1274,7 @@ impl MCPServersListPageView {
                         .current_team()
                         .map(|team| team.name.clone());
                     let shared_by_text = match team_name {
-                        Some(name) => format!("Shared by Warp and {name}"),
+                        Some(name) => i18n::t!("Shared by Warp and {name}", name = name).to_string(),
                         None => i18n::t!("Shared by Warp and from other devices").to_string(),
                     };
 
@@ -1766,7 +1766,7 @@ impl MCPServersListPageView {
 
                 if is_shared {
                     match creator {
-                        Some(creator) => Some(TitleChip::text(format!("Shared by: {creator}"))),
+                        Some(creator) => Some(TitleChip::text(i18n::t!("Shared by: {creator}", creator = creator).to_string())),
                         None => Some(TitleChip::text(i18n::t!("Shared by a team member").to_string())),
                     }
                 } else if matches!(item_id, ServerCardItemId::TemplatableMCP(_)) {

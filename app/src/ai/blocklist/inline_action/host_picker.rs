@@ -491,7 +491,7 @@ pub(crate) fn menu_label_for(slug: &str, default_host: Option<&str>) -> String {
 
 fn format_known_label(slug: &str, badge: Option<&str>) -> String {
     match badge {
-        Some(badge) => format!("{slug}  ({badge})"),
+        Some(badge) => i18n::t!("{slug}  ({badge})", slug = slug, badge = badge).to_string(),
         None => slug.to_string(),
     }
 }

@@ -59,7 +59,7 @@ fn file_title_text(openable_path: &OpenablePath) -> String {
 
                     match language.as_ref().map(|language| language.display_name()) {
                         Some(display_name) => {
-                            format!("Did you know that Warp can directly edit {display_name} files?")
+                            i18n::t!("Did you know that Warp can directly edit {display_name} files?", display_name = display_name).to_string()
                         }
                         None => i18n::t!("Did you know that Warp can directly edit code?").to_string(),
                     }

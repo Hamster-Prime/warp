@@ -218,7 +218,7 @@ async fn execute_remote_codebase_search(
             .join(", ");
         return Ok(SearchCodebaseResult::Failed {
             reason: SearchCodebaseFailureReason::InvalidFilePaths,
-            message: format!("Failed to read remote search result files: {failed}"),
+            message: i18n::t!("Failed to read remote search result files: {failed}", failed = failed).to_string(),
         });
     }
     let file_contents = file_contents_from_response(response);
@@ -266,7 +266,7 @@ async fn execute_remote_codebase_search(
             .join(", ");
         return Ok(SearchCodebaseResult::Failed {
             reason: SearchCodebaseFailureReason::InvalidFilePaths,
-            message: format!("Failed to read remote search result files: {failed}"),
+            message: i18n::t!("Failed to read remote search result files: {failed}", failed = failed).to_string(),
         });
     }
     let files = response

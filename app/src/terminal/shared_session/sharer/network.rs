@@ -1716,7 +1716,7 @@ pub fn session_terminated_reason_string(
         }
         SessionTerminatedReason::ExceededSizeLimit => {
             let max_bytes = max_session_size.get_appropriate_unit(UnitType::Decimal);
-            format!("Session limit ({max_bytes}) exceeded. Please reshare to continue.")
+            i18n::t!("Session limit ({max_bytes}) exceeded. Please reshare to continue.", max_bytes = max_bytes).to_string()
         }
         SessionTerminatedReason::InternalServerError { .. } => {
             i18n::t!("Session ended due to an internal error. Please try sharing again.").to_string()

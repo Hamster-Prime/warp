@@ -402,7 +402,7 @@ pub fn render_warping_indicator<V: View>(
                             } else {
                                 format!("{}m", secs / 60)
                             };
-                            let suffix = format!(" · Next check in {formatted}");
+                            let suffix = i18n::t!(" · Next check in {formatted}", formatted = formatted).to_string();
 
                             // Keep the base message constant so the shimmering animation
                             // isn't interrupted every time the countdown ticks. The
@@ -668,7 +668,7 @@ pub fn format_elapsed_seconds(elapsed: std::time::Duration) -> String {
     if total_seconds == 1 {
         "1 second".to_string()
     } else {
-        format!("{total_seconds} seconds")
+        i18n::t!("{total_seconds} seconds", total_seconds = total_seconds).to_string()
     }
 }
 
@@ -3365,7 +3365,7 @@ pub(crate) fn render_debug_footer<V: View>(
 
     // render the conversation's debug id so screenshots automatically show the debug id
     let debug_text = Text::new(
-        format!("Debug information: {debug_info}"),
+        i18n::t!("Debug information: {debug_info}", debug_info = debug_info).to_string(),
         appearance.ui_font_family(),
         appearance.monospace_font_size(),
     )

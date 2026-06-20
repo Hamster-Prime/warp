@@ -112,9 +112,9 @@ pub fn human_readable_approx_duration(duration: Duration, sentence_case: bool) -
 fn truncated_quantity_with_unit(num: f64, unit: &str) -> String {
     let truncated_int = num as i32;
     if truncated_int == 1 {
-        format!("{truncated_int} {unit} ago")
+        i18n::t!("{truncated_int} {unit} ago", truncated_int = truncated_int, unit = unit).to_string()
     } else {
-        format!("{truncated_int} {unit}s ago")
+        i18n::t!("{truncated_int} {unit}s ago", truncated_int = truncated_int, unit = unit).to_string()
     }
 }
 
@@ -130,21 +130,21 @@ pub fn format_elapsed_since(created_at: instant::Instant) -> String {
         if mins == 1 {
             "1 minute ago".to_string()
         } else {
-            format!("{mins} minutes ago")
+            i18n::t!("{mins} minutes ago", mins = mins).to_string()
         }
     } else if secs < 86400 {
         let hours = secs / 3600;
         if hours == 1 {
             "1 hour ago".to_string()
         } else {
-            format!("{hours} hours ago")
+            i18n::t!("{hours} hours ago", hours = hours).to_string()
         }
     } else {
         let days = secs / 86400;
         if days == 1 {
             "1 day ago".to_string()
         } else {
-            format!("{days} days ago")
+            i18n::t!("{days} days ago", days = days).to_string()
         }
     }
 }

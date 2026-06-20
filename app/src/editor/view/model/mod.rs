@@ -511,7 +511,7 @@ impl EditorModel {
                 } else {
                     "unselected"
                 };
-                AccessibilityContent::new(delta, format!(", {action}"), WarpA11yRole::UserAction)
+                AccessibilityContent::new(delta, i18n::t!(", {action}", action = action).to_string(), WarpA11yRole::UserAction)
             }
             (true, false) => {
                 AccessibilityContent::new_without_help("Unselected", WarpA11yRole::UserAction)

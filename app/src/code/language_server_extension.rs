@@ -601,7 +601,7 @@ impl LocalCodeEditorView {
         };
 
         let text = FormattedText::new([FormattedTextLine::Line(vec![
-            FormattedTextFragment::bold(format!("{severity_text}: ")),
+            FormattedTextFragment::bold(i18n::t!("{severity_text}: ", severity_text = severity_text).to_string()),
             FormattedTextFragment::plain_text(&diagnostic.message),
         ])]);
 

@@ -8,7 +8,7 @@ pub fn create_message(id: &str, task_id: &str) -> api::Message {
         citations: vec![],
         message: Some(api::message::Message::AgentOutput(
             api::message::AgentOutput {
-                text: format!("Message content for {id}"),
+                text: i18n::t!("Message content for {id}", id = id).to_string(),
             },
         )),
         request_id: String::new(),

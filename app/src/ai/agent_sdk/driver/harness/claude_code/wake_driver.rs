@@ -164,7 +164,7 @@ impl ClaudeHarness {
             .with_context(|| format!("Failed to fetch Claude transcript for task {task_id}"))?;
         let envelope: ClaudeTranscriptEnvelope =
             serde_json::from_slice(&bytes).with_context(|| {
-                format!("Failed to deserialize Claude transcript for wake task {task_id}")
+                i18n::t!("Failed to deserialize Claude transcript for wake task {task_id}", task_id = task_id).to_string()
             })?;
         let wake_prompt = match resolved.resumption_prompt {
             Some(resumption_prompt) if !resumption_prompt.is_empty() => {

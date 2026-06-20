@@ -1854,10 +1854,10 @@ impl CodeDiffView {
             let diff_type = diff.diff_view.as_ref(app).diff();
             let file_name = match diff.diff_view.as_ref(app).file_name() {
                 Some(file_name) if matches!(diff_type, Some(DiffType::Create { .. })) => {
-                    format!("{file_name} (new)")
+                    i18n::t!("{file_name} (new)", file_name = file_name).to_string()
                 }
                 Some(file_name) if matches!(diff_type, Some(DiffType::Delete { .. })) => {
-                    format!("{file_name} (deleted)")
+                    i18n::t!("{file_name} (deleted)", file_name = file_name).to_string()
                 }
                 Some(file_name) => {
                     // Check if this is a rename
@@ -1867,7 +1867,7 @@ impl CodeDiffView {
                             .file_name()
                             .and_then(|n| n.to_str())
                             .unwrap_or_default();
-                        format!("{file_name} → {rename_file_name}")
+                        i18n::t!("{file_name} → {rename_file_name}", file_name = file_name, rename_file_name = rename_file_name).to_string()
                     } else {
                         file_name
                     }

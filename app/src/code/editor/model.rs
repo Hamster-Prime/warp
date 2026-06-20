@@ -2002,7 +2002,7 @@ impl CodeEditorModel {
         // When we are adding comments, typically editors add an additional whitespace between prefix
         // and the original content of the line.
         let prefix = if !all_selected_lines_commented {
-            format!("{prefix} ")
+            i18n::t!("{prefix} ", prefix = prefix).to_string()
         } else {
             prefix.to_string()
         };

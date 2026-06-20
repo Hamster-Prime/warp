@@ -393,7 +393,7 @@ impl ExportManager {
         if !export.get().is_bulk {
             ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                 let message = match export.key().display_name(ctx) {
-                    Some(name) => format!("Exported {name}"),
+                    Some(name) => i18n::t!("Exported {name}", name = name).to_string(),
                     None => i18n::t!("Exported object").to_string(),
                 };
 

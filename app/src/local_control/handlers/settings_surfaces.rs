@@ -85,7 +85,7 @@ pub(crate) fn keybinding_get(
         .ok_or_else(|| {
             ControlError::new(
                 ErrorCode::MissingTarget,
-                format!("keybinding.get could not find {binding_name}"),
+                i18n::t!("keybinding.get could not find {binding_name}", binding_name = binding_name).to_string(),
             )
         })?;
     to_control_data(KeybindingGetResult { keybinding })
@@ -161,7 +161,7 @@ fn setting_get_result(
 pub(super) fn rejected_setting_key(key: &str) -> ControlError {
     ControlError::new(
         ErrorCode::NotAllowlisted,
-        format!("{key} is not an allowlisted local-control setting"),
+        i18n::t!("{key} is not an allowlisted local-control setting", key = key).to_string(),
     )
 }
 

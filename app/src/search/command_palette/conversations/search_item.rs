@@ -422,7 +422,7 @@ impl SearchItem for ConversationSearchItem {
                 )
             }
             ConversationAction::Fork { title, .. } => {
-                format!("Fork current conversation ({title})")
+                i18n::t!("Fork current conversation ({title})", title = title).to_string()
             }
             ConversationAction::New => i18n::t!("New conversation").to_string(),
         }

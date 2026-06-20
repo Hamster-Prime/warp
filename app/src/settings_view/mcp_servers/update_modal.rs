@@ -153,7 +153,7 @@ impl UpdateModalBody {
 
         // Renders MCP title text
         let title = Text::new(
-            format!("Update {name}"),
+            i18n::t!("Update {name}", name = name).to_string(),
             appearance.ui_font_family(),
             appearance.header_font_size(),
         )
@@ -267,15 +267,15 @@ impl UpdateModalBody {
                     .unwrap_or_else(Local::now);
                 let formatted_time = format_approx_duration_from_now(datetime);
                 (
-                    format!("Update from {publisher_string}"),
+                    i18n::t!("Update from {publisher_string}", publisher_string = publisher_string).to_string(),
                     formatted_time.to_string(),
                 )
             }
             MCPServerUpdate::Gallery {
                 name, new_version, ..
             } => (
-                format!("Update from {name}"),
-                format!("Version {new_version}"),
+                i18n::t!("Update from {name}", name = name).to_string(),
+                i18n::t!("Version {new_version}", new_version = new_version).to_string(),
             ),
         };
 

@@ -588,14 +588,14 @@ impl InputSuggestions {
         ) {
             (Some(text), Some(desc)) => {
                 ctx.emit_a11y_content(AccessibilityContent::new(
-                    format!("Suggestion: {text}.\n"),
+                    i18n::t!("Suggestion: {text}.\n", text = text).to_string(),
                     desc,
                     WarpA11yRole::MenuItemRole,
                 ));
             }
             (Some(text), None) => {
                 ctx.emit_a11y_content(AccessibilityContent::new_without_help(
-                    format!("Suggestion: {text}.\n"),
+                    i18n::t!("Suggestion: {text}.\n", text = text).to_string(),
                     WarpA11yRole::MenuItemRole,
                 ));
             }
@@ -619,7 +619,7 @@ impl InputSuggestions {
 
         if let Some(text) = self.get_selected_item_text() {
             ctx.emit_a11y_content(AccessibilityContent::new_without_help(
-                format!("Selected: {text}"),
+                i18n::t!("Selected: {text}", text = text).to_string(),
                 WarpA11yRole::MenuItemRole,
             ));
         }

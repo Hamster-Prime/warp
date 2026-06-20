@@ -147,9 +147,9 @@ pub fn format_credits(credits: f32) -> String {
     if credits.fract() < 0.1 {
         let whole = credits.trunc() as i32;
         if whole == 1 {
-            format!("{whole} credit")
+            i18n::t!("{whole} credit", whole = whole).to_string()
         } else {
-            format!("{whole} credits")
+            i18n::t!("{whole} credits", whole = whole).to_string()
         }
     } else {
         format!("{credits:.1} credits")

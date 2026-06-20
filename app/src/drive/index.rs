@@ -4168,7 +4168,7 @@ impl DriveIndex {
         let highlight =
             Highlight::new().with_properties(Properties::default().weight(Weight::Bold));
 
-        let banner_line_1 = format!("You've run out of {object_type}s on your plan.");
+        let banner_line_1 = i18n::t!("You've run out of {object_type}s on your plan.", object_type = object_type).to_string();
         let body = Container::new(
             appearance
                 .ui_builder()

@@ -4806,14 +4806,14 @@ pub fn get_duplicate_object_name(original_name: &str) -> String {
 
             // edge case check for when the duplicate number is usize::MAX
             if new_num == usize::MAX {
-                format!("{original_name} (1)")
+                i18n::t!("{original_name} (1)", original_name = original_name).to_string()
             } else {
                 DUPLICATE_OBJECT_NAME_REGEX
-                    .replace(original_name, format!(" ({new_num})"))
+                    .replace(original_name, i18n::t!(" ({new_num})", new_num = new_num).to_string())
                     .to_string()
             }
         }
-        None => format!("{original_name} (1)"),
+        None => i18n::t!("{original_name} (1)", original_name = original_name).to_string(),
     }
 }
 

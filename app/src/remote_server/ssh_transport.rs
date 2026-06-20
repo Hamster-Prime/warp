@@ -90,7 +90,7 @@ impl SshTransport {
         let binary = remote_server::setup::remote_server_binary();
         let identity_key = self.auth_context.remote_server_identity_key();
         let quoted_identity_key = shell_words::quote(&identity_key);
-        format!("{binary} remote-server-proxy --identity-key {quoted_identity_key}")
+        i18n::t!("{binary} remote-server-proxy --identity-key {quoted_identity_key}", binary = binary, quoted_identity_key = quoted_identity_key).to_string()
     }
 }
 

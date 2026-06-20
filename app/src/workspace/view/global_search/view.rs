@@ -2154,8 +2154,8 @@ impl View for GlobalSearchView {
             i18n::t!("No results found. Review your gitignore files.").to_string()
         } else {
             match self.total_match_count {
-                1 => format!("1 result in {files} {file_word}"),
-                n => format!("{n} results in {files} {file_word}"),
+                1 => i18n::t!("1 result in {files} {file_word}", files = files, file_word = file_word).to_string(),
+                n => i18n::t!("{n} results in {files} {file_word}", n = n, files = files, file_word = file_word).to_string(),
             }
         };
 

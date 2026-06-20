@@ -804,7 +804,7 @@ impl CommentListView {
             .finish();
 
             let outdated_text = Text::new(
-                format!("{outdated_count} outdated"),
+                i18n::t!("{outdated_count} outdated", outdated_count = outdated_count).to_string(),
                 appearance.ui_font_family(),
                 appearance.ui_font_size(),
             )
@@ -910,7 +910,7 @@ impl CommentListView {
             } else {
                 let cmd = agent.command_prefix();
                 let label = if cmd.is_empty() { "CLI agent" } else { cmd };
-                Cow::Owned(format!("Send diff comments to {label}"))
+                Cow::Owned(i18n::t!("Send diff comments to {label}", label = label).to_string())
             }
         } else if !ai_enabled {
             Cow::Borrowed("AI must be enabled to send comments to Agent")

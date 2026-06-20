@@ -1156,7 +1156,7 @@ async fn gather_repo(
                 error: Some(err_str.clone()),
             });
             pre_upload_entries.push(EntryResult {
-                label: format!("[repo] {repo_path}"),
+                label: i18n::t!("[repo] {repo_path}", repo_path = repo_path).to_string(),
                 status: EntryStatus::GatherFailed,
                 error: Some(err_str),
             });
@@ -1208,7 +1208,7 @@ async fn gather_file(
                 error: Some(err_str.clone()),
             });
             pre_upload_entries.push(EntryResult {
-                label: format!("[file] {file_path}"),
+                label: i18n::t!("[file] {file_path}", file_path = file_path).to_string(),
                 status: EntryStatus::ReadFailed,
                 error: Some(err_str),
             });

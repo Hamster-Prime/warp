@@ -2972,7 +2972,7 @@ impl DriveIndex {
                 if mouse_state.is_hovered() {
                     let tooltip = appearance
                         .ui_builder()
-                        .tool_tip(String::from("Syncing Warp Drive"));
+                        .tool_tip(i18n::t!("Syncing Warp Drive").to_string());
 
                     stack.add_positioned_overlay_child(
                         tooltip.build().finish(),

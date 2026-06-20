@@ -26,7 +26,7 @@ pub fn update_browser_url(url: Option<Url>, force_redirect: bool) {
                     log::error!("Failed to replace browser state");
                     crate::platform::wasm::emit_event(
                         crate::platform::wasm::WarpEvent::ErrorLogged {
-                            error: String::from("Failed to replace browser state"),
+                            error: i18n::t!("Failed to replace browser state").to_string(),
                         },
                     );
                 });

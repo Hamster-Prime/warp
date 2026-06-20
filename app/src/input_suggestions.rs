@@ -704,7 +704,7 @@ impl InputSuggestions {
                     Align::new(
                         Container::new(
                             Text::new_inline(
-                                String::from("No suggestions"),
+                                i18n::t!("No suggestions").to_string(),
                                 appearance.monospace_font_family(),
                                 appearance.monospace_font_size(),
                             )

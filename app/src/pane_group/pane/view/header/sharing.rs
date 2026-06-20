@@ -259,7 +259,7 @@ impl<P: BackingView> PaneHeader<P> {
         element.add_child(primary_button);
 
         if !editability.can_edit() {
-            let mut tooltip_text = String::from("Read-only");
+            let mut tooltip_text = i18n::t!("Read-only").to_string();
             if matches!(editability, ContentEditability::RequiresLogin) {
                 tooltip_text.push_str(". Sign in to edit");
             }

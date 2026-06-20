@@ -302,7 +302,7 @@ impl FileUpload {
         if let FileUploadStatus::AwaitingPassword = file.status {
             session_action_row.add_child(
                 FormattedTextElement::from_str(
-                    String::from("Waiting for password input"),
+                    i18n::t!("Waiting for password input").to_string(),
                     font_family,
                     font_size,
                 )
@@ -439,9 +439,9 @@ impl FileUpload {
         appearance: &Appearance,
     ) -> Box<dyn Element> {
         let view_session_text = if file.local_session_open {
-            String::from("Close")
+            i18n::t!("Close").to_string()
         } else {
-            String::from("View")
+            i18n::t!("View").to_string()
         } + " upload session";
         let upload_id = file.upload_id;
         Container::new(

@@ -2576,22 +2576,22 @@ impl<A: Action + Clone> SubMenu<A> {
                 ))
             }
             OpenSubmenu => Custom(AccessibilityContent::new(
-                String::from("Submenu Expanded"),
+                i18n::t!("Submenu Expanded").to_string(),
                 "Press the right key to open the selected submenu",
                 WarpA11yRole::TextRole,
             )),
             CloseSubmenu(_) => Custom(AccessibilityContent::new(
-                String::from("Submenu Closed"),
+                i18n::t!("Submenu Closed").to_string(),
                 "Removing focus from a submenu will close the submenu",
                 WarpA11yRole::TextRole,
             )),
             Close(_) => Custom(AccessibilityContent::new(
-                String::from("Menu Closed"),
+                i18n::t!("Menu Closed").to_string(),
                 "Press the escape key to close the menu",
                 WarpA11yRole::TextRole,
             )),
             Enter => Custom(AccessibilityContent::new(
-                String::from("Action Selected"),
+                i18n::t!("Action Selected").to_string(),
                 "Press the enter key to execute the selected menu item action",
                 WarpA11yRole::TextRole,
             )),

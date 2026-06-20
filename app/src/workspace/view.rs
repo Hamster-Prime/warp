@@ -20998,7 +20998,7 @@ impl Workspace {
                 Some(hovered_styles),
                 None,
             )
-            .with_centered_text_label(String::from("Sign up"));
+            .with_centered_text_label(i18n::t!("Sign up").to_string());
 
         Align::new(
             button
@@ -21040,7 +21040,7 @@ impl Workspace {
                 Some(hovered_styles),
                 None,
             )
-            .with_centered_text_label(String::from("Sign up"));
+            .with_centered_text_label(i18n::t!("Sign up").to_string());
 
         Align::new(
             button

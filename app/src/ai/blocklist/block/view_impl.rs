@@ -663,12 +663,12 @@ pub fn render_citation(
                 .to_warp_drive_item(appearance)?;
             (
                 item.icon(appearance, Some(theme.active_ui_text_color())),
-                item.display_name().unwrap_or(String::from("Untitled")),
+                item.display_name().unwrap_or(i18n::t!("Untitled").to_string()),
             )
         }
         AIAgentCitation::WarpDocumentation { .. } => {
             let icon = Icon::Warp.to_warpui_icon(theme.foreground()).finish();
-            let name = String::from("Warp Docs");
+            let name = i18n::t!("Warp Docs").to_string();
             (Some(icon), name)
         }
         AIAgentCitation::WebPage { url } => {

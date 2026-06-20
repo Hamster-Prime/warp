@@ -3305,3 +3305,60 @@ Successfully shared environment:
   zh-CN: 成功共享 环境
 Successfully updated environment:
   zh-CN: 成功已更新 环境
+
+# Additional translations (post-fmt fix)
+
+Could not resolve a working directory for the local {} child.:
+  zh-CN: 无法resolve a 工作目录 for the 本地 {} 子.
+'Failed to build client with headers: {e}':
+  zh-CN: 构建客户端 with headers 失败：{e}
+Failed to create Codex config dir at {}:
+  zh-CN: 创建Codex 配置 dir at {} 失败
+'Failed to create local {} child task: {error}':
+  zh-CN: 创建本地 {} 子任务 失败：{error}
+Failed to create remote-server tarball cache directory '{}':
+  zh-CN: 创建远程-服务器 tarball cache 目录 '{}' 失败
+'Failed to deserialize {harness_label} transcript for {conversation_id}: {err:#}':
+  zh-CN: 反序列化{harness_label} 对话记录 for {conversation_id} 失败：{err:#}
+Failed to download artifact '{}' from signed URL:
+  zh-CN: 下载产物 '{}' from signed URL 失败
+'Failed to install {}: {e}':
+  zh-CN: 安装{} 失败：{e}
+'Failed to install {}: {}':
+  zh-CN: 安装{} 失败：{}
+'Failed to load tab config {friendly_path}: {}':
+  zh-CN: 加载标签页 配置 {friendly_path} 失败：{}
+'Failed to move cursor to ({}, {}): {e}':
+  zh-CN: 移动cursor to ({}, {}) 失败：{e}
+Failed to move message bridge record {} to {}:
+  zh-CN: 移动消息 bridge record {} to {} 失败
+Failed to parse Codex config.toml at {}:
+  zh-CN: 解析Codex 配置.toml at {} 失败
+Failed to parse bundled skill at {}:
+  zh-CN: 解析bundled 技能 at {} 失败
+Failed to parse config file '{}' as JSON or YAML:
+  zh-CN: 解析配置文件 '{}' as JSON or YAML 失败
+Failed to read Codex config.toml at {}:
+  zh-CN: 读取Codex 配置.toml at {} 失败
+'Failed to read files: {failed}':
+  zh-CN: 读取files 失败：{failed}
+'Failed to remove existing install directory: {:?}':
+  zh-CN: 移除existing 安装目录 失败：{:?}
+Failed to rename {} to {}:
+  zh-CN: 重命名{} to {} 失败
+'Failed to resolve child agent skills: {}':
+  zh-CN: 解决子智能体技能 失败：{}
+Failed to run git {:?} in {}:
+  zh-CN: 运行git {:?} in {} 失败
+Failed to save file {file_path_clone}:
+  zh-CN: 保存文件 {file_path_clone} 失败
+Failed to start LSP server for {workspace_root_display} with error {e}:
+  zh-CN: 启动LSP 服务器 for {workspace_root_display} with 错误 {e} 失败
+Failed to write Codex config.toml at {}:
+  zh-CN: 写入Codex 配置.toml at {} 失败
+Failed to write Codex system prompt to {}:
+  zh-CN: 写入Codex system 提示 to {} 失败
+Failed to write Gemini system prompt to {}:
+  zh-CN: 写入Gemini system 提示 to {} 失败
+Failed to write {} to storage:
+  zh-CN: 写入{} to storage 失败

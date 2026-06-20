@@ -293,7 +293,7 @@ impl TypedActionView for PluginInstructionsBlock {
                     let window_id = ctx.window_id();
                     ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                         toast_stack.add_ephemeral_toast(
-                            DismissibleToast::success("Copied to clipboard".to_owned()),
+                            DismissibleToast::success(i18n::t!("Copied to clipboard").to_string()),
                             window_id,
                             ctx,
                         );

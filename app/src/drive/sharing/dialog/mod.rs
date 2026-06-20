@@ -2447,7 +2447,7 @@ impl SharingDialog {
     fn download_qr_code(&self, ctx: &mut ViewContext<Self>) {
         let Some(url) = self.target_link(ctx) else {
             self.show_ephemeral_toast(
-                DismissibleToast::error("Unable to download QR code.".to_string()),
+                DismissibleToast::error(i18n::t!("Unable to download QR code.").to_string()),
                 ctx,
             );
             return;
@@ -2457,7 +2457,7 @@ impl SharingDialog {
             Ok(png) => png,
             Err(_) => {
                 self.show_ephemeral_toast(
-                    DismissibleToast::error("Unable to download QR code.".to_string()),
+                    DismissibleToast::error(i18n::t!("Unable to download QR code.").to_string()),
                     ctx,
                 );
                 return;
@@ -2485,11 +2485,11 @@ impl SharingDialog {
     fn handle_qr_write_result(&self, result: std::io::Result<()>, ctx: &mut ViewContext<Self>) {
         match result {
             Ok(()) => self.show_ephemeral_toast(
-                DismissibleToast::success("QR code downloaded.".to_string()),
+                DismissibleToast::success(i18n::t!("QR code downloaded.").to_string()),
                 ctx,
             ),
             Err(_) => self.show_ephemeral_toast(
-                DismissibleToast::error("Unable to download QR code.".to_string()),
+                DismissibleToast::error(i18n::t!("Unable to download QR code.").to_string()),
                 ctx,
             ),
         }

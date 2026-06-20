@@ -2312,7 +2312,7 @@ impl TypedActionView for NotebookView {
                 let window_id = ctx.window_id();
                 ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     toast_stack.add_ephemeral_toast(
-                        DismissibleToast::success("Link copied to clipboard".to_string()),
+                        DismissibleToast::success(i18n::t!("Link copied to clipboard").to_string()),
                         window_id,
                         ctx,
                     );

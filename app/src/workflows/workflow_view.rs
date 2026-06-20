@@ -2717,7 +2717,7 @@ impl WorkflowView {
 
         crate::workspace::ToastStack::handle(ctx).update(ctx, |stack, ctx| {
             stack.add_ephemeral_toast(
-                DismissibleToast::error("Looks like you're out of AI credits.".into())
+                DismissibleToast::error(i18n::t!("Looks like you're out of AI credits.").to_string())
                     .with_link(toast_link),
                 window_id,
                 ctx,

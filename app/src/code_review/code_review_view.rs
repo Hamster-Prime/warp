@@ -4282,7 +4282,7 @@ impl CodeReviewView {
 
                 self.clear_review_comments(ctx);
                 ToastStack::handle(ctx).update(ctx, |stack, ctx| {
-                    let toast = DismissibleToast::default("Comments sent to agent".into());
+                    let toast = DismissibleToast::default(i18n::t!("Comments sent to agent").to_string());
                     stack.add_ephemeral_toast(toast, self.window_id, ctx);
                 });
                 ctx.emit(CodeReviewViewEvent::ReviewSubmitted);

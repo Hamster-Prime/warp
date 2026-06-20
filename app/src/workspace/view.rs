@@ -4462,7 +4462,7 @@ impl Workspace {
         ));
 
         self.toast_stack.update(ctx, |toast_stack, ctx| {
-            let toast = DismissibleToast::default("Remote control link copied.".to_string());
+            let toast = DismissibleToast::default(i18n::t!("Remote control link copied.").to_string());
             toast_stack.add_ephemeral_toast(toast, ctx);
         });
     }
@@ -10736,7 +10736,7 @@ impl Workspace {
 
                 self.toast_stack.update(ctx, |view, ctx| {
                     let new_toast =
-                        DismissibleToast::error("Looks like you're out of AI credits.".into())
+                        DismissibleToast::error(i18n::t!("Looks like you're out of AI credits.").to_string())
                             .with_link(
                                 ToastLink::new("Upgrade for more credits.".into())
                                     .with_href(upgrade_link),
@@ -12814,7 +12814,7 @@ impl Workspace {
                     ctx.notify();
                 });
                 WorkspaceToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
-                    let toast = DismissibleToast::error("Failed to load conversation.".to_owned());
+                    let toast = DismissibleToast::error(i18n::t!("Failed to load conversation.").to_string());
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });
                 return;
@@ -12875,7 +12875,7 @@ impl Workspace {
             let Some(conversation) = conversation else {
                 log::warn!("Failed to load conversation {conversation_id}");
                 WorkspaceToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
-                    let toast = DismissibleToast::error("Failed to load conversation.".to_owned());
+                    let toast = DismissibleToast::error(i18n::t!("Failed to load conversation.").to_string());
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });
                 // Close the loading pane
@@ -12944,7 +12944,7 @@ impl Workspace {
             let Some(conversation) = conversation else {
                 log::warn!("Failed to load conversation {conversation_id}");
                 WorkspaceToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
-                    let toast = DismissibleToast::error("Failed to load conversation.".to_owned());
+                    let toast = DismissibleToast::error(i18n::t!("Failed to load conversation.").to_string());
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });
                 // Close the loading tab
@@ -13182,7 +13182,7 @@ impl Workspace {
             Err(e) => {
                 log::error!("Conversation forking failed. {e}.");
                 WorkspaceToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
-                    let toast = DismissibleToast::error("Conversation forking failed.".to_owned());
+                    let toast = DismissibleToast::error(i18n::t!("Conversation forking failed.").to_string());
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });
                 return;
@@ -17096,7 +17096,7 @@ impl Workspace {
                 let window_id = ctx.window_id();
                 WorkspaceToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     let toast =
-                        DismissibleToast::default("This plan is already in context.".to_owned());
+                        DismissibleToast::default(i18n::t!("This plan is already in context.").to_string());
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });
                 return;
@@ -17201,7 +17201,7 @@ impl Workspace {
         if !ContextFlag::CreateNewSession.is_enabled() {
             self.toast_stack.update(ctx, |toast_stack, ctx| {
                 let toast =
-                    DismissibleToast::error("Cannot open a new terminal session".to_string());
+                    DismissibleToast::error(i18n::t!("Cannot open a new terminal session").to_string());
                 toast_stack.add_ephemeral_toast(toast, ctx);
             });
             return None;
@@ -24148,7 +24148,7 @@ impl TypedActionView for Workspace {
 
                 self.toast_stack.update(ctx, |view, ctx| {
                     let new_toast =
-                        DismissibleToast::success("Disabled all synchronized inputs.".to_string());
+                        DismissibleToast::success(i18n::t!("Disabled all synchronized inputs.").to_string());
                     view.add_ephemeral_toast(new_toast, ctx);
                 });
                 send_telemetry_from_ctx!(TelemetryEvent::DisableInputSync, ctx);
@@ -24871,7 +24871,7 @@ impl TypedActionView for Workspace {
 
                 self.toast_stack.update(ctx, |view, ctx| {
                     view.add_ephemeral_toast(
-                        DismissibleToast::default("Sampling process for 3 seconds...".to_string()),
+                        DismissibleToast::default(i18n::t!("Sampling process for 3 seconds...").to_string()),
                         ctx,
                     );
                 });
@@ -25119,7 +25119,7 @@ impl TypedActionView for Workspace {
                 send_telemetry_from_ctx!(TelemetryEvent::ConversationListItemDeleted, ctx);
                 ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                     toast_stack.add_ephemeral_toast(
-                        DismissibleToast::success("Conversation deleted".to_string()),
+                        DismissibleToast::success(i18n::t!("Conversation deleted").to_string()),
                         window_id,
                         ctx,
                     );

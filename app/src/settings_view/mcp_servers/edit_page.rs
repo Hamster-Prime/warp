@@ -532,7 +532,7 @@ impl MCPServersEditPageView {
             let window_id = ctx.window_id();
             ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                 toast_stack.add_ephemeral_toast(
-                    DismissibleToast::error("This MCP server contains secrets. Visit Settings > Privacy to modify your secret redaction settings.".to_string()),
+                    DismissibleToast::error(i18n::t!("This MCP server contains secrets. Visit Settings > Privacy to modify your secret redaction settings.").to_string()),
                     window_id,
                     ctx,
                 );
@@ -592,7 +592,7 @@ impl MCPServersEditPageView {
             let window_id = ctx.window_id();
             ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                 toast_stack.add_ephemeral_toast(
-                    DismissibleToast::error("No MCP Server specified.".to_string()),
+                    DismissibleToast::error(i18n::t!("No MCP Server specified.").to_string()),
                     window_id,
                     ctx,
                 );
@@ -889,7 +889,7 @@ impl TypedActionView for MCPServersEditPageView {
                         let window_id = ctx.window_id();
                         ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                             toast_stack.add_ephemeral_toast(
-                                DismissibleToast::error("No MCP Server specified.".to_string()),
+                                DismissibleToast::error(i18n::t!("No MCP Server specified.").to_string()),
                                 window_id,
                                 ctx,
                             );

@@ -932,7 +932,7 @@ impl Action {
                     if let Some(window_id) = primary_window_id {
                         ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                             let toast =
-                                DismissibleToast::error("Custom URI is invalid.".to_owned());
+                                DismissibleToast::error(i18n::t!("Custom URI is invalid.").to_string());
                             toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                         });
                     }

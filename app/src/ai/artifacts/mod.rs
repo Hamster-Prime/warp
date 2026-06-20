@@ -386,7 +386,7 @@ pub fn download_file_artifact<V: warpui::View>(
                 log::warn!("Failed to load file artifact {artifact_uid}: {error}");
                 show_file_download_toast(
                     &artifact_uid,
-                    DismissibleToast::error("Failed to prepare file download.".to_string()),
+                    DismissibleToast::error(i18n::t!("Failed to prepare file download.").to_string()),
                     ctx,
                 );
             }

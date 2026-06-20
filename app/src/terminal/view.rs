@@ -25340,7 +25340,7 @@ impl TerminalView {
         if shell_type == ShellType::PowerShell {
             ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                 let toast =
-                    DismissibleToast::error("PowerShell subshells not supported".to_owned());
+                    DismissibleToast::error(i18n::t!("PowerShell subshells not supported").to_string());
                 toast_stack.add_ephemeral_toast(toast, window_id, ctx);
             });
             return;

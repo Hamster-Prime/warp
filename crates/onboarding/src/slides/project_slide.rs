@@ -282,7 +282,7 @@ impl ProjectSlide {
         let back_button = self.back_button.render(
             appearance,
             button::Params {
-                content: button::Content::Label("Back".into()),
+                content: button::Content::Label(i18n::t!("Back")),
                 theme: &button::themes::Naked,
                 options: button::Options {
                     on_click: Some(Box::new(|ctx, _app, _pos| {
@@ -299,15 +299,15 @@ impl ProjectSlide {
         let (label, keystroke, action) = match settings {
             ProjectOnboardingSettings::Project { .. } => (
                 if theme_picker_last {
-                    "Next"
+                    i18n::t!("Next")
                 } else {
-                    "Get Warping"
+                    i18n::t!("Get Warping")
                 },
                 Keystroke::parse("enter").unwrap_or_default(),
                 ProjectSlideAction::NextClicked,
             ),
             ProjectOnboardingSettings::NoProject => (
-                "Skip",
+                i18n::t!("Skip"),
                 Keystroke::parse("cmdorctrl-enter").unwrap_or_default(),
                 ProjectSlideAction::SkipClicked,
             ),
@@ -316,7 +316,7 @@ impl ProjectSlide {
         let next_button = self.next_button.render(
             appearance,
             button::Params {
-                content: button::Content::Label(label.into()),
+                content: button::Content::Label(label),
                 theme: &button::themes::Primary,
                 options: button::Options {
                     keystroke: Some(keystroke),
@@ -345,8 +345,8 @@ impl ProjectSlide {
         appearance: &Appearance,
         mouse_state: MouseStateHandle,
         checked: bool,
-        title: &'static str,
-        description: &'static str,
+        title: std::borrow::Cow<'static, str>,
+        description: std::borrow::Cow<'static, str>,
         action: ProjectSlideAction,
     ) -> Box<dyn Element> {
         let theme = appearance.theme();
@@ -410,8 +410,8 @@ impl ProjectSlide {
             appearance,
             self.initialize_projects_automatically_mouse_state.clone(),
             initialize_projects_automatically,
-            "Initialize project automatically",
-            "Prepares the project environment, builds an index of your code, and generates project rules—giving the agent deeper understanding and better performance.",
+            i18n::t!("Initialize project automatically"),
+            i18n::t!("Prepares the project environment, builds an index of your code, and generates project rules—giving the agent deeper understanding and better performance."),
             ProjectSlideAction::ToggleInitializeProjectsAutomatically,
         );
 

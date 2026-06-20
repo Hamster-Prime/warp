@@ -29,7 +29,6 @@ const PRIMARY_BUTTON_HEIGHT: f32 = 40.;
 const SECTION_UNIFORM_PADDING: f32 = 16.;
 const MARGIN_BETWEEN_MODAL_SECTIONS: f32 = 16.;
 const MODAL_CONTENT_FONT_SIZE: f32 = 14.;
-const RESTORE_DEFAULT_LABEL: &str = "Restore default";
 
 /// Mouse state handles for interactive controls in chip editor sections and modals.
 #[derive(Default)]
@@ -146,7 +145,7 @@ fn render_restore_default_button<A: Action + Clone + Copy + 'static>(
     let button = Hoverable::new(mouse_handle.clone(), |_state| {
         appearance
             .ui_builder()
-            .span(RESTORE_DEFAULT_LABEL.to_string())
+            .span(i18n::t!("Restore default"))
             .with_style(UiComponentStyles {
                 font_size: Some(MODAL_CONTENT_FONT_SIZE),
                 ..Default::default()

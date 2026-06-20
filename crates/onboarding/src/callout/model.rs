@@ -405,12 +405,12 @@ impl OnboardingCalloutModel {
                 OnboardingQuery::TerminalCommand("git status".to_string())
             }
             UniversalInputCalloutState::TalkToAgent
-            | UniversalInputCalloutState::Complete(FinalState::Submit) => {
-                OnboardingQuery::AgentPrompt(
+            | UniversalInputCalloutState::Complete(FinalState::Submit) => OnboardingQuery::AgentPrompt(
+                i18n::t!(
                     "What tests exist in this repo, how are they structured, and what do they cover?"
-                        .to_string(),
                 )
-            }
+                .to_string(),
+            ),
             UniversalInputCalloutState::Complete(_) => OnboardingQuery::None,
         }
     }
@@ -418,14 +418,16 @@ impl OnboardingCalloutModel {
     fn prompt_for_agent_modality(&self, state: AgentModalityCalloutState) -> OnboardingQuery {
         match state {
             AgentModalityCalloutState::Off => OnboardingQuery::None,
-            AgentModalityCalloutState::TerminalMode => {
-                OnboardingQuery::TerminalCommand("Run a command...".to_string())
-            }
+            AgentModalityCalloutState::TerminalMode => OnboardingQuery::TerminalCommand(
+                i18n::t!("Run a command...").to_string(),
+            ),
             AgentModalityCalloutState::AgentMode => {
                 if self.has_project {
                     OnboardingQuery::AgentPrompt("/init".to_string())
                 } else {
-                    OnboardingQuery::AgentPrompt("Tell the agent what to build...".to_string())
+                    OnboardingQuery::AgentPrompt(
+                        i18n::t!("Tell the agent what to build...").to_string(),
+                    )
                 }
             }
             // All completion states should return None so the input gets cleared

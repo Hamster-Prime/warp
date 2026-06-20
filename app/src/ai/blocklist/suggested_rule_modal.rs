@@ -36,7 +36,6 @@ use crate::ui_components::blended_colors;
 use crate::view_components::action_button::{ActionButton, PrimaryTheme};
 use crate::workspaces::user_workspaces::UserWorkspaces;
 
-const HEADER_TEXT: &str = "Suggested rule";
 const MAX_EDITOR_HEIGHT: f32 = 240.;
 
 pub fn init(app: &mut AppContext) {
@@ -94,7 +93,7 @@ impl SuggestedRuleModal {
 
         let view_handle = view.clone();
         let modal = ctx.add_typed_action_view(|ctx| {
-            Modal::new(Some(HEADER_TEXT.to_string()), view, ctx)
+            Modal::new(Some(i18n::t!("Suggested rule").to_string()), view, ctx)
                 .with_modal_style(UiComponentStyles {
                     width: Some(510.),
                     background: Some(background.into()),

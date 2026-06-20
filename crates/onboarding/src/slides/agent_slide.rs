@@ -329,7 +329,7 @@ impl AgentSlide {
             .finish();
 
         let subtitle = FormattedTextElement::from_str(
-            "Select your in-app agent's defaults.",
+            i18n::t!("Select your in-app agent's defaults."),
             appearance.ui_font_family(),
             16.,
         )
@@ -403,7 +403,7 @@ impl AgentSlide {
 
     fn render_section_header(
         &self,
-        title: &'static str,
+        title: std::borrow::Cow<'static, str>,
         appearance: &Appearance,
     ) -> Box<dyn Element> {
         appearance
@@ -424,7 +424,7 @@ impl AgentSlide {
         settings: &AgentDevelopmentSettings,
         app: &AppContext,
     ) -> Box<dyn Element> {
-        let header = self.render_section_header("Default model", appearance);
+        let header = self.render_section_header(i18n::t!("Default model"), appearance);
 
         let expanded = self.is_model_list_expanded;
         let chip = self.render_collapsed_model_chip(appearance, settings, app, expanded);
@@ -730,8 +730,8 @@ impl AgentSlide {
             // model, "Premium" on paywalled rows. In practice a single row is
             // at most one of these, but both can be shown side-by-side if the
             // default is also premium for any reason.
-            let make_pill = |label: &'static str| -> Box<dyn Element> {
-                let badge = Text::new(label.to_string(), ui_font_family, 11.0)
+            let make_pill = |label: std::borrow::Cow<'static, str>| -> Box<dyn Element> {
+                let badge = Text::new(label, ui_font_family, 11.0)
                     .with_color(internal_colors::text_sub(theme, background_for_text))
                     .with_style(Properties {
                         weight: Weight::Normal,
@@ -750,9 +750,9 @@ impl AgentSlide {
             };
 
             let trailing: Box<dyn Element> = if is_default {
-                make_pill("Recommended")
+                make_pill(i18n::t!("Recommended"))
             } else if requires_upgrade {
-                make_pill("Premium")
+                make_pill(i18n::t!("Premium"))
             } else {
                 Empty::new().finish()
             };
@@ -806,12 +806,11 @@ impl AgentSlide {
     }
 
     fn render_autonomy_workspace_enforced(&self, appearance: &Appearance) -> Box<dyn Element> {
-        let header = self.render_section_header("Autonomy", appearance);
+        let header = self.render_section_header(i18n::t!("Autonomy"), appearance);
 
         let theme = appearance.theme();
         let background_for_text = theme.background().into_solid();
         let ui_font_family = appearance.ui_font_family();
-
         let title_color = internal_colors::text_main(theme, background_for_text);
         let subtitle_color = internal_colors::text_sub(theme, background_for_text);
 
@@ -825,7 +824,7 @@ impl AgentSlide {
             .finish();
 
         let subtitle_el = Text::new(
-            "Autonomy settings are configured as part of your team workspace.",
+            i18n::t!("Autonomy settings are configured as part of your team workspace."),
             ui_font_family,
             12.0,
         )
@@ -861,7 +860,7 @@ impl AgentSlide {
         appearance: &Appearance,
         settings: &AgentDevelopmentSettings,
     ) -> Box<dyn Element> {
-        let header = self.render_section_header("Autonomy", appearance);
+        let header = self.render_section_header(i18n::t!("Autonomy"), appearance);
 
         // The rows now take the full column width (vs. the previous three-across layout),
         // so they no longer need the extra height that came from cramped subtitle wrapping.
@@ -873,23 +872,23 @@ impl AgentSlide {
         let text_main = internal_colors::text_main(theme, background_for_text);
         let text_sub = internal_colors::text_sub(theme, background_for_text);
 
-        let autonomy_options: [(AgentAutonomy, &str, &str, MouseStateHandle); 3] = [
+        let autonomy_options: [(AgentAutonomy, std::borrow::Cow<'static, str>, std::borrow::Cow<'static, str>, MouseStateHandle); 3] = [
             (
                 AgentAutonomy::Full,
-                "Full",
-                "Runs commands, writes code, and reads files without asking.",
+                i18n::t!("Full"),
+                i18n::t!("Runs commands, writes code, and reads files without asking."),
                 self.autonomy_full_mouse_state.clone(),
             ),
             (
                 AgentAutonomy::Partial,
-                "Partial",
-                "Can plan, read files, and execute low-risk commands. Asks before making any changes or executing sensitive commands.",
+                i18n::t!("Partial"),
+                i18n::t!("Can plan, read files, and execute low-risk commands. Asks before making any changes or executing sensitive commands."),
                 self.autonomy_partial_mouse_state.clone(),
             ),
             (
                 AgentAutonomy::None,
-                "None",
-                "Takes no actions without your approval.",
+                i18n::t!("None"),
+                i18n::t!("Takes no actions without your approval."),
                 self.autonomy_none_mouse_state.clone(),
             ),
         ];
@@ -975,7 +974,7 @@ impl AgentSlide {
         let back_button = self.back_button.render(
             appearance,
             button::Params {
-                content: button::Content::Label("Back".into()),
+                content: button::Content::Label(i18n::t!("Back")),
                 theme: &button::themes::Naked,
                 options: button::Options {
                     on_click: Some(Box::new(|ctx, _app, _pos| {
@@ -990,7 +989,7 @@ impl AgentSlide {
         let next_button = self.next_button.render(
             appearance,
             button::Params {
-                content: button::Content::Label("Next".into()),
+                content: button::Content::Label(i18n::t!("Next")),
                 theme: &button::themes::Primary,
                 options: button::Options {
                     keystroke: Some(enter),
@@ -1040,7 +1039,7 @@ impl AgentSlide {
 
         // Primary "heading" line: bolder, full-contrast.
         let title = Text::new(
-            "Upgrade for access to premium models.",
+            i18n::t!("Upgrade for access to premium models."),
             ui_font_family,
             13.0,
         )
@@ -1054,7 +1053,7 @@ impl AgentSlide {
 
         // Secondary subtext: muted, normal weight.
         let subtitle = Text::new(
-            "State-of-the-art models require paid plans.",
+            i18n::t!("State-of-the-art models require paid plans."),
             ui_font_family,
             12.0,
         )
@@ -1076,7 +1075,7 @@ impl AgentSlide {
         let upgrade_button = self.upgrade_button.render(
             appearance,
             button::Params {
-                content: button::Content::Label("Upgrade".into()),
+                content: button::Content::Label(i18n::t!("Upgrade")),
                 theme: &UpgradeButtonTheme,
                 options: button::Options {
                     size: button::Size::Small,
@@ -1173,7 +1172,7 @@ impl AgentSlide {
 
         let copy_url_link = ui_builder
             .link(
-                "copy the URL".into(),
+                i18n::t!("copy the URL").to_string(),
                 None,
                 Some(Box::new(|ctx| {
                     ctx.dispatch_typed_action(AgentSlideAction::CopyUpgradeUrlClicked);
@@ -1187,7 +1186,7 @@ impl AgentSlide {
 
         let paste_token_link = ui_builder
             .link(
-                "Click here".into(),
+                i18n::t!("Click here").to_string(),
                 None,
                 Some(Box::new(|ctx| {
                     ctx.dispatch_typed_action(AgentSlideAction::PasteAuthTokenFromClipboardClicked);
@@ -1216,7 +1215,7 @@ impl AgentSlide {
             .with_child(copy_url_link)
             .with_child(
                 ui_builder
-                    .span(" and open the page manually. ")
+                    .span(i18n::t!(" and open the page manually. "))
                     .with_style(text_styles)
                     .build()
                     .finish(),
@@ -1224,7 +1223,7 @@ impl AgentSlide {
             .with_child(paste_token_link)
             .with_child(
                 ui_builder
-                    .span(" to paste your token from the browser.")
+                    .span(i18n::t!(" to paste your token from the browser."))
                     .with_style(text_styles)
                     .build()
                     .finish(),

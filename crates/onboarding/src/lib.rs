@@ -27,21 +27,25 @@ pub use callout::{OnboardingCalloutView, OnboardingKeybindings};
 /// User-facing names of the AI features enabled when the agent intention is selected.
 /// Shared by the intention slide's agent card checklist and the login slide's
 /// skip-login confirmation dialog so the two always stay in sync.
-pub const AI_FEATURES: &[&str] = &[
-    "Warp agents",
-    "Oz cloud agents platform",
-    "Next command predictions",
-    "Prompt suggestions",
-    "Codebase context",
-    "Remote control with Claude Code, Codex, and other agents",
-    "Agents over SSH",
-];
+pub fn ai_features() -> Vec<std::borrow::Cow<'static, str>> {
+    vec![
+        i18n::t!("Warp agents"),
+        i18n::t!("Oz cloud agents platform"),
+        i18n::t!("Next command predictions"),
+        i18n::t!("Prompt suggestions"),
+        i18n::t!("Codebase context"),
+        i18n::t!("Remote control with Claude Code, Codex, and other agents"),
+        i18n::t!("Agents over SSH"),
+    ]
+}
 
 /// User-facing names of the Warp Drive features enabled when the terminal
 /// intention is selected with Warp Drive turned on. Shared by the login slide's
 /// skip-login confirmation dialog so the list stays in sync with any future
 /// surfaces that need it.
-pub const WARP_DRIVE_FEATURES: &[&str] = &["Warp Drive", "Session Sharing"];
+pub fn warp_drive_features() -> Vec<std::borrow::Cow<'static, str>> {
+    vec![i18n::t!("Warp Drive"), i18n::t!("Session Sharing")]
+}
 
 cfg_if::cfg_if! {
     if #[cfg(feature = "bin")] {

@@ -24,7 +24,7 @@ use super::OnboardingSlide;
 use crate::model::OnboardingStateModel;
 use crate::slides::{bottom_nav, layout, slide_content};
 use crate::visuals::{intention_terminal_visual, intention_visual};
-use crate::{OnboardingIntention, AI_FEATURES};
+use crate::{OnboardingIntention, ai_features};
 
 #[derive(Debug, Clone)]
 pub enum IntentionSlideAction {
@@ -93,7 +93,7 @@ impl IntentionSlide {
             .finish();
 
         let subtitle = FormattedTextElement::from_str(
-            "How do you want to work?",
+            i18n::t!("How do you want to work?"),
             appearance.ui_font_family(),
             16.,
         )
@@ -240,7 +240,7 @@ impl IntentionSlide {
         };
 
         let description = FormattedTextElement::from_str(
-            "An agent-first experience with best in class terminal support. Get terminal and agent driven development AI features like:",
+            i18n::t!("An agent-first experience with best in class terminal support. Get terminal and agent driven development AI features like:"),
             appearance.ui_font_family(),
             14.,
         )
@@ -251,7 +251,7 @@ impl IntentionSlide {
         .finish();
 
         let checklist = {
-            let items = AI_FEATURES;
+            let items = ai_features();
             // When the agent card is selected, use the theme's green to match the
             // "Blended ANSI/green_fg" token in the design.
             let check_fill = if is_selected {
@@ -262,7 +262,7 @@ impl IntentionSlide {
             let mut col = Flex::column()
                 .with_main_axis_size(MainAxisSize::Min)
                 .with_cross_axis_alignment(CrossAxisAlignment::Start);
-            for &item in items {
+            for item in items {
                 let icon_el = ConstrainedBox::new(Icon::Check.to_warpui_icon(check_fill).finish())
                     .with_width(16.)
                     .with_height(16.)
@@ -388,7 +388,7 @@ impl IntentionSlide {
         let back_button = self.back_button.render(
             appearance,
             button::Params {
-                content: button::Content::Label("Back".into()),
+                content: button::Content::Label(i18n::t!("Back")),
                 theme: &button::themes::Naked,
                 options: button::Options {
                     on_click: Some(Box::new(|ctx, _app, _pos| {
@@ -401,15 +401,15 @@ impl IntentionSlide {
 
         let new_settings_modes = FeatureFlag::OpenWarpNewSettingsModes.is_enabled();
         let next_text = if !new_settings_modes && selected_index == 1 {
-            "Get Warping"
+            i18n::t!("Get Warping")
         } else {
-            "Next"
+            i18n::t!("Next")
         };
         let enter = Keystroke::parse("enter").unwrap_or_default();
         let next_button = self.next_button.render(
             appearance,
             button::Params {
-                content: button::Content::Label(next_text.into()),
+                content: button::Content::Label(next_text),
                 theme: &button::themes::Primary,
                 options: button::Options {
                     keystroke: Some(enter),

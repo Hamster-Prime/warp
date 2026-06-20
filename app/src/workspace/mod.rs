@@ -111,7 +111,7 @@ pub fn init(app: &mut AppContext) {
     lsp::init(app);
 
     app.register_fixed_bindings([FixedBinding::empty(
-        "Dump debug info",
+        i18n::t!("Dump debug info"),
         WorkspaceAction::DumpDebugInfo,
         id!("Workspace"),
     )]);
@@ -130,16 +130,16 @@ pub fn init(app: &mut AppContext) {
 
     if ChannelState::enable_debug_features() {
         let crash_description = if cfg!(target_os = "macos") {
-            "Crash the app (for testing sentry-cocoa)"
+            i18n::t!("Crash the app (for testing sentry-cocoa)")
         } else {
-            "Crash the app (for testing sentry-native)"
+            i18n::t!("Crash the app (for testing sentry-native)")
         };
         app.register_editable_bindings([
             EditableBinding::new("workspace:crash", crash_description, WorkspaceAction::Crash)
                 .with_context_predicate(id!("Workspace")),
             EditableBinding::new(
                 "workspace:log_review_comment_send_status_for_active_tab",
-                "[Debug] Log review comment send status for active tab",
+                i18n::t!("[Debug] Log review comment send status for active tab"),
                 WorkspaceAction::LogReviewCommentSendStatusForActiveTab,
             )
             .with_context_predicate(id!("Workspace")),
@@ -157,7 +157,7 @@ pub fn init(app: &mut AppContext) {
             .with_context_predicate(id!("Workspace")),
         ]);
         app.register_fixed_bindings([FixedBinding::empty(
-            "[Debug] View first-time user experience",
+            i18n::t!("[Debug] View first-time user experience"),
             WorkspaceAction::AddGetStartedTab,
             id!("Workspace"),
         )]);
@@ -167,97 +167,97 @@ pub fn init(app: &mut AppContext) {
             app.register_editable_bindings([
                 EditableBinding::new(
                     "workspace:open_build_plan_migration_modal",
-                    "[Debug] Open Build Plan Migration Modal",
+                    i18n::t!("[Debug] Open Build Plan Migration Modal"),
                     WorkspaceAction::OpenBuildPlanMigrationModal,
                 )
                 .with_context_predicate(id!("Workspace")),
                 EditableBinding::new(
                     "workspace:reset_build_plan_migration_modal_state",
-                    "[Debug] Reset Build Plan Migration Modal State",
+                    i18n::t!("[Debug] Reset Build Plan Migration Modal State"),
                     WorkspaceAction::ResetBuildPlanMigrationModalState,
                 )
                 .with_context_predicate(id!("Workspace")),
                 EditableBinding::new(
                     "workspace:debug_reset_aws_bedrock_login_banner_dismissed",
-                    "[Debug] Un-dismiss AWS login banner",
+                    i18n::t!("[Debug] Un-dismiss AWS login banner"),
                     WorkspaceAction::DebugResetAwsBedrockLoginBannerDismissed,
                 )
                 .with_context_predicate(id!("Workspace")),
                 EditableBinding::new(
                     "workspace:open_oz_launch_modal",
-                    "[Debug] Open Oz Launch Modal",
+                    i18n::t!("[Debug] Open Oz Launch Modal"),
                     WorkspaceAction::OpenOzLaunchModal,
                 )
                 .with_context_predicate(id!("Workspace")),
                 EditableBinding::new(
                     "workspace:reset_oz_launch_modal_state",
-                    "[Debug] Reset Oz Launch Modal State",
+                    i18n::t!("[Debug] Reset Oz Launch Modal State"),
                     WorkspaceAction::ResetOzLaunchModalState,
                 )
                 .with_context_predicate(id!("Workspace")),
                 EditableBinding::new(
                     "workspace:open_openwarp_launch_modal",
-                    "[Debug] Open OpenWarp Launch Modal",
+                    i18n::t!("[Debug] Open OpenWarp Launch Modal"),
                     WorkspaceAction::OpenOpenWarpLaunchModal,
                 )
                 .with_context_predicate(id!("Workspace")),
                 EditableBinding::new(
                     "workspace:reset_openwarp_launch_modal_state",
-                    "[Debug] Reset OpenWarp Launch Modal State",
+                    i18n::t!("[Debug] Reset OpenWarp Launch Modal State"),
                     WorkspaceAction::ResetOpenWarpLaunchModalState,
                 )
                 .with_context_predicate(id!("Workspace")),
                 EditableBinding::new(
                     "workspace:open_orchestration_launch_modal",
-                    "[Debug] Open Orchestration Launch Modal",
+                    i18n::t!("[Debug] Open Orchestration Launch Modal"),
                     WorkspaceAction::OpenOrchestrationLaunchModal,
                 )
                 .with_context_predicate(id!("Workspace")),
                 EditableBinding::new(
                     "workspace:reset_orchestration_launch_modal_state",
-                    "[Debug] Reset Orchestration Launch Modal State",
+                    i18n::t!("[Debug] Reset Orchestration Launch Modal State"),
                     WorkspaceAction::ResetOrchestrationLaunchModalState,
                 )
                 .with_context_predicate(id!("Workspace")),
                 EditableBinding::new(
                     "workspace:open_auto_handoff_sleep_modal",
-                    "[Debug] Open Auto-Handoff Sleep Modal",
+                    i18n::t!("[Debug] Open Auto-Handoff Sleep Modal"),
                     WorkspaceAction::OpenAutoHandoffSleepModal,
                 )
                 .with_context_predicate(id!("Workspace")),
                 EditableBinding::new(
                     "workspace:reset_auto_handoff_sleep_modal_state",
-                    "[Debug] Reset Auto-Handoff Sleep Modal State",
+                    i18n::t!("[Debug] Reset Auto-Handoff Sleep Modal State"),
                     WorkspaceAction::ResetAutoHandoffSleepModalState,
                 )
                 .with_context_predicate(id!("Workspace")),
                 EditableBinding::new(
                     "workspace:trigger_auto_handoff_to_cloud",
-                    "[Debug] Trigger Auto-Handoff to Cloud",
+                    i18n::t!("[Debug] Trigger Auto-Handoff to Cloud"),
                     WorkspaceAction::TriggerAutoHandoffToCloud,
                 )
                 .with_context_predicate(id!("Workspace")),
                 EditableBinding::new(
                     "workspace:install_opencode_warp_plugin",
-                    "[Debug] Install OpenCode Warp plugin",
+                    i18n::t!("[Debug] Install OpenCode Warp plugin"),
                     WorkspaceAction::InstallOpenCodeWarpPlugin,
                 )
                 .with_context_predicate(id!("Workspace")),
                 EditableBinding::new(
                     "workspace:use_local_opencode_warp_plugin",
-                    "[Debug] Use local OpenCode Warp plugin (testing only)",
+                    i18n::t!("[Debug] Use local OpenCode Warp plugin (testing only)"),
                     WorkspaceAction::UseLocalOpenCodeWarpPlugin,
                 )
                 .with_context_predicate(id!("Workspace")),
                 EditableBinding::new(
                     "workspace:open_session_config_modal",
-                    "[Debug] Open Session Config Modal",
+                    i18n::t!("[Debug] Open Session Config Modal"),
                     WorkspaceAction::ShowSessionConfigModal,
                 )
                 .with_context_predicate(id!("Workspace")),
                 EditableBinding::new(
                     "workspace:show_hoa_onboarding_flow",
-                    "[Debug] Start HOA Onboarding Flow",
+                    i18n::t!("[Debug] Start HOA Onboarding Flow"),
                     WorkspaceAction::ShowHoaOnboardingFlow,
                 )
                 .with_context_predicate(id!("Workspace")),
@@ -287,26 +287,26 @@ pub fn init(app: &mut AppContext) {
         FixedBinding::custom(
             CustomAction::CycleNextSession,
             WorkspaceAction::CycleNextSession,
-            "Switch to next tab",
+            i18n::t!("Switch to next tab"),
             id!("Workspace") & id!("Workspace_MultipleTabs"),
         ),
         FixedBinding::custom(
             CustomAction::CyclePrevSession,
             WorkspaceAction::CyclePrevSession,
-            "Switch to previous tab",
+            i18n::t!("Switch to previous tab"),
             id!("Workspace") & id!("Workspace_MultipleTabs"),
         ),
         FixedBinding::custom(
             CustomAction::AddWindow,
             WorkspaceAction::AddWindow,
-            "Create New Window",
+            i18n::t!("Create New Window"),
             id!("Workspace"),
         )
         .with_enabled(|| ContextFlag::CreateNewSession.is_enabled()),
         FixedBinding::custom(
             CustomAction::NewFile,
             WorkspaceAction::NewCodeFile,
-            "New File",
+            i18n::t!("New File"),
             id!("Workspace") & !id!("Workspace_ViewOnlySharedSession"),
         ),
     ]);
@@ -316,21 +316,21 @@ pub fn init(app: &mut AppContext) {
             FixedBinding::custom(
                 CustomAction::IncreaseZoom,
                 WorkspaceAction::IncreaseZoom,
-                "Zoom In",
+                i18n::t!("Zoom In"),
                 id!("Workspace"),
             )
             .with_group(bindings::BindingGroup::Settings.as_str()),
             FixedBinding::custom(
                 CustomAction::DecreaseZoom,
                 WorkspaceAction::DecreaseZoom,
-                "Zoom Out",
+                i18n::t!("Zoom Out"),
                 id!("Workspace"),
             )
             .with_group(bindings::BindingGroup::Settings.as_str()),
             FixedBinding::custom(
                 CustomAction::ResetZoom,
                 WorkspaceAction::ResetZoom,
-                "Reset Zoom",
+                i18n::t!("Reset Zoom"),
                 id!("Workspace"),
             )
             .with_group(bindings::BindingGroup::Settings.as_str()),
@@ -340,14 +340,14 @@ pub fn init(app: &mut AppContext) {
             FixedBinding::custom(
                 CustomAction::IncreaseFontSize,
                 WorkspaceAction::IncreaseFontSize,
-                "Increase font size",
+                i18n::t!("Increase font size"),
                 id!("Workspace"),
             )
             .with_group(bindings::BindingGroup::Settings.as_str()),
             FixedBinding::custom(
                 CustomAction::DecreaseFontSize,
                 WorkspaceAction::DecreaseFontSize,
-                "Decrease font size",
+                i18n::t!("Decrease font size"),
                 id!("Workspace"),
             )
             .with_group(bindings::BindingGroup::Settings.as_str()),
@@ -358,7 +358,7 @@ pub fn init(app: &mut AppContext) {
         app.register_fixed_bindings([FixedBinding::custom(
             CustomAction::SaveCurrentConfig,
             WorkspaceAction::OpenLaunchConfigSaveModal,
-            "Save new launch configuration",
+            i18n::t!("Save new launch configuration"),
             id!("Workspace"),
         )]);
     }

@@ -235,20 +235,20 @@ pub fn init(ctx: &mut AppContext) {
         FixedBinding::custom(
             CustomAction::Copy,
             EditorAction::Copy,
-            "Copy",
+            i18n::t!("Copy"),
             id!("EditorView") & !id!("IMEOpen"),
         ),
         FixedBinding::custom(
             CustomAction::Cut,
             EditorAction::Cut,
-            "Cut",
+            i18n::t!("Cut"),
             id!("EditorView") & !id!("IMEOpen"),
         ),
         // Bindings for paste require the StandardAction and CustomAction binding to work on all platforms.
         FixedBinding::custom(
             CustomAction::Paste,
             EditorAction::Paste,
-            "Paste",
+            i18n::t!("Paste"),
             id!("EditorView") & !id!("IMEOpen"),
         ),
         FixedBinding::standard(
@@ -260,7 +260,7 @@ pub fn init(ctx: &mut AppContext) {
         FixedBinding::custom(
             CustomAction::WindowsPaste,
             EditorAction::Paste,
-            "Paste",
+            i18n::t!("Paste"),
             id!("EditorView") & !id!("IMEOpen"),
         ),
         FixedBinding::new(
@@ -398,13 +398,13 @@ pub fn init(ctx: &mut AppContext) {
         FixedBinding::custom(
             CustomAction::Undo,
             EditorAction::Undo,
-            "Undo",
+            i18n::t!("Undo"),
             id!("EditorView") & !id!("IMEOpen"),
         ),
         FixedBinding::custom(
             CustomAction::Redo,
             EditorAction::Redo,
-            "Redo",
+            i18n::t!("Redo"),
             id!("EditorView") & !id!("IMEOpen"),
         ),
         // This might seem like a no-op since `ctrl-right` changes desktops on Mac by default.

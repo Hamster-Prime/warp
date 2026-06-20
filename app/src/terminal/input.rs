@@ -1910,7 +1910,7 @@ pub fn init(app: &mut AppContext) {
     {
         app.register_editable_bindings([EditableBinding::new(
             "input:toggle_classic_completions_mode",
-            "(Experimental) Toggle classic completions mode",
+            i18n::t!("(Experimental) Toggle classic completions mode").to_string(),
             InputAction::ToggleClassicCompletionsMode,
         )
         .with_context_predicate(id!("Input"))]);

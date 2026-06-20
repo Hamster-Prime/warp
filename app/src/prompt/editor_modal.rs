@@ -51,11 +51,6 @@ const DROPDOWN_WIDTH: f32 = 72.;
 const MODAL_CONTENT_FONT_SIZE: f32 = 14.;
 const CHECKBOX_SIZE: f32 = 16.;
 
-const MODAL_TITLE: &str = "Edit prompt";
-const WARP_PROMPT_SECTION_HEADER: &str = "Warp terminal prompt";
-const SHELL_PROMPT_SECTION_HEADER: &str = "Shell prompt (PS1)";
-const RESTORE_DEFAULT_BUTTON: &str = "Restore default";
-
 pub fn init(app: &mut AppContext) {
     use warpui::keymap::macros::*;
 
@@ -479,7 +474,7 @@ impl EditorModal {
     fn render_header(&self, appearance: &Appearance) -> Box<dyn Element> {
         appearance
             .ui_builder()
-            .span(MODAL_TITLE.to_string())
+            .span(i18n::t!("Edit prompt"))
             .with_style(UiComponentStyles {
                 font_size: Some(MODAL_TITLE_FONT_SIZE),
                 font_weight: Some(warpui::fonts::Weight::Bold),
@@ -570,7 +565,7 @@ impl EditorModal {
             |_state| {
                 appearance
                     .ui_builder()
-                    .span(RESTORE_DEFAULT_BUTTON.to_string())
+                    .span(i18n::t!("Restore default"))
                     .with_style(UiComponentStyles {
                         font_size: Some(MODAL_CONTENT_FONT_SIZE),
                         ..Default::default()
@@ -670,7 +665,7 @@ impl EditorModal {
             .with_child(
                 appearance
                     .ui_builder()
-                    .span(WARP_PROMPT_SECTION_HEADER.to_string())
+                    .span(i18n::t!("Warp terminal prompt"))
                     .with_style(UiComponentStyles {
                         font_size: Some(MODAL_CONTENT_FONT_SIZE),
                         font_weight: Some(warpui::fonts::Weight::Semibold),
@@ -719,7 +714,7 @@ impl EditorModal {
 
         let header = appearance
             .ui_builder()
-            .span(SHELL_PROMPT_SECTION_HEADER.to_string())
+            .span(i18n::t!("Shell prompt (PS1)"))
             .with_style(UiComponentStyles {
                 font_size: Some(MODAL_CONTENT_FONT_SIZE),
                 font_weight: Some(warpui::fonts::Weight::Semibold),

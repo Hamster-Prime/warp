@@ -1,7 +1,7 @@
 use std::cell::Cell;
 
 use onboarding::slides::{layout, slide_content};
-use onboarding::{OnboardingIntention, AI_FEATURES, WARP_DRIVE_FEATURES};
+use onboarding::{OnboardingIntention, ai_features, warp_drive_features};
 use pathfinder_color::ColorU;
 use pathfinder_geometry::vector::vec2f;
 use ui_components::{button, Component as _, Options as _};
@@ -937,9 +937,9 @@ impl LoginSlideView {
             .finish();
 
         let body_text_str = if is_terminal {
-            "Warp Drive lets you save workflows and knowledge across devices and share them with your team. By continuing, you won't have access to the following features:"
+            i18n::t!("Warp Drive lets you save workflows and knowledge across devices and share them with your team. By continuing, you won't have access to the following features:").to_string()
         } else {
-            "Warp is better with AI. By continuing, you won't have access to any of the following features:"
+            i18n::t!("Warp is better with AI. By continuing, you won't have access to any of the following features:").to_string()
         };
         let body_text =
             FormattedTextElement::from_str(body_text_str, appearance.ui_font_family(), 14.)
@@ -952,12 +952,12 @@ impl LoginSlideView {
         let feature_x_fill: ThemeFill = ThemeFill::Solid(theme.ansi_fg_red());
         let mut feature_list =
             Flex::column().with_cross_axis_alignment(CrossAxisAlignment::Stretch);
-        let feature_items: &[&str] = if is_terminal {
-            WARP_DRIVE_FEATURES
+        let feature_items: Vec<std::borrow::Cow<'static, str>> = if is_terminal {
+            warp_drive_features()
         } else {
-            AI_FEATURES
+            ai_features()
         };
-        for &item in feature_items {
+        for item in feature_items {
             let icon_el = ConstrainedBox::new(Icon::X.to_warpui_icon(feature_x_fill).finish())
                 .with_width(16.)
                 .with_height(16.)

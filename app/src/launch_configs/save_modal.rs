@@ -38,8 +38,6 @@ const MODAL_WIDTH: f32 = 660.;
 const SIDE_PADDING: f32 = 16.;
 const BUTTON_SIZE: f32 = 24.;
 const DOC_LINK_WIDTH: f32 = 120.;
-const SAVE_CONFIG_BUTTON_LABEL: &str = "Save Configuration";
-const OPEN_FILE_BUTTON_LABEL: &str = "Open YAML File";
 
 pub fn init(app: &mut AppContext) {
     use warpui::keymap::macros::*;
@@ -343,7 +341,7 @@ impl LaunchConfigSaveModal {
     ) -> Box<dyn Element> {
         self.save_modal_button(
             appearance,
-            SAVE_CONFIG_BUTTON_LABEL.to_owned(),
+            i18n::t!("Save Configuration").to_string(),
             self.mouse_states.save_button_state.clone(),
             disabled,
         )
@@ -357,7 +355,7 @@ impl LaunchConfigSaveModal {
     fn render_open_file_button(&self, appearance: &Appearance) -> Box<dyn Element> {
         self.save_modal_button(
             appearance,
-            OPEN_FILE_BUTTON_LABEL.to_owned(),
+            i18n::t!("Open YAML File").to_string(),
             self.mouse_states.open_file_button_state.clone(),
             false,
         )

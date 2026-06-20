@@ -163,7 +163,7 @@ impl View for WasmNUXDialog {
                 appearance,
             ))
         } else if app_install_detected == &UserAppInstallStatus::NotDetected {
-            Dialog::new("Download Warp Desktop?".to_string(), None, dialog_styles)
+            Dialog::new(i18n::t!("Download Warp Desktop?").to_string(), None, dialog_styles)
                 .with_child(
                     Flex::column()
                         .with_cross_axis_alignment(CrossAxisAlignment::Stretch)

@@ -128,7 +128,7 @@ impl ThemePickerSlide {
         self.theme_options
             .get(index)
             .and_then(|option| option.theme.name())
-            .unwrap_or_else(|| format!("Theme {}", index + 1))
+            .unwrap_or_else(|| i18n::t!("Theme {index}", index = index + 1).to_string())
     }
 
     fn render_theme_picker_content(
@@ -204,7 +204,7 @@ impl ThemePickerSlide {
             .finish();
 
         let subtitle = FormattedTextElement::from_str(
-            "Click or use arrow keys to select, Enter to confirm.",
+            i18n::t!("Click or use arrow keys to select, Enter to confirm."),
             appearance.ui_font_family(),
             16.,
         )
@@ -261,7 +261,7 @@ impl ThemePickerSlide {
         let back_button = self.back_button.render(
             appearance,
             button::Params {
-                content: button::Content::Label("Back".into()),
+                content: button::Content::Label(i18n::t!("Back")),
                 theme: &button::themes::Naked,
                 options: button::Options {
                     on_click: Some(Box::new(|ctx, _app, _pos| {
@@ -274,16 +274,16 @@ impl ThemePickerSlide {
 
         let theme_picker_last = FeatureFlag::OpenWarpNewSettingsModes.is_enabled();
         let next_label = if theme_picker_last {
-            "Get Warping"
+            i18n::t!("Get Warping")
         } else {
-            "Next"
+            i18n::t!("Next")
         };
 
         let enter = Keystroke::parse("enter").unwrap_or_default();
         let next_button = self.next_button.render(
             appearance,
             button::Params {
-                content: button::Content::Label(next_label.into()),
+                content: button::Content::Label(next_label),
                 theme: &button::themes::Primary,
                 options: button::Options {
                     keystroke: Some(enter),
@@ -532,7 +532,7 @@ impl ThemePickerSlide {
             .finish();
 
         let label = Text::new(
-            "Sync light/dark theme with OS",
+            i18n::t!("Sync light/dark theme with OS"),
             appearance.ui_font_family(),
             14.0,
         )
@@ -586,7 +586,7 @@ impl ThemePickerSlide {
             .with_child(
                 ui_builder
                     .link(
-                        "Privacy Settings".into(),
+                        i18n::t!("Privacy Settings").to_string(),
                         None,
                         Some(Box::new(|ctx| {
                             ctx.dispatch_typed_action(
@@ -613,7 +613,7 @@ impl ThemePickerSlide {
             .with_child(
                 ui_builder
                     .link(
-                        "Terms of Service".into(),
+                        i18n::t!("Terms of Service").to_string(),
                         Some(TOS_URL.into()),
                         None,
                         self.tos_mouse_state.clone(),

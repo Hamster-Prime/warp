@@ -66,8 +66,6 @@ const INNER_MARGIN: f32 = 20.;
 const MODAL_WIDTH: f32 = 862.;
 const BLOCK_TITLE_INPUT_WIDTH: f32 = 800.;
 
-const BLOCK_TITLE_PLACEHOLDER: &str = "Title (optional)";
-
 // TODO(vorporeal): This is 12 in the specs, but I think our 14pt font is a bit
 // taller than 14pt?
 const VERTICAL_SEPARATOR_HEIGHT: f32 = 32.;
@@ -81,10 +79,6 @@ const COMMAND_AND_OUTPUT_OPTION: (&str, DisplaySetting) =
     ("Command and Output", DisplaySetting::CommandAndOutput);
 const COMMAND_OPTION: (&str, DisplaySetting) = ("Command", DisplaySetting::Command);
 const OUTPUT_OPTION: (&str, DisplaySetting) = ("Output", DisplaySetting::Output);
-
-/// This default title is helpful for screen readers.
-const DEFAULT_EMBED_TITLE: &str = "embedded warp block";
-const BLOCK_CREATION_FAILED_MESSAGE: &str = "Something went wrong. Please try again.";
 
 #[derive(PartialEq)]
 enum ShareRequestState {
@@ -196,7 +190,7 @@ impl ShareBlockModal {
                 },
                 ctx,
             );
-            editor.set_placeholder_text(BLOCK_TITLE_PLACEHOLDER, ctx);
+            editor.set_placeholder_text(i18n::t!("Title (optional)").to_string(), ctx);
             editor
         });
         ctx.subscribe_to_view(&block_title_editor, move |me, _, event, ctx| {
@@ -383,7 +377,7 @@ impl ShareBlockModal {
 
     fn display_failure_toast(&mut self, ctx: &mut ViewContext<Self>) {
         ctx.emit(ShareBlockModalEvent::ShowToast {
-            message: BLOCK_CREATION_FAILED_MESSAGE.to_string(),
+            message: i18n::t!("Something went wrong. Please try again.").to_string(),
             flavor: ToastFlavor::Error,
         });
     }
@@ -523,7 +517,7 @@ impl ShareBlockModal {
         let width = ServerBlock::embed_pixel_width(block);
         let mut title = self.block_title_editor.as_ref(app).buffer_text(app);
         if title.is_empty() {
-            title = DEFAULT_EMBED_TITLE.to_string();
+            title = i18n::t!("embedded warp block").to_string();
         }
         let embed_link = escape_html_attribute(&embed_link);
         let title = escape_html_attribute(&title);

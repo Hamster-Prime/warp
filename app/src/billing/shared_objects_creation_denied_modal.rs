@@ -21,8 +21,6 @@ use crate::ui_components::icons::Icon;
 use crate::workspaces::user_workspaces::UserWorkspaces;
 use crate::workspaces::workspace::CustomerType;
 
-const DEFAULT_LIMIT_REACHED_MODAL_HEADER: &str = "Shared object limit reached";
-
 pub struct SharedObjectsCreationDeniedModal {
     shared_objects_creation_denied_modal: ViewHandle<Modal<SharedObjectsCreationDeniedBody>>,
     team_uid: Option<ServerId>,
@@ -65,7 +63,7 @@ impl SharedObjectsCreationDeniedModal {
 
         let shared_objects_creation_denied_modal = ctx.add_typed_action_view(|ctx| {
             Modal::new(
-                Some(DEFAULT_LIMIT_REACHED_MODAL_HEADER.into()),
+                Some(i18n::t!("Shared object limit reached").into()),
                 shared_objects_creation_denied_body,
                 ctx,
             )

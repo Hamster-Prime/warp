@@ -24,7 +24,7 @@ pub fn static_suggested_query(command: &str) -> Option<PromptSuggestion> {
             let label = pattern
                 .rule
                 .label_template
-                .map(|template| apply_captures(template, &captures));
+                .map(|template| apply_captures(&i18n::t!(template), &captures));
             let query = apply_captures(pattern.rule.query_template, &captures);
 
             return Some(PromptSuggestion {

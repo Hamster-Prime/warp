@@ -86,6 +86,8 @@ AI Fact:
   zh-CN: AI 事实
 AI command search:
   zh-CN: AI 命令搜索
+AI features are disabled:
+  zh-CN: AI 功能已禁用
 'AI prompt: {query_text}':
   zh-CN: AI 提示：{query_text}
 'AI query: {query_text}':
@@ -199,16 +201,22 @@ Agent 1:
   zh-CN: 智能体 1
 Agent B init failed:
   zh-CN: 智能体 B 初始化失败
+agent conversation history is unavailable or disabled:
+  zh-CN: Agent 对话历史不可用或已禁用
 Agent conversations:
   zh-CN: 智能体对话
 Agent decides:
   zh-CN: 由 Agent 决定
+Agent environment:
+  zh-CN: Agent 环境
 Agent failed:
   zh-CN: 智能体失败
 Agent is unaware of recent plan edits:
   zh-CN: 智能体未察觉最近的计划编辑
 Agent location:
   zh-CN: 智能体位置
+agent management is unavailable or disabled:
+  zh-CN: Agent 管理不可用或已禁用
 Agent management panel:
   zh-CN: 智能体管理面板
 ? 'Agent mode gives your questions and tasks their own conversation, so you can ask
@@ -556,6 +564,8 @@ Cannot index remote codebase because the maximum number of codebase indexes has 
   zh-CN: 无法索引远程代码库，因为已达到最大代码库索引数。
 Cannot open a new terminal session:
   zh-CN: 无法打开新的终端会话
+Cannot save — remote session disconnected.:
+  zh-CN: 无法保存 — 远程会话已断开。
 Cannot send queries as a read-only viewer.:
   zh-CN: 无法以只读查看者身份发送查询。
 Cannot share with '{other}'. Expected 'team', 'public', or an email address:
@@ -717,12 +727,16 @@ Cloud handoff:
   zh-CN: 云端移交
 Cloud platform:
   zh-CN: 云平台
+Code a feature or fix a bug in {1}:
+  zh-CN: 在 {1} 中编写功能或修复 Bug
 Code Diff:
   zh-CN: 代码差异
 Code Editor and Review:
   zh-CN: 代码编辑与审查
 Code review:
   zh-CN: 代码审查
+code review is unavailable without local filesystem support:
+  zh-CN: 无本地文件系统支持时，代码审查不可用
 Code review panel:
   zh-CN: 代码审查面板
 Code search failed:
@@ -863,6 +877,8 @@ Continue this cloud conversation:
   zh-CN: 继续此云端对话
 Continue without installing:
   zh-CN: 不安装继续
+Continued:
+  zh-CN: 已继续
 Controls how reasoning/thinking traces are displayed.:
   zh-CN: 控制推理/思考过程的显示方式。
 Controls whether orchestration messages stay expanded.:
@@ -877,6 +893,8 @@ Conversation deleted:
   zh-CN: 对话已删除
 'Conversation ended with API error: {error:?}':
   zh-CN: 对话因 API 错误结束：{error:?}
+Conversation exported to clipboard:
+  zh-CN: 对话已导出到剪贴板
 Conversation exported to {display_path}:
   zh-CN: 对话已导出到 {display_path}
 Conversation forking failed.:
@@ -999,6 +1017,8 @@ Copyright 2026 Warp:
   zh-CN: Copyright 2026 Warp
 'Could not apply diff to document {}: content mismatch':
   zh-CN: 无法将差异应用于文档 {}：内容不匹配
+Could not create workflow:
+  zh-CN: 无法创建 Workflow
 Could not create {file} because it already exists.:
   zh-CN: 无法创建 {file}，因为它已存在。
 Could not determine parent directory of file when running grep:
@@ -1075,6 +1095,8 @@ Create an environment:
   zh-CN: 创建an 环境
 Create and initialize a brand new project:
   zh-CN: 创建并初始化一个全新项目
+Create Environment:
+  zh-CN: 创建环境
 Create environment:
   zh-CN: 创建环境
 Create environment using the current working dir as repo:
@@ -1850,6 +1872,8 @@ Failed to leave {object_name}:
   zh-CN: 离开 {object_name} 失败
 Failed to load:
   zh-CN: 加载失败
+Failed to load file.:
+  zh-CN: 加载文件失败。
 Failed to load GitHub repositories:
   zh-CN: 加载GitHub 仓库 失败
 Failed to load blocks. Please try again.:
@@ -2038,6 +2062,8 @@ Failed to save file {file_path_clone}:
   zh-CN: 保存文件 {file_path_clone} 失败
 'Failed to save file {path:?}: {error}':
   zh-CN: 保存文件 {path:?} 失败：{error}
+Failed to save file.:
+  zh-CN: 保存文件失败。
 'Failed to save file: {e:?}':
   zh-CN: 保存文件 失败：{e:?}
 Failed to save. A launch configuration with the same name already exists.:
@@ -2104,6 +2130,8 @@ Failed to start orchestration:
   zh-CN: 启动orchestration 失败：{error}
 'Failed to start session request: {e}':
   zh-CN: 启动会话 请求 失败：{e}
+Failed to start voice input (you may need to enable Microphone access):
+  zh-CN: 启动语音输入失败（可能需要开启麦克风访问权限）
 Failed to stat artifact file '{}':
   zh-CN: 获取产物文件 '{}' 状态失败
 'Failed to subscribe to response signal: {e}':
@@ -2114,6 +2142,8 @@ Failed to suggest a Docker image:
   zh-CN: 推荐 Docker 镜像失败：{e}
 Failed to sync download file '{}':
   zh-CN: 同步下载文件 '{}' 失败
+Failed to transcribe voice input:
+  zh-CN: 语音输入转写失败
 Failed to trash {object_name_lowercase}:
   zh-CN: 移至回收站 {object_name_lowercase} 失败
 'Failed to uninstall Oz command: {error}':
@@ -2196,6 +2226,8 @@ File not found or could not be read:
   zh-CN: 未找到文件或无法读取文件
 'File not found: {display}':
   zh-CN: 未找到文件：{display}
+File saved.:
+  zh-CN: 文件已保存。
 File {display_path} already exists and will be overwritten:
   zh-CN: 文件 {display_path} 已存在，将被覆盖
 File {display} already exists:
@@ -2350,6 +2382,8 @@ Global search failed.:
   zh-CN: 全局搜索失败。
 Go to Warp to see your new tab.:
   zh-CN: 前往 Warp 查看您的新标签页。
+global search is unavailable or disabled:
+  zh-CN: 全局搜索不可用或已禁用
 Go to definition:
   zh-CN: 转到定义
 Go to line:
@@ -2398,6 +2432,38 @@ Have Warp installed but redirecting to download page?:
   zh-CN: 已安装 Warp 但被重定向到下载页面？
 Header toolbar layout:
   zh-CN: 标题栏工具栏布局
+Help me code a feature or fix a bug in {1}:
+  zh-CN: 帮我在 {1} 中编写功能或修复 Bug
+Help me create a new Next.js app:
+  zh-CN: 帮我创建一个新的 Next.js 应用
+Help me create a new React app:
+  zh-CN: 帮我创建一个新的 React 应用
+Help me manage or troubleshoot {1} with Docker Compose:
+  zh-CN: 帮我使用 Docker Compose 管理或排查 {1}
+Help me set up a new Ruby project:
+  zh-CN: 帮我设置一个新的 Ruby 项目
+Help me set up Prisma in this project:
+  zh-CN: 帮我在此项目中设置 Prisma
+Help me start a Django project for {1}:
+  zh-CN: 帮我为 {1} 开始一个 Django 项目
+Help me start a Go project for {1}:
+  zh-CN: 帮我为 {1} 开始一个 Go 项目
+Help me start a Gradle/Maven project:
+  zh-CN: 帮我开始一个 Gradle/Maven 项目
+Help me start a new project:
+  zh-CN: 帮我开始一个新项目
+Help me start a Node.js project:
+  zh-CN: 帮我开始一个 Node.js 项目
+Help me start a Poetry project for {1}:
+  zh-CN: 帮我为 {1} 开始一个 Poetry 项目
+Help me start a Rails app for {1}:
+  zh-CN: 帮我为 {1} 开始一个 Rails 应用
+Help me start a Rust project for {1}:
+  zh-CN: 帮我为 {1} 开始一个 Rust 项目
+Help me start a Swift project:
+  zh-CN: 帮我开始一个 Swift 项目
+Help me start a Terraform configuration:
+  zh-CN: 帮我开始一个 Terraform 配置
 Hide "Use Agent" footer:
   zh-CN: 隐藏"使用 Agent"页脚
 Hide Others:
@@ -2412,6 +2478,8 @@ Hide code review button in tab bar:
   zh-CN: 在标签页栏中隐藏代码审查按钮
 Hide file navigation:
   zh-CN: 隐藏文件导航
+Hide Rich Input:
+  zh-CN: 隐藏富文本输入
 Hide search bar in vertical tab layout:
   zh-CN: 在垂直标签页布局中隐藏搜索栏
 Hide secret:
@@ -2798,6 +2866,8 @@ Link (web or file):
   zh-CN: 链接（网页或文件）
 Link SSO:
   zh-CN: 关联 SSO
+Link copied:
+  zh-CN: 链接已复制
 Link copied to clipboard:
   zh-CN: 链接已复制到剪贴板
 Link copied.:
@@ -2854,6 +2924,8 @@ Looks like you're out of AI credits. Contact a team admin to upgrade for more cr
   zh-CN: '您的额度似乎已用完。 '
 Looks like you're out of credits. Contact a team admin to upgrade for more credits.:
   zh-CN: 您的积分似乎已用完。请联系团队管理员升级以获取更多积分。
+MCP server updated:
+  zh-CN: MCP 服务器已更新
 MCP Server {uuid}:
   zh-CN: MCP 服务器 {uuid}
 MCP Servers:
@@ -3366,6 +3438,8 @@ Open in Warp Desktop?:
   zh-CN: 在 Warp 桌面端中打开？
 Open in code review:
   zh-CN: 在代码审查中打开
+Open in different pane:
+  zh-CN: 在不同窗格中打开
 Open in editor:
   zh-CN: 在编辑器中打开
 Open in new pane:
@@ -3641,6 +3715,8 @@ Project Skill:
   zh-CN: 项目技能
 Project explorer:
   zh-CN: 项目浏览器
+project explorer is unavailable or disabled:
+  zh-CN: 项目浏览器不可用或已禁用
 Project rules linked from {path}:
   zh-CN: 项目规则链接自 {path}
 Project setup:
@@ -3879,6 +3955,8 @@ Resize pane > Move divider up:
   zh-CN: 调整窗格大小 > 向上移动分隔条
 Resolved custom:
   zh-CN: 已解析的自定义
+Resource not found or access denied:
+  zh-CN: 未找到资源或访问被拒绝
 'Response could not be delivered: {e}':
   zh-CN: 响应无法送达：{e}
 'Response stream finished unexpectedly with internal error: {message}':
@@ -3899,6 +3977,8 @@ Restore notebook from trash:
   zh-CN: 从回收站恢复 Notebook
 Restore workflow from trash:
   zh-CN: 从回收站恢复 Workflow
+Restored:
+  zh-CN: 已恢复
 Restricted due to billing issue:
   zh-CN: 由于账单问题受限
 Result accepted.:
@@ -4811,6 +4891,8 @@ Text:
   zh-CN: 文本
 Text Editing:
   zh-CN: 文本编辑
+Thank you for the feedback!:
+  zh-CN: 感谢您的反馈！
 The /open-file command is not supported in this build:
   zh-CN: 此版本不支持 /open-file 命令
 The Agentic Development Environment:
@@ -4848,6 +4930,8 @@ The default AWS profile:
   zh-CN: 默认 AWS 配置文件
 The file read/edit tool is not available on this remote session. Try using a different tool.:
   zh-CN: 此远程会话上不提供文件读取/编辑工具。请尝试使用其他工具。
+the left panel has no available views:
+  zh-CN: 左侧面板没有可用的视图
 The output should be {expected_output:?}, but got "{last_output}":
   zh-CN: 输出应为 {expected_output:?}，但得到 "{last_output}"
 The person you want to say hello to:
@@ -5270,6 +5354,8 @@ Version {new_version}:
   zh-CN: 版本 {new_version}
 Vertical:
   zh-CN: 垂直
+vertical tabs are unavailable or disabled:
+  zh-CN: 垂直标签页不可用或已禁用
 View:
   zh-CN: 查看
 View Agents:
@@ -5346,6 +5432,8 @@ Voice input:
   zh-CN: 语音输入
 Voice input (hold {key_name} key):
   zh-CN: 语音输入（按住 {key_name} 键）
+Voice input limit reached:
+  zh-CN: 语音输入已达上限
 Voice transcription:
   zh-CN: 语音转录
 Voice transcription is disabled because Microphone access was not granted.:
@@ -5376,6 +5464,8 @@ Warp Drive as agent context:
 ? 'Warp Drive lets you save workflows and knowledge across devices and share them
   with your team. By continuing, you won''t have access to the following features:'
 : zh-CN: Warp Drive 让您可以跨设备保存工作流和知识，并与团队共享。继续操作，您将无法使用以下功能：
+Warp Drive is disabled:
+  zh-CN: Warp Drive 已禁用
 Warp Drive.:
   zh-CN: Warp Drive。
 Warp Essentials:
@@ -5406,6 +5496,8 @@ Warp loads and sends local AWS CLI credentials for Bedrock-supported models. Thi
   zh-CN: Warp 会加载并发送本地 AWS CLI 凭据用于 Bedrock 支持的模型。此设置由您的组织管理。
 Warp terminal prompt:
   zh-CN: Warp 终端提示符
+Warp updated!:
+  zh-CN: Warp 已更新！
 Warp was unable to launch the new installed version.:
   zh-CN: Warp 无法启动新安装的版本。
 Warp's Pro plan comes with a limited number of shared {object_type}s.:
@@ -6471,3 +6563,4 @@ you can adjust your:
   zh-CN: ❌ {timestamp}
 💣 {secret}:
   zh-CN: 💣 {secret}
+

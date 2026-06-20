@@ -14426,8 +14426,9 @@ impl Workspace {
                                 link = link.with_keystroke(keystroke);
                             }
 
-                            let toast = DismissibleToast::default(String::from("Warp updated!"))
-                                .with_link(link);
+                            let toast =
+                                DismissibleToast::default(i18n::t!("Warp updated!").to_string())
+                                    .with_link(link);
 
                             stack.add_ephemeral_toast(toast, ctx);
                         });
@@ -15714,9 +15715,9 @@ impl Workspace {
 
                 if !object_found {
                     self.toast_stack.update(ctx, |toast_stack, ctx| {
-                        let toast = DismissibleToast::error(String::from(
-                            "Resource not found or access denied",
-                        ));
+                        let toast = DismissibleToast::error(
+                            i18n::t!("Resource not found or access denied").to_string(),
+                        );
                         toast_stack.add_ephemeral_toast(toast, ctx);
                     });
                     ctx.notify();

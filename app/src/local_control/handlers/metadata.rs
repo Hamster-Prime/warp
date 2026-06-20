@@ -289,8 +289,7 @@ pub(crate) fn surface_list(
             .iter()
             .copied()
             .map(|destination| {
-                let unavailable_reason =
-                    surface_unavailable_reason(destination, ctx).map(str::to_owned);
+                let unavailable_reason = surface_unavailable_reason(destination, ctx);
                 SurfaceSummary {
                     name: destination.name().to_owned(),
                     is_available: unavailable_reason.is_none(),
@@ -304,7 +303,7 @@ pub(crate) fn surface_list(
 pub(crate) fn surface_unavailable_reason(
     destination: SurfaceDestination,
     ctx: &AppContext,
-) -> Option<&'static str> {
+) -> Option<String> {
     match destination {
         SurfaceDestination::Settings
         | SurfaceDestination::CommandPalette
@@ -313,24 +312,26 @@ pub(crate) fn surface_unavailable_reason(
         | SurfaceDestination::Keybindings
         | SurfaceDestination::ResourceCenter => None,
         SurfaceDestination::WarpDrive if !WarpDriveSettings::is_warp_drive_enabled(ctx) => {
-            Some("Warp Drive is disabled")
+            Some(i18n::t!("Warp Drive is disabled").to_string())
         }
         SurfaceDestination::WarpDrive => None,
         SurfaceDestination::AiAssistant if !AISettings::as_ref(ctx).is_any_ai_enabled(ctx) => {
-            Some("AI features are disabled")
+            Some(i18n::t!("AI features are disabled").to_string())
         }
         SurfaceDestination::AiAssistant => None,
         SurfaceDestination::CodeReview | SurfaceDestination::RightPanel
             if !cfg!(feature = "local_fs") =>
         {
-            Some("code review is unavailable without local filesystem support")
+            Some(
+                i18n::t!("code review is unavailable without local filesystem support").to_string(),
+            )
         }
         SurfaceDestination::CodeReview | SurfaceDestination::RightPanel => None,
         SurfaceDestination::ProjectExplorer
             if !cfg!(feature = "local_fs")
                 || !*CodeSettings::as_ref(ctx).show_project_explorer.value() =>
         {
-            Some("project explorer is unavailable or disabled")
+            Some(i18n::t!("project explorer is unavailable or disabled").to_string())
         }
         SurfaceDestination::ProjectExplorer => None,
         SurfaceDestination::GlobalSearch
@@ -338,7 +339,7 @@ pub(crate) fn surface_unavailable_reason(
                 || !FeatureFlag::GlobalSearch.is_enabled()
                 || !*CodeSettings::as_ref(ctx).show_global_search.value() =>
         {
-            Some("global search is unavailable or disabled")
+            Some(i18n::t!("global search is unavailable or disabled").to_string())
         }
         SurfaceDestination::GlobalSearch => None,
         SurfaceDestination::ConversationList
@@ -346,7 +347,7 @@ pub(crate) fn surface_unavailable_reason(
                 || !AISettings::as_ref(ctx).is_any_ai_enabled(ctx)
                 || !*AISettings::as_ref(ctx).show_conversation_history.value() =>
         {
-            Some("agent conversation history is unavailable or disabled")
+            Some(i18n::t!("agent conversation history is unavailable or disabled").to_string())
         }
         SurfaceDestination::ConversationList => None,
         SurfaceDestination::LeftPanel
@@ -356,21 +357,21 @@ pub(crate) fn surface_unavailable_reason(
                     .is_some()
                 && surface_unavailable_reason(SurfaceDestination::WarpDrive, ctx).is_some() =>
         {
-            Some("the left panel has no available views")
+            Some(i18n::t!("the left panel has no available views").to_string())
         }
         SurfaceDestination::LeftPanel => None,
         SurfaceDestination::VerticalTabs
             if !FeatureFlag::VerticalTabs.is_enabled()
                 || !*TabSettings::as_ref(ctx).use_vertical_tabs.value() =>
         {
-            Some("vertical tabs are unavailable or disabled")
+            Some(i18n::t!("vertical tabs are unavailable or disabled").to_string())
         }
         SurfaceDestination::VerticalTabs => None,
         SurfaceDestination::AgentManagement
             if !FeatureFlag::AgentManagementView.is_enabled()
                 || !AISettings::as_ref(ctx).is_any_ai_enabled(ctx) =>
         {
-            Some("agent management is unavailable or disabled")
+            Some(i18n::t!("agent management is unavailable or disabled").to_string())
         }
         SurfaceDestination::AgentManagement => None,
     }

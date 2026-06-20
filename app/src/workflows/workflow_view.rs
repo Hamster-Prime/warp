@@ -1622,7 +1622,10 @@ impl WorkflowView {
                     id
                 } else {
                     log::error!("No client_id obtained for creating workflow");
-                    self.display_error_toast(String::from("Could not create workflow"), ctx);
+                    self.display_error_toast(
+                        i18n::t!("Could not create workflow").to_string(),
+                        ctx,
+                    );
                     return;
                 };
 

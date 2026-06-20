@@ -352,7 +352,7 @@ fn ensure_surface_available(
     };
     Err(ControlError::new(
         ErrorCode::UnsupportedAction,
-        format!("{} is unavailable: {reason}", action.as_str()),
+        format!("{} is unavailable: {}", action.as_str(), reason),
     ))
 }
 

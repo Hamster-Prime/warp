@@ -9,7 +9,7 @@ fn agent_management_surface_reports_feature_flag_unavailable() {
             app.update(|ctx| {
                 surface_unavailable_reason(SurfaceDestination::AgentManagement, ctx)
             }),
-            Some("agent management is unavailable or disabled")
+            Some(i18n::t!("agent management is unavailable or disabled").to_string())
         );
     });
     drop(flag_guard);

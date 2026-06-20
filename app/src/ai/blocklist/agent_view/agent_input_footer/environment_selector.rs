@@ -441,9 +441,9 @@ impl EnvironmentSelector {
             button.set_label(label, ctx);
             button.set_tooltip(
                 if is_configuring {
-                    Some("Choose an environment")
+                    Some(i18n::t!("Choose an environment"))
                 } else {
-                    Some("Agent environment")
+                    Some(i18n::t!("Agent environment"))
                 },
                 ctx,
             );

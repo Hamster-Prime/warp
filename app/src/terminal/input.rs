@@ -5605,8 +5605,9 @@ impl Input {
         else {
             let window_id = ctx.window_id();
             ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
-                let toast =
-                    DismissibleToast::default(String::from("No active conversation to export"));
+                let toast = DismissibleToast::default(
+                    i18n::t!("No active conversation to export").to_string(),
+                );
                 toast_stack.add_ephemeral_toast(toast, window_id, ctx);
             });
             return;

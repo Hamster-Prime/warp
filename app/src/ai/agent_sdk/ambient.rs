@@ -862,7 +862,7 @@ impl AmbientAgentRunner {
 
             // Created time
             let created_formatted = format_approx_duration_from_now_utc(task.created_at);
-            table.add_row(vec![format!("Created: {}", created_formatted)]);
+            table.add_row(vec![i18n::t!("Created: {created_formatted}", created_formatted = created_formatted).to_string()]);
 
             // Status message (if available) - single multi-line cell
             if let Some(status_msg) = &task.status_message {

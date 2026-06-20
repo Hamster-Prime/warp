@@ -1811,7 +1811,7 @@ impl EnvironmentsPageWidget {
                 }
             }
 
-            let mut details_parts = vec![format!("Image: {}", env_docker_image)];
+            let mut details_parts = vec![i18n::t!("Image: {env_docker_image}", env_docker_image = env_docker_image).to_string()];
 
             if !env_github_repos.is_empty() {
                 let repos_text = env_github_repos
@@ -1819,12 +1819,12 @@ impl EnvironmentsPageWidget {
                     .map(|(owner, repo)| format!("{}/{}", owner, repo))
                     .collect::<Vec<_>>()
                     .join(", ");
-                details_parts.push(format!("Repos: {}", repos_text));
+                details_parts.push(i18n::t!("Repos: {repos_text}", repos_text = repos_text).to_string());
             }
 
             if !env_setup_commands.is_empty() {
                 let commands_text = env_setup_commands.join(", ");
-                details_parts.push(format!("Setup commands: {}", commands_text));
+                details_parts.push(i18n::t!("Setup commands: {commands_text}", commands_text = commands_text).to_string());
             }
 
             // Create details section with Env ID on first line and other details below

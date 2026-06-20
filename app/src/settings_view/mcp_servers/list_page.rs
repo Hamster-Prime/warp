@@ -1767,10 +1767,10 @@ impl MCPServersListPageView {
                 if is_shared {
                     match creator {
                         Some(creator) => Some(TitleChip::text(format!("Shared by: {creator}"))),
-                        None => Some(TitleChip::text("Shared by a team member")),
+                        None => Some(TitleChip::text(i18n::t!("Shared by a team member").to_string())),
                     }
                 } else if matches!(item_id, ServerCardItemId::TemplatableMCP(_)) {
-                    Some(TitleChip::text("From another device"))
+                    Some(TitleChip::text(i18n::t!("From another device").to_string()))
                 } else {
                     None
                 }

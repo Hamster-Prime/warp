@@ -1,4 +1,5 @@
 #![allow(clippy::doc_lazy_continuation)]
+#![allow(clippy::unnecessary_to_owned)]
 
 mod ai;
 mod alloc;

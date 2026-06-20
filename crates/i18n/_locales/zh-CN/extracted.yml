@@ -4648,3 +4648,1411 @@ you can adjust your:
   zh-CN: '{} 需要关注'
 '{} other settings':
   zh-CN: '{} 项其他设置'
+
+'''{command}'' failed after 4s':
+  zh-CN: '''{command}'' 在 4 秒后失败'
+'''{command}''{expected_title_suffix}':
+  zh-CN: '''{command}''{expected_title_suffix}'
+'''{display_cmd}'' failed':
+  zh-CN: '''{display_cmd}'' 失败'
+'''{name}'' did not start within {}s':
+  zh-CN: '''{name}'' 未在 {} 秒内启动'
+'''{name}'' failed to start{error}':
+  zh-CN: '''{name}'' 启动失败{error}'
+'''{}'': default {default_json} — {err}':
+  zh-CN: '''{}''：默认值 {default_json} — {err}'
+'***{text}***':
+  zh-CN: '***{text}***'
+'**/{trimmed}/**':
+  zh-CN: '**/{trimmed}/**'
+'**{text}**':
+  zh-CN: '**{text}**'
+'*{text}*':
+  zh-CN: '*{text}*'
+'+ {hidden_count} more':
+  zh-CN: '+ {hidden_count} 更多'
+'+{additions}':
+  zh-CN: '+{additions}'
+'+{content}':
+  zh-CN: '+{content}'
+', error={message}':
+  zh-CN: '，错误={message}'
+', {action}':
+  zh-CN: '，{action}'
+', {title}':
+  zh-CN: '，{title}'
+', {title} ({arg1}/{list_len})':
+  zh-CN: '，{title}（{arg1}/{list_len}）'
+'...{truncated}':
+  zh-CN: '...{truncated}'
+'.{entry}':
+  zh-CN: '.{entry}'
+'.{extension}':
+  zh-CN: '.{extension}'
+': {error}':
+  zh-CN: '：{error}'
+': {message}':
+  zh-CN: '：{message}'
+': {subject}':
+  zh-CN: '：{subject}'
+':{port}':
+  zh-CN: '：{port}'
+'<u>{text}</u>':
+  zh-CN: '<u>{text}</u>'
+'Agents ({})':
+  zh-CN: 'Agent（{}）'
+'Authentication credentials for {operation} do not match daemon credentials':
+  zh-CN: '{operation} 的认证凭据与守护进程凭据不匹配'
+'Authentication required. Log in via ''{bin} login'', provide an API key via ''--api-key'', or set the WARP_API_KEY environment variable.':
+  zh-CN: '需要认证。请通过 ''{bin} login'' 登录、通过 ''--api-key'' 提供 API 密钥，或设置 WARP_API_KEY 环境变量。'
+'Basic {credentials}':
+  zh-CN: 'Basic {credentials}'
+'Bearer ${{{var_name}}}':
+  zh-CN: 'Bearer ${{{var_name}}}'
+'Bearer {token}':
+  zh-CN: 'Bearer {token}'
+'Bearer {}':
+  zh-CN: 'Bearer {}'
+'Binding {binding} should have display string {display_string:?}':
+  zh-CN: '绑定 {binding} 应具有显示字符串 {display_string:?}'
+'Block {index}: {}, {}.':
+  zh-CN: 'Block {index}：{}，{}。'
+'Block {}.':
+  zh-CN: 'Block {}。'
+'Block {}:':
+  zh-CN: 'Block {}：'
+'Block {}: {}. Output: {}':
+  zh-CN: 'Block {}：{}。输出：{}'
+'Branch: {branch}':
+  zh-CN: '分支：{branch}'
+'Buffer loaded but content or sync clock unavailable for file {file_id:?}':
+  zh-CN: '缓冲区已加载但文件 {file_id:?} 的内容或同步时钟不可用'
+'Buffer mapping failed: {e}':
+  zh-CN: '缓冲区映射失败：{e}'
+'Cannot share with ''{other}''. Expected ''team'', ''public'', or an email address':
+  zh-CN: '无法与 ''{other}'' 共享。请使用 ''team''、''public'' 或邮箱地址'
+'Character ''{ch}'' is outside the Basic Multilingual Plane (BMP); use TypeText for emoji and other supplementary-plane characters':
+  zh-CN: '字符 ''{ch}'' 超出基本多语言平面（BMP）；请对表情符号和其他补充平面字符使用 TypeText'
+'Code symbol: {} in {}:{}':
+  zh-CN: '代码符号：{} 在 {}:{}'
+'Codebase index root hash mismatch: requested {requested}, current {current}':
+  zh-CN: '代码库索引根哈希不匹配：请求 {requested}，当前 {current}'
+'Col{}':
+  zh-CN: '列 {}'
+'Completed {} ({}/{})':
+  zh-CN: '已完成 {}（{}/{}）'
+'Connected on {}.':
+  zh-CN: '于 {} 连接。'
+'Conversation ended with API error: {error:?}':
+  zh-CN: '对话因 API 错误结束：{error:?}'
+'Conversation is done but does not match expected status - is {status:?}':
+  zh-CN: '对话已完成但状态不符 - 当前状态为 {status:?}'
+'Conversation with ID {conversation_id:?} not found in terminal view':
+  zh-CN: '在终端视图中未找到 ID 为 {conversation_id:?} 的对话'
+'Could not apply diff to document {}: content mismatch':
+  zh-CN: '无法将差异应用于文档 {}：内容不匹配'
+'Created by {} • {}':
+  zh-CN: '由 {} 创建 • {}'
+'Demo {}/{} - {}':
+  zh-CN: '演示 {}/{} - {}'
+'Diff against {branch}':
+  zh-CN: '与 {branch} 的差异'
+'Empty {} response':
+  zh-CN: '空的 {} 响应'
+'Enter AI query: {query}':
+  zh-CN: '输入 AI 查询：{query}'
+'Env ID: {clone}':
+  zh-CN: '环境 ID：{clone}'
+'Environment Variables: {}':
+  zh-CN: '环境变量：{}'
+'Environment: {abbreviated}…':
+  zh-CN: '环境：{abbreviated}…'
+'Environment: {text}':
+  zh-CN: '环境：{text}'
+'Error configuring cloud access: {err:#}':
+  zh-CN: '配置云访问错误：{err:#}'
+'Error loading asset at {full_path:?}: {error_string}':
+  zh-CN: '加载资源 {full_path:?} 错误：{error_string}'
+'Error writing GCP token to {output_path}':
+  zh-CN: '将 GCP 令牌写入 {output_path} 时出错'
+'Error: {error}':
+  zh-CN: '错误：{error}'
+'Exception {exception_code}':
+  zh-CN: '异常 {exception_code}'
+'Exception {} ({} / {:?})':
+  zh-CN: '异常 {}（{} / {:?}）'
+'Exchange at index {exchange_index} does not exist and task is done':
+  zh-CN: '索引 {exchange_index} 处的交换不存在且任务已完成'
+'Exchange failed with error: {error:?}':
+  zh-CN: '交换失败，错误：{error:?}'
+'Executed as: {executor}':
+  zh-CN: '执行者：{executor}'
+'Executed on: {}':
+  zh-CN: '执行于：{}'
+'Executed: {command}':
+  zh-CN: '已执行：{command}'
+'Exit code {value}':
+  zh-CN: '退出码 {value}'
+'Expected exit code 0, but got {}. Block output:':
+  zh-CN: '预期退出码 0，但得到 {}。Block 输出：'
+'Expected exit code {}, but got {}':
+  zh-CN: '预期退出码 {}，但得到 {}'
+'Expected no exchanges but found {exchange_count}':
+  zh-CN: '预期无消息交换，但发现了 {exchange_count} 个'
+'Expected no tool calls in output (no auto-execute), but found: {action_type:?}':
+  zh-CN: '输出中预期无工具调用（无自动执行），但发现了：{action_type:?}'
+'Expected task to be blocked, but status is {status:?}':
+  zh-CN: '预期任务被阻塞，但状态为 {status:?}'
+'Expected {expected_git_branch:?} as git branch but got {actual_branch:?}':
+  zh-CN: '预期 git 分支为 {expected_git_branch:?}，但得到 {actual_branch:?}'
+'Expires {arg0}':
+  zh-CN: '过期时间 {arg0}'
+'Failed to apply diff to document {document_id}':
+  zh-CN: '无法将差异应用于文档 {document_id}'
+'Failed to canonicalize Codex working dir at {}':
+  zh-CN: '无法规范化 Codex 工作目录 {}'
+'Failed to canonicalize repo path: {}':
+  zh-CN: '无法规范化仓库路径：{}'
+'Failed to clear {} from secure storage':
+  zh-CN: '无法从安全存储中清除 {}'
+'Failed to clone repository ''{org}/{repo}'': {message}':
+  zh-CN: '克隆仓库 ''{org}/{repo}'' 失败：{message}'
+'Failed to create RemoteDesktop proxy: {e}':
+  zh-CN: '创建 RemoteDesktop 代理失败：{e}'
+'Failed to create Screencast proxy: {e}':
+  zh-CN: '创建 Screencast 代理失败：{e}'
+'Failed to create remote-server tarball cache temp directory ''{}''':
+  zh-CN: '创建远程服务器 tarball 缓存临时目录 ''{}'' 失败'
+'Failed to execute git clone: {e}':
+  zh-CN: '执行 git clone 失败：{e}'
+'Failed to fetch git credentials before skill resolution: {err:#}':
+  zh-CN: '在技能解析前获取 git 凭据失败：{err:#}'
+'Failed to get cursor position: {e}':
+  zh-CN: '获取光标位置失败：{e}'
+'Failed to get exchange at index {exchange_index}':
+  zh-CN: '获取索引 {exchange_index} 处的交换失败'
+'Failed to get keyboard mapping reply: {e}':
+  zh-CN: '获取键盘映射回复失败：{e}'
+'Failed to get pointer reply: {e}':
+  zh-CN: '获取指针回复失败：{e}'
+'Failed to initialize AWS Bedrock credentials: {msg}':
+  zh-CN: '初始化 AWS Bedrock 凭据失败：{msg}'
+'Failed to judge conversation: {e:?}':
+  zh-CN: '判断对话失败：{e:?}'
+'Failed to load conversation ''{}'' to resolve artifact upload headers':
+  zh-CN: '加载对话 ''{}'' 以解析产物上传头失败'
+'Failed to locate {server_name} binary after extraction':
+  zh-CN: '提取后无法找到 {server_name} 可执行文件'
+'Failed to materialize conversation: {e}':
+  zh-CN: '物化对话失败：{e}'
+'Failed to move message bridge record {} back to {}':
+  zh-CN: '将消息桥记录 {} 移回 {} 失败'
+'Failed to move remote-server tarball into cache at ''{}''':
+  zh-CN: '将远程服务器 tarball 移入缓存 ''{}'' 失败'
+'Failed to parse keystroke "{}" in trigger "{}"':
+  zh-CN: '在触发器 "{}" 中解析按键 "{}" 失败'
+'Failed to parse opencode.json: {e}':
+  zh-CN: '解析 opencode.json 失败：{e}'
+'Failed to parse the STS response: {err:#}':
+  zh-CN: '解析 STS 响应失败：{err:#}'
+'Failed to parse the impersonation response: {err:#}':
+  zh-CN: '解析模拟响应失败：{err:#}'
+'Failed to query pointer: {e}':
+  zh-CN: '查询指针失败：{e}'
+'Failed to read existing {} from secure storage':
+  zh-CN: '从安全存储读取现有 {} 失败'
+'Failed to read opencode.json: {e}':
+  zh-CN: '读取 opencode.json 失败：{e}'
+'Failed to remove Claude message bridge state dir {}':
+  zh-CN: '移除 Claude 消息桥状态目录 {} 失败'
+'Failed to select screencast sources: {e}':
+  zh-CN: '选择屏幕录制源失败：{e}'
+'Failed to send agent message (sender_run_id={:?}, task_id={:?}, target_agent_ids={:?})':
+  zh-CN: '发送 Agent 消息失败（sender_run_id={:?}, task_id={:?}, target_agent_ids={:?}）'
+'Failed to send scroll button press: {e}':
+  zh-CN: '发送滚动按钮按下失败：{e}'
+'Failed to send scroll button release: {e}':
+  zh-CN: '发送滚动按钮释放失败：{e}'
+'Failed to serialize opencode.json: {e}':
+  zh-CN: '序列化 opencode.json 失败：{e}'
+'Failed to serialize {} for secure storage':
+  zh-CN: '序列化 {} 以存入安全存储失败'
+'Failed to stat artifact file ''{}''':
+  zh-CN: '获取产物文件 ''{}'' 状态失败'
+'Failed to subscribe to response signal: {e}':
+  zh-CN: '订阅响应信号失败：{e}'
+'Failed to sync download file ''{}''':
+  zh-CN: '同步下载文件 ''{}'' 失败'
+'Failed to warp pointer: {e}':
+  zh-CN: '移动指针失败：{e}'
+'Failed to write git credentials before skill resolution: {err:#}':
+  zh-CN: '在技能解析前写入 git 凭据失败：{err:#}'
+'Failed to write opencode.json: {e}':
+  zh-CN: '写入 opencode.json 失败：{e}'
+'Failed to write {} to secure storage':
+  zh-CN: '将 {} 写入安全存储失败'
+'Failed to {}':
+  zh-CN: '{} 失败'
+'Failed with error: {e:?}':
+  zh-CN: '失败，错误：{e:?}'
+'Field {field_name} list elements are not messages':
+  zh-CN: '字段 {field_name} 的列表元素不是消息'
+'Field {} lists have different lengths: target has {}, patch has {}':
+  zh-CN: '字段 {} 列表长度不同：目标有 {}，补丁有 {}'
+'File edits do not match assertion. Found {} file edits':
+  zh-CN: '文件编辑不匹配断言。找到 {} 个文件编辑'
+'File: {display}':
+  zh-CN: '文件：{display}'
+'File: {label}':
+  zh-CN: '文件：{label}'
+'Finished in {}':
+  zh-CN: '在 {} 内完成'
+'Found .md file edit request: {}':
+  zh-CN: '找到 .md 文件编辑请求：{}'
+'Found forbidden command: {command}':
+  zh-CN: '发现禁止的命令：{command}'
+'Frame written to {}':
+  zh-CN: '帧已写入 {}'
+'Gallery Id: {uuid}':
+  zh-CN: '图库 ID：{uuid}'
+Grep operation timed out:
+  zh-CN: 'Grep 操作超时'
+'Handling action: {}':
+  zh-CN: '正在处理操作：{}'
+'Harness ''{harness}'' config setup failed: {error}':
+  zh-CN: '框架 ''{harness}'' 配置设置失败：{error}'
+'Harness ''{harness}'' validation failed: {reason}':
+  zh-CN: '框架 ''{harness}'' 验证失败：{reason}'
+'Harness command exited with code {exit_code}':
+  zh-CN: '框架命令以退出码 {exit_code} 结束'
+'History item: {command}':
+  zh-CN: '历史记录：{command}'
+'HpkePrivateKeyManager: invalid private key: {e:#}':
+  zh-CN: 'HpkePrivateKeyManager：无效的私钥：{e:#}'
+'HpkePrivateKeyManager: invalid public key: {e:#}':
+  zh-CN: 'HpkePrivateKeyManager：无效的公钥：{e:#}'
+'HpkePublicKeyManager: invalid public key: {e:#}':
+  zh-CN: 'HpkePublicKeyManager：无效的公钥：{e:#}'
+'IPC error occurred: {e:?}':
+  zh-CN: '发生 IPC 错误：{e:?}'
+'Incorrect passcode. {retry_count} attempts remaining.':
+  zh-CN: '验证码错误。剩余 {retry_count} 次尝试。'
+'Indexed repository: {display_name}':
+  zh-CN: '已索引仓库：{display_name}'
+'Input line {i} with some content':
+  zh-CN: '输入行 {i} 含某些内容'
+'Install {binary_name}':
+  zh-CN: '安装 {binary_name}'
+'Installing {binary_name}...':
+  zh-CN: '正在安装 {binary_name}...'
+'Installing {} in background...':
+  zh-CN: '正在后台安装 {}...'
+'Invalid JSON in config file ''{}''':
+  zh-CN: '配置文件 ''{}'' 中的 JSON 无效'
+'Invalid ResyncCodebase mode: {mode}':
+  zh-CN: '无效的 ResyncCodebase 模式：{mode}'
+'Invalid YAML in config file ''{}''':
+  zh-CN: '配置文件 ''{}'' 中的 YAML 无效'
+'Invalid address: {}':
+  zh-CN: '无效的地址：{}'
+'Invalid content hash: {error}':
+  zh-CN: '无效的内容哈希：{error}'
+'Invalid dir_path: {e}':
+  zh-CN: '无效的 dir_path：{e}'
+'Invalid domains: {len}':
+  zh-CN: '无效的域名：{len}'
+'Invalid emails: {len}':
+  zh-CN: '无效的邮箱：{len}'
+'Invalid input type: {s}. Must be ''shell'' or ''ai''':
+  zh-CN: '无效的输入类型：{s}。必须为 ''shell'' 或 ''ai'''
+'Invalid keycode {code}: must be in range 0..={}':
+  zh-CN: '无效的键码 {code}：必须在 0..={} 范围内'
+'Invalid keysym: {keysym} (must be non-negative)':
+  zh-CN: '无效的键符：{keysym}（必须为非负数）'
+'Invalid mcp_servers in ''{}''':
+  zh-CN: '无效的 mcp_servers 在 ''{}'' 中'
+'Invalid path encoding: {:?}':
+  zh-CN: '无效的路径编码：{:?}'
+'Invalid path: {e}':
+  zh-CN: '无效的路径：{e}'
+'Invalid repo_path {repo_path}: {error}':
+  zh-CN: '无效的 repo_path {repo_path}：{error}'
+'Invalid repo_path: {e}':
+  zh-CN: '无效的 repo_path：{e}'
+'Invalid root_hash: {error}':
+  zh-CN: '无效的 root_hash：{error}'
+'Invalid texture dimensions: {width}x{height}':
+  zh-CN: '无效的纹理尺寸：{width}x{height}'
+'Invalid virtual-key code {code}: must be in range 0..={}':
+  zh-CN: '无效的虚拟键码 {code}：必须在 0..={} 范围内'
+'Invalid x1: {}':
+  zh-CN: '无效的 x1：{}'
+'Invalid x2: {}':
+  zh-CN: '无效的 x2：{}'
+'Invalid y1: {}':
+  zh-CN: '无效的 y1：{}'
+'Invalid y2: {}':
+  zh-CN: '无效的 y2：{}'
+'Item {}':
+  zh-CN: '项目 {}'
+'JSON Schema for Warp settings ({channel} channel, {entry_count} settings)':
+  zh-CN: 'Warp 设置的 JSON Schema（{channel} 频道，{entry_count} 项设置）'
+Jump to latest agent message:
+  zh-CN: '跳转到最新的 Agent 消息'
+'KeyDown ''{chars}''':
+  zh-CN: '按键 ''{chars}'''
+'Key{}':
+  zh-CN: '键 {}'
+'Killed by signal {ssi_signo} / {ssi_code}':
+  zh-CN: '被信号 {ssi_signo} / {ssi_code} 终止'
+'LLM judged conversation to fail: {}':
+  zh-CN: 'LLM 判断对话失败：{}'
+'LSSetDefaultRoleHandlerForContentType failed with stats: {result}':
+  zh-CN: 'LSSetDefaultRoleHandlerForContentType 失败，状态：{result}'
+'Last AI interaction: {prompt}':
+  zh-CN: '上次 AI 交互：{prompt}'
+'Last edited: {}':
+  zh-CN: '上次编辑：{}'
+'Last run command {clone}':
+  zh-CN: '上次运行的命令 {clone}'
+'Last used: {}':
+  zh-CN: '上次使用：{}'
+'Left {object_name}':
+  zh-CN: '已离开 {object_name}'
+'Link: {url}':
+  zh-CN: '链接：{url}'
+'Live session started at {} on {}':
+  zh-CN: '实时会话于 {} 在 {} 上开始'
+'Loaded at {}':
+  zh-CN: '加载于 {}'
+'Loaded at {}, expires {}':
+  zh-CN: '加载于 {}，过期于 {}'
+'MCP Tool: {name}':
+  zh-CN: 'MCP 工具：{name}'
+'MCP server ''{server_name}'' field ''warp_id'' must be a UUID':
+  zh-CN: 'MCP 服务器 ''{server_name}'' 的 ''warp_id'' 字段必须为 UUID'
+'Message content for {id}':
+  zh-CN: '{id} 的消息内容'
+'Method {} not implemented':
+  zh-CN: '方法 {} 未实现'
+'Missing authentication credentials for {operation}':
+  zh-CN: '缺少 {operation} 的认证凭据'
+'Missing cached authentication credentials for {operation}':
+  zh-CN: '缺少 {operation} 的缓存认证凭据'
+'Models ({arg0})':
+  zh-CN: '模型（{arg0}）'
+'Move to {arg0}':
+  zh-CN: '移动到 {arg0}'
+'MultiAgent request failed after {} retries':
+  zh-CN: 'MultiAgent 在 {} 次重试后失败'
+'New log zip path conflicts with an existing zip: {}':
+  zh-CN: '新的日志 zip 路径与现有 zip 冲突：{}'
+'New worktree: {repo_display_name}':
+  zh-CN: '新工作树：{repo_display_name}'
+'New {display_name}':
+  zh-CN: '新建 {display_name}'
+'No active diff state model for repo={} mode={:?}':
+  zh-CN: '仓库={} 模式={:?} 没有活动的差异状态模型'
+'No executor for session {session_id:?}':
+  zh-CN: '会话 {session_id:?} 没有执行器'
+'No keycode found for character ''{}''':
+  zh-CN: '未找到字符 ''{}'' 的键码'
+'No keycode found for keysym 0x{:x} (char: {:?})':
+  zh-CN: '未找到键符 0x{:x} 的键码（字符：{:?}）'
+'No position for {position_id}':
+  zh-CN: '{position_id} 没有位置'
+'No remote server setup state for session {session_id:?} yet':
+  zh-CN: '会话 {session_id:?} 尚无远程服务器设置状态'
+'No such service (ID: {service_id})':
+  zh-CN: '无此服务（ID：{service_id}）'
+'No todo operations match assertion. Found operations: {todo_operations:?}':
+  zh-CN: '无待办操作匹配断言。找到的操作：{todo_operations:?}'
+'No valid keystrokes were found in trigger: {}':
+  zh-CN: '在触发器中未找到有效的按键：{}'
+'No version found for npm package {}':
+  zh-CN: '未找到 npm 包 {} 的版本'
+'Notebook: {notebook_name} - {description}':
+  zh-CN: 'Notebook：{notebook_name} - {description}'
+'Notebook: {title}':
+  zh-CN: 'Notebook：{title}'
+'Open block filter editor for block {block_index}':
+  zh-CN: '为 Block {block_index} 打开 Block 筛选编辑器'
+'Open: {name}':
+  zh-CN: '打开：{name}'
+'OpenCode plugin set to: {new_entry}':
+  zh-CN: 'OpenCode 插件设置为：{new_entry}'
+'Operation was cancelled with reason: {}':
+  zh-CN: '操作已取消，原因：{}'
+'Option {}':
+  zh-CN: '选项 {}'
+'Orchestrate {} agent(s)':
+  zh-CN: '编排 {} 个 Agent'
+'Output line {i} with some content':
+  zh-CN: '输出行 {i} 含某些内容'
+'PID eq {pid}':
+  zh-CN: 'PID 等于 {pid}'
+'PR #{number}':
+  zh-CN: 'PR #{number}'
+'PR: {repo} #{num}':
+  zh-CN: 'PR：{repo} #{num}'
+'PTY recording started: {display_path}':
+  zh-CN: 'PTY 录制已开始：{display_path}'
+'PTY recording stopped: {display_path}':
+  zh-CN: 'PTY 录制已停止：{display_path}'
+'Pane {pane_index} was not in expected path {}':
+  zh-CN: '窗格 {pane_index} 不在预期路径 {} 中'
+'Pasted {n} lines, ignoring {skipped} line(s)':
+  zh-CN: '已粘贴 {n} 行，忽略了 {skipped} 行'
+'Path: {filepath}':
+  zh-CN: '路径：{filepath}'
+'Plan: {title}':
+  zh-CN: '计划：{title}'
+'Position not found for element with position_id {position_id}':
+  zh-CN: '未找到 position_id 为 {position_id} 的元素位置'
+'Position not set for {position_id:?}':
+  zh-CN: '未设置 {position_id:?} 的位置'
+'Process sample saved to {output_path}':
+  zh-CN: '进程样本已保存到 {output_path}'
+'Profile: {name}':
+  zh-CN: '配置文件：{name}'
+'Project: {name}':
+  zh-CN: '项目：{name}'
+'Prompt: {name}':
+  zh-CN: '提示词：{name}'
+'Q: {question}':
+  zh-CN: '问：{question}'
+'Received {len} agent events':
+  zh-CN: '收到 {len} 个 Agent 事件'
+'Received {len} messages':
+  zh-CN: '收到 {len} 条消息'
+'RemoteServerManager has no session for {session_id:?}':
+  zh-CN: 'RemoteServerManager 没有会话 {session_id:?}'
+'Repo: {display}':
+  zh-CN: '仓库：{display}'
+'Request failed with error: {value:?}':
+  zh-CN: '请求失败，错误：{value:?}'
+'Required platform plugin installation failed: {e}':
+  zh-CN: '必需的平台插件安装失败：{e}'
+'Required platform plugin update failed: {e}':
+  zh-CN: '必需的平台插件更新失败：{e}'
+'Resets {formatted_next_refresh_time}':
+  zh-CN: '在 {formatted_next_refresh_time} 重置'
+'Response could not be delivered: {e}':
+  zh-CN: '响应无法送达：{e}'
+'Response stream finished unexpectedly with internal error: {message}':
+  zh-CN: '响应流意外结束，内部错误：{message}'
+'Result {} of {}.':
+  zh-CN: '结果 {}，共 {} 个。'
+Review Comment:
+  zh-CN: '审查评论'
+'Rewind to: {} (+{} -{})':
+  zh-CN: '回退到：{}（+{} -{}）'
+'Ripgrep search failed: {e}':
+  zh-CN: 'Ripgrep 搜索失败：{e}'
+'RipgrepSearch root must be absolute: {root}':
+  zh-CN: 'RipgrepSearch 根路径必须是绝对路径：{root}'
+'Row {}':
+  zh-CN: '第 {} 行'
+'Row {} - Another short one':
+  zh-CN: '第 {} 行 - 另一个短文本'
+'Row {} - Medium text here with some more content to make it wrap and create varying row heights throughout the virtualized table.':
+  zh-CN: '第 {} 行 - 中等长度的文本，通过更多内容使其换行并在虚拟表中创建不同行高。'
+'Row {} - Short':
+  zh-CN: '第 {} 行 - 短文本'
+'Row {} - This is a medium length description that will wrap to multiple lines in a constrained column':
+  zh-CN: '第 {} 行 - 中等长度的描述，会在受限列中换行显示'
+'Row {} - Very long description here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.':
+  zh-CN: '第 {} 行 - 很长的描述。Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'
+'Run ''{command}'' and then exit with exit step':
+  zh-CN: '运行 ''{command}'' 然后退出'
+'Run ''{command}'' and verify block exists':
+  zh-CN: '运行 ''{command}'' 并验证 Block 存在'
+'Run ''{command}'' and verify block is running':
+  zh-CN: '运行 ''{command}'' 并验证 Block 正在运行'
+'Run time: {run_time}':
+  zh-CN: '运行时间：{run_time}'
+'Running {}...':
+  zh-CN: '正在运行 {}...'
+'Runtime error: {}':
+  zh-CN: '运行时错误：{}'
+'SQLite {err_kind} error':
+  zh-CN: 'SQLite {err_kind} 错误'
+'Script exited with code {exit_code}: {truncated}':
+  zh-CN: '脚本以退出码 {exit_code} 退出：{truncated}'
+'Secondary click on {arg0}':
+  zh-CN: '在 {arg0} 上辅助点击'
+'Section: {title}':
+  zh-CN: '章节：{title}'
+'Selected Workflow argument {name}':
+  zh-CN: '已选择 Workflow 参数 {name}'
+'Selected all {} blocks.':
+  zh-CN: '已选择全部 {} 个 Block。'
+'Selected tab: {title}.':
+  zh-CN: '已选择标签页：{title}。'
+'Selected workflow: {command}':
+  zh-CN: '已选择 Workflow：{command}'
+'Selected {accessibility_label}':
+  zh-CN: '已选择 {accessibility_label}'
+'Selected {num_non_hidden_selected_blocks} blocks.':
+  zh-CN: '已选择 {num_non_hidden_selected_blocks} 个 Block。'
+'Selected {} {}':
+  zh-CN: '已选择 {} {}'
+'Selected {}, {}.':
+  zh-CN: '已选择 {}，{}。'
+'Selected {}.':
+  zh-CN: '已选择 {}。'
+'Selected {}. {}.':
+  zh-CN: '已选择 {}。{}。'
+'Selected: {text}':
+  zh-CN: '已选择：{text}'
+'Service error: {}':
+  zh-CN: '服务错误：{}'
+'Session start failed: {e}':
+  zh-CN: '会话启动失败：{e}'
+'Set preferred agent mode LLM to {llm_id}':
+  zh-CN: '将首选 Agent 模式 LLM 设为 {llm_id}'
+'Set preferred coding LLM to {llm_id}':
+  zh-CN: '将首选编码 LLM 设为 {llm_id}'
+'Settings file migration: {failed_count} of {} settings failed to migrate':
+  zh-CN: '设置文件迁移：{} 项设置中有 {failed_count} 项迁移失败'
+'Setup commands: {commands_text}':
+  zh-CN: '设置命令：{commands_text}'
+'Share {display_name}':
+  zh-CN: '共享 {display_name}'
+'Skill ''{skill}'' is ambiguous; specify as repo:skill_name':
+  zh-CN: '技能 ''{skill}'' 有歧义；请按 repo:skill_name 格式指定'
+'Skill resolution failed: {msg}':
+  zh-CN: '技能解析失败：{msg}'
+'Skill: {name}':
+  zh-CN: '技能：{name}'
+'Skill: {name}.':
+  zh-CN: '技能：{name}。'
+'Skill: {skill}':
+  zh-CN: '技能：{skill}'
+'Snapshot upload: {}/{} uploaded (failed: {}, skipped: {}, gather_failed: {}, read_failed: {}; {manifest_bit})':
+  zh-CN: '快照上传：{}/{} 已上传（失败：{}，跳过：{}，收集失败：{}，读取失败：{}；{manifest_bit}）'
+'Source: {source}':
+  zh-CN: '来源：{source}'
+'Split Pane {direction}: {}':
+  zh-CN: '拆分窗格 {direction}：{}'
+'Split created pane {}':
+  zh-CN: '拆分创建了窗格 {}'
+'Start remote-server ssh connection with remote shell ''{shell}''':
+  zh-CN: '使用远程 shell ''{shell}'' 启动远程服务器 SSH 连接'
+'Start ssh connection with remote shell ''{shell}''':
+  zh-CN: '使用远程 shell ''{shell}'' 启动 SSH 连接'
+'Started at: {arg0}':
+  zh-CN: '开始时间：{arg0}'
+'Starting {display_name}...':
+  zh-CN: '正在启动 {display_name}...'
+'Status: upload failed: {error}':
+  zh-CN: '状态：上传失败：{error}'
+'Status: uploaded artifact {artifact_uid}':
+  zh-CN: '状态：已上传产物 {artifact_uid}'
+'Step started: {}':
+  zh-CN: '步骤已开始：{}'
+'Step succeeded: {}':
+  zh-CN: '步骤已成功：{}'
+'Stopped task {}/{}: "{}"':
+  zh-CN: '已停止任务 {}/{}："{}"'
+'Suggestion: {text}.':
+  zh-CN: '建议：{text}。'
+'Syncing - {completed_nodes} / {total_nodes}':
+  zh-CN: '同步中 - {completed_nodes} / {total_nodes}'
+'System theme value {theme_value:?} was invalid':
+  zh-CN: '系统主题值 {theme_value:?} 无效'
+'Target directory {} already exists but is not a git repository':
+  zh-CN: '目标目录 {} 已存在但不是 git 仓库'
+'Task {id}':
+  zh-CN: '任务 {id}'
+'Task {task_id}':
+  zh-CN: '任务 {task_id}'
+'Template sync id: {sync_id}':
+  zh-CN: '模板同步 ID：{sync_id}'
+'Terminal session failed to start: {error}':
+  zh-CN: '终端会话启动失败：{error}'
+'The output should be {expected_output:?}, but got "{last_output}"':
+  zh-CN: '输出应为 {expected_output:?}，但得到 "{last_output}"'
+'The theme chooser contains {count} theme(s) named "{theme_name}"':
+  zh-CN: '主题选择器包含 {count} 个名为 "{theme_name}" 的主题'
+'The {harness} harness is only supported for local child agent launches.':
+  zh-CN: '{harness} 框架仅支持本地子 Agent 启动。'
+'Theme {}':
+  zh-CN: '主题 {}'
+'Timed out waiting for mouse to move to ({}, {}). Current position: ({}, {})':
+  zh-CN: '等待鼠标移动到（{}, {}）超时。当前位置：({}, {})'
+'Tip: {description}':
+  zh-CN: '提示：{description}'
+'Todo items do not match assertion: {todo_list:?}':
+  zh-CN: '待办项不匹配断言：{todo_list:?}'
+'Toggle setting: {action:?}':
+  zh-CN: '切换设置：{action:?}'
+'TypedCharacters ''{chars}''':
+  zh-CN: '输入字符 ''{chars}'''
+'Unable to get block upload slot for conversation {conversation_id}':
+  zh-CN: '无法为对话 {conversation_id} 获取 Block 上传槽位'
+'Unable to serialize block for conversation {conversation_id}':
+  zh-CN: '无法为对话 {conversation_id} 序列化 Block'
+'Unexpected response variant for {op}: {other:?}':
+  zh-CN: '{op} 的响应变体异常：{other:?}'
+'Unexpected status code: {status}':
+  zh-CN: '意外的状态码：{status}'
+'Unknown diff failure for document {document_id}':
+  zh-CN: '文档 {document_id} 的未知差异失败'
+'Unsupported OS: {os}':
+  zh-CN: '不支持的操作系统：{os}'
+'Updated: {formatted}':
+  zh-CN: '已更新：{formatted}'
+'Upload artifact: {file_path}':
+  zh-CN: '上传产物：{file_path}'
+'Use {{other_var}}, {expected_cli}, and {} together.':
+  zh-CN: '同时使用 {{other_var}}、{expected_cli} 和 {}。'
+'User {creator_uid}':
+  zh-CN: '用户 {creator_uid}'
+'Version {new_version}':
+  zh-CN: '版本 {new_version}'
+'Warp AI: {item_body_text}':
+  zh-CN: 'Warp AI：{item_body_text}'
+'Warp AI: {}':
+  zh-CN: 'Warp AI：{}'
+'Warp instance {}':
+  zh-CN: 'Warp 实例 {}'
+'Warp instance {} is reachable (protocol version {})':
+  zh-CN: 'Warp 实例 {} 可达（协议版本 {}）'
+'Window Blur Radius: {blur_value}':
+  zh-CN: '窗口模糊半径：{blur_value}'
+'Window Opacity: {opacity_value}':
+  zh-CN: '窗口不透明度：{opacity_value}'
+'Workflow command {arg0} inserted.':
+  zh-CN: 'Workflow 命令 {arg0} 已插入。'
+'Workflow: {name}':
+  zh-CN: 'Workflow：{name}'
+'Workflow: {workflow_name} - {description}':
+  zh-CN: 'Workflow：{workflow_name} - {description}'
+'[DEBUG] {text}':
+  zh-CN: '[DEBUG] {text}'
+'[Tab {tab_index}] {title}':
+  zh-CN: '[标签页 {tab_index}] {title}'
+'[projects.''{key}'']':
+  zh-CN: '[projects.''{key}'']'
+'[{level}]':
+  zh-CN: '[{level}]'
+'[{level}] {}':
+  zh-CN: '[{level}] {}'
+'[{modifier} Click]':
+  zh-CN: '[{modifier} 点击]'
+'[{text}]({url})':
+  zh-CN: '[{text}]({url})'
+'after {next_refresh_time}':
+  zh-CN: '在 {next_refresh_time} 之后'
+'assert ''{command}'' is running':
+  zh-CN: '断言 ''{command}'' 正在运行'
+'assert ''{command}'' ran':
+  zh-CN: '断言 ''{command}'' 已运行'
+'assertion failed: {}':
+  zh-CN: '断言失败：{}'
+'cannot resolve requested shell {name:?}':
+  zh-CN: '无法解析请求的 shell {name:?}'
+'conversation {conversation_id} not found or not accessible':
+  zh-CN: '对话 {conversation_id} 未找到或无法访问'
+'credential for {} cannot invoke {}':
+  zh-CN: '{} 的凭据无法调用 {}'
+'diffset against {branch_name}':
+  zh-CN: '与 {branch_name} 的差异集'
+'diffset against {main_branch}':
+  zh-CN: '与 {main_branch} 的差异集'
+'encryption failed: {e}':
+  zh-CN: '加密失败：{e}'
+'error: {err}':
+  zh-CN: '错误：{err}'
+'expected anchor file to be {expected_file_path:?}, got {:?}':
+  zh-CN: '预期锚点文件为 {expected_file_path:?}，得到 {:?}'
+'expected anchor line number to be {expected_line_number}, got {}':
+  zh-CN: '预期锚点行号为 {expected_line_number}，得到 {}'
+'expected anchor text to be {expected_text:?}, got {:?}':
+  zh-CN: '预期锚点文本为 {expected_text:?}，得到 {:?}'
+'expected code review line {line_number} for {expected_file_path:?} to be available':
+  zh-CN: '预期 {expected_file_path:?} 的代码审查行 {line_number} 可用'
+'expected line {line_number} in {expected_file_path:?} to be {expected_text:?}, got {line_text:?}':
+  zh-CN: '预期 {expected_file_path:?} 的第 {line_number} 行为 {expected_text:?}，得到 {line_text:?}'
+'expected scroll region to be {expected_str:?}, got {actual:?}':
+  zh-CN: '预期滚动区域为 {expected_str:?}，得到 {actual:?}'
+'failed to decode {} parameters':
+  zh-CN: '解码 {} 参数失败'
+'failed to import public key: {e}':
+  zh-CN: '导入公钥失败：{e}'
+'failed to run ''{display_cmd}''':
+  zh-CN: '运行 ''{display_cmd}'' 失败'
+'failed to serialize {} parameters':
+  zh-CN: '序列化 {} 参数失败'
+'failed to {operation}':
+  zh-CN: '{operation} 失败'
+'failed, status code {value}':
+  zh-CN: '失败，状态码 {value}'
+'float {n} is not valid JSON number':
+  zh-CN: 'float {n} 不是有效的 JSON 数字'
+'in {display_path} cancelled':
+  zh-CN: '在 {display_path} 中已取消'
+'in {path}':
+  zh-CN: '在 {path} 中'
+'in {path} cancelled':
+  zh-CN: '在 {path} 中已取消'
+'invalid DiffLineType value {line_type}':
+  zh-CN: '无效的 DiffLineType 值 {line_type}'
+'invalid DiffSize value {size}':
+  zh-CN: '无效的 DiffSize 值 {size}'
+'invalid RFC 3339 timestamp ''{s}'': {e}':
+  zh-CN: '无效的 RFC 3339 时间戳 ''{s}''：{e}'
+'invalid parent handle: {e}':
+  zh-CN: '无效的父句柄：{e}'
+'keybinding.get could not find {binding_name}':
+  zh-CN: 'keybinding.get 未找到 {binding_name}'
+'limit is {MAX_IMAGES_PER_CONVERSATION} per conversation':
+  zh-CN: '每对话上限为 {MAX_IMAGES_PER_CONVERSATION} 张'
+'limit is {MAX_IMAGE_COUNT_FOR_QUERY} per query':
+  zh-CN: '每次查询上限为 {MAX_IMAGE_COUNT_FOR_QUERY} 张'
+'line {i}':
+  zh-CN: '第 {i} 行'
+'line {line}':
+  zh-CN: '第 {line} 行'
+'line {}':
+  zh-CN: '第 {} 行'
+'local-control request failed with HTTP {status}':
+  zh-CN: '本地控制请求失败，HTTP 状态码 {status}'
+'no Warp instance with id {}':
+  zh-CN: '没有 ID 为 {} 的 Warp 实例'
+'no Warp instance with pid {pid}':
+  zh-CN: '没有 PID 为 {pid} 的 Warp 实例'
+'no asset exists at path {path}':
+  zh-CN: '路径 {path} 下不存在资源'
+'no pane at pane_index {pane_index}':
+  zh-CN: 'pane_index {pane_index} 处没有窗格'
+'oauth_token: {token}':
+  zh-CN: 'oauth_token: {token}'
+'output of: {command}':
+  zh-CN: '{command} 的输出'
+'request failed: {err:#}':
+  zh-CN: '请求失败：{err:#}'
+'shell selection is unavailable for requested shell {name:?}':
+  zh-CN: '请求的 shell {name:?} 不可选择'
+'status {status} body':
+  zh-CN: '状态码 {status} 正文'
+'surface.settings.open cannot resolve settings page {page:?}':
+  zh-CN: 'surface.settings.open 无法解析设置页面 {page:?}'
+'task_id: {tid}':
+  zh-CN: '任务 ID：{tid}'
+'to open ''{title}''':
+  zh-CN: '打开 ''{title}'''
+'to {recipients}':
+  zh-CN: '发送给 {recipients}'
+'to {recipients} • {subject}':
+  zh-CN: '发送给 {recipients} • {subject}'
+'tool_name: {name}':
+  zh-CN: '工具名称：{name}'
+'unsupported protocol version {protocol_version}':
+  zh-CN: '不支持的协议版本 {protocol_version}'
+'user: {username}':
+  zh-CN: '用户：{username}'
+'write declarations file {}':
+  zh-CN: '写入声明文件 {}'
+'{:.1} seconds':
+  zh-CN: '{:.1} 秒'
+'{:?}:{uid}':
+  zh-CN: '{:?}：{uid}'
+'{alias_value}{rest}':
+  zh-CN: '{alias_value}{rest}'
+'{amount}/{max_amount}':
+  zh-CN: '{amount}/{max_amount}'
+'{app_name}: stash {}':
+  zh-CN: '{app_name}：储藏 {}'
+'{app_name}: stash {} files':
+  zh-CN: '{app_name}：储藏 {} 个文件'
+'{arg0} notebook':
+  zh-CN: '{arg0} Notebook'
+'{arg0} {into}':
+  zh-CN: '{arg0} {into}'
+'{arg0} {subtitle}':
+  zh-CN: '{arg0} {subtitle}'
+'{backtrace}':
+  zh-CN: '{backtrace}'
+'{banner_intro_text} from {}':
+  zh-CN: '来自 {} 的{banner_intro_text}'
+'{base} blue;':
+  zh-CN: '{base} 蓝色；'
+'{base} darkred;':
+  zh-CN: '{base} 暗红；'
+'{base} gray;':
+  zh-CN: '{base} 灰色；'
+'{base} green;':
+  zh-CN: '{base} 绿色；'
+'{base} orange;':
+  zh-CN: '{base} 橙色；'
+'{body}. {detail}':
+  zh-CN: '{body}。{detail}'
+'{breadcrumbs} / {display_name}':
+  zh-CN: '{breadcrumbs} / {display_name}'
+'{buffer_text}{text}':
+  zh-CN: '{buffer_text}{text}'
+'{char_count} / {DESCRIPTION_MAX_CHARS} characters':
+  zh-CN: '{char_count} / {DESCRIPTION_MAX_CHARS} 个字符'
+'{color} is not a supported tab color':
+  zh-CN: '{color} 不是受支持的标签页颜色'
+'{command}':
+  zh-CN: '{command}'
+'{command}{ext}':
+  zh-CN: '{command}{ext}'
+'{commit}:{file_path}':
+  zh-CN: '{commit}：{file_path}'
+'{count_objects_message} deleted forever':
+  zh-CN: '{count_objects_message} 已永久删除'
+'{counter}':
+  zh-CN: '{counter}'
+'{count}':
+  zh-CN: '{count}'
+'{count}{OUTDATED_SECTION_HEADER_PLURAL_FMT}':
+  zh-CN: '{count}{OUTDATED_SECTION_HEADER_PLURAL_FMT}'
+'{credits:.1} credits':
+  zh-CN: '{credits:.1} 积分'
+'{ctx}':
+  zh-CN: '{ctx}'
+'{description}':
+  zh-CN: '{description}'
+'{dir}/{name}':
+  zh-CN: '{dir}/{name}'
+'{dir}/{name}-{}':
+  zh-CN: '{dir}/{name}-{}'
+'{display_name} ({desc})':
+  zh-CN: '{display_name}（{desc}）'
+'{edited} · {last_used_part}':
+  zh-CN: '{edited} · {last_used_part}'
+'{editor}':
+  zh-CN: '{editor}'
+'{edits}  |  {actions}':
+  zh-CN: '{edits}  |  {actions}'
+'{emoji} {explanation}':
+  zh-CN: '{emoji} {explanation}'
+'{enabled}':
+  zh-CN: '{enabled}'
+'{env} · {status}':
+  zh-CN: '{env} · {status}'
+'{env} · {wd}':
+  zh-CN: '{env} · {wd}'
+'{error_label}: {err}':
+  zh-CN: '{error_label}：{err}'
+'{error}':
+  zh-CN: '{error}'
+'{err}':
+  zh-CN: '{err}'
+'{euid}':
+  zh-CN: '{euid}'
+'{exec} {}':
+  zh-CN: '{exec} {}'
+'{expected}':
+  zh-CN: '{expected}'
+'{file_key} L{start}-L{end} (+{} -{})':
+  zh-CN: '{file_key} 第 {start}-{end} 行（+{} -{}）'
+'{file_path} L{line}: {text}':
+  zh-CN: '{file_path} 第 {line} 行：{text}'
+'{filename}.md':
+  zh-CN: '{filename}.md'
+'{filename}: {err}':
+  zh-CN: '{filename}：{err}'
+'{filename}:{}-{}':
+  zh-CN: '{filename}：{}-{}'
+'{heading} {description}':
+  zh-CN: '{heading} {description}'
+'{heading} {}':
+  zh-CN: '{heading} {}'
+'{host_label}:{name}':
+  zh-CN: '{host_label}：{name}'
+'{h}.{key}':
+  zh-CN: '{h}.{key}'
+'{idx}':
+  zh-CN: '{idx}'
+'{id} description':
+  zh-CN: '{id} 描述'
+'{index}/{total}':
+  zh-CN: '{index}/{total}'
+'{inner}':
+  zh-CN: '{inner}'
+'{input_prefix}some text':
+  zh-CN: '{input_prefix}某段文本'
+'{inverse_action} input hint text':
+  zh-CN: '{inverse_action} 输入提示文本'
+'{item} was created.':
+  zh-CN: '{item} 已创建。'
+'{key_code}:{alt}':
+  zh-CN: '{key_code}：{alt}'
+'{key} is not a boolean setting and cannot be toggled':
+  zh-CN: '{key} 不是布尔值设置，无法切换'
+'{key} is not an allowlisted local-control setting':
+  zh-CN: '{key} 不在本地控制设置的允许列表中'
+'{key} requires a boolean value':
+  zh-CN: '{key} 需要布尔值'
+'{key} requires a non-negative integer value':
+  zh-CN: '{key} 需要非负整数值'
+'{key} requires a string value':
+  zh-CN: '{key} 需要字符串值'
+'{key}={}':
+  zh-CN: '{key}={}'
+'{label_prefix}: {text}':
+  zh-CN: '{label_prefix}：{text}'
+'{label} ({shortcut})':
+  zh-CN: '{label}（{shortcut}）'
+'{label}: {line}':
+  zh-CN: '{label}：{line}'
+'{label}: {name}':
+  zh-CN: '{label}：{name}'
+'{label}: {value}':
+  zh-CN: '{label}：{value}'
+'{label}: {wline}':
+  zh-CN: '{label}：{wline}'
+'{large_text}extra':
+  zh-CN: '{large_text}额外内容'
+'{left}{right}':
+  zh-CN: '{left}{right}'
+'{len} files':
+  zh-CN: '{len} 个文件'
+'{len} tools available':
+  zh-CN: '{len} 个可用工具'
+'{max}':
+  zh-CN: '{max}'
+'{member_count} tabs':
+  zh-CN: '{member_count} 个标签页'
+'{meta}':
+  zh-CN: '{meta}'
+'{min}':
+  zh-CN: '{min}'
+'{name}':
+  zh-CN: '{name}'
+'{name} ({arg1})':
+  zh-CN: '{name}（{arg1}）'
+'{name} ({id})':
+  zh-CN: '{name}（{id}）'
+'{name} ({uid})':
+  zh-CN: '{name}（{uid}）'
+'{name} - {description}':
+  zh-CN: '{name} - {description}'
+'{name} bundled skill':
+  zh-CN: '{name} 捆绑技能'
+'{name} is not an available theme':
+  zh-CN: '{name} 不是可用的主题'
+'{name} matches multiple themes':
+  zh-CN: '{name} 匹配多个主题'
+'{name} remote skill':
+  zh-CN: '{name} 远程技能'
+'{name} skill':
+  zh-CN: '{name} 技能'
+'{name}.cmd':
+  zh-CN: '{name}.cmd'
+'{name}: warp_id={warp_id}':
+  zh-CN: '{name}：warp_id={warp_id}'
+'{name}: {command}':
+  zh-CN: '{name}：{command}'
+'{name}: {command} {}':
+  zh-CN: '{name}：{command} {}'
+'{name}: {description}':
+  zh-CN: '{name}：{description}'
+'{name}: {get_display_name}':
+  zh-CN: '{name}：{get_display_name}'
+'{name}: {name_1}':
+  zh-CN: '{name}：{name_1}'
+'{name}: {url}':
+  zh-CN: '{name}：{url}'
+'{name}: {val}':
+  zh-CN: '{name}：{val}'
+'{next_refresh_time} until refresh.':
+  zh-CN: '距刷新还有 {next_refresh_time}。'
+'{no_argument_command_name} trailing':
+  zh-CN: '{no_argument_command_name} 尾随参数'
+'{num_days} days':
+  zh-CN: '{num_days} 天'
+'{num_hours} hours':
+  zh-CN: '{num_hours} 小时'
+'{num_members} teammates':
+  zh-CN: '{num_members} 名队友'
+'{num_minutes} minutes':
+  zh-CN: '{num_minutes} 分钟'
+'{number}':
+  zh-CN: '{number}'
+'{n} blocks':
+  zh-CN: '{n} 个 Block'
+'{n} objects':
+  zh-CN: '{n} 个对象'
+'{object_name} moved to {containing_object_name}':
+  zh-CN: '{object_name} 已移动到 {containing_object_name}'
+'{object_name} restored':
+  zh-CN: '{object_name} 已恢复'
+'{object_name} saved to {containing_object_name}':
+  zh-CN: '{object_name} 已保存到 {containing_object_name}'
+'{object_name} trashed':
+  zh-CN: '{object_name} 已移至回收站'
+'{object_name} updated':
+  zh-CN: '{object_name} 已更新'
+'{operation}':
+  zh-CN: '{operation}'
+'{optional_argument_command_name} prompt':
+  zh-CN: '{optional_argument_command_name} 提示'
+'{outdated_count} outdated':
+  zh-CN: '{outdated_count} 个已过时'
+'{owner}/{repo}':
+  zh-CN: '{owner}/{repo}'
+'{path}':
+  zh-CN: '{path}'
+'{path}:{line}':
+  zh-CN: '{path}：{line}'
+'{prefix}':
+  zh-CN: '{prefix}'
+'{prefix}/{pattern}':
+  zh-CN: '{prefix}/{pattern}'
+'{prefix}: {repo}':
+  zh-CN: '{prefix}：{repo}'
+'{prefix}_progress_indicator_{index}':
+  zh-CN: '{prefix}_progress_indicator_{index}'
+'{prefix}update-tab-config Update {} to...':
+  zh-CN: '{prefix}update-tab-config 将 {} 更新为...'
+'{prefix}{current}':
+  zh-CN: '{prefix}{current}'
+'{prefix}{escaped_sufix}':
+  zh-CN: '{prefix}{escaped_sufix}'
+'{prefix}{skill_name}':
+  zh-CN: '{prefix}{skill_name}'
+'{prefix}{value}':
+  zh-CN: '{prefix}{value}'
+'{prefix}{}':
+  zh-CN: '{prefix}{}'
+'{prefix}{}{suffix}{}{question}':
+  zh-CN: '{prefix}{}{suffix}{}{question}'
+'{replace}{unmatched_suffix}':
+  zh-CN: '{replace}{unmatched_suffix}'
+'{repo} #{num}':
+  zh-CN: '{repo} #{num}'
+'{request}':
+  zh-CN: '{request}'
+'{result}...':
+  zh-CN: '{result}...'
+'{seconds}.{tenths}s':
+  zh-CN: '{seconds}.{tenths} 秒'
+'{secs}s':
+  zh-CN: '{secs} 秒'
+'{selected_item_text} Selected':
+  zh-CN: '{selected_item_text} 已选定'
+'{self}':
+  zh-CN: '{self}'
+'{self}. Default values are being used.':
+  zh-CN: '{self}。正在使用默认值。'
+'{self}. Open the file to fix it.':
+  zh-CN: '{self}。打开文件以修复它。'
+'{self}. The default value is being used.':
+  zh-CN: '{self}。正在使用默认值。'
+'{separate_with_commas} credits':
+  zh-CN: '{separate_with_commas} 积分'
+'{server_name} ({uuid}): {state:?}{error}':
+  zh-CN: '{server_name}（{uuid}）：{state:?}{error}'
+'{server_name} ({uuid}): {state}{error}':
+  zh-CN: '{server_name}（{uuid}）：{state}{error}'
+'{server_name}: error':
+  zh-CN: '{server_name}：错误'
+'{server_name}: stopped':
+  zh-CN: '{server_name}：已停止'
+'{shell}@ssh-remote-server-testing':
+  zh-CN: '{shell}@ssh-remote-server-testing'
+'{shell}@ubuntu-14-04':
+  zh-CN: '{shell}@ubuntu-14-04'
+'{short_name} ({display})':
+  zh-CN: '{short_name}（{display}）'
+'{side} {symbol}':
+  zh-CN: '{side} {symbol}'
+'{slug}  ({badge})':
+  zh-CN: '{slug}  （{badge}）'
+'{source}':
+  zh-CN: '{source}'
+'{spacing}{view_name} ({view_id:?})':
+  zh-CN: '{spacing}{view_name}（{view_id:?}）'
+'{start}-{end}':
+  zh-CN: '{start}-{end}'
+'{start}{end}':
+  zh-CN: '{start}{end}'
+'{status} after {duration_seconds}s':
+  zh-CN: '{status}，耗时 {duration_seconds} 秒'
+'{style:?} {action}':
+  zh-CN: '{style:?} {action}'
+'{subagent}':
+  zh-CN: '{subagent}'
+'{text}':
+  zh-CN: '{text}'
+'{timestamp}-{title}.md':
+  zh-CN: '{timestamp}-{title}.md'
+'{title} ({url})':
+  zh-CN: '{title}（{url}）'
+'{title} content':
+  zh-CN: '{title} 内容'
+'{title} notebook':
+  zh-CN: '{title} Notebook'
+'{title} recognized.':
+  zh-CN: '已识别 {title}。'
+'{title}{secondary_suffix}':
+  zh-CN: '{title}{secondary_suffix}'
+'{tool}':
+  zh-CN: '{tool}'
+'{total_seconds} seconds':
+  zh-CN: '{total_seconds} 秒'
+'{truncated}...':
+  zh-CN: '{truncated}...'
+'{truncated}…':
+  zh-CN: '{truncated}…'
+'{t}: {body}':
+  zh-CN: '{t}：{body}'
+'{uid}':
+  zh-CN: '{uid}'
+'{used}/{limit}':
+  zh-CN: '{used}/{limit}'
+'{username}:{}':
+  zh-CN: '{username}：{}'
+'{user}@{hostname}:':
+  zh-CN: '{user}@{hostname}：'
+'{user}@{hostname}:{display_path}':
+  zh-CN: '{user}@{hostname}：{display_path}'
+'{user}@{host}':
+  zh-CN: '{user}@{host}'
+'{uuid}-agent-{uuid}':
+  zh-CN: '{uuid}-agent-{uuid}'
+'{value} {label}{arg2}':
+  zh-CN: '{value} {label}{arg2}'
+'{value}%':
+  zh-CN: '{value}%'
+'{value}{patch_value}':
+  zh-CN: '{value}{patch_value}'
+'{verbosity:?} accessibility announcements set':
+  zh-CN: '{verbosity:?} 辅助功能播报已设置'
+'{verb}':
+  zh-CN: '{verb}'
+'{version} (restored from {from_version})':
+  zh-CN: '{version}（从 {from_version} 恢复）'
+'{word}-{word}':
+  zh-CN: '{word}-{word}'
+'{{{json}}}':
+  zh-CN: '{{{json}}}'
+'{{{name}}}':
+  zh-CN: '{{{name}}}'
+'{{{{{key}}}}}':
+  zh-CN: '{{{{{key}}}}}'
+'{{{{{name}}}}}':
+  zh-CN: '{{{{{name}}}}}'
+'{} ({count})':
+  zh-CN: '{}（{count}）'
+'{} ({suffix})':
+  zh-CN: '{}（{suffix}）'
+'{} Expanded':
+  zh-CN: '{} 已展开'
+'{} Selected':
+  zh-CN: '{} 已选定'
+'{} accepts autosuggestions.':
+  zh-CN: '{} 接受自动建议。'
+'{} blocks:':
+  zh-CN: '{} 个 Block：'
+'{} cannot resolve the requested pane':
+  zh-CN: '{} 无法解析请求的窗格'
+'{} cannot resolve the requested pane id':
+  zh-CN: '{} 无法解析请求的窗格 ID'
+'{} cannot resolve the requested pane index':
+  zh-CN: '{} 无法解析请求的窗格索引'
+'{} cannot resolve the requested session id':
+  zh-CN: '{} 无法解析请求的会话 ID'
+'{} cannot resolve the requested tab':
+  zh-CN: '{} 无法解析请求的标签页'
+'{} cannot resolve the requested window id':
+  zh-CN: '{} 无法解析请求的窗口 ID'
+'{} cannot resolve the requested window index':
+  zh-CN: '{} 无法解析请求的窗口索引'
+'{} cannot resolve the requested window title':
+  zh-CN: '{} 无法解析请求的窗口标题'
+'{} cannot resolve the requested {selector}':
+  zh-CN: '{} 无法解析请求的 {selector}'
+'{} child blurred':
+  zh-CN: '{} 子元素失去焦点'
+'{} child focused':
+  zh-CN: '{} 子元素获得焦点'
+'{} comment{}':
+  zh-CN: '{} 条评论{}'
+'{} completed':
+  zh-CN: '{} 已完成'
+'{} could not resolve a target':
+  zh-CN: '{} 无法解析目标'
+'{} credits':
+  zh-CN: '{} 积分'
+'{} days':
+  zh-CN: '{} 天'
+'{} didn''t return secrets (likely not configured or authenticated)':
+  zh-CN: '{} 未返回密钥（可能未配置或未认证）'
+'{} does not accept pane or session selectors':
+  zh-CN: '{} 不接受窗格或会话选择器'
+'{} does not accept parameters':
+  zh-CN: '{} 不接受参数'
+'{} does not accept session selectors':
+  zh-CN: '{} 不接受会话选择器'
+'{} does not accept target selectors':
+  zh-CN: '{} 不接受目标选择器'
+'{} does not accept {families}':
+  zh-CN: '{} 不接受 {families}'
+'{} failed to update app settings':
+  zh-CN: '{} 更新应用设置失败'
+'{} failed with status {status}: {body}':
+  zh-CN: '{} 失败，状态码 {status}：{body}'
+'{} files were not attached — exceed 10MB limit.':
+  zh-CN: '{} 个文件未附加 — 超过 10MB 限制。'
+'{} handler returned malformed metadata':
+  zh-CN: '{} 处理程序返回了格式错误的元数据'
+'{} hours':
+  zh-CN: '{} 小时'
+'{} is disabled for local control':
+  zh-CN: '{} 的本地控制已禁用'
+'{} is invalid or incomplete in your local AWS configuration. Update your AWS profile settings and credentials, then refresh.':
+  zh-CN: '{} 在您的本地 AWS 配置中无效或不完整。请更新您的 AWS 配置文件设置和凭据，然后刷新。'
+'{} is not a safe app-state handler action':
+  zh-CN: '{} 不是安全的应用状态处理操作'
+'{} is not a theme mutation':
+  zh-CN: '{} 不是主题变更操作'
+'{} is not an appearance mutation':
+  zh-CN: '{} 不是外观变更操作'
+'{} is not implemented by this local-control bridge':
+  zh-CN: '{} 未由此本地控制桥实现'
+'{} is unavailable: {reason}':
+  zh-CN: '{} 不可用：{reason}'
+'{} min':
+  zh-CN: '{} 分钟'
+'{} only supports active and opaque window id selectors':
+  zh-CN: '{} 仅支持活动和不透明窗口 ID 选择器'
+'{} only supports active, opaque tab id, and tab index selectors':
+  zh-CN: '{} 仅支持活动、不透明标签页 ID 和标签页索引选择器'
+'{} only supports active, opaque window id, and window index selectors':
+  zh-CN: '{} 仅支持活动、不透明窗口 ID 和窗口索引选择器'
+'{} opens completion menu.':
+  zh-CN: '{} 打开补全菜单。'
+'{} outdated comment{}':
+  zh-CN: '{} 条已过时评论{}'
+'{} pane and session selectors resolve different targets':
+  zh-CN: '{} 的窗格和会话选择器解析到不同目标'
+'{} received parameters with the wrong shape':
+  zh-CN: '{} 收到的参数格式错误'
+'{} rejects newlines, carriage returns, and control characters':
+  zh-CN: '{} 拒绝换行符、回车符和控制字符'
+'{} requires a pane or session target':
+  zh-CN: '{} 需要窗格或会话目标'
+'{} requires a target tab':
+  zh-CN: '{} 需要目标标签页'
+'{} requires a terminal input target':
+  zh-CN: '{} 需要终端输入目标'
+'{} requires a terminal session target':
+  zh-CN: '{} 需要终端会话目标'
+'{} requires a workspace in the target window':
+  zh-CN: '{} 需要目标窗口中的工作区'
+'{} requires an active Warp window':
+  zh-CN: '{} 需要活动的 Warp 窗口'
+'{} requires an active pane':
+  zh-CN: '{} 需要活动的窗格'
+'{} requires an active terminal session':
+  zh-CN: '{} 需要活动的终端会话'
+'{} requires an explicit window selector when no Warp window is active':
+  zh-CN: '{} 在没有活动的 Warp 窗口时需要显式窗口选择器'
+'{} resolved multiple panes':
+  zh-CN: '{} 解析到多个窗格'
+'{} resolved multiple tabs':
+  zh-CN: '{} 解析到多个标签页'
+'{} resolved multiple targets':
+  zh-CN: '{} 解析到多个目标'
+'{} resolved multiple targets by {selector}':
+  zh-CN: '{} 通过 {selector} 解析到多个目标'
+'{} resolved multiple windows by title':
+  zh-CN: '{} 按标题解析到多个窗口'
+'{} resolved multiple workspaces in one window':
+  zh-CN: '{} 在同一个窗口中解析到多个工作区'
+'{} sec':
+  zh-CN: '{} 秒'
+'{} seconds':
+  zh-CN: '{} 秒'
+'{} self blurred':
+  zh-CN: '{} 自身失去焦点'
+'{} self focused':
+  zh-CN: '{} 自身获得焦点'
+'{} the number of concurrent cloud agents':
+  zh-CN: '{} 并发云 Agent 的数量'
+'{} theme name cannot be empty':
+  zh-CN: '{} 主题名称不能为空'
+'{} title cannot be empty':
+  zh-CN: '{} 标题不能为空'
+'{} updates':
+  zh-CN: '{} 个更新'
+'{} was not attached — exceeds 10MB limit.':
+  zh-CN: '{} 未附加 — 超过 10MB 限制。'
+'{} {query}':
+  zh-CN: '{} {query}'
+'{} {} in the last day':
+  zh-CN: '{} {} 在过去 1 天内'
+'{} {} in the last month':
+  zh-CN: '{} {} 在过去 1 个月内'
+'{} {} in the last week':
+  zh-CN: '{} {} 在过去 1 周内'
+'{} {} in the last year':
+  zh-CN: '{} {} 在过去 1 年内'
+'{}-{key}':
+  zh-CN: '{}-{key}'
+'{}-{profile}':
+  zh-CN: '{}-{profile}'
+'{}. {cmd}':
+  zh-CN: '{}. {cmd}'
+'{}: Output truncated after {} lines.':
+  zh-CN: '{}：输出在 {} 行后截断。'
+'{}: {error}':
+  zh-CN: '{}：{error}'
+'{}: {key}':
+  zh-CN: '{}：{key}'
+'{}: {msg}':
+  zh-CN: '{}：{msg}'
+'{}: {reason}':
+  zh-CN: '{}：{reason}'
+'~~{text}~~':
+  zh-CN: '~~{text}~~'
+'±{text}':
+  zh-CN: '±{text}'
+'· Next check in {formatted}':
+  zh-CN: '· 下次检查于 {formatted}'
+'…{tail}':
+  zh-CN: '…{tail}'
+'…{truncated}':
+  zh-CN: '…{truncated}'
+'⎈ {text}':
+  zh-CN: '⎈ {text}'
+'❌ {timestamp}':
+  zh-CN: '❌ {timestamp}'
+'💣 {secret}':
+  zh-CN: '💣 {secret}'
+
+'exit code {value}':
+  zh-CN: '退出码 {value}'
+'exit code {}':
+  zh-CN: '退出码 {}'
+'exit code {value}: {output_text}':
+  zh-CN: '退出码 {value}：{output_text}'
+'exit code {}: {}':
+  zh-CN: '退出码 {}：{}'
+'Ran {}':
+  zh-CN: '已运行 {}'
+'Unsupported screen depth: {depth}':
+  zh-CN: '不支持的屏幕色深：{depth}'
+'Websocket closed before starting session':
+  zh-CN: '会话开始前 WebSocket 已关闭'
+'for task {task_id}':
+  zh-CN: '用于任务 {task_id}'
+'Missing parent for {}':
+  zh-CN: '缺少 {} 的父级'
+'with {}.':
+  zh-CN: '使用 {}。'
+'poll agent {run_id}':
+  zh-CN: '轮询 Agent {run_id}'
+'writing {}':
+  zh-CN: '正在写入 {}'
+'reading {}':
+  zh-CN: '正在读取 {}'
+'reading yaml {}':
+  zh-CN: '正在读取 YAML {}'

@@ -1,0 +1,47 @@
+name: i18n Check
+
+# 检查翻译完整性：代码中的 t!() key 是否都有对应翻译。
+# 非阻塞（warning only）—— 目前还有 ~1800 个 debug/log 字符串故意不翻译。
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'crates/i18n/**'
+      - 'app/src/**'
+      - '.github/workflows/i18n-check.yml'
+  pull_request:
+    paths:
+      - 'crates/i18n/**'
+      - 'app/src/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Verify i18n key completeness
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - name: Build i18n-check tool
+        run: cargo build -p i18n_tools --bin i18n-check --release
+
+      - name: Run i18n check
+        run: |
+          cargo run -p i18n_tools --bin i18n-check -- --source . --locales crates/i18n/_locales/zh-CN/ > /tmp/i18n-report.txt 2>&1 || true
+          cat /tmp/i18n-report.txt
+
+      - name: Summary
+        run: |
+          echo "## i18n Translation Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          head -3 /tmp/i18n-report.txt >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Missing keys are typically debug logs, AI prompts, and code identifiers that stay in English." >> $GITHUB_STEP_SUMMARY

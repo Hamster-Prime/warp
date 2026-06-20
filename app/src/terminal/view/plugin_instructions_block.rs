@@ -103,7 +103,7 @@ impl PluginInstructionsBlock {
                 FormattedTextFragment::plain_text(
                     i18n::t!("{description} ", description = description).to_string(),
                 ),
-                FormattedTextFragment::hyperlink("Learn more", url),
+                FormattedTextFragment::hyperlink(i18n::t!("Learn more"), url),
             ];
             let formatted = FormattedText::new(vec![FormattedTextLine::Line(fragments)]);
             FormattedTextElement::new(

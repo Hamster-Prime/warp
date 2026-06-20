@@ -611,7 +611,7 @@ impl View for CreateApiKeyModal {
                         FormattedText::new([FormattedTextLine::Line(vec![
                             FormattedTextFragment::plain_text(selected_key_type.description()),
                             FormattedTextFragment::plain_text(" "),
-                            FormattedTextFragment::hyperlink("Learn more", API_KEY_DOCS_URL),
+                            FormattedTextFragment::hyperlink(i18n::t!("Learn more"), API_KEY_DOCS_URL),
                         ])]),
                         LABEL_FONT_SIZE,
                         appearance.ui_font_family(),

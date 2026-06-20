@@ -661,7 +661,7 @@ fn render_title_and_description(props: HeaderProps, app: &AppContext) -> Vec<Box
                 FormattedTextFragment::plain_text(
                     "Use cloud agents to run parallel agents, build agents that run autonomously, and check in on your agents from anywhere. ",
                 ),
-                FormattedTextFragment::hyperlink("Visit docs", CLOUD_AGENT_DOCS_URL),
+                FormattedTextFragment::hyperlink(i18n::t!("Visit docs"), CLOUD_AGENT_DOCS_URL),
             ])]);
 
             items.push(

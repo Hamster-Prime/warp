@@ -25,7 +25,7 @@ pub(crate) fn long_context_pricing_warning_title() -> FormattedTextInline {
         FormattedTextFragment::plain_text(
             "OpenAI automatically applies long-context pricing when context exceeds 272,000 tokens. ",
         ),
-        FormattedTextFragment::hyperlink("Learn more", LONG_CONTEXT_PRICING_WARNING_URL),
+        FormattedTextFragment::hyperlink(i18n::t!("Learn more"), LONG_CONTEXT_PRICING_WARNING_URL),
     ]
 }
 

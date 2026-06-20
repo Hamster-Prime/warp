@@ -4632,19 +4632,19 @@ impl SettingsWidget for UsageWidget {
                 let upgrade_url = UserWorkspaces::upgrade_link_for_team(team.uid);
                 if has_admin_permissions {
                     vec![
-                        FormattedTextFragment::hyperlink("Upgrade", upgrade_url),
+                        FormattedTextFragment::hyperlink(i18n::t!("Upgrade"), upgrade_url),
                         FormattedTextFragment::plain_text(" to get more AI usage."),
                     ]
                 } else {
                     // The /upgrade page says to contact their administrator.
                     vec![
-                        FormattedTextFragment::hyperlink("Compare plans", upgrade_url),
+                        FormattedTextFragment::hyperlink(i18n::t!("Compare plans"), upgrade_url),
                         FormattedTextFragment::plain_text(" for more AI usage."),
                     ]
                 }
             } else {
                 vec![
-                    FormattedTextFragment::hyperlink("Contact support", "mailto:support@warp.dev"),
+                    FormattedTextFragment::hyperlink(i18n::t!("Contact support"), "mailto:support@warp.dev"),
                     FormattedTextFragment::plain_text(" for more AI usage."),
                 ]
             }
@@ -4652,7 +4652,7 @@ impl SettingsWidget for UsageWidget {
             let user_id = auth_state.user_id().unwrap_or_default();
             let upgrade_url = UserWorkspaces::upgrade_link(user_id);
             vec![
-                FormattedTextFragment::hyperlink("Upgrade", upgrade_url),
+                FormattedTextFragment::hyperlink(i18n::t!("Upgrade"), upgrade_url),
                 FormattedTextFragment::plain_text(" to get more AI usage."),
             ]
         };
@@ -6599,7 +6599,7 @@ impl VoiceWidget {
             FormattedTextFragment::plain_text(
                 "Voice input allows you to control Warp by speaking directly to your terminal (powered by ",
             ),
-            FormattedTextFragment::hyperlink("Wispr Flow", WISPR_FLOW_URL),
+            FormattedTextFragment::hyperlink(i18n::t!("Wispr Flow"), WISPR_FLOW_URL),
             FormattedTextFragment::plain_text(")."),
         ];
 
@@ -7862,7 +7862,7 @@ impl ApiKeysWidget {
             FormattedTextFragment::plain_text(
                 "Use your own API keys from model providers for Warp Agent. You can also add custom endpoints to use third-party models. Custom endpoints must support the OpenAI-compatible Chat Completions API. API keys are stored only on your device, never on Warp's servers. They're used to make requests to your chosen model provider. Using auto models or models from providers you have not provided API keys for will consume Warp credits. ",
             ),
-            FormattedTextFragment::hyperlink("Learn more", CUSTOM_INFERENCE_LEARN_MORE_URL),
+            FormattedTextFragment::hyperlink(i18n::t!("Learn more"), CUSTOM_INFERENCE_LEARN_MORE_URL),
         ];
         let description = FormattedTextElement::new(
             FormattedText::new([FormattedTextLine::Line(text_fragments)]),
@@ -7900,7 +7900,7 @@ impl ApiKeysWidget {
             FormattedTextFragment::plain_text(
                 "By using BYOK or custom endpoints, you agree to use them only as permitted by ",
             ),
-            FormattedTextFragment::hyperlink("Warp's Terms of Service", CUSTOM_INFERENCE_TERMS_URL),
+            FormattedTextFragment::hyperlink(i18n::t!("Warp's Terms of Service"), CUSTOM_INFERENCE_TERMS_URL),
             FormattedTextFragment::plain_text(
                 ". BYOK and custom endpoints are intended for individual use and small teams. Companies or organizations with more than 10 employees should use Warp Business or Enterprise.",
             ),
@@ -8363,7 +8363,7 @@ impl SettingsWidget for ApiKeysWidget {
             {
                 if team.billing_metadata.customer_type == CustomerType::Enterprise {
                     vec![
-                        FormattedTextFragment::hyperlink("Contact sales", "mailto:sales@warp.dev"),
+                        FormattedTextFragment::hyperlink(i18n::t!("Contact sales"), "mailto:sales@warp.dev"),
                         FormattedTextFragment::plain_text(
                             " to enable bringing your own API keys on your Enterprise plan.",
                         ),
@@ -8400,7 +8400,7 @@ impl SettingsWidget for ApiKeysWidget {
                 let user_id = auth_state.user_id().unwrap_or_default();
                 let upgrade_url = UserWorkspaces::upgrade_link(user_id);
                 vec![
-                    FormattedTextFragment::hyperlink("Upgrade to the Build plan", upgrade_url),
+                    FormattedTextFragment::hyperlink(i18n::t!("Upgrade to the Build plan"), upgrade_url),
                     FormattedTextFragment::plain_text(" to use your own API keys."),
                 ]
             };

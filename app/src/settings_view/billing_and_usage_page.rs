@@ -3199,7 +3199,7 @@ impl BillingAndUsagePageView {
                 ]
             } else if !team.billing_metadata.is_usage_based_pricing_toggleable() {
                 vec![
-                    FormattedTextFragment::hyperlink("Contact support", "mailto:support@warp.dev"),
+                    FormattedTextFragment::hyperlink(i18n::t!("Contact support"), "mailto:support@warp.dev"),
                     FormattedTextFragment::plain_text(" for more AI usage."),
                 ]
             } else {

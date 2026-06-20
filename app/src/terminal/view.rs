@@ -3870,7 +3870,7 @@ impl TerminalView {
                     FormattedTextFragment::plain_text(
                         "Seems like your shell is taking a while to start...  ",
                     ),
-                    FormattedTextFragment::hyperlink("More info", KNOWN_ISSUES_URL),
+                    FormattedTextFragment::hyperlink(i18n::t!("More info"), KNOWN_ISSUES_URL),
                 ]),
                 vec![BannerTextButton::new(
                     i18n::t!("Show initialization block").to_string(),
@@ -3913,7 +3913,7 @@ impl TerminalView {
                 FormattedTextFragment::plain_text(
                     "Your shell configuration is incompatible with Warp...  ",
                 ),
-                FormattedTextFragment::hyperlink("More info", KNOWN_ISSUES_URL),
+                FormattedTextFragment::hyperlink(i18n::t!("More info"), KNOWN_ISSUES_URL),
             ]))
         });
 
@@ -22128,7 +22128,7 @@ impl TerminalView {
                         "Pure is not yet supported in Warp. You might consider one of the \
                         supported prompts as an alternative.  ",
                     ),
-                    FormattedTextFragment::hyperlink("Learn more", PROMPT_COMPATIBILITY_URL),
+                    FormattedTextFragment::hyperlink(i18n::t!("Learn more"), PROMPT_COMPATIBILITY_URL),
                 ]))
             } else {
                 None

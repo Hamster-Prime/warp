@@ -1,5 +1,9 @@
 _version: 2
 
+' and open the page manually. ':
+  zh-CN: ' 并手动打开页面。 '
+' to paste your token from the browser.':
+  zh-CN: 以从浏览器粘贴您的令牌。
 '## Warp AI Transcript ({})':
   zh-CN: '## Warp AI 转录记录 ({})'
 ${} per user per month:
@@ -20,6 +24,8 @@ ${} per user per month for annual plans:
   zh-CN: '''{name}'' 启动失败{error}'
 '''{}'': default {default_json} — {err}':
   zh-CN: '''{}''：默认值 {default_json} — {err}'
+(Experimental) Toggle classic completions mode:
+  zh-CN: (实验性) 切换经典补全模式
 '***{text}***':
   zh-CN: '***{text}***'
 '**/{trimmed}/**':
@@ -70,6 +76,8 @@ ${} per user per month for annual plans:
   zh-CN: ：{port}
 <u>{text}</u>:
   zh-CN: <u>{text}</u>
+A modern terminal with state of the art agents built in.:
+  zh-CN: 内置顶尖智能体的现代终端。
 A new version of the Warp plugin is available:
   zh-CN: 有新版本的 Warp 插件可用
 AI Document:
@@ -132,6 +140,8 @@ Add New MCP Server:
   zh-CN: 添加新的 MCP 服务器
 Add Profile:
   zh-CN: 添加配置文件
+Add a description:
+  zh-CN: 添加描述
 Add a session {i} using cmd-t and verify it bootstraps:
   zh-CN: 使用 cmd-t 添加会话 {i} 并验证其引导
 Add a workflow argument:
@@ -201,6 +211,20 @@ Agent location:
   zh-CN: 智能体位置
 Agent management panel:
   zh-CN: 智能体管理面板
+? 'Agent mode gives your questions and tasks their own conversation, so you can ask
+  follow-ups without leaving your terminal workflow.
+
+
+  Submit the query below to have the agent initialize this project, or ⊗ to clear
+  the input and start your own!'
+: zh-CN: 'Agent 模式为您的问题和任务提供独立的对话，因此您可以在不离开终端工作流的情况下追问。
+
+
+    提交以下查询以让智能体初始化此项目，或点击 ⊗ 清除输入并开始您自己的查询！'
+? Agent mode gives your questions and tasks their own conversation, so you can ask
+  follow-ups without leaving your terminal workflow. Press {keybinding} to return
+  to terminal mode at any point.
+: zh-CN: Agent 模式为您的问题和任务提供独立的对话，因此您可以在不离开终端工作流的情况下追问。随时按 {keybinding} 返回终端模式。
 ? Agent mode gives your questions and tasks their own conversation, so you can ask
   follow-ups without leaving your terminal workflow. Press {} to return to terminal
   mode at any point.
@@ -215,6 +239,8 @@ Agents:
   zh-CN: Agent
 Agents ({}):
   zh-CN: Agent（{}）
+Agents over SSH:
+  zh-CN: 通过 SSH 使用智能体
 All:
   zh-CN: 全部
 All changes compared to the main branch:
@@ -245,6 +271,8 @@ Always open {object_kind} on the web?:
   zh-CN: 始终在网页端打开 {object_kind}？
 Always show tab bar:
   zh-CN: 始终显示标签页栏
+'An agent-first experience with best in class terminal support. Get terminal and agent driven development AI features like:':
+  zh-CN: 以智能体为先的体验，配备一流的终端支持。获得以下终端和智能体驱动的开发 AI 功能：
 An error occurred while trying to invoke the env var:
   zh-CN: 尝试调用环境变量时发生错误
 An issue was encountered while saving.:
@@ -275,13 +303,23 @@ Apply:
   zh-CN: 应用
 Apply link:
   zh-CN: 应用链接
+Are you sure you want to delete this team?:
+  zh-CN: 确定要删除此团队吗？
+Are you sure you want to delete this theme?:
+  zh-CN: 确定要删除此主题吗？
 ? Are you sure you want to delete {}? This action cannot be undone. Any agents or
   environments referencing this secret will no longer have access to it.
 : zh-CN: 您确定要删除 {} 吗？此操作无法撤销。任何引用此密钥的 Agent 或环境将无法再访问它。
+Are you sure you want to empty the trash?:
+  zh-CN: 确定要清空回收站吗？
+Are you sure you want to leave this team?:
+  zh-CN: 确定要离开此团队吗？
 Are you sure you want to remove the {} environment?:
   zh-CN: 您确定要移除 {} 环境吗？
 Are you sure you want to remove this endpoint? You won't be able to use its models in your agent sessions moving forward.:
   zh-CN: 确定要移除此端点吗？今后您将无法在智能体会话中使用其模型。
+Are you sure you want to remove this member?:
+  zh-CN: 确定要移除此成员吗？
 Are you sure you want to skip login?:
   zh-CN: 确定要跳过登录吗？
 ? Are you sure you want to transfer team ownership to {}? You will no longer be the
@@ -376,6 +414,8 @@ Auto-update not supported for this agent:
   zh-CN: 此智能体不支持自动更新
 Autocomplete quotes, parentheses, and brackets:
   zh-CN: 自动补全引号、括号和方括号
+Autofill:
+  zh-CN: 自动填充
 Autogenerate worktree branch name:
   zh-CN: 自动生成 worktree 分支名称
 Autohides on loss of keyboard focus:
@@ -386,10 +426,18 @@ Automatically enforced team-wide Zero Data Retention:
   zh-CN: 自动强制实施团队范围的零数据保留
 Automatically open links in desktop app whenever possible.:
   zh-CN: 尽可能在桌面应用中自动打开链接。
+Autonomy:
+  zh-CN: 自主性
+Autonomy settings are configured as part of your team workspace.:
+  zh-CN: 自主性设置作为团队工作区的一部分进行配置。
 Available to install:
   zh-CN: 可安装
+Back:
+  zh-CN: 返回
 Back to parent conversation:
   zh-CN: 返回父对话
+Back to terminal:
+  zh-CN: 返回终端
 Backend:
   zh-CN: 后端
 Background Color{suffix}:
@@ -464,6 +512,8 @@ By link:
   zh-CN: 通过链接
 CLI:
   zh-CN: CLI
+CLI agent toolbar:
+  zh-CN: CLI 智能体工具栏
 CLI subagent user takeover:
   zh-CN: CLI subagent 用户接管
 CLI summary:
@@ -476,6 +526,8 @@ Call web tools:
   zh-CN: 调用网络工具
 Calling "{name}" MCP tool...:
   zh-CN: 正在调用 "{name}" MCP 工具...
+Can plan, read files, and execute low-risk commands. Asks before making any changes or executing sensitive commands.:
+  zh-CN: 可以制定计划、读取文件并执行低风险命令。在进行任何更改或执行敏感命令前会先询问。
 Cancel:
   zh-CN: 取消
 Cancel active process:
@@ -583,10 +635,14 @@ Clear selected lines:
   zh-CN: 清除所选行
 Clear upload:
   zh-CN: 清除上传
+Click here:
+  zh-CN: 点击此处
 Click here to paste your token from the browser:
   zh-CN: 点击此处从浏览器粘贴您的令牌
 Click on a block attached as context to this AI query.:
   zh-CN: 点击附加到此 AI 查询作为上下文的块。
+Click or use arrow keys to select, Enter to confirm.:
+  zh-CN: 点击或使用方向键选择，按 Enter 确认。
 Click to learn more in docs:
   zh-CN: 点击在文档中了解更多
 Click to set global hotkey:
@@ -675,6 +731,8 @@ Code search failed:
   zh-CN: 代码符号：{} 在 {}:{}
 Codebase Indexing:
   zh-CN: 代码库索引
+Codebase context:
+  zh-CN: 代码库上下文
 Codebase index has no synced root hash:
   zh-CN: 代码库索引没有已同步的根哈希
 Codebase index not found:
@@ -687,6 +745,8 @@ Collapse:
   zh-CN: 折叠
 Collapse all:
   zh-CN: 全部折叠
+Collection name:
+  zh-CN: 集合名称
 Columns:
   zh-CN: 列数
 Col{}:
@@ -821,6 +881,8 @@ Conversation exported to {display_path}:
   zh-CN: 对话已导出到 {display_path}
 Conversation forking failed.:
   zh-CN: 对话分叉失败。
+Conversation history:
+  zh-CN: 对话历史
 Conversation is done but does not match expected status - is {status:?}:
   zh-CN: 对话已完成但状态不符 - 当前状态为 {status:?}
 Conversation renamed to {title}:
@@ -969,10 +1031,16 @@ CourierOld:
   zh-CN: CourierOld
 Crash reporting helps Warp's engineering team understand stability and improve performance.:
   zh-CN: 崩溃报告帮助 Warp 工程团队了解稳定性并改进性能。
+Crash the app (for testing sentry-cocoa):
+  zh-CN: 崩溃应用（用于测试 sentry-cocoa）
+Crash the app (for testing sentry-native):
+  zh-CN: 崩溃应用（用于测试 sentry-native）
 Create:
   zh-CN: 创建
 'Create New Tab: {short_name}':
   zh-CN: 新建标签页：{short_name}
+Create New Window:
+  zh-CN: 新建窗口
 'Create New Window: {short_name}':
   zh-CN: 新建窗口：{short_name}
 Create PR:
@@ -1031,6 +1099,8 @@ Create new tab:
   zh-CN: 新建标签页
 Create new team environment variables:
   zh-CN: 创建新的团队环境变量
+Create new theme from image:
+  zh-CN: 从图片创建新主题
 Create or edit link:
   zh-CN: 创建或编辑链接
 Create team:
@@ -1143,8 +1213,12 @@ Default (no color):
   zh-CN: 默认（无颜色）
 Default mode for new sessions:
   zh-CN: 新会话的默认模式
+Default model:
+  zh-CN: 默认模型
 Default shell for new sessions:
   zh-CN: 新会话的默认 shell
+Default value (optional):
+  zh-CN: 默认值（可选）
 'Default: {default_value}':
   zh-CN: 默认：{default_value}
 Delete:
@@ -1191,6 +1265,9 @@ Delete {scope} secret '{name}'?:
   zh-CN: 删除 {scope} 密钥 '{name}'？
 Deleted conversation:
   zh-CN: 已删除的对话
+? Deleting this team will permanently delete it and all of its related content, including
+  billing information or credits. You will not be able to restore them.
+: zh-CN: 删除此团队将永久删除该团队及其所有相关内容，包括账单信息或额度。您将无法恢复它们。
 Deleting...:
   zh-CN: 删除中...
 Demo {}/{} - {}:
@@ -1237,6 +1314,8 @@ Disable Warp Agent:
   zh-CN: 禁用 Warp Agent
 Disable {description_suffix}:
   zh-CN: 禁用 {description_suffix}
+Disabled:
+  zh-CN: 已禁用
 Disabled all synchronized inputs.:
   zh-CN: 已禁用所有同步输入。
 Disabled by your administrator:
@@ -1297,6 +1376,8 @@ Don't show me suggested code banners again:
   zh-CN: '现在不想登录？ '
 Done:
   zh-CN: 完成
+Download Warp Desktop?:
+  zh-CN: 下载 Warp 桌面版？
 'Download failed with status {status}: {body}':
   zh-CN: 下载失败，状态码 {status}：{body}
 Downloaded {toast_filename}.:
@@ -1305,6 +1386,8 @@ Dracula:
   zh-CN: Dracula
 Drag an image into the pane to attach it as agent context.:
   zh-CN: 将图片拖到窗格中以将其作为智能体上下文附加。
+Dump debug info:
+  zh-CN: 转储调试信息
 Dump heap profile (can only be done once):
   zh-CN: 导出堆分析（仅可执行一次）
 Duplicate:
@@ -1333,10 +1416,14 @@ Edit Variables:
   zh-CN: 编辑变量
 Edit agent toolbelt:
   zh-CN: 编辑智能体工具带
+Edit anyway:
+  zh-CN: 仍然编辑
 Edit config:
   zh-CN: 编辑配置
 Edit custom endpoint:
   zh-CN: 编辑自定义端点
+Edit enum:
+  zh-CN: 编辑枚举
 Edit prompt:
   zh-CN: 编辑提示
 Edit requested command:
@@ -1377,6 +1464,8 @@ Enable Focus Reporting:
   zh-CN: 启用焦点报告
 Enable Mouse Reporting:
   zh-CN: 启用鼠标报告
+Enable Natural Language Detection:
+  zh-CN: 启用自然语言检测
 Enable Scroll Reporting:
   zh-CN: 启用滚动报告
 Enable Warp shell integration in this session:
@@ -1409,6 +1498,8 @@ Enable {} support:
   zh-CN: 启用 {} 支持
 Enable {} support for this codebase? This will give you smarter code navigation, inline error checking, and more.:
   zh-CN: 为此代码库启用 {} 支持？这将为您提供更智能的代码导航、内联错误检查等功能。
+Enabled:
+  zh-CN: 已启用
 Enabled by your organization.:
   zh-CN: 由您的组织启用。
 Enables codebase indexing and WARP.md:
@@ -2173,6 +2264,8 @@ Fold:
   zh-CN: 折叠
 Fold selected ranges:
   zh-CN: 折叠所选范围
+Folder name:
+  zh-CN: 文件夹名称
 Follow up with existing conversation:
   zh-CN: 在现有对话中继续
 Foreground Color{suffix}:
@@ -2217,6 +2310,8 @@ From another device:
   zh-CN: 来自其他设备
 Front end focused agents:
   zh-CN: 专注前端的 Agent
+Full:
+  zh-CN: 完全
 Full Terminal Use:
   zh-CN: 完整终端使用权限
 Future links will automatically open on desktop.:
@@ -2333,6 +2428,10 @@ Home:
   zh-CN: 首页
 Honor linux selection clipboard:
   zh-CN: 支持 Linux 选区剪贴板
+Horizontal:
+  zh-CN: 水平
+How do you want to work?:
+  zh-CN: 您希望如何工作？
 'HpkePrivateKeyManager: invalid private key: {e:#}':
   zh-CN: HpkePrivateKeyManager：无效的私钥：{e:#}
 'HpkePrivateKeyManager: invalid public key: {e:#}':
@@ -2349,6 +2448,12 @@ INDEXING:
   zh-CN: 发生 IPC 错误：{e:?}
 Idle:
   zh-CN: 空闲
+? If you leave this team, you’ll lose access to any remaining reload credits tied
+  to it. You’ll regain access to any unused, non-expired credits if you rejoin the
+  same team later.
+: zh-CN: 如果您离开此团队，您将失去对与之关联的所有剩余充值额度的访问权限。如果您稍后重新加入同一团队，您将重新获得对所有未使用、未过期额度的访问权限。
+If you take edit controls, the current editor will be forced into view mode:
+  zh-CN: 如果您获取编辑控制权，当前编辑者将被强制切换到查看模式
 If you'd like to opt out of analytics and AI features,:
   zh-CN: 如果您想退出分析和 AI 功能，
 'If you''d like to opt out of analytics, you can adjust your ':
@@ -2403,10 +2508,14 @@ Indexing - {completed}:
   zh-CN: 正在索引 - {completed}
 Indexing - {completed} / {total}:
   zh-CN: 正在索引 - {completed} / {total}
+Initialize:
+  zh-CN: 初始化
 Initialize Project:
   zh-CN: 初始化项目
 Initialize codebase:
   zh-CN: 初始化代码库
+Initialize project automatically:
+  zh-CN: 自动初始化项目
 Initialized / indexed folders:
   zh-CN: 已初始化/已索引的文件夹
 Initiate project for warp:
@@ -2555,6 +2664,8 @@ Jellyfish:
   zh-CN: Jellyfish
 Join our Slack community (opens external link):
   zh-CN: 加入我们的 Slack 社区（打开外部链接）
+July 12, 2023:
+  zh-CN: 2023 年 7 月 12 日
 Jump to latest agent message:
   zh-CN: 跳转到最新的 Agent 消息
 Jump to latest agent task:
@@ -2565,6 +2676,8 @@ Just now:
   zh-CN: 刚刚
 Just use the terminal:
   zh-CN: 仅使用终端
+Keep editing:
+  zh-CN: 继续编辑
 KeyDown '{chars}':
   zh-CN: 按键 '{chars}'
 Keyboard Shortcuts:
@@ -2631,6 +2744,8 @@ Latest CLI prompt:
   zh-CN: 最新 CLI 提示
 Latest Oz prompt:
   zh-CN: 最新 Oz 提示
+'Latest output:':
+  zh-CN: 最新输出：
 Latest prompt:
   zh-CN: 最新提示
 Launch configuration palette:
@@ -2643,6 +2758,8 @@ Learn more:
   zh-CN: 了解更多
 Learn more about authentication for {harness_name} in Warp.:
   zh-CN: 在 Warp 中了解更多关于 {harness_name} 的认证信息。
+Leave Team:
+  zh-CN: 离开团队
 Left:
   zh-CN: 左
 'Left Panel: Agent conversations':
@@ -2707,6 +2824,8 @@ Loaded at {}:
   zh-CN: 加载于 {}
 Loaded at {}, expires {}:
   zh-CN: 加载于 {}，过期于 {}
+Loading:
+  zh-CN: 加载中
 Loading {display_name} suggestions:
   zh-CN: 正在加载 {display_name} 建议
 Loading {display_name}...:
@@ -2721,6 +2840,8 @@ Lock scrolling at bottom of block:
   zh-CN: 锁定滚动到 Block 底部
 Log editor state:
   zh-CN: 记录编辑器状态
+Log in:
+  zh-CN: 登录
 Log into AWS:
   zh-CN: 登录 AWS
 Log out:
@@ -2793,6 +2914,8 @@ Maximize:
   zh-CN: 最大化
 Maximum rows in a block:
   zh-CN: 每个 Block 的最大行数
+Meet the Warp input:
+  zh-CN: 认识 Warp 输入框
 Mermaid diagram:
   zh-CN: Mermaid 图表
 Message content for {id}:
@@ -2919,6 +3042,8 @@ New Agent Tab:
   zh-CN: 新建 Agent 标签页
 New Cloud Agent Tab:
   zh-CN: 新建云端 Agent 标签页
+New File:
+  zh-CN: 新建文件
 New Group:
   zh-CN: 新建分组
 New Oz agent conversation:
@@ -2949,10 +3074,14 @@ New agent:
   zh-CN: 新建 Agent
 New agent conversation:
   zh-CN: 新建 Agent 对话
+New argument:
+  zh-CN: 新建参数
 New cloud agent:
   zh-CN: 新建云 Agent
 New conversation:
   zh-CN: 新对话
+New enum:
+  zh-CN: 新建枚举
 New environment:
   zh-CN: 新环境
 New features:
@@ -2999,6 +3128,8 @@ Next:
   zh-CN: 下一个
 Next Command:
   zh-CN: 下一条命令
+Next command predictions:
+  zh-CN: 下一条命令预测
 Nice work on finishing the welcome tips!:
   zh-CN: 恭喜完成欢迎提示！
 No AI features:
@@ -3103,6 +3234,8 @@ Not yet loaded:
   zh-CN: 尚未加载
 Notebook:
   zh-CN: Notebook
+Notebook name:
+  zh-CN: 笔记本名称
 'Notebook: {notebook_name} - {description}':
   zh-CN: Notebook：{notebook_name} - {description}
 'Notebook: {title}':
@@ -3191,6 +3324,8 @@ Open Tab:
   zh-CN: 打开标签页
 Open Team Settings:
   zh-CN: 打开团队设置
+Open YAML File:
+  zh-CN: 打开 YAML 文件
 Open a new terminal session in this directory:
   zh-CN: 在此目录中打开新的终端会话
 Open a project:
@@ -3311,6 +3446,8 @@ Output line {i} with some content:
   zh-CN: 输出：
 Overage spending limit:
   zh-CN: 超额消费限额
+Oz cloud agents platform:
+  zh-CN: Oz 云智能体平台
 Oz documentation:
   zh-CN: Oz 文档
 Oz needs your confirmation to continue:
@@ -3345,6 +3482,8 @@ Pane {pane_index} was not in expected path {}:
   zh-CN: 窗格 {pane_index} 不在预期路径 {} 中
 Parent conversation:
   zh-CN: 父对话
+Partial:
+  zh-CN: 部分
 Past 3 days:
   zh-CN: 过去 3 天
 Paste:
@@ -3443,6 +3582,13 @@ Prefer rendering new windows with integrated GPU (low power):
   zh-CN: 优先使用集成 GPU 渲染新窗口（低功耗）
 Premature:
   zh-CN: Premature
+Premium:
+  zh-CN: 高级
+Premium Hydro Flask:
+  zh-CN: Premium Hydro Flask
+? Prepares the project environment, builds an index of your code, and generates project
+  rules—giving the agent deeper understanding and better performance.
+: zh-CN: 准备项目环境，构建代码索引并生成项目规则——让智能体获得更深入的理解和更好的性能。
 Preparing handoff — try again in a moment.:
   zh-CN: 正在准备移交 — 请稍后重试。
 Preparing...:
@@ -3491,6 +3637,8 @@ Production API:
   zh-CN: 配置文件：{name}
 Project Explorer:
   zh-CN: 项目资源管理器
+Project Skill:
+  zh-CN: 项目技能
 Project explorer:
   zh-CN: 项目浏览器
 Project rules linked from {path}:
@@ -3503,6 +3651,8 @@ Promote to admin:
   zh-CN: 提升为管理员
 Prompt copied.:
   zh-CN: 提示词已复制。
+Prompt suggestions:
+  zh-CN: 提示建议
 Prompt the agent to control interactive tools like node, python, postgres, gdb, or vim.:
   zh-CN: 提示 Agent 控制 node、python、postgres、gdb 或 vim 等交互式工具。
 'Prompt: {name}':
@@ -3561,12 +3711,16 @@ Received {len} agent events:
   zh-CN: 收到 {len} 个 Agent 事件
 Received {len} messages:
   zh-CN: 收到 {len} 条消息
+Recommended:
+  zh-CN: 推荐
 Reconnecting:
   zh-CN: 重新连接中
 Red Rock:
   zh-CN: Red Rock
 Redact secrets (API keys, passwords, IP addresses, PII etc.):
   zh-CN: 脱敏敏感信息（API Key、密码、IP 地址、PII 等）
+Redo:
+  zh-CN: 重做
 Refer a friend:
   zh-CN: 推荐好友
 Refresh:
@@ -3605,6 +3759,8 @@ Remote codebase search was unexpectedly unavailable.:
   zh-CN: 远程代码库搜索意外不可用。
 Remote control link copied.:
   zh-CN: 远程控制链接已复制。
+Remote control with Claude Code, Codex, and other agents:
+  zh-CN: 通过 Claude Code、Codex 和其他智能体进行远程控制
 Remote host:
   zh-CN: 远程主机
 RemoteServerManager has no session for {session_id:?}:
@@ -3613,6 +3769,8 @@ Remove:
   zh-CN: 移除
 Remove '{}'?:
   zh-CN: 移除'{}'?
+Remove Member:
+  zh-CN: 移除成员
 Remove domain:
   zh-CN: 移除域名
 Remove endpoint:
@@ -3689,6 +3847,8 @@ Requires the `{command}` command:
   zh-CN: 需要 `{command}` 命令
 Reset:
   zh-CN: 重置
+Reset Zoom:
+  zh-CN: 重置缩放
 Reset active pane name:
   zh-CN: 重置活动窗格名称
 Reset font size to default:
@@ -3731,6 +3891,8 @@ Restart server:
   zh-CN: 重启服务器
 Restore:
   zh-CN: 恢复
+Restore default:
+  zh-CN: 恢复默认
 Restore environment variables from trash:
   zh-CN: 从废纸篓还原环境变量
 Restore notebook from trash:
@@ -3830,8 +3992,15 @@ Run '{command}' and verify block is running:
   zh-CN: 运行 '{command}' 并验证 Block 正在运行
 Run Connection Lost:
   zh-CN: 运行连接已断开
+Run a command...:
+  zh-CN: 运行命令…
 'Run command: {command}':
   zh-CN: 运行命令：{command}
+? Run commands here, just like a regular terminal. If you type a question or task
+  using natural language, Warp can suggest opening it in agent mode. You can always
+  override using {keybinding}.
+: zh-CN: 在此处运行命令，就像在普通终端中一样。如果您使用自然语言输入问题或任务，Warp 可以建议在 Agent 模式中打开它。您随时可以使用 {keybinding}
+    覆盖。
 ? Run commands here, just like a regular terminal. If you type a question or task
   using natural language, Warp can suggest opening it in agent mode. You can always
   override using {}.
@@ -3848,6 +4017,8 @@ Running child agents is disabled by the active execution profile.:
   zh-CN: 活动的执行配置文件已禁用运行子 Agent。
 Running {}...:
   zh-CN: 正在运行 {}...
+Runs commands, writes code, and reads files without asking.:
+  zh-CN: 无需询问即可运行命令、编写代码和读取文件。
 'Runtime error: {}':
   zh-CN: 运行时错误：{}
 SQLite {err_kind} error:
@@ -3858,8 +4029,12 @@ SSH ControlMaster error:
   zh-CN: SSH ControlMaster 错误
 Same line prompt:
   zh-CN: 同一行提示
+Sampling process for 3 seconds...:
+  zh-CN: 采样中，持续 3 秒...
 Save:
   zh-CN: 保存
+Save Configuration:
+  zh-CN: 保存配置
 Save all unsaved files in code review:
   zh-CN: 保存代码审查中的所有未保存文件
 Save and auto-sync this plan to your Warp Drive:
@@ -3974,6 +4149,8 @@ Second Tab:
   zh-CN: 第二个标签页
 Secondary click on {arg0}:
   zh-CN: 在 {arg0} 上辅助点击
+Secret command:
+  zh-CN: 机密命令
 Secret key copied.:
   zh-CN: 密钥已复制。
 Secret visual redaction mode:
@@ -4006,6 +4183,8 @@ Select and move to the top:
   zh-CN: 选择并移至顶部
 Select coding agent:
   zh-CN: 选择编码 Agent
+Select defaults for using agents like Claude Code, Codex, and Gemini.:
+  zh-CN: 选择使用 Claude Code、Codex 和 Gemini 等智能体的默认设置。
 Select directory:
   zh-CN: 选择目录
 Select down:
@@ -4050,6 +4229,8 @@ Select to start of paragraph:
   zh-CN: 选择到段落起始
 Select up:
   zh-CN: 向上选择
+Select your in-app agent's defaults.:
+  zh-CN: 选择应用内智能体的默认设置。
 Selected Workflow argument {name}:
   zh-CN: 已选择 Workflow 参数 {name}
 Selected all {} blocks.:
@@ -4098,6 +4279,8 @@ Server update available:
   zh-CN: 服务错误：{}
 Session:
   zh-CN: 会话
+Session Sharing:
+  zh-CN: 会话共享
 Session ended due to an internal error. Please try sharing again.:
   zh-CN: 由于内部错误，会话已结束。请重新尝试共享。
 Session ended.:
@@ -4190,6 +4373,8 @@ Shared by a team member:
   zh-CN: 共享者：{creator}
 Shared editing permissions were revoked due to inactivity:
   zh-CN: 由于长时间未活动，共享编辑权限已被撤销
+Shared object limit reached:
+  zh-CN: 已达到共享对象上限
 Shared with me:
   zh-CN: 与我共享的
 Shared {object_type}s have been restricted due to a subscription payment issue.:
@@ -4208,6 +4393,8 @@ Shell process exited:
   zh-CN: Shell 进程已退出
 Shell process exited prematurely!:
   zh-CN: Shell 进程意外退出！
+Shell prompt (PS1):
+  zh-CN: Shell 提示符 (PS1)
 Show "Use Agent" footer:
   zh-CN: 显示"使用 Agent"页脚
 Show Global Workflows in Command Search (ctrl-r):
@@ -4328,6 +4515,8 @@ Skip for now:
   zh-CN: 暂时跳过
 Skip for now.:
   zh-CN: 暂时跳过。
+Skip initialization:
+  zh-CN: 跳过初始化
 Slack:
   zh-CN: Slack
 'Slash command: {name}':
@@ -4413,6 +4602,8 @@ Starting {display_name}...:
   zh-CN: 正在启动 {display_name}...
 Stash changes:
   zh-CN: 储藏更改
+State-of-the-art models require paid plans.:
+  zh-CN: 最先进的模型需要付费方案。
 Status update:
   zh-CN: 状态更新
 'Status: upload failed: {error}':
@@ -4447,6 +4638,8 @@ Store reusable workflows, notebooks, and prompts in your:
   zh-CN: 在以下位置存储可重用的 Workflow、Notebook 和提示词：
 Streaming...:
   zh-CN: 流式传输中...
+Submit:
+  zh-CN: 提交
 Subshells:
   zh-CN: 子 Shell
 Successfully authenticated {server_name} MCP server:
@@ -4479,6 +4672,8 @@ Suggested Rules:
   zh-CN: 建议的修正命令：{command}
 'Suggested prompt:':
   zh-CN: 建议的提示词：
+Suggested rule:
+  zh-CN: 建议的规则
 'Suggestion: {text}.':
   zh-CN: 建议：{text}。
 ? Summarization is already running. If you cancel now, the request may still incur
@@ -4528,6 +4723,12 @@ Switch to 8th tab:
   zh-CN: 切换到第 8 个标签页
 Switch to last tab:
   zh-CN: 切换到最后一个标签页
+Switch to next tab:
+  zh-CN: 切换到下一个标签页
+Switch to previous tab:
+  zh-CN: 切换到上一个标签页
+Sync light/dark theme with OS:
+  zh-CN: 与系统同步浅色/深色主题
 Synced:
   zh-CN: 已同步
 Syncing - {completed_nodes} / {total_nodes}:
@@ -4546,16 +4747,24 @@ Tab item:
   zh-CN: 标签页项
 Tab key behavior:
   zh-CN: Tab 键行为
+Tab styling:
+  zh-CN: 标签页样式
 Tab was not in expected path {}:
   zh-CN: 标签页不在预期路径 {} 中
 Tail prompt chip log:
   zh-CN: 跟踪提示词标记日志
+Tailor your features and UI to your working style.:
+  zh-CN: 根据您的工作风格定制功能和 UI。
 Take control:
   zh-CN: 取得控制权
 Take control of running command:
   zh-CN: 接管运行中的命令
 Take over:
   zh-CN: 接管
+Takes no actions without your approval.:
+  zh-CN: 未经您批准不采取任何行动。
+Talk to the agent:
+  zh-CN: 与智能体对话
 Target directory {} already exists but is not a git repository:
   zh-CN: 目标目录 {} 已存在但不是 git 仓库
 Task blocked:
@@ -4578,6 +4787,8 @@ Team total:
   zh-CN: 团队总计
 Teammates with the link:
   zh-CN: 拥有链接的团队成员
+Tell the agent what to build...:
+  zh-CN: 告诉智能体要构建什么…
 Template contains no servers:
   zh-CN: 模板不包含任何服务器
 'Template sync id: {sync_id}':
@@ -4667,6 +4878,8 @@ The {harness} harness is only supported for local child agent launches.:
   zh-CN: '{harness} 框架仅支持本地子 Agent 启动。'
 Theme Picker:
   zh-CN: 主题选择器
+Theme {index}:
+  zh-CN: 主题 {index}
 Theme {}:
   zh-CN: 主题 {}
 There can only be one attempt to create {file}.:
@@ -4705,6 +4918,11 @@ This is the {refresh_duration} limit of AI credits for your account.:
   zh-CN: 这是您账户每 {refresh_duration} 的 AI 额度上限。
 This is the {} limit of AI credits for your account.:
   zh-CN: 这是您账户 AI 积分的{}上限。
+? This member will lose access to any remaining reload credits tied to this team.
+  If they rejoin later, they’ll regain access to any unused, non-expired credits.
+: zh-CN: 此成员将失去对与该团队关联的所有剩余充值额度的访问权限。如果他们稍后重新加入，将重新获得对所有未使用、未过期额度的访问权限。
+This notebook is currently being edited:
+  zh-CN: 此笔记本正在被编辑
 This option is enforced by your organization's settings and cannot be customized.:
   zh-CN: 此选项由您的组织设置强制执行，无法自定义。
 This plan has changes the agent isn't aware of. {save_action} to stop the agent's current task and send the updated plan:
@@ -4750,6 +4968,8 @@ Timed out while loading AWS credentials. Refresh and try again.:
   zh-CN: 加载 AWS 凭据超时。请刷新后重试。
 'Tip: {description}':
   zh-CN: 提示：{description}
+Title (optional):
+  zh-CN: 标题（可选）
 To toggle this panel:
   zh-CN: 切换此面板
 To use Warp Drive, please create an account.:
@@ -4852,6 +5072,8 @@ Tool call was cancelled:
   zh-CN: 工具调用已取消
 Toolbar layout:
   zh-CN: 工具栏布局
+Tools panel:
+  zh-CN: 工具面板
 Tools panel visibility is consistent across tabs:
   zh-CN: 工具面板的可见性在不同标签页间保持一致
 Total overages:
@@ -4966,6 +5188,8 @@ Untitled pane:
   zh-CN: 无标题窗格
 Untitled tab:
   zh-CN: 无标题标签页
+Untitled workflow:
+  zh-CN: 未命名 Workflow
 Update:
   zh-CN: 更新
 Update Agent:
@@ -4992,6 +5216,8 @@ Updating to ({version}):
   zh-CN: 正在更新到 ({version})
 Upgrade:
   zh-CN: 升级
+Upgrade for access to premium models.:
+  zh-CN: 升级以访问高级模型。
 Upgrade for more credits.:
   zh-CN: 升级以获取更多积分。
 Upgrade plan:
@@ -5036,8 +5262,14 @@ Using Warp Offline:
   zh-CN: 离线使用 Warp
 Using injected token (WARP_IAP_TOKEN):
   zh-CN: 使用注入的令牌 (WARP_IAP_TOKEN)
+Variant:
+  zh-CN: 变体
+Variants:
+  zh-CN: 变体
 Version {new_version}:
   zh-CN: 版本 {new_version}
+Vertical:
+  zh-CN: 垂直
 View:
   zh-CN: 查看
 View Agents:
@@ -5141,6 +5373,9 @@ Warp Drive as agent context:
 ? Warp Drive is a workspace in your terminal where you can save Workflows, Notebooks,
   Prompts, and Environment Variables for personal use or to share with a team.
 : zh-CN: Warp Drive 是终端中的工作区，您可以保存工作流、笔记本、提示和环境变量供个人使用或与团队共享。
+? 'Warp Drive lets you save workflows and knowledge across devices and share them
+  with your team. By continuing, you won''t have access to the following features:'
+: zh-CN: Warp Drive 让您可以跨设备保存工作流和知识，并与团队共享。继续操作，您将无法使用以下功能：
 Warp Drive.:
   zh-CN: Warp Drive。
 Warp Essentials:
@@ -5149,6 +5384,8 @@ Warp Referral:
   zh-CN: Warp 推荐
 Warp Settings:
   zh-CN: Warp 设置
+Warp agents:
+  zh-CN: Warp 智能体
 Warp can auto-expand aliases.:
   zh-CN: Warp 可以自动展开别名。
 Warp credit fallback:
@@ -5159,12 +5396,16 @@ Warp instance {}:
   zh-CN: Warp 实例 {}
 Warp instance {} is reachable (protocol version {}):
   zh-CN: Warp 实例 {} 可达（协议版本 {}）
+'Warp is better with AI. By continuing, you won''t have access to any of the following features:':
+  zh-CN: Warp 借助 AI 会更好。继续操作，您将无法使用以下任何功能：
 Warp is currently overloaded. Please try again later.:
   zh-CN: Warp 当前负载过高。请稍后重试。
 Warp is the intelligent terminal with AI and your dev team's knowledge built-in.:
   zh-CN: Warp 是内置 AI 和您开发团队知识的智能终端。
 Warp loads and sends local AWS CLI credentials for Bedrock-supported models. This setting is managed by your organization.:
   zh-CN: Warp 会加载并发送本地 AWS CLI 凭据用于 Bedrock 支持的模型。此设置由您的组织管理。
+Warp terminal prompt:
+  zh-CN: Warp 终端提示符
 Warp was unable to launch the new installed version.:
   zh-CN: Warp 无法启动新安装的版本。
 Warp's Pro plan comes with a limited number of shared {object_type}s.:
@@ -5195,6 +5436,8 @@ Websocket closed before starting session:
   zh-CN: 会话开始前 WebSocket 已关闭
 Welcome to Warp:
   zh-CN: 欢迎使用 Warp
+Welcome to terminal mode:
+  zh-CN: 欢迎使用终端模式
 What can you help with me on?:
   zh-CN: 您可以帮我做些什么？
 What's new:
@@ -5245,8 +5488,14 @@ Worktree branch name:
   zh-CN: 工作树分支名称
 Write current codebase index snapshot:
   zh-CN: 写入当前代码库索引快照
+Yes, delete:
+  zh-CN: 是的，删除
+Yes, empty trash:
+  zh-CN: 是的，清空回收站
 Yes, index this codebase.:
   zh-CN: 是，索引此代码库。
+Yes, leave:
+  zh-CN: 是的，离开
 Yes, skip login:
   zh-CN: 是，跳过登录
 You are sharing {} {}{scope_suffix}:
@@ -5261,12 +5510,18 @@ You can press {} to Warpify this {} for more Warp features.:
   zh-CN: 您可以按 {} 来 Warpify 此 {} 以获得更多 Warp 功能。
 You can sign up later, but some features, such as AI,:
   zh-CN: 您可以稍后注册，但某些功能（如 AI）
+? 'You can type in natural language to engage the agent. Submit the query below to
+  start: What tests exist in this repo, how are they structured, and what do they
+  cover?'
+: zh-CN: 您可以输入自然语言来与智能体交互。提交以下查询以开始：此仓库中存在哪些测试，它们是如何组织的，覆盖了哪些内容？
 You don't have any shared blocks yet.:
   zh-CN: 您还没有任何共享 Block。
 You have 1 free credit to use on Oz cloud agents.:
   zh-CN: 您有 1 个免费积分可用于 Oz 云 Agent。
 You have requested {} mode:
   zh-CN: 您已请求 {} 模式
+You have unsaved changes.:
+  zh-CN: 您有未保存的更改。
 You have unsaved file changes{scope_suffix}:
   zh-CN: 您有未保存的文件更改{scope_suffix}
 You have {num_long_running_commands} {plural} running.:
@@ -5277,6 +5532,8 @@ You have {} free credits to use on Oz cloud agents.:
   zh-CN: 您有 {} 个免费积分可用于 Oz 云 Agent。
 You have {} {} running:
   zh-CN: 您有 {} 个 {} 正在运行
+You will need to be reinvited in order to rejoin.:
+  zh-CN: 您需要被重新邀请才能重新加入。
 You {verb} mouse reporting.:
   zh-CN: 您{verb}了鼠标报告。
 You {verb} synchronized inputs in all tabs.:
@@ -5289,6 +5546,8 @@ You're about to discard all committed and uncommitted changes.:
   zh-CN: 您将丢弃所有已提交和未提交的更改。
 You're about to discard all local changes that haven't been committed.:
   zh-CN: 您将丢弃所有尚未提交的本地更改。
+You're in agent mode:
+  zh-CN: 您正在 Agent 模式
 You've run out of {object_type}s on your plan.:
   zh-CN: 您套餐中的 {object_type} 已用完。
 Your API key is invalid. Please provide a valid key via '--api-key' or the WARP_API_KEY environment variable.:
@@ -5305,6 +5564,8 @@ Your agent is currently running on a {} machine.:
   zh-CN: 您的 Agent 当前正在 {} 机器上运行。
 Your credentials are encrypted end-to-end.:
   zh-CN: 您的凭据已端到端加密。
+Your credentials are invalid. Please log in again with `{cli_name} login`.:
+  zh-CN: 您的凭据无效。请使用 `{cli_name} login` 重新登录。
 Your credit limit is prorated because you joined midway through the billing cycle.:
   zh-CN: 您的信用额度已按比例折算，因为您在计费周期中途加入。
 Your invite is on the way!:
@@ -5320,6 +5581,10 @@ Your settings file contains an error.:
 Your settings file contains errors.:
   zh-CN: 您的设置文件包含错误。
 ? Your terminal input accepts both terminal commands and agent prompts and automatically
+  detects which you're using. Use {keybinding} to lock the input to Agent mode (natural
+  language) or Terminal mode (commands).
+: zh-CN: 您的终端输入既接受终端命令也接受智能体提示，并会自动检测您正在使用的类型。使用 {keybinding} 可将输入锁定为 Agent 模式（自然语言）或终端模式（命令）。
+? Your terminal input accepts both terminal commands and agent prompts and automatically
   detects which you're using. Use {} to lock the input to Agent mode (natural language)
   or Terminal mode (commands).
 : zh-CN: 您的终端输入框同时接受终端命令和 Agent 提示词，并自动检测您正在使用哪一种。使用 {} 将输入框锁定为 Agent 模式（自然语言）或终端模式（命令）。
@@ -5327,8 +5592,50 @@ Your usage:
   zh-CN: 您的用量
 Your {len} invites are on the way!:
   zh-CN: 您的 {len} 份邀请正在发送中！
+You’re in terminal mode:
+  zh-CN: 您正在终端模式
+Zoom In:
+  zh-CN: 放大
+Zoom Out:
+  zh-CN: 缩小
 '[DEBUG] {text}':
   zh-CN: '[DEBUG] {text}'
+'[Debug] Install OpenCode Warp plugin':
+  zh-CN: '[Debug] 安装 OpenCode Warp 插件'
+'[Debug] Log review comment send status for active tab':
+  zh-CN: '[Debug] 记录活动标签页的审查评论发送状态'
+'[Debug] Open Auto-Handoff Sleep Modal':
+  zh-CN: '[Debug] 打开自动交接休眠弹窗'
+'[Debug] Open Build Plan Migration Modal':
+  zh-CN: '[Debug] 打开构建计划迁移弹窗'
+'[Debug] Open OpenWarp Launch Modal':
+  zh-CN: '[Debug] 打开 OpenWarp 启动弹窗'
+'[Debug] Open Orchestration Launch Modal':
+  zh-CN: '[Debug] 打开编排启动弹窗'
+'[Debug] Open Oz Launch Modal':
+  zh-CN: '[Debug] 打开 Oz 启动弹窗'
+'[Debug] Open Session Config Modal':
+  zh-CN: '[Debug] 打开会话配置弹窗'
+'[Debug] Reset Auto-Handoff Sleep Modal State':
+  zh-CN: '[Debug] 重置自动交接休眠弹窗状态'
+'[Debug] Reset Build Plan Migration Modal State':
+  zh-CN: '[Debug] 重置构建计划迁移弹窗状态'
+'[Debug] Reset OpenWarp Launch Modal State':
+  zh-CN: '[Debug] 重置 OpenWarp 启动弹窗状态'
+'[Debug] Reset Orchestration Launch Modal State':
+  zh-CN: '[Debug] 重置编排启动弹窗状态'
+'[Debug] Reset Oz Launch Modal State':
+  zh-CN: '[Debug] 重置 Oz 启动弹窗状态'
+'[Debug] Start HOA Onboarding Flow':
+  zh-CN: '[Debug] 启动 HOA 引导流程'
+'[Debug] Trigger Auto-Handoff to Cloud':
+  zh-CN: '[Debug] 触发自动交接至云端'
+'[Debug] Un-dismiss AWS login banner':
+  zh-CN: '[Debug] 取消隐藏 AWS 登录横幅'
+'[Debug] Use local OpenCode Warp plugin (testing only)':
+  zh-CN: '[Debug] 使用本地 OpenCode Warp 插件（仅用于测试）'
+'[Debug] View first-time user experience':
+  zh-CN: '[Debug] 查看首次用户体验'
 '[Tab {tab_index}] {title}':
   zh-CN: '[标签页 {tab_index}] {title}'
 '[projects.''{key}'']':
@@ -5365,6 +5672,8 @@ command (supports regex):
   zh-CN: 命令（支持正则表达式）
 conversation {conversation_id} not found or not accessible:
   zh-CN: 对话 {conversation_id} 未找到或无法访问
+copy the URL:
+  zh-CN: 复制 URL
 credential for {} cannot invoke {}:
   zh-CN: '{} 的凭据无法调用 {}'
 diffset against {branch_name}:
@@ -5381,6 +5690,8 @@ e.g., Zach's external models:
   zh-CN: e.g., Zach's external models
 e.g., sk-...:
   zh-CN: e.g., sk-...
+embedded warp block:
+  zh-CN: 嵌入式 Warp 区块
 'encryption failed: {e}':
   zh-CN: 加密失败：{e}
 'error: {err}':
@@ -6160,277 +6471,3 @@ you can adjust your:
   zh-CN: ❌ {timestamp}
 💣 {secret}:
   zh-CN: 💣 {secret}
-' and open the page manually. ':
-  zh-CN: ' 并手动打开页面。 '
-' to paste your token from the browser.':
-  zh-CN: 以从浏览器粘贴您的令牌。
-(Experimental) Toggle classic completions mode:
-  zh-CN: (实验性) 切换经典补全模式
-A modern terminal with state of the art agents built in.:
-  zh-CN: 内置顶尖智能体的现代终端。
-Add a description:
-  zh-CN: 添加描述
-'Agent mode gives your questions and tasks their own conversation, so you can ask follow-ups without leaving your terminal workflow. Press {keybinding} to return to terminal mode at any point.':
-  zh-CN: Agent 模式为您的问题和任务提供独立的对话，因此您可以在不离开终端工作流的情况下追问。随时按 {keybinding} 返回终端模式。
-"Agent mode gives your questions and tasks their own conversation, so you can ask follow-ups without leaving your terminal workflow.\n\nSubmit the query below to have the agent initialize this project, or ⊗ to clear the input and start your own!":
-  zh-CN: "Agent 模式为您的问题和任务提供独立的对话，因此您可以在不离开终端工作流的情况下追问。\n\n提交以下查询以让智能体初始化此项目，或点击 ⊗ 清除输入并开始您自己的查询！"
-Agents over SSH:
-  zh-CN: 通过 SSH 使用智能体
-An agent-first experience with best in class terminal support. Get terminal and agent driven development AI features like::
-  zh-CN: 以智能体为先的体验，配备一流的终端支持。获得以下终端和智能体驱动的开发 AI 功能：
-Are you sure you want to delete this team?:
-  zh-CN: 确定要删除此团队吗？
-Are you sure you want to delete this theme?:
-  zh-CN: 确定要删除此主题吗？
-Are you sure you want to empty the trash?:
-  zh-CN: 确定要清空回收站吗？
-Are you sure you want to leave this team?:
-  zh-CN: 确定要离开此团队吗？
-Are you sure you want to remove this member?:
-  zh-CN: 确定要移除此成员吗？
-Autofill:
-  zh-CN: 自动填充
-Autonomy:
-  zh-CN: 自主性
-Autonomy settings are configured as part of your team workspace.:
-  zh-CN: 自主性设置作为团队工作区的一部分进行配置。
-Back:
-  zh-CN: 返回
-Back to terminal:
-  zh-CN: 返回终端
-CLI agent toolbar:
-  zh-CN: CLI 智能体工具栏
-Can plan, read files, and execute low-risk commands. Asks before making any changes or executing sensitive commands.:
-  zh-CN: 可以制定计划、读取文件并执行低风险命令。在进行任何更改或执行敏感命令前会先询问。
-Click here:
-  zh-CN: 点击此处
-Click or use arrow keys to select, Enter to confirm.:
-  zh-CN: 点击或使用方向键选择，按 Enter 确认。
-Codebase context:
-  zh-CN: 代码库上下文
-Collection name:
-  zh-CN: 集合名称
-Conversation history:
-  zh-CN: 对话历史
-Crash the app (for testing sentry-cocoa):
-  zh-CN: 崩溃应用（用于测试 sentry-cocoa）
-Crash the app (for testing sentry-native):
-  zh-CN: 崩溃应用（用于测试 sentry-native）
-Create new theme from image:
-  zh-CN: 从图片创建新主题
-Default model:
-  zh-CN: 默认模型
-Default value (optional):
-  zh-CN: 默认值（可选）
-Deleting this team will permanently delete it and all of its related content, including billing information or credits. You will not be able to restore them.:
-  zh-CN: 删除此团队将永久删除该团队及其所有相关内容，包括账单信息或额度。您将无法恢复它们。
-Disabled:
-  zh-CN: 已禁用
-Download Warp Desktop?:
-  zh-CN: 下载 Warp 桌面版？
-Dump debug info:
-  zh-CN: 转储调试信息
-Edit anyway:
-  zh-CN: 仍然编辑
-Edit enum:
-  zh-CN: 编辑枚举
-Enable Natural Language Detection:
-  zh-CN: 启用自然语言检测
-Enabled:
-  zh-CN: 已启用
-Folder name:
-  zh-CN: 文件夹名称
-Full:
-  zh-CN: 完全
-Horizontal:
-  zh-CN: 水平
-How do you want to work?:
-  zh-CN: 您希望如何工作？
-'If you leave this team, you’ll lose access to any remaining reload credits tied to it. You’ll regain access to any unused, non-expired credits if you rejoin the same team later.':
-  zh-CN: 如果您离开此团队，您将失去对与之关联的所有剩余充值额度的访问权限。如果您稍后重新加入同一团队，您将重新获得对所有未使用、未过期额度的访问权限。
-If you take edit controls, the current editor will be forced into view mode:
-  zh-CN: 如果您获取编辑控制权，当前编辑者将被强制切换到查看模式
-Initialize:
-  zh-CN: 初始化
-Initialize project automatically:
-  zh-CN: 自动初始化项目
-Keep editing:
-  zh-CN: 继续编辑
-Leave Team:
-  zh-CN: 离开团队
-Loading:
-  zh-CN: 加载中
-'Log in':
-  zh-CN: 登录
-Meet the Warp input:
-  zh-CN: 认识 Warp 输入框
-'New File':
-  zh-CN: 新建文件
-New argument:
-  zh-CN: 新建参数
-New enum:
-  zh-CN: 新建枚举
-Next command predictions:
-  zh-CN: 下一条命令预测
-Notebook name:
-  zh-CN: 笔记本名称
-'Open YAML File':
-  zh-CN: 打开 YAML 文件
-Oz cloud agents platform:
-  zh-CN: Oz 云智能体平台
-Partial:
-  zh-CN: 部分
-Premium:
-  zh-CN: 高级
-Prepares the project environment, builds an index of your code, and generates project rules—giving the agent deeper understanding and better performance.:
-  zh-CN: 准备项目环境，构建代码索引并生成项目规则——让智能体获得更深入的理解和更好的性能。
-Prompt suggestions:
-  zh-CN: 提示建议
-Recommended:
-  zh-CN: 推荐
-Redo:
-  zh-CN: 重做
-Remote control with Claude Code, Codex, and other agents:
-  zh-CN: 通过 Claude Code、Codex 和其他智能体进行远程控制
-'Remove Member':
-  zh-CN: 移除成员
-Reset Zoom:
-  zh-CN: 重置缩放
-Restore default:
-  zh-CN: 恢复默认
-Run a command...:
-  zh-CN: 运行命令…
-'Run commands here, just like a regular terminal. If you type a question or task using natural language, Warp can suggest opening it in agent mode. You can always override using {keybinding}.':
-  zh-CN: 在此处运行命令，就像在普通终端中一样。如果您使用自然语言输入问题或任务，Warp 可以建议在 Agent 模式中打开它。您随时可以使用 {keybinding} 覆盖。
-Runs commands, writes code, and reads files without asking.:
-  zh-CN: 无需询问即可运行命令、编写代码和读取文件。
-Save Configuration:
-  zh-CN: 保存配置
-Secret command:
-  zh-CN: 机密命令
-Select defaults for using agents like Claude Code, Codex, and Gemini.:
-  zh-CN: 选择使用 Claude Code、Codex 和 Gemini 等智能体的默认设置。
-Select your in-app agent's defaults.:
-  zh-CN: 选择应用内智能体的默认设置。
-Session Sharing:
-  zh-CN: 会话共享
-Shared object limit reached:
-  zh-CN: 已达到共享对象上限
-Shell prompt (PS1):
-  zh-CN: Shell 提示符 (PS1)
-Skip initialization:
-  zh-CN: 跳过初始化
-State-of-the-art models require paid plans.:
-  zh-CN: 最先进的模型需要付费方案。
-Submit:
-  zh-CN: 提交
-Suggested rule:
-  zh-CN: 建议的规则
-Switch to next tab:
-  zh-CN: 切换到下一个标签页
-Switch to previous tab:
-  zh-CN: 切换到上一个标签页
-Sync light/dark theme with OS:
-  zh-CN: 与系统同步浅色/深色主题
-Tab styling:
-  zh-CN: 标签页样式
-Tailor your features and UI to your working style.:
-  zh-CN: 根据您的工作风格定制功能和 UI。
-Takes no actions without your approval.:
-  zh-CN: 未经您批准不采取任何行动。
-Talk to the agent:
-  zh-CN: 与智能体对话
-Tell the agent what to build...:
-  zh-CN: 告诉智能体要构建什么…
-Theme {index}:
-  zh-CN: 主题 {index}
-This member will lose access to any remaining reload credits tied to this team. If they rejoin later, they’ll regain access to any unused, non-expired credits.:
-  zh-CN: 此成员将失去对与该团队关联的所有剩余充值额度的访问权限。如果他们稍后重新加入，将重新获得对所有未使用、未过期额度的访问权限。
-This notebook is currently being edited:
-  zh-CN: 此笔记本正在被编辑
-Title (optional):
-  zh-CN: 标题（可选）
-Tools panel:
-  zh-CN: 工具面板
-Untitled workflow:
-  zh-CN: 未命名 Workflow
-Upgrade for access to premium models.:
-  zh-CN: 升级以访问高级模型。
-Variant:
-  zh-CN: 变体
-Variants:
-  zh-CN: 变体
-Vertical:
-  zh-CN: 垂直
-Warp Drive lets you save workflows and knowledge across devices and share them with your team. By continuing, you won't have access to the following features::
-  zh-CN: Warp Drive 让您可以跨设备保存工作流和知识，并与团队共享。继续操作，您将无法使用以下功能：
-Warp agents:
-  zh-CN: Warp 智能体
-Warp is better with AI. By continuing, you won't have access to any of the following features::
-  zh-CN: Warp 借助 AI 会更好。继续操作，您将无法使用以下任何功能：
-Warp terminal prompt:
-  zh-CN: Warp 终端提示符
-Welcome to terminal mode:
-  zh-CN: 欢迎使用终端模式
-Yes, delete:
-  zh-CN: 是的，删除
-Yes, empty trash:
-  zh-CN: 是的，清空回收站
-Yes, leave:
-  zh-CN: 是的，离开
-'You can type in natural language to engage the agent. Submit the query below to start: What tests exist in this repo, how are they structured, and what do they cover?':
-  zh-CN: 您可以输入自然语言来与智能体交互。提交以下查询以开始：此仓库中存在哪些测试，它们是如何组织的，覆盖了哪些内容？
-You have unsaved changes.:
-  zh-CN: 您有未保存的更改。
-You will need to be reinvited in order to rejoin.:
-  zh-CN: 您需要被重新邀请才能重新加入。
-You're in agent mode:
-  zh-CN: 您正在 Agent 模式
-'You’re in terminal mode':
-  zh-CN: 您正在终端模式
-Your terminal input accepts both terminal commands and agent prompts and automatically detects which you're using. Use {keybinding} to lock the input to Agent mode (natural language) or Terminal mode (commands).:
-  zh-CN: 您的终端输入既接受终端命令也接受智能体提示，并会自动检测您正在使用的类型。使用 {keybinding} 可将输入锁定为 Agent 模式（自然语言）或终端模式（命令）。
-Zoom In:
-  zh-CN: 放大
-Zoom Out:
-  zh-CN: 缩小
-'[Debug] Install OpenCode Warp plugin':
-  zh-CN: '[Debug] 安装 OpenCode Warp 插件'
-'[Debug] Log review comment send status for active tab':
-  zh-CN: '[Debug] 记录活动标签页的审查评论发送状态'
-'[Debug] Open Auto-Handoff Sleep Modal':
-  zh-CN: '[Debug] 打开自动交接休眠弹窗'
-'[Debug] Open Build Plan Migration Modal':
-  zh-CN: '[Debug] 打开构建计划迁移弹窗'
-'[Debug] Open OpenWarp Launch Modal':
-  zh-CN: '[Debug] 打开 OpenWarp 启动弹窗'
-'[Debug] Open Orchestration Launch Modal':
-  zh-CN: '[Debug] 打开编排启动弹窗'
-'[Debug] Open Oz Launch Modal':
-  zh-CN: '[Debug] 打开 Oz 启动弹窗'
-'[Debug] Open Session Config Modal':
-  zh-CN: '[Debug] 打开会话配置弹窗'
-'[Debug] Reset Auto-Handoff Sleep Modal State':
-  zh-CN: '[Debug] 重置自动交接休眠弹窗状态'
-'[Debug] Reset Build Plan Migration Modal State':
-  zh-CN: '[Debug] 重置构建计划迁移弹窗状态'
-'[Debug] Reset OpenWarp Launch Modal State':
-  zh-CN: '[Debug] 重置 OpenWarp 启动弹窗状态'
-'[Debug] Reset Orchestration Launch Modal State':
-  zh-CN: '[Debug] 重置编排启动弹窗状态'
-'[Debug] Reset Oz Launch Modal State':
-  zh-CN: '[Debug] 重置 Oz 启动弹窗状态'
-'[Debug] Start HOA Onboarding Flow':
-  zh-CN: '[Debug] 启动 HOA 引导流程'
-'[Debug] Trigger Auto-Handoff to Cloud':
-  zh-CN: '[Debug] 触发自动交接至云端'
-'[Debug] Un-dismiss AWS login banner':
-  zh-CN: '[Debug] 取消隐藏 AWS 登录横幅'
-'[Debug] Use local OpenCode Warp plugin (testing only)':
-  zh-CN: '[Debug] 使用本地 OpenCode Warp 插件（仅用于测试）'
-'[Debug] View first-time user experience':
-  zh-CN: '[Debug] 查看首次用户体验'
-copy the URL:
-  zh-CN: 复制 URL
-embedded warp block:
-  zh-CN: 嵌入式 Warp 区块

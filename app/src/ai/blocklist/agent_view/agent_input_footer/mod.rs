@@ -416,7 +416,10 @@ impl AgentInputFooter {
             ActionButton::new(i18n::t!("Enable notifications"), InstallPluginButtonTheme)
                 .with_icon(Icon::Download)
                 .with_tooltip(
-                    "Install the Warp plugin to enable rich agent notifications within Warp",
+                    i18n::t!(
+                        "Install the Warp plugin to enable rich agent notifications within Warp"
+                    )
+                    .to_string(),
                 )
                 .with_size(cli_button_size)
                 .with_tooltip_alignment(TooltipAlignment::Left)
@@ -1378,12 +1381,15 @@ impl AgentInputFooter {
         let success_msg = self
             .cli_agent(ctx)
             .and_then(plugin_manager_for)
-            .map(|m| m.install_success_message())
-            .unwrap_or("Warp plugin installed. Please restart the session to activate.");
+            .map(|m| m.install_success_message().to_string())
+            .unwrap_or_else(|| {
+                i18n::t!("Warp plugin installed. Please restart the session to activate.")
+                    .to_string()
+            });
         self.handle_plugin_operation(
-            "Installing Warp plugin...",
-            "Failed to install Warp plugin",
-            success_msg,
+            &i18n::t!("Installing Warp plugin..."),
+            &i18n::t!("Failed to install Warp plugin"),
+            &success_msg,
             PluginChipTelemetryKind::Install,
             |manager| async move { manager.install().await },
             ctx,
@@ -1395,12 +1401,14 @@ impl AgentInputFooter {
         let success_msg = self
             .cli_agent(ctx)
             .and_then(plugin_manager_for)
-            .map(|m| m.update_success_message())
-            .unwrap_or("Warp plugin updated. Please restart the session to activate.");
+            .map(|m| m.update_success_message().to_string())
+            .unwrap_or_else(|| {
+                i18n::t!("Warp plugin updated. Please restart the session to activate.").to_string()
+            });
         self.handle_plugin_operation(
-            "Updating Warp plugin...",
-            "Failed to update Warp plugin",
-            success_msg,
+            &i18n::t!("Updating Warp plugin..."),
+            &i18n::t!("Failed to update Warp plugin"),
+            &success_msg,
             PluginChipTelemetryKind::Update,
             |manager| async move { manager.update().await },
             ctx,

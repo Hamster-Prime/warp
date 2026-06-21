@@ -55,7 +55,7 @@ pub fn init(app: &mut AppContext) {
         FixedBinding::custom(
             CustomAction::Paste,
             PasteAuthTokenModalAction::PasteIntoEditor,
-            "Paste",
+            i18n::t!("Paste").to_string(),
             id!(PasteAuthTokenModalView::ui_name()),
         ),
         FixedBinding::standard(

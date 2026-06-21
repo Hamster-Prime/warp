@@ -246,14 +246,14 @@ pub fn init(app: &mut AppContext) {
         FixedBinding::custom(
             CustomAction::Copy,
             EditorViewAction::Copy,
-            "Copy",
+            i18n::t!("Copy").to_string(),
             id!("RichTextEditorView") & !id!("IMEOpen"),
         ),
         // Bindings for paste require the StandardAction and CustomAction binding to work on all platforms.
         FixedBinding::custom(
             CustomAction::Paste,
             EditorViewAction::Paste,
-            "Paste",
+            i18n::t!("Paste").to_string(),
             id!("RichTextEditorView") & !id!("IMEOpen"),
         ),
         FixedBinding::standard(
@@ -265,32 +265,32 @@ pub fn init(app: &mut AppContext) {
         FixedBinding::custom(
             CustomAction::WindowsPaste,
             EditorViewAction::Paste,
-            "Paste",
+            i18n::t!("Paste").to_string(),
             id!("RichTextEditorView") & !id!("IMEOpen"),
         ),
         #[cfg(windows)]
         FixedBinding::custom(
             CustomAction::WindowsCopy,
             EditorViewAction::Copy,
-            "Copy",
+            i18n::t!("Copy").to_string(),
             id!("RichTextEditorView") & !id!("IMEOpen"),
         ),
         FixedBinding::custom(
             CustomAction::Cut,
             EditorViewAction::Cut,
-            "Cut",
+            i18n::t!("Cut").to_string(),
             id!("RichTextEditorView") & !id!("IMEOpen"),
         ),
         FixedBinding::custom(
             CustomAction::Undo,
             EditorViewAction::Undo,
-            "Undo",
+            i18n::t!("Undo").to_string(),
             id!("RichTextEditorView") & !id!("IMEOpen"),
         ),
         FixedBinding::custom(
             CustomAction::Redo,
             EditorViewAction::Redo,
-            "Redo",
+            i18n::t!("Redo").to_string(),
             id!("RichTextEditorView") & !id!("IMEOpen"),
         ),
     ]);

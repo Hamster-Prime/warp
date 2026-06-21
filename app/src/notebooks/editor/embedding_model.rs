@@ -227,7 +227,7 @@ impl NotebookEmbed {
                     appearance,
                     Icon::Pencil,
                     self.mouse_state_handles.edit_button_state.clone(),
-                    "Edit",
+                    i18n::t!("Edit").to_string(),
                     None,
                 )
                 .on_click(move |ctx, _, _| {
@@ -245,7 +245,7 @@ impl NotebookEmbed {
                     appearance,
                     Icon::Copy,
                     self.mouse_state_handles.copy_button_state.clone(),
-                    "Copy",
+                    i18n::t!("Copy").to_string(),
                     custom_action_to_display(CustomAction::Copy),
                 )
                 .on_click(move |ctx, _, _| {

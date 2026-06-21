@@ -284,19 +284,19 @@ impl ExecutionProfileEditorView {
             dropdown.set_items(
                 vec![
                     DropdownItem::new(
-                        "Agent decides",
+                        i18n::t!("Agent decides").to_string(),
                         ExecutionProfileEditorViewAction::SetApplyCodeDiffs {
                             permission: ActionPermission::AgentDecides,
                         },
                     ),
                     DropdownItem::new(
-                        "Always allow",
+                        i18n::t!("Always allow").to_string(),
                         ExecutionProfileEditorViewAction::SetApplyCodeDiffs {
                             permission: ActionPermission::AlwaysAllow,
                         },
                     ),
                     DropdownItem::new(
-                        "Always ask",
+                        i18n::t!("Always ask").to_string(),
                         ExecutionProfileEditorViewAction::SetApplyCodeDiffs {
                             permission: ActionPermission::AlwaysAsk,
                         },
@@ -312,19 +312,19 @@ impl ExecutionProfileEditorView {
             dropdown.set_items(
                 vec![
                     DropdownItem::new(
-                        "Agent decides",
+                        i18n::t!("Agent decides").to_string(),
                         ExecutionProfileEditorViewAction::SetReadFiles {
                             permission: ActionPermission::AgentDecides,
                         },
                     ),
                     DropdownItem::new(
-                        "Always allow",
+                        i18n::t!("Always allow").to_string(),
                         ExecutionProfileEditorViewAction::SetReadFiles {
                             permission: ActionPermission::AlwaysAllow,
                         },
                     ),
                     DropdownItem::new(
-                        "Always ask",
+                        i18n::t!("Always ask").to_string(),
                         ExecutionProfileEditorViewAction::SetReadFiles {
                             permission: ActionPermission::AlwaysAsk,
                         },
@@ -340,19 +340,19 @@ impl ExecutionProfileEditorView {
             dropdown.set_items(
                 vec![
                     DropdownItem::new(
-                        "Agent decides",
+                        i18n::t!("Agent decides").to_string(),
                         ExecutionProfileEditorViewAction::SetExecuteCommands {
                             permission: ActionPermission::AgentDecides,
                         },
                     ),
                     DropdownItem::new(
-                        "Always allow",
+                        i18n::t!("Always allow").to_string(),
                         ExecutionProfileEditorViewAction::SetExecuteCommands {
                             permission: ActionPermission::AlwaysAllow,
                         },
                     ),
                     DropdownItem::new(
-                        "Always ask",
+                        i18n::t!("Always ask").to_string(),
                         ExecutionProfileEditorViewAction::SetExecuteCommands {
                             permission: ActionPermission::AlwaysAsk,
                         },
@@ -368,13 +368,13 @@ impl ExecutionProfileEditorView {
             dropdown.set_items(
                 vec![
                     DropdownItem::new(
-                        "Always allow",
+                        i18n::t!("Always allow").to_string(),
                         ExecutionProfileEditorViewAction::SetWriteToPty {
                             permission: WriteToPtyPermission::AlwaysAllow,
                         },
                     ),
                     DropdownItem::new(
-                        "Always ask",
+                        i18n::t!("Always ask").to_string(),
                         ExecutionProfileEditorViewAction::SetWriteToPty {
                             permission: WriteToPtyPermission::AlwaysAsk,
                         },
@@ -396,19 +396,19 @@ impl ExecutionProfileEditorView {
             dropdown.set_items(
                 vec![
                     DropdownItem::new(
-                        "Agent decides",
+                        i18n::t!("Agent decides").to_string(),
                         ExecutionProfileEditorViewAction::SetCallMcpServers {
                             permission: ActionPermission::AgentDecides,
                         },
                     ),
                     DropdownItem::new(
-                        "Always allow",
+                        i18n::t!("Always allow").to_string(),
                         ExecutionProfileEditorViewAction::SetCallMcpServers {
                             permission: ActionPermission::AlwaysAllow,
                         },
                     ),
                     DropdownItem::new(
-                        "Always ask",
+                        i18n::t!("Always ask").to_string(),
                         ExecutionProfileEditorViewAction::SetCallMcpServers {
                             permission: ActionPermission::AlwaysAsk,
                         },
@@ -424,19 +424,19 @@ impl ExecutionProfileEditorView {
             dropdown.set_items(
                 vec![
                     DropdownItem::new(
-                        "Never",
+                        i18n::t!("Never").to_string(),
                         ExecutionProfileEditorViewAction::SetComputerUse {
                             permission: super::ComputerUsePermission::Never,
                         },
                     ),
                     DropdownItem::new(
-                        "Always ask",
+                        i18n::t!("Always ask").to_string(),
                         ExecutionProfileEditorViewAction::SetComputerUse {
                             permission: super::ComputerUsePermission::AlwaysAsk,
                         },
                     ),
                     DropdownItem::new(
-                        "Always allow",
+                        i18n::t!("Always allow").to_string(),
                         ExecutionProfileEditorViewAction::SetComputerUse {
                             permission: super::ComputerUsePermission::AlwaysAllow,
                         },
@@ -452,19 +452,19 @@ impl ExecutionProfileEditorView {
             dropdown.set_items(
                 vec![
                     DropdownItem::new(
-                        "Never ask",
+                        i18n::t!("Never ask").to_string(),
                         ExecutionProfileEditorViewAction::SetAskUserQuestion {
                             permission: super::AskUserQuestionPermission::Never,
                         },
                     ),
                     DropdownItem::new(
-                        "Ask unless auto-approve",
+                        i18n::t!("Ask unless auto-approve").to_string(),
                         ExecutionProfileEditorViewAction::SetAskUserQuestion {
                             permission: super::AskUserQuestionPermission::AskExceptInAutoApprove,
                         },
                     ),
                     DropdownItem::new(
-                        "Always ask",
+                        i18n::t!("Always ask").to_string(),
                         ExecutionProfileEditorViewAction::SetAskUserQuestion {
                             permission: super::AskUserQuestionPermission::AlwaysAsk,
                         },
@@ -480,19 +480,19 @@ impl ExecutionProfileEditorView {
             dropdown.set_items(
                 vec![
                     DropdownItem::new(
-                        "Never",
+                        i18n::t!("Never").to_string(),
                         ExecutionProfileEditorViewAction::SetRunAgents {
                             permission: RunAgentsPermission::NeverAllow,
                         },
                     ),
                     DropdownItem::new(
-                        "Always allow",
+                        i18n::t!("Always allow").to_string(),
                         ExecutionProfileEditorViewAction::SetRunAgents {
                             permission: RunAgentsPermission::AlwaysAllow,
                         },
                     ),
                     DropdownItem::new(
-                        "Always ask",
+                        i18n::t!("Always ask").to_string(),
                         ExecutionProfileEditorViewAction::SetRunAgents {
                             permission: RunAgentsPermission::AlwaysAsk,
                         },
@@ -505,13 +505,13 @@ impl ExecutionProfileEditorView {
 
         let mcp_allowlist_dropdown = ctx.add_typed_action_view(|ctx| {
             let mut dropdown = FilterableDropdown::new(ctx);
-            dropdown.set_menu_header_to_static("Select MCP servers");
+            dropdown.set_menu_header_to_static(i18n::t!("Select MCP servers").to_string());
             dropdown
         });
 
         let mcp_denylist_dropdown = ctx.add_typed_action_view(|ctx| {
             let mut dropdown = FilterableDropdown::new(ctx);
-            dropdown.set_menu_header_to_static("Select MCP servers");
+            dropdown.set_menu_header_to_static(i18n::t!("Select MCP servers").to_string());
             dropdown
         });
 

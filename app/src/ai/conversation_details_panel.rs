@@ -628,7 +628,7 @@ pub fn init(app: &mut AppContext) {
     app.register_fixed_bindings([FixedBinding::custom(
         CustomAction::Copy,
         ConversationDetailsPanelAction::CopySelectedText,
-        "Copy",
+        i18n::t!("Copy").to_string(),
         id!(ConversationDetailsPanel::ui_name()) & !id!("IMEOpen"),
     )]);
 }

@@ -489,11 +489,11 @@ impl AgentManagementView {
         };
 
         let mut dropdown = Dropdown::new(ctx);
-        Self::setup_filter_menu(&mut dropdown, "Status", ctx);
+        Self::setup_filter_menu(&mut dropdown, i18n::t!("Status").to_string(), ctx);
 
         // Use this helper to make dropdown items with status icons
         let make_status_option =
-            |label: &str, action: AgentManagementViewAction, icon_data: Option<(Icon, Fill)>| {
+            |label: String, action: AgentManagementViewAction, icon_data: Option<(Icon, Fill)>| {
                 let mut fields = MenuItemFields::new(label)
                     .with_on_select_action(DropdownAction::select_action_and_close(action));
                 if let Some((icon, color)) = icon_data {
@@ -504,22 +504,22 @@ impl AgentManagementView {
 
         let items = vec![
             make_status_option(
-                "All",
+                i18n::t!("All").to_string(),
                 AgentManagementViewAction::SetStatusFilter(StatusFilter::All),
                 None,
             ),
             make_status_option(
-                "Working",
+                i18n::t!("Working").to_string(),
                 AgentManagementViewAction::SetStatusFilter(StatusFilter::Working),
                 Some((Icon::ClockLoader, Fill::from(magenta))),
             ),
             make_status_option(
-                "Done",
+                i18n::t!("Done").to_string(),
                 AgentManagementViewAction::SetStatusFilter(StatusFilter::Done),
                 Some((Icon::Check, Fill::from(green))),
             ),
             make_status_option(
-                "Failed",
+                i18n::t!("Failed").to_string(),
                 AgentManagementViewAction::SetStatusFilter(StatusFilter::Failed),
                 Some((Icon::X, Fill::from(red))),
             ),
@@ -534,7 +534,7 @@ impl AgentManagementView {
         ctx: &mut ViewContext<Dropdown<AgentManagementViewAction>>,
     ) -> Dropdown<AgentManagementViewAction> {
         let mut dropdown = Dropdown::new(ctx);
-        Self::setup_filter_menu(&mut dropdown, "Source", ctx);
+        Self::setup_filter_menu(&mut dropdown, i18n::t!("Source").to_string(), ctx);
         // Set a max height so we can fit all of the source options without scrolling
         dropdown.set_menu_max_height(200., ctx);
 
@@ -598,7 +598,7 @@ impl AgentManagementView {
         ctx: &mut ViewContext<Dropdown<AgentManagementViewAction>>,
     ) -> Dropdown<AgentManagementViewAction> {
         let mut dropdown = Dropdown::new(ctx);
-        Self::setup_filter_menu(&mut dropdown, "Created on", ctx);
+        Self::setup_filter_menu(&mut dropdown, i18n::t!("Created on").to_string(), ctx);
 
         let items = vec![
             MenuItem::Item(
@@ -640,7 +640,7 @@ impl AgentManagementView {
         ctx: &mut ViewContext<Dropdown<AgentManagementViewAction>>,
     ) -> Dropdown<AgentManagementViewAction> {
         let mut dropdown = Dropdown::new(ctx);
-        Self::setup_filter_menu(&mut dropdown, "Has artifact", ctx);
+        Self::setup_filter_menu(&mut dropdown, i18n::t!("Has artifact").to_string(), ctx);
 
         let items = vec![
             MenuItem::Item(
@@ -689,7 +689,7 @@ impl AgentManagementView {
         ctx: &mut ViewContext<Dropdown<AgentManagementViewAction>>,
     ) -> Dropdown<AgentManagementViewAction> {
         let mut dropdown = Dropdown::new(ctx);
-        Self::setup_filter_menu(&mut dropdown, "Harness", ctx);
+        Self::setup_filter_menu(&mut dropdown, i18n::t!("Harness").to_string(), ctx);
 
         let items = Self::build_harness_dropdown_items(ctx);
         dropdown.set_rich_items(items, ctx);
@@ -727,7 +727,7 @@ impl AgentManagementView {
         ctx: &mut ViewContext<FilterableDropdown<AgentManagementViewAction>>,
     ) -> FilterableDropdown<AgentManagementViewAction> {
         let mut dropdown = FilterableDropdown::new(ctx);
-        Self::setup_searchable_filter_menu(&mut dropdown, "Environment", ctx);
+        Self::setup_searchable_filter_menu(&mut dropdown, i18n::t!("Environment").to_string(), ctx);
 
         // Keep the button compact when a specific environment ID is selected by abbreviating the
         // displayed ID. (The dropdown menu still shows the full ID.)
@@ -754,14 +754,14 @@ impl AgentManagementView {
         ctx: &mut ViewContext<FilterableDropdown<AgentManagementViewAction>>,
     ) -> FilterableDropdown<AgentManagementViewAction> {
         let mut dropdown = FilterableDropdown::new(ctx);
-        Self::setup_searchable_filter_menu(&mut dropdown, "Created by", ctx);
+        Self::setup_searchable_filter_menu(&mut dropdown, i18n::t!("Created by").to_string(), ctx);
         dropdown
     }
 
     // Initialize the dropdown menu for the filter dropdowns (status, source)
     fn setup_filter_menu<A: DropdownItemAction>(
         dropdown: &mut Dropdown<A>,
-        label_prefix: &'static str,
+        label_prefix: String,
         ctx: &mut ViewContext<Dropdown<A>>,
     ) {
         dropdown.set_menu_width(160., ctx);
@@ -769,7 +769,7 @@ impl AgentManagementView {
         dropdown.set_menu_header_text_override(move |text| {
             i18n::t!(
                 "{label_prefix}: {text}",
-                label_prefix = label_prefix,
+                label_prefix = label_prefix.clone(),
                 text = text
             )
             .to_string()
@@ -780,7 +780,7 @@ impl AgentManagementView {
     // Initialize the dropdown menu for the searchable filter dropdowns (creator)
     fn setup_searchable_filter_menu<A: DropdownItemAction>(
         dropdown: &mut FilterableDropdown<A>,
-        label_prefix: &'static str,
+        label_prefix: String,
         ctx: &mut ViewContext<FilterableDropdown<A>>,
     ) {
         dropdown.set_menu_width(320., ctx);
@@ -788,7 +788,7 @@ impl AgentManagementView {
         dropdown.set_menu_header_text_override(move |text| {
             i18n::t!(
                 "{label_prefix}: {text}",
-                label_prefix = label_prefix,
+                label_prefix = label_prefix.clone(),
                 text = text
             )
             .to_string()
@@ -1545,8 +1545,11 @@ impl AgentManagementView {
 
         // Early return if session is available - no status label rendered
         let (label_text, tooltip_text_opt) = match session_status {
-            SessionStatus::Expired => ("Session expired", Some(SESSION_EXPIRED_TEXT)),
-            SessionStatus::Unavailable => ("No session available", None),
+            SessionStatus::Expired => (
+                i18n::t!("Session expired").to_string(),
+                Some(SESSION_EXPIRED_TEXT),
+            ),
+            SessionStatus::Unavailable => (i18n::t!("No session available").to_string(), None),
             SessionStatus::Available => return Empty::new().finish(),
         };
 
@@ -1841,10 +1844,13 @@ impl AgentManagementView {
         let availability = HarnessAvailabilityModel::as_ref(app);
         if availability.should_show_harness_selector() {
             if let Some(harness) = entry.display.harness {
-                metadata_parts.push(format!(
-                    "Harness: {}",
-                    availability.display_name_for(harness)
-                ));
+                metadata_parts.push(
+                    i18n::t!(
+                        "Harness: {display_name}",
+                        display_name = availability.display_name_for(harness).to_string()
+                    )
+                    .to_string(),
+                );
             }
         }
 
@@ -1942,7 +1948,7 @@ impl AgentManagementView {
 
         let build_header = |use_expanded: bool| {
             let title = Text::new_inline(
-                "Runs",
+                i18n::t!("Runs"),
                 appearance.ui_font_family(),
                 appearance.ui_font_size() + 4.,
             )
@@ -2075,7 +2081,7 @@ impl AgentManagementView {
         let theme = appearance.theme();
 
         let title = Text::new_inline(
-            "Runs",
+            i18n::t!("Runs"),
             appearance.ui_font_family(),
             appearance.ui_font_size() + 4.,
         )
@@ -2097,7 +2103,7 @@ impl AgentManagementView {
             .with_child(Container::new(loading_icon).with_margin_right(10.).finish())
             .with_child(
                 Text::new_inline(
-                    "Loading agents...",
+                    i18n::t!("Loading agents..."),
                     appearance.ui_font_family(),
                     appearance.ui_font_size() + 2.,
                 )

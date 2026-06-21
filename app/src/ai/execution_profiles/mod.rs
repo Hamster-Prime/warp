@@ -23,7 +23,7 @@ pub(crate) const LONG_CONTEXT_PRICING_WARNING_URL: &str =
 pub(crate) fn long_context_pricing_warning_title() -> FormattedTextInline {
     vec![
         FormattedTextFragment::plain_text(
-            "OpenAI automatically applies long-context pricing when context exceeds 272,000 tokens. ",
+            i18n::t!("OpenAI automatically applies long-context pricing when context exceeds 272,000 tokens. ").to_string(),
         ),
         FormattedTextFragment::hyperlink(i18n::t!("Learn more"), LONG_CONTEXT_PRICING_WARNING_URL),
     ]
@@ -97,7 +97,7 @@ pub fn create_default_from_legacy_settings(app: &AppContext) -> AIExecutionProfi
     // ignore it. The same applies to "Autonomy".
     let ai_settings = AISettings::as_ref(app);
     AIExecutionProfile {
-        name: "Default".to_string(),
+        name: i18n::t!("Default").to_string(),
         is_default_profile: true,
         command_denylist: ai_settings.agent_mode_command_execution_denylist.clone(),
         // We initialize the command allowlist to be anything the user added, excluding all

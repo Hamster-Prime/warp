@@ -55,7 +55,7 @@ struct OrchestrationParticipant {
 impl OrchestrationParticipant {
     fn orchestrator() -> Self {
         Self {
-            display_name: "Orchestrator".to_string(),
+            display_name: i18n::t!("Orchestrator").to_string(),
             avatar: OrchestrationAvatar::Orchestrator,
             conversation_id: None,
         }

@@ -1114,7 +1114,7 @@ fn render_oz_updates(props: OzUpdatesProps<'_>, app: &AppContext) -> Option<Box<
                                 .with_child(
                                     Container::new(
                                         Text::new(
-                                            "View changelog",
+                                            i18n::t!("View changelog").to_string(),
                                             appearance.ui_font_family(),
                                             appearance.monospace_font_size() - 2.,
                                         )

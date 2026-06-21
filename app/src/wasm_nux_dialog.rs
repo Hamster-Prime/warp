@@ -231,7 +231,7 @@ impl View for WasmNUXDialog {
                 dialog_styles,
             )
             .with_bottom_row_child(Self::render_dialog_button(
-                "Yes",
+                i18n::t!("Yes").to_string(),
                 WasmNUXDialogAction::SetWebAndClose,
                 &self.confirm_mouse_state,
                 appearance,

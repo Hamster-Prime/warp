@@ -7066,3 +7066,191 @@ you can adjust your:
   zh-CN: 您想要构建什么？
 "Write a CSV to JSON converter CLI":
   zh-CN: 编写一个 CSV 转 JSON 的命令行工具
+"Apply code diffs":
+  zh-CN: 应用代码差异
+"Ask questions":
+  zh-CN: 提问
+"Ask unless auto-approve":
+  zh-CN: 除非自动批准，否则询问
+"Base model":
+  zh-CN: 基础模型
+"Clear secret":
+  zh-CN: 清除密钥
+"Compact Mode":
+  zh-CN: 紧凑模式
+"Computer use":
+  zh-CN: 计算机使用
+"Computer use model":
+  zh-CN: 计算机使用模型
+"Copy branch name":
+  zh-CN: 复制分支名称
+"Copy on Select within the Terminal":
+  zh-CN: 在终端中选中即复制
+"Create anonymous user":
+  zh-CN: 创建匿名用户
+"Created by":
+  zh-CN: 创建者
+"Created on":
+  zh-CN: 创建时间
+"Debug":
+  zh-CN: 调试
+"Default profile name cannot be changed.":
+  zh-CN: 默认配置文件的名称无法更改。
+"Delete agent":
+  zh-CN: 删除智能体
+"Disable PTY Recording Mode (warp.pty.recording)":
+  zh-CN: 禁用 PTY 录制模式 (warp.pty.recording)
+"Disable Shell Debug Mode (-x) for New Sessions":
+  zh-CN: 为新会话禁用 Shell 调试模式 (-x)
+"Disable in-band generators for new sessions":
+  zh-CN: 为新会话禁用带内生成器
+"Download file":
+  zh-CN: 下载文件
+"Enable Figma MCP":
+  zh-CN: 启用 Figma MCP
+"Enable In-band Generators for New Sessions":
+  zh-CN: 为新会话启用带内生成器
+"Enable PTY Recording Mode (warp.pty.recording)":
+  zh-CN: 启用 PTY 录制模式 (warp.pty.recording)
+"Enable Shell Debug Mode (-x) for New Sessions":
+  zh-CN: 为新会话启用 Shell 调试模式 (-x)
+"Enabling...":
+  zh-CN: 正在启用...
+"Execute commands":
+  zh-CN: 执行命令
+"Export Default Settings as CSV to home dir":
+  zh-CN: 将默认设置导出为 CSV 到主目录
+"Failed to install Warp plugin":
+  zh-CN: 安装 Warp 插件失败
+"Failed to update Warp plugin":
+  zh-CN: 更新 Warp 插件失败
+"Focus pane":
+  zh-CN: 聚焦窗格
+"Full terminal use model":
+  zh-CN: 全终端使用模型
+"Get Figma MCP":
+  zh-CN: 获取 Figma MCP
+"GitHub Issues...":
+  zh-CN: GitHub Issues...
+"Give the agent file access to certain directories.":
+  zh-CN: 授予智能体对某些目录的文件访问权限。
+"Harness":
+  zh-CN: Harness
+"Has artifact":
+  zh-CN: 含产物
+"Help":
+  zh-CN: 帮助
+"Hide In-band Command Blocks":
+  zh-CN: 隐藏带内命令块
+"Hide Initialization Block":
+  zh-CN: 隐藏初始化块
+"Hide Warpified SSH Blocks":
+  zh-CN: 隐藏 Warp 化的 SSH 块
+"Install the Warp plugin to enable rich agent notifications within Warp":
+  zh-CN: 安装 Warp 插件以在 Warp 中启用丰富的智能体通知
+"Installing Warp plugin...":
+  zh-CN: 正在安装 Warp 插件...
+"Interact with running commands":
+  zh-CN: 与运行中的命令交互
+"Kill agent":
+  zh-CN: 终止智能体
+"Launch Configurations":
+  zh-CN: 启动配置
+"Loading agents...":
+  zh-CN: 正在加载智能体...
+"Manually Toggle Network Status":
+  zh-CN: 手动切换网络状态
+"Maximize pane":
+  zh-CN: 最大化窗格
+"Minimize pane":
+  zh-CN: 最小化窗格
+"Never":
+  zh-CN: 从不
+"Never ask":
+  zh-CN: 从不询问
+"No session available":
+  zh-CN: 没有可用会话
+"Open Recent":
+  zh-CN: 最近打开
+"Open plan":
+  zh-CN: 打开计划
+"Open pull request":
+  zh-CN: 打开 Pull Request
+"OpenAI automatically applies long-context pricing when context exceeds 272,000 tokens. ":
+  zh-CN: 当上下文超过 272,000 个 token 时，OpenAI 会自动应用长上下文定价。
+"Orchestrator":
+  zh-CN: 编排器
+"Preferences":
+  zh-CN: 偏好设置
+"Privacy Policy...":
+  zh-CN: 隐私政策...
+"Profile default":
+  zh-CN: 配置文件默认值
+"Read files":
+  zh-CN: 读取文件
+"Regular expressions to match commands that Oz should always ask permission to execute.":
+  zh-CN: 用于匹配 Oz 应始终询问执行权限的命令的正则表达式。
+"Regular expressions to match commands that can be automatically executed by Oz.":
+  zh-CN: 用于匹配可由 Oz 自动执行的命令的正则表达式。
+"Run orchestrated agents":
+  zh-CN: 运行编排的智能体
+"Runs":
+  zh-CN: 运行
+"Save New...":
+  zh-CN: 新建...
+"Save environment":
+  zh-CN: 保存环境
+"Select MCP servers":
+  zh-CN: 选择 MCP 服务器
+"Send Feedback...":
+  zh-CN: 发送反馈...
+"Session expired":
+  zh-CN: 会话已过期
+"Set Warp as Default Terminal":
+  zh-CN: 将 Warp 设为默认终端
+"Show In-band Command Blocks":
+  zh-CN: 显示带内命令块
+"Show Initialization Block":
+  zh-CN: 显示初始化块
+"Show Warpified SSH Blocks":
+  zh-CN: 显示 Warp 化的 SSH 块
+"Sorry you had a bad experience with this interaction. We've refunded you 1 credit. We appreciate your feedback!":
+  zh-CN: 抱歉这次交互给您带来了不好的体验。我们已退还您 1 个积分。感谢您的反馈！
+"Stop agent":
+  zh-CN: 停止智能体
+"Synchronize Inputs":
+  zh-CN: 同步输入
+"The model used when the agent operates inside interactive terminal applications like database shells, debuggers, REPLs, or dev servers—reading live output and writing commands to the PTY.":
+  zh-CN: 当智能体在数据库 shell、调试器、REPL 或开发服务器等交互式终端应用中操作时使用的模型——读取实时输出并向 PTY 写入命令。
+"The model used when the agent takes control of your computer to interact with graphical applications through mouse movements, clicks, and keyboard input.":
+  zh-CN: 当智能体控制您的计算机通过鼠标移动、点击和键盘输入与图形应用交互时使用的模型。
+"This model serves as the primary engine behind the agent. It powers most interactions and invokes other models for tasks like planning or code generation when necessary. Warp may automatically switch to alternate models based on model availability or for auxiliary tasks such as conversation summarization.":
+  zh-CN: 此模型作为智能体背后的主引擎。它支持大多数交互，并在必要时调用其他模型来执行规划或代码生成等任务。Warp 可能会根据模型可用性或用于对话摘要等辅助任务自动切换到其他模型。
+"Toggle Focus Reporting":
+  zh-CN: 切换焦点上报
+"Toggle Mouse Reporting":
+  zh-CN: 切换鼠标上报
+"Toggle Scroll Reporting":
+  zh-CN: 切换滚动上报
+"Unknown":
+  zh-CN: 未知
+"Updating Warp plugin...":
+  zh-CN: 正在更新 Warp 插件...
+"Use Warp's Prompt":
+  zh-CN: 使用 Warp 提示符
+"View screenshots":
+  zh-CN: 查看截图
+"Warp Documentation...":
+  zh-CN: Warp 文档...
+"Warp Slack Community...":
+  zh-CN: Warp Slack 社区...
+"Warp plugin installed. Please restart the session to activate.":
+  zh-CN: Warp 插件已安装。请重启会话以激活。
+"Warp plugin updated. Please restart the session to activate.":
+  zh-CN: Warp 插件已更新。请重启会话以激活。
+"Working":
+  zh-CN: 进行中
+"Yes":
+  zh-CN: 是
+"{label} (optional)":
+  zh-CN: "{label}（可选）"

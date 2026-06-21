@@ -25,7 +25,7 @@ pub fn static_suggested_query(command: &str) -> Option<PromptSuggestion> {
                 .rule
                 .label_template
                 .map(|template| apply_captures(&i18n::t!(template), &captures));
-            let query = apply_captures(pattern.rule.query_template, &captures);
+            let query = apply_captures(&i18n::t!(pattern.rule.query_template), &captures);
 
             return Some(PromptSuggestion {
                 id: Uuid::new_v4().to_string(),

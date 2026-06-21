@@ -87,7 +87,7 @@ pub fn init(app: &mut AppContext) {
     app.register_fixed_bindings([FixedBinding::custom(
         CustomAction::Undo,
         CodeReviewAction::UndoRevert,
-        "Undo",
+        i18n::t!("Undo").to_string(),
         id!("CodeReviewView") & !id!("IMEOpen"),
     )]);
 

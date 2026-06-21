@@ -831,10 +831,10 @@ impl UpdateEnvironmentForm {
 
     fn update_submit_button_label(&mut self, ctx: &mut ViewContext<Self>) {
         let button_text = match (&self.mode, self.show_header) {
-            (EnvironmentFormMode::Create, true) => "Create",
-            (EnvironmentFormMode::Create, false) => "Create environment",
-            (EnvironmentFormMode::Edit { .. }, true) => "Save",
-            (EnvironmentFormMode::Edit { .. }, false) => "Save environment",
+            (EnvironmentFormMode::Create, true) => i18n::t!("Create").to_string(),
+            (EnvironmentFormMode::Create, false) => i18n::t!("Create environment").to_string(),
+            (EnvironmentFormMode::Edit { .. }, true) => i18n::t!("Save").to_string(),
+            (EnvironmentFormMode::Edit { .. }, false) => i18n::t!("Save environment").to_string(),
         };
         self.submit_button.update(ctx, |button, ctx| {
             button.set_label(button_text, ctx);

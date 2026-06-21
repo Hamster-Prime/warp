@@ -917,7 +917,7 @@ impl AuthSecretFtuxView {
 
         for (idx, field) in info.fields.iter().enumerate() {
             let label = if field.optional {
-                format!("{} (optional)", field.label)
+                i18n::t!("{label} (optional)", label = field.label).to_string()
             } else {
                 field.label.to_string()
             };
@@ -934,7 +934,7 @@ impl AuthSecretFtuxView {
 
     fn render_button(
         &self,
-        label: &'static str,
+        label: String,
         mouse_state: MouseStateHandle,
         background: Option<Fill>,
         action: AuthSecretFtuxAction,
@@ -994,9 +994,9 @@ impl AuthSecretFtuxView {
         row.add_child(Expanded::new(1., Empty::new().finish()).finish());
 
         let (label, action) = if self.creation_state.is_some() {
-            ("Back", AuthSecretFtuxAction::Back)
+            (i18n::t!("Back").to_string(), AuthSecretFtuxAction::Back)
         } else {
-            ("Cancel", AuthSecretFtuxAction::Cancel)
+            (i18n::t!("Cancel").to_string(), AuthSecretFtuxAction::Cancel)
         };
         row.add_child(self.render_button(
             label,
@@ -1010,7 +1010,7 @@ impl AuthSecretFtuxView {
         let accent_fill = Appearance::as_ref(app).theme().accent();
         let continue_disabled = !self.can_submit_creation_form(app);
         row.add_child(self.render_button(
-            "Continue",
+            i18n::t!("Continue").to_string(),
             self.continue_mouse_state.clone(),
             Some(accent_fill),
             AuthSecretFtuxAction::Continue,

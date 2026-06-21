@@ -236,14 +236,14 @@ pub fn init(app: &mut AppContext) {
         FixedBinding::custom(
             CustomAction::Copy,
             CodeEditorViewAction::Copy,
-            "Copy",
+            i18n::t!("Copy").to_string(),
             text_entry.clone(),
         ),
         // Bindings for paste require the StandardAction and CustomAction binding to work on all platforms.
         FixedBinding::custom(
             CustomAction::Paste,
             CodeEditorViewAction::Paste,
-            "Paste",
+            i18n::t!("Paste").to_string(),
             text_entry.clone(),
         ),
         FixedBinding::standard(
@@ -255,32 +255,32 @@ pub fn init(app: &mut AppContext) {
         FixedBinding::custom(
             CustomAction::WindowsPaste,
             CodeEditorViewAction::Paste,
-            "Paste",
+            i18n::t!("Paste").to_string(),
             text_entry.clone(),
         ),
         #[cfg(windows)]
         FixedBinding::custom(
             CustomAction::WindowsCopy,
             CodeEditorViewAction::WindowsCtrlC,
-            "Copy",
+            i18n::t!("Copy").to_string(),
             text_entry.clone(),
         ),
         FixedBinding::custom(
             CustomAction::Cut,
             CodeEditorViewAction::Cut,
-            "Cut",
+            i18n::t!("Cut").to_string(),
             text_entry.clone(),
         ),
         FixedBinding::custom(
             CustomAction::Undo,
             CodeEditorViewAction::Undo,
-            "Undo",
+            i18n::t!("Undo").to_string(),
             text_entry.clone(),
         ),
         FixedBinding::custom(
             CustomAction::Redo,
             CodeEditorViewAction::Redo,
-            "Redo",
+            i18n::t!("Redo").to_string(),
             text_entry.clone(),
         ),
         FixedBinding::new("escape", CodeEditorViewAction::Escape, text_entry.clone()),

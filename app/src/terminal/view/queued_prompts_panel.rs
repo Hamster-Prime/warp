@@ -77,11 +77,11 @@ fn build_row_state(
     // "wait for the cloud agent" message while send-now is disabled; "Send now" is the default.
     let (edit_tooltip, delete_tooltip) = if is_initial_cloud_mode_prompt {
         (
-            INITIAL_CLOUD_MODE_PROMPT_TOOLTIP,
-            INITIAL_CLOUD_MODE_PROMPT_TOOLTIP,
+            i18n::t!(INITIAL_CLOUD_MODE_PROMPT_TOOLTIP).to_string(),
+            i18n::t!(INITIAL_CLOUD_MODE_PROMPT_TOOLTIP).to_string(),
         )
     } else {
-        ("Edit", "Delete")
+        (i18n::t!("Edit").to_string(), i18n::t!("Delete").to_string())
     };
 
     let send_now_button = ctx.add_typed_action_view(move |_| {
@@ -1182,7 +1182,7 @@ fn render_row(props: RenderRowProps<'_>, app: &AppContext) -> Box<dyn Element> {
                 if drag_state.is_hovered() {
                     stack.add_positioned_overlay_child(
                         ui_builder
-                            .tool_tip(INITIAL_CLOUD_MODE_PROMPT_TOOLTIP.to_owned())
+                            .tool_tip(i18n::t!(INITIAL_CLOUD_MODE_PROMPT_TOOLTIP).to_string())
                             .build()
                             .finish(),
                         OffsetPositioning::offset_from_parent(

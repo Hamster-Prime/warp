@@ -312,7 +312,7 @@ impl KeybindingRow {
     ) -> Box<dyn Element> {
         let conflict_warning = if has_conflicting_binding {
             render_text(
-                SHORTCUT_CONFLICT_WARNING_TEXT,
+                &i18n::t!(SHORTCUT_CONFLICT_WARNING_TEXT),
                 Some(UiComponentStyles {
                     font_weight: Some(Weight::Bold),
                     ..Default::default()
@@ -399,7 +399,7 @@ impl KeybindingRow {
                 self.mouse_state_handles.remove_mouse_state.clone(),
                 |state| {
                     render_button(
-                        CLEAR_BUTTON_TEXT,
+                        i18n::t!(CLEAR_BUTTON_TEXT).to_string(),
                         appearance,
                         self.get_button_text_color(appearance, state),
                     )
@@ -420,7 +420,7 @@ impl KeybindingRow {
                     .clone(),
                 |state| {
                     render_button(
-                        RESET_BUTTON_TEXT,
+                        i18n::t!(RESET_BUTTON_TEXT).to_string(),
                         appearance,
                         self.get_button_text_color(appearance, state),
                     )
@@ -442,12 +442,20 @@ impl KeybindingRow {
                     let cancel_button_color = self.get_button_text_color(appearance, state);
                     if index == 0 {
                         SavePosition::new(
-                            render_button(CANCEL_BUTTON_TEXT, appearance, cancel_button_color),
+                            render_button(
+                                i18n::t!(CANCEL_BUTTON_TEXT).to_string(),
+                                appearance,
+                                cancel_button_color,
+                            ),
                             "first_keybinding_cancel",
                         )
                         .finish()
                     } else {
-                        render_button("Cancel", appearance, cancel_button_color)
+                        render_button(
+                            i18n::t!("Cancel").to_string(),
+                            appearance,
+                            cancel_button_color,
+                        )
                     }
                 },
             )
@@ -464,7 +472,7 @@ impl KeybindingRow {
         let save = Container::new(
             Hoverable::new(self.mouse_state_handles.save_mouse_state.clone(), |state| {
                 render_button(
-                    SAVE_BUTTON_TEXT,
+                    i18n::t!(SAVE_BUTTON_TEXT).to_string(),
                     appearance,
                     self.get_button_text_color(appearance, state),
                 )
@@ -894,7 +902,7 @@ fn render_columns(
 }
 
 fn render_button(
-    text: &'static str,
+    text: String,
     appearance: &Appearance,
     line_color: themes::theme::Fill,
 ) -> Box<dyn Element> {

@@ -155,7 +155,7 @@ pub fn init(app: &mut AppContext) {
         FixedBinding::custom(
             CustomAction::Copy,
             ShareBlockModalAction::CopyLink,
-            "Copy",
+            i18n::t!("Copy").to_string(),
             id!(ShareBlockModal::ui_name()),
         ),
         FixedBinding::new(

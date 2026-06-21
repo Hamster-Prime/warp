@@ -771,7 +771,7 @@ impl RunnableCommandModel for NotebookCommand {
                     appearance,
                     Icon::Copy,
                     self.mouse_state_handles.copy_button_state.clone(),
-                    "Copy",
+                    i18n::t!("Copy").to_string(),
                     custom_action_to_display(CustomAction::Copy),
                 )
                 .on_click(move |ctx, app, _| {

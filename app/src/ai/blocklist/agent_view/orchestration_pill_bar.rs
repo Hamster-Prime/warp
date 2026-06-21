@@ -330,7 +330,7 @@ impl Entity for OrchestrationPillBar {
 
 impl OrchestrationPillBar {
     fn overflow_menu_item(
-        label: &'static str,
+        label: String,
         icon: Icon,
         action: OrchestrationPillBarAction,
         hover_background: Fill,
@@ -459,19 +459,19 @@ impl OrchestrationPillBar {
 
         let mut items = if is_open_elsewhere {
             vec![item(
-                "Focus pane",
+                i18n::t!("Focus pane").to_string(),
                 Icon::ArrowSplit,
                 OrchestrationPillBarAction::FocusOpenedConversation(conversation_id),
             )]
         } else {
             vec![
                 item(
-                    "Open in new pane",
+                    i18n::t!("Open in new pane").to_string(),
                     Icon::ArrowSplit,
                     OrchestrationPillBarAction::OpenInNewPane(conversation_id),
                 ),
                 item(
-                    "Open in new tab",
+                    i18n::t!("Open in new tab").to_string(),
                     Icon::Plus,
                     OrchestrationPillBarAction::OpenInNewTab(conversation_id),
                 ),
@@ -479,7 +479,7 @@ impl OrchestrationPillBar {
         };
         if Self::oz_run_url_for_conversation(conversation_id, ctx).is_some() {
             items.push(item(
-                "View in Oz",
+                i18n::t!("View in Oz").to_string(),
                 Icon::Oz,
                 OrchestrationPillBarAction::ViewInOz(conversation_id),
             ));
@@ -500,15 +500,15 @@ impl OrchestrationPillBar {
         items.push(MenuItem::Separator);
         if is_in_progress {
             items.push(destructive_item(
-                "Stop agent",
+                i18n::t!("Stop agent").to_string(),
                 Icon::StopFilled,
                 OrchestrationPillBarAction::Stop(conversation_id),
             ));
         }
         let (kill_label, kill_icon) = if is_in_finished_state {
-            ("Delete agent", Icon::Trash)
+            (i18n::t!("Delete agent").to_string(), Icon::Trash)
         } else {
-            ("Kill agent", Icon::X)
+            (i18n::t!("Kill agent").to_string(), Icon::X)
         };
         items.push(destructive_item(
             kill_label,

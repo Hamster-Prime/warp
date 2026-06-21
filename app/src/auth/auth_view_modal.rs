@@ -39,7 +39,7 @@ pub fn init(app: &mut AppContext) {
         FixedBinding::custom(
             CustomAction::Paste,
             AuthViewAction::PasteAuthUrl,
-            "Paste",
+            i18n::t!("Paste").to_string(),
             id!(AuthView::ui_name()),
         ),
         FixedBinding::standard(

@@ -1300,16 +1300,80 @@ impl ServerApi {
 
     pub async fn generate_multi_agent_output(
         &self,
-        _request: &warp_multi_agent_api::Request,
+        request: &warp_multi_agent_api::Request,
     ) -> std::result::Result<AIOutputStream<warp_multi_agent_api::ResponseEvent>, Arc<AIApiError>>
     {
-        // Local-only build: direct LLM connection not yet implemented.
-        // CLI harness (Claude Code / Codex / Gemini CLI) works normally.
-        Err(Arc::new(AIApiError::Other(anyhow::anyhow!(
-            "Warp Agent direct mode is in development.\n\
-             To use AI agents now, configure Claude Code, Codex CLI, or Gemini CLI \
-             in Settings → AI → Third party CLI agents."
-        ))))
+        // Local-only build: use direct_llm to connect directly to the user's
+        // configured OpenAI-compatible endpoint instead of the Warp server relay.
+        let config = self.get_direct_llm_config();
+
+        match config {
+            Some(direct_config) => {
+                let stream = direct_llm::generate_direct(direct_config, request)
+                    .await
+                    .map_err(|e| Arc::new(AIApiError::Other(e)))?;
+
+                // Convert DirectLlmError → AIApiError
+                let mapped = stream.map(|result| {
+                    result.map_err(|e| Arc::new(AIApiError::Other(anyhow::anyhow!("{e}"))))
+                });
+
+                Ok(Box::pin(mapped))
+            }
+            None => Err(Arc::new(AIApiError::Other(anyhow::anyhow!(
+                "No LLM endpoint configured.\n\
+                 Go to Settings → AI → Custom endpoints to add your OpenAI or Anthropic API key."
+            )))),
+        }
+    }
+
+    /// Reads the user's direct LLM configuration from environment variables.
+    ///
+    /// Supports:
+    /// - `OPENAI_API_KEY` + optional `OPENAI_BASE_URL` (default: api.openai.com/v1)
+    /// - `ANTHROPIC_API_KEY` (via Anthropic's OpenAI-compatible endpoint)
+    /// - `WARP_LLM_BASE_URL` + `WARP_LLM_API_KEY` + `WARP_LLM_MODEL` (custom)
+    fn get_direct_llm_config(&self) -> Option<direct_llm::DirectLlmConfig> {
+        // Custom endpoint (highest priority)
+        if let (Ok(base_url), Ok(api_key)) = (
+            std::env::var("WARP_LLM_BASE_URL"),
+            std::env::var("WARP_LLM_API_KEY"),
+        ) {
+            let model = std::env::var("WARP_LLM_MODEL").unwrap_or_else(|_| "gpt-4o".to_string());
+            return Some(direct_llm::DirectLlmConfig {
+                base_url,
+                api_key,
+                model,
+            });
+        }
+
+        // OpenAI
+        if let Ok(api_key) = std::env::var("OPENAI_API_KEY") {
+            if !api_key.is_empty() {
+                let base_url = std::env::var("OPENAI_BASE_URL")
+                    .unwrap_or_else(|_| "https://api.openai.com/v1".to_string());
+                let model = std::env::var("OPENAI_MODEL")
+                    .unwrap_or_else(|_| "gpt-4o".to_string());
+                return Some(direct_llm::DirectLlmConfig {
+                    base_url,
+                    api_key,
+                    model,
+                });
+            }
+        }
+
+        // Anthropic (OpenAI-compatible endpoint)
+        if let Ok(api_key) = std::env::var("ANTHROPIC_API_KEY") {
+            if !api_key.is_empty() {
+                return Some(direct_llm::DirectLlmConfig {
+                    base_url: "https://api.anthropic.com/v1".to_string(),
+                    api_key,
+                    model: "claude-3-5-sonnet-20241022".to_string(),
+                });
+            }
+        }
+
+        None
     }
 
     fn set_server_time(&self, server_time: ServerTime) {

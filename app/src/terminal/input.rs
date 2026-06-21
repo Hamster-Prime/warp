@@ -5671,9 +5671,13 @@ impl Input {
             let window_id = ctx.window_id();
             let display_path = file_path.display().to_string();
             ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
-                let toast = DismissibleToast::default(format!(
-                    "File {display_path} already exists and will be overwritten"
-                ));
+                let toast = DismissibleToast::default(
+                    i18n::t!(
+                        "File {path} already exists and will be overwritten",
+                        path = display_path.clone()
+                    )
+                    .to_string(),
+                );
                 toast_stack.add_ephemeral_toast(toast, window_id, ctx);
             });
         }
@@ -5685,9 +5689,13 @@ impl Input {
                 let window_id = ctx.window_id();
                 let display_path = file_path.display().to_string();
                 ToastStack::handle(ctx).update(ctx, move |toast_stack, ctx| {
-                    let toast = DismissibleToast::default(format!(
-                        "Conversation exported to {display_path}"
-                    ));
+                    let toast = DismissibleToast::default(
+                        i18n::t!(
+                            "Conversation exported to {path}",
+                            path = display_path.clone()
+                        )
+                        .to_string(),
+                    );
                     toast_stack.add_ephemeral_toast(toast, window_id, ctx);
                 });
             }

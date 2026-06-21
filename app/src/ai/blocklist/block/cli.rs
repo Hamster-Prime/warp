@@ -1617,7 +1617,7 @@ fn render_web_search(query: Option<String>, app: &AppContext) -> Box<dyn Element
     let theme = appearance.theme();
 
     let text = if let Some(q) = query {
-        format!("Searching the web for \"{q}\"")
+        i18n::t!("Searching the web for \"{q}\"", q = q.clone()).to_string()
     } else {
         i18n::t!("Searching the web...").to_string()
     };

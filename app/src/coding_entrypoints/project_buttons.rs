@@ -224,7 +224,7 @@ impl View for ProjectButtons {
         if FeatureFlag::CreateProjectFlow.is_enabled() {
             row.add_children([
                 Container::new(self.glowing_button(
-                    "Create new project",
+                    i18n::t!("Create new project").to_string(),
                     Icon::Plus,
                     ProjectButtonsAction::CreateProject,
                     TooltipData {
@@ -240,7 +240,7 @@ impl View for ProjectButtons {
                 .with_margin_right(16.)
                 .finish(),
                 Container::new(self.glowing_button(
-                    "Open repository",
+                    i18n::t!("Open repository").to_string(),
                     Icon::Folder,
                     ProjectButtonsAction::OpenRepository,
                     TooltipData {
@@ -256,7 +256,7 @@ impl View for ProjectButtons {
                 .with_margin_right(16.)
                 .finish(),
                 self.glowing_button(
-                    "Clone repository",
+                    i18n::t!("Clone repository").to_string(),
                     Icon::Duplicate,
                     ProjectButtonsAction::CloneRepository,
                     TooltipData {
@@ -272,7 +272,7 @@ impl View for ProjectButtons {
                 Expanded::new(
                     1.,
                     self.glowing_button(
-                        "Open repository",
+                        i18n::t!("Open repository").to_string(),
                         Icon::Plus,
                         ProjectButtonsAction::CreateProject,
                         TooltipData {

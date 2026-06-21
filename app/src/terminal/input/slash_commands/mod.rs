@@ -997,7 +997,10 @@ impl Input {
                     .as_ref(ctx)
                     .selected_conversation_id(ctx)
                 else {
-                    show_error_toast("/fork requires an active conversation".to_owned(), ctx);
+                    show_error_toast(
+                        i18n::t!("/fork requires an active conversation").to_string(),
+                        ctx,
+                    );
                     return true;
                 };
 
@@ -1133,12 +1136,18 @@ impl Input {
                     .as_ref(ctx)
                     .selected_conversation_id(ctx)
                 else {
-                    show_error_toast("/queue requires an active conversation".to_owned(), ctx);
+                    show_error_toast(
+                        i18n::t!("/queue requires an active conversation").to_string(),
+                        ctx,
+                    );
                     return true;
                 };
 
                 let Some(prompt) = argument.filter(|a| !a.is_empty()).cloned() else {
-                    show_error_toast("/queue requires a prompt argument".to_owned(), ctx);
+                    show_error_toast(
+                        i18n::t!("/queue requires a prompt argument").to_string(),
+                        ctx,
+                    );
                     return true;
                 };
 

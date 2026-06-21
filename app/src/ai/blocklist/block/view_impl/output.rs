@@ -2040,9 +2040,9 @@ fn render_stopped_output(props: Props, app: &AppContext) -> Box<dyn Element> {
                 }
             }
 
-            conversation
-                .initial_query()
-                .map(|task_name| format!("Stopped task: \"{task_name}\""))
+            conversation.initial_query().map(|task_name| {
+                i18n::t!("Stopped task: \"{task_name}\"", task_name = task_name).to_string()
+            })
         })
         .unwrap_or_else(|| i18n::t!("Stopped task").to_string());
 
@@ -2683,7 +2683,11 @@ fn render_comment_addressed_header(comment: &ReviewComment, app: &AppContext) ->
         Shrinkable::new(
             1.,
             Text::new_inline(
-                format!("Comment addressed: \"{content}\""),
+                i18n::t!(
+                    "Comment addressed: \"{content}\"",
+                    content = content.clone()
+                )
+                .to_string(),
                 appearance.ui_font_family(),
                 appearance.monospace_font_size(),
             )

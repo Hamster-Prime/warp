@@ -7015,3 +7015,54 @@ you can adjust your:
   zh-CN: "您的组织已为您的账户启用了 SSO"
 "ZDR":
   zh-CN: "ZDR"
+
+"/fork requires an active conversation":
+  zh-CN: /fork 需要一个活跃的对话
+"/queue requires a prompt argument":
+  zh-CN: /queue 需要一个提示参数
+"/queue requires an active conversation":
+  zh-CN: /queue 需要一个活跃的对话
+"Build a Minesweeper clone in React":
+  zh-CN: 用 React 构建扫雷克隆
+"Clone repository":
+  zh-CN: 克隆仓库
+"Code a Node.js server that returns random quotes from a JSON file":
+  zh-CN: 编写一个从 JSON 文件返回随机名言的 Node.js 服务器
+"Conversation exported to {path}":
+  zh-CN: "对话已导出到 {path}"
+"Create a starter template for a résumé web page":
+  zh-CN: 创建一个简历网页的入门模板
+"Delete '{title}'?":
+  zh-CN: "删除'{title}'？"
+"Enable {name} notifications":
+  zh-CN: "启用 {name} 通知"
+"Failed to save file {path}":
+  zh-CN: "保存文件 {path} 失败"
+"Failed to start LSP server for {workspace} with error {error}":
+  zh-CN: "为 {workspace} 启动 LSP 服务器失败，错误：{error}"
+"Fetched {count} web pages":
+  zh-CN: "已获取 {count} 个网页"
+"Fetched {success} of {total} web pages":
+  zh-CN: "已获取 {success} / {total} 个网页"
+"Fetching {count} web pages...":
+  zh-CN: "正在获取 {count} 个网页..."
+"File {path} already exists and will be overwritten":
+  zh-CN: "文件 {path} 已存在，将被覆盖"
+"Have Warp installed but redirecting to download page?\nEnable Local Network Access for {url} in your browser.":
+  zh-CN: "已安装 Warp 但仍跳转到下载页面？\n请在浏览器中为 {url} 启用\"本地网络访问\"。"
+"Make a Conway's Game of Life simulation":
+  zh-CN: 制作一个康威生命游戏模拟
+"Provide a repository URL e.g. \"git@github.com:username/project.git\"":
+  zh-CN: "提供仓库 URL，例如 \"git@github.com:username/project.git\""
+"Searched for \"{query}\"":
+  zh-CN: "已搜索\"{query}\""
+"Searched for \"{query}\" in {repo}":
+  zh-CN: "已在 {repo} 中搜索\"{query}\""
+"Searching for \"{query}\" in {repo}":
+  zh-CN: "正在 {repo} 中搜索\"{query}\""
+"Voice input is enabled. You can also press and hold the `{key}` key to activate voice input (configure in Settings > AI > Voice)":
+  zh-CN: "语音输入已启用。您也可以按住 `{key}` 键来激活语音输入（在\"设置 > AI > 语音\"中配置）"
+"What do you want to build?":
+  zh-CN: 您想要构建什么？
+"Write a CSV to JSON converter CLI":
+  zh-CN: 编写一个 CSV 转 JSON 的命令行工具

@@ -40,7 +40,7 @@ impl WebSearchView {
         let loading_icon = yellow_running_icon(appearance);
 
         let text = if let Some(q) = query {
-            format!("Searching the web for \"{q}\"")
+            i18n::t!("Searching the web for \"{q}\"", q = q.clone()).to_string()
         } else {
             i18n::t!("Searching the web").to_string()
         };
@@ -57,7 +57,7 @@ impl WebSearchView {
         let title_text = if query.is_empty() {
             i18n::t!("Searched the web").to_string()
         } else {
-            format!("Searched the web for \"{query}\"")
+            i18n::t!("Searched the web for \"{query}\"", query = query).to_string()
         };
 
         let body = if self.collapsible.is_expanded {

@@ -22979,10 +22979,11 @@ impl Workspace {
             // the browser intentionally obscures the error root cause for privacy reasons.
             // Many users' browser settings will block Local Network Access so this will end up redirecting to download page,
             // even if they have the app installed.
-            let toast_message = format!(
-                "Have Warp installed but redirecting to download page?\nEnable Local Network Access for {} in your browser.",
-                ChannelState::server_root_url()
-            );
+            let toast_message = i18n::t!(
+                "Have Warp installed but redirecting to download page?\nEnable Local Network Access for {url} in your browser.",
+                url = ChannelState::server_root_url().to_string()
+            )
+            .to_string();
             self.toast_stack.update(ctx, |toast_stack, ctx| {
                 toast_stack.add_persistent_toast(DismissibleToast::default(toast_message), ctx)
             });

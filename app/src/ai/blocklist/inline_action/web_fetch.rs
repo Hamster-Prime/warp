@@ -37,7 +37,7 @@ impl WebFetchView {
         let appearance = Appearance::as_ref(app);
         let loading_icon = yellow_running_icon(appearance);
 
-        let text = format!("Fetching {} web pages...", urls.len());
+        let text = i18n::t!("Fetching {count} web pages...", count = urls.len()).to_string();
 
         super::search_results_common::render_loading_header(text, loading_icon, app)
     }
@@ -49,9 +49,14 @@ impl WebFetchView {
     ) -> Box<dyn Element> {
         let successful_count = pages.iter().filter(|(_, _, success)| *success).count();
         let title_text = if successful_count == pages.len() {
-            format!("Fetched {} web pages", pages.len())
+            i18n::t!("Fetched {count} web pages", count = pages.len()).to_string()
         } else {
-            format!("Fetched {} of {} web pages", successful_count, pages.len())
+            i18n::t!(
+                "Fetched {success} of {total} web pages",
+                success = successful_count,
+                total = pages.len()
+            )
+            .to_string()
         };
 
         let body = if self.collapsible.is_expanded {

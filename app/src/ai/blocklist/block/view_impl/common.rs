@@ -317,10 +317,10 @@ pub fn render_warping_indicator<V: View>(
             }
             Some(AIAgentActionType::Grep { .. }) => i18n::t!("Grepping...").to_string(),
             Some(AIAgentActionType::CallMCPTool { name, .. }) => {
-                format!("Calling \"{name}\" MCP tool...")
+                i18n::t!("Calling \"{name}\" MCP tool...", name = name.clone()).to_string()
             }
             Some(AIAgentActionType::ReadMCPResource { name, .. }) => {
-                format!("Reading \"{name}\" MCP resource...")
+                i18n::t!("Reading \"{name}\" MCP resource...", name = name.clone()).to_string()
             }
             Some(AIAgentActionType::FileGlob { .. })
             | Some(AIAgentActionType::FileGlobV2 { .. }) => {

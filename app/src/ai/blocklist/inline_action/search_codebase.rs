@@ -155,9 +155,18 @@ impl SearchCodebaseView {
         app: &AppContext,
     ) -> Box<dyn Element> {
         let title_text = if let Some(repo_name) = &self.repo_name {
-            format!("Searched for \"{}\" in {}", self.search_query, repo_name)
+            i18n::t!(
+                "Searched for \"{query}\" in {repo}",
+                query = self.search_query.clone(),
+                repo = repo_name.clone()
+            )
+            .to_string()
         } else {
-            format!("Searched for \"{}\"", self.search_query)
+            i18n::t!(
+                "Searched for \"{query}\"",
+                query = self.search_query.clone()
+            )
+            .to_string()
         };
 
         let body = if self.collapsible.is_expanded {
@@ -465,7 +474,12 @@ impl View for SearchCodebaseView {
                 | AIActionStatus::RunningAsync,
             ) => {
                 let loading_text = if let Some(repo_name) = &self.repo_name {
-                    format!("Searching for \"{}\" in {}", self.search_query, repo_name)
+                    i18n::t!(
+                        "Searching for \"{query}\" in {repo}",
+                        query = self.search_query.clone(),
+                        repo = repo_name.clone()
+                    )
+                    .to_string()
                 } else {
                     format!("Searching codebase for \"{}\"", self.search_query)
                 };

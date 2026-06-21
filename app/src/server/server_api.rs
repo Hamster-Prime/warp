@@ -1305,7 +1305,7 @@ impl ServerApi {
     {
         // Local-only build: use direct_llm to connect directly to the user's
         // configured OpenAI-compatible endpoint instead of the Warp server relay.
-        let config = self.get_direct_llm_config();
+        let config = self.get_direct_llm_config(request);
 
         match config {
             Some(direct_config) => {
@@ -1327,47 +1327,51 @@ impl ServerApi {
         }
     }
 
-    /// Reads the user's direct LLM configuration from environment variables.
+    /// Reads the user's direct LLM configuration from the protobuf Request.
     ///
-    /// Supports:
-    /// - `OPENAI_API_KEY` + optional `OPENAI_BASE_URL` (default: api.openai.com/v1)
-    /// - `ANTHROPIC_API_KEY` (via Anthropic's OpenAI-compatible endpoint)
-    /// - `WARP_LLM_BASE_URL` + `WARP_LLM_API_KEY` + `WARP_LLM_MODEL` (custom)
-    fn get_direct_llm_config(&self) -> Option<direct_llm::DirectLlmConfig> {
-        // Custom endpoint (highest priority)
-        if let (Ok(base_url), Ok(api_key)) = (
-            std::env::var("WARP_LLM_BASE_URL"),
-            std::env::var("WARP_LLM_API_KEY"),
-        ) {
-            let model = std::env::var("WARP_LLM_MODEL").unwrap_or_else(|_| "gpt-4o".to_string());
-            return Some(direct_llm::DirectLlmConfig {
-                base_url,
-                api_key,
-                model,
-            });
-        }
+    /// The Agent request already contains API keys and custom endpoints
+    /// packed by `RequestParams::new()` from the settings page.
+    fn get_direct_llm_config(
+        &self,
+        request: &warp_multi_agent_api::Request,
+    ) -> Option<direct_llm::DirectLlmConfig> {
+        let settings = request.settings.as_ref()?;
 
-        // OpenAI
-        if let Ok(api_key) = std::env::var("OPENAI_API_KEY") {
-            if !api_key.is_empty() {
-                let base_url = std::env::var("OPENAI_BASE_URL")
-                    .unwrap_or_else(|_| "https://api.openai.com/v1".to_string());
-                let model = std::env::var("OPENAI_MODEL")
-                    .unwrap_or_else(|_| "gpt-4o".to_string());
-                return Some(direct_llm::DirectLlmConfig {
-                    base_url,
-                    api_key,
-                    model,
-                });
+        // Try custom model providers first (highest priority — explicitly user-configured)
+        if let Some(custom) = &settings.custom_model_providers {
+            if let Some(provider) = custom.providers.first() {
+                if let Some(model) = provider.models.first() {
+                    return Some(direct_llm::DirectLlmConfig {
+                        base_url: provider.base_url.clone(),
+                        api_key: provider.api_key.clone(),
+                        model: model.config_key.clone(),
+                    });
+                }
             }
         }
 
-        // Anthropic (OpenAI-compatible endpoint)
-        if let Ok(api_key) = std::env::var("ANTHROPIC_API_KEY") {
-            if !api_key.is_empty() {
+        // Try BYO API keys
+        if let Some(keys) = &settings.api_keys {
+            // OpenAI
+            if !keys.openai.is_empty() {
+                let key = &keys.openai;
+                let model = settings
+                    .model_config
+                    .as_ref()
+                    .map(|c| c.base.clone())
+                    .unwrap_or_else(|| "gpt-4o".to_string());
+                return Some(direct_llm::DirectLlmConfig {
+                    base_url: "https://api.openai.com/v1".to_string(),
+                    api_key: key.clone(),
+                    model,
+                });
+            }
+
+            // Anthropic
+            if !keys.anthropic.is_empty() {
                 return Some(direct_llm::DirectLlmConfig {
                     base_url: "https://api.anthropic.com/v1".to_string(),
-                    api_key,
+                    api_key: keys.anthropic.clone(),
                     model: "claude-3-5-sonnet-20241022".to_string(),
                 });
             }

@@ -111,68 +111,30 @@ impl AuthState {
         }
     }
 
-    /// Creates and initializes auth state. Checks, in order:
-    /// 1. Test user (test/integration/skip_login builds)
-    /// 2. Provided API key
-    /// 3. WARP_USER_SECRET environment variable
-    /// 4. Persisted user from secure storage
-    #[cfg_attr(target_family = "wasm", allow(dead_code))]
-    pub fn initialize(ctx: &AppContext, api_key: Option<String>) -> Self {
+    /// Creates and initializes auth state for local-only builds.
+    /// Always creates a fully-logged-in local user without contacting any server.
+    pub fn initialize(ctx: &AppContext, _api_key: Option<String>) -> Self {
         let state = Self::new(ctx);
 
-        if Self::should_use_test_user() {
-            state.set_user(Some(User::test()));
-            #[cfg(any(
-                test,
-                feature = "integration_tests",
-                feature = "skip_login",
-                feature = "test-util"
-            ))]
-            state.set_credentials(Some(Self::test_credentials()));
-            return state;
-        }
-
-        if let Some(api_key_value) = api_key {
-            log::info!("Authenticating via API key");
-            let formatted = if api_key_value.starts_with(API_KEY_PREFIX) {
-                api_key_value
-            } else {
-                format!("{API_KEY_PREFIX}{api_key_value}")
-            };
-            state.set_credentials(Some(Credentials::ApiKey {
-                key: formatted,
-                owner_type: None,
-            }));
-            return state;
-        }
-
-        // Try WARP_USER_SECRET environment variable.
-        if let Some(persisted) = option_env!("WARP_USER_SECRET")
-            .and_then(|s| serde_json::from_str::<PersistedUser>(s).ok())
-        {
-            state.apply_persisted_user(persisted);
-            return state;
-        }
-
-        // Try reading from secure storage.
-        match PersistedUser::from_secure_storage(ctx) {
-            Ok(persisted) => {
-                if persisted.auth_tokens.refresh_token.is_empty() {
-                    log::warn!(
-                        "Found persisted user with empty refresh token; clearing secure storage entry"
-                    );
-                    let _ = PersistedUser::remove_from_secure_storage(ctx).map_err(|err| {
-                        log::warn!("Unable to clear invalid user from secure storage: {err:?}");
-                    });
-                } else {
-                    state.apply_persisted_user(persisted);
-                }
-            }
-            Err(err) => {
-                log::info!("Unable to read user from secure storage: {err:?}");
-            }
-        }
-
+        // Local-only build: always logged in as a local user.
+        // No server contact, no secure storage, no token refresh.
+        state.set_user(Some(User {
+            local_id: UserUid::new("local-user".into()),
+            metadata: UserMetadata {
+                email: "local@warp.local".to_string(),
+                display_name: Some("Local User".to_string()),
+                photo_url: None,
+            },
+            is_onboarded: true,
+            needs_sso_link: false,
+            anonymous_user_type: None,
+            is_on_work_domain: false,
+            linked_at: None,
+            personal_object_limits: None,
+            principal_type: PrincipalType::User,
+            global_skills: Vec::new(),
+        }));
+        state.set_credentials(Some(Credentials::Bearer("local-no-auth".to_string())));
         state
     }
 

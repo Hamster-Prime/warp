@@ -231,12 +231,9 @@ fn generate_channel_config_if_needed(target_family: &str, target_os: &str) {
 
 /// Returns a minimal valid `ChannelConfig` JSON for the given channel.
 ///
-/// Used when `warp-channel-config` is not on PATH (external/fork builds). The stub points
-/// at production servers so login/RTC work for end-user testing, but disables telemetry,
-/// crash reporting, autoupdate, and MCP OAuth — those require channel-specific secrets.
+/// Local-only build: all cloud features disabled. No server connections.
+/// Agent uses direct LLM connection (Phase 2) or CLI harness.
 fn stub_channel_config(channel: &str) -> String {
-    // Channel-specific app_id and log filename. Keep these in sync with the
-    // APP_NAME / WARP_BIN mapping in script/windows/bundle.ps1.
     let (app_id, logfile_name) = match channel {
         "local" => ("dev.warp.WarpLocal", "warp-local.log"),
         "dev" => ("dev.warp.WarpDev", "warp-dev.log"),
@@ -249,14 +246,14 @@ fn stub_channel_config(channel: &str) -> String {
   "app_id": "{app_id}",
   "logfile_name": "{logfile_name}",
   "server_config": {{
-    "server_root_url": "https://app.warp.dev",
-    "rtc_server_url": "wss://rtc.app.warp.dev/graphql/v2",
-    "session_sharing_server_url": "wss://sessions.app.warp.dev",
-    "firebase_auth_api_key": "AIzaSyBdy3O3S9hrdayLJxJ7mriBR4qgUaUygAs",
+    "server_root_url": "http://localhost:0",
+    "rtc_server_url": "",
+    "session_sharing_server_url": null,
+    "firebase_auth_api_key": "",
     "iap_config": null
   }},
   "oz_config": {{
-    "oz_root_url": "https://oz.warp.dev",
+    "oz_root_url": "",
     "workload_audience_url": null
   }},
   "telemetry_config": null,

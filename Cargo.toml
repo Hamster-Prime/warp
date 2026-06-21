@@ -46,6 +46,7 @@ firebase = { path = "crates/firebase" }
 fuzzy_match = { path = "crates/fuzzy_match" }
 handlebars = { path = "crates/handlebars" }
 i18n = { path = "crates/i18n" }
+direct_llm = { path = "crates/direct_llm" }
 i18n_tools = { path = "crates/i18n_tools" }
 http_client = { path = "crates/http_client" }
 http_server = { path = "crates/http_server" }

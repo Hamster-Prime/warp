@@ -1198,10 +1198,9 @@ impl SettingsWidget for LogoutWidget {
         "sign out log out logout"
     }
 
-    fn should_render(&self, app: &AppContext) -> bool {
-        !AuthStateProvider::as_ref(app)
-            .get()
-            .is_anonymous_or_logged_out()
+    fn should_render(&self, _app: &AppContext) -> bool {
+        // Local-only build: never show logout button.
+        false
     }
 
     fn render(

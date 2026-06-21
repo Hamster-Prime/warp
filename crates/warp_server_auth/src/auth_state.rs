@@ -18,7 +18,7 @@ use super::user::persistence::PersistedUser;
 use super::user::{
     AnonymousUserType, FirebaseAuthTokens, PersonalObjectLimits, PrincipalType, User,
 };
-use super::{API_KEY_PREFIX, UserUid};
+use super::UserUid;
 
 const ANONYMOUS_USER_NOTIFICATION_BLOCK_TIMER: Duration = Duration::days(7);
 
@@ -119,7 +119,7 @@ impl AuthState {
         // Local-only build: always logged in as a local user.
         // No server contact, no secure storage, no token refresh.
         state.set_user(Some(User {
-            local_id: UserUid::new("local-user".into()),
+            local_id: UserUid::new("local-user"),
             metadata: UserMetadata {
                 email: "local@warp.local".to_string(),
                 display_name: Some("Local User".to_string()),
@@ -138,6 +138,7 @@ impl AuthState {
         state
     }
 
+    #[allow(dead_code)]
     fn should_use_test_user() -> bool {
         cfg!(any(test, feature = "skip_login", feature = "test-util"))
             || ChannelState::channel() == Channel::Integration
@@ -184,6 +185,7 @@ impl AuthState {
     }
 
     /// Applies a deserialized PersistedUser, splitting it into User and Credentials.
+    #[allow(dead_code)]
     fn apply_persisted_user(&self, persisted: PersistedUser) {
         let user = User {
             is_onboarded: persisted.is_onboarded,

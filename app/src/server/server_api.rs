@@ -19,8 +19,8 @@ use ::http::header::CONTENT_LENGTH;
 use ai::AIClient;
 use anyhow::{anyhow, Context, Result};
 use auth::AuthClient;
-use base64::prelude::BASE64_URL_SAFE;
-use base64::Engine;
+//use base64::prelude::BASE64_URL_SAFE;
+//use base64::Engine;
 use base_client::{AMBIENT_WORKLOAD_TOKEN_HEADER, CLOUD_AGENT_ID_HEADER};
 use block::BlockClient;
 use channel_versions::ChannelVersions;
@@ -29,12 +29,12 @@ use futures::StreamExt;
 use instant::Instant;
 use object::ObjectClient;
 use parking_lot::{Mutex, RwLock};
-use prost::Message;
+//use prost::Message;
 use referral::ReferralsClient;
 use reqwest::StatusCode;
 use serde::{Deserialize, Serialize};
 use team::TeamClient;
-use tracing_futures::Instrument as _;
+//use tracing_futures::Instrument as _;
 use url::Url;
 use warp_core::context_flag::ContextFlag;
 use warp_core::errors::{register_error, AnyhowErrorExt, ErrorExt};
@@ -282,6 +282,7 @@ impl AIApiError {
 
     /// Format a stream error into a human-readable error message. This will read the response
     /// body if there is one.
+    #[allow(dead_code)]
     async fn from_stream_error(stream_type: &'static str, err: reqwest_eventsource::Error) -> Self {
         match err {
             reqwest_eventsource::Error::InvalidStatusCode(
@@ -1299,129 +1300,16 @@ impl ServerApi {
 
     pub async fn generate_multi_agent_output(
         &self,
-        request: &warp_multi_agent_api::Request,
+        _request: &warp_multi_agent_api::Request,
     ) -> std::result::Result<AIOutputStream<warp_multi_agent_api::ResponseEvent>, Arc<AIApiError>>
     {
-        let auth_token = self
-            .get_or_refresh_access_token()
-            .await
-            .map_err(Into::into)
-            .map_err(Arc::new)?;
-
-        let is_passive = request.input.as_ref().is_some_and(|input| {
-            matches!(
-                input.r#type,
-                Some(warp_multi_agent_api::request::input::Type::GeneratePassiveSuggestions(_))
-            )
-        });
-        let is_evals = cfg!(feature = "agent_mode_evals");
-        let url = format!(
-            "{}/{}/{}",
-            ChannelState::server_root_url(),
-            if is_evals { "agent-mode-evals" } else { "ai" },
-            if is_passive {
-                "passive-suggestions"
-            } else {
-                "multi-agent"
-            }
-        );
-
-        let ambient_workload_token = if is_passive {
-            // Do not include cloud agent workload metadata in passive suggestion requests - they
-            // read from the main conversation, but cannot modify it.
-            None
-        } else {
-            self.get_or_create_ambient_workload_token()
-                .await
-                .map_err(Into::into)
-                .map_err(Arc::new)?
-        };
-
-        let mut request_builder = self
-            .client
-            .post(url)
-            .proto(request)
-            .prevent_sleep("Agent Mode request in-progress");
-        if let Some(token) = auth_token.as_bearer_token() {
-            request_builder = request_builder.bearer_auth(token);
-        }
-
-        if let Some(token) = ambient_workload_token {
-            request_builder = request_builder.header(AMBIENT_WORKLOAD_TOKEN_HEADER, token);
-        }
-
-        cfg_if::cfg_if! {
-            if #[cfg(feature = "agent_mode_evals")] {
-                let mut request = request_builder;
-                if let Some(eval_user_id) = self.eval_user_id {
-                    request = request.header(EVAL_USER_ID_HEADER, eval_user_id.to_string());
-                }
-            } else {
-                let request = request_builder;
-            }
-        }
-
-        let raw_stream = self.wrap_eventsource_with_iap_detection(request.eventsource());
-        let output_stream = raw_stream.filter_map(|event| async {
-            let result = match event {
-                Ok(reqwest_eventsource::Event::Message(message_event)) => {
-                    match BASE64_URL_SAFE.decode(message_event.data.trim_matches('"')) {
-                        Ok(decoded_data) => {
-                            let action = warp_multi_agent_api::ResponseEvent::decode(
-                                decoded_data.as_slice(),
-                            );
-                            Some(action.map_err(|e| AIApiError::Other(anyhow::Error::from(e))))
-                        }
-                        Err(e) => Some(Err(AIApiError::Other(anyhow::Error::from(e)))),
-                    }
-                }
-                Ok(reqwest_eventsource::Event::Open) => None,
-                Err(err) => Some(Err(AIApiError::from_stream_error(
-                    "GenerateMultiAgentOutput",
-                    err,
-                )
-                .await)),
-            }
-            // Wrap errors in an Arc so that they're cloneable by downstream event
-            // handlers.
-            .map(|item| item.map_err(Arc::new));
-            result
-        });
-
-        // Once we get the init event, add some identifiers to the trace span.
-        let output_stream = output_stream.inspect(|event| {
-            if let Ok(event) = &event {
-                match &event.r#type {
-                    Some(warp_multi_agent_api::response_event::Type::Init(init)) => {
-                        tracing::info!("StreamInit");
-                        tracing::Span::current().record("conversation_id", &init.conversation_id);
-                        tracing::Span::current().record("request_id", &init.request_id);
-                        tracing::Span::current().record("run_id", &init.run_id);
-                    }
-                    Some(warp_multi_agent_api::response_event::Type::Finished(_finished)) => {
-                        tracing::info!("StreamFinished");
-                    }
-                    _ => {}
-                }
-            }
-        });
-
-        // Wrap the output stream with a trace span.
-        let output_stream = output_stream.instrument(tracing::info_span!(
-            "generate_multi_agent_output",
-            tags.cloud_agent = true,
-            conversation_id = tracing::field::Empty,
-            request_id = tracing::field::Empty,
-            run_id = tracing::field::Empty,
-        ));
-
-        cfg_if::cfg_if! {
-            if #[cfg(target_family = "wasm")] {
-                Ok(output_stream.boxed_local())
-            } else {
-                Ok(output_stream.boxed())
-            }
-        }
+        // Local-only build: direct LLM connection not yet implemented.
+        // CLI harness (Claude Code / Codex / Gemini CLI) works normally.
+        Err(Arc::new(AIApiError::Other(anyhow::anyhow!(
+            "Warp Agent direct mode is in development.\n\
+             To use AI agents now, configure Claude Code, Codex CLI, or Gemini CLI \
+             in Settings → AI → Third party CLI agents."
+        ))))
     }
 
     fn set_server_time(&self, server_time: ServerTime) {

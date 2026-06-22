@@ -1,14 +1,10 @@
 //! OpenAI-compatible API client.
-//!
-//! Handles HTTP communication with any OpenAI-compatible endpoint
-//! (OpenAI, Anthropic via proxy, Ollama, LM Studio, etc.)
 
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
 use super::DirectLlmConfig;
 
-/// OpenAI chat completion request.
 #[derive(Serialize, Debug)]
 pub struct ChatCompletionRequest {
     pub model: String,
@@ -18,7 +14,6 @@ pub struct ChatCompletionRequest {
     pub tools: Option<Vec<ToolDefinition>>,
 }
 
-/// A single chat message in OpenAI format.
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct ChatMessage {
     pub role: String,
@@ -30,7 +25,6 @@ pub struct ChatMessage {
     pub tool_call_id: Option<String>,
 }
 
-/// OpenAI function/tool definition.
 #[derive(Serialize, Debug)]
 pub struct ToolDefinition {
     #[serde(rename = "type")]
@@ -47,7 +41,6 @@ pub struct FunctionDefinition {
     pub parameters: Option<Value>,
 }
 
-/// A tool call from the assistant.
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct ToolCall {
     pub id: String,
@@ -63,7 +56,6 @@ pub struct FunctionCall {
     pub arguments: Option<String>,
 }
 
-/// A chunk from the streaming SSE response.
 #[derive(Deserialize, Debug)]
 pub struct ChatCompletionChunk {
     pub choices: Vec<ChunkChoice>,
@@ -78,21 +70,20 @@ pub struct ChunkChoice {
 
 #[derive(Deserialize, Debug)]
 pub struct Delta {
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     pub content: Option<String>,
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
     pub tool_calls: Option<Vec<ToolCall>>,
 }
 
-/// Starts a streaming chat completion request.
-///
-/// Sends POST to `{base_url}/chat/completions` with streaming enabled.
-/// Returns a stream of `ChatCompletionChunk`s parsed from the SSE response.
 pub async fn stream_chat_completion(
     config: &DirectLlmConfig,
     request: &ChatCompletionRequest,
 ) -> Result<futures::stream::BoxStream<'static, Result<ChatCompletionChunk, super::DirectLlmError>>, super::DirectLlmError> {
     let url = format!("{}/chat/completions", config.base_url.trim_end_matches('/'));
+
+    log::info!("[direct_llm] POST {url} model={}", config.model);
+    log::info!("[direct_llm] messages count: {}", request.messages.len());
 
     let client = reqwest::Client::builder()
         .build()
@@ -109,40 +100,43 @@ pub async fn stream_chat_completion(
     if !response.status().is_success() {
         let status = response.status().as_u16();
         let body = response.text().await.unwrap_or_default();
+        log::error!("[direct_llm] API error: status={status}, body={body}");
         return Err(super::DirectLlmError::ApiError { status, body });
     }
 
-    // Convert the byte stream into a stream of parsed ChatCompletionChunks.
+    log::info!("[direct_llm] SSE stream connected, parsing chunks...");
+
     let byte_stream = response.bytes_stream();
-
     let chunk_stream = parse_sse_stream(byte_stream);
-
     Ok(Box::pin(chunk_stream))
 }
 
 /// Parses an SSE byte stream into ChatCompletionChunks.
-///
-/// SSE format: lines starting with "data: " contain JSON payloads.
-/// A line "data: [DONE]" signals the end of the stream.
 fn parse_sse_stream(
     byte_stream: impl futures::Stream<Item = Result<bytes::Bytes, reqwest::Error>> + Send + 'static,
 ) -> impl futures::Stream<Item = Result<ChatCompletionChunk, super::DirectLlmError>> + Send {
     use futures::StreamExt;
 
-    // Buffer for accumulating partial SSE lines across chunk boundaries.
-    let mut buffer = String::new();
+    let buffer = std::sync::Arc::new(std::sync::Mutex::new(String::new()));
+    let buf2 = buffer.clone();
 
     byte_stream.filter_map(move |chunk_result| {
+        let buffer = buf2.clone();
+
         let result = match chunk_result {
             Ok(bytes) => {
-                buffer.push_str(&String::from_utf8_lossy(&bytes));
+                let text = String::from_utf8_lossy(&bytes);
+                log::info!("[direct_llm] raw SSE chunk: {} bytes", bytes.len());
 
-                let mut results = Vec::new();
+                let mut buf = buffer.lock().unwrap();
+                buf.push_str(&text);
 
-                // Process complete lines in the buffer.
-                while let Some(pos) = buffer.find('\n') {
-                    let line = buffer[..pos].trim().to_string();
-                    buffer = buffer[pos + 1..].to_string();
+                let mut last_chunk: Option<ChatCompletionChunk> = None;
+                let mut total_parsed = 0;
+
+                while let Some(pos) = buf.find('\n') {
+                    let line = buf[..pos].trim().to_string();
+                    buf.drain(..=pos);
 
                     if line.is_empty() || line.starts_with(':') {
                         continue;
@@ -150,26 +144,47 @@ fn parse_sse_stream(
 
                     if let Some(json_str) = line.strip_prefix("data: ") {
                         if json_str.trim() == "[DONE]" {
+                            log::info!("[direct_llm] SSE [DONE] received");
                             continue;
                         }
 
                         match serde_json::from_str::<ChatCompletionChunk>(json_str) {
-                            Ok(chunk) => results.push(Ok(chunk)),
+                            Ok(chunk) => {
+                                total_parsed += 1;
+                                let has_content = chunk.choices.iter().any(|c| {
+                                    c.delta.content.as_ref().is_some_and(|s| !s.is_empty())
+                                });
+                                let has_finish = chunk.choices.iter().any(|c| c.finish_reason.is_some());
+                                if has_content || has_finish {
+                                    log::info!(
+                                        "[direct_llm] parsed chunk #{}: content={} finish={:?}",
+                                        total_parsed,
+                                        has_content,
+                                        chunk.choices.first().and_then(|c| c.finish_reason.as_deref())
+                                    );
+                                }
+                                last_chunk = Some(chunk);
+                            }
                             Err(e) => {
-                                log::warn!("Failed to parse SSE chunk: {e}");
+                                log::warn!("[direct_llm] Failed to parse SSE JSON: {e}");
+                                log::warn!("[direct_llm] Raw JSON was: {json_str}");
                             }
                         }
+                    } else {
+                        log::warn!("[direct_llm] Unexpected SSE line: {line}");
                     }
                 }
 
-                if results.is_empty() {
-                    None
-                } else {
-                    // Return the last chunk (typically one per SSE event).
-                    results.into_iter().last()
+                if total_parsed > 0 {
+                    log::info!("[direct_llm] parsed {total_parsed} chunks from this TCP segment");
                 }
+
+                last_chunk.map(Ok)
             }
-            Err(e) => Some(Err(super::DirectLlmError::Connection(e.to_string()))),
+            Err(e) => {
+                log::error!("[direct_llm] HTTP stream error: {e}");
+                Some(Err(super::DirectLlmError::Connection(e.to_string())))
+            }
         };
 
         std::future::ready(result)

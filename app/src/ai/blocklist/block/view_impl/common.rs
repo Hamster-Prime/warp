@@ -411,8 +411,8 @@ pub fn render_warping_indicator<V: View>(
     if let Some(take_over_button_props) = props.take_over_lrc_control_button {
         has_buttons = true;
         buttons_row.add_child(render_switch_control_to_user_button(
-            "Take over",
-            "Take over control of the command",
+            i18n::t!("Take over"),
+            i18n::t!("Take over control of the command"),
             take_over_button_props,
             appearance,
         ));
@@ -722,9 +722,9 @@ fn render_hide_responses_button(
 ) -> Box<dyn Element> {
     let theme = appearance.theme();
     let button_text = if should_hide_responses {
-        "Show responses"
+        i18n::t!("Show responses")
     } else {
-        "Hide responses"
+        i18n::t!("Hide responses")
     };
     let text = Container::new(
         Text::new(
@@ -738,9 +738,9 @@ fn render_hide_responses_button(
     .finish();
 
     let tooltip_text = if should_hide_responses {
-        "Show agent responses"
+        i18n::t!("Show agent responses")
     } else {
-        "Hide agent responses"
+        i18n::t!("Hide agent responses")
     };
 
     render_warping_indicator_button(
@@ -758,8 +758,8 @@ fn render_hide_responses_button(
 }
 
 pub fn render_switch_control_to_user_button(
-    text: &'static str,
-    tooltip: &'static str,
+    text: impl Into<Cow<'static, str>>,
+    tooltip: impl ToString,
     props: ButtonProps,
     appearance: &Appearance,
 ) -> Box<dyn Element> {
@@ -832,9 +832,9 @@ fn render_queue_next_prompt_button(
     .finish();
 
     let tooltip_text = if props.is_active {
-        "Auto-queue is on: your next prompt will be queued"
+        i18n::t!("Auto-queue is on: your next prompt will be queued")
     } else {
-        "Auto-queue next prompt while agent is responding"
+        i18n::t!("Auto-queue next prompt while agent is responding")
     };
 
     render_warping_indicator_button(
@@ -876,11 +876,11 @@ fn render_auto_approve_button(
     .finish();
 
     let tooltip_text = if props.is_locked {
-        "Fast forward is always enabled for cloud agent conversations"
+        i18n::t!("Fast forward is always enabled for cloud agent conversations")
     } else if is_active {
-        "Turn off auto-approve all agent actions"
+        i18n::t!("Turn off auto-approve all agent actions")
     } else {
-        "Auto-approve all agent actions for this task"
+        i18n::t!("Auto-approve all agent actions for this task")
     };
 
     render_warping_indicator_button(
@@ -3170,7 +3170,7 @@ fn render_invalid_api_key_error(
     .finish();
 
     let alert_text = Text::new(
-        "Provided API key is not valid",
+        i18n::t!("Provided API key is not valid"),
         appearance.ui_font_family(),
         14.,
     )
@@ -3179,9 +3179,10 @@ fn render_invalid_api_key_error(
     .finish();
 
     let detail_text = Text::new(
-        format!(
-            "Failed to authenticate with {provider} when using {model_name}. \
-                     Double-check that your API key is correct."
+        i18n::t!(
+            "Failed to authenticate with {provider} when using {model_name}. Double-check that your API key is correct.",
+            provider = provider,
+            model_name = model_name,
         ),
         appearance.ui_font_family(),
         14.,

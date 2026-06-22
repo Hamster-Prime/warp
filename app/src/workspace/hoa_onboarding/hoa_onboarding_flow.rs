@@ -1,3 +1,4 @@
+use std::borrow::Cow;
 use std::path::PathBuf;
 
 use markdown_parser::{
@@ -373,8 +374,8 @@ impl HoaOnboardingFlow {
 
     fn render_callout_content(
         &self,
-        title: &'static str,
-        description: &'static str,
+        title: impl Into<Cow<'static, str>>,
+        description: impl Into<Cow<'static, str>>,
         extra_child: Option<Box<dyn Element>>,
         button: &ViewHandle<ActionButton>,
         appearance: &Appearance,
@@ -445,8 +446,8 @@ impl HoaOnboardingFlow {
         };
 
         self.render_callout_content(
-            "Introducing vertical tabs - the new default",
-            "Vertical tabs show all open agent and terminal panes, grouped by tab. Customize what information you want to see to support your workflow.",
+            i18n::t!("Introducing vertical tabs - the new default"),
+            i18n::t!("Vertical tabs show all open agent and terminal panes, grouped by tab. Customize what information you want to see to support your workflow."),
             Some(checkbox_row),
             button,
             appearance,
@@ -455,7 +456,7 @@ impl HoaOnboardingFlow {
 
     fn render_inbox_callout(&self, appearance: &Appearance) -> Box<dyn Element> {
         let title = Text::new(
-            "Meet your new agent inbox",
+            i18n::t!("Meet your new agent inbox"),
             appearance.ui_font_family(),
             16.,
         )
@@ -477,7 +478,7 @@ impl HoaOnboardingFlow {
 
         let formatted = FormattedText::new([FormattedTextLine::Line(vec![
             FormattedTextFragment::plain_text(
-                "Warp pipes through notifications from any CLI coding agent into a unified notification center that works across all coding agents and harnesses. ",
+                i18n::t!("Warp pipes through notifications from any CLI coding agent into a unified notification center that works across all coding agents and harnesses. "),
             ),
             learn_more_fragment,
         ])]);

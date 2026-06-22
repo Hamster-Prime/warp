@@ -51,9 +51,6 @@ const COPY_BUTTON_SIZE: f32 = 14.;
 const TERMINAL_INPUT_BUTTON_SIZE: f32 = 20.;
 const SAVE_AS_WORKFLOW_BUTTON_SIZE: f32 = 20.;
 
-const HOW_DO_I_FIX_PROMPT: &str = "How do I fix this?";
-const SHOW_EXAMPLES_PROMPT: &str = "Show examples.";
-const WHAT_TO_DO_NEXT_PROMPT: &str = "What should I do next?";
 const IN_FLIGHT_REQUEST_TEXT: &str = "Generating answer...";
 const ACCURACY_NOTICE_TEXT: &str = "AI responses can be inaccurate.";
 const MISSING_CONTEXT_NOTICE_TEXT: &str =
@@ -762,7 +759,7 @@ impl Transcript {
                 self.mouse_state_handles.what_to_do_next_button.clone(),
                 None,
                 Some(8.),
-                WHAT_TO_DO_NEXT_PROMPT,
+                i18n::t!("What should I do next?"),
             ))
             .with_child(
                 Container::new(render_prepared_response_button(
@@ -770,7 +767,7 @@ impl Transcript {
                     self.mouse_state_handles.show_examples_button.clone(),
                     None,
                     Some(8.),
-                    SHOW_EXAMPLES_PROMPT,
+                    i18n::t!("Show examples."),
                 ))
                 .with_margin_left(10.)
                 .with_margin_right(10.)
@@ -781,7 +778,7 @@ impl Transcript {
                 self.mouse_state_handles.how_do_i_fix_button.clone(),
                 None,
                 Some(8.),
-                HOW_DO_I_FIX_PROMPT,
+                i18n::t!("How do I fix this?"),
             ))
             .finish()
     }

@@ -1,3 +1,4 @@
+use std::borrow::Cow;
 use warp_core::ui::builder::UiBuilder;
 use warpui::accessibility::{AccessibilityContent, WarpA11yRole};
 use warpui::elements::{Align, Container, Element, Flex, MouseStateHandle, ParentElement};
@@ -16,23 +17,17 @@ const TADA_FONT_SIZE: f32 = 60.;
 const TADA_MARGIN_TOP: f32 = 0.;
 const TADA_MARGIN_BOTTOM: f32 = 50.;
 // Constants for the main title
-const TITLE: &str = "Congrats!";
 const TITLE_FONT_SIZE: f32 = 20.;
 const TITLE_MARGIN_BOTTOM: f32 = 25.;
 // Constants for the subtitle
-const SUBTITLE_SENT_REFERRAL: &str =
-    "You earned an exclusive Warp theme for referring someone to Warp.";
-const SUBTITLE_RECEIVED_REFERRAL: &str =
-    "You earned an exclusive Warp theme for being referred to Warp.";
 const SUBTITLE_FONT_SIZE: f32 = 14.;
 const SUBTITLE_MARGIN_BOTTOM: f32 = 40.;
 // Constants for the button
-const BUTTON_CTA: &str = "Try it out!";
 const BUTTON_FONT_SIZE: f32 = 14.;
 const BUTTON_HEIGHT: f32 = 45.;
 const BUTTON_WIDTH: f32 = 240.;
 const BUTTON_MARGIN_BOTTOM: f32 = 14.;
-const ACCESSIBILITY_HELP: &str = "Press enter to open the theme chooser or escape to dismiss.";
+
 
 pub fn init(app: &mut AppContext) {
     use warpui::keymap::macros::*;
@@ -86,10 +81,10 @@ impl RewardView {
         ctx.notify();
     }
 
-    fn subtitle(&self) -> &'static str {
+    fn subtitle(&self) -> Cow<'static, str> {
         match self.kind {
-            RewardKind::SentReferralTheme => SUBTITLE_SENT_REFERRAL,
-            RewardKind::ReceivedReferralTheme => SUBTITLE_RECEIVED_REFERRAL,
+            RewardKind::SentReferralTheme => i18n::t!("You earned an exclusive Warp theme for referring someone to Warp."),
+            RewardKind::ReceivedReferralTheme => i18n::t!("You earned an exclusive Warp theme for being referred to Warp."),
         }
     }
 
@@ -115,7 +110,7 @@ impl RewardView {
     fn render_title(&self, ui_builder: &UiBuilder) -> Box<dyn Element> {
         Align::new(
             ui_builder
-                .span(TITLE)
+                .span(i18n::t!("Congrats!"))
                 .with_style(UiComponentStyles {
                     font_size: Some(TITLE_FONT_SIZE),
                     margin: Some(Coords {
@@ -133,7 +128,7 @@ impl RewardView {
     fn render_subtitle(&self, ui_builder: &UiBuilder) -> Box<dyn Element> {
         Align::new(
             ui_builder
-                .paragraph(self.subtitle().to_owned())
+                    .paragraph(self.subtitle().to_string())
                 .with_style(UiComponentStyles {
                     font_size: Some(SUBTITLE_FONT_SIZE),
                     margin: Some(Coords {
@@ -153,7 +148,7 @@ impl RewardView {
             Container::new(
                 ui_builder
                     .button(ButtonVariant::Accent, self.cta_mouse_state.clone())
-                    .with_centered_text_label(BUTTON_CTA.into())
+                    .with_centered_text_label(i18n::t!("Try it out!").to_string())
                     .with_style(UiComponentStyles {
                         height: Some(BUTTON_HEIGHT),
                         width: Some(BUTTON_WIDTH),
@@ -184,11 +179,11 @@ impl View for RewardView {
         Some(AccessibilityContent::new(
             i18n::t!(
                 "{arg0} {subtitle}",
-                arg0 = TITLE,
+                arg0 = i18n::t!("Congrats!"),
                 subtitle = self.subtitle()
             )
             .to_string(),
-            ACCESSIBILITY_HELP,
+            i18n::t!("Press enter to open the theme chooser or escape to dismiss.").to_string(),
             WarpA11yRole::WindowRole,
         ))
     }

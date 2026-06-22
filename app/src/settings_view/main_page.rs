@@ -1,3 +1,4 @@
+use std::borrow::Cow;
 use std::sync::{Arc, Mutex};
 
 use ::settings::{Setting, ToggleableSetting};
@@ -360,7 +361,7 @@ impl AccountWidget {
             .with_cross_axis_alignment(CrossAxisAlignment::End);
         let current_user_id = auth_state.user_id().unwrap_or_default();
 
-        plan_info.add_child(render_customer_type_badge(appearance, "Free".into()));
+        plan_info.add_child(render_customer_type_badge(appearance, i18n::t!("Free").to_string()));
         plan_info.add_child(
             Container::new(
                 appearance
@@ -372,7 +373,7 @@ impl AccountWidget {
                     .with_text_and_icon_label(
                         TextAndIcon::new(
                             TextAndIconAlignment::IconFirst,
-                            "Compare plans",
+                            i18n::t!("Compare plans"),
                             Icon::CoinsStacked.to_warpui_icon(appearance.theme().accent()),
                             MainAxisSize::Min,
                             MainAxisAlignment::Center,
@@ -546,9 +547,9 @@ impl AccountWidget {
                     // If the team is upgradeable to self-serve tier, show them the upgrade link.
                     if team.billing_metadata.can_upgrade_to_higher_tier_plan() {
                         let description = match team.billing_metadata.customer_type {
-                            CustomerType::Prosumer => "Upgrade to Turbo plan",
-                            CustomerType::Turbo => "Upgrade to Lightspeed plan",
-                            _ => "Compare plans",
+                            CustomerType::Prosumer => i18n::t!("Upgrade to Turbo plan"),
+                            CustomerType::Turbo => i18n::t!("Upgrade to Lightspeed plan"),
+                            _ => i18n::t!("Compare plans"),
                         };
                         let team_uid = team.uid;
                         plan_info.add_child(
@@ -574,7 +575,7 @@ impl AccountWidget {
                 }
             }
         } else {
-            let plan_badge_child = render_customer_type_badge(appearance, "Free".into());
+            let plan_badge_child = render_customer_type_badge(appearance, i18n::t!("Free").to_string());
             plan_info.add_child(plan_badge_child);
 
             plan_info.add_child(
@@ -831,11 +832,11 @@ impl VersionInfoWidget {
             .with_opacity(60)
             .into();
         struct StatusContent {
-            text: &'static str,
+            text: Cow<'static, str>,
             color: ColorU,
         }
         struct CallToActionContent {
-            text: &'static str,
+            text: Cow<'static, str>,
             action: MainPageAction,
         }
 
@@ -845,73 +846,73 @@ impl VersionInfoWidget {
                 match autoupdate::get_update_state(app) {
                     AutoupdateStage::NoUpdateAvailable => (
                         Some(StatusContent {
-                            text: "Up to date",
+                            text: i18n::t!("Up to date"),
                             color: faded_text_color,
                         }),
                         Some(CallToActionContent {
-                            text: "Check for updates",
+                            text: i18n::t!("Check for updates"),
                             action: MainPageAction::CheckForUpdate,
                         }),
                     ),
                     AutoupdateStage::CheckingForUpdate => (
                         Some(StatusContent {
-                            text: "checking for update...",
+                            text: i18n::t!("checking for update..."),
                             color: faded_text_color,
                         }),
                         None,
                     ),
                     AutoupdateStage::DownloadingUpdate => (
                         Some(StatusContent {
-                            text: "downloading update...",
+                            text: i18n::t!("downloading update..."),
                             color: faded_text_color,
                         }),
                         None,
                     ),
                     AutoupdateStage::UpdateReady { .. } => (
                         Some(StatusContent {
-                            text: "Update available",
+                            text: i18n::t!("Update available"),
                             color: ansi_red,
                         }),
                         Some(CallToActionContent {
-                            text: "Relaunch Warp",
+                            text: i18n::t!("Relaunch Warp"),
                             action: MainPageAction::Relaunch,
                         }),
                     ),
                     AutoupdateStage::Updating { .. } => (
                         Some(StatusContent {
-                            text: "Updating...",
+                            text: i18n::t!("Updating..."),
                             color: faded_text_color,
                         }),
                         None,
                     ),
                     AutoupdateStage::UpdatedPendingRestart { .. } => (
                         Some(StatusContent {
-                            text: "Installed update",
+                            text: i18n::t!("Installed update"),
                             color: faded_text_color,
                         }),
                         Some(CallToActionContent {
-                            text: "Relaunch Warp",
+                            text: i18n::t!("Relaunch Warp"),
                             action: MainPageAction::Relaunch,
                         }),
                     ),
                     AutoupdateStage::UnableToUpdateToNewVersion { .. } => (
                         Some(StatusContent {
-                            text: "A new version of Warp is available but can't be installed",
+                            text: i18n::t!("A new version of Warp is available but can't be installed"),
                             color: ansi_red,
                         }),
                         Some(CallToActionContent {
-                            text: "Update Warp manually",
+                            text: i18n::t!("Update Warp manually"),
                             // note: the handler for this action is a no-op
                             action: MainPageAction::DownloadUpdate,
                         }),
                     ),
                     AutoupdateStage::UnableToLaunchNewVersion { .. } => (
                         Some(StatusContent {
-                            text: "A new version of Warp is installed but can't be launched.",
+                            text: i18n::t!("A new version of Warp is installed but can't be launched."),
                             color: ansi_red,
                         }),
                         Some(CallToActionContent {
-                            text: "Update Warp manually",
+                            text: i18n::t!("Update Warp manually"),
                             // note: the handler for this action is a no-op
                             action: MainPageAction::DownloadUpdate,
                         }),
@@ -928,7 +929,7 @@ impl VersionInfoWidget {
                     1.0,
                     Align::new(
                         Text::new_inline(
-                            "Version".to_string(),
+                            i18n::t!("Version"),
                             appearance.ui_font_family(),
                             REGULAR_TEXT_FONT_SIZE,
                         )
@@ -1102,7 +1103,7 @@ impl SettingsWidget for IapCredentialsWidget {
         let active: ColorU = appearance.theme().active_ui_text_color().into();
         let (status_text, status_color): (String, ColorU) = match &state {
             IapCredentialsState::Missing => (i18n::t!("Not yet loaded").to_string(), disabled),
-            IapCredentialsState::Refreshing { .. } => ("Refreshing…".to_string(), active),
+            IapCredentialsState::Refreshing { .. } => (i18n::t!("Refreshing…").to_string(), active),
             IapCredentialsState::Loaded(cached) => {
                 let remaining = cached
                     .expires_at
@@ -1159,9 +1160,9 @@ impl SettingsWidget for IapCredentialsWidget {
                 self.refresh_button_mouse_state.clone(),
             )
             .with_text_label(if is_refreshing {
-                "Refreshing…".into()
+                i18n::t!("Refreshing…").to_string()
             } else {
-                "Refresh".into()
+                i18n::t!("Refresh").to_string()
             })
             .with_style(UiComponentStyles {
                 font_size: Some(12.),

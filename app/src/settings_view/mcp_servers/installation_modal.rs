@@ -423,9 +423,9 @@ impl InstallationModalBody {
         .finish();
 
         let source_text = if is_shared {
-            "Shared from team"
+            i18n::t!("Shared from team")
         } else {
-            "From another device"
+            i18n::t!("From another device")
         };
 
         let label_text = Text::new_inline(
@@ -548,7 +548,7 @@ impl View for InstallationModalBody {
                 .finish()
         } else {
             Text::new(
-                "No MCP server selected",
+                i18n::t!("No MCP server selected"),
                 appearance.ui_font_family(),
                 appearance.ui_font_size(),
             )

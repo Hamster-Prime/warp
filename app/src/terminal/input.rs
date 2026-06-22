@@ -772,26 +772,26 @@ impl InputSuggestionsMode {
     }
 
     /// Returns the placeholder text for this mode, if it has a custom one.
-    pub fn placeholder_text(&self) -> Option<&'static str> {
+    pub fn placeholder_text(&self) -> Option<Cow<'static, str>> {
         match self {
             InputSuggestionsMode::UserQueryMenu {
                 action: UserQueryMenuAction::ForkFrom,
                 ..
-            } => Some("Search queries"),
+            } => Some(i18n::t!("Search queries")),
             InputSuggestionsMode::UserQueryMenu {
                 action: UserQueryMenuAction::Rewind,
                 ..
-            } => Some("Search queries to rewind to"),
-            InputSuggestionsMode::ConversationMenu => Some("Search conversations"),
-            InputSuggestionsMode::SkillMenu => Some("Search skills"),
-            InputSuggestionsMode::ModelSelector => Some("Search models"),
-            InputSuggestionsMode::ProfileSelector => Some("Search profiles"),
+            } => Some(i18n::t!("Search queries to rewind to")),
+            InputSuggestionsMode::ConversationMenu => Some(i18n::t!("Search conversations")),
+            InputSuggestionsMode::SkillMenu => Some(i18n::t!("Search skills")),
+            InputSuggestionsMode::ModelSelector => Some(i18n::t!("Search models")),
+            InputSuggestionsMode::ProfileSelector => Some(i18n::t!("Search profiles")),
             InputSuggestionsMode::SlashCommands if FeatureFlag::AgentView.is_enabled() => {
-                Some("Search commands")
+                Some(i18n::t!("Search commands"))
             }
-            InputSuggestionsMode::PromptsMenu => Some("Search prompts"),
-            InputSuggestionsMode::IndexedReposMenu => Some("Search indexed repos"),
-            InputSuggestionsMode::PlanMenu { .. } => Some("Search plans"),
+            InputSuggestionsMode::PromptsMenu => Some(i18n::t!("Search prompts")),
+            InputSuggestionsMode::IndexedReposMenu => Some(i18n::t!("Search indexed repos")),
+            InputSuggestionsMode::PlanMenu { .. } => Some(i18n::t!("Search plans")),
             _ => None,
         }
     }

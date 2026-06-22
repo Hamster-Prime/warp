@@ -79,7 +79,6 @@ const HARNESS_CIRCLE_SIZE: f32 = 16.0;
 const HARNESS_ICON_IN_CIRCLE: f32 = 9.0;
 const LABEL_VALUE_GAP: f32 = 4.0;
 const SECTION_HEADER_GAP: f32 = 8.0;
-const RUN_METADATA_ACCESS_DENIED_TITLE: &str = "Run metadata is not available";
 const RUN_METADATA_ACCESS_DENIED_DESCRIPTION: &str =
     "You can view this shared session, but run metadata is only visible to users with access to this run.";
 
@@ -1159,7 +1158,7 @@ impl ConversationDetailsPanel {
                     .finish();
 
             let title = Text::new(
-                RUN_METADATA_ACCESS_DENIED_TITLE,
+                i18n::t!("Run metadata is not available"),
                 appearance.ui_font_family(),
                 ui_font_size,
             )

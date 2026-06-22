@@ -90,7 +90,7 @@ impl KeybindingsView {
 
         search_editor.update(ctx, |editor, ctx| {
             editor.clear_buffer_and_reset_undo_stack(ctx);
-            editor.set_placeholder_text(settings_view::keybindings::SEARCH_PLACEHOLDER, ctx);
+            editor.set_placeholder_text(i18n::t!("Search by name or by keys (ex. \"cmd d\")").to_string(), ctx);
         });
 
         let search_bar = {

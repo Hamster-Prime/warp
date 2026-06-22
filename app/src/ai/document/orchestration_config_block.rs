@@ -108,7 +108,6 @@ fn render_pill_toggle(is_on: bool, theme: &WarpTheme) -> Box<dyn Element> {
 const CONFIG_BLOCK_HEADER: &str = "Use orchestration";
 const CONFIG_BLOCK_DESCRIPTION: &str =
     "Break this work into coordinated streams with multiple agents.";
-const BASE_MODEL_HELPER: &str = "The primary model all agents will use.";
 
 // ── Action type ─────────────────────────────────────────────────────
 
@@ -722,7 +721,7 @@ impl View for OrchestrationConfigBlockView {
 
                 // Helper text
                 let helper = Text::new(
-                    BASE_MODEL_HELPER.to_string(),
+                    i18n::t!("The primary model all agents will use.").to_string(),
                     appearance.ui_font_family(),
                     appearance.monospace_font_size() - 1.,
                 )

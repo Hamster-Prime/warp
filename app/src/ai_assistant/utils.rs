@@ -1,4 +1,5 @@
 /// Common functionality used across different AI Assistant components.
+use std::borrow::Cow;
 use markdown_parser::{parse_markdown, CodeBlockText, FormattedText, FormattedTextLine};
 use pathfinder_color::ColorU;
 use warpui::elements::{
@@ -260,8 +261,9 @@ pub fn render_prepared_response_button(
     mouse_state_handle: MouseStateHandle,
     width: Option<f32>,
     right_left_padding: Option<f32>,
-    prompt: &'static str,
+    prompt: impl Into<Cow<'static, str>>,
 ) -> Box<dyn Element> {
+    let prompt = prompt.into();
     let theme = appearance.theme();
     let default_button_styles = UiComponentStyles {
         width,
@@ -303,7 +305,9 @@ pub fn render_prepared_response_button(
         .build()
         .with_cursor(Cursor::PointingHand)
         .on_click(move |ctx, _, _| {
-            ctx.dispatch_typed_action(AIAssistantAction::PreparedPrompt(prompt))
+            ctx.dispatch_typed_action(AIAssistantAction::PreparedPrompt(
+                prompt.to_string(),
+            ))
         })
         .finish()
 }

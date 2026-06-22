@@ -188,16 +188,6 @@ const RETRY_BUTTON_TOOLTIP_LABEL: &str = "Retry sync";
 const SHARED_OBJECT_LIMIT_HIT_BANNER_LINE: &str =
     "Upgrade for access to more notebooks, workflows, shared sessions, and AI credits.";
 
-const PAYMENT_ISSUE_BANNER_LINE_1: &str =
-    "Shared objects have been restricted due to a subscription payment issue.";
-
-const PAYMENT_ISSUE_BANNER_LINE_2_ADMIN: &str =
-    "Please update your payment information to restore access.";
-
-const PAYMENT_ISSUE_BANNER_LINE_2_ADMIN_ENTERPRISE: &str =
-    "Please contact support@warp.dev to restore access.";
-
-const PAYMENT_ISSUE_BANNER_LINE_2_NONADMIN: &str = "Please contact a team admin to restore access.";
 
 /// Struct to hold different state-related information on per-space basis.
 /// Currently, we only have 1 space (1 Team), but as we're working on personal space, and add
@@ -4263,12 +4253,13 @@ impl DriveIndex {
         let highlight =
             Highlight::new().with_properties(Properties::default().weight(Weight::Bold));
 
+        let banner_line_1 = i18n::t!("Shared objects have been restricted due to a subscription payment issue.");
         let banner_line_2 = if has_admin_permissions && is_on_stripe_paid_plan {
-            PAYMENT_ISSUE_BANNER_LINE_2_ADMIN
+            i18n::t!("Please update your payment information to restore access.")
         } else if has_admin_permissions && !is_on_stripe_paid_plan {
-            PAYMENT_ISSUE_BANNER_LINE_2_ADMIN_ENTERPRISE
+            i18n::t!("Please contact support@warp.dev to restore access.")
         } else {
-            PAYMENT_ISSUE_BANNER_LINE_2_NONADMIN
+            i18n::t!("Please contact a team admin to restore access.")
         };
 
         body.add_child(
@@ -4276,11 +4267,11 @@ impl DriveIndex {
                 appearance
                     .ui_builder()
                     .wrappable_text(
-                        format!("{PAYMENT_ISSUE_BANNER_LINE_1} {banner_line_2}").to_string(),
+                        i18n::t!("{line_1} {line_2}", line_1 = banner_line_1, line_2 = banner_line_2),
                         true,
                     )
                     .with_highlights(
-                        (0..PAYMENT_ISSUE_BANNER_LINE_1.len()).collect::<Vec<_>>(),
+                        (0..banner_line_1.len()).collect::<Vec<_>>(),
                         highlight,
                     )
                     .with_style(UiComponentStyles {

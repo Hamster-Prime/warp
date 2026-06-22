@@ -1133,10 +1133,10 @@ impl MCPServersListPageView {
         > = std::sync::LazyLock::new(|| {
             vec![
                 FormattedTextFragment::plain_text(
-                    "Automatically detect and spawn MCP servers from globally-scoped third-party AI agent configuration files (e.g. in your home directory). Servers detected inside a repository are never spawned automatically and must be enabled individually in the \"Detected from\" sections below. ",
+                    i18n::t!("Automatically detect and spawn MCP servers from globally-scoped third-party AI agent configuration files (e.g. in your home directory). Servers detected inside a repository are never spawned automatically and must be enabled individually in the \"Detected from\" sections below. "),
                 ),
                 FormattedTextFragment::hyperlink(
-                    "See supported providers.",
+                    i18n::t!("See supported providers."),
                     "https://docs.warp.dev/agent-platform/capabilities/mcp#file-based-mcp-servers",
                 ),
             ]
@@ -1174,7 +1174,7 @@ impl MCPServersListPageView {
         let description_fragments = vec![
             FormattedTextFragment::plain_text(i18n::t!("Add MCP servers to extend the Warp Agent's capabilities. MCP servers expose data sources or tools to agents through a standardized interface, essentially acting like plugins. Add a custom server, or use the presets to get started with popular servers. You can also find team servers that have been shared with you here. ")),
             FormattedTextFragment::hyperlink(
-                "Learn more.",
+                i18n::t!("Learn more."),
                 "https://docs.warp.dev/agent-platform/capabilities/mcp",
             ),
         ];
@@ -1258,7 +1258,7 @@ impl MCPServersListPageView {
 
                 if !owned_server_cards.is_empty() {
                     page.add_child(self.render_server_cards_section(
-                        "My MCPs",
+                        i18n::t!("My MCPs").as_ref(),
                         &owned_server_cards,
                         appearance,
                         app,

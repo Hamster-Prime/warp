@@ -7254,3 +7254,265 @@ you can adjust your:
   zh-CN: 是
 "{label} (optional)":
   zh-CN: "{label}（可选）"
+A new version of Warp is available but can't be installed:
+  zh-CN: 有新版本的 Warp 可用，但无法安装
+A new version of Warp is installed but can't be launched.:
+  zh-CN: 已安装新版本的 Warp，但无法启动。
+Add credits:
+  zh-CN: 添加额度
+Agent inbox:
+  zh-CN: Agent 收件箱
+Agent is monitoring command...:
+  zh-CN: Agent 正在监控命令...
+Agent needs your input to continue:
+  zh-CN: Agent 需要您的输入才能继续
+Agent ran into an issue. Take over control.:
+  zh-CN: Agent 遇到问题。请接管控制。
+AI Features must be enabled to use codebase indexing.:
+  zh-CN: 必须启用 AI 功能才能使用代码库索引。
+'Auto-approve':
+  zh-CN: 自动批准
+Auto-approve all agent actions for this task:
+  zh-CN: 自动批准此任务的所有 Agent 操作
+'Auto-queue is on: your next prompt will be queued':
+  zh-CN: 自动排队已开启：您的下一个提示将被排队
+Auto-queue next prompt while agent is responding:
+  zh-CN: Agent 回放时自动排队下一个提示
+Automatically detect and spawn MCP servers from globally-scoped third-party AI agent configuration files (e.g. in your home directory). Servers detected inside a repository are never spawned automatically and must be enabled individually in the "Detected from" sections below. :
+  zh-CN: 自动检测并启动来自全局范围的第三方 AI Agent 配置文件（例如在您的主目录中）的 MCP 服务器。在代码仓库中检测到的服务器永远不会自动启动，必须在下方的"检测来源"部分中单独启用。
+Can I start additional agents for this task?:
+  zh-CN: 我可以为此任务启动额外的 Agent 吗？
+checking for update...:
+  zh-CN: 正在检查更新...
+Cloud agent trial:
+  zh-CN: 云 Agent 试用
+Code:
+  zh-CN: 代码
+Codebase indexing:
+  zh-CN: 代码库索引
+Compare plans:
+  zh-CN: 比较套餐
+'Congrats!':
+  zh-CN: 恭喜！
+Continuing current conversation:
+  zh-CN: 继续当前对话
+Conversation not found:
+  zh-CN: 未找到对话
+Conversation title must be {CONVERSATION_TITLE_MAX_CHARS} characters or fewer:
+  zh-CN: 对话标题不能超过 {CONVERSATION_TITLE_MAX_CHARS} 个字符
+Default:
+  zh-CN: 默认
+downloading update...:
+  zh-CN: 正在下载更新...
+Edit requested command:
+  zh-CN: 编辑请求的命令
+Failed to authenticate with {provider} when using {model_name}. Double-check that your API key is correct.:
+  zh-CN: 使用 {model_name} 对 {provider} 进行身份验证失败。请仔细检查您的 API 密钥是否正确。
+Fast forward is always enabled for cloud agent conversations:
+  zh-CN: 云 Agent 对话始终启用快进功能
+Free:
+  zh-CN: 免费
+Generating command...:
+  zh-CN: 正在生成命令...
+Hide agent responses:
+  zh-CN: 隐藏 Agent 回复
+Hide responses:
+  zh-CN: 隐藏回复
+How do I find all files containing specific text?:
+  zh-CN: 如何查找包含特定文本的所有文件？
+How do I fix this?:
+  zh-CN: 如何修复此问题？
+How do I undo the most recent commits in git?:
+  zh-CN: 如何撤销最近的 git 提交？
+Index new folders by default:
+  zh-CN: 默认索引新文件夹
+Initialization Settings:
+  zh-CN: 初始化设置
+Installed update:
+  zh-CN: 已安装更新
+'Introducing universal agent support: level up any coding agent with Warp':
+  zh-CN: 全新通用 Agent 支持：用 Warp 提升任何编码 Agent
+Introducing vertical tabs - the new default:
+  zh-CN: 全新垂直标签页 - 新的默认布局
+'Learn more.':
+  zh-CN: 了解更多。
+Meet your new agent inbox:
+  zh-CN: 认识您的全新 Agent 收件箱
+My MCPs:
+  zh-CN: 我的 MCP
+Native code review:
+  zh-CN: 原生代码审查
+New:
+  zh-CN: 新
+New conversation started:
+  zh-CN: 已开始新对话
+New conversation suggestion cancelled:
+  zh-CN: 新对话建议已取消
+No MCP server selected:
+  zh-CN: 未选择 MCP 服务器
+No relevant files found.:
+  zh-CN: 未找到相关文件。
+No updates available:
+  zh-CN: 没有可用更新
+OK if I call this MCP tool?:
+  zh-CN: 可以调用此 MCP 工具吗？
+OK if I run this command and read the output?:
+  zh-CN: 可以运行此命令并读取输出吗？
+Only team admins and the creator of the MCP server can edit the MCP server.:
+  zh-CN: 只有团队管理员和 MCP 服务器的创建者可以编辑 MCP 服务器。
+Open skill:
+  zh-CN: 打开技能
+Paused agent. User is in control.:
+  zh-CN: 已暂停 Agent。用户已接管控制。
+Please contact a team admin to restore access.:
+  zh-CN: 请联系团队管理员以恢复访问。
+Please contact support@warp.dev to restore access.:
+  zh-CN: 请联系 support@warp.dev 以恢复访问。
+Please provide a conversation title:
+  zh-CN: 请提供对话标题
+Please update your payment information to restore access.:
+  zh-CN: 请更新您的付款信息以恢复访问。
+Press enter to open the theme chooser or escape to dismiss.:
+  zh-CN: 按回车键打开主题选择器，或按 Esc 键关闭。
+Provided API key is not valid:
+  zh-CN: 提供的 API 密钥无效
+Refreshing…:
+  zh-CN: 刷新中…
+Relaunch Warp:
+  zh-CN: 重新启动 Warp
+Rich tab titles and metadata like git branch, worktree, and PR. Fully customizable.:
+  zh-CN: 丰富的标签页标题和元数据，如 git 分支、工作树和 PR。完全可自定义。
+Run:
+  zh-CN: 运行
+Run metadata is not available:
+  zh-CN: 运行元数据不可用
+Searched:
+  zh-CN: 已搜索
+Search commands:
+  zh-CN: 搜索命令
+Search conversations:
+  zh-CN: 搜索对话
+Search in {to_string_lossy} cancelled:
+  zh-CN: 在 {to_string_lossy} 中搜索已取消
+Search in {to_string_lossy} failed:
+  zh-CN: 在 {to_string_lossy} 中搜索失败
+Search in {to_string_lossy} failed because the codebase isn't indexed:
+  zh-CN: 在 {to_string_lossy} 中搜索失败，因为代码库未索引
+Search indexed repos:
+  zh-CN: 搜索已索引仓库
+Search models:
+  zh-CN: 搜索模型
+Search plans:
+  zh-CN: 搜索计划
+Search profiles:
+  zh-CN: 搜索配置文件
+Search prompts:
+  zh-CN: 搜索提示
+'Search queries':
+  zh-CN: 搜索查询
+Search queries to rewind to:
+  zh-CN: 搜索要回退到的查询
+Search skills:
+  zh-CN: 搜索技能
+Searching:
+  zh-CN: 搜索中
+'See supported providers.':
+  zh-CN: 查看支持的提供商。
+Send inline comments from Warp's code review directly to Claude Code, Codex, or OpenCode:
+  zh-CN: 将 Warp 代码审查中的行内评论直接发送到 Claude Code、Codex 或 OpenCode
+Server:
+  zh-CN: 服务器
+Set up a reusable starting point for your tabs. Pick a repo, choose a session type, and optionally attach a worktree. Use it whenever you want to open a tab with this setup.:
+  zh-CN: 为您的标签页设置可重用的起始点。选择一个代码仓库，选择会话类型，并可选择附加工作树。在您想使用此设置打开标签页时随时使用。
+Shared from team:
+  zh-CN: 来自团队共享
+Shared objects have been restricted due to a subscription payment issue.:
+  zh-CN: 由于订阅付款问题，共享对象已被限制。
+Show agent responses:
+  zh-CN: 显示 Agent 回复
+Show responses:
+  zh-CN: 显示回复
+'Stopped task {item_index}/{total}: "{title}"':
+  zh-CN: 已停止任务 {item_index}/{total}："{title}"
+Tab configs:
+  zh-CN: 标签页配置
+Tab-level schema to set your directory, startup commands, theme, and worktree with one click:
+  zh-CN: 标签页级别的架构，一键设置您的目录、启动命令、主题和工作树
+Take over control of the command:
+  zh-CN: 接管命令的控制权
+Team admins have disabled codebase indexing.:
+  zh-CN: 团队管理员已禁用代码库索引。
+Team admins have enabled codebase indexing.:
+  zh-CN: 团队管理员已启用代码库索引。
+The primary model all agents will use.:
+  zh-CN: 所有 Agent 将使用的主要模型。
+Thinking:
+  zh-CN: 思考中
+This notebook could not be saved because changes were made while you were editing. Please copy your work and refresh.:
+  zh-CN: 此笔记本无法保存，因为在您编辑时进行了更改。请复制您的工作并刷新。
+This notebook could not be saved to the server because the feature is temporarily unavailable. The changes are saved locally. Please retry later.:
+  zh-CN: 此笔记本无法保存到服务器，因为该功能暂时不可用。更改已保存在本地。请稍后重试。
+This server has {count} updates available, which would you like to proceed with?:
+  zh-CN: 此服务器有 {count} 个可用更新，您想进行哪些更新？
+This suggestion is being edited in another tab.:
+  zh-CN: 此建议正在另一个标签页中编辑。
+To exclude specific files or directories from indexing, add them to the .warpindexingignore file in your repository directory. These files will still be accessible to AI features, but they won't be included in codebase embeddings.:
+  zh-CN: 要从索引中排除特定文件或目录，请在代码仓库目录中的 .warpindexingignore 文件中添加它们。这些文件仍可用于 AI 功能，但不会包含在代码库嵌入中。
+'Try it out!':
+  zh-CN: 立即试用！
+Turn off auto-approve all agent actions:
+  zh-CN: 关闭自动批准所有 Agent 操作
+'Up to date':
+  zh-CN: 已是最新版本
+Update available:
+  zh-CN: 有可用更新
+Update Warp manually:
+  zh-CN: 手动更新 Warp
+Updating...:
+  zh-CN: 更新中...
+User:
+  zh-CN: 用户
+User in control:
+  zh-CN: 用户已接管控制
+'User is in control.':
+  zh-CN: 用户已接管控制。
+Version:
+  zh-CN: 版本
+Vertical tabs:
+  zh-CN: 垂直标签页
+Vertical tabs show all open agent and terminal panes, grouped by tab. Customize what information you want to see to support your workflow.:
+  zh-CN: 垂直标签页按标签显示所有打开的 Agent 和终端窗格。自定义您想查看的信息以支持您的工作流程。
+Warp can automatically index code repositories as you navigate them, helping agents quickly understand context and provide solutions. Code is never stored on the server. If a codebase is unable to be indexed, Warp can still navigate your codebase and gain insights via grep and find tool calling.:
+  zh-CN: Warp 可以在您浏览代码仓库时自动索引，帮助 Agent 快速理解上下文并提供解决方案。代码永远不会存储在服务器上。如果代码库无法索引，Warp 仍可通过 grep 和 find 工具调用浏览您的代码库并获取洞察。
+Warp pipes through notifications from any CLI coding agent into a unified notification center that works across all coding agents and harnesses. :
+  zh-CN: Warp 将来自任何 CLI 编码 Agent 的通知汇集到一个统一的 notification center 中，适用于所有编码 Agent 和运行环境。
+What should I do next?:
+  zh-CN: 接下来我该做什么？
+When set to true, Warp will automatically index code repositories as you navigate them - helping agents quickly understand context and provide targeted solutions.:
+  zh-CN: 设置为 true 时，Warp 将在您浏览代码仓库时自动索引 - 帮助 Agent 快速理解上下文并提供有针对性的解决方案。
+Write a script to connect to an AWS EC2 instance.:
+  zh-CN: 编写一个连接到 AWS EC2 实例的脚本。
+You can't rename an empty conversation:
+  zh-CN: 无法重命名空对话
+You earned an exclusive Warp theme for being referred to Warp.:
+  zh-CN: 您通过被推荐使用 Warp 获得了一个专属 Warp 主题。
+You earned an exclusive Warp theme for referring someone to Warp.:
+  zh-CN: 您通过推荐他人使用 Warp 获得了一个专属 Warp 主题。
+You have reached the maximum number of codebase indices for your plan. Delete existing indices to auto-index new codebases.:
+  zh-CN: 您已达到套餐允许的最大代码库索引数。请删除现有索引以自动索引新代码库。
+A rename is already in progress for this conversation:
+  zh-CN: 此对话的重命名已在进行中
+From another device:
+  zh-CN: 来自其他设备
+'{line_1} {line_2}':
+  zh-CN: '{line_1} {line_2}'
+Your conversation hasn't synced to the cloud yet. Try sending another message, then rename it again.:
+  zh-CN: 您的对话尚未同步到云端。请尝试发送另一条消息，然后再次重命名。
+Your conversation is still syncing. Try renaming it again in a moment.:
+  zh-CN: 您的对话仍在同步中。请稍后再次尝试重命名。
+'Show examples.':
+  zh-CN: 显示示例。
+Notifications when any agent needs your attention, also accessible in a central inbox:
+  zh-CN: 当任何 Agent 需要您关注时的通知，也可在中心收件箱中访问
+'Search by name or by keys (ex. "cmd d")':
+  zh-CN: 按名称或快捷键搜索（例如 "cmd d"）

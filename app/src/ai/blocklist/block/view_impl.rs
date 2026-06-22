@@ -29,6 +29,7 @@ pub mod output;
 pub mod query;
 mod todos;
 
+use std::borrow::Cow;
 use std::collections::{HashMap, HashSet};
 
 use common::get_highlight_ranges_for_find_matches;
@@ -796,7 +797,7 @@ where
 /// This function is needed both above (i.e. `block.rs`) and below (i.e. `output.rs`), and as such
 /// cannot reside in `output.rs` because we don't want to make `mod output` public.
 pub fn render_autonomy_checkbox_setting_speedbump_footer(
-    description: &'static str,
+    description: impl Into<Cow<'static, str>>,
     checked: bool,
     on_toggled_action: AIBlockAction,
     checkbox_handle: MouseStateHandle,

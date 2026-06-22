@@ -103,7 +103,6 @@ pub(super) const AGGREGATE_CREDITS_DOT_COLOR: ColorU = ColorU {
     a: 255,
 };
 const DEFAULT_MAX_MONTHLY_SPEND_CENTS: i32 = 20_000;
-const AMBIENT_AGENT_TRIAL_TITLE: &str = "Cloud agent trial";
 
 #[derive(Default)]
 struct PlanSectionMouseStates {
@@ -897,7 +896,7 @@ impl BillingAndUsagePageV2View {
         let fg = theme.foreground().into_solid();
         let bg = theme.background().into_solid();
 
-        let title = Text::new_inline(AMBIENT_AGENT_TRIAL_TITLE, appearance.ui_font_family(), 14.)
+        let title = Text::new_inline(i18n::t!("Cloud agent trial"), appearance.ui_font_family(), 14.)
             .with_color(theme.active_ui_text_color().into())
             .with_style(Properties::default().weight(Weight::Semibold))
             .finish();

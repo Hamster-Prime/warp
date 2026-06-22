@@ -69,9 +69,6 @@ const TITLE_FONT_SIZE: f32 = 16.;
 const ZERO_STATE_HELP_TEXT_FONT_SIZE: f32 = 12.;
 
 const ZERO_STATE_HELP_TEXT: &str = "Shift + ctrl + space a block or text selection to ask Warp AI.";
-const SCRIPT_ZERO_STATE_PROMPT: &str = "Write a script to connect to an AWS EC2 instance.";
-const GIT_ZERO_STATE_PROMPT: &str = "How do I undo the most recent commits in git?";
-const FILES_ZERO_STATE_PROMPT: &str = "How do I find all files containing specific text?";
 
 // The placeholder texts are prepended with a space to give them cushion from the cursor.
 const INIT_PLACEHOLDER_TEXT: &str = " Ask a question...";
@@ -131,7 +128,7 @@ pub enum AIAssistantAction {
     ClosePanel,
     ResetContext,
     CopyTranscript,
-    PreparedPrompt(&'static str),
+    PreparedPrompt(String),
     ClickedUrl(HyperlinkUrl),
     CopyAnswerToClipboard(Arc<String>),
     FocusTerminalInput,
@@ -918,7 +915,7 @@ impl AIAssistantPanelView {
                     self.mouse_state_handles.git_zero_state_prompt.clone(),
                     Some(300.),
                     None,
-                    GIT_ZERO_STATE_PROMPT,
+                    i18n::t!("How do I undo the most recent commits in git?"),
                 ))
                 .with_margin_top(20.)
                 .with_margin_bottom(10.)
@@ -928,7 +925,7 @@ impl AIAssistantPanelView {
                     self.mouse_state_handles.files_zero_state_prompt.clone(),
                     Some(300.),
                     None,
-                    FILES_ZERO_STATE_PROMPT,
+                    i18n::t!("How do I find all files containing specific text?"),
                 ))
                 .with_margin_bottom(10.)
                 .finish(),
@@ -937,7 +934,7 @@ impl AIAssistantPanelView {
                     self.mouse_state_handles.script_zero_state_prompt.clone(),
                     Some(300.),
                     None,
-                    SCRIPT_ZERO_STATE_PROMPT,
+                    i18n::t!("Write a script to connect to an AWS EC2 instance."),
                 ))
                 .finish(),
             ]);
@@ -1042,7 +1039,7 @@ impl TypedActionView for AIAssistantPanelView {
             }
             PreparedPrompt(prompt) => {
                 self.issue_request(prompt.to_string(), ctx);
-                send_telemetry_from_ctx!(TelemetryEvent::UsedWarpAIPreparedPrompt { prompt }, ctx);
+                send_telemetry_from_ctx!(TelemetryEvent::UsedWarpAIPreparedPrompt { prompt: prompt.clone() }, ctx);
             }
             ClickedUrl(url) => {
                 ctx.open_url(&url.url);

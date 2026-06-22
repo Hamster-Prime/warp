@@ -50,7 +50,6 @@ pub enum HostPickerEvent {
 }
 
 const CUSTOM_HOST_LABEL: &str = "Custom host…";
-const DEFAULT_BADGE: &str = "Default";
 const EDITOR_PLACEHOLDER: &str = "my-worker-host";
 
 // ── Internal action plumbing ────────────────────────────────────────
@@ -427,9 +426,10 @@ pub(crate) fn build_menu_items(
     let mut known_slugs: Vec<String> = Vec::new();
 
     if let Some(slug) = default_host {
+        let default_badge = i18n::t!("Default");
         items.push(menu_item_for_known(
             slug,
-            Some(DEFAULT_BADGE),
+            Some(default_badge.as_ref()),
             InternalAction::SelectKnown(slug.to_string()),
         ));
         known_slugs.push(slug.to_string());
@@ -482,8 +482,9 @@ pub(crate) fn build_menu_items(
 /// Returns the menu label corresponding to `slug`, including the "Default"
 /// badge when it matches the workspace default.
 pub(crate) fn menu_label_for(slug: &str, default_host: Option<&str>) -> String {
+    let default_badge = i18n::t!("Default");
     if default_host == Some(slug) {
-        format_known_label(slug, Some(DEFAULT_BADGE))
+        format_known_label(slug, Some(default_badge.as_ref()))
     } else {
         format_known_label(slug, None)
     }

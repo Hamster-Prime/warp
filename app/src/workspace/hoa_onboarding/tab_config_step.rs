@@ -64,7 +64,7 @@ where
     .finish();
 
     let description = Text::new(
-        "Set up a reusable starting point for your tabs. Pick a repo, choose a session type, and optionally attach a worktree. Use it whenever you want to open a tab with this setup.",
+        i18n::t!("Set up a reusable starting point for your tabs. Pick a repo, choose a session type, and optionally attach a worktree. Use it whenever you want to open a tab with this setup."),
         appearance.ui_font_family(),
         14.,
     )

@@ -1665,7 +1665,7 @@ pub enum TelemetryEvent {
     },
     /// This is purely for static prompts! Do not send user-written prompts with this event.
     UsedWarpAIPreparedPrompt {
-        prompt: &'static str,
+        prompt: String,
     },
     ToggleFocusPaneOnHover {
         enabled: bool,

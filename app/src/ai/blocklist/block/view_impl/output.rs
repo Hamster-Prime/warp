@@ -347,7 +347,7 @@ pub(super) fn render(props: Props, app: &AppContext) -> Box<dyn Element> {
                                 i18n::t!("Thought for {arg0}", arg0 = format_elapsed_seconds(*dur))
                                     .to_string()
                             } else {
-                                "Thinking".to_string()
+                                i18n::t!("Thinking").to_string()
                             };
                             if let Some(element) = render_collapsible_block(
                                 output_message,
@@ -997,7 +997,7 @@ pub(super) fn render(props: Props, app: &AppContext) -> Box<dyn Element> {
                                 });
 
                             let done = is_finished || is_cancelled;
-                            let verb = if done { "Searched" } else { "Searching" };
+                            let verb = if done { i18n::t!("Searched").to_string() } else { i18n::t!("Searching").to_string() };
 
                             let mut fragments: Vec<FormattedTextFragment> =
                                 vec![FormattedTextFragment::plain_text(
@@ -1328,9 +1328,9 @@ fn render_search_codebase(
                                     .clone(),
                                 vec![
                                     RadioButtonItem::text(
-                                        "Always allow file access for coding tasks",
+                                        i18n::t!("Always allow file access for coding tasks"),
                                     ),
-                                    RadioButtonItem::text("Always allow file access for this repo"),
+                                    RadioButtonItem::text(i18n::t!("Always allow file access for this repo")),
                                 ],
                                 props
                                     .state_handles
@@ -1506,7 +1506,7 @@ fn render_search_codebase(
                                 renderable_action(
                                     props,
                                     id,
-                                    "No relevant files found.",
+                                    i18n::t!("No relevant files found.").to_string().as_str(),
                                     app,
                                     footer,
                                     appearance,
@@ -1541,10 +1541,10 @@ fn render_search_codebase(
                         SearchCodebaseResult::Failed { reason, .. } => {
                             let root_repo_path = root_repo_path?;
                             let message = match reason {
-                                SearchCodebaseFailureReason::CodebaseNotIndexed => format!(
-                                    "Search in {} failed because the codebase isn't indexed",
-                                    root_repo_path.to_string_lossy(),
-                                ),
+                                SearchCodebaseFailureReason::CodebaseNotIndexed => i18n::t!(
+                                    "Search in {to_string_lossy} failed because the codebase isn't indexed",
+                                    to_string_lossy = root_repo_path.to_string_lossy(),
+                                ).to_string(),
                                 _ => i18n::t!(
                                     "Search in {to_string_lossy} failed",
                                     to_string_lossy = root_repo_path.to_string_lossy()
@@ -1797,7 +1797,7 @@ fn render_read_skill(
 
                 let skill_icon_override = icon_override_for_skill_name(&skill.name);
                 let open_button = render_skill_button(
-                    "Open skill",
+                    i18n::t!("Open skill").as_ref(),
                     button_handle,
                     appearance,
                     skill.provider,
@@ -1873,7 +1873,7 @@ fn render_read_files(
             *shown.lock() = true;
             renderable_action =
                 renderable_action.with_footer(render_autonomy_checkbox_setting_speedbump_footer(
-                    "Always allow file access for coding tasks",
+                    i18n::t!("Always allow file access for coding tasks"),
                     *checked,
                     AIBlockAction::ToggleAutoreadFilesSpeedbumpCheckbox,
                     props
@@ -2032,12 +2032,12 @@ fn render_stopped_output(props: Props, app: &AppContext) -> Box<dyn Element> {
                         .get_item_index(&item.id)
                         .map(|index| (item, index))
                 }) {
-                    return Some(format!(
-                        "Stopped task {}/{}: \"{}\"",
-                        item_index + 1,
-                        todo_list.len(),
-                        item.title
-                    ));
+                    return Some(i18n::t!(
+                        "Stopped task {item_index}/{total}: \"{title}\"",
+                        item_index = item_index + 1,
+                        total = todo_list.len(),
+                        title = item.title
+                    ).to_string());
                 }
             }
 
@@ -2202,7 +2202,7 @@ fn render_requested_edits_output_message(
         match requested_edit.view.as_ref(app).display_mode() {
             DisplayMode::FullPane => Align::new(
                 Text::new_inline(
-                    "This suggestion is being edited in another tab.",
+                    i18n::t!("This suggestion is being edited in another tab."),
                     appearance.ui_font_family(),
                     appearance.monospace_font_size(),
                 )
@@ -2312,11 +2312,11 @@ fn render_suggest_new_conversation(
         };
         let (label, status_icon) = match result {
             SuggestNewConversationResult::Accepted { .. } => (
-                "New conversation started",
+                i18n::t!("New conversation started"),
                 inline_action_icons::green_check_icon(appearance).finish(),
             ),
             SuggestNewConversationResult::Rejected => (
-                "Continuing current conversation",
+                i18n::t!("Continuing current conversation"),
                 warpui::elements::Icon::new(
                     Icon::FlipForward.into(),
                     internal_colors::neutral_6(theme),
@@ -2324,13 +2324,13 @@ fn render_suggest_new_conversation(
                 .finish(),
             ),
             SuggestNewConversationResult::Cancelled => (
-                "New conversation suggestion cancelled",
+                i18n::t!("New conversation suggestion cancelled"),
                 inline_action_icons::cancelled_icon(appearance).finish(),
             ),
         };
         return Some(
             render_requested_action_row_for_text(
-                label.into(),
+                label,
                 appearance.ui_font_family(),
                 Some(status_icon),
                 None,
@@ -2644,7 +2644,7 @@ fn render_file_retrieval_tool(
         } if show_for_action_id == action_id => {
             *shown.lock() = true;
             config = config.with_footer(render_autonomy_checkbox_setting_speedbump_footer(
-                "Always allow file access for coding tasks",
+                i18n::t!("Always allow file access for coding tasks"),
                 *checked,
                 AIBlockAction::ToggleAutoreadFilesSpeedbumpCheckbox,
                 props

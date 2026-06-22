@@ -123,7 +123,8 @@ impl UpdateModalBody {
 
     fn render_title(&self, appearance: &Appearance) -> Box<dyn Element> {
         let theme = appearance.theme();
-        let name = self.server_name.as_deref().unwrap_or("Server");
+        let default_server_name = i18n::t!("Server");
+        let name = self.server_name.as_deref().unwrap_or(&default_server_name);
 
         // Renders MCP avatar icon
         let avatar_content = if let Some(icon) = ExternalProductIcon::from_string(name) {
@@ -220,9 +221,9 @@ impl UpdateModalBody {
 
     fn render_description(&self, appearance: &Appearance) -> Box<dyn Element> {
         // Modal appears only when multiple updates are available
-        let description = format!(
-            "This server has {} updates available, which would you like to proceed with?",
-            self.update_options.len()
+        let description = i18n::t!(
+            "This server has {count} updates available, which would you like to proceed with?",
+            count = self.update_options.len()
         );
 
         Text::new(
@@ -395,7 +396,7 @@ impl View for UpdateModalBody {
         // Add update options
         if self.update_options.is_empty() {
             let no_updates_text = Text::new(
-                "No updates available",
+                i18n::t!("No updates available"),
                 appearance.ui_font_family(),
                 appearance.ui_font_size(),
             )

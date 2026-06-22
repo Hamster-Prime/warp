@@ -1,3 +1,4 @@
+use std::borrow::Cow;
 use pathfinder_geometry::vector::vec2f;
 use warp_core::ui::theme::phenomenon::PhenomenonStyle;
 use warp_core::ui::theme::Fill;
@@ -20,32 +21,34 @@ const HERO_IMAGE_PATH: &str = "async/png/onboarding/hoa_welcome_banner.png";
 
 struct FeatureItem {
     icon: Icon,
-    title: &'static str,
-    description: &'static str,
+    title: Cow<'static, str>,
+    description: Cow<'static, str>,
 }
 
-const FEATURE_ITEMS: &[FeatureItem] = &[
-    FeatureItem {
-        icon: Icon::LayoutAlt01,
-        title: "Vertical tabs",
-        description: "Rich tab titles and metadata like git branch, worktree, and PR. Fully customizable.",
-    },
-    FeatureItem {
-        icon: Icon::Sliders,
-        title: "Tab configs",
-        description: "Tab-level schema to set your directory, startup commands, theme, and worktree with one click",
-    },
-    FeatureItem {
-        icon: Icon::Inbox,
-        title: "Agent inbox",
-        description: "Notifications when any agent needs your attention, also accessible in a central inbox",
-    },
-    FeatureItem {
-        icon: Icon::MessageCheckSquare,
-        title: "Native code review",
-        description: "Send inline comments from Warp's code review directly to Claude Code, Codex, or OpenCode",
-    },
-];
+fn feature_items() -> Vec<FeatureItem> {
+    vec![
+        FeatureItem {
+            icon: Icon::LayoutAlt01,
+            title: i18n::t!("Vertical tabs"),
+            description: i18n::t!("Rich tab titles and metadata like git branch, worktree, and PR. Fully customizable."),
+        },
+        FeatureItem {
+            icon: Icon::Sliders,
+            title: i18n::t!("Tab configs"),
+            description: i18n::t!("Tab-level schema to set your directory, startup commands, theme, and worktree with one click"),
+        },
+        FeatureItem {
+            icon: Icon::Inbox,
+            title: i18n::t!("Agent inbox"),
+            description: i18n::t!("Notifications when any agent needs your attention, also accessible in a central inbox"),
+        },
+        FeatureItem {
+            icon: Icon::MessageCheckSquare,
+            title: i18n::t!("Native code review"),
+            description: i18n::t!("Send inline comments from Warp's code review directly to Claude Code, Codex, or OpenCode"),
+        },
+    ]
+}
 
 pub fn render_welcome_banner(
     close_button: &ViewHandle<ActionButton>,
@@ -84,7 +87,7 @@ pub fn render_welcome_banner(
     );
 
     // "New" badge
-    let text = Text::new_inline("New".to_string(), appearance.ui_font_family(), 14.)
+    let text = Text::new_inline(i18n::t!("New"), appearance.ui_font_family(), 14.)
         .with_color(PhenomenonStyle::modal_badge_text())
         .finish();
     let badge = ConstrainedBox::new(
@@ -105,7 +108,7 @@ pub fn render_welcome_banner(
 
     // Title
     let title = Text::new(
-        "Introducing universal agent support: level up any coding agent with Warp",
+        i18n::t!("Introducing universal agent support: level up any coding agent with Warp"),
         appearance.ui_font_family(),
         20.,
     )
@@ -118,7 +121,7 @@ pub fn render_welcome_banner(
         .with_cross_axis_alignment(CrossAxisAlignment::Start)
         .with_spacing(12.);
 
-    for item in FEATURE_ITEMS {
+    for item in &feature_items() {
         let icon_el = ConstrainedBox::new(
             item.icon
                 .to_warpui_icon(Fill::Solid(PhenomenonStyle::modal_feature_title_text()))
@@ -132,12 +135,12 @@ pub fn render_welcome_banner(
             .with_cross_axis_alignment(CrossAxisAlignment::Start)
             .with_spacing(2.)
             .with_child(
-                Text::new_inline(item.title.to_string(), appearance.ui_font_family(), 14.)
+                Text::new_inline(item.title.clone(), appearance.ui_font_family(), 14.)
                     .with_color(PhenomenonStyle::modal_feature_title_text())
                     .finish(),
             )
             .with_child(
-                Text::new(item.description, appearance.ui_font_family(), 14.)
+                Text::new(item.description.clone(), appearance.ui_font_family(), 14.)
                     .with_color(PhenomenonStyle::modal_feature_description_text())
                     .finish(),
             )

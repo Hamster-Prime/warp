@@ -102,7 +102,6 @@ const ADDITIONAL_ADDON_CREDITS_DESCRIPTION_FOR_TEAM: &str =
     "Purchased add-on credits are shared across your team.";
 
 // Cloud agent trial widget constants.
-const AMBIENT_AGENT_TRIAL_TITLE: &str = "Cloud agent trial";
 /// The threshold below which we only show the "Buy more" button (not "New agent").
 use crate::ai::request_usage_model::AMBIENT_AGENT_TRIAL_CREDIT_THRESHOLD;
 
@@ -1113,7 +1112,7 @@ impl BillingAndUsagePageView {
         let fg = theme.foreground().into_solid();
         let bg = theme.background().into_solid();
 
-        let title = Text::new_inline(AMBIENT_AGENT_TRIAL_TITLE, appearance.ui_font_family(), 14.)
+        let title = Text::new_inline(i18n::t!("Cloud agent trial"), appearance.ui_font_family(), 14.)
             .with_color(theme.active_ui_text_color().into())
             .with_style(Properties::default().weight(Weight::Semibold))
             .finish();

@@ -1729,11 +1729,11 @@ impl AISettingsPageView {
 
             let items = vec![
                 DropdownItem::new(
-                    "New Tab",
+                    i18n::t!("New Tab").to_string(),
                     AISettingsPageAction::SetConversationLayout(OpenConversationPreference::NewTab),
                 ),
                 DropdownItem::new(
-                    "Split Pane",
+                    i18n::t!("Split Pane").to_string(),
                     AISettingsPageAction::SetConversationLayout(
                         OpenConversationPreference::SplitPane,
                     ),
@@ -1744,9 +1744,11 @@ impl AISettingsPageView {
             let current = *crate::util::file::external_editor::EditorSettings::as_ref(ctx)
                 .open_conversation_layout_preference;
             match current {
-                OpenConversationPreference::NewTab => dropdown.set_selected_by_name("New Tab", ctx),
+                OpenConversationPreference::NewTab => {
+                    dropdown.set_selected_by_name(i18n::t!("New Tab"), ctx)
+                }
                 OpenConversationPreference::SplitPane => {
-                    dropdown.set_selected_by_name("Split Pane", ctx)
+                    dropdown.set_selected_by_name(i18n::t!("Split Pane"), ctx)
                 }
             };
             dropdown
@@ -2738,7 +2740,7 @@ impl AISettingsPageView {
             menu.set_items(
                 vec![
                     DropdownItem::new(
-                        "Read only",
+                        i18n::t!("Read only").to_string(),
                         AISettingsPageAction::SetAutonomyReadonlyCommandsSetting,
                     ),
                     DropdownItem::new(
@@ -4430,7 +4432,7 @@ impl UsageWidget {
         let request_count_label = if workspace_is_delinquent_due_to_payment_issue {
             i18n::t!("Restricted due to billing issue").to_string()
         } else if is_unlimited {
-            "Unlimited".to_string()
+            i18n::t!("Unlimited").to_string()
         } else {
             format!("{used}/{limit}")
         };
@@ -5154,7 +5156,7 @@ impl AgentsWidget {
         let is_any_ai_enabled = ai_settings.is_any_ai_enabled(app);
         let model_subheader = Container::new(render_custom_size_header(
             appearance,
-            "Models",
+            i18n::t!("Models").to_string(),
             14.0,
             Some(styles::header_font_color(is_any_ai_enabled, app)),
         ))
@@ -5705,7 +5707,7 @@ impl AgentsWidget {
 
         render_dropdown_item(
             appearance,
-            "Base model",
+            &i18n::t!("Base model"),
             Some(
                 "This model serves as the primary engine behind the Warp Agent. It powers most interactions and invokes other models for tasks like planning or code generation when necessary. Warp may automatically switch to alternate models based on model availability or for auxiliary tasks such as conversation summarization.",
             ),
@@ -8251,7 +8253,7 @@ impl SettingsWidget for ApiKeysWidget {
                 .with_child(
                     build_sub_header(
                         appearance,
-                        "Custom inference",
+                        i18n::t!("Custom inference").to_string(),
                         Some(styles::header_font_color(
                             custom_inference_controls_enabled,
                             app,
@@ -8302,7 +8304,7 @@ impl SettingsWidget for ApiKeysWidget {
                 column.add_child(
                     Container::new(
                         Text::new_inline(
-                            "Custom endpoints",
+                            i18n::t!("Custom endpoints").to_string(),
                             appearance.ui_font_family(),
                             CONTENT_FONT_SIZE,
                         )

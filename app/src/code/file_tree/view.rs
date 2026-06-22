@@ -2377,7 +2377,7 @@ impl FileTreeView {
                     items.push(MenuItem::Separator);
                     if self.has_terminal_session {
                         items.push(
-                            MenuItemFields::new("cd to directory")
+                            MenuItemFields::new(i18n::t!("cd to directory").to_string())
                                 .with_on_select_action(FileTreeAction::CDToDirectory {
                                     id: id.clone(),
                                 })
@@ -2393,11 +2393,11 @@ impl FileTreeView {
             };
 
             let open_text = if cfg!(target_os = "macos") {
-                "Reveal in Finder"
+                i18n::t!("Reveal in Finder").to_string()
             } else if cfg!(target_os = "windows") {
-                "Reveal in Explorer"
+                i18n::t!("Reveal in Explorer").to_string()
             } else {
-                "Reveal in file manager"
+                i18n::t!("Reveal in file manager").to_string()
             };
             items.push(
                 MenuItemFields::new(open_text)

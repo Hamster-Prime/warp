@@ -2058,11 +2058,11 @@ impl CodeView {
 
             if local_path.is_some() {
                 let reveal_label = if cfg!(target_os = "macos") {
-                    "Reveal in Finder"
+                    i18n::t!("Reveal in Finder").to_string()
                 } else if cfg!(target_os = "windows") {
-                    "Reveal in Explorer"
+                    i18n::t!("Reveal in Explorer").to_string()
                 } else {
-                    "Reveal in file manager"
+                    i18n::t!("Reveal in file manager").to_string()
                 };
                 items.push(
                     MenuItemFields::new(reveal_label)

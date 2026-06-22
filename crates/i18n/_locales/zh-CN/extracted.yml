@@ -556,6 +556,8 @@ Cancelled search for files that match the following patterns in {path}:
   zh-CN: 已取消在 {path} 中搜索匹配以下模式的文件
 Cannot add multiple MCP servers while editing a single server.:
   zh-CN: 编辑单个服务器时无法添加多个 MCP 服务器。
+cd to directory:
+  zh-CN: 进入目录
 Cannot attach context when terminal is running:
   zh-CN: 终端运行时无法附加上下文
 Cannot attach diff while input is not available:
@@ -1179,6 +1181,10 @@ Custom URI is invalid.:
   zh-CN: 自定义 URI 无效。
 'Custom URI is invalid: {e}':
   zh-CN: 自定义 URI 无效：{e}
+Custom endpoints:
+  zh-CN: 自定义端点
+Custom inference:
+  zh-CN: 自定义推理
 Custom models:
   zh-CN: 自定义模型
 Custom · {name}:
@@ -3006,6 +3012,8 @@ Missing source file:
   zh-CN: 缺少源文件
 Model Specs:
   zh-CN: 模型规格
+Models:
+  zh-CN: 模型
 Models ({arg0}):
   zh-CN: 模型（{arg0}）
 Monaco:
@@ -3775,6 +3783,8 @@ Read all changelogs:
   zh-CN: 阅读所有更新日志
 Read more about Warp's use of data:
   zh-CN: 了解更多关于 Warp 的数据使用
+Read only:
+  zh-CN: 只读
 Reading "{name}" MCP resource...:
   zh-CN: 正在读取 "{name}" MCP 资源...
 Reading {count} messages:
@@ -3995,6 +4005,12 @@ Retry title:
   zh-CN: 重试标题
 Reuse existing SSH ControlMaster:
   zh-CN: 复用现有的 SSH ControlMaster
+Reveal in Explorer:
+  zh-CN: 在资源管理器中显示
+Reveal in Finder:
+  zh-CN: 在 Finder 中显示
+Reveal in file manager:
+  zh-CN: 在文件管理器中显示
 Reveal secret:
   zh-CN: 显示密钥
 Revert to server:
@@ -5242,6 +5258,8 @@ Unknown platform:
   zh-CN: 未知平台
 'Unknown tab color ''{arg}''. Use one of: {}.':
   zh-CN: 未知的标签页颜色 '{arg}'。请使用以下之一：{}。
+Unlimited:
+  zh-CN: 无限
 Unnamed file:
   zh-CN: 未命名文件
 Unpin group:

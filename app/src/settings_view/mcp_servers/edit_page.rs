@@ -613,7 +613,7 @@ impl MCPServersEditPageView {
             ToastStack::handle(ctx).update(ctx, |toast_stack, ctx| {
                 toast_stack.add_ephemeral_toast(
                     DismissibleToast::error(
-                        "Cannot add multiple MCP servers while editing a single server."
+                        i18n::t!("Cannot add multiple MCP servers while editing a single server.")
                             .to_string(),
                     ),
                     window_id,

@@ -129,7 +129,7 @@ impl CustomEndpointModal {
                 ..Default::default()
             };
             let mut editor = EditorView::single_line(options, ctx);
-            editor.set_placeholder_text(i18n::t!("Please include 'https://'").to_string(), ctx);
+            editor.set_placeholder_text(i18n::t!("Please include 'http://' or 'https://'").to_string(), ctx);
             if let Some(ep) = endpoint {
                 editor.set_buffer_text(&ep.url, ctx);
             }
@@ -895,15 +895,15 @@ fn validate_url(url: &str) -> Result<(), &'static str> {
         return Ok(());
     }
     let parsed = Url::parse(url).map_err(|_| "Invalid URL")?;
-    if parsed.scheme() != "https" {
-        return Err("URL must use HTTPS");
+    // Allow both HTTP and HTTPS (local-only build supports local endpoints like Ollama)
+    if parsed.scheme() != "https" && parsed.scheme() != "http" {
+        return Err("URL must use HTTP or HTTPS");
     }
     let Some(host) = parsed.host_str().filter(|h| !h.is_empty()) else {
         return Err("URL must include a host");
     };
-    if is_restricted_host(host) {
-        return Err("URL must not use a local or private host");
-    }
+    // Allow local/private hosts for local LLM servers (Ollama, LM Studio, etc.)
+    let _ = host;
     Ok(())
 }
 
@@ -915,6 +915,7 @@ fn is_endpoint_form_valid(name: &str, url: &str, api_key: &str, has_models: bool
         && validate_url(url).is_ok()
 }
 
+#[allow(dead_code)]
 fn is_restricted_host(host: &str) -> bool {
     let host = host
         .strip_prefix('[')

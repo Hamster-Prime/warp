@@ -206,8 +206,7 @@ use crate::{
     LLMPreferences, PrivacySettings, ToastStack,
 };
 
-/// The default display name used for the user if they have no associated display name.
-
+// The default display name used for the user if they have no associated display name.
 const HAS_PENDING_ACTION: &str = "HasPendingAction";
 const DISPATCHED_REQUESTED_EDIT_KEYMAP_CONTEXT: &str = "PendingAIRequestedEdits";
 

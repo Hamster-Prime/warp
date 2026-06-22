@@ -29,7 +29,7 @@ use crate::editor::{
     TextOptions,
 };
 use crate::search_bar::SearchBar;
-use crate::settings_view;
+
 use crate::settings_view::keybindings::{KeybindingChangedEvent, KeybindingChangedNotifier};
 use crate::util::bindings::{filter_bindings_including_keystroke, CommandBinding};
 use crate::workspace::tab_settings::TabSettings;

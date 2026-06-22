@@ -4295,6 +4295,7 @@ dependencies = [
  "futures-util",
  "log",
  "prost",
+ "prost-types",
  "reqwest",
  "serde",
  "serde_json",

@@ -1339,12 +1339,42 @@ impl ServerApi {
 
         // Try custom model providers first (highest priority — explicitly user-configured)
         if let Some(custom) = &settings.custom_model_providers {
+            // Find the provider whose model config_key matches model_config.base
+            let model_base = settings
+                .model_config
+                .as_ref()
+                .map(|c| c.base.as_str())
+                .unwrap_or("");
+
+            for provider in &custom.providers {
+                for model in &provider.models {
+                    // Match by config_key (UUID) or fall back to first model
+                    if model.config_key == model_base || model_base.is_empty() {
+                        // Use slug (real model name like "gpt-4o"), not config_key (UUID)
+                        return Some(direct_llm::DirectLlmConfig {
+                            base_url: provider.base_url.clone(),
+                            api_key: provider.api_key.clone(),
+                            model: if model.slug.is_empty() {
+                                model.config_key.clone()
+                            } else {
+                                model.slug.clone()
+                            },
+                        });
+                    }
+                }
+            }
+
+            // Fallback: use first provider's first model
             if let Some(provider) = custom.providers.first() {
                 if let Some(model) = provider.models.first() {
                     return Some(direct_llm::DirectLlmConfig {
                         base_url: provider.base_url.clone(),
                         api_key: provider.api_key.clone(),
-                        model: model.config_key.clone(),
+                        model: if model.slug.is_empty() {
+                            model.config_key.clone()
+                        } else {
+                            model.slug.clone()
+                        },
                     });
                 }
             }
